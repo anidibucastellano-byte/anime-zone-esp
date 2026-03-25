@@ -528,129 +528,69 @@ def actualizar_top_json_con_tmdb():
         
         return nuevos
     
-    series_nuevas_unicas = filtrar_nuevos(todas_series_f17, series_existente)
+    # Para series de f17, guardar siempre (son live-action, van en su propia sección)
+    series_nuevas_unicas = todas_series_f17  # No filtrar duplicados para series live-action
     peliculas_nuevas_unicas = filtrar_nuevos(nuevas_peliculas, peliculas_existente)
     
-    # Separar series en anime y dibujos
-    anime_nuevos = [s for s in series_nuevas_unicas if s.get('tmdb_type') == 'anime']
-    dibujos_nuevos = [s for s in series_nuevas_unicas if s.get('tmdb_type') == 'dibujos' or not s.get('tmdb_type')]
+    # Las series de f17 van directamente a la sección series (son live-action, no animación)
+    # No se clasifican como anime/dibujos porque son de personas reales
     
     print(f"\n📊 Resultados:")
-    print(f"   Series nuevas: {len(series_nuevas_unicas)}")
-    print(f"   Anime nuevos: {len(anime_nuevos)}")
-    print(f"   Dibujos nuevos: {len(dibujos_nuevos)}")
+    print(f"   Series encontradas en f17: {len(todas_series_f17)}")
     print(f"   Películas nuevas: {len(peliculas_nuevas_unicas)}")
     
-    # Si hay contenido nuevo, añadirlo
-    if series_nuevas_unicas or anime_nuevos or dibujos_nuevos or peliculas_nuevas_unicas:
-        print(f"\n➕ Añadiendo contenido nuevo...")
+    # Actualizar series de f17 (siempre que se encuentren)
+    if todas_series_f17:
+        print(f"\n🔄 Actualizando series de f17 (live-action)...")
         
-        # Añadir series nuevas
-        if series_nuevas_unicas:
-            series_existente.extend(series_nuevas_unicas)
-            print(f"   ✅ {len(series_nuevas_unicas)} series añadidas")
-            
-            # Mostrar las series añadidas
-            print(f"\n📋 Series añadidas:")
-            for i, serie in enumerate(series_nuevas_unicas, 1):
-                name = serie.get('name', '')
-                clean_name = re.sub(r'\[.*?\]', '', name).strip()
-                genero = serie.get('specificGenre', '')
-                tmdb_genres = serie.get('tmdb_genres', [])
-                tmdb_text = f" (TMDB: {', '.join(tmdb_genres)})" if tmdb_genres else ""
-                print(f"   {i}. {clean_name} - {genero}{tmdb_text}")
+        # Reemplazar series con las de f17 (son live-action)
+        data['series'] = todas_series_f17
         
-        # Añadir anime nuevos
-        if anime_nuevos:
-            anime_existente.extend(anime_nuevos)
-            print(f"   ✅ {len(anime_nuevos)} anime añadidos")
-            
-            # Mostrar los anime añadidos
-            print(f"\n🎌 Anime añadidos:")
-            for i, anime in enumerate(anime_nuevos, 1):
-                name = anime.get('name', '')
-                clean_name = re.sub(r'\[.*?\]', '', name).strip()
-                genero = anime.get('specificGenre', '')
-                tmdb_genres = anime.get('tmdb_genres', [])
-                tmdb_text = f" (TMDB: {', '.join(tmdb_genres)})" if tmdb_genres else ""
-                print(f"   {i}. {clean_name} - {genero}{tmdb_text}")
+        # Ordenar series
+        series_ordenadas = sorted(todas_series_f17, key=get_sort_name_perfect)
+        data['series'] = series_ordenadas
         
-        # Añadir dibujos nuevos
-        if dibujos_nuevos:
-            dibujos_existente.extend(dibujos_nuevos)
-            print(f"   ✅ {len(dibujos_nuevos)} dibujos añadidos")
-            
-            # Mostrar los dibujos añadidos
-            print(f"\n📺 Dibujos añadidos:")
-            for i, dibujo in enumerate(dibujos_nuevos, 1):
-                name = dibujo.get('name', '')
-                clean_name = re.sub(r'\[.*?\]', '', name).strip()
-                genero = dibujo.get('specificGenre', '')
-                tmdb_genres = dibujo.get('tmdb_genres', [])
-                tmdb_text = f" (TMDB: {', '.join(tmdb_genres)})" if tmdb_genres else ""
-                print(f"   {i}. {clean_name} - {genero}{tmdb_text}")
+        # Mostrar las series
+        print(f"\n📋 Series de f17 (live-action):")
+        for i, serie in enumerate(series_ordenadas, 1):
+            name = serie.get('name', '')
+            clean_name = re.sub(r'\[.*?\]', '', name).strip()
+            genero = serie.get('specificGenre', '')
+            tmdb_genres = serie.get('tmdb_genres', [])
+            tmdb_text = f" (TMDB: {', '.join(tmdb_genres)})" if tmdb_genres else ""
+            print(f"   {i}. {clean_name} - {genero}{tmdb_text}")
         
-        # Añadir películas nuevas
-        if peliculas_nuevas_unicas:
-            peliculas_existente.extend(peliculas_nuevas_unicas)
-            print(f"   ✅ {len(peliculas_nuevas_unicas)} películas añadidas")
-            
-            # Mostrar las películas añadidas
-            print(f"\n🎬 Películas añadidas:")
-            for i, pelicula in enumerate(peliculas_nuevas_unicas, 1):
-                name = pelicula.get('name', '')
-                clean_name = re.sub(r'\[.*?\]', '', name).strip()
-                genero = pelicula.get('specificGenre', '')
-                tmdb_genres = pelicula.get('tmdb_genres', [])
-                tmdb_text = f" (TMDB: {', '.join(tmdb_genres)})" if tmdb_genres else ""
-                print(f"   {i}. {clean_name} - {genero}{tmdb_text}")
-        
-        # Ordenar todo
-        print(f"\n🔄 Ordenando contenido...")
-        series_existente = sorted(series_existente, key=get_sort_name_perfect)
-        anime_existente = sorted(anime_existente, key=get_sort_name_perfect)
-        dibujos_existente = sorted(dibujos_existente, key=get_sort_name_perfect)
-        peliculas_existente = sorted(peliculas_existente, key=get_sort_name_perfect)
-        
-        # Actualizar datos
-        data['series'] = series_existente
-        data['anime'] = anime_existente
-        data['dibujos'] = dibujos_existente
-        data['peliculas'] = peliculas_existente
-        
-        # Actualizar resumen
-        total_actual = data['resumen']['total']
-        total_nuevo = total_actual + len(series_nuevas_unicas) + len(anime_nuevos) + len(dibujos_nuevos) + len(peliculas_nuevas_unicas)
-        data['resumen']['total'] = total_nuevo
-        data['resumen']['series'] = len(series_existente)
-        data['resumen']['anime'] = len(anime_existente)
-        data['resumen']['dibujos'] = len(dibujos_existente)
-        data['resumen']['peliculas'] = len(peliculas_existente)
-        
-        # Guardar archivo
-        print(f"\n💾 Guardando TOP.json actualizado...")
-        try:
-            with open('TOP.json', 'w', encoding='utf-8') as f:
-                json.dump(data, f, ensure_ascii=False, indent=2)
-            print(f"✅ TOP.json actualizado exitosamente")
-        except Exception as e:
-            print(f"❌ Error al guardar: {e}")
-            return
-        
-        print(f"\n🎉 ¡Actualización completada con TMDB!")
+        print(f"   ✅ {len(series_ordenadas)} series actualizadas")
+    
+    # Añadir películas nuevas si hay
+    if peliculas_nuevas_unicas:
+        peliculas_existente.extend(peliculas_nuevas_unicas)
+        print(f"   ✅ {len(peliculas_nuevas_unicas)} películas añadidas")
+    
+    # Actualizar resumen
+    total_anime = len(anime_existente)
+    total_dibujos = len(dibujos_existente)
+    total_peliculas = len(peliculas_existente)
+    total_series = len(data.get('series', []))
+    total_nuevo = total_anime + total_dibujos + total_peliculas + total_series
+    data['resumen']['total'] = total_nuevo
+    data['resumen']['series'] = total_series
+    data['resumen']['anime'] = total_anime
+    data['resumen']['dibujos'] = total_dibujos
+    data['resumen']['peliculas'] = total_peliculas
+    
+    # Guardar archivo
+    print(f"\n💾 Guardando TOP.json actualizado...")
+    try:
+        with open('TOP.json', 'w', encoding='utf-8') as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        print(f"✅ TOP.json actualizado exitosamente")
+        print(f"🎉 ¡Actualización completada!")
         print(f"📊 Total de entradas: {total_nuevo}")
-        
-    else:
-        print(f"\n✅ No hay contenido nuevo válido. TOP.json está actualizado.")
-        
-        # Siempre guardar para asegurar que la sección series exista
-        print(f"\n💾 Guardando cambios para asegurar sección series...")
-        try:
-            with open('TOP.json', 'w', encoding='utf-8') as f:
-                json.dump(data, f, ensure_ascii=False, indent=2)
-            print(f"✅ TOP.json actualizado con sección series")
-        except Exception as e:
-            print(f"❌ Error al guardar: {e}")
+        print(f"� Series live-action: {total_series}")
+    except Exception as e:
+        print(f"❌ Error al guardar: {e}")
+        return
     
     print(f"\n🏁 Proceso de actualización automática con TMDB finalizado.")
 
