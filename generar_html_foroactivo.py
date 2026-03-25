@@ -381,10 +381,13 @@ def generar_html_foroactivo():
         
         <div class="tabs-container">
             <button class="tab-btn active" onclick="showTab('all')">TODO</button>
-            <button class="tab-btn" onclick="showTab('novedades')">NOVEDADES</button>
             <button class="tab-btn" onclick="showTab('anime')">ANIME</button>
             <button class="tab-btn" onclick="showTab('dibujos')">DIBUJOS</button>
             <button class="tab-btn" onclick="showTab('peliculas')">PELICULAS</button>
+        </div>
+        
+        <div class="search-container" style="display: flex; justify-content: center; margin-bottom: 20px;">
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar serie, película o género..." onkeyup="applyFilters()" style="width: 100%; max-width: 500px; padding: 12px 20px; background: var(--bg-elevated); border: 2px solid #333; border-radius: 25px; color: var(--text-primary); font-size: 1rem; outline: none; transition: all 0.3s ease;">
         </div>
         
         <div class="sort-container" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
@@ -394,13 +397,6 @@ def generar_html_foroactivo():
         
         <div id="content-all" class="content-section active">
             <div class="items-grid" id="grid-all"></div>
-        </div>
-        <div id="content-novedades" class="content-section">
-            <div style="text-align: center; margin-bottom: 20px;">
-                <h3 style="color: var(--primary-red); font-family: 'Orbitron', sans-serif;">ULTIMAS SUBIDAS</h3>
-                <p style="color: var(--text-secondary);">Las {min(20, len(todos_items))} entradas más recientes</p>
-            </div>
-            <div class="items-grid" id="grid-novedades"></div>
         </div>
         <div id="content-anime" class="content-section">
             <div class="items-grid" id="grid-anime"></div>
@@ -429,12 +425,7 @@ def generar_html_foroactivo():
             document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
             document.getElementById('content-' + tab).classList.add('active');
             currentTab = tab;
-            
-            if (tab === 'novedades') {{
-                renderNovedades();
-            }} else {{
-                applyFilters();
-            }}
+            applyFilters();
         }}
         
         function sortItems(sortBy) {{
@@ -481,17 +472,24 @@ def generar_html_foroactivo():
         function applyFilters() {{
             const decada = document.getElementById('decadaFilter').value;
             const genero = document.getElementById('generoFilter').value;
-            
-            // Si es novedades, no aplicar filtros normales
-            if (currentTab === 'novedades') {{
-                renderNovedades();
-                return;
-            }}
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
             
             let filtered = allItems.filter(item => {{
                 if (currentTab !== 'all' && item.tipo !== currentTab) return false;
                 if (decada !== 'all' && getDecade(item.year) !== decada) return false;
                 if (genero !== 'all' && (item.specificGenre || item.genre || 'N/A') !== genero) return false;
+                
+                // Búsqueda por texto
+                if (searchTerm) {{
+                    const nombre = (item.nombre_limpio || item.name || '').toLowerCase();
+                    const itemGenero = (item.specificGenre || item.genre || '').toLowerCase();
+                    const year = String(item.year || '').toLowerCase();
+                    
+                    if (!nombre.includes(searchTerm) && !itemGenero.includes(searchTerm) && !year.includes(searchTerm)) {{
+                        return false;
+                    }}
+                }}
+                
                 return true;
             }});
             
@@ -499,7 +497,7 @@ def generar_html_foroactivo():
             const grid = document.getElementById(gridId);
             
             if (filtered.length === 0) {{
-                grid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 60px; color: var(--text-secondary);"><div style="font-size: 4rem; margin-bottom: 20px;">🔍</div><p>No se encontraron resultados</p></div>';
+                grid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 60px; color: var(--text-secondary);"><div style="font-size: 4rem; margin-bottom: 20px;">�</div><p>No se encontraron resultados</p></div>';
                 return;
             }}
             
@@ -510,29 +508,6 @@ def generar_html_foroactivo():
                 const url = item.url || '#';
                 
                 return `<div class="item-card"><div class="item-number">#${{index + 1}}</div><div class="item-header"><div class="item-title">${{nombre}}</div></div><div class="item-body"><div class="item-meta"><span class="meta-badge">📅 ${{year}}</span><span class="meta-badge genre-badge">${{genero}}</span></div><a href="${{url}}" target="_blank" class="item-link">Ver</a></div></div>`;
-            }}).join('');
-        }}
-        
-        function renderNovedades() {{
-            // Tomar las últimas 20 entradas (asumiendo que las más nuevas están al final)
-            const novedades = allItems.slice(-20).reverse(); // Últimas 20, ordenadas de más reciente a más antigua
-            
-            const grid = document.getElementById('grid-novedades');
-            
-            if (novedades.length === 0) {{
-                grid.innerHTML = '<div style="text-align: center; padding: 60px; color: var(--text-secondary);"><div style="font-size: 4rem; margin-bottom: 20px;">📭</div><p>No hay novedades disponibles</p></div>';
-                return;
-            }}
-            
-            grid.innerHTML = novedades.map((item, index) => {{
-                const nombre = item.nombre_limpio || item.name || '';
-                const year = item.year || 'N/A';
-                const genero = item.specificGenre || item.genre || 'N/A';
-                const url = item.url || '#';
-                const tipo = item.tipo || 'anime';
-                const tipoLabel = tipo === 'anime' ? 'ANIME' : tipo === 'dibujos' ? 'DIBUJOS' : 'PELICULA';
-                
-                return `<div class="item-card" style="border-left: 4px solid var(--primary-red);"><div class="item-number">#${{index + 1}}</div><div class="item-header"><div class="item-title">${{nombre}}</div></div><div class="item-body"><div class="item-meta"><span class="meta-badge" style="background: var(--primary-red); color: white;">${{tipoLabel}}</span><span class="meta-badge">📅 ${{year}}</span><span class="meta-badge genre-badge">${{genero}}</span></div><a href="${{url}}" target="_blank" class="item-link">Ver</a></div></div>`;
             }}).join('');
         }}
         
