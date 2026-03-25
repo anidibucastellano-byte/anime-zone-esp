@@ -477,8 +477,9 @@ def actualizar_top_json_con_tmdb():
     anime_existente = data.get('anime', [])
     dibujos_existente = data.get('dibujos', [])
     peliculas_existente = data.get('peliculas', [])
+    series_existente = data.get('series', [])
     
-    print(f"✅ Cargados {len(anime_existente)} animes, {len(dibujos_existente)} dibujos, {len(peliculas_existente)} películas")
+    print(f"✅ Cargados {len(anime_existente)} animes, {len(dibujos_existente)} dibujos, {len(peliculas_existente)} películas, {len(series_existente)} series")
     
     # Extraer contenido nuevo del foro con TMDB
     print(f"\n📺 Buscando nuevas series en sección castellano (con TMDB)...")
@@ -486,6 +487,16 @@ def actualizar_top_json_con_tmdb():
     
     print(f"\n🎬 Buscando nuevas películas en sección castellano (con TMDB)...")
     nuevas_peliculas = extraer_contenido_seccion("https://animezoneesp.foroactivo.com/f14-castellano", "14")
+    
+    print(f"\n📋 Buscando nuevas series en sección Series (con TMDB)...")
+    nuevas_series_f17 = extraer_contenido_seccion("https://animezoneesp.foroactivo.com/f17-series", "17")
+    
+    # Extraer también la página 12 de series
+    print(f"\n📋 Buscando nuevas series en sección Series - Página 12 (con TMDB)...")
+    nuevas_series_f17_p12 = extraer_contenido_seccion("https://animezoneesp.foroactivo.com/f17p12-series", "17")
+    
+    # Combinar todas las series de f17
+    todas_series_f17 = nuevas_series_f17 + nuevas_series_f17_p12
     
     # Filtrar contenido nuevo (que no existe ya)
     def filtrar_nuevos(contenido_nuevo, contenido_existente):
@@ -506,7 +517,7 @@ def actualizar_top_json_con_tmdb():
         
         return nuevos
     
-    series_nuevas_unicas = filtrar_nuevos(nuevas_series, anime_existente + dibujos_existente)
+    series_nuevas_unicas = filtrar_nuevos(todas_series_f17, series_existente)
     peliculas_nuevas_unicas = filtrar_nuevos(nuevas_peliculas, peliculas_existente)
     
     # Separar series en anime y dibujos
@@ -514,13 +525,29 @@ def actualizar_top_json_con_tmdb():
     dibujos_nuevos = [s for s in series_nuevas_unicas if s.get('tmdb_type') == 'dibujos' or not s.get('tmdb_type')]
     
     print(f"\n📊 Resultados:")
+    print(f"   Series nuevas: {len(series_nuevas_unicas)}")
     print(f"   Anime nuevos: {len(anime_nuevos)}")
     print(f"   Dibujos nuevos: {len(dibujos_nuevos)}")
     print(f"   Películas nuevas: {len(peliculas_nuevas_unicas)}")
     
     # Si hay contenido nuevo, añadirlo
-    if anime_nuevos or dibujos_nuevos or peliculas_nuevas_unicas:
+    if series_nuevas_unicas or anime_nuevos or dibujos_nuevos or peliculas_nuevas_unicas:
         print(f"\n➕ Añadiendo contenido nuevo...")
+        
+        # Añadir series nuevas
+        if series_nuevas_unicas:
+            series_existente.extend(series_nuevas_unicas)
+            print(f"   ✅ {len(series_nuevas_unicas)} series añadidas")
+            
+            # Mostrar las series añadidas
+            print(f"\n📋 Series añadidas:")
+            for i, serie in enumerate(series_nuevas_unicas, 1):
+                name = serie.get('name', '')
+                clean_name = re.sub(r'\[.*?\]', '', name).strip()
+                genero = serie.get('specificGenre', '')
+                tmdb_genres = serie.get('tmdb_genres', [])
+                tmdb_text = f" (TMDB: {', '.join(tmdb_genres)})" if tmdb_genres else ""
+                print(f"   {i}. {clean_name} - {genero}{tmdb_text}")
         
         # Añadir anime nuevos
         if anime_nuevos:
@@ -569,19 +596,22 @@ def actualizar_top_json_con_tmdb():
         
         # Ordenar todo
         print(f"\n🔄 Ordenando contenido...")
+        series_existente = sorted(series_existente, key=get_sort_name_perfect)
         anime_existente = sorted(anime_existente, key=get_sort_name_perfect)
         dibujos_existente = sorted(dibujos_existente, key=get_sort_name_perfect)
         peliculas_existente = sorted(peliculas_existente, key=get_sort_name_perfect)
         
         # Actualizar datos
+        data['series'] = series_existente
         data['anime'] = anime_existente
         data['dibujos'] = dibujos_existente
         data['peliculas'] = peliculas_existente
         
         # Actualizar resumen
         total_actual = data['resumen']['total']
-        total_nuevo = total_actual + len(anime_nuevos) + len(dibujos_nuevos) + len(peliculas_nuevas_unicas)
+        total_nuevo = total_actual + len(series_nuevas_unicas) + len(anime_nuevos) + len(dibujos_nuevos) + len(peliculas_nuevas_unicas)
         data['resumen']['total'] = total_nuevo
+        data['resumen']['series'] = len(series_existente)
         data['resumen']['anime'] = len(anime_existente)
         data['resumen']['dibujos'] = len(dibujos_existente)
         data['resumen']['peliculas'] = len(peliculas_existente)
