@@ -360,6 +360,7 @@ def generar_html_foroactivo():
         
         <div class="tabs-container">
             <button class="tab-btn active" onclick="showTab('all')">TODO</button>
+            <button class="tab-btn" onclick="showTab('novedades')">NOVEDADES</button>
             <button class="tab-btn" onclick="showTab('anime')">ANIME</button>
             <button class="tab-btn" onclick="showTab('dibujos')">DIBUJOS</button>
             <button class="tab-btn" onclick="showTab('peliculas')">PELICULAS</button>
@@ -372,6 +373,13 @@ def generar_html_foroactivo():
         
         <div id="content-all" class="content-section active">
             <div class="items-grid" id="grid-all"></div>
+        </div>
+        <div id="content-novedades" class="content-section">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <h3 style="color: var(--primary-red); font-family: 'Orbitron', sans-serif;">ULTIMAS SUBIDAS</h3>
+                <p style="color: var(--text-secondary);">Las {min(20, len(todos_items))} entradas más recientes</p>
+            </div>
+            <div class="items-grid" id="grid-novedades"></div>
         </div>
         <div id="content-anime" class="content-section">
             <div class="items-grid" id="grid-anime"></div>
@@ -400,7 +408,12 @@ def generar_html_foroactivo():
             document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
             document.getElementById('content-' + tab).classList.add('active');
             currentTab = tab;
-            applyFilters();
+            
+            if (tab === 'novedades') {{
+                renderNovedades();
+            }} else {{
+                applyFilters();
+            }}
         }}
         
         function sortItems(sortBy) {{
@@ -448,6 +461,12 @@ def generar_html_foroactivo():
             const decada = document.getElementById('decadaFilter').value;
             const genero = document.getElementById('generoFilter').value;
             
+            // Si es novedades, no aplicar filtros normales
+            if (currentTab === 'novedades') {{
+                renderNovedades();
+                return;
+            }}
+            
             let filtered = allItems.filter(item => {{
                 if (currentTab !== 'all' && item.tipo !== currentTab) return false;
                 if (decada !== 'all' && getDecade(item.year) !== decada) return false;
@@ -464,12 +483,51 @@ def generar_html_foroactivo():
             }}
             
             grid.innerHTML = filtered.map((item, index) => {{
-                const nombre = (item.name || '').replace('[Activo]', '').trim();
+                // Limpiar nombre: quitar todo entre corchetes y paréntesis técnicos
+                let nombre = (item.name || '');
+                nombre = nombre.replace(/\\[.*?\\]/g, ''); // Quitar todo entre [ ]
+                nombre = nombre.replace(/\\(.*?)\\)/g, ''); // Quitar todo entre ( )
+                nombre = nombre.replace(/\\d+\\/\\d+/g, ''); // Quitar formatos como 45/45
+                nombre = nombre.replace(/\\d+x\\d+/g, ''); // Quitar resoluciones como 1440x1080
+                nombre = nombre.replace(/\\d+MB/gi, ''); // Quitar tamaños como 425MB
+                nombre = nombre.trim();
+                
                 const year = item.year || 'N/A';
                 const genero = item.specificGenre || item.genre || 'N/A';
                 const url = item.url || '#';
                 
                 return `<div class="item-card"><div class="item-number">#${{index + 1}}</div><div class="item-header"><div class="item-title">${{nombre}}</div></div><div class="item-body"><div class="item-meta"><span class="meta-badge">📅 ${{year}}</span><span class="meta-badge genre-badge">${{genero}}</span></div><a href="${{url}}" target="_blank" class="item-link">Ver</a></div></div>`;
+            }}).join('');
+        }}
+        
+        function renderNovedades() {{
+            // Tomar las últimas 20 entradas (asumiendo que las más nuevas están al final)
+            const novedades = allItems.slice(-20).reverse(); // Últimas 20, ordenadas de más reciente a más antigua
+            
+            const grid = document.getElementById('grid-novedades');
+            
+            if (novedades.length === 0) {{
+                grid.innerHTML = '<div style="text-align: center; padding: 60px; color: var(--text-secondary);"><div style="font-size: 4rem; margin-bottom: 20px;">📭</div><p>No hay novedades disponibles</p></div>';
+                return;
+            }}
+            
+            grid.innerHTML = novedades.map((item, index) => {{
+                // Limpiar nombre: quitar todo entre corchetes y paréntesis técnicos
+                let nombre = (item.name || '');
+                nombre = nombre.replace(/\\[.*?\\]/g, ''); // Quitar todo entre [ ]
+                nombre = nombre.replace(/\\(.*?)\\)/g, ''); // Quitar todo entre ( )
+                nombre = nombre.replace(/\\d+\\/\\d+/g, ''); // Quitar formatos como 45/45
+                nombre = nombre.replace(/\\d+x\\d+/g, ''); // Quitar resoluciones como 1440x1080
+                nombre = nombre.replace(/\\d+MB/gi, ''); // Quitar tamaños como 425MB
+                nombre = nombre.trim();
+                
+                const year = item.year || 'N/A';
+                const genero = item.specificGenre || item.genre || 'N/A';
+                const url = item.url || '#';
+                const tipo = item.tipo || 'anime';
+                const tipoLabel = tipo === 'anime' ? 'ANIME' : tipo === 'dibujos' ? 'DIBUJOS' : 'PELICULA';
+                
+                return `<div class="item-card" style="border-left: 4px solid var(--primary-red);"><div class="item-number">#${{index + 1}}</div><div class="item-header"><div class="item-title">${{nombre}}</div></div><div class="item-body"><div class="item-meta"><span class="meta-badge" style="background: var(--primary-red); color: white;">${{tipoLabel}}</span><span class="meta-badge">📅 ${{year}}</span><span class="meta-badge genre-badge">${{genero}}</span></div><a href="${{url}}" target="_blank" class="item-link">Ver</a></div></div>`;
             }}).join('');
         }}
         
