@@ -1,9 +1,9 @@
 {
   "resumen": {
-    "anime": 313,
+    "anime": 314,
     "dibujos": 440,
     "peliculas": 123,
-    "total": 886,
+    "total": 887,
     "ultima_actualizacion": "2026-03-25 03:35:44"
   },
   "anime": [
@@ -1529,6 +1529,19 @@
       "genre": "Animación Japonesa",
       "confianza": 90,
       "razonClasificacion": "Clasificado con TMDB: Animación, Action & Adventure, Crimen, Drama",
+      "specificGenre": "Acción",
+      "originalGenre": "Animación Japonesa",
+      "tmdb_type": "anime"
+    },
+    {
+      "name": "[Activo] Gunslinger Girl (2003) [Dual-Audio] [13/13] [BD-Rip] [1920x1080] [735MB/1,02GB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 2003,
+      "url": "https://animezoneesp.foroactivo.com/t1506-activo-gunslinger-girl-2003-dual-audio-13-13-bd-rip-1920x1080-735mb-102gb-mega-pixeldrain-ver-online",
+      "href": "/t1506-activo-gunslinger-girl-2003-dual-audio-13-13-bd-rip-1920x1080-735mb-102gb-mega-pixeldrain-ver-online",
+      "type": "Anime",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Action & Adventure, Animación, Drama",
       "specificGenre": "Acción",
       "originalGenre": "Animación Japonesa",
       "tmdb_type": "anime"
