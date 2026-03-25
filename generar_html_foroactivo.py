@@ -198,55 +198,57 @@ def generar_html_foroactivo():
         }}
         
         .items-grid {{
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }}
         
         .item-card {{
             background: var(--bg-card);
             border: 2px solid #333;
-            border-radius: 15px;
+            border-radius: 10px;
             overflow: hidden;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
         }}
         
         .item-card:hover {{
-            transform: translateY(-10px);
             border-color: var(--primary-red);
-            box-shadow: var(--shadow-hover);
+            box-shadow: var(--shadow);
         }}
         
         .item-header {{
-            background: var(--bg-elevated);
-            padding: 20px;
-            border-bottom: 1px solid #333;
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }}
+        
+        .item-title {{
+            font-size: 1rem;
+            font-weight: 600;
         }}
         
         .item-number {{
             font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 900;
             color: var(--primary-red);
-            opacity: 0.3;
-            float: right;
-        }}
-        
-        .item-title {{
-            font-size: 1.1rem;
-            font-weight: 700;
-            padding-right: 50px;
+            min-width: 50px;
+            text-align: center;
         }}
         
         .item-body {{
-            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }}
         
         .item-meta {{
             display: flex;
             gap: 10px;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
+            align-items: center;
         }}
         
         .meta-badge {{
@@ -262,15 +264,16 @@ def generar_html_foroactivo():
         }}
         
         .item-link {{
-            display: block;
             background: var(--primary-red);
             color: white;
             text-align: center;
-            padding: 12px;
+            padding: 8px 20px;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 6px;
             font-weight: 600;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
+            white-space: nowrap;
         }}
         
         .item-link:hover {{
@@ -282,7 +285,6 @@ def generar_html_foroactivo():
     <div class="container">
         <div class="header">
             <h1>Anime Zone ESP</h1>
-            <p>TOP Actualizado Automáticamente</p>
         </div>
         
         <div class="stats-bar">
@@ -315,7 +317,11 @@ def generar_html_foroactivo():
                         <option value="2000">2000s (2000-2009)</option>
                         <option value="1990">1990s (1990-1999)</option>
                         <option value="1980">1980s (1980-1989)</option>
-                        <option value="older">Anteriores a 1980</option>
+                        <option value="1970">1970s (1970-1979)</option>
+                        <option value="1960">1960s (1960-1969)</option>
+                        <option value="1950">1950s (1950-1959)</option>
+                        <option value="1940">1940s (1940-1949)</option>
+                        <option value="older">Anteriores a 1940</option>
                     </select>
                 </div>
                 <div>
@@ -374,6 +380,10 @@ def generar_html_foroactivo():
             if (y >= 2000) return '2000';
             if (y >= 1990) return '1990';
             if (y >= 1980) return '1980';
+            if (y >= 1970) return '1970';
+            if (y >= 1960) return '1960';
+            if (y >= 1950) return '1950';
+            if (y >= 1940) return '1940';
             return 'older';
         }}
         
@@ -402,7 +412,7 @@ def generar_html_foroactivo():
                 const genero = item.specificGenre || item.genre || 'N/A';
                 const url = item.url || '#';
                 
-                return `<div class="item-card"><div class="item-header"><div class="item-number">#${{index + 1}}</div><div class="item-title">${{nombre}}</div></div><div class="item-body"><div class="item-meta"><span class="meta-badge">📅 ${{year}}</span><span class="meta-badge genre-badge">${{genero}}</span></div><a href="${{url}}" target="_blank" class="item-link">Ver en Foro</a></div></div>`;
+                return `<div class="item-card"><div class="item-number">#${{index + 1}}</div><div class="item-header"><div class="item-title">${{nombre}}</div></div><div class="item-body"><div class="item-meta"><span class="meta-badge">📅 ${{year}}</span><span class="meta-badge genre-badge">${{genero}}</span></div><a href="${{url}}" target="_blank" class="item-link">Ver</a></div></div>`;
             }}).join('');
         }}
         
