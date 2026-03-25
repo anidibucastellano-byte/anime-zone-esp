@@ -2,8 +2,8 @@ name: Actualización Automática de Anime
 
 on:
   schedule:
-    # Ejecutar todos los días a las 3:00 AM UTC
-    - cron: '0 3 * * *'
+    # Ejecutar cada 2 horas
+    - cron: '0 */2 * * *'
   # Permitir ejecución manual
   workflow_dispatch:
 
