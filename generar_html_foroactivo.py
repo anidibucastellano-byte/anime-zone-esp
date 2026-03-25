@@ -99,13 +99,13 @@ def generar_html_foroactivo():
         
         .header h1 {{
             font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 900;
             background: linear-gradient(135deg, #c0392b 0%, #e74c3c 50%, #f39c12 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-transform: uppercase;
-            letter-spacing: 4px;
+            letter-spacing: 6px;
             margin-bottom: 10px;
         }}
         
@@ -113,7 +113,7 @@ def generar_html_foroactivo():
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }}
         
         .stat-card {{
@@ -168,6 +168,7 @@ def generar_html_foroactivo():
             gap: 15px;
             margin-bottom: 30px;
             flex-wrap: wrap;
+            justify-content: center;
         }}
         
         .tab-btn {{
@@ -184,6 +185,29 @@ def generar_html_foroactivo():
         }}
         
         .tab-btn.active {{
+            background: var(--primary-red);
+            border-color: var(--primary-red);
+            color: white;
+        }}
+        
+        .sort-btn {{
+            background: var(--bg-elevated);
+            border: 2px solid #333;
+            border-radius: 8px;
+            padding: 10px 20px;
+            color: var(--text-secondary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }}
+        
+        .sort-btn:hover {{
+            border-color: var(--primary-red);
+            color: var(--text-primary);
+        }}
+        
+        .sort-btn.active {{
             background: var(--primary-red);
             border-color: var(--primary-red);
             color: white;
@@ -284,25 +308,25 @@ def generar_html_foroactivo():
 <body>
     <div class="container">
         <div class="header">
-            <h1>Anime Zone ESP</h1>
+            <h1>ANIMEZONEESP</h1>
         </div>
         
         <div class="stats-bar">
             <div class="stat-card">
                 <div class="number">{len(animes)}</div>
-                <div class="label">🎌 Anime</div>
+                <div class="label">Anime</div>
             </div>
             <div class="stat-card">
                 <div class="number">{len(dibujos)}</div>
-                <div class="label">📺 Dibujos</div>
+                <div class="label">Dibujos</div>
             </div>
             <div class="stat-card">
                 <div class="number">{len(peliculas)}</div>
-                <div class="label">🎬 Películas</div>
+                <div class="label">Peliculas</div>
             </div>
             <div class="stat-card">
                 <div class="number">{len(animes) + len(dibujos) + len(peliculas)}</div>
-                <div class="label">📈 Total</div>
+                <div class="label">Total</div>
             </div>
         </div>
         
@@ -335,10 +359,15 @@ def generar_html_foroactivo():
         </div>
         
         <div class="tabs-container">
-            <button class="tab-btn active" onclick="showTab('all')">📋 Todo</button>
-            <button class="tab-btn" onclick="showTab('anime')">🎌 Anime</button>
-            <button class="tab-btn" onclick="showTab('dibujos')">📺 Dibujos</button>
-            <button class="tab-btn" onclick="showTab('peliculas')">🎬 Películas</button>
+            <button class="tab-btn active" onclick="showTab('all')">TODO</button>
+            <button class="tab-btn" onclick="showTab('anime')">ANIME</button>
+            <button class="tab-btn" onclick="showTab('dibujos')">DIBUJOS</button>
+            <button class="tab-btn" onclick="showTab('peliculas')">PELICULAS</button>
+        </div>
+        
+        <div class="sort-container" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
+            <button class="sort-btn" onclick="sortItems('name')">Ordenar por Nombre</button>
+            <button class="sort-btn" onclick="sortItems('year')">Ordenar por Año</button>
         </div>
         
         <div id="content-all" class="content-section active">
@@ -362,6 +391,8 @@ def generar_html_foroactivo():
     <script>
         const allItems = {json.dumps(todos_items, ensure_ascii=False)};
         let currentTab = 'all';
+        let currentSort = 'name';
+        let sortDirection = 'asc';
         
         function showTab(tab) {{
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -369,6 +400,32 @@ def generar_html_foroactivo():
             document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
             document.getElementById('content-' + tab).classList.add('active');
             currentTab = tab;
+            applyFilters();
+        }}
+        
+        function sortItems(sortBy) {{
+            if (currentSort === sortBy) {{
+                sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+            }} else {{
+                currentSort = sortBy;
+                sortDirection = 'asc';
+            }}
+            
+            allItems.sort((a, b) => {{
+                let valA, valB;
+                if (sortBy === 'name') {{
+                    valA = (a.name || '').toLowerCase().replace('[activo]', '').trim();
+                    valB = (b.name || '').toLowerCase().replace('[activo]', '').trim();
+                }} else if (sortBy === 'year') {{
+                    valA = parseInt(a.year) || 0;
+                    valB = parseInt(b.year) || 0;
+                }}
+                
+                if (valA < valB) return sortDirection === 'asc' ? -1 : 1;
+                if (valA > valB) return sortDirection === 'asc' ? 1 : -1;
+                return 0;
+            }});
+            
             applyFilters();
         }}
         
