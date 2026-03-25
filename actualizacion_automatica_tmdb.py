@@ -477,7 +477,18 @@ def actualizar_top_json_con_tmdb():
     anime_existente = data.get('anime', [])
     dibujos_existente = data.get('dibujos', [])
     peliculas_existente = data.get('peliculas', [])
+    
+    # Asegurar que existe la sección series
+    if 'series' not in data:
+        data['series'] = []
+        print(f"📋 Creando sección 'series' (no existía)")
+    
     series_existente = data.get('series', [])
+    
+    # Asegurar que existe el resumen de series
+    if 'series' not in data.get('resumen', {}):
+        data['resumen']['series'] = 0
+        print(f"📋 Añadiendo 'series' al resumen")
     
     print(f"✅ Cargados {len(anime_existente)} animes, {len(dibujos_existente)} dibujos, {len(peliculas_existente)} películas, {len(series_existente)} series")
     
@@ -631,6 +642,15 @@ def actualizar_top_json_con_tmdb():
         
     else:
         print(f"\n✅ No hay contenido nuevo válido. TOP.json está actualizado.")
+        
+        # Siempre guardar para asegurar que la sección series exista
+        print(f"\n💾 Guardando cambios para asegurar sección series...")
+        try:
+            with open('TOP.json', 'w', encoding='utf-8') as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+            print(f"✅ TOP.json actualizado con sección series")
+        except Exception as e:
+            print(f"❌ Error al guardar: {e}")
     
     print(f"\n🏁 Proceso de actualización automática con TMDB finalizado.")
 
