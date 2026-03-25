@@ -25,6 +25,7 @@ def generar_html_foroactivo():
     
     animes = data.get('anime', [])
     peliculas = data.get('peliculas', [])
+    dibujos = data.get('dibujos', [])
     resumen = data.get('resumen', {})
     
     # Generar HTML
@@ -72,6 +73,43 @@ def generar_html_foroactivo():
                     <td style="padding: 10px; border: 1px solid #bdc3c7; text-align: center;">{year}</td>
                     <td style="padding: 10px; border: 1px solid #bdc3c7; text-align: center;"><span style="background: #3498db; color: white; padding: 3px 8px; border-radius: 12px; font-size: 12px;">{genero}</span></td>
                     <td style="padding: 10px; border: 1px solid #bdc3c7; text-align: center;"><a href="{url}" style="background: #27ae60; color: white; padding: 5px 10px; text-decoration: none; border-radius: 4px; font-size: 12px;">Ver</a></td>
+                </tr>"""
+    
+    html += """
+            </tbody>
+        </table>
+    </div>
+
+    <div class="lista-dibujos" style="margin-top: 30px;">
+        <h2 style="color: #f39c12; border-bottom: 3px solid #f39c12; padding-bottom: 10px;">📺 Dibujos Animados ({len(dibujos)} series)</h2>
+        <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+            <thead>
+                <tr style="background: #d68910; color: white;">
+                    <th style="padding: 12px; text-align: left; border: 1px solid #ca6f1e;">#</th>
+                    <th style="padding: 12px; text-align: left; border: 1px solid #ca6f1e;">Nombre</th>
+                    <th style="padding: 12px; text-align: center; border: 1px solid #ca6f1e;">Año</th>
+                    <th style="padding: 12px; text-align: center; border: 1px solid #ca6f1e;">Género</th>
+                    <th style="padding: 12px; text-align: center; border: 1px solid #ca6f1e;">Enlace</th>
+                </tr>
+            </thead>
+            <tbody>"""
+    
+    # Añadir dibujos
+    for i, dibujo in enumerate(dibujos, 1):
+        nombre = dibujo.get('name', '').replace('[Activo]', '').strip()
+        year = dibujo.get('year', 'N/A')
+        genero = dibujo.get('specificGenre', dibujo.get('genre', 'N/A'))
+        url = dibujo.get('url', '')
+        
+        bg_color = '#fef9e7' if i % 2 == 0 else '#ffffff'
+        
+        html += f"""
+                <tr style="background: {bg_color};">
+                    <td style="padding: 10px; border: 1px solid #f5cba7; text-align: center;">{i}</td>
+                    <td style="padding: 10px; border: 1px solid #f5cba7;">{nombre}</td>
+                    <td style="padding: 10px; border: 1px solid #f5cba7; text-align: center;">{year}</td>
+                    <td style="padding: 10px; border: 1px solid #f5cba7; text-align: center;"><span style="background: #f39c12; color: white; padding: 3px 8px; border-radius: 12px; font-size: 12px;">{genero}</span></td>
+                    <td style="padding: 10px; border: 1px solid #f5cba7; text-align: center;"><a href="{url}" style="background: #d68910; color: white; padding: 5px 10px; text-decoration: none; border-radius: 4px; font-size: 12px;">Ver</a></td>
                 </tr>"""
     
     html += """
@@ -131,7 +169,7 @@ def generar_html_foroactivo():
         f.write(html)
     
     print(f"✅ HTML generado: top_foroactivo.html")
-    print(f"📊 {len(animes)} animes + {len(peliculas)} películas")
+    print(f"📊 {len(animes)} animes + {len(dibujos)} dibujos + {len(peliculas)} películas")
     print(f"📝 Copia el contenido de top_foroactivo.html y pégalo en foroactivo")
 
 if __name__ == "__main__":
