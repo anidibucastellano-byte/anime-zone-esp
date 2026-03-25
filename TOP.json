@@ -1,9 +1,9 @@
 {
   "resumen": {
-    "anime": 314,
+    "anime": 315,
     "dibujos": 440,
     "peliculas": 123,
-    "total": 887,
+    "total": 888,
     "ultima_actualizacion": "2026-03-25 03:35:44"
   },
   "anime": [
@@ -2097,6 +2097,19 @@
       "razonClasificacion": "Clasificación durante scraping con enlace",
       "specificGenre": "Ciencia ficción",
       "originalGenre": "Animación Japonesa"
+    },
+    {
+      "name": "[Activo] Little Witch Academia (2017) [Multi-audio] [25/25] [BD-Rip] [1920x1080] [710MB/1,16GB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 2017,
+      "url": "https://animezoneesp.foroactivo.com/t1509-activo-little-witch-academia-2017-multi-audio-25-25-bd-rip-1920x1080-710mb-116gb-mega-pixeldrain-ver-online",
+      "href": "/t1509-activo-little-witch-academia-2017-multi-audio-25-25-bd-rip-1920x1080-710mb-116gb-mega-pixeldrain-ver-online",
+      "type": "Anime",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Animación, Sci-Fi & Fantasy, Comedia, Action & Adventure, Kids",
+      "specificGenre": "Ciencia Ficción",
+      "originalGenre": "Animación Japonesa",
+      "tmdb_type": "anime"
     },
     {
       "name": "[Activo]Los Caballeros del Zodiaco (1986) [Tri-Audio] [114/114] [WebDL-Rip] [720x544] [220/275 MB] [Mega/Pixeldrain] [Ver Online]",
