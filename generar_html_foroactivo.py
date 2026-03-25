@@ -104,9 +104,13 @@ def generar_html_foroactivo():
         }}
         
         .container {{
-            max-width: 1400px;
-            margin: 0 auto;
+            max-width: 1200px;
+            margin: 20px auto;
             padding: 20px;
+            background: var(--bg-dark);
+            border: 2px solid var(--primary-red);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
         }}
         
         .header {{
@@ -232,6 +236,28 @@ def generar_html_foroactivo():
             background: var(--primary-red);
             border-color: var(--primary-red);
             color: white;
+        }}
+        
+        .search-input {{
+            background: var(--bg-elevated);
+            border: 2px solid #333;
+            border-radius: 25px;
+            padding: 12px 20px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 500px;
+        }}
+        
+        .search-input:hover {{
+            border-color: var(--primary-red);
+        }}
+        
+        .search-input:focus {{
+            border-color: var(--primary-red);
+            box-shadow: 0 0 15px rgba(192, 57, 43, 0.3);
         }}
         
         .content-section {{
@@ -387,7 +413,7 @@ def generar_html_foroactivo():
         </div>
         
         <div class="search-container" style="display: flex; justify-content: center; margin-bottom: 20px;">
-            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar serie, película o género..." onkeyup="applyFilters()" style="width: 100%; max-width: 500px; padding: 12px 20px; background: var(--bg-elevated); border: 2px solid #333; border-radius: 25px; color: var(--text-primary); font-size: 1rem; outline: none; transition: all 0.3s ease;">
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar serie, película o género..." onkeyup="applyFilters()">
         </div>
         
         <div class="sort-container" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
