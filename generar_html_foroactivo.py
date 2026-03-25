@@ -32,7 +32,7 @@ def generar_html_foroactivo():
     html = f"""<!-- GENERADO AUTOMÁTICAMENTE - {datetime.now().strftime('%d/%m/%Y %H:%M')} -->
 <div class="top-anime-container">
     
-    <div class="resumen-stats" style="background: #2c3e50; color: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center;">
+    <div class="resumen-stats" style="background: #1a1a1a; color: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center; border: 2px solid #c0392b;">
         <h3>📊 Estadísticas del TOP</h3>
         <p>
             <strong>🎌 Anime:</strong> {resumen.get('anime', 0)} | 
@@ -44,15 +44,15 @@ def generar_html_foroactivo():
     </div>
 
     <div class="lista-anime">
-        <h2 style="color: #e74c3c; border-bottom: 3px solid #e74c3c; padding-bottom: 10px;">🎌 Lista de Anime ({len(animes)} series)</h2>
+        <h2 style="color: #c0392b; border-bottom: 3px solid #c0392b; padding-bottom: 10px;">🎌 Lista de Anime ({len(animes)} series)</h2>
         <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
             <thead>
-                <tr style="background: #34495e; color: white;">
-                    <th style="padding: 12px; text-align: left; border: 1px solid #2c3e50;">#</th>
-                    <th style="padding: 12px; text-align: left; border: 1px solid #2c3e50;">Nombre</th>
-                    <th style="padding: 12px; text-align: center; border: 1px solid #2c3e50;">Año</th>
-                    <th style="padding: 12px; text-align: center; border: 1px solid #2c3e50;">Género</th>
-                    <th style="padding: 12px; text-align: center; border: 1px solid #2c3e50;">Enlace</th>
+                <tr style="background: #922b21; color: white;">
+                    <th style="padding: 12px; text-align: left; border: 1px solid #641e16;">#</th>
+                    <th style="padding: 12px; text-align: left; border: 1px solid #641e16;">Nombre</th>
+                    <th style="padding: 12px; text-align: center; border: 1px solid #641e16;">Año</th>
+                    <th style="padding: 12px; text-align: center; border: 1px solid #641e16;">Género</th>
+                    <th style="padding: 12px; text-align: center; border: 1px solid #641e16;">Enlace</th>
                 </tr>
             </thead>
             <tbody>"""
@@ -64,15 +64,15 @@ def generar_html_foroactivo():
         genero = anime.get('specificGenre', anime.get('genre', 'N/A'))
         url = anime.get('url', '')
         
-        bg_color = '#ecf0f1' if i % 2 == 0 else '#ffffff'
+        bg_color = '#fadbd8' if i % 2 == 0 else '#ffffff'
         
         html += f"""
                 <tr style="background: {bg_color};">
-                    <td style="padding: 10px; border: 1px solid #bdc3c7; text-align: center;">{i}</td>
-                    <td style="padding: 10px; border: 1px solid #bdc3c7;">{nombre}</td>
-                    <td style="padding: 10px; border: 1px solid #bdc3c7; text-align: center;">{year}</td>
-                    <td style="padding: 10px; border: 1px solid #bdc3c7; text-align: center;"><span style="background: #3498db; color: white; padding: 3px 8px; border-radius: 12px; font-size: 12px;">{genero}</span></td>
-                    <td style="padding: 10px; border: 1px solid #bdc3c7; text-align: center;"><a href="{url}" style="background: #27ae60; color: white; padding: 5px 10px; text-decoration: none; border-radius: 4px; font-size: 12px;">Ver</a></td>
+                    <td style="padding: 10px; border: 1px solid #e6b0aa; text-align: center;">{i}</td>
+                    <td style="padding: 10px; border: 1px solid #e6b0aa;">{nombre}</td>
+                    <td style="padding: 10px; border: 1px solid #e6b0aa; text-align: center;">{year}</td>
+                    <td style="padding: 10px; border: 1px solid #e6b0aa; text-align: center;"><span style="background: #c0392b; color: white; padding: 3px 8px; border-radius: 12px; font-size: 12px;">{genero}</span></td>
+                    <td style="padding: 10px; border: 1px solid #e6b0aa; text-align: center;"><a href="{url}" style="background: #922b21; color: white; padding: 5px 10px; text-decoration: none; border-radius: 4px; font-size: 12px;">Ver</a></td>
                 </tr>"""
     
     html += """
@@ -81,15 +81,15 @@ def generar_html_foroactivo():
     </div>
 
     <div class="lista-dibujos" style="margin-top: 30px;">
-        <h2 style="color: #f39c12; border-bottom: 3px solid #f39c12; padding-bottom: 10px;">📺 Dibujos Animados ({len(dibujos)} series)</h2>
+        <h2 style="color: #c0392b; border-bottom: 3px solid #c0392b; padding-bottom: 10px;">📺 Dibujos Animados ({len(dibujos)} series)</h2>
         <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
             <thead>
-                <tr style="background: #d68910; color: white;">
-                    <th style="padding: 12px; text-align: left; border: 1px solid #ca6f1e;">#</th>
-                    <th style="padding: 12px; text-align: left; border: 1px solid #ca6f1e;">Nombre</th>
-                    <th style="padding: 12px; text-align: center; border: 1px solid #ca6f1e;">Año</th>
-                    <th style="padding: 12px; text-align: center; border: 1px solid #ca6f1e;">Género</th>
-                    <th style="padding: 12px; text-align: center; border: 1px solid #ca6f1e;">Enlace</th>
+                <tr style="background: #922b21; color: white;">
+                    <th style="padding: 12px; text-align: left; border: 1px solid #641e16;">#</th>
+                    <th style="padding: 12px; text-align: left; border: 1px solid #641e16;">Nombre</th>
+                    <th style="padding: 12px; text-align: center; border: 1px solid #641e16;">Año</th>
+                    <th style="padding: 12px; text-align: center; border: 1px solid #641e16;">Género</th>
+                    <th style="padding: 12px; text-align: center; border: 1px solid #641e16;">Enlace</th>
                 </tr>
             </thead>
             <tbody>"""
@@ -101,15 +101,15 @@ def generar_html_foroactivo():
         genero = dibujo.get('specificGenre', dibujo.get('genre', 'N/A'))
         url = dibujo.get('url', '')
         
-        bg_color = '#fef9e7' if i % 2 == 0 else '#ffffff'
+        bg_color = '#fadbd8' if i % 2 == 0 else '#ffffff'
         
         html += f"""
                 <tr style="background: {bg_color};">
-                    <td style="padding: 10px; border: 1px solid #f5cba7; text-align: center;">{i}</td>
-                    <td style="padding: 10px; border: 1px solid #f5cba7;">{nombre}</td>
-                    <td style="padding: 10px; border: 1px solid #f5cba7; text-align: center;">{year}</td>
-                    <td style="padding: 10px; border: 1px solid #f5cba7; text-align: center;"><span style="background: #f39c12; color: white; padding: 3px 8px; border-radius: 12px; font-size: 12px;">{genero}</span></td>
-                    <td style="padding: 10px; border: 1px solid #f5cba7; text-align: center;"><a href="{url}" style="background: #d68910; color: white; padding: 5px 10px; text-decoration: none; border-radius: 4px; font-size: 12px;">Ver</a></td>
+                    <td style="padding: 10px; border: 1px solid #e6b0aa; text-align: center;">{i}</td>
+                    <td style="padding: 10px; border: 1px solid #e6b0aa;">{nombre}</td>
+                    <td style="padding: 10px; border: 1px solid #e6b0aa; text-align: center;">{year}</td>
+                    <td style="padding: 10px; border: 1px solid #e6b0aa; text-align: center;"><span style="background: #c0392b; color: white; padding: 3px 8px; border-radius: 12px; font-size: 12px;">{genero}</span></td>
+                    <td style="padding: 10px; border: 1px solid #e6b0aa; text-align: center;"><a href="{url}" style="background: #922b21; color: white; padding: 5px 10px; text-decoration: none; border-radius: 4px; font-size: 12px;">Ver</a></td>
                 </tr>"""
     
     html += """
@@ -118,15 +118,15 @@ def generar_html_foroactivo():
     </div>
 
     <div class="lista-peliculas" style="margin-top: 30px;">
-        <h2 style="color: #9b59b6; border-bottom: 3px solid #9b59b6; padding-bottom: 10px;">🎬 Lista de Películas ({len(peliculas)} películas)</h2>
+        <h2 style="color: #922b21; border-bottom: 3px solid #922b21; padding-bottom: 10px;">🎬 Lista de Películas ({len(peliculas)} películas)</h2>
         <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
             <thead>
-                <tr style="background: #8e44ad; color: white;">
-                    <th style="padding: 12px; text-align: left; border: 1px solid #7d3c98;">#</th>
-                    <th style="padding: 12px; text-align: left; border: 1px solid #7d3c98;">Nombre</th>
-                    <th style="padding: 12px; text-align: center; border: 1px solid #7d3c98;">Año</th>
-                    <th style="padding: 12px; text-align: center; border: 1px solid #7d3c98;">Género</th>
-                    <th style="padding: 12px; text-align: center; border: 1px solid #7d3c98;">Enlace</th>
+                <tr style="background: #641e16; color: white;">
+                    <th style="padding: 12px; text-align: left; border: 1px solid #4a1210;">#</th>
+                    <th style="padding: 12px; text-align: left; border: 1px solid #4a1210;">Nombre</th>
+                    <th style="padding: 12px; text-align: center; border: 1px solid #4a1210;">Año</th>
+                    <th style="padding: 12px; text-align: center; border: 1px solid #4a1210;">Género</th>
+                    <th style="padding: 12px; text-align: center; border: 1px solid #4a1210;">Enlace</th>
                 </tr>
             </thead>
             <tbody>"""
@@ -138,15 +138,15 @@ def generar_html_foroactivo():
         genero = pelicula.get('specificGenre', pelicula.get('genre', 'N/A'))
         url = pelicula.get('url', '')
         
-        bg_color = '#f5eef8' if i % 2 == 0 else '#ffffff'
+        bg_color = '#f5b7b1' if i % 2 == 0 else '#ffffff'
         
         html += f"""
                 <tr style="background: {bg_color};">
-                    <td style="padding: 10px; border: 1px solid #d5dbdb; text-align: center;">{i}</td>
-                    <td style="padding: 10px; border: 1px solid #d5dbdb;">{nombre}</td>
-                    <td style="padding: 10px; border: 1px solid #d5dbdb; text-align: center;">{year}</td>
-                    <td style="padding: 10px; border: 1px solid #d5dbdb; text-align: center;"><span style="background: #9b59b6; color: white; padding: 3px 8px; border-radius: 12px; font-size: 12px;">{genero}</span></td>
-                    <td style="padding: 10px; border: 1px solid #d5dbdb; text-align: center;"><a href="{url}" style="background: #8e44ad; color: white; padding: 5px 10px; text-decoration: none; border-radius: 4px; font-size: 12px;">Ver</a></td>
+                    <td style="padding: 10px; border: 1px solid #e6b0aa; text-align: center;">{i}</td>
+                    <td style="padding: 10px; border: 1px solid #e6b0aa;">{nombre}</td>
+                    <td style="padding: 10px; border: 1px solid #e6b0aa; text-align: center;">{year}</td>
+                    <td style="padding: 10px; border: 1px solid #e6b0aa; text-align: center;"><span style="background: #922b21; color: white; padding: 3px 8px; border-radius: 12px; font-size: 12px;">{genero}</span></td>
+                    <td style="padding: 10px; border: 1px solid #e6b0aa; text-align: center;"><a href="{url}" style="background: #641e16; color: white; padding: 5px 10px; text-decoration: none; border-radius: 4px; font-size: 12px;">Ver</a></td>
                 </tr>"""
     
     html += """
@@ -157,11 +157,12 @@ def generar_html_foroactivo():
 </div>
 
 <style>
-.top-anime-container { font-family: Arial, sans-serif; max-width: 1200px; margin: 0 auto; }
-.top-anime-container table { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.top-anime-container { font-family: Arial, sans-serif; max-width: 1200px; margin: 0 auto; background: #1a1a1a; padding: 20px; border-radius: 10px; }
+.top-anime-container table { box-shadow: 0 2px 8px rgba(0,0,0,0.3); border: 1px solid #c0392b; }
 .top-anime-container th { font-weight: bold; }
-.top-anime-container tr:hover { background: #d5e8d4 !important; }
-.top-anime-container a:hover { opacity: 0.8; }
+.top-anime-container tr:hover { background: #f5b7b1 !important; }
+.top-anime-container a:hover { opacity: 0.8; background: #c0392b !important; }
+.top-anime-container h2 { text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
 </style>"""
     
     # Guardar HTML
