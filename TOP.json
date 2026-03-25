@@ -1,9 +1,9 @@
 {
   "resumen": {
-    "anime": 314,
+    "anime": 313,
     "dibujos": 440,
     "peliculas": 123,
-    "total": 884,
+    "total": 886,
     "ultima_actualizacion": "2026-03-25 03:35:44"
   },
   "anime": [
@@ -1484,6 +1484,19 @@
       "originalGenre": "Animación Japonesa"
     },
     {
+      "name": "[Activo] Goblin Slayer (2018) [Dual-Audio] [24/24] [WebDL-Rip] [1920x1080] [620MB/1,36GB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 2018,
+      "url": "https://animezoneesp.foroactivo.com/t1503-activo-goblin-slayer-2018-dual-audio-24-24-webdl-rip-1920x1080-620mb-136gb-mega-pixeldrain-ver-online",
+      "href": "/t1503-activo-goblin-slayer-2018-dual-audio-24-24-webdl-rip-1920x1080-620mb-136gb-mega-pixeldrain-ver-online",
+      "type": "Anime",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Animación, Action & Adventure, Sci-Fi & Fantasy",
+      "specificGenre": "Acción",
+      "originalGenre": "Animación Japonesa",
+      "tmdb_type": "anime"
+    },
+    {
       "name": "[Activo]Golden Boy (1995) [Multi-Audio] [6/6] [DVD-Rip] [628x480] [525/625 MB] [Mega] [Ver Online]",
       "year": 1995,
       "type": "Anime",
@@ -1506,6 +1519,19 @@
       "razonClasificacion": "Clasificación durante scraping con enlace",
       "specificGenre": "Acción",
       "originalGenre": "Animación Japonesa"
+    },
+    {
+      "name": "[Activo] Gungrave (2003) [Dual-Audio] [26/26] [BD-Rip] [1920x1080] [915MB/1,09GB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 2003,
+      "url": "https://animezoneesp.foroactivo.com/t1504-activo-gungrave-2003-dual-audio-26-26-bd-rip-1920x1080-915mb-109gb-mega-pixeldrain-ver-online",
+      "href": "/t1504-activo-gungrave-2003-dual-audio-26-26-bd-rip-1920x1080-915mb-109gb-mega-pixeldrain-ver-online",
+      "type": "Anime",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Animación, Action & Adventure, Crimen, Drama",
+      "specificGenre": "Acción",
+      "originalGenre": "Animación Japonesa",
+      "tmdb_type": "anime"
     },
     {
       "name": "[Activo] .hack//Sign (2002) [Castellano] [28/28] [DVD-Rip] [720x400] [50/105 MB] [Mega/Pixeldrain] [Ver Online]",
