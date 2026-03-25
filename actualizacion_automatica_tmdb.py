@@ -435,6 +435,27 @@ def extraer_contenido_seccion(url_base, seccion_id):
                             contenido_encontrado.append(contenido_info)
                             tipo_label = "🎌 ANIME" if tipo_animacion == 'anime' else "📺 DIBUJOS"
                             print(f"   {tipo_label} {len(contenido_encontrado)}. {title} - {genero_especifico}")
+                    
+                    elif seccion_id == "17":  # Sección de series live-action
+                        if tipo_detectado == 'serie':
+                            # Clasificar con TMDB
+                            genero_especifico, tmdb_data = clasificar_con_tmdb(title, year, 'serie')
+                            
+                            contenido_info = {
+                                'name': title,
+                                'year': year,
+                                'url': topic_url,
+                                'href': topic.get('href', ''),
+                                'type': 'Serie Live-Action',
+                                'genre': 'Live-Action',
+                                'confianza': 90,  # Mayor confianza con TMDB
+                                'razonClasificacion': f"Clasificado con TMDB: {', '.join(tmdb_data['genres']) if tmdb_data and tmdb_data.get('genres') else 'Sin datos TMDB'}",
+                                'specificGenre': genero_especifico,
+                                'originalGenre': 'Live-Action'
+                            }
+                            
+                            contenido_encontrado.append(contenido_info)
+                            print(f"   📺 SERIES {len(contenido_encontrado)}. {title} - {genero_especifico}")
                 
                 # Pausa más larga para evitar bloqueos (3 segundos)
                 time.sleep(3)
