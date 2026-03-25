@@ -3,8 +3,6 @@ name: Deploy GitHub Pages
 on:
   push:
     branches: [ main ]
-    paths:
-      - 'TOP.json'
   workflow_dispatch:
 
 permissions:
