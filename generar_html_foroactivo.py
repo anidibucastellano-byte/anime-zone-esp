@@ -5,19 +5,16 @@ from datetime import datetime
 def generar_html_foroactivo():
     """Generar código HTML premium con filtros interactivos"""
     
-    GITHUB_RAW_URL = "https://raw.githubusercontent.com/anidibucastellano-byte/anime-zone-esp/main/TOP.json"
-    
-    print(f"📥 Descargando TOP.json desde GitHub...")
+    # Usar siempre el archivo local TOP.json
+    print(f"📥 Cargando TOP.json local...")
     
     try:
-        response = requests.get(GITHUB_RAW_URL, timeout=30)
-        response.raise_for_status()
-        data = response.json()
-        print(f"✅ TOP.json descargado correctamente")
-    except Exception as e:
-        print(f"❌ Error al descargar desde GitHub: {e}")
         with open('TOP.json', 'r', encoding='utf-8') as f:
             data = json.load(f)
+        print(f"✅ TOP.json cargado correctamente")
+    except Exception as e:
+        print(f"❌ Error al cargar TOP.json local: {e}")
+        return
     
     animes = data.get('anime', [])
     dibujos = data.get('dibujos', [])
