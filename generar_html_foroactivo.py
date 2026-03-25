@@ -45,6 +45,27 @@ def generar_html_foroactivo():
         item['tipo'] = 'peliculas'
         todos_items.append(item)
     
+    # Función para limpiar nombres en Python
+    def limpiar_nombre(nombre):
+        if not nombre:
+            return ''
+        import re
+        # Quitar todo entre corchetes
+        nombre = re.sub(r'\[.*?\]', '', nombre)
+        # Quitar todo entre paréntesis (excepto años)
+        nombre = re.sub(r'\((?!\d{4}).*?\)', '', nombre)
+        # Quitar formatos técnicos
+        nombre = re.sub(r'\d+/\d+', '', nombre)  # Episodios 45/45
+        nombre = re.sub(r'\d+x\d+', '', nombre)  # Resoluciones 1440x1080
+        nombre = re.sub(r'\d+MB', '', nombre, flags=re.IGNORECASE)  # Tamaños 425MB
+        # Quitar múltiples espacios
+        nombre = re.sub(r'\s+', ' ', nombre)
+        return nombre.strip()
+    
+    # Limpiar todos los nombres antes de pasar a JavaScript
+    for item in todos_items:
+        item['nombre_limpio'] = limpiar_nombre(item.get('name', ''))
+    
     html = f'''<!DOCTYPE html>
 <html lang="es">
 <head>
@@ -483,15 +504,7 @@ def generar_html_foroactivo():
             }}
             
             grid.innerHTML = filtered.map((item, index) => {{
-                // Limpiar nombre: quitar todo entre corchetes y paréntesis técnicos
-                let nombre = (item.name || '');
-                nombre = nombre.replace(/\\[.*?\\]/g, ''); // Quitar todo entre [ ]
-                nombre = nombre.replace(/\\(.*?)\\)/g, ''); // Quitar todo entre ( )
-                nombre = nombre.replace(/\\d+\\/\\d+/g, ''); // Quitar formatos como 45/45
-                nombre = nombre.replace(/\\d+x\\d+/g, ''); // Quitar resoluciones como 1440x1080
-                nombre = nombre.replace(/\\d+MB/gi, ''); // Quitar tamaños como 425MB
-                nombre = nombre.trim();
-                
+                const nombre = item.nombre_limpio || item.name || '';
                 const year = item.year || 'N/A';
                 const genero = item.specificGenre || item.genre || 'N/A';
                 const url = item.url || '#';
@@ -512,15 +525,7 @@ def generar_html_foroactivo():
             }}
             
             grid.innerHTML = novedades.map((item, index) => {{
-                // Limpiar nombre: quitar todo entre corchetes y paréntesis técnicos
-                let nombre = (item.name || '');
-                nombre = nombre.replace(/\\[.*?\\]/g, ''); // Quitar todo entre [ ]
-                nombre = nombre.replace(/\\(.*?)\\)/g, ''); // Quitar todo entre ( )
-                nombre = nombre.replace(/\\d+\\/\\d+/g, ''); // Quitar formatos como 45/45
-                nombre = nombre.replace(/\\d+x\\d+/g, ''); // Quitar resoluciones como 1440x1080
-                nombre = nombre.replace(/\\d+MB/gi, ''); // Quitar tamaños como 425MB
-                nombre = nombre.trim();
-                
+                const nombre = item.nombre_limpio || item.name || '';
                 const year = item.year || 'N/A';
                 const genero = item.specificGenre || item.genre || 'N/A';
                 const url = item.url || '#';
