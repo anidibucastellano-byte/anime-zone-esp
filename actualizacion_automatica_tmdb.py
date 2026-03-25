@@ -310,8 +310,18 @@ def extraer_contenido_seccion(url_base, seccion_id):
     contenido_encontrado = []
     
     try:
+        # Headers más completos para simular un navegador real
         headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+            'Accept-Language': 'es-ES,es;q=0.9,en;q=0.8',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'Connection': 'keep-alive',
+            'Upgrade-Insecure-Requests': '1',
+            'Sec-Fetch-Dest': 'document',
+            'Sec-Fetch-Mode': 'navigate',
+            'Sec-Fetch-Site': 'none',
+            'Cache-Control': 'max-age=0'
         }
         
         # Explorar primeras páginas
@@ -393,8 +403,8 @@ def extraer_contenido_seccion(url_base, seccion_id):
                             contenido_encontrado.append(contenido_info)
                             print(f"   📺 {len(contenido_encontrado)}. {title} - {genero_especifico}")
                 
-                # Pequeña pausa
-                time.sleep(0.5)
+                # Pausa más larga para evitar bloqueos (3 segundos)
+                time.sleep(3)
                 
             except Exception as e:
                 print(f"   ⚠️ Error en página {page_num + 1}: {str(e)[:50]}...")
