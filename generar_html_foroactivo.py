@@ -22,11 +22,12 @@ def generar_html_foroactivo():
     animes = data.get('anime', [])
     dibujos = data.get('dibujos', [])
     peliculas = data.get('peliculas', [])
+    series = data.get('series', [])
     resumen = data.get('resumen', {})
     
     # Obtener todos los géneros únicos para el filtro
     todos_generos = set()
-    for item in animes + dibujos + peliculas:
+    for item in animes + dibujos + peliculas + series:
         genero = item.get('specificGenre', item.get('genre', 'N/A'))
         if genero and genero != 'N/A':
             todos_generos.add(genero)
@@ -43,6 +44,9 @@ def generar_html_foroactivo():
         todos_items.append(item)
     for item in peliculas:
         item['tipo'] = 'peliculas'
+        todos_items.append(item)
+    for item in series:
+        item['tipo'] = 'series'
         todos_items.append(item)
     
     # Función para limpiar nombres en Python
@@ -372,7 +376,11 @@ def generar_html_foroactivo():
                 <div class="label">Peliculas</div>
             </div>
             <div class="stat-card">
-                <div class="number">{len(animes) + len(dibujos) + len(peliculas)}</div>
+                <div class="number">{len(series)}</div>
+                <div class="label">Series</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">{len(animes) + len(dibujos) + len(peliculas) + len(series)}</div>
                 <div class="label">Total</div>
             </div>
         </div>
@@ -407,6 +415,7 @@ def generar_html_foroactivo():
         
         <div class="tabs-container">
             <button class="tab-btn active" onclick="showTab('all')">TODO</button>
+            <button class="tab-btn" onclick="showTab('series')">SERIES</button>
             <button class="tab-btn" onclick="showTab('anime')">ANIME</button>
             <button class="tab-btn" onclick="showTab('dibujos')">DIBUJOS</button>
             <button class="tab-btn" onclick="showTab('peliculas')">PELICULAS</button>
@@ -423,6 +432,9 @@ def generar_html_foroactivo():
         
         <div id="content-all" class="content-section active">
             <div class="items-grid" id="grid-all"></div>
+        </div>
+        <div id="content-series" class="content-section">
+            <div class="items-grid" id="grid-series"></div>
         </div>
         <div id="content-anime" class="content-section">
             <div class="items-grid" id="grid-anime"></div>
