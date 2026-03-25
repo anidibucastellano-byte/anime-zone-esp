@@ -111,6 +111,8 @@ def buscar_en_tmdb(title, year, media_type="tv"):
             first_air_date = detail_data.get('first_air_date') if media_type == "tv" else detail_data.get('release_date')
             overview = detail_data.get('overview', '')
             vote_average = detail_data.get('vote_average', 0)
+            origin_country = detail_data.get('origin_country', [])
+            original_language = detail_data.get('original_language', '')
             
             return {
                 'genres': genre_names,
@@ -120,7 +122,9 @@ def buscar_en_tmdb(title, year, media_type="tv"):
                 'tmdb_id': item_id,
                 'original_title': detail_data.get('original_name') if media_type == "tv" else detail_data.get('original_title'),
                 'poster_path': detail_data.get('poster_path'),
-                'backdrop_path': detail_data.get('backdrop_path')
+                'backdrop_path': detail_data.get('backdrop_path'),
+                'origin_country': origin_country,
+                'original_language': original_language
             }
         
         return None
@@ -245,6 +249,30 @@ def mapear_genero_tmdb_a_nuestro(tmdb_genres):
     
     # Si todos los géneros eran "Animation" o no hay coincidencias, devolver "Drama" en lugar de "General"
     return "Drama"
+
+def clasificar_anime_vs_dibujos(tmdb_data):
+    """Clasificar automáticamente entre Anime (Japón) y Dibujos (otros países) usando datos de TMDB"""
+    if not tmdb_data:
+        return 'anime'  # Por defecto, asumir anime
+    
+    origin_country = tmdb_data.get('origin_country', [])
+    original_language = tmdb_data.get('original_language', '')
+    
+    # Si el país de origen es Japón (JP) o el idioma es japonés (ja)
+    if 'JP' in origin_country or original_language == 'ja':
+        return 'anime'
+    
+    # Si el país de origen es USA, Canadá, o países occidentales
+    paises_occidentales = ['US', 'CA', 'GB', 'FR', 'DE', 'AU', 'NZ', 'ES', 'IT']
+    if any(country in origin_country for country in paises_occidentales):
+        return 'dibujos'
+    
+    # Si el idioma es inglés u otros idiomas occidentales (y no japonés)
+    if original_language in ['en', 'fr', 'de', 'es', 'it']:
+        return 'dibujos'
+    
+    # Por defecto, clasificar como anime si no se puede determinar
+    return 'anime'
 
 def clasificar_tipo_contenido(title):
     """Determinar si es película, serie o pack"""
@@ -387,21 +415,26 @@ def extraer_contenido_seccion(url_base, seccion_id):
                             # Clasificar con TMDB
                             genero_especifico, tmdb_data = clasificar_con_tmdb(title, year, tipo_detectado)
                             
+                            # Clasificar automáticamente entre anime y dibujos
+                            tipo_animacion = clasificar_anime_vs_dibujos(tmdb_data)
+                            
                             contenido_info = {
                                 'name': title,
                                 'year': year,
                                 'url': topic_url,
                                 'href': topic.get('href', ''),
-                                'type': 'Anime',
-                                'genre': 'Animación Japonesa',
+                                'type': 'Anime' if tipo_animacion == 'anime' else 'Dibujos',
+                                'genre': 'Animación Japonesa' if tipo_animacion == 'anime' else 'Animación Occidental',
                                 'confianza': 90,  # Mayor confianza con TMDB
                                 'razonClasificacion': f"Clasificado con TMDB: {', '.join(tmdb_data['genres']) if tmdb_data and tmdb_data.get('genres') else 'Sin datos TMDB'}",
                                 'specificGenre': genero_especifico,
-                                'originalGenre': 'Animación Japonesa'
+                                'originalGenre': 'Animación Japonesa' if tipo_animacion == 'anime' else 'Animación Occidental',
+                                'tmdb_type': tipo_animacion  # Guardar el tipo para filtrado
                             }
                             
                             contenido_encontrado.append(contenido_info)
-                            print(f"   📺 {len(contenido_encontrado)}. {title} - {genero_especifico}")
+                            tipo_label = "🎌 ANIME" if tipo_animacion == 'anime' else "📺 DIBUJOS"
+                            print(f"   {tipo_label} {len(contenido_encontrado)}. {title} - {genero_especifico}")
                 
                 # Pausa más larga para evitar bloqueos (3 segundos)
                 time.sleep(3)
@@ -442,9 +475,10 @@ def actualizar_top_json_con_tmdb():
     
     # Obtener contenido existente
     anime_existente = data.get('anime', [])
+    dibujos_existente = data.get('dibujos', [])
     peliculas_existente = data.get('peliculas', [])
     
-    print(f"✅ Cargados {len(anime_existente)} animes, {len(peliculas_existente)} películas")
+    print(f"✅ Cargados {len(anime_existente)} animes, {len(dibujos_existente)} dibujos, {len(peliculas_existente)} películas")
     
     # Extraer contenido nuevo del foro con TMDB
     print(f"\n📺 Buscando nuevas series en sección castellano (con TMDB)...")
@@ -472,29 +506,49 @@ def actualizar_top_json_con_tmdb():
         
         return nuevos
     
-    series_nuevas_unicas = filtrar_nuevos(nuevas_series, anime_existente)
+    series_nuevas_unicas = filtrar_nuevos(nuevas_series, anime_existente + dibujos_existente)
     peliculas_nuevas_unicas = filtrar_nuevos(nuevas_peliculas, peliculas_existente)
     
+    # Separar series en anime y dibujos
+    anime_nuevos = [s for s in series_nuevas_unicas if s.get('tmdb_type') == 'anime']
+    dibujos_nuevos = [s for s in series_nuevas_unicas if s.get('tmdb_type') == 'dibujos' or not s.get('tmdb_type')]
+    
     print(f"\n📊 Resultados:")
-    print(f"   Series nuevas válidas: {len(series_nuevas_unicas)}")
-    print(f"   Películas nuevas válidas: {len(peliculas_nuevas_unicas)}")
+    print(f"   Anime nuevos: {len(anime_nuevos)}")
+    print(f"   Dibujos nuevos: {len(dibujos_nuevos)}")
+    print(f"   Películas nuevas: {len(peliculas_nuevas_unicas)}")
     
     # Si hay contenido nuevo, añadirlo
-    if series_nuevas_unicas or peliculas_nuevas_unicas:
+    if anime_nuevos or dibujos_nuevos or peliculas_nuevas_unicas:
         print(f"\n➕ Añadiendo contenido nuevo...")
         
-        # Añadir series nuevas
-        if series_nuevas_unicas:
-            anime_existente.extend(series_nuevas_unicas)
-            print(f"   ✅ {len(series_nuevas_unicas)} series añadidas")
+        # Añadir anime nuevos
+        if anime_nuevos:
+            anime_existente.extend(anime_nuevos)
+            print(f"   ✅ {len(anime_nuevos)} anime añadidos")
             
-            # Mostrar las series añadidas
-            print(f"\n📺 Series añadidas:")
-            for i, serie in enumerate(series_nuevas_unicas, 1):
-                name = serie.get('name', '')
+            # Mostrar los anime añadidos
+            print(f"\n🎌 Anime añadidos:")
+            for i, anime in enumerate(anime_nuevos, 1):
+                name = anime.get('name', '')
                 clean_name = re.sub(r'\[.*?\]', '', name).strip()
-                genero = serie.get('specificGenre', '')
-                tmdb_genres = serie.get('tmdb_genres', [])
+                genero = anime.get('specificGenre', '')
+                tmdb_genres = anime.get('tmdb_genres', [])
+                tmdb_text = f" (TMDB: {', '.join(tmdb_genres)})" if tmdb_genres else ""
+                print(f"   {i}. {clean_name} - {genero}{tmdb_text}")
+        
+        # Añadir dibujos nuevos
+        if dibujos_nuevos:
+            dibujos_existente.extend(dibujos_nuevos)
+            print(f"   ✅ {len(dibujos_nuevos)} dibujos añadidos")
+            
+            # Mostrar los dibujos añadidos
+            print(f"\n📺 Dibujos añadidos:")
+            for i, dibujo in enumerate(dibujos_nuevos, 1):
+                name = dibujo.get('name', '')
+                clean_name = re.sub(r'\[.*?\]', '', name).strip()
+                genero = dibujo.get('specificGenre', '')
+                tmdb_genres = dibujo.get('tmdb_genres', [])
                 tmdb_text = f" (TMDB: {', '.join(tmdb_genres)})" if tmdb_genres else ""
                 print(f"   {i}. {clean_name} - {genero}{tmdb_text}")
         
@@ -516,17 +570,20 @@ def actualizar_top_json_con_tmdb():
         # Ordenar todo
         print(f"\n🔄 Ordenando contenido...")
         anime_existente = sorted(anime_existente, key=get_sort_name_perfect)
+        dibujos_existente = sorted(dibujos_existente, key=get_sort_name_perfect)
         peliculas_existente = sorted(peliculas_existente, key=get_sort_name_perfect)
         
         # Actualizar datos
         data['anime'] = anime_existente
+        data['dibujos'] = dibujos_existente
         data['peliculas'] = peliculas_existente
         
         # Actualizar resumen
         total_actual = data['resumen']['total']
-        total_nuevo = total_actual + len(series_nuevas_unicas) + len(peliculas_nuevas_unicas)
+        total_nuevo = total_actual + len(anime_nuevos) + len(dibujos_nuevos) + len(peliculas_nuevas_unicas)
         data['resumen']['total'] = total_nuevo
         data['resumen']['anime'] = len(anime_existente)
+        data['resumen']['dibujos'] = len(dibujos_existente)
         data['resumen']['peliculas'] = len(peliculas_existente)
         
         # Guardar archivo
