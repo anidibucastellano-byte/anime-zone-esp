@@ -275,25 +275,28 @@ def clasificar_anime_vs_dibujos(tmdb_data):
     return 'anime'
 
 def clasificar_tipo_contenido(title):
-    """Determinar si es película, serie o pack"""
+    """Clasificar si es serie o película"""
     title_lower = title.lower()
     
-    # Indicadores de película
+    # Indicadores de película (más completos)
     indicadores_pelicula = [
-        'pelicula', 'película', '[1/1]', 'movie', 'film', 'the movie',
-        'la película', 'la pelicula'
+        'pelicula', 'movie', 'film', 'la pelicula', 'el film',
+        'zero', 'the movie', 'la película', 'pelicula:', 'movie:',
+        'jin-roh', 'steamboy', 'brigada del lobo'
     ]
     
-    # Packs de películas
-    indicadores_pack_peliculas = [
-        'pack películas', 'pack peliculas', 'peliculas pack',
-        'pack movie', 'movie pack'
-    ]
-    
-    # Indicadores de series
-    indicadores_serie = [
+    # Indicadores de serie live-action
+    indicadores_serie_live = [
         '[/', 'episodios', 'capitulos', 'temporada', 'season',
         'episode', 'chapter', 'tv series', 'serie'
+    ]
+    
+    # Indicadores de anime/dibujos (prioridad alta)
+    indicadores_anime = [
+        'lady georgie', 'macross', 'gundam', 'dragon ball', 'sailor moon',
+        'saint seiya', 'candy candy', 'heidi', 'marco', 'remi',
+        'kimagure orange road', 'los caballeros del zodiaco', 'slam dunk',
+        'captain tsubasa', 'los chicos del ma', 'bola de dragón'
     ]
     
     # Verificar si es película primero (prioridad alta)
@@ -301,8 +304,13 @@ def clasificar_tipo_contenido(title):
         if indicador in title_lower:
             return 'pelicula'
     
-    # Verificar si es serie
-    for indicador in indicadores_serie:
+    # Verificar si es anime (prioridad alta para f11-castellano)
+    for indicador in indicadores_anime:
+        if indicador in title_lower:
+            return 'anime'
+    
+    # Verificar si es serie live-action
+    for indicador in indicadores_serie_live:
         if indicador in title_lower:
             return 'serie'
     
@@ -310,18 +318,49 @@ def clasificar_tipo_contenido(title):
     if 'pelicula' in title_lower or 'movie' in title_lower:
         return 'pelicula'
     
-    # Casos especiales conocidos
-    casos_especiales = [
+    # Casos especiales conocidos (expandido)
+    casos_especiales_pelicula = [
         'no game no life: zero',
         'boruto: naruto la pelicula',
-        'psycho-pass: la película'
+        'psycho-pass: la película',
+        'jin-roh: la brigada del lobo',
+        'steamboy',
+        'una carta para momo',
+        'viaje a agartha',
+        'death note relight',
+        'la chica que saltaba a través del tiempo',
+        'xxxholic: el sueño de una noche de verano'
     ]
     
-    for caso in casos_especiales:
+    casos_especiales_anime = [
+        'lady georgie',
+        'macross plus',
+        'macross ii lovers again',
+        'harlock saga',
+        'ah my goddess',
+        'no game no life',
+        'kimagure orange road',
+        'captain tsubasa'
+    ]
+    
+    for caso in casos_especiales_pelicula:
         if caso in title_lower:
             return 'pelicula'
     
-    return 'serie'  # Por defecto
+    for caso in casos_especiales_anime:
+        if caso in title_lower:
+            return 'anime'
+    
+    # Si el título contiene año y no tiene indicadores de serie live-action, probablemente es película o anime
+    year_match = re.search(r'\((\d{4})\)', title)
+    if year_match and not any(ind in title_lower for ind in indicadores_serie_live):
+        # Si es de los 80s o 90s y tiene características de anime, es anime
+        year = int(year_match.group(1))
+        if year <= 2000 and any(ind in title_lower for ind in indicadores_anime):
+            return 'anime'
+        return 'pelicula'
+    
+    return 'anime'  # Por defecto para f11-castellano (más probable que sea anime)
 
 def clasificar_con_tmdb(title, year, tipo_contenido):
     """Clasificar usando TMDB"""
@@ -367,14 +406,23 @@ def extraer_contenido_seccion(url_base, seccion_id):
         }
         
         # Explorar primeras páginas
-        max_paginas = 1  # Limitar a 1 página para diagnóstico
+        max_paginas = 12  # Procesar hasta 12 páginas para encontrar todas las películas
         
         for page_num in range(0, max_paginas):
             if page_num == 0:
                 url = url_base
             else:
-                start_topic = page_num * 12
-                url = f"https://animezoneesp.foroactivo.com/f{seccion_id}p{start_topic}"
+                # Corregir paginación para diferentes formatos de URL
+                if url_base == "https://animezoneesp.foroactivo.com/f14-castellano":
+                    # Para f14-castellano: f14-castellanop12, f14-castellanop24, etc.
+                    url = f"https://animezoneesp.foroactivo.com/f14-castellanop{page_num * 12}"
+                elif url_base == "https://animezoneesp.foroactivo.com/f11-castellano":
+                    # Para f11-castellano: f11-castellanop12, f11-castellanop24, etc.
+                    url = f"https://animezoneesp.foroactivo.com/f11-castellanop{page_num * 12}"
+                else:
+                    # Para f17-series: f17p12, f17p24, etc.
+                    start_topic = page_num * 12
+                    url = f"https://animezoneesp.foroactivo.com/f17p{start_topic}"
             
             print(f"\n📖 Página {page_num + 1}: {url}")
             
