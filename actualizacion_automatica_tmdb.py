@@ -296,20 +296,30 @@ def clasificar_tipo_contenido(title):
         'episode', 'chapter', 'tv series', 'serie'
     ]
     
+    # Verificar si es película primero (prioridad alta)
+    for indicador in indicadores_pelicula:
+        if indicador in title_lower:
+            return 'pelicula'
+    
     # Verificar si es serie
     for indicador in indicadores_serie:
         if indicador in title_lower:
             return 'serie'
     
-    # Verificar si es película
-    for indicador in indicadores_pelicula:
-        if indicador in title_lower:
-            return 'pelicula'
+    # Si contiene "pelicula" o "movie" en cualquier parte
+    if 'pelicula' in title_lower or 'movie' in title_lower:
+        return 'pelicula'
     
-    # Verificar si es pack de películas
-    for indicador in indicadores_pack_peliculas:
-        if indicador in title_lower:
-            return 'pack_peliculas'
+    # Casos especiales conocidos
+    casos_especiales = [
+        'no game no life: zero',
+        'boruto: naruto la pelicula',
+        'psycho-pass: la película'
+    ]
+    
+    for caso in casos_especiales:
+        if caso in title_lower:
+            return 'pelicula'
     
     return 'serie'  # Por defecto
 
@@ -545,19 +555,28 @@ def actualizar_top_json_con_tmdb():
     # Extraer contenido nuevo del foro con TMDB
     print(f"\n🎬 Buscando nuevas películas en sección castellano (con TMDB)...")
     print(f"🔗 URL: https://animezoneesp.foroactivo.com/f14-castellano")
-    nuevas_peliculas = extraer_contenido_seccion("https://animezoneesp.foroactivo.com/f14-castellano", "14")
-    print(f"📊 Resultado f14: {len(nuevas_peliculas)} películas encontradas")
-    
-    # Debug: Mostrar primeras películas encontradas
-    if nuevas_peliculas:
-        print(f"🔍 Primeras películas encontradas:")
-        for i, pelicula in enumerate(nuevas_peliculas[:3]):
-            print(f"   {i+1}. {pelicula.get('name', 'SIN NOMBRE')}")
-    else:
-        print(f"❌ No se encontraron películas en f14-castellano")
+    try:
+        nuevas_peliculas = extraer_contenido_seccion("https://animezoneesp.foroactivo.com/f14-castellano", "14")
+        print(f"📊 Resultado f14: {len(nuevas_peliculas)} películas encontradas")
+        
+        # Debug: Mostrar primeras películas encontradas
+        if nuevas_peliculas:
+            print(f"🔍 Primeras películas encontradas:")
+            for i, pelicula in enumerate(nuevas_peliculas[:3]):
+                print(f"   {i+1}. {pelicula.get('name', 'SIN NOMBRE')}")
+        else:
+            print(f"❌ No se encontraron películas en f14-castellano")
+    except Exception as e:
+        print(f"❌ ERROR en f14-castellano: {e}")
+        nuevas_peliculas = []
     
     print(f"\n📺 Buscando nuevas series en sección castellano (con TMDB)...")
-    nuevas_series = extraer_contenido_seccion("https://animezoneesp.foroactivo.com/f11-castellano", "11")
+    try:
+        nuevas_series = extraer_contenido_seccion("https://animezoneesp.foroactivo.com/f11-castellano", "11")
+        print(f"📊 Resultado f11: {len(nuevas_series)} series encontradas")
+    except Exception as e:
+        print(f"❌ ERROR en f11-castellano: {e}")
+        nuevas_series = []
     
     print(f"\n📋 Buscando nuevas series en sección Series (con TMDB)...")
     nuevas_series_f17 = extraer_contenido_seccion("https://animezoneesp.foroactivo.com/f17-series", "17")
