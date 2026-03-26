@@ -296,7 +296,11 @@ def clasificar_tipo_contenido(title):
         'lady georgie', 'macross', 'gundam', 'dragon ball', 'sailor moon',
         'saint seiya', 'candy candy', 'heidi', 'marco', 'remi',
         'kimagure orange road', 'los caballeros del zodiaco', 'slam dunk',
-        'captain tsubasa', 'los chicos del ma', 'bola de dragón'
+        'captain tsubasa', 'los chicos del ma', 'bola de dragón',
+        'no game no life', 'death note', 'one piece', 'naruto',
+        'bleach', 'attack on titan', 'sword art online', 'fairy tail',
+        'hunter x hunter', 'fullmetal alchemist', 'code geass',
+        'steins gate', 're zero', 'overlord', 'tokyo ghoul'
     ]
     
     # Verificar si es película primero (prioridad alta)
@@ -340,7 +344,21 @@ def clasificar_tipo_contenido(title):
         'ah my goddess',
         'no game no life',
         'kimagure orange road',
-        'captain tsubasa'
+        'captain tsubasa',
+        'death note',
+        'one piece',
+        'naruto',
+        'bleach',
+        'attack on titan',
+        'sword art online',
+        'fairy tail',
+        'hunter x hunter',
+        'fullmetal alchemist',
+        'code geass',
+        'steins gate',
+        're zero',
+        'overlord',
+        'tokyo ghoul'
     ]
     
     for caso in casos_especiales_pelicula:
@@ -496,8 +514,8 @@ def extraer_contenido_seccion(url_base, seccion_id):
                             print(f"      ❌ Rechazado (no es película): {tipo_detectado}")
                             print(f"   � {len(contenido_encontrado)}. {title} - {genero_especifico}")
                         
-                    elif seccion_id == "11":  # Sección de series
-                        if tipo_detectado == 'serie':
+                    elif seccion_id == "11":  # Sección de series/anime
+                        if tipo_detectado in ['serie', 'anime']:
                             # Clasificar con TMDB
                             genero_especifico, tmdb_data = clasificar_con_tmdb(title, year, tipo_detectado)
                             
@@ -521,6 +539,9 @@ def extraer_contenido_seccion(url_base, seccion_id):
                             contenido_encontrado.append(contenido_info)
                             tipo_label = "🎌 ANIME" if tipo_animacion == 'anime' else "📺 DIBUJOS"
                             print(f"   {tipo_label} {len(contenido_encontrado)}. {title} - {genero_especifico}")
+                        else:
+                            print(f"      ❌ Rechazado (no es serie/anime): {tipo_detectado}")
+                            print(f"   📝 {len(contenido_encontrado)}. {title} - {genero_especifico}")
                     
                     elif seccion_id == "17":  # Sección de series live-action
                         if tipo_detectado == 'serie':
