@@ -2,8 +2,8 @@
   "resumen": {
     "anime": 315,
     "dibujos": 440,
-    "peliculas": 123,
-    "total": 900,
+    "peliculas": 125,
+    "total": 902,
     "ultima_actualizacion": "2026-03-25 03:35:44",
     "series": 22
   },
@@ -10550,6 +10550,30 @@
       "confianza": 75,
       "razonClasificacion": "Corregido desde ASD.txt (coincidencia inteligente)",
       "specificGenre": "Fantasía",
+      "originalGenre": "Animación Japonesa"
+    },
+    {
+      "name": "[Activo] Boruto: Naruto La Pelicula (2015) [Tri-Audio] [BD-Rip] [1912x1034] [8,89GB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 2015,
+      "url": "https://animezoneesp.foroactivo.com/t1530-activo-boruto-naruto-la-pelicula-2015-tri-audio-bd-rip-1912x1034-889gb-mega-pixeldrain-ver-online",
+      "href": "/t1530-activo-boruto-naruto-la-pelicula-2015-tri-audio-bd-rip-1912x1034-889gb-mega-pixeldrain-ver-online",
+      "type": "Película",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Aventura, Acción, Animación, Comedia, Fantasía",
+      "specificGenre": "Aventura",
+      "originalGenre": "Animación Japonesa"
+    },
+    {
+      "name": "[Activo] Psycho-Pass: La película (2015) [Dual-Audio] [BD-Rip] [1920x1080] [8,67GB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 2015,
+      "url": "https://animezoneesp.foroactivo.com/t1529-activo-psycho-pass-la-pelicula-2015-dual-audio-bd-rip-1920x1080-867gb-mega-pixeldrain-ver-online",
+      "href": "/t1529-activo-psycho-pass-la-pelicula-2015-dual-audio-bd-rip-1920x1080-867gb-mega-pixeldrain-ver-online",
+      "type": "Película",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Animación, Ciencia ficción, Acción",
+      "specificGenre": "Ciencia Ficción",
       "originalGenre": "Animación Japonesa"
     }
   ],
