@@ -337,6 +337,10 @@ def extraer_contenido_seccion(url_base, seccion_id):
     """Extraer contenido de una sección específica con clasificación TMDB"""
     contenido_encontrado = []
     
+    print(f"\n🚀 INICIANDO EXTRACCIÓN:")
+    print(f"   📂 Sección ID: {seccion_id}")
+    print(f"   🔗 URL Base: {url_base}")
+    
     try:
         # Headers más completos para simular un navegador real
         headers = {
@@ -353,7 +357,7 @@ def extraer_contenido_seccion(url_base, seccion_id):
         }
         
         # Explorar primeras páginas
-        max_paginas = 5
+        max_paginas = 1  # Limitar a 1 página para diagnóstico
         
         for page_num in range(0, max_paginas):
             if page_num == 0:
@@ -362,54 +366,79 @@ def extraer_contenido_seccion(url_base, seccion_id):
                 start_topic = page_num * 12
                 url = f"https://animezoneesp.foroactivo.com/f{seccion_id}p{start_topic}"
             
-            print(f"📖 Explorando página {page_num + 1}: {url}")
+            print(f"\n📖 Página {page_num + 1}: {url}")
             
             try:
                 response = requests.get(url, headers=headers, timeout=30)
+                print(f"   📊 Status: {response.status_code}")
+                print(f"   📏 Tamaño: {len(response.content)} bytes")
+                
+                if response.status_code != 200:
+                    print(f"   ❌ Error HTTP: {response.status_code}")
+                    continue
+                    
                 response.raise_for_status()
                 
                 soup = BeautifulSoup(response.content, 'html.parser')
                 topics = soup.find_all('a', class_='topictitle')
                 
-                if not topics:
-                    print(f"   ❌ No se encontraron temas en página {page_num + 1}")
-                    break
-                
                 print(f"   ✅ Encontrados {len(topics)} temas")
                 
+                if not topics:
+                    print(f"   ❌ No se encontraron temas en página {page_num + 1}")
+                    # Intentar buscar con otro selector
+                    topics_alt = soup.find_all('a', href=lambda x: x and '/t' in x)
+                    print(f"   🔍 Búsqueda alternativa: {len(topics_alt)} enlaces")
+                    if topics_alt:
+                        topics = topics_alt[:10]  # Limitar a 10
+                    else:
+                        break
+                
+                # Limitar procesamiento para evitar timeouts
+                max_items = 3 if seccion_id == "11" else 5  # Limitar f11 a 3 items
+                topics = topics[:max_items]
+                print(f"   📊 Procesando solo primeros {len(topics)} items")
+                    
                 for i, topic in enumerate(topics):
                     title = topic.get_text(strip=True)
                     topic_url = urljoin("https://animezoneesp.foroactivo.com/", topic.get('href'))
-                    
+                        
+                    print(f"   📝 Tema {i+1}: {title}")
+                        
                     # Extraer año
                     year_match = re.search(r'\((\d{4})\)', title)
                     year = int(year_match.group(1)) if year_match else 0
-                    
+                        
                     # Clasificar tipo
                     tipo_detectado = clasificar_tipo_contenido(title)
-                    
+                    print(f"      🔍 Tipo detectado: {tipo_detectado}")
+                        
                     # Filtrar según el tipo que buscamos
                     if seccion_id == "14":  # Sección de películas
                         if tipo_detectado in ['pelicula', 'pack_peliculas']:
+                            print(f"      ✅ Aceptado como película/pack")
                             # Clasificar con TMDB
                             genero_especifico, tmdb_data = clasificar_con_tmdb(title, year, tipo_detectado)
-                            
+                                
                             contenido_info = {
                                 'name': title,
                                 'year': year,
                                 'url': topic_url,
                                 'href': topic.get('href', ''),
-                                'type': 'Película',
+                                'type': 'Película' if tipo_detectado == 'pelicula' else 'Pack',
                                 'genre': 'Animación Japonesa',
                                 'confianza': 90,  # Mayor confianza con TMDB
                                 'razonClasificacion': f"Clasificado con TMDB: {', '.join(tmdb_data['genres']) if tmdb_data and tmdb_data.get('genres') else 'Sin datos TMDB'}",
                                 'specificGenre': genero_especifico,
                                 'originalGenre': 'Animación Japonesa'
                             }
-                            
+                                
                             contenido_encontrado.append(contenido_info)
-                            print(f"   📺 {len(contenido_encontrado)}. {title} - {genero_especifico}")
-                    
+                            print(f"      � Añadido: {title} - {genero_especifico}")
+                        else:
+                            print(f"      ❌ Rechazado (no es película): {tipo_detectado}")
+                            print(f"   � {len(contenido_encontrado)}. {title} - {genero_especifico}")
+                        
                     elif seccion_id == "11":  # Sección de series
                         if tipo_detectado == 'serie':
                             # Clasificar con TMDB
@@ -514,11 +543,42 @@ def actualizar_top_json_con_tmdb():
     print(f"✅ Cargados {len(anime_existente)} animes, {len(dibujos_existente)} dibujos, {len(peliculas_existente)} películas, {len(series_existente)} series")
     
     # Extraer contenido nuevo del foro con TMDB
+    print(f"\n🎬 Buscando nuevas películas en sección castellano (con TMDB)...")
+    print(f"🔗 URL: https://animezoneesp.foroactivo.com/f14-castellano")
+    nuevas_peliculas = extraer_contenido_seccion("https://animezoneesp.foroactivo.com/f14-castellano", "14")
+    print(f"📊 Resultado f14: {len(nuevas_peliculas)} películas encontradas")
+    
+    # Debug: Mostrar primeras películas encontradas
+    if nuevas_peliculas:
+        print(f"🔍 Primeras películas encontradas:")
+        for i, pelicula in enumerate(nuevas_peliculas[:3]):
+            print(f"   {i+1}. {pelicula.get('name', 'SIN NOMBRE')}")
+    else:
+        print(f"❌ No se encontraron películas en f14-castellano")
+    
     print(f"\n📺 Buscando nuevas series en sección castellano (con TMDB)...")
     nuevas_series = extraer_contenido_seccion("https://animezoneesp.foroactivo.com/f11-castellano", "11")
     
-    print(f"\n🎬 Buscando nuevas películas en sección castellano (con TMDB)...")
-    nuevas_peliculas = extraer_contenido_seccion("https://animezoneesp.foroactivo.com/f14-castellano", "14")
+    print(f"\n📋 Buscando nuevas series en sección Series (con TMDB)...")
+    nuevas_series_f17 = extraer_contenido_seccion("https://animezoneesp.foroactivo.com/f17-series", "17")
+    
+    # Extraer también la página 12 de series
+    print(f"\n📋 Buscando nuevas series en sección Series - Página 12 (con TMDB)...")
+    nuevas_series_f17_p12 = extraer_contenido_seccion("https://animezoneesp.foroactivo.com/f17p12-series", "17")
+    
+    # Temporalmente comentado para diagnosticar f14
+    # # Buscar también en otras secciones de películas
+    # print(f"\n🎬 Buscando películas en sección Películas (con TMDB)...")
+    # nuevas_peliculas_extra = extraer_contenido_seccion("https://animezoneesp.foroactivo.com/f5-peliculas", "5")
+    
+    # print(f"\n🎬 Buscando películas en sección Películas - Página 2 (con TMDB)...")
+    # nuevas_peliculas_p2 = extraer_contenido_seccion("https://animezoneesp.foroactivo.com/f5p15-peliculas", "5")
+    
+    # Combinar todas las películas
+    todas_peliculas = nuevas_peliculas
+    print(f"\n🔍 Extracción de películas:")
+    print(f"   f14-castellano: {len(nuevas_peliculas)}")
+    print(f"   Total películas: {len(todas_peliculas)}")
     
     print(f"\n📋 Buscando nuevas series en sección Series (con TMDB)...")
     nuevas_series_f17 = extraer_contenido_seccion("https://animezoneesp.foroactivo.com/f17-series", "17")
@@ -530,28 +590,81 @@ def actualizar_top_json_con_tmdb():
     # Combinar todas las series de f17
     todas_series_f17 = nuevas_series_f17 + nuevas_series_f17_p12
     
+    print(f"\n🔍 Extracción de series live-action:")
+    print(f"   f17-series encontradas: {len(nuevas_series_f17)}")
+    print(f"   f17p12-series encontradas: {len(nuevas_series_f17_p12)}")
+    print(f"   Total series live-action: {len(todas_series_f17)}")
+    
+    # Mostrar las series encontradas
+    if todas_series_f17:
+        print(f"\n📋 Series live-action encontradas:")
+        for i, serie in enumerate(todas_series_f17, 1):
+            name = serie.get('name', '')
+            print(f"   {i}. {name}")
+    else:
+        print(f"\n⚠️ No se encontraron series live-action en f17 o f17p12")
+    
     # Filtrar contenido nuevo (que no existe ya)
     def filtrar_nuevos(contenido_nuevo, contenido_existente):
         nuevos = []
         nombres_existentes = set()
+        
+        print(f"\n🔍 FILTRADO DETALLADO:")
+        print(f"   📥 Items nuevos a filtrar: {len(contenido_nuevo)}")
+        print(f"   📋 Items existentes: {len(contenido_existente)}")
         
         # Crear conjunto de nombres existentes
         for item in contenido_existente:
             nombre_limpio = limpiar_texto(item.get('name', ''))
             nombres_existentes.add(nombre_limpio)
         
+        print(f"   📝 Nombres existentes únicos: {len(nombres_existentes)}")
+        
         # Filtrar solo los que no existen
-        for item in contenido_nuevo:
+        duplicados_encontrados = 0
+        for i, item in enumerate(contenido_nuevo):
             nombre_limpio = limpiar_texto(item.get('name', ''))
+            print(f"   📝 Item {i+1}: {nombre_limpio}")
+            
             if nombre_limpio not in nombres_existentes:
                 nuevos.append(item)
                 nombres_existentes.add(nombre_limpio)
+                print(f"      ✅ NUEVO: {nombre_limpio}")
+            else:
+                duplicados_encontrados += 1
+                print(f"      ❌ DUPLICADO: {nombre_limpio}")
+                # Mostrar qué nombre existente coincide
+                for existente in nombres_existentes:
+                    if existente == nombre_limpio:
+                        print(f"         ↔️ Coincide con: {existente}")
+                        break
         
+        print(f"📊 Resultado filtrado: {len(nuevos)} nuevos, {duplicados_encontrados} duplicados")
         return nuevos
     
     # Para series de f17, guardar siempre (son live-action, van en su propia sección)
     series_nuevas_unicas = todas_series_f17  # No filtrar duplicados para series live-action
-    peliculas_nuevas_unicas = filtrar_nuevos(nuevas_peliculas, peliculas_existente)
+    peliculas_nuevas_unicas = filtrar_nuevos(todas_peliculas, peliculas_existente)
+    
+    # Búsqueda específica para películas que podrían estar en otras secciones
+    print(f"\n🔍 Búsqueda específica de películas populares...")
+    busqueda_especifica = ["no game no life", "no game no life zero", "game no life"]
+    peliculas_perdidas = []
+    
+    for termino in busqueda_especifica:
+        encontrado = False
+        for pelicula in peliculas_existente:
+            if termino in limpiar_texto(pelicula.get('name', '').lower()):
+                encontrado = True
+                print(f"✅ Encontrado: {termino} -> {pelicula.get('name', '')}")
+                break
+        if not encontrado:
+            peliculas_perdidas.append(termino)
+            print(f"❌ NO encontrado: {termino}")
+    
+    if peliculas_perdidas:
+        print(f"\n⚠️ Películas no encontradas en el sistema: {', '.join(peliculas_perdidas)}")
+        print(f"💡 Sugerencia: Podrían estar en otras secciones del foro no monitoreadas")
     
     # Las series de f17 van directamente a la sección series (son live-action, no animación)
     # No se clasifican como anime/dibujos porque son de personas reales
