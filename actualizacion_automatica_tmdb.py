@@ -406,7 +406,7 @@ def extraer_contenido_seccion(url_base, seccion_id):
         }
         
         # Explorar primeras páginas
-        max_paginas = 12  # Procesar hasta 12 páginas para encontrar todas las películas
+        max_paginas = 2  # Procesar solo las 2 primeras páginas para optimizar rendimiento
         
         for page_num in range(0, max_paginas):
             if page_num == 0:
@@ -414,15 +414,14 @@ def extraer_contenido_seccion(url_base, seccion_id):
             else:
                 # Corregir paginación para diferentes formatos de URL
                 if url_base == "https://animezoneesp.foroactivo.com/f14-castellano":
-                    # Para f14-castellano: f14-castellanop12, f14-castellanop24, etc.
-                    url = f"https://animezoneesp.foroactivo.com/f14-castellanop{page_num * 12}"
+                    # Para f14-castellano: f14p12-castellano, f14p24-castellano, etc.
+                    url = f"https://animezoneesp.foroactivo.com/f14p{page_num * 12}-castellano"
                 elif url_base == "https://animezoneesp.foroactivo.com/f11-castellano":
-                    # Para f11-castellano: f11-castellanop12, f11-castellanop24, etc.
-                    url = f"https://animezoneesp.foroactivo.com/f11-castellanop{page_num * 12}"
+                    # Para f11-castellano: f11p12-castellano, f11p24-castellano, etc.
+                    url = f"https://animezoneesp.foroactivo.com/f11p{page_num * 12}-castellano"
                 else:
-                    # Para f17-series: f17p12, f17p24, etc.
-                    start_topic = page_num * 12
-                    url = f"https://animezoneesp.foroactivo.com/f17p{start_topic}"
+                    # Para f17-series: f17p12-series, f17p24-series, etc.
+                    url = f"https://animezoneesp.foroactivo.com/f17p{page_num * 12}-series"
             
             print(f"\n📖 Página {page_num + 1}: {url}")
             
