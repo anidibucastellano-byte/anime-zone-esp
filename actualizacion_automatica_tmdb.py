@@ -404,11 +404,11 @@ def extraer_contenido_seccion(url_base, seccion_id):
                     else:
                         break
                 
-                # Limitar procesamiento para evitar timeouts
-                max_items = 3 if seccion_id == "11" else 5  # Limitar f11 a 3 items
-                topics = topics[:max_items]
-                print(f"   📊 Procesando solo primeros {len(topics)} items")
-                    
+                # Limitar procesamiento para evitar timeouts - REMOVIDO para procesar todos
+                # max_items = 3 if seccion_id == "11" else 5  # Limitar f11 a 3 items
+                # topics = topics[:max_items]
+                # print(f"   📊 Procesando solo primeros {len(topics)} items")
+                
                 for i, topic in enumerate(topics):
                     title = topic.get_text(strip=True)
                     topic_url = urljoin("https://animezoneesp.foroactivo.com/", topic.get('href'))
