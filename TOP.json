@@ -2,8 +2,8 @@
   "resumen": {
     "anime": 315,
     "dibujos": 440,
-    "peliculas": 125,
-    "total": 890,
+    "peliculas": 126,
+    "total": 891,
     "ultima_actualizacion": "2026-03-25 03:35:44",
     "series": 10
   },
@@ -10574,6 +10574,18 @@
       "confianza": 90,
       "razonClasificacion": "Clasificado con TMDB: Animación, Ciencia ficción, Acción",
       "specificGenre": "Ciencia Ficción",
+      "originalGenre": "Animación Japonesa"
+    },
+    {
+      "name": "[Activo] No Game No Life: Zero (2017) [Dual-Audio] [BD-Rip] [1920x1080] [8,88GB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 2017,
+      "url": "https://animezoneesp.foroactivo.com/t1531-activo-no-game-no-life-zero-2017-dual-audio-bd-rip-1920x1080-888gb-mega-pixeldrain-ver-online",
+      "href": "/t1531-activo-no-game-no-life-zero-2017-dual-audio-bd-rip-1920x1080-888gb-mega-pixeldrain-ver-online",
+      "type": "Película",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Aventura, Animación, Drama, Fantasía, Romance",
+      "specificGenre": "Aventura",
       "originalGenre": "Animación Japonesa"
     }
   ],
