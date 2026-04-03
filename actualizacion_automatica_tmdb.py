@@ -780,6 +780,10 @@ def actualizar_top_json_con_tmdb():
     series_nuevas_unicas = filtrar_nuevos(todas_series_f17, series_existente)
     peliculas_nuevas_unicas = filtrar_nuevos(todas_peliculas, peliculas_existente)
     
+    # Filtrar anime y dibujos de f11 contra los existentes
+    anime_nuevos_unicos = filtrar_nuevos([item for item in nuevas_series if item.get('tmdb_type') == 'anime'], anime_existente)
+    dibujos_nuevos_unicos = filtrar_nuevos([item for item in nuevas_series if item.get('tmdb_type') == 'dibujos'], dibujos_existente)
+    
     # Para anime/dibujos de f11, guardar en variable para añadir después
     nuevos_anime_dibujos = []  # Variable para guardar los nuevos items de f11
     
@@ -838,19 +842,14 @@ def actualizar_top_json_con_tmdb():
         peliculas_existente.extend(peliculas_nuevas_unicas)
         print(f"   ✅ {len(peliculas_nuevas_unicas)} películas añadidas")
     
-    # Añadir anime/dibujos nuevos de f11 si hay (usando nuevas_series que es el return value)
-    if nuevas_series:
-        # Separar anime y dibujos
-        nuevos_anime = [item for item in nuevas_series if item.get('tmdb_type') == 'anime']
-        nuevos_dibujos = [item for item in nuevas_series if item.get('tmdb_type') == 'dibujos']
-        
-        if nuevos_anime:
-            anime_existente.extend(nuevos_anime)
-            print(f"   ✅ {len(nuevos_anime)} anime añadidos")
-        
-        if nuevos_dibujos:
-            dibujos_existente.extend(nuevos_dibujos)
-            print(f"   ✅ {len(nuevos_dibujos)} dibujos añadidos")
+    # Añadir anime/dibujos nuevos de f11 si hay (usando las listas filtradas)
+    if anime_nuevos_unicos:
+        anime_existente.extend(anime_nuevos_unicos)
+        print(f"   ✅ {len(anime_nuevos_unicos)} anime añadidos")
+    
+    if dibujos_nuevos_unicos:
+        dibujos_existente.extend(dibujos_nuevos_unicos)
+        print(f"   ✅ {len(dibujos_nuevos_unicos)} dibujos añadidos")
     
     # Actualizar resumen
     total_anime = len(anime_existente)
