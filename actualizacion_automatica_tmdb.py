@@ -576,12 +576,25 @@ def extraer_contenido_seccion(url_base, seccion_id):
                         print(f"      🔍 Analizando: {title}")
                         print(f"      🔍 Tipo detectado: {tipo_detectado}")
                         
-                        # FILTRO: Rechazar animes conocidos que no son live-action
+                        # Clasificar con TMDB primero para obtener datos de origen
+                        genero_especifico, tmdb_data = clasificar_con_tmdb(title, year, 'serie')
+                        
+                        # FILTRO: Rechazar si es anime (origen Japón) usando datos TMDB
+                        if tmdb_data:
+                            origin_country = tmdb_data.get('origin_country', [])
+                            original_language = tmdb_data.get('original_language', '')
+                            
+                            if 'JP' in origin_country or original_language == 'ja':
+                                print(f"      ❌ RECHAZADO: Es anime de origen japonés (TMDB: {origin_country}, lang: {original_language})")
+                                continue
+                        
+                        # FILTRO adicional: Rechazar animes conocidos que no son live-action
                         animes_conocidos = [
                             'bobobo', 'one piece', 'dragon ball', 'naruto', 'bleach',
                             'attack on titan', 'sailor moon', 'saint seiya', 'caballeros del zodiaco',
                             'gundam', 'macross', 'evangelion', 'death note', 'fullmetal alchemist',
-                            'hunter x hunter', 'my hero academia', 'demon slayer', 'jujutsu kaisen'
+                            'hunter x hunter', 'my hero academia', 'demon slayer', 'jujutsu kaisen',
+                            'animatrix', 'black clover', 'monsters', 'psycho-pass', 'witchblade', 'xxxholic'
                         ]
                         
                         title_lower = title.lower()
@@ -589,11 +602,8 @@ def extraer_contenido_seccion(url_base, seccion_id):
                             print(f"      ❌ RECHAZADO: Es anime '{title}', no serie live-action")
                             continue
                         
-                        # ACEPTAR TODO sin importar el tipo
-                        print(f"      ✅ ACEPTADO como {tipo_detectado}")
-                        
-                        # Clasificar con TMDB
-                        genero_especifico, tmdb_data = clasificar_con_tmdb(title, year, 'serie')
+                        # ACEPTAR como serie live-action
+                        print(f"      ✅ ACEPTADO como serie live-action")
                             
                         contenido_info = {
                             'name': title,
@@ -714,16 +724,8 @@ def actualizar_top_json_con_tmdb():
     print(f"   f14-castellano: {len(nuevas_peliculas)}")
     print(f"   Total películas: {len(todas_peliculas)}")
     
-    print(f"\n📋 Buscando nuevas series en sección Series (con TMDB)...")
-    nuevas_series_f17 = extraer_contenido_seccion("https://animezoneesp.foroactivo.com/f17-series", "17")
-    
-    # Extraer también la página 12 de series - ELIMINADO para evitar duplicados
-    # print(f"\n📋 Buscando nuevas series en sección Series - Página 12 (con TMDB)...")
-    # nuevas_series_f17_p12 = extraer_contenido_seccion("https://animezoneesp.foroactivo.com/f17p12-series", "17")
-    
-    # Combinar todas las series de f17 (solo la primera página para evitar duplicados)
-    todas_series_f17 = nuevas_series_f17
-    
+    # Combinar ambas páginas de f17
+    todas_series_f17 = nuevas_series_f17 + nuevas_series_f17_p12
     print(f"\n🔍 Extracción de series live-action:")
     print(f"   f17-series encontradas: {len(nuevas_series_f17)}")
     print(f"   f17p12-series encontradas: {len(nuevas_series_f17_p12)}")
