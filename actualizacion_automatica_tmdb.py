@@ -15,6 +15,9 @@ TMDB_API_KEY = os.environ.get('TMDB_API_KEY', '6e711704d7ada0c49876e5941de50431'
 TMDB_BASE_URL = "https://api.themoviedb.org/3"
 TMDB_LANGUAGE = "es-ES"
 
+# Variable global para guardar los nuevos items de f11
+nuevos_anime_dibujos = []
+
 def limpiar_texto(texto):
     """Normalizar texto para comparación"""
     return normalize('NFKD', texto.lower()).replace('é', 'e')
@@ -300,18 +303,20 @@ def clasificar_tipo_contenido(title):
         'no game no life', 'death note', 'one piece', 'naruto',
         'bleach', 'attack on titan', 'sword art online', 'fairy tail',
         'hunter x hunter', 'fullmetal alchemist', 'code geass',
-        'steins gate', 're zero', 'overlord', 'tokyo ghoul'
+        'steins gate', 're zero', 'overlord', 'tokyo ghoul',
+        'bobobo', 'initial d', 'girls bravo', 'yū hakusho',
+        'one piece', 'harlock saga', 'ah my goddess'
     ]
+    
+    # Verificar si es anime primero (prioridad alta para f11-castellano)
+    for indicador in indicadores_anime:
+        if indicador in title_lower:
+            return 'anime'
     
     # Verificar si es película primero (prioridad alta)
     for indicador in indicadores_pelicula:
         if indicador in title_lower:
             return 'pelicula'
-    
-    # Verificar si es anime (prioridad alta para f11-castellano)
-    for indicador in indicadores_anime:
-        if indicador in title_lower:
-            return 'anime'
     
     # Verificar si es serie live-action
     for indicador in indicadores_serie_live:
@@ -324,7 +329,7 @@ def clasificar_tipo_contenido(title):
     
     # Casos especiales conocidos (expandido)
     casos_especiales_pelicula = [
-        'no game no life: zero',
+        'no game no life zero',
         'boruto: naruto la pelicula',
         'psycho-pass: la película',
         'jin-roh: la brigada del lobo',
@@ -369,13 +374,14 @@ def clasificar_tipo_contenido(title):
         if caso in title_lower:
             return 'anime'
     
-    # Si el título contiene año y no tiene indicadores de serie live-action, probablemente es película o anime
+    # Si el título contiene año y no tiene indicadores de serie live-action, probablemente es anime o película
     year_match = re.search(r'\((\d{4})\)', title)
     if year_match and not any(ind in title_lower for ind in indicadores_serie_live):
-        # Si es de los 80s o 90s y tiene características de anime, es anime
+        # Si es de los 80s/90s y tiene características de anime, es anime
         year = int(year_match.group(1))
         if year <= 2000 and any(ind in title_lower for ind in indicadores_anime):
             return 'anime'
+        # Si no, es película
         return 'pelicula'
     
     return 'anime'  # Por defecto para f11-castellano (más probable que sea anime)
@@ -402,6 +408,8 @@ def clasificar_con_tmdb(title, year, tipo_contenido):
 
 def extraer_contenido_seccion(url_base, seccion_id):
     """Extraer contenido de una sección específica con clasificación TMDB"""
+    global nuevos_anime_dibujos  # Variable global para guardar los nuevos items de f11
+    
     contenido_encontrado = []
     
     print(f"\n🚀 INICIANDO EXTRACCIÓN:")
@@ -424,7 +432,7 @@ def extraer_contenido_seccion(url_base, seccion_id):
         }
         
         # Explorar primeras páginas
-        max_paginas = 2  # Procesar solo las 2 primeras páginas para optimizar rendimiento
+        max_paginas = 10  # Procesar 10 páginas (120 items aprox) - óptimo para capturar contenido activo
         
         for page_num in range(0, max_paginas):
             if page_num == 0:
@@ -477,92 +485,131 @@ def extraer_contenido_seccion(url_base, seccion_id):
                 for i, topic in enumerate(topics):
                     title = topic.get_text(strip=True)
                     topic_url = urljoin("https://animezoneesp.foroactivo.com/", topic.get('href'))
-                        
+                    topic_href = topic.get('href', '')
+                    
                     print(f"   📝 Tema {i+1}: {title}")
-                        
+                    
+                    # FILTRO ANTI-NOTICIAS: Rechazar items de f18-noticias o que parezcan noticias
+                    if 'f18' in topic_href.lower() or 'noticias' in topic_href.lower():
+                        print(f"      ❌ RECHAZADO: Es de sección noticias (f18)")
+                        continue
+                    
+                    # FILTRO: Rechazar items de secciones administrativas (f3, f4, f5)
+                    if any(f'/f{num}' in topic_href for num in [3, 4, 5]):
+                        print(f"      ❌ RECHAZADO: Es de sección administrativa (f3/f4/f5)")
+                        continue
+                    
                     # Extraer año
                     year_match = re.search(r'\((\d{4})\)', title)
                     year = int(year_match.group(1)) if year_match else 0
-                        
+                    
+                    # Filtrar items sin año válido (contenido real debe tener año)
+                    if year == 0:
+                        print(f"      ❌ RECHAZADO: Sin año válido (probablemente no es contenido real)")
+                        continue
+                    
                     # Clasificar tipo
                     tipo_detectado = clasificar_tipo_contenido(title)
                     print(f"      🔍 Tipo detectado: {tipo_detectado}")
                         
                     # Filtrar según el tipo que buscamos
-                    if seccion_id == "14":  # Sección de películas
-                        if tipo_detectado in ['pelicula', 'pack_peliculas']:
-                            print(f"      ✅ Aceptado como película/pack")
-                            # Clasificar con TMDB
-                            genero_especifico, tmdb_data = clasificar_con_tmdb(title, year, tipo_detectado)
-                                
-                            contenido_info = {
-                                'name': title,
-                                'year': year,
-                                'url': topic_url,
-                                'href': topic.get('href', ''),
-                                'type': 'Película' if tipo_detectado == 'pelicula' else 'Pack',
-                                'genre': 'Animación Japonesa',
-                                'confianza': 90,  # Mayor confianza con TMDB
-                                'razonClasificacion': f"Clasificado con TMDB: {', '.join(tmdb_data['genres']) if tmdb_data and tmdb_data.get('genres') else 'Sin datos TMDB'}",
-                                'specificGenre': genero_especifico,
-                                'originalGenre': 'Animación Japonesa'
-                            }
-                                
-                            contenido_encontrado.append(contenido_info)
-                            print(f"      � Añadido: {title} - {genero_especifico}")
-                        else:
-                            print(f"      ❌ Rechazado (no es película): {tipo_detectado}")
-                            print(f"   � {len(contenido_encontrado)}. {title} - {genero_especifico}")
+                    if seccion_id == "14":  # Sección de películas - ACEPTAR TODO
+                        print(f"      🔍 Analizando: {title}")
+                        print(f"      🔍 Tipo detectado: {tipo_detectado}")
                         
-                    elif seccion_id == "11":  # Sección de series/anime
-                        if tipo_detectado in ['serie', 'anime']:
-                            # Clasificar con TMDB
-                            genero_especifico, tmdb_data = clasificar_con_tmdb(title, year, tipo_detectado)
-                            
-                            # Clasificar automáticamente entre anime y dibujos
-                            tipo_animacion = clasificar_anime_vs_dibujos(tmdb_data)
-                            
-                            contenido_info = {
-                                'name': title,
-                                'year': year,
-                                'url': topic_url,
-                                'href': topic.get('href', ''),
-                                'type': 'Anime' if tipo_animacion == 'anime' else 'Dibujos',
-                                'genre': 'Animación Japonesa' if tipo_animacion == 'anime' else 'Animación Occidental',
-                                'confianza': 90,  # Mayor confianza con TMDB
-                                'razonClasificacion': f"Clasificado con TMDB: {', '.join(tmdb_data['genres']) if tmdb_data and tmdb_data.get('genres') else 'Sin datos TMDB'}",
-                                'specificGenre': genero_especifico,
-                                'originalGenre': 'Animación Japonesa' if tipo_animacion == 'anime' else 'Animación Occidental',
-                                'tmdb_type': tipo_animacion  # Guardar el tipo para filtrado
-                            }
-                            
-                            contenido_encontrado.append(contenido_info)
-                            tipo_label = "🎌 ANIME" if tipo_animacion == 'anime' else "📺 DIBUJOS"
-                            print(f"   {tipo_label} {len(contenido_encontrado)}. {title} - {genero_especifico}")
-                        else:
-                            print(f"      ❌ Rechazado (no es serie/anime): {tipo_detectado}")
-                            print(f"   📝 {len(contenido_encontrado)}. {title} - {genero_especifico}")
+                        # ACEPTAR TODO sin importar el tipo
+                        print(f"      ✅ ACEPTADO como {tipo_detectado}")
+                        
+                        # Clasificar con TMDB
+                        genero_especifico, tmdb_data = clasificar_con_tmdb(title, year, tipo_detectado)
+                                
+                        contenido_info = {
+                            'name': title,
+                            'year': year,
+                            'url': topic_url,
+                            'href': topic.get('href', ''),
+                            'type': 'Película' if tipo_detectado == 'pelicula' else 'Pack',
+                            'genre': 'Animación Japonesa',
+                            'confianza': 90,  # Mayor confianza con TMDB
+                            'razonClasificacion': f"Clasificado con TMDB: {', '.join(tmdb_data['genres']) if tmdb_data and tmdb_data.get('genres') else 'Sin datos TMDB'}",
+                            'specificGenre': genero_especifico,
+                            'originalGenre': 'Animación Japonesa'
+                        }
+                                
+                        contenido_encontrado.append(contenido_info)
+                        print(f"      ✅ Añadido: {title} - {genero_especifico}")
+                    elif seccion_id == "11":  # Sección de series/anime - ACEPTAR TODO
+                        print(f"      🔍 Analizando: {title}")
+                        print(f"      🔍 Tipo detectado: {tipo_detectado}")
+                        
+                        # ACEPTAR TODO sin importar el tipo
+                        print(f"      ✅ ACEPTADO como {tipo_detectado}")
+                        
+                        # Clasificar con TMDB
+                        genero_especifico, tmdb_data = clasificar_con_tmdb(title, year, tipo_detectado)
+                        
+                        # Clasificar automáticamente entre anime y dibujos
+                        tipo_animacion = clasificar_anime_vs_dibujos(tmdb_data)
+                        
+                        contenido_info = {
+                            'name': title,
+                            'year': year,
+                            'url': topic_url,
+                            'href': topic.get('href', ''),
+                            'type': 'Anime' if tipo_animacion == 'anime' else 'Dibujos',
+                            'genre': 'Animación Japonesa' if tipo_animacion == 'anime' else 'Animación Occidental',
+                            'confianza': 90,  # Mayor confianza con TMDB
+                            'razonClasificacion': f"Clasificado con TMDB: {', '.join(tmdb_data['genres']) if tmdb_data and tmdb_data.get('genres') else 'Sin datos TMDB'}",
+                            'specificGenre': genero_especifico,
+                            'originalGenre': 'Animación Japonesa' if tipo_animacion == 'anime' else 'Animación Occidental',
+                            'tmdb_type': tipo_animacion  # Guardar el tipo para filtrado
+                        }
+                        
+                        contenido_encontrado.append(contenido_info)
+                        tipo_label = "🎌 ANIME" if tipo_animacion == 'anime' else "📺 DIBUJOS"
+                        print(f"   {tipo_label} {len(contenido_encontrado)}. {title} - {genero_especifico}")
+                        
+                        # Guardar en la variable global para añadir después
+                        nuevos_anime_dibujos.append(contenido_info)
                     
                     elif seccion_id == "17":  # Sección de series live-action
-                        if tipo_detectado == 'serie':
-                            # Clasificar con TMDB
-                            genero_especifico, tmdb_data = clasificar_con_tmdb(title, year, 'serie')
+                        print(f"      🔍 Analizando: {title}")
+                        print(f"      🔍 Tipo detectado: {tipo_detectado}")
+                        
+                        # FILTRO: Rechazar animes conocidos que no son live-action
+                        animes_conocidos = [
+                            'bobobo', 'one piece', 'dragon ball', 'naruto', 'bleach',
+                            'attack on titan', 'sailor moon', 'saint seiya', 'caballeros del zodiaco',
+                            'gundam', 'macross', 'evangelion', 'death note', 'fullmetal alchemist',
+                            'hunter x hunter', 'my hero academia', 'demon slayer', 'jujutsu kaisen'
+                        ]
+                        
+                        title_lower = title.lower()
+                        if any(anime in title_lower for anime in animes_conocidos):
+                            print(f"      ❌ RECHAZADO: Es anime '{title}', no serie live-action")
+                            continue
+                        
+                        # ACEPTAR TODO sin importar el tipo
+                        print(f"      ✅ ACEPTADO como {tipo_detectado}")
+                        
+                        # Clasificar con TMDB
+                        genero_especifico, tmdb_data = clasificar_con_tmdb(title, year, 'serie')
                             
-                            contenido_info = {
-                                'name': title,
-                                'year': year,
-                                'url': topic_url,
-                                'href': topic.get('href', ''),
-                                'type': 'Serie Live-Action',
-                                'genre': 'Live-Action',
-                                'confianza': 90,  # Mayor confianza con TMDB
-                                'razonClasificacion': f"Clasificado con TMDB: {', '.join(tmdb_data['genres']) if tmdb_data and tmdb_data.get('genres') else 'Sin datos TMDB'}",
-                                'specificGenre': genero_especifico,
-                                'originalGenre': 'Live-Action'
-                            }
+                        contenido_info = {
+                            'name': title,
+                            'year': year,
+                            'url': topic_url,
+                            'href': topic.get('href', ''),
+                            'type': 'Serie Live-Action',
+                            'genre': 'Live-Action',
+                            'confianza': 90,  # Mayor confianza con TMDB
+                            'razonClasificacion': f"Clasificado con TMDB: {', '.join(tmdb_data['genres']) if tmdb_data and tmdb_data.get('genres') else 'Sin datos TMDB'}",
+                            'specificGenre': genero_especifico,
+                            'originalGenre': 'Live-Action'
+                        }
                             
-                            contenido_encontrado.append(contenido_info)
-                            print(f"   📺 SERIES {len(contenido_encontrado)}. {title} - {genero_especifico}")
+                        contenido_encontrado.append(contenido_info)
+                        print(f"   📺 SERIES {len(contenido_encontrado)}. {title} - {genero_especifico}")
                 
                 # Pausa más larga para evitar bloqueos (3 segundos)
                 time.sleep(3)
@@ -670,12 +717,12 @@ def actualizar_top_json_con_tmdb():
     print(f"\n📋 Buscando nuevas series en sección Series (con TMDB)...")
     nuevas_series_f17 = extraer_contenido_seccion("https://animezoneesp.foroactivo.com/f17-series", "17")
     
-    # Extraer también la página 12 de series
-    print(f"\n📋 Buscando nuevas series en sección Series - Página 12 (con TMDB)...")
-    nuevas_series_f17_p12 = extraer_contenido_seccion("https://animezoneesp.foroactivo.com/f17p12-series", "17")
+    # Extraer también la página 12 de series - ELIMINADO para evitar duplicados
+    # print(f"\n📋 Buscando nuevas series en sección Series - Página 12 (con TMDB)...")
+    # nuevas_series_f17_p12 = extraer_contenido_seccion("https://animezoneesp.foroactivo.com/f17p12-series", "17")
     
-    # Combinar todas las series de f17
-    todas_series_f17 = nuevas_series_f17 + nuevas_series_f17_p12
+    # Combinar todas las series de f17 (solo la primera página para evitar duplicados)
+    todas_series_f17 = nuevas_series_f17
     
     print(f"\n🔍 Extracción de series live-action:")
     print(f"   f17-series encontradas: {len(nuevas_series_f17)}")
@@ -729,9 +776,12 @@ def actualizar_top_json_con_tmdb():
         print(f"📊 Resultado filtrado: {len(nuevos)} nuevos, {duplicados_encontrados} duplicados")
         return nuevos
     
-    # Para series de f17, guardar siempre (son live-action, van en su propia sección)
-    series_nuevas_unicas = todas_series_f17  # No filtrar duplicados para series live-action
+    # Para series de f17, también filtrar duplicados
+    series_nuevas_unicas = filtrar_nuevos(todas_series_f17, series_existente)
     peliculas_nuevas_unicas = filtrar_nuevos(todas_peliculas, peliculas_existente)
+    
+    # Para anime/dibujos de f11, guardar en variable para añadir después
+    nuevos_anime_dibujos = []  # Variable para guardar los nuevos items de f11
     
     # Búsqueda específica para películas que podrían estar en otras secciones
     print(f"\n🔍 Búsqueda específica de películas populares...")
@@ -787,6 +837,20 @@ def actualizar_top_json_con_tmdb():
     if peliculas_nuevas_unicas:
         peliculas_existente.extend(peliculas_nuevas_unicas)
         print(f"   ✅ {len(peliculas_nuevas_unicas)} películas añadidas")
+    
+    # Añadir anime/dibujos nuevos de f11 si hay (usando nuevas_series que es el return value)
+    if nuevas_series:
+        # Separar anime y dibujos
+        nuevos_anime = [item for item in nuevas_series if item.get('tmdb_type') == 'anime']
+        nuevos_dibujos = [item for item in nuevas_series if item.get('tmdb_type') == 'dibujos']
+        
+        if nuevos_anime:
+            anime_existente.extend(nuevos_anime)
+            print(f"   ✅ {len(nuevos_anime)} anime añadidos")
+        
+        if nuevos_dibujos:
+            dibujos_existente.extend(nuevos_dibujos)
+            print(f"   ✅ {len(nuevos_dibujos)} dibujos añadidos")
     
     # Actualizar resumen
     total_anime = len(anime_existente)
