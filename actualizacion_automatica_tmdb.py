@@ -811,14 +811,14 @@ def actualizar_top_json_con_tmdb():
     print(f"   Películas nuevas: {len(peliculas_nuevas_unicas)}")
     
     # Actualizar series de f17 (siempre que se encuentren)
-    if todas_series_f17:
+    if series_nuevas_unicas:
         print(f"\n🔄 Actualizando series de f17 (live-action)...")
         
         # Reemplazar series con las de f17 (son live-action)
-        data['series'] = todas_series_f17
+        data['series'] = series_nuevas_unicas
         
         # Ordenar series
-        series_ordenadas = sorted(todas_series_f17, key=get_sort_name_perfect)
+        series_ordenadas = sorted(series_nuevas_unicas, key=get_sort_name_perfect)
         data['series'] = series_ordenadas
         
         # Mostrar las series
