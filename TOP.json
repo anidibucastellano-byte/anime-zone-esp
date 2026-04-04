@@ -3,9 +3,9 @@
     "anime": 368,
     "dibujos": 439,
     "peliculas": 147,
-    "total": 978,
+    "total": 979,
     "ultima_actualizacion": "2026-03-25 03:35:44",
-    "series": 24
+    "series": 25
   },
   "anime": [
     {
@@ -11825,6 +11825,18 @@
     }
   ],
   "series": [
+    {
+      "name": "[Activo] Bolts and Blip (2010) [Castellano] [26/26] [TV-RIP] [640x360] [125MB/130MB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 2010,
+      "url": "https://animezoneesp.foroactivo.com/t1597-activo-bolts-and-blip-2010-castellano-26-26-tv-rip-640x360-125mb-130mb-mega-pixeldrain-ver-online#3937",
+      "href": "/t1597-activo-bolts-and-blip-2010-castellano-26-26-tv-rip-640x360-125mb-130mb-mega-pixeldrain-ver-online#3937",
+      "type": "Serie Live-Action",
+      "genre": "Live-Action",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Sci-Fi & Fantasy, Animación, Familia",
+      "specificGenre": "Ciencia Ficción",
+      "originalGenre": "Live-Action"
+    },
     {
       "name": "[Activo] Buffy, cazavampiros (1997) [Castellano] [144/144] [BD-Rip] [1280x720] [1,14/2,47 GB] [Mega/Pixeldrain] [Ver Online]",
       "year": 1997,
