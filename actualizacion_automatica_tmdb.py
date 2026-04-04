@@ -579,31 +579,32 @@ def extraer_contenido_seccion(url_base, seccion_id):
                         # Clasificar con TMDB primero para obtener datos de origen
                         genero_especifico, tmdb_data = clasificar_con_tmdb(title, year, 'serie')
                         
-                        # FILTRO: Rechazar si es anime (origen Japón) usando datos TMDB
-                        if tmdb_data:
-                            origin_country = tmdb_data.get('origin_country', [])
-                            original_language = tmdb_data.get('original_language', '')
-                            
-                            if 'JP' in origin_country or original_language == 'ja':
-                                print(f"      ❌ RECHAZADO: Es anime de origen japonés (TMDB: {origin_country}, lang: {original_language})")
-                                continue
+                        # FILTRO Estricto: SOLO aceptar si TMDB confirma que NO es anime japonés
+                        if not tmdb_data:
+                            print(f"      ❌ RECHAZADO: Sin datos TMDB, no se puede confirmar como live-action")
+                            continue
                         
-                        # FILTRO adicional: Rechazar animes conocidos que no son live-action
-                        animes_conocidos = [
-                            'bobobo', 'one piece', 'dragon ball', 'naruto', 'bleach',
-                            'attack on titan', 'sailor moon', 'saint seiya', 'caballeros del zodiaco',
-                            'gundam', 'macross', 'evangelion', 'death note', 'fullmetal alchemist',
-                            'hunter x hunter', 'my hero academia', 'demon slayer', 'jujutsu kaisen',
-                            'animatrix', 'black clover', 'monsters', 'psycho-pass', 'witchblade', 'xxxholic'
-                        ]
+                        origin_country = tmdb_data.get('origin_country', [])
+                        original_language = tmdb_data.get('original_language', '')
                         
-                        title_lower = title.lower()
-                        if any(anime in title_lower for anime in animes_conocidos):
-                            print(f"      ❌ RECHAZADO: Es anime '{title}', no serie live-action")
+                        # Rechazar si es de origen japonés
+                        if 'JP' in origin_country or original_language == 'ja':
+                            print(f"      ❌ RECHAZADO: Es anime de origen japonés (TMDB: {origin_country}, lang: {original_language})")
+                            continue
+                        
+                        # Solo aceptar si TMDB confirma origen occidental
+                        paises_occidentales = ['US', 'CA', 'GB', 'FR', 'DE', 'AU', 'NZ', 'ES', 'IT', 'MX', 'BR', 'AR', 'CL', 'CO', 'PE', 'VE']
+                        idiomas_occidentales = ['en', 'fr', 'de', 'es', 'it', 'pt']
+                        
+                        es_occidental = any(country in origin_country for country in paises_occidentales) or \
+                                       original_language in idiomas_occidentales
+                        
+                        if not es_occidental:
+                            print(f"      ❌ RECHAZADO: No se puede confirmar origen occidental (TMDB: {origin_country}, lang: {original_language})")
                             continue
                         
                         # ACEPTAR como serie live-action
-                        print(f"      ✅ ACEPTADO como serie live-action")
+                        print(f"      ✅ ACEPTADO como serie live-action (TMDB: {origin_country}, lang: {original_language})")
                             
                         contenido_info = {
                             'name': title,
@@ -816,20 +817,20 @@ def actualizar_top_json_con_tmdb():
     print(f"   Series encontradas en f17: {len(todas_series_f17)}")
     print(f"   Películas nuevas: {len(peliculas_nuevas_unicas)}")
     
-    # Actualizar series de f17 (siempre que se encuentren)
+    # Actualizar series de f17 (manteniendo las existentes y añadiendo nuevas)
     if series_nuevas_unicas:
         print(f"\n🔄 Actualizando series de f17 (live-action)...")
         
-        # Reemplazar series con las de f17 (son live-action)
-        data['series'] = series_nuevas_unicas
+        # Añadir series nuevas a las existentes (sin reemplazar)
+        series_existente.extend(series_nuevas_unicas)
         
         # Ordenar series
-        series_ordenadas = sorted(series_nuevas_unicas, key=get_sort_name_perfect)
+        series_ordenadas = sorted(series_existente, key=get_sort_name_perfect)
         data['series'] = series_ordenadas
         
-        # Mostrar las series
-        print(f"\n📋 Series de f17 (live-action):")
-        for i, serie in enumerate(series_ordenadas, 1):
+        # Mostrar las series nuevas añadidas
+        print(f"\n📋 Series nuevas añadidas de f17:")
+        for i, serie in enumerate(series_nuevas_unicas, 1):
             name = serie.get('name', '')
             clean_name = re.sub(r'\[.*?\]', '', name).strip()
             genero = serie.get('specificGenre', '')
@@ -837,7 +838,8 @@ def actualizar_top_json_con_tmdb():
             tmdb_text = f" (TMDB: {', '.join(tmdb_genres)})" if tmdb_genres else ""
             print(f"   {i}. {clean_name} - {genero}{tmdb_text}")
         
-        print(f"   ✅ {len(series_ordenadas)} series actualizadas")
+        print(f"   ✅ {len(series_nuevas_unicas)} series nuevas añadidas")
+        print(f"   📊 Total series ahora: {len(series_ordenadas)}")
     
     # Añadir películas nuevas si hay
     if peliculas_nuevas_unicas:
