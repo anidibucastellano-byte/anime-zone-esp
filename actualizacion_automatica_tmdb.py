@@ -592,6 +592,17 @@ def extraer_contenido_seccion(url_base, seccion_id):
                             print(f"      ❌ RECHAZADO: Es anime de origen japonés (TMDB: {origin_country}, lang: {original_language})")
                             continue
                         
+                        # FILTRO: Rechazar si es animación/dibujos según géneros TMDB
+                        generos_tmdb = tmdb_data.get('genres', [])
+                        generos_nombres = [g.get('name', '').lower() for g in generos_tmdb]
+                        
+                        generos_animacion = ['animation', 'animación', 'family', 'kids', 'children']
+                        es_animacion = any(gen in generos_nombres for gen in generos_animacion)
+                        
+                        if es_animacion:
+                            print(f"      ❌ RECHAZADO: Es dibujo animado según TMDB (géneros: {generos_nombres})")
+                            continue
+                        
                         # Solo aceptar si TMDB confirma origen occidental
                         paises_occidentales = ['US', 'CA', 'GB', 'FR', 'DE', 'AU', 'NZ', 'ES', 'IT', 'MX', 'BR', 'AR', 'CL', 'CO', 'PE', 'VE']
                         idiomas_occidentales = ['en', 'fr', 'de', 'es', 'it', 'pt']
