@@ -1,9 +1,9 @@
 {
   "resumen": {
-    "anime": 371,
+    "anime": 372,
     "dibujos": 440,
     "peliculas": 147,
-    "total": 981,
+    "total": 982,
     "ultima_actualizacion": "2026-03-25 03:35:44",
     "series": 23
   },
@@ -4557,6 +4557,19 @@
       "confianza": 90,
       "razonClasificacion": "Clasificado con TMDB: Acción, Drama",
       "specificGenre": "Acción",
+      "originalGenre": "Animación Japonesa",
+      "tmdb_type": "anime"
+    },
+    {
+      "name": "[Activo]Gormiti El retorno de los Señores de la Naturaleza (2009) [Castellano] [65/65] [DVD-Rip] [704x528] [195/285 MB] [Mega] [Ver Online]",
+      "year": 2009,
+      "url": "https://animezoneesp.foroactivo.com/t221-activogormiti-el-retorno-de-los-senores-de-la-naturaleza-2009-castellano-65-65-dvd-rip-704x528-195-285-mb-mega-ver-online",
+      "href": "/t221-activogormiti-el-retorno-de-los-senores-de-la-naturaleza-2009-castellano-65-65-dvd-rip-704x528-195-285-mb-mega-ver-online",
+      "type": "Anime",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
+      "specificGenre": "Drama",
       "originalGenre": "Animación Japonesa",
       "tmdb_type": "anime"
     }
