@@ -1,11 +1,11 @@
 {
   "resumen": {
-    "anime": 368,
-    "dibujos": 439,
+    "anime": 369,
+    "dibujos": 440,
     "peliculas": 147,
-    "total": 979,
+    "total": 980,
     "ultima_actualizacion": "2026-03-25 03:35:44",
-    "series": 25
+    "series": 24
   },
   "anime": [
     {
@@ -4513,6 +4513,19 @@
       "year": 2004,
       "url": "https://animezoneesp.foroactivo.com/t1602-activo-gankutsuou-el-conde-de-montecristo-2004-castellano-24-24-dvd-rip-704x396-270mb-285mb-mega-pixeldrain-ver-online",
       "href": "/t1602-activo-gankutsuou-el-conde-de-montecristo-2004-castellano-24-24-dvd-rip-704x396-270mb-285mb-mega-pixeldrain-ver-online",
+      "type": "Anime",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
+      "specificGenre": "Drama",
+      "originalGenre": "Animación Japonesa",
+      "tmdb_type": "anime"
+    },
+    {
+      "name": "[Activo] Las aventuras del Capitán Harlock (1978) [Castellano] [42/42] [DVD-Rip] [640x480] [155MB/175MB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 1978,
+      "url": "https://animezoneesp.foroactivo.com/t1604-activo-las-aventuras-del-capitan-harlock-1978-castellano-42-42-dvd-rip-640x480-155mb-175mb-mega-pixeldrain-ver-online",
+      "href": "/t1604-activo-las-aventuras-del-capitan-harlock-1978-castellano-42-42-dvd-rip-640x480-155mb-175mb-mega-pixeldrain-ver-online",
       "type": "Anime",
       "genre": "Animación Japonesa",
       "confianza": 90,
@@ -10054,6 +10067,19 @@
       "confianza": 90,
       "razonClasificacion": "Clasificado con TMDB: Drama",
       "specificGenre": "Drama",
+      "originalGenre": "Animación Occidental",
+      "tmdb_type": "dibujos"
+    },
+    {
+      "name": "[Activo] Lazarus (2025) [Multi-audio] [13/13] [WebDL-Rip] [1920x1080] [710MB/1,14GB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 2025,
+      "url": "https://animezoneesp.foroactivo.com/t1605-activo-lazarus-2025-multi-audio-13-13-webdl-rip-1920x1080-710mb-114gb-mega-pixeldrain-ver-online",
+      "href": "/t1605-activo-lazarus-2025-multi-audio-13-13-webdl-rip-1920x1080-710mb-114gb-mega-pixeldrain-ver-online",
+      "type": "Dibujos",
+      "genre": "Animación Occidental",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Acción, Drama",
+      "specificGenre": "Acción",
       "originalGenre": "Animación Occidental",
       "tmdb_type": "dibujos"
     }
