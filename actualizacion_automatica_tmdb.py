@@ -253,17 +253,47 @@ def mapear_genero_tmdb_a_nuestro(tmdb_genres):
     # Si todos los géneros eran "Animation" o no hay coincidencias, devolver "Drama" en lugar de "General"
     return "Drama"
 
-def clasificar_anime_vs_dibujos(tmdb_data):
+def clasificar_anime_vs_dibujos(tmdb_data, title=''):
     """Clasificar automáticamente entre Anime (Japón) y Dibujos (otros países) usando datos de TMDB"""
+    
+    # Lista de palabras típicas de anime en títulos
+    indicadores_anime = [
+        'lazarus', 'zom', 'anime', 'manga', 'ghibli', 'mecha', 'isekai', 'shonen', 'shoujo',
+        'dragon ball', 'naruto', 'one piece', 'bleach', 'attack on titan', 'death note',
+        'sailor moon', 'saint seiya', 'gundam', 'evangelion', 'fullmetal', 'hunter', 'demon slayer',
+        'jujutsu', 'my hero', 'tokyo ghoul', 'steins', 'code geass', 'fairy tail', 'sword art',
+        'overlord', 're zero', 'kaguya', 'spy family', 'chainsaw', 'vinland', 'made in abyss',
+        'promise neverland', 'dororo', 'mob psycho', 'one punch', 'haikyuu', 'demon slayer'
+    ]
+    
+    title_lower = title.lower()
+    
+    # Si el título contiene indicadores de anime, clasificar como anime primero
+    if any(ind in title_lower for ind in indicadores_anime):
+        print(f"      🎌 Detectado como anime por título: {title}")
+        return 'anime'
+    
     if not tmdb_data:
         return 'anime'  # Por defecto, asumir anime
     
     origin_country = tmdb_data.get('origin_country', [])
     original_language = tmdb_data.get('original_language', '')
+    genres = tmdb_data.get('genres', [])
+    genre_names = [g.get('name', '').lower() for g in genres]
+    
+    # Verificar géneros de animación
+    es_animacion = any(g in ['animation', 'animación', 'family'] for g in genre_names)
     
     # Si el país de origen es Japón (JP) o el idioma es japonés (ja)
     if 'JP' in origin_country or original_language == 'ja':
         return 'anime'
+    
+    # Si es animación pero NO es de Japón, y el título tiene indicadores de anime occidental
+    if es_animacion:
+        # Verificar si es anime estilo occidental (Avatar, etc.)
+        anime_occidental = ['avatar', 'korra', 'voltron', 'castlevania']
+        if any(a in title_lower for a in anime_occidental):
+            return 'anime'
     
     # Si el país de origen es USA, Canadá, o países occidentales
     paises_occidentales = ['US', 'CA', 'GB', 'FR', 'DE', 'AU', 'NZ', 'ES', 'IT']
@@ -549,7 +579,7 @@ def extraer_contenido_seccion(url_base, seccion_id):
                         genero_especifico, tmdb_data = clasificar_con_tmdb(title, year, tipo_detectado)
                         
                         # Clasificar automáticamente entre anime y dibujos
-                        tipo_animacion = clasificar_anime_vs_dibujos(tmdb_data)
+                        tipo_animacion = clasificar_anime_vs_dibujos(tmdb_data, title)
                         
                         contenido_info = {
                             'name': title,
@@ -601,6 +631,39 @@ def extraer_contenido_seccion(url_base, seccion_id):
                         
                         if es_animacion:
                             print(f"      ❌ RECHAZADO: Es dibujo animado según TMDB (géneros: {generos_nombres})")
+                            continue
+                        
+                        # FILTRO ADICIONAL: Rechazar dibujos animados conocidos por título
+                        dibujos_conocidos = [
+                            'mario', 'sonic', 'luigi', 'bowser', 'peach', 'toad',
+                            'zelda', 'link', 'pokemon', 'kirby', 'donkey kong',
+                            'pac-man', 'megaman', 'mega man', 'metroid', 'samus',
+                            'street fighter', 'mortal kombat', 'tekken',
+                            'tom y jerry', 'tom and jerry', 'looney tunes', 'bugs bunny',
+                            'scooby doo', 'scooby-doo', 'flintstones', 'picapiedra',
+                            'jetsons', 'simpsons', 'family guy', 'south park',
+                            'rick and morty', 'futurama', 'american dad',
+                            'bob esponja', 'spongebob', 'patrick', 'calamardo',
+                            'phineas', 'ferb', 'gravity falls', 'star vs',
+                            'adventure time', 'hora de aventura', 'regular show',
+                            'steven universe', 'we bare bears', 'teen titans',
+                            'powerpuff', 'chicas superpoderosas', 'samurai jack',
+                            'johnny bravo', 'coraje', 'courage', 'dexter',
+                            'laboratorio de dexter', 'cow and chicken', 'vaca y pollito',
+                            'i am weasel', 'soy la comadreja', 'foster', 'imaginary friends',
+                            'camp lazlo', 'my gym partner', 'monkey', 'juniper lee',
+                            'ben 10', 'generator rex', 'sym-bionic titan',
+                            'super robot monkey team', 'samurai jack',
+                            'megas xlr', 'transformers', 'g.i. joe', 'he-man',
+                            'thundercats', 'silverhawks', 'tigermans', ' BraveStarr',
+                            'ghostbusters', 'real ghostbusters', 'extreme ghostbusters',
+                            'dungeons and dragons', 'd&d', 'cave kids',
+                            'super mario', 'super mario bros', 'mario bros'
+                        ]
+                        
+                        title_lower = title.lower()
+                        if any(dibujo in title_lower for dibujo in dibujos_conocidos):
+                            print(f"      ❌ RECHAZADO: Es dibujo animado conocido '{title}'")
                             continue
                         
                         # Solo aceptar si TMDB confirma origen occidental
