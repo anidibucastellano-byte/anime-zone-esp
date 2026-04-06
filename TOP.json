@@ -1,9 +1,9 @@
 {
   "resumen": {
-    "anime": 383,
+    "anime": 384,
     "dibujos": 440,
     "peliculas": 156,
-    "total": 1003,
+    "total": 1004,
     "ultima_actualizacion": "2026-03-25 03:35:44",
     "series": 24
   },
@@ -4708,6 +4708,19 @@
       "year": 2014,
       "url": "https://animezoneesp.foroactivo.com/t305-activobreadwinners-2014-dual-audio-40-40-webdl-rip-1280x720-75-320-mb-mega-pixeldrain-ver-online",
       "href": "/t305-activobreadwinners-2014-dual-audio-40-40-webdl-rip-1280x720-75-320-mb-mega-pixeldrain-ver-online",
+      "type": "Anime",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
+      "specificGenre": "Drama",
+      "originalGenre": "Animación Japonesa",
+      "tmdb_type": "anime"
+    },
+    {
+      "name": "[Activo]La pajarería de Transilvania (1994) [Dual-Audio] [65/65] [DVD-Rip] [1076x720] [170/270 MB] [Mega] [Ver Online]",
+      "year": 1994,
+      "url": "https://animezoneesp.foroactivo.com/t161-activola-pajareria-de-transilvania-1994-dual-audio-65-65-dvd-rip-1076x720-170-270-mb-mega-ver-online",
+      "href": "/t161-activola-pajareria-de-transilvania-1994-dual-audio-65-65-dvd-rip-1076x720-170-270-mb-mega-ver-online",
       "type": "Anime",
       "genre": "Animación Japonesa",
       "confianza": 90,
