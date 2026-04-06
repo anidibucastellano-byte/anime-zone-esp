@@ -624,7 +624,7 @@ def extraer_contenido_seccion(url_base, seccion_id):
                         
                         # FILTRO: Rechazar si es animación/dibujos según géneros TMDB
                         generos_tmdb = tmdb_data.get('genres', [])
-                        generos_nombres = [g.get('name', '').lower() for g in generos_tmdb]
+                        generos_nombres = [g.lower() for g in generos_tmdb]
                         
                         generos_animacion = ['animation', 'animación']
                         es_animacion = any(gen in generos_nombres for gen in generos_animacion)
