@@ -418,7 +418,7 @@ def clasificar_tipo_contenido(title):
 
 def clasificar_con_tmdb(title, year, tipo_contenido):
     """Clasificar usando TMDB"""
-    if tipo_contenido == 'serie':
+    if tipo_contenido in ['serie', 'tv']:
         tmdb_data = buscar_en_tmdb(title, year, "tv")
     else:  # película
         tmdb_data = buscar_en_tmdb(title, year, "movie")
