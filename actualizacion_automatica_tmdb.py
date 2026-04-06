@@ -607,7 +607,7 @@ def extraer_contenido_seccion(url_base, seccion_id):
                         print(f"      🔍 Tipo detectado: {tipo_detectado}")
                         
                         # Clasificar con TMDB primero para obtener datos de origen
-                        genero_especifico, tmdb_data = clasificar_con_tmdb(title, year, 'serie')
+                        genero_especifico, tmdb_data = clasificar_con_tmdb(title, year, 'tv')
                         
                         # FILTRO Estricto: SOLO aceptar si TMDB confirma que NO es anime japonés
                         if not tmdb_data:
