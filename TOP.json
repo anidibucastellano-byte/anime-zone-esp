@@ -1,9 +1,9 @@
 {
   "resumen": {
-    "anime": 380,
+    "anime": 381,
     "dibujos": 440,
     "peliculas": 156,
-    "total": 1000,
+    "total": 1001,
     "ultima_actualizacion": "2026-03-25 03:35:44",
     "series": 24
   },
@@ -4669,6 +4669,19 @@
       "year": 2009,
       "url": "https://animezoneesp.foroactivo.com/t1629-activo-metajets-2009-castellano-40-40-iaupscale-rip-1280x720-395mb-610mb-mega-pixeldrain-ver-online",
       "href": "/t1629-activo-metajets-2009-castellano-40-40-iaupscale-rip-1280x720-395mb-610mb-mega-pixeldrain-ver-online",
+      "type": "Anime",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
+      "specificGenre": "Drama",
+      "originalGenre": "Animación Japonesa",
+      "tmdb_type": "anime"
+    },
+    {
+      "name": "[Activo]Slugterra (2012) [Castellano] [46/63+20] [WebDL-Rip] [1280x720] [195/715 MB] [Mega] [Ver Online]",
+      "year": 2012,
+      "url": "https://animezoneesp.foroactivo.com/t112-activoslugterra-2012-castellano-46-6320-webdl-rip-1280x720-195-715-mb-mega-ver-online",
+      "href": "/t112-activoslugterra-2012-castellano-46-6320-webdl-rip-1280x720-195-715-mb-mega-ver-online",
       "type": "Anime",
       "genre": "Animación Japonesa",
       "confianza": 90,
