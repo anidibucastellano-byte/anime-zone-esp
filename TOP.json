@@ -1,11 +1,11 @@
 {
   "resumen": {
-    "anime": 379,
+    "anime": 380,
     "dibujos": 440,
     "peliculas": 156,
-    "total": 998,
+    "total": 1000,
     "ultima_actualizacion": "2026-03-25 03:35:44",
-    "series": 23
+    "series": 24
   },
   "anime": [
     {
@@ -4656,6 +4656,19 @@
       "year": 1960,
       "url": "https://animezoneesp.foroactivo.com/t1324-activo-los-picapiedra-1960-castellano-166-166-webdl-rip-1440x1080-785-mb-275-gb-mega-pixeldrain-ver-online",
       "href": "/t1324-activo-los-picapiedra-1960-castellano-166-166-webdl-rip-1440x1080-785-mb-275-gb-mega-pixeldrain-ver-online",
+      "type": "Anime",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
+      "specificGenre": "Drama",
+      "originalGenre": "Animación Japonesa",
+      "tmdb_type": "anime"
+    },
+    {
+      "name": "[Activo] MetaJets (2009) [Castellano] [40/40] [IAUpScale-Rip] [1280x720] [395MB/610MB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 2009,
+      "url": "https://animezoneesp.foroactivo.com/t1629-activo-metajets-2009-castellano-40-40-iaupscale-rip-1280x720-395mb-610mb-mega-pixeldrain-ver-online",
+      "href": "/t1629-activo-metajets-2009-castellano-40-40-iaupscale-rip-1280x720-395mb-610mb-mega-pixeldrain-ver-online",
       "type": "Anime",
       "genre": "Animación Japonesa",
       "confianza": 90,
@@ -12351,6 +12364,18 @@
       "confianza": 90,
       "razonClasificacion": "Clasificado con TMDB: Drama, Action & Adventure, Sci-Fi & Fantasy",
       "specificGenre": "Drama",
+      "originalGenre": "Live-Action"
+    },
+    {
+      "name": "[Activo] Zeke y Luther (2009) [Castellano] [73/73] [WebDL-Rip] [1280x720] [370MB/1025MB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 2009,
+      "url": "https://animezoneesp.foroactivo.com/t1627-activo-zeke-y-luther-2009-castellano-73-73-webdl-rip-1280x720-370mb-1025mb-mega-pixeldrain-ver-online",
+      "href": "/t1627-activo-zeke-y-luther-2009-castellano-73-73-webdl-rip-1280x720-370mb-1025mb-mega-pixeldrain-ver-online",
+      "type": "Serie Live-Action",
+      "genre": "Live-Action",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Comedia, Familia",
+      "specificGenre": "Comedia",
       "originalGenre": "Live-Action"
     },
     {
