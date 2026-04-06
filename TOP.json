@@ -1,9 +1,9 @@
 {
   "resumen": {
-    "anime": 381,
+    "anime": 383,
     "dibujos": 440,
     "peliculas": 156,
-    "total": 1001,
+    "total": 1003,
     "ultima_actualizacion": "2026-03-25 03:35:44",
     "series": 24
   },
@@ -4682,6 +4682,32 @@
       "year": 2012,
       "url": "https://animezoneesp.foroactivo.com/t112-activoslugterra-2012-castellano-46-6320-webdl-rip-1280x720-195-715-mb-mega-ver-online",
       "href": "/t112-activoslugterra-2012-castellano-46-6320-webdl-rip-1280x720-195-715-mb-mega-ver-online",
+      "type": "Anime",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
+      "specificGenre": "Drama",
+      "originalGenre": "Animación Japonesa",
+      "tmdb_type": "anime"
+    },
+    {
+      "name": "[Activo]El inspector Gadget (2015) [Castellano] [52/52] [WebDL-Rip] [1280x720] [330/385 MB] [Mega] [Ver Online]",
+      "year": 2015,
+      "url": "https://animezoneesp.foroactivo.com/t160-activoel-inspector-gadget-2015-castellano-52-52-webdl-rip-1280x720-330-385-mb-mega-ver-online",
+      "href": "/t160-activoel-inspector-gadget-2015-castellano-52-52-webdl-rip-1280x720-330-385-mb-mega-ver-online",
+      "type": "Anime",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
+      "specificGenre": "Drama",
+      "originalGenre": "Animación Japonesa",
+      "tmdb_type": "anime"
+    },
+    {
+      "name": "[Activo]Breadwinners (2014) [Dual-Audio] [40/40] [WebDL-Rip] [1280x720] [75/320 MB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 2014,
+      "url": "https://animezoneesp.foroactivo.com/t305-activobreadwinners-2014-dual-audio-40-40-webdl-rip-1280x720-75-320-mb-mega-pixeldrain-ver-online",
+      "href": "/t305-activobreadwinners-2014-dual-audio-40-40-webdl-rip-1280x720-75-320-mb-mega-pixeldrain-ver-online",
       "type": "Anime",
       "genre": "Animación Japonesa",
       "confianza": 90,
