@@ -1,9 +1,9 @@
 {
   "resumen": {
-    "anime": 384,
+    "anime": 385,
     "dibujos": 440,
     "peliculas": 156,
-    "total": 1004,
+    "total": 1005,
     "ultima_actualizacion": "2026-03-25 03:35:44",
     "series": 24
   },
@@ -4721,6 +4721,19 @@
       "year": 1994,
       "url": "https://animezoneesp.foroactivo.com/t161-activola-pajareria-de-transilvania-1994-dual-audio-65-65-dvd-rip-1076x720-170-270-mb-mega-ver-online",
       "href": "/t161-activola-pajareria-de-transilvania-1994-dual-audio-65-65-dvd-rip-1076x720-170-270-mb-mega-ver-online",
+      "type": "Anime",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
+      "specificGenre": "Drama",
+      "originalGenre": "Animación Japonesa",
+      "tmdb_type": "anime"
+    },
+    {
+      "name": "[Activo] Martin Mystery (2003) [Castellano] [66/66] [IAUpScale-Rip] [1440x1080] [220/385 MB] [Mega] [Ver Online]",
+      "year": 2003,
+      "url": "https://animezoneesp.foroactivo.com/t441-activo-martin-mystery-2003-castellano-66-66-iaupscale-rip-1440x1080-220-385-mb-mega-ver-online",
+      "href": "/t441-activo-martin-mystery-2003-castellano-66-66-iaupscale-rip-1440x1080-220-385-mb-mega-ver-online",
       "type": "Anime",
       "genre": "Animación Japonesa",
       "confianza": 90,
