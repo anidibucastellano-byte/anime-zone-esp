@@ -1,11 +1,11 @@
 {
   "resumen": {
-    "anime": 389,
+    "anime": 392,
     "dibujos": 440,
-    "peliculas": 156,
-    "total": 1009,
+    "peliculas": 157,
+    "total": 1015,
     "ultima_actualizacion": "2026-03-25 03:35:44",
-    "series": 24
+    "series": 26
   },
   "anime": [
     {
@@ -4786,6 +4786,45 @@
       "year": 2021,
       "url": "https://animezoneesp.foroactivo.com/t1639-activo-de-yakuza-a-amo-de-casa-2021-multi-audio-15-15-webdl-rip-1920x1080-370mb-129gb-mega-pixeldrain-ver-online",
       "href": "/t1639-activo-de-yakuza-a-amo-de-casa-2021-multi-audio-15-15-webdl-rip-1920x1080-370mb-129gb-mega-pixeldrain-ver-online",
+      "type": "Anime",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
+      "specificGenre": "Drama",
+      "originalGenre": "Animación Japonesa",
+      "tmdb_type": "anime"
+    },
+    {
+      "name": "[Activo] GetBackers (2002) [Castellano] [49/49] [DVD-Rip] [720x400] [55MB/85MB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 2002,
+      "url": "https://animezoneesp.foroactivo.com/t1672-activo-getbackers-2002-castellano-49-49-dvd-rip-720x400-55mb-85mb-mega-pixeldrain-ver-online",
+      "href": "/t1672-activo-getbackers-2002-castellano-49-49-dvd-rip-720x400-55mb-85mb-mega-pixeldrain-ver-online",
+      "type": "Anime",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
+      "specificGenre": "Drama",
+      "originalGenre": "Animación Japonesa",
+      "tmdb_type": "anime"
+    },
+    {
+      "name": "[Activo] El irresponsable Capitán Tylor (1993) [Dual-Audio] [26/26+09] [BD-Rip] [1440x1080] [780MB/3,38GB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 1993,
+      "url": "https://animezoneesp.foroactivo.com/t1670-activo-el-irresponsable-capitan-tylor-1993-dual-audio-26-2609-bd-rip-1440x1080-780mb-338gb-mega-pixeldrain-ver-online",
+      "href": "/t1670-activo-el-irresponsable-capitan-tylor-1993-dual-audio-26-2609-bd-rip-1440x1080-780mb-338gb-mega-pixeldrain-ver-online",
+      "type": "Anime",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
+      "specificGenre": "Drama",
+      "originalGenre": "Animación Japonesa",
+      "tmdb_type": "anime"
+    },
+    {
+      "name": "[Caído] Akame ga Kill! (2014) [Multi-audio] [24/24] [WebDL-Rip] [1920x1080] [1,76GB/2,75GB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 2014,
+      "url": "https://animezoneesp.foroactivo.com/t1642-caido-akame-ga-kill-2014-multi-audio-24-24-webdl-rip-1920x1080-176gb-275gb-mega-pixeldrain-ver-online",
+      "href": "/t1642-caido-akame-ga-kill-2014-multi-audio-24-24-webdl-rip-1920x1080-176gb-275gb-mega-pixeldrain-ver-online",
       "type": "Anime",
       "genre": "Animación Japonesa",
       "confianza": 90,
@@ -12216,6 +12255,18 @@
       "razonClasificacion": "Clasificado con TMDB: Acción, Fantasía, Animación, Terror",
       "specificGenre": "Acción",
       "originalGenre": "Animación Japonesa"
+    },
+    {
+      "name": "[Activo] Proyecto A-Ko (1986) [Multi-audio] [BD-Rip] [1920x1080] [14,45GB] [Mega] [Ver Online]",
+      "year": 1986,
+      "url": "https://animezoneesp.foroactivo.com/t1674-activo-proyecto-a-ko-1986-multi-audio-bd-rip-1920x1080-1445gb-mega-ver-online",
+      "href": "/t1674-activo-proyecto-a-ko-1986-multi-audio-bd-rip-1920x1080-1445gb-mega-ver-online",
+      "type": "Película",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Acción, Animación, Comedia, Ciencia ficción",
+      "specificGenre": "Acción",
+      "originalGenre": "Animación Japonesa"
     }
   ],
   "series": [
@@ -12277,6 +12328,18 @@
       "confianza": 90,
       "razonClasificacion": "Clasificado con TMDB: Crimen, Drama, Misterio",
       "specificGenre": "Crimen",
+      "originalGenre": "Live-Action"
+    },
+    {
+      "name": "[Activo] El príncipe de Bel-Air (1990) [Dual-Audio] [148/148] [BD-Rip] [1440x1080] [265MB/520MB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 1990,
+      "url": "https://animezoneesp.foroactivo.com/t1671-activo-el-principe-de-bel-air-1990-dual-audio-148-148-bd-rip-1440x1080-265mb-520mb-mega-pixeldrain-ver-online",
+      "href": "/t1671-activo-el-principe-de-bel-air-1990-dual-audio-148-148-bd-rip-1440x1080-265mb-520mb-mega-pixeldrain-ver-online",
+      "type": "Serie Live-Action",
+      "genre": "Live-Action",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Comedia, Familia",
+      "specificGenre": "Comedia",
       "originalGenre": "Live-Action"
     },
     {
@@ -12420,6 +12483,18 @@
       "genre": "Live-Action",
       "confianza": 90,
       "razonClasificacion": "Clasificado con TMDB: Comedia, Kids",
+      "specificGenre": "Comedia",
+      "originalGenre": "Live-Action"
+    },
+    {
+      "name": "[Activo] Me llamo Earl (2005) [Dual-Audio] [96/96] [WebDL-Rip] [1920x1080] [1,07GB/1,71GB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 2005,
+      "url": "https://animezoneesp.foroactivo.com/t1673-activo-me-llamo-earl-2005-dual-audio-96-96-webdl-rip-1920x1080-107gb-171gb-mega-pixeldrain-ver-online",
+      "href": "/t1673-activo-me-llamo-earl-2005-dual-audio-96-96-webdl-rip-1920x1080-107gb-171gb-mega-pixeldrain-ver-online",
+      "type": "Serie Live-Action",
+      "genre": "Live-Action",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Comedia",
       "specificGenre": "Comedia",
       "originalGenre": "Live-Action"
     },
