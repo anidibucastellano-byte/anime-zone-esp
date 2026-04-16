@@ -1,9 +1,9 @@
 {
   "resumen": {
-    "anime": 392,
+    "anime": 393,
     "dibujos": 440,
     "peliculas": 157,
-    "total": 1015,
+    "total": 1016,
     "ultima_actualizacion": "2026-03-25 03:35:44",
     "series": 26
   },
@@ -4825,6 +4825,19 @@
       "year": 2014,
       "url": "https://animezoneesp.foroactivo.com/t1642-caido-akame-ga-kill-2014-multi-audio-24-24-webdl-rip-1920x1080-176gb-275gb-mega-pixeldrain-ver-online",
       "href": "/t1642-caido-akame-ga-kill-2014-multi-audio-24-24-webdl-rip-1920x1080-176gb-275gb-mega-pixeldrain-ver-online",
+      "type": "Anime",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
+      "specificGenre": "Drama",
+      "originalGenre": "Animación Japonesa",
+      "tmdb_type": "anime"
+    },
+    {
+      "name": "[Activo]She-Ra y las Princesas del Poder (2018) [Castellano] [52/52] [WebDL-Rip] [1920x1080] [525/550 MB] [Mega] [Ver Online]",
+      "year": 2018,
+      "url": "https://animezoneesp.foroactivo.com/t94-activoshe-ra-y-las-princesas-del-poder-2018-castellano-52-52-webdl-rip-1920x1080-525-550-mb-mega-ver-online",
+      "href": "/t94-activoshe-ra-y-las-princesas-del-poder-2018-castellano-52-52-webdl-rip-1920x1080-525-550-mb-mega-ver-online",
       "type": "Anime",
       "genre": "Animación Japonesa",
       "confianza": 90,
