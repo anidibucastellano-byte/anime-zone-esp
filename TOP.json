@@ -2,8 +2,8 @@
   "resumen": {
     "anime": 395,
     "dibujos": 440,
-    "peliculas": 157,
-    "total": 1018,
+    "peliculas": 160,
+    "total": 1021,
     "ultima_actualizacion": "2026-03-25 03:35:44",
     "series": 26
   },
@@ -12305,6 +12305,42 @@
       "confianza": 90,
       "razonClasificacion": "Clasificado con TMDB: Acción, Animación, Comedia, Ciencia ficción",
       "specificGenre": "Acción",
+      "originalGenre": "Animación Japonesa"
+    },
+    {
+      "name": "[Activo] Proyecto A-Ko 4: Final (1989) [Multi-audio] [BD-Rip] [1920x1080] [9,73GB] [Mega] [Ver Online]",
+      "year": 1989,
+      "url": "https://animezoneesp.foroactivo.com/t1686-activo-proyecto-a-ko-4-final-1989-multi-audio-bd-rip-1920x1080-973gb-mega-ver-online",
+      "href": "/t1686-activo-proyecto-a-ko-4-final-1989-multi-audio-bd-rip-1920x1080-973gb-mega-ver-online",
+      "type": "Película",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Animación, Ciencia ficción",
+      "specificGenre": "Ciencia Ficción",
+      "originalGenre": "Animación Japonesa"
+    },
+    {
+      "name": "[Activo] Proyecto A-Ko 3: La rapsodia de Cenicienta (1988) [Multi-audio] [BD-Rip] [1920x1080] [8,75GB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 1988,
+      "url": "https://animezoneesp.foroactivo.com/t1685-activo-proyecto-a-ko-3-la-rapsodia-de-cenicienta-1988-multi-audio-bd-rip-1920x1080-875gb-mega-pixeldrain-ver-online",
+      "href": "/t1685-activo-proyecto-a-ko-3-la-rapsodia-de-cenicienta-1988-multi-audio-bd-rip-1920x1080-875gb-mega-pixeldrain-ver-online",
+      "type": "Película",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Animación, Ciencia ficción, Comedia",
+      "specificGenre": "Ciencia Ficción",
+      "originalGenre": "Animación Japonesa"
+    },
+    {
+      "name": "[Activo] Proyecto A-Ko 2: El entramado del grupo financiero Daitokuji (1987) [Multi-audio] [BD-Rip] [1920x1080] [9,99GB] [Mega] [Ver Online]",
+      "year": 1987,
+      "url": "https://animezoneesp.foroactivo.com/t1684-activo-proyecto-a-ko-2-el-entramado-del-grupo-financiero-daitokuji-1987-multi-audio-bd-rip-1920x1080-999gb-mega-ver-online",
+      "href": "/t1684-activo-proyecto-a-ko-2-el-entramado-del-grupo-financiero-daitokuji-1987-multi-audio-bd-rip-1920x1080-999gb-mega-ver-online",
+      "type": "Película",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Ciencia ficción, Animación, Comedia",
+      "specificGenre": "Ciencia Ficción",
       "originalGenre": "Animación Japonesa"
     }
   ],
