@@ -999,16 +999,22 @@ def actualizar_top_json_con_tmdb():
     
     # Añadir anime/dibujos nuevos de f11 si hay (usando las listas filtradas)
     if anime_nuevos_unicos:
-        anime_existente.extend(anime_nuevos_unicos)
-        print(f"   ✅ {len(anime_nuevos_unicos)} anime añadidos")
+        # Añadir directamente a data['anime'] para asegurar que se guarda
+        if 'anime' not in data:
+            data['anime'] = []
+        data['anime'].extend(anime_nuevos_unicos)
+        print(f"   ✅ {len(anime_nuevos_unicos)} anime añadidos a data['anime']")
     
     if dibujos_nuevos_unicos:
-        dibujos_existente.extend(dibujos_nuevos_unicos)
-        print(f"   ✅ {len(dibujos_nuevos_unicos)} dibujos añadidos")
+        # Añadir directamente a data['dibujos'] para asegurar que se guarda
+        if 'dibujos' not in data:
+            data['dibujos'] = []
+        data['dibujos'].extend(dibujos_nuevos_unicos)
+        print(f"   ✅ {len(dibujos_nuevos_unicos)} dibujos añadidos a data['dibujos']")
     
-    # Actualizar resumen
-    total_anime = len(anime_existente)
-    total_dibujos = len(dibujos_existente)
+    # Actualizar resumen (recalcular desde data para incluir nuevos items)
+    total_anime = len(data.get('anime', []))
+    total_dibujos = len(data.get('dibujos', []))
     total_peliculas = len(peliculas_existente)
     total_series = len(data.get('series', []))
     total_nuevo = total_anime + total_dibujos + total_peliculas + total_series
