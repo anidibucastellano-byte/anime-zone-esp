@@ -326,7 +326,23 @@ def clasificar_anime_vs_dibujos(tmdb_data, title=''):
         print(f"      🎌 Detectado como anime por título: {title}")
         return 'anime'
     
+    # Si no hay datos de TMDB, usar título para decidir
     if not tmdb_data or not isinstance(tmdb_data, dict):
+        # Palabras típicas de dibujos animados occidentales
+        indicadores_dibujos = [
+            'robocop', 'strange planet', 'rick and morty', 'family guy', 'simpsons',
+            'south park', 'futurama', 'archer', 'bojack', 'big mouth',
+            'disenchantment', 'f is for family', 'love death robots', 'love, death',
+            'invincible', 'harley quinn', 'primal', 'venture bros', 'metalocalypse',
+            'aqua teen', 'robot chicken', 'american dad', 'cleveland show',
+            'bob\'s burgers', 'king of the hill', 'beavis', 'butt-head', 'daria',
+            'clone high', 'mission hill', 'spawn', 'todd mcfarlane', 'maxx',
+            'aeon flux', 'reign', 'mtv oddities'
+        ]
+        if any(ind in title_lower for ind in indicadores_dibujos):
+            print(f"      🎬 Detectado como dibujos por título (sin TMDB): {title}")
+            return 'dibujos'
+        print(f"      ❓ Sin datos TMDB, asumiendo anime por defecto: {title}")
         return 'anime'  # Por defecto, asumir anime
     
     origin_country = tmdb_data.get('origin_country', [])
@@ -637,7 +653,9 @@ def extraer_contenido_seccion(url_base, seccion_id):
                         genero_especifico, tmdb_data = clasificar_con_tmdb(title, year, tipo_detectado)
                         
                         # Clasificar automáticamente entre anime y dibujos
+                        print(f"      🔍 [F11] Datos TMDB para clasificación: origin_country={tmdb_data.get('origin_country') if isinstance(tmdb_data, dict) else 'N/A'}, lang={tmdb_data.get('original_language') if isinstance(tmdb_data, dict) else 'N/A'}")
                         tipo_animacion = clasificar_anime_vs_dibujos(tmdb_data, title)
+                        print(f"      🔍 [F11] Resultado clasificación: {tipo_animacion}")
                         
                         contenido_info = {
                             'name': title,
