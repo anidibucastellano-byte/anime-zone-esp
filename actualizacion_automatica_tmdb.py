@@ -331,7 +331,8 @@ def clasificar_anime_vs_dibujos(tmdb_data, title=''):
         # Palabras típicas de dibujos animados occidentales
         indicadores_dibujos = [
             'robocop', 'strange planet', 'un planeta extraño', 'sin supervision',
-            'isami', 'vuela isami', 'tokyo babylon', 'lucky luke', 'pingu', 'simpsons',
+            'capitan biceps', 'jimmy neutron',
+            'lucky luke', 'pingu', 'isami', 'vuela isami', 'tokyo babylon', 'lucky luke', 'pingu', 'simpsons',
             'south park', 'futurama', 'archer', 'bojack', 'big mouth',
             'disenchantment', 'f is for family', 'love death robots', 'love, death',
             'invincible', 'harley quinn', 'primal', 'venture bros', 'metalocalypse',
@@ -629,6 +630,7 @@ def extraer_contenido_seccion(url_base, seccion_id):
                         
                         # Clasificar con TMDB
                         genero_especifico, tmdb_data = clasificar_con_tmdb(title, year, tipo_detectado)
+                        print(f"      🔍 [F14] tmdb_data type: {type(tmdb_data).__name__}, valor: {tmdb_data if not isinstance(tmdb_data, dict) else 'dict'}")
                                 
                         contenido_info = {
                             'name': title,
@@ -663,6 +665,7 @@ def extraer_contenido_seccion(url_base, seccion_id):
                         
                         # Clasificar con TMDB
                         genero_especifico, tmdb_data = clasificar_con_tmdb(title, year, tipo_detectado)
+                        print(f"      🔍 [F11] tmdb_data type: {type(tmdb_data).__name__}, valor: {tmdb_data if not isinstance(tmdb_data, dict) else 'dict'}")
                         
                         # Clasificar automáticamente entre anime y dibujos
                         print(f"      🔍 [F11] Datos TMDB para clasificación: origin_country={tmdb_data.get('origin_country') if isinstance(tmdb_data, dict) else 'N/A'}, lang={tmdb_data.get('original_language') if isinstance(tmdb_data, dict) else 'N/A'}")
@@ -700,6 +703,7 @@ def extraer_contenido_seccion(url_base, seccion_id):
                         
                         # Clasificar con TMDB primero para obtener datos de origen
                         genero_especifico, tmdb_data = clasificar_con_tmdb(title, year, 'tv')
+                        print(f"      🔍 [F17] tmdb_data type: {type(tmdb_data).__name__}, valor: {tmdb_data if not isinstance(tmdb_data, dict) else 'dict'}")
                         
                         # FILTRO Estricto: SOLO aceptar si TMDB confirma que NO es anime japonés
                         if not tmdb_data or not isinstance(tmdb_data, dict):
