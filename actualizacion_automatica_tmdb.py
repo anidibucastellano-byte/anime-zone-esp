@@ -626,6 +626,7 @@ def extraer_contenido_seccion(url_base, seccion_id):
                         contenido_encontrado.append(contenido_info)
                         print(f"      ✅ Añadido: {title} - {genero_especifico}")
                     elif seccion_id == "11":  # Sección de series/anime - ACEPTAR TODO
+                        print(f"      🔍 [F11] ENTRANDO EN BLOQUE F11 - seccion_id={seccion_id}")
                         print(f"      🔍 Analizando: {title}")
                         print(f"      🔍 Tipo detectado: {tipo_detectado}")
                         
@@ -660,6 +661,7 @@ def extraer_contenido_seccion(url_base, seccion_id):
                         nuevos_anime_dibujos.append(contenido_info)
                     
                     elif seccion_id == "17":  # Sección de series live-action
+                        print(f"      🔍 [F17] ENTRANDO EN BLOQUE F17 - seccion_id={seccion_id}")
                         print(f"      🔍 Analizando: {title}")
                         print(f"      🔍 Tipo detectado: {tipo_detectado}")
                         
