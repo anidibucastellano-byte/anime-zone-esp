@@ -1,9 +1,9 @@
 {
   "resumen": {
-    "anime": 391,
+    "anime": 392,
     "dibujos": 440,
     "peliculas": 173,
-    "total": 1030,
+    "total": 1031,
     "ultima_actualizacion": "2026-03-25 03:35:44",
     "series": 26
   },
@@ -4812,6 +4812,19 @@
       "year": 1992,
       "url": "https://animezoneesp.foroactivo.com/t1702-activo-tokyo-babylon-miniserie-1992-dual-audio-02-02-dvd-rip-640x480-745mb-920mb-mega-pixeldrain-ver-online",
       "href": "/t1702-activo-tokyo-babylon-miniserie-1992-dual-audio-02-02-dvd-rip-640x480-745mb-920mb-mega-pixeldrain-ver-online",
+      "type": "Anime",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
+      "specificGenre": "Drama",
+      "originalGenre": "Animación Japonesa",
+      "tmdb_type": "anime"
+    },
+    {
+      "name": "[Activo] Sin Supervisión (2012) [Castellano] [13/13] [HD-RIP] [720x400] [295MB/330MB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 2012,
+      "url": "https://animezoneesp.foroactivo.com/t1701-activo-sin-supervision-2012-castellano-13-13-hd-rip-720x400-295mb-330mb-mega-pixeldrain-ver-online",
+      "href": "/t1701-activo-sin-supervision-2012-castellano-13-13-hd-rip-720x400-295mb-330mb-mega-pixeldrain-ver-online",
       "type": "Anime",
       "genre": "Animación Japonesa",
       "confianza": 90,
