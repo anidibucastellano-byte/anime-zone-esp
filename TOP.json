@@ -1,9 +1,9 @@
 {
   "resumen": {
-    "anime": 390,
+    "anime": 391,
     "dibujos": 442,
     "peliculas": 173,
-    "total": 1031,
+    "total": 1032,
     "ultima_actualizacion": "2026-03-25 03:35:44",
     "series": 26
   },
@@ -4799,6 +4799,19 @@
       "year": 2010,
       "url": "https://animezoneesp.foroactivo.com/t1276-activo-hero-108-2010-castellano-25-26-tv-rip-704x400-245-250-mb-mega-pixeldrain-ver-online",
       "href": "/t1276-activo-hero-108-2010-castellano-25-26-tv-rip-704x400-245-250-mb-mega-pixeldrain-ver-online",
+      "type": "Anime",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
+      "specificGenre": "Drama",
+      "originalGenre": "Animación Japonesa",
+      "tmdb_type": "anime"
+    },
+    {
+      "name": "[Activo] Capitán Biceps (2010) [Castellano] [39/78] [TV-RIP] [632x360] [35MB/100MB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 2010,
+      "url": "https://animezoneesp.foroactivo.com/t1708-activo-capitan-biceps-2010-castellano-39-78-tv-rip-632x360-35mb-100mb-mega-pixeldrain-ver-online",
+      "href": "/t1708-activo-capitan-biceps-2010-castellano-39-78-tv-rip-632x360-35mb-100mb-mega-pixeldrain-ver-online",
       "type": "Anime",
       "genre": "Animación Japonesa",
       "confianza": 90,
