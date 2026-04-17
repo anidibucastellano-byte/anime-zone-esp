@@ -638,7 +638,7 @@ def extraer_contenido_seccion(url_base, seccion_id):
                             'type': 'Película' if tipo_detectado == 'pelicula' else 'Pack',
                             'genre': 'Animación Japonesa',
                             'confianza': 90,  # Mayor confianza con TMDB
-                            'razonClasificacion': f"Clasificado con TMDB: {', '.join(tmdb_data['genres']) if tmdb_data and tmdb_data.get('genres') else 'Sin datos TMDB'}",
+                            'razonClasificacion': f"Clasificado con TMDB: {', '.join(tmdb_data.get('genres', [])) if isinstance(tmdb_data, dict) and tmdb_data.get('genres') else 'Sin datos TMDB'}",
                             'specificGenre': genero_especifico,
                             'originalGenre': 'Animación Japonesa'
                         }
@@ -677,7 +677,7 @@ def extraer_contenido_seccion(url_base, seccion_id):
                             'type': 'Anime' if tipo_animacion == 'anime' else 'Dibujos',
                             'genre': 'Animación Japonesa' if tipo_animacion == 'anime' else 'Animación Occidental',
                             'confianza': 90,  # Mayor confianza con TMDB
-                            'razonClasificacion': f"Clasificado con TMDB: {', '.join(tmdb_data['genres']) if tmdb_data and tmdb_data.get('genres') else 'Sin datos TMDB'}",
+                            'razonClasificacion': f"Clasificado con TMDB: {', '.join(tmdb_data.get('genres', [])) if isinstance(tmdb_data, dict) and tmdb_data.get('genres') else 'Sin datos TMDB'}",
                             'specificGenre': genero_especifico,
                             'originalGenre': 'Animación Japonesa' if tipo_animacion == 'anime' else 'Animación Occidental',
                             'tmdb_type': tipo_animacion  # Guardar el tipo para filtrado
@@ -780,7 +780,7 @@ def extraer_contenido_seccion(url_base, seccion_id):
                             'type': 'Serie Live-Action',
                             'genre': 'Live-Action',
                             'confianza': 90,  # Mayor confianza con TMDB
-                            'razonClasificacion': f"Clasificado con TMDB: {', '.join(tmdb_data['genres']) if tmdb_data and tmdb_data.get('genres') else 'Sin datos TMDB'}",
+                            'razonClasificacion': f"Clasificado con TMDB: {', '.join(tmdb_data.get('genres', [])) if isinstance(tmdb_data, dict) and tmdb_data.get('genres') else 'Sin datos TMDB'}",
                             'specificGenre': genero_especifico,
                             'originalGenre': 'Live-Action'
                         }
