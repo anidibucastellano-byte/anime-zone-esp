@@ -1,9 +1,9 @@
 {
   "resumen": {
-    "anime": 389,
+    "anime": 391,
     "dibujos": 440,
     "peliculas": 173,
-    "total": 1028,
+    "total": 1030,
     "ultima_actualizacion": "2026-03-25 03:35:44",
     "series": 26
   },
@@ -4786,6 +4786,32 @@
       "year": 1995,
       "url": "https://animezoneesp.foroactivo.com/t297-activolas-tres-mellizas-1995-castellano-104-104-dvd-rip-960x720-325-625-mb-mega-pixeldrain-ver-online",
       "href": "/t297-activolas-tres-mellizas-1995-castellano-104-104-dvd-rip-960x720-325-625-mb-mega-pixeldrain-ver-online",
+      "type": "Anime",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
+      "specificGenre": "Drama",
+      "originalGenre": "Animación Japonesa",
+      "tmdb_type": "anime"
+    },
+    {
+      "name": "[Activo] ¡Vuela, Isami! (1995) [Dual-Audio] [50/50] [DVD-Rip] [640x480] [170MB/265MB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 1995,
+      "url": "https://animezoneesp.foroactivo.com/t1705-activo-vuela-isami-1995-dual-audio-50-50-dvd-rip-640x480-170mb-265mb-mega-pixeldrain-ver-online",
+      "href": "/t1705-activo-vuela-isami-1995-dual-audio-50-50-dvd-rip-640x480-170mb-265mb-mega-pixeldrain-ver-online",
+      "type": "Anime",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
+      "specificGenre": "Drama",
+      "originalGenre": "Animación Japonesa",
+      "tmdb_type": "anime"
+    },
+    {
+      "name": "[Activo] Tokyo Babylon (Miniserie) (1992) [Dual-Audio] [02/02] [DVD-Rip] [640x480] [745MB/920MB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 1992,
+      "url": "https://animezoneesp.foroactivo.com/t1702-activo-tokyo-babylon-miniserie-1992-dual-audio-02-02-dvd-rip-640x480-745mb-920mb-mega-pixeldrain-ver-online",
+      "href": "/t1702-activo-tokyo-babylon-miniserie-1992-dual-audio-02-02-dvd-rip-640x480-745mb-920mb-mega-pixeldrain-ver-online",
       "type": "Anime",
       "genre": "Animación Japonesa",
       "confianza": 90,
