@@ -1,9 +1,9 @@
 {
   "resumen": {
-    "anime": 391,
-    "dibujos": 442,
+    "anime": 389,
+    "dibujos": 440,
     "peliculas": 173,
-    "total": 1032,
+    "total": 1028,
     "ultima_actualizacion": "2026-03-25 03:35:44",
     "series": 26
   },
@@ -4786,32 +4786,6 @@
       "year": 1995,
       "url": "https://animezoneesp.foroactivo.com/t297-activolas-tres-mellizas-1995-castellano-104-104-dvd-rip-960x720-325-625-mb-mega-pixeldrain-ver-online",
       "href": "/t297-activolas-tres-mellizas-1995-castellano-104-104-dvd-rip-960x720-325-625-mb-mega-pixeldrain-ver-online",
-      "type": "Anime",
-      "genre": "Animación Japonesa",
-      "confianza": 90,
-      "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
-      "originalGenre": "Animación Japonesa",
-      "tmdb_type": "anime"
-    },
-    {
-      "name": "[Activo] Hero: 108 (2010) [Castellano] [25/26] [TV-RIP] [704x400] [245/250 MB] [Mega/Pixeldrain] [Ver Online]",
-      "year": 2010,
-      "url": "https://animezoneesp.foroactivo.com/t1276-activo-hero-108-2010-castellano-25-26-tv-rip-704x400-245-250-mb-mega-pixeldrain-ver-online",
-      "href": "/t1276-activo-hero-108-2010-castellano-25-26-tv-rip-704x400-245-250-mb-mega-pixeldrain-ver-online",
-      "type": "Anime",
-      "genre": "Animación Japonesa",
-      "confianza": 90,
-      "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
-      "originalGenre": "Animación Japonesa",
-      "tmdb_type": "anime"
-    },
-    {
-      "name": "[Activo] Capitán Biceps (2010) [Castellano] [39/78] [TV-RIP] [632x360] [35MB/100MB] [Mega/Pixeldrain] [Ver Online]",
-      "year": 2010,
-      "url": "https://animezoneesp.foroactivo.com/t1708-activo-capitan-biceps-2010-castellano-39-78-tv-rip-632x360-35mb-100mb-mega-pixeldrain-ver-online",
-      "href": "/t1708-activo-capitan-biceps-2010-castellano-39-78-tv-rip-632x360-35mb-100mb-mega-pixeldrain-ver-online",
       "type": "Anime",
       "genre": "Animación Japonesa",
       "confianza": 90,
@@ -10366,32 +10340,6 @@
       "confianza": 90,
       "razonClasificacion": "Clasificado con TMDB: Acción, Drama",
       "specificGenre": "Acción",
-      "originalGenre": "Animación Occidental",
-      "tmdb_type": "dibujos"
-    },
-    {
-      "name": "[Activo] ¡Vuela, Isami! (1995) [Dual-Audio] [50/50] [DVD-Rip] [640x480] [170MB/265MB] [Mega/Pixeldrain] [Ver Online]",
-      "year": 1995,
-      "url": "https://animezoneesp.foroactivo.com/t1705-activo-vuela-isami-1995-dual-audio-50-50-dvd-rip-640x480-170mb-265mb-mega-pixeldrain-ver-online",
-      "href": "/t1705-activo-vuela-isami-1995-dual-audio-50-50-dvd-rip-640x480-170mb-265mb-mega-pixeldrain-ver-online",
-      "type": "Dibujos",
-      "genre": "Animación Occidental",
-      "confianza": 90,
-      "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
-      "originalGenre": "Animación Occidental",
-      "tmdb_type": "dibujos"
-    },
-    {
-      "name": "[Activo] Tokyo Babylon (Miniserie) (1992) [Dual-Audio] [02/02] [DVD-Rip] [640x480] [745MB/920MB] [Mega/Pixeldrain] [Ver Online]",
-      "year": 1992,
-      "url": "https://animezoneesp.foroactivo.com/t1702-activo-tokyo-babylon-miniserie-1992-dual-audio-02-02-dvd-rip-640x480-745mb-920mb-mega-pixeldrain-ver-online",
-      "href": "/t1702-activo-tokyo-babylon-miniserie-1992-dual-audio-02-02-dvd-rip-640x480-745mb-920mb-mega-pixeldrain-ver-online",
-      "type": "Dibujos",
-      "genre": "Animación Occidental",
-      "confianza": 90,
-      "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
       "originalGenre": "Animación Occidental",
       "tmdb_type": "dibujos"
     }
