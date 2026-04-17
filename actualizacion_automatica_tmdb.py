@@ -330,14 +330,15 @@ def clasificar_anime_vs_dibujos(tmdb_data, title=''):
     if not tmdb_data or not isinstance(tmdb_data, dict):
         # Palabras típicas de dibujos animados occidentales
         indicadores_dibujos = [
-            'robocop', 'strange planet', 'rick and morty', 'family guy', 'simpsons',
+            'robocop', 'strange planet', 'un planeta extraño', 'sin supervision',
+            'rick and morty', 'family guy', 'simpsons',
             'south park', 'futurama', 'archer', 'bojack', 'big mouth',
             'disenchantment', 'f is for family', 'love death robots', 'love, death',
             'invincible', 'harley quinn', 'primal', 'venture bros', 'metalocalypse',
             'aqua teen', 'robot chicken', 'american dad', 'cleveland show',
             'bob\'s burgers', 'king of the hill', 'beavis', 'butt-head', 'daria',
             'clone high', 'mission hill', 'spawn', 'todd mcfarlane', 'maxx',
-            'aeon flux', 'reign', 'mtv oddities'
+            'aeon flux', 'reign', 'mtv oddities', 'isami', 'tokyo babylon'
         ]
         if any(ind in title_lower for ind in indicadores_dibujos):
             print(f"      🎬 Detectado como dibujos por título (sin TMDB): {title}")
@@ -646,6 +647,13 @@ def extraer_contenido_seccion(url_base, seccion_id):
                         print(f"      🔍 Analizando: {title}")
                         print(f"      🔍 Tipo detectado: {tipo_detectado}")
                         
+                        # Debug específico para títulos problemáticos
+                        titulos_debug = ['isami', 'tokyo babylon', 'robocop', 'planeta extraño', 'sin supervision']
+                        if any(t in title.lower() for t in titulos_debug):
+                            print(f"      🎯 [DEBUG] Título especial detectado: {title}")
+                            print(f"      🎯 [DEBUG] URL: {topic_url}")
+                            print(f"      🎯 [DEBUG] Href: {topic_href}")
+                        
                         # ACEPTAR TODO sin importar el tipo
                         print(f"      ✅ ACEPTADO como {tipo_detectado}")
                         
@@ -677,6 +685,7 @@ def extraer_contenido_seccion(url_base, seccion_id):
                         
                         # Guardar en la variable global para añadir después
                         nuevos_anime_dibujos.append(contenido_info)
+                        print(f"      📦 AÑADIDO a nuevos_anime_dibujos: {title} (tipo: {tipo_animacion}, total: {len(nuevos_anime_dibujos)})")
                     
                     elif seccion_id == "17":  # Sección de series live-action
                         print(f"      🔍 [F17] ENTRANDO EN BLOQUE F17 - seccion_id={seccion_id}")
@@ -931,6 +940,12 @@ def actualizar_top_json_con_tmdb():
         for i, item in enumerate(contenido_nuevo):
             nombre_limpio = limpiar_nombre_para_comparar(item.get('name', ''))
             print(f"   📝 Item {i+1}: {nombre_limpio[:50]}...")
+            
+            # Debug para títulos problemáticos
+            titulos_debug = ['isami', 'tokyo babylon', 'robocop', 'planeta extraño', 'sin supervision']
+            if any(t in nombre_limpio for t in titulos_debug):
+                print(f"      🎯 [FILTRO DEBUG] Título especial: {nombre_limpio}")
+                print(f"      🎯 [FILTRO DEBUG] En nombres_existentes: {nombre_limpio in nombres_existentes}")
             
             if nombre_limpio and nombre_limpio not in nombres_existentes:
                 nuevos.append(item)
