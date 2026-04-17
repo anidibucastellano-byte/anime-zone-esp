@@ -331,7 +331,7 @@ def clasificar_anime_vs_dibujos(tmdb_data, title=''):
         # Palabras típicas de dibujos animados occidentales
         indicadores_dibujos = [
             'robocop', 'strange planet', 'un planeta extraño', 'sin supervision',
-            'rick and morty', 'family guy', 'simpsons',
+            'isami', 'vuela isami', 'tokyo babylon', 'lucky luke', 'pingu', 'simpsons',
             'south park', 'futurama', 'archer', 'bojack', 'big mouth',
             'disenchantment', 'f is for family', 'love death robots', 'love, death',
             'invincible', 'harley quinn', 'primal', 'venture bros', 'metalocalypse',
@@ -536,7 +536,10 @@ def extraer_contenido_seccion(url_base, seccion_id):
         }
         
         # Explorar primeras páginas
-        max_paginas = 10  # Procesar 10 páginas (120 items aprox) - óptimo para capturar contenido activo
+        if seccion_id == "11":
+            max_paginas = 2  # Procesar páginas 1 y 2 de f11
+        else:
+            max_paginas = 10  # Procesar 10 páginas (120 items aprox) - óptimo para capturar contenido activo
         
         for page_num in range(0, max_paginas):
             if page_num == 0:
@@ -581,10 +584,10 @@ def extraer_contenido_seccion(url_base, seccion_id):
                     else:
                         break
                 
-                # Limitar procesamiento para evitar timeouts - REMOVIDO para procesar todos
-                # max_items = 3 if seccion_id == "11" else 5  # Limitar f11 a 3 items
-                # topics = topics[:max_items]
-                # print(f"   📊 Procesando solo primeros {len(topics)} items")
+                # Contadores para estadísticas
+                temas_procesados = 0
+                temas_aceptados = 0
+                temas_rechazados = 0
                 
                 for i, topic in enumerate(topics):
                     title = topic.get_text(strip=True)
@@ -641,6 +644,7 @@ def extraer_contenido_seccion(url_base, seccion_id):
                         }
                                 
                         contenido_encontrado.append(contenido_info)
+                        temas_aceptados += 1
                         print(f"      ✅ Añadido: {title} - {genero_especifico}")
                     elif seccion_id == "11":  # Sección de series/anime - ACEPTAR TODO
                         print(f"      🔍 [F11] ENTRANDO EN BLOQUE F11 - seccion_id={seccion_id}")
@@ -680,6 +684,8 @@ def extraer_contenido_seccion(url_base, seccion_id):
                         }
                         
                         contenido_encontrado.append(contenido_info)
+                        temas_aceptados += 1
+                        
                         tipo_label = "🎌 ANIME" if tipo_animacion == 'anime' else "📺 DIBUJOS"
                         print(f"   {tipo_label} {len(contenido_encontrado)}. {title} - {genero_especifico}")
                         
@@ -780,6 +786,7 @@ def extraer_contenido_seccion(url_base, seccion_id):
                         }
                             
                         contenido_encontrado.append(contenido_info)
+                        temas_aceptados += 1
                         print(f"   📺 SERIES {len(contenido_encontrado)}. {title} - {genero_especifico}")
                 
                 # Pausa más larga para evitar bloqueos (3 segundos)
@@ -787,7 +794,17 @@ def extraer_contenido_seccion(url_base, seccion_id):
                 
             except Exception as e:
                 print(f"   ⚠️ Error en página {page_num + 1}: {str(e)[:50]}...")
+                temas_rechazados += 1
                 continue
+            
+            temas_procesados += 1
+                
+        # Resumen de la página
+        print(f"\n   📊 RESUMEN Página {page_num + 1}:")
+        print(f"      Total temas: {len(topics)}")
+        print(f"      Procesados: {temas_procesados}")
+        print(f"      Aceptados: {temas_aceptados}")
+        print(f"      Rechazados: {temas_rechazados}")
                 
     except Exception as e:
         print(f"❌ Error general: {e}")
