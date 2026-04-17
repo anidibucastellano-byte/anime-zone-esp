@@ -764,7 +764,7 @@ def extraer_contenido_seccion(url_base, seccion_id):
 
 def actualizar_top_json_con_tmdb():
     """Función principal de actualización automática con TMDB"""
-    global nuevos_anime_dibujos
+    global nuevos_anime_dibujos  # Usar la variable global
     
     # Inicializar variable global para recolectar items de f11
     nuevos_anime_dibujos = []
@@ -831,8 +831,21 @@ def actualizar_top_json_con_tmdb():
     try:
         nuevas_series = extraer_contenido_seccion("https://animezoneesp.foroactivo.com/f11-castellano", "11")
         print(f"📊 Resultado f11: {len(nuevas_series)} series encontradas")
+        print(f"📦 Variable global nuevos_anime_dibujos: {len(nuevos_anime_dibujos)} items")
+        
+        # DEBUG: Mostrar todos los items recolectados
+        if nuevos_anime_dibujos:
+            print(f"\n📋 Items en nuevos_anime_dibujos:")
+            for i, item in enumerate(nuevos_anime_dibujos, 1):
+                tipo = item.get('tmdb_type', 'SIN_TIPO')
+                nombre = item.get('name', 'SIN_NOMBRE')[:50]
+                print(f"   {i}. [{tipo}] {nombre}...")
+        else:
+            print(f"⚠️ nuevos_anime_dibujos está VACÍO")
     except Exception as e:
         print(f"❌ ERROR en f11-castellano: {e}")
+        import traceback
+        traceback.print_exc()
         nuevas_series = []
     
     print(f"\n📋 Buscando nuevas series en sección Series (con TMDB)...")
