@@ -702,8 +702,8 @@ def extraer_contenido_seccion(url_base, seccion_id):
                         genero_especifico, tmdb_data = clasificar_con_tmdb(title, year, 'tv')
                         
                         # FILTRO Estricto: SOLO aceptar si TMDB confirma que NO es anime japonés
-                        if not tmdb_data:
-                            print(f"      ❌ RECHAZADO: Sin datos TMDB, no se puede confirmar como live-action")
+                        if not tmdb_data or not isinstance(tmdb_data, dict):
+                            print(f"      ❌ RECHAZADO: Sin datos TMDB válidos, no se puede confirmar como live-action")
                             continue
                         
                         origin_country = tmdb_data.get('origin_country', [])
