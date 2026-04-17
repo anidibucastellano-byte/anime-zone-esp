@@ -326,7 +326,7 @@ def clasificar_anime_vs_dibujos(tmdb_data, title=''):
         print(f"      🎌 Detectado como anime por título: {title}")
         return 'anime'
     
-    if not tmdb_data:
+    if not tmdb_data or not isinstance(tmdb_data, dict):
         return 'anime'  # Por defecto, asumir anime
     
     origin_country = tmdb_data.get('origin_country', [])
@@ -476,7 +476,8 @@ def clasificar_con_tmdb(title, year, tipo_contenido):
     else:  # película
         tmdb_data = buscar_en_tmdb(title, year, "movie")
     
-    if tmdb_data and tmdb_data.get('genres'):
+    # Verificar que tmdb_data es un diccionario y tiene genres
+    if tmdb_data and isinstance(tmdb_data, dict) and tmdb_data.get('genres'):
         # Mapear géneros de TMDB a nuestro sistema
         genero_nuestro = mapear_genero_tmdb_a_nuestro(tmdb_data['genres'])
         
@@ -485,8 +486,11 @@ def clasificar_con_tmdb(title, year, tipo_contenido):
         
         return genero_nuestro, tmdb_data
     
-    # Si TMDB falla, usar clasificación básica
-    print(f"   ⚠️ TMDB no encontró resultados, usando clasificación básica")
+    # Si TMDB falla o datos inválidos, usar clasificación básica
+    if tmdb_data and not isinstance(tmdb_data, dict):
+        print(f"   ⚠️ TMDB devolvió datos inválidos (tipo: {type(tmdb_data).__name__})")
+    else:
+        print(f"   ⚠️ TMDB no encontró resultados, usando clasificación básica")
     return "Drama", None
 
 def extraer_contenido_seccion(url_base, seccion_id):
