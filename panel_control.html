@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control - Anime Zone ESP</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+        }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 3px solid #e94560;
+            margin-bottom: 30px;
+        }
+        h1 { font-size: 2.5em; color: #e94560; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(233, 69, 96, 0.3);
+        }
+        .stat-number { font-size: 2em; font-weight: bold; color: #e94560; }
+        .stat-label { color: #aaa; margin-top: 5px; }
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .tab {
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        .tab:hover, .tab.active { background: #e94560; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #e94560;
+            font-weight: 500;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(233, 69, 96, 0.3);
+            border-radius: 8px;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            font-size: 14px;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #e94560;
+        }
+        button {
+            padding: 12px 24px;
+            background: #e94560;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        button:hover { background: #ff6b6b; transform: translateY(-2px); }
+        .btn-secondary { background: #0f3460; }
+        .btn-secondary:hover { background: #1a4a7a; }
+        .btn-success { background: #00d9ff; color: #000; }
+        .btn-success:hover { background: #33e0ff; }
+        .series-list {
+            display: grid;
+            gap: 10px;
+        }
+        .series-item {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(233, 69, 96, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .series-info { flex: 1; }
+        .series-name { font-weight: bold; color: #fff; }
+        .series-meta { color: #aaa; font-size: 12px; margin-top: 5px; }
+        .series-actions { display: flex; gap: 10px; }
+        .icon-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        .btn-edit { background: #ffd700; color: #000; }
+        .btn-delete { background: #ff4757; color: #fff; }
+        .search-box {
+            margin-bottom: 20px;
+        }
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(233, 69, 96, 0.3);
+            color: #fff;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background: #e94560;
+            border-color: #e94560;
+        }
+        .status-msg {
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            display: none;
+        }
+        .status-msg.success { background: rgba(0, 255, 0, 0.2); border: 1px solid #00ff00; }
+        .status-msg.error { background: rgba(255, 0, 0, 0.2); border: 1px solid #ff0000; }
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 Panel de Control</h1>
+            <p>Anime Zone ESP - Gestión de Catálogo</p>
+        </header>
+
+        <div class="stats" id="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="stat-total">0</div>
+                <div class="stat-label">Total Series</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-anime">0</div>
+                <div class="stat-label">Anime</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-dibujos">0</div>
+                <div class="stat-label">Dibujos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-peliculas">0</div>
+                <div class="stat-label">Películas</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-series">0</div>
+                <div class="stat-label">Series Live-Action</div>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('add')">➕ Añadir Nuevo</button>
+            <button class="tab" onclick="showTab('catalog')">📋 Ver Catálogo</button>
+            <button class="tab" onclick="showTab('import')">📥 Importar/Exportar</button>
+        </div>
+
+        <!-- Tab: Añadir Nuevo -->
+        <div id="tab-add" class="tab-content active">
+            <h2>Añadir Nueva Serie</h2>
+            <form id="addForm">
+                <div class="form-group">
+                    <label>Nombre completo *</label>
+                    <input type="text" id="name" placeholder="[Activo] Título (Año) [Castellano]..." required>
+                </div>
+                <div class="form-group">
+                    <label>Año *</label>
+                    <input type="number" id="year" placeholder="2024" required>
+                </div>
+                <div class="form-group">
+                    <label>Tipo *</label>
+                    <select id="type" required>
+                        <option value="">Seleccionar...</option>
+                        <option value="Anime">Anime</option>
+                        <option value="Dibujos">Dibujos</option>
+                        <option value="Película">Película</option>
+                        <option value="Serie Live-Action">Serie Live-Action</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Género *</label>
+                    <select id="genre" required>
+                        <option value="">Seleccionar...</option>
+                        <option value="Animación Japonesa">Animación Japonesa</option>
+                        <option value="Animación Occidental">Animación Occidental</option>
+                        <option value="Live-Action">Live-Action</option>
+                        <option value="Acción">Acción</option>
+                        <option value="Comedia">Comedia</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Fantasía">Fantasía</option>
+                        <option value="Ciencia Ficción">Ciencia Ficción</option>
+                        <option value="Terror">Terror</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Deportes">Deportes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>URL del foro *</label>
+                    <input type="url" id="url" placeholder="https://animezoneesp.foroactivo.com/..." required>
+                </div>
+                <div class="form-group">
+                    <label>Género Específico (opcional)</label>
+                    <input type="text" id="specificGenre" placeholder="Acción, Aventura, Mecha...">
+                </div>
+                <div class="form-group">
+                    <label>Notas / Razón de clasificación</label>
+                    <textarea id="razonClasificacion" rows="3" placeholder="Añadido manualmente desde el panel..."></textarea>
+                </div>
+                <button type="submit">💾 Guardar Serie</button>
+                <div id="addStatus" class="status-msg"></div>
+            </form>
+        </div>
+
+        <!-- Tab: Ver Catálogo -->
+        <div id="tab-catalog" class="tab-content">
+            <h2>Catálogo de Series</h2>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="🔍 Buscar por nombre, género, año..." oninput="filterSeries()">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterByCategory('all')">Todos</button>
+                <button class="filter-btn" onclick="filterByCategory('anime')">Anime</button>
+                <button class="filter-btn" onclick="filterByCategory('dibujos')">Dibujos</button>
+                <button class="filter-btn" onclick="filterByCategory('peliculas')">Películas</button>
+                <button class="filter-btn" onclick="filterByCategory('series')">Series</button>
+            </div>
+            <div id="seriesList" class="series-list"></div>
+        </div>
+
+        <!-- Tab: Importar/Exportar -->
+        <div id="tab-import" class="tab-content">
+            <h2>Importar / Exportar</h2>
+            
+            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                <h3>📤 Exportar JSON</h3>
+                <p>Descarga el archivo TOP.json como backup</p>
+                <button onclick="exportJSON()" class="btn-secondary">Descargar JSON</button>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                <h3>📁 Importar JSON</h3>
+                <p>Restaurar desde archivo JSON (reemplaza todo el catálogo)</p>
+                <input type="file" id="importFile" accept=".json" style="margin-bottom: 10px;">
+                <br>
+                <button onclick="importJSON()" class="btn-secondary">Importar</button>
+            </div>
+
+            <div style="background: rgba(233, 69, 96, 0.2); padding: 20px; border-radius: 10px; border: 2px solid #e94560;">
+                <h3>🚀 Subir a GitHub y Deploy</h3>
+                <p>Hace commit y push de los cambios, activando el deploy de GitHub Pages</p>
+                <button id="gitPushBtn" onclick="pushToGitHub()" class="btn-success" style="font-size: 16px; padding: 15px 30px;">
+                    Subir a GitHub y Deploy
+                </button>
+                <div id="gitStatus" class="status-msg"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = window.location.origin;
+        let currentData = null;
+        let currentCategory = 'all';
+        let currentSearch = '';
+
+        // Cargar datos al iniciar
+        async function loadData() {
+            try {
+                const response = await fetch(`${API_URL}/api/data`);
+                currentData = await response.json();
+                updateStats();
+                renderSeries();
+            } catch (error) {
+                console.error('Error cargando datos:', error);
+                alert('Error al cargar los datos. ¿El servidor está corriendo?');
+            }
+        }
+
+        // Actualizar estadísticas
+        function updateStats() {
+            if (!currentData) return;
+            document.getElementById('stat-total').textContent = currentData.resumen?.total || 0;
+            document.getElementById('stat-anime').textContent = currentData.resumen?.anime || 0;
+            document.getElementById('stat-dibujos').textContent = currentData.resumen?.dibujos || 0;
+            document.getElementById('stat-peliculas').textContent = currentData.resumen?.peliculas || 0;
+            document.getElementById('stat-series').textContent = currentData.resumen?.series || 0;
+        }
+
+        // Mostrar pestaña
+        function showTab(tabName) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(`tab-${tabName}`).classList.add('active');
+            
+            if (tabName === 'catalog') {
+                renderSeries();
+            }
+        }
+
+        // Añadir serie
+        document.getElementById('addForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const data = {
+                name: document.getElementById('name').value,
+                year: parseInt(document.getElementById('year').value),
+                type: document.getElementById('type').value,
+                genre: document.getElementById('genre').value,
+                url: document.getElementById('url').value,
+                href: '/' + document.getElementById('url').value.split('/').pop().split('#')[0],
+                specificGenre: document.getElementById('specificGenre').value,
+                razonClasificacion: document.getElementById('razonClasificacion').value || 'Añadido manualmente desde el panel',
+                originalGenre: document.getElementById('genre').value
+            };
+
+            try {
+                const response = await fetch(`${API_URL}/api/series/add`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                const statusEl = document.getElementById('addStatus');
+                
+                if (response.ok) {
+                    statusEl.textContent = '✅ Serie añadida correctamente';
+                    statusEl.className = 'status-msg success';
+                    document.getElementById('addForm').reset();
+                    loadData();
+                } else {
+                    statusEl.textContent = '❌ ' + (result.error || 'Error desconocido');
+                    statusEl.className = 'status-msg error';
+                }
+                statusEl.style.display = 'block';
+                
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+
+        // Filtrar series
+        function filterByCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+            renderSeries();
+        }
+
+        function filterSeries() {
+            currentSearch = document.getElementById('searchInput').value.toLowerCase();
+            renderSeries();
+        }
+
+        // Renderizar lista de series
+        function renderSeries() {
+            if (!currentData) return;
+            
+            const list = document.getElementById('seriesList');
+            list.innerHTML = '';
+            
+            const categories = currentCategory === 'all' ? ['anime', 'dibujos', 'peliculas', 'series'] : [currentCategory];
+            let series = [];
+            
+            categories.forEach(cat => {
+                if (currentData[cat]) {
+                    currentData[cat].forEach((item, idx) => {
+                        series.push({ ...item, _cat: cat, _idx: idx });
+                    });
+                }
+            });
+            
+            // Filtrar por búsqueda
+            if (currentSearch) {
+                series = series.filter(s => 
+                    s.name?.toLowerCase().includes(currentSearch) ||
+                    s.genre?.toLowerCase().includes(currentSearch) ||
+                    String(s.year).includes(currentSearch)
+                );
+            }
+            
+            // Ordenar por nombre
+            series.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+            
+            if (series.length === 0) {
+                list.innerHTML = '<p style="text-align: center; color: #888; padding: 40px;">No se encontraron series</p>';
+                return;
+            }
+            
+            series.forEach(item => {
+                const el = document.createElement('div');
+                el.className = 'series-item';
+                el.innerHTML = `
+                    <div class="series-info">
+                        <div class="series-name">${item.name}</div>
+                        <div class="series-meta">
+                            ${item.type} • ${item.year || 'N/A'} • ${item.genre}
+                        </div>
+                    </div>
+                    <div class="series-actions">
+                        <button class="icon-btn btn-edit" onclick="editSeries('${item._cat}', ${item._idx})">✏️</button>
+                        <button class="icon-btn btn-delete" onclick="deleteSeries('${item._cat}', ${item._idx})">🗑️</button>
+                    </div>
+                `;
+                list.appendChild(el);
+            });
+        }
+
+        // Exportar JSON
+        function exportJSON() {
+            if (!currentData) return;
+            const blob = new Blob([JSON.stringify(currentData, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `TOP_backup_${new Date().toISOString().slice(0,10)}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Importar JSON
+        async function importJSON() {
+            const file = document.getElementById('importFile').files[0];
+            if (!file) {
+                alert('Selecciona un archivo JSON');
+                return;
+            }
+            
+            if (!confirm('⚠️ Esto reemplazará TODO el catálogo actual. ¿Continuar?')) return;
+            
+            const reader = new FileReader();
+            reader.onload = async (e) => {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    const response = await fetch(`${API_URL}/api/data`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data)
+                    });
+                    
+                    if (response.ok) {
+                        alert('✅ Catálogo importado correctamente');
+                        loadData();
+                    } else {
+                        alert('❌ Error al importar');
+                    }
+                } catch (err) {
+                    alert('❌ Archivo JSON inválido');
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        // Push a GitHub
+        async function pushToGitHub() {
+            const btn = document.getElementById('gitPushBtn');
+            const status = document.getElementById('gitStatus');
+            
+            btn.disabled = true;
+            btn.innerHTML = '<span class="loading"></span> Subiendo...';
+            status.style.display = 'none';
+            
+            try {
+                const response = await fetch(`${API_URL}/api/git/push`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({})
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    status.textContent = '✅ ' + result.message;
+                    status.className = 'status-msg success';
+                } else {
+                    status.textContent = '❌ Error: ' + (result.error || result.details || 'Error desconocido');
+                    status.className = 'status-msg error';
+                }
+            } catch (error) {
+                status.textContent = '❌ Error de conexión: ' + error.message;
+                status.className = 'status-msg error';
+            }
+            
+            status.style.display = 'block';
+            btn.disabled = false;
+            btn.innerHTML = '🚀 Subir a GitHub y Deploy';
+        }
+
+        // Editar serie (simplificado - solo eliminar y re-crear)
+        async function deleteSeries(cat, idx) {
+            if (!confirm('¿Eliminar esta serie?')) return;
+            
+            try {
+                const response = await fetch(`${API_URL}/api/series/${cat}/${idx}`, {
+                    method: 'DELETE'
+                });
+                
+                if (response.ok) {
+                    loadData();
+                    renderSeries();
+                } else {
+                    alert('Error al eliminar');
+                }
+            } catch (error) {
+                alert('Error de conexión');
+            }
+        }
+
+        function editSeries(cat, idx) {
+            alert('Función de edición: ve a "Añadir Nuevo" y crea la serie con los datos correctos, luego elimina esta versión.');
+        }
+
+        // Cargar datos al inicio
+        loadData();
+    </script>
+</body>
+</html>
