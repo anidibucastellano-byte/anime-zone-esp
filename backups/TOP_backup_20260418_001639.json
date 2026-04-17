@@ -12496,9 +12496,9 @@
     "anime": 391,
     "dibujos": 444,
     "peliculas": 173,
-    "series": 27,
-    "total": 1035,
-    "ultima_actualizacion": "2026-04-18 00:16:39"
+    "series": 26,
+    "total": 1034,
+    "ultima_actualizacion": "2026-04-17 21:04:31"
   },
   "series": [
     {
@@ -12812,19 +12812,6 @@
       "type": "Serie Live-Action",
       "url": "https://animezoneesp.foroactivo.com/t1108-activo-zoey-101-2005-castellano-65-65-tv-rip-560x320-135-505-mb-mega-pixeldrain-ver-online",
       "year": 2005
-    },
-    {
-      "name": "Cosas de casa",
-      "year": 1989,
-      "type": "Serie Live-Action",
-      "genre": "Comedia",
-      "specificGenre": "Comedia, Familia",
-      "url": "https://animezoneesp.foroactivo.com/t1711-activo-cosas-de-casa-1989-castellano-215-215-dvd-rip-720x540-190mb-405mb-mega-pixeldrain-ver-online#4186",
-      "href": "/t1711-activo-cosas-de-casa-1989-castellano-215-215-dvd-rip-720x540-190mb-405mb-mega-pixeldrain-ver-online",
-      "razonClasificacion": "Extraído automáticamente del foro - 2026-04-18 00:16",
-      "originalGenre": "Comedia",
-      "confianza": 100,
-      "fecha_adicion": "2026-04-18T00:16:39.579109"
     }
   ]
 }
