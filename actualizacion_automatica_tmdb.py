@@ -19,8 +19,61 @@ TMDB_LANGUAGE = "es-ES"
 nuevos_anime_dibujos = []
 
 def limpiar_texto(texto):
-    """Normalizar texto para comparación"""
-    return normalize('NFKD', texto.lower()).replace('é', 'e')
+    """Normalizar texto para comparación - elimina acentos y normaliza"""
+    import unicodedata
+    # Normalizar Unicode y eliminar diacríticos (acentos)
+    texto = unicodedata.normalize('NFKD', texto.lower())
+    texto = ''.join(c for c in texto if not unicodedata.combining(c))
+    # Reemplazar caracteres especiales comunes
+    reemplazos = {
+        'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u',
+        'à': 'a', 'è': 'e', 'ì': 'i', 'ò': 'o', 'ù': 'u',
+        'ä': 'a', 'ë': 'e', 'ï': 'i', 'ö': 'o', 'ü': 'u',
+        'â': 'a', 'ê': 'e', 'î': 'i', 'ô': 'o', 'û': 'u',
+        'ñ': 'n', 'ç': 'c',
+        '!': '', '¡': '', '?': '', '¿': '',
+        ':': '', ';': '', ',': '', '.': '',
+        '(': '', ')': '', '[': '', ']': '',
+        '-': ' ', '_': ' ', '/': ' ', '\\': ' '
+    }
+    for antiguo, nuevo in reemplazos.items():
+        texto = texto.replace(antiguo, nuevo)
+    # Eliminar espacios múltiples
+    texto = ' '.join(texto.split())
+    return texto.strip()
+
+def limpiar_nombre_para_comparar(nombre):
+    """Limpia nombre para comparación de duplicados - elimina prefijos, años y normaliza"""
+    import re
+    if not nombre:
+        return ""
+    
+    nombre = nombre.lower()
+    
+    # Eliminar prefijos comunes
+    prefijos = [
+        r'\[activo\]', r'\[castellano\]', r'\[dual-audio\]', r'\[multi-audio\]', 
+        r'\[tri-audio\]', r'\[japon[eé]s\]', r'\[latino\]', r'\[espa[nñ]ol\]',
+        r'\[sub-esp\]', r'\[hd\]', r'\[sd\]', r'\[1080p\]', r'\[720p\]',
+        r'\[completo\]', r'\[ongoing\]', r'\[finalizado\]'
+    ]
+    for prefijo in prefijos:
+        nombre = re.sub(prefijo, '', nombre, flags=re.IGNORECASE)
+    
+    # Eliminar años entre paréntesis: (2014), (1998), etc.
+    nombre = re.sub(r'\(\d{4}\)', '', nombre)
+    
+    # Eliminar información técnica entre corchetes y paréntesis
+    nombre = re.sub(r'\[[^\]]+\]', '', nombre)
+    nombre = re.sub(r'\([^\)]+\]', '', nombre)  # Corregir paréntesis mal cerrados
+    
+    # Eliminar información de capítulos: [24/24], 12/12, etc.
+    nombre = re.sub(r'\d+/\d+', '', nombre)
+    
+    # Aplicar limpieza de texto normal
+    nombre = limpiar_texto(nombre)
+    
+    return nombre.strip()
 
 def get_sort_name_perfect(item):
     """Función perfecta para ordenamiento"""
@@ -711,6 +764,10 @@ def extraer_contenido_seccion(url_base, seccion_id):
 
 def actualizar_top_json_con_tmdb():
     """Función principal de actualización automática con TMDB"""
+    global nuevos_anime_dibujos
+    
+    # Inicializar variable global para recolectar items de f11
+    nuevos_anime_dibujos = []
     
     print(f"🔄 Actualización Automática con TMDB - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("=" * 70)
@@ -824,20 +881,21 @@ def actualizar_top_json_con_tmdb():
         print(f"   📥 Items nuevos a filtrar: {len(contenido_nuevo)}")
         print(f"   📋 Items existentes: {len(contenido_existente)}")
         
-        # Crear conjunto de nombres existentes
+        # Crear conjunto de nombres existentes (usando limpieza completa que elimina prefijos)
         for item in contenido_existente:
-            nombre_limpio = limpiar_texto(item.get('name', ''))
-            nombres_existentes.add(nombre_limpio)
+            nombre_limpio = limpiar_nombre_para_comparar(item.get('name', ''))
+            if nombre_limpio:
+                nombres_existentes.add(nombre_limpio)
         
         print(f"   📝 Nombres existentes únicos: {len(nombres_existentes)}")
         
         # Filtrar solo los que no existen
         duplicados_encontrados = 0
         for i, item in enumerate(contenido_nuevo):
-            nombre_limpio = limpiar_texto(item.get('name', ''))
-            print(f"   📝 Item {i+1}: {nombre_limpio}")
+            nombre_limpio = limpiar_nombre_para_comparar(item.get('name', ''))
+            print(f"   📝 Item {i+1}: {nombre_limpio[:50]}...")
             
-            if nombre_limpio not in nombres_existentes:
+            if nombre_limpio and nombre_limpio not in nombres_existentes:
                 nuevos.append(item)
                 nombres_existentes.add(nombre_limpio)
                 print(f"      ✅ NUEVO: {nombre_limpio}")
@@ -858,11 +916,13 @@ def actualizar_top_json_con_tmdb():
     peliculas_nuevas_unicas = filtrar_nuevos(todas_peliculas, peliculas_existente)
     
     # Filtrar anime y dibujos de f11 contra los existentes
-    anime_nuevos_unicos = filtrar_nuevos([item for item in nuevas_series if item.get('tmdb_type') == 'anime'], anime_existente)
-    dibujos_nuevos_unicos = filtrar_nuevos([item for item in nuevas_series if item.get('tmdb_type') == 'dibujos'], dibujos_existente)
+    # Usar la variable global nuevos_anime_dibujos que se llenó en extraer_contenido_seccion
+    print(f"📦 Items recolectados de f11: {len(nuevos_anime_dibujos)}")
+    for item in nuevos_anime_dibujos:
+        print(f"  - {item.get('name', 'Sin nombre')[:50]}... (Tipo: {item.get('tmdb_type', 'N/A')})")
     
-    # Para anime/dibujos de f11, guardar en variable para añadir después
-    nuevos_anime_dibujos = []  # Variable para guardar los nuevos items de f11
+    anime_nuevos_unicos = filtrar_nuevos([item for item in nuevos_anime_dibujos if item.get('tmdb_type') == 'anime'], anime_existente)
+    dibujos_nuevos_unicos = filtrar_nuevos([item for item in nuevos_anime_dibujos if item.get('tmdb_type') == 'dibujos'], dibujos_existente)
     
     # Búsqueda específica para películas que podrían estar en otras secciones
     print(f"\n🔍 Búsqueda específica de películas populares...")
