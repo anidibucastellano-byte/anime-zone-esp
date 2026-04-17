@@ -1,9 +1,9 @@
 {
   "resumen": {
-    "anime": 389,
+    "anime": 392,
     "dibujos": 440,
     "peliculas": 173,
-    "total": 1028,
+    "total": 1031,
     "ultima_actualizacion": "2026-03-25 03:35:44",
     "series": 26
   },
@@ -4786,6 +4786,45 @@
       "year": 1995,
       "url": "https://animezoneesp.foroactivo.com/t297-activolas-tres-mellizas-1995-castellano-104-104-dvd-rip-960x720-325-625-mb-mega-pixeldrain-ver-online",
       "href": "/t297-activolas-tres-mellizas-1995-castellano-104-104-dvd-rip-960x720-325-625-mb-mega-pixeldrain-ver-online",
+      "type": "Anime",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
+      "specificGenre": "Drama",
+      "originalGenre": "Animación Japonesa",
+      "tmdb_type": "anime"
+    },
+    {
+      "name": "[Activo] Seraph of the end (El reino de los vampiros) (2015) [Castellano] [24/24] [WebDL-Rip] [1920x1080] [330MB/340MB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 2015,
+      "url": "https://animezoneesp.foroactivo.com/t1704-activo-seraph-of-the-end-el-reino-de-los-vampiros-2015-castellano-24-24-webdl-rip-1920x1080-330mb-340mb-mega-pixeldrain-ver-online",
+      "href": "/t1704-activo-seraph-of-the-end-el-reino-de-los-vampiros-2015-castellano-24-24-webdl-rip-1920x1080-330mb-340mb-mega-pixeldrain-ver-online",
+      "type": "Anime",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
+      "specificGenre": "Drama",
+      "originalGenre": "Animación Japonesa",
+      "tmdb_type": "anime"
+    },
+    {
+      "name": "[Activo] Un planeta extraño (2023) [Dual-Audio] [10/10] [WebDL-Rip] [1920x1080] [410MB/575MB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 2023,
+      "url": "https://animezoneesp.foroactivo.com/t1703-activo-un-planeta-extrano-2023-dual-audio-10-10-webdl-rip-1920x1080-410mb-575mb-mega-pixeldrain-ver-online",
+      "href": "/t1703-activo-un-planeta-extrano-2023-dual-audio-10-10-webdl-rip-1920x1080-410mb-575mb-mega-pixeldrain-ver-online",
+      "type": "Anime",
+      "genre": "Animación Japonesa",
+      "confianza": 90,
+      "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
+      "specificGenre": "Drama",
+      "originalGenre": "Animación Japonesa",
+      "tmdb_type": "anime"
+    },
+    {
+      "name": "[Activo] Sin Supervisión (2012) [Castellano] [13/13] [HD-RIP] [720x400] [295MB/330MB] [Mega/Pixeldrain] [Ver Online]",
+      "year": 2012,
+      "url": "https://animezoneesp.foroactivo.com/t1701-activo-sin-supervision-2012-castellano-13-13-hd-rip-720x400-295mb-330mb-mega-pixeldrain-ver-online",
+      "href": "/t1701-activo-sin-supervision-2012-castellano-13-13-hd-rip-720x400-295mb-330mb-mega-pixeldrain-ver-online",
       "type": "Anime",
       "genre": "Animación Japonesa",
       "confianza": 90,
