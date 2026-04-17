@@ -938,8 +938,22 @@ def actualizar_top_json_con_tmdb():
     for item in nuevos_anime_dibujos:
         print(f"  - {item.get('name', 'Sin nombre')[:50]}... (Tipo: {item.get('tmdb_type', 'N/A')})")
     
-    anime_nuevos_unicos = filtrar_nuevos([item for item in nuevos_anime_dibujos if item.get('tmdb_type') == 'anime'], anime_existente)
-    dibujos_nuevos_unicos = filtrar_nuevos([item for item in nuevos_anime_dibujos if item.get('tmdb_type') == 'dibujos'], dibujos_existente)
+    # Separar por tipo antes de filtrar
+    anime_items_f11 = [item for item in nuevos_anime_dibujos if item.get('tmdb_type') == 'anime']
+    dibujos_items_f11 = [item for item in nuevos_anime_dibujos if item.get('tmdb_type') == 'dibujos']
+    
+    print(f"\n🔍 Separados por tipo:")
+    print(f"   Anime items: {len(anime_items_f11)}")
+    print(f"   Dibujos items: {len(dibujos_items_f11)}")
+    print(f"   Anime existente: {len(anime_existente)}")
+    print(f"   Dibujos existente: {len(dibujos_existente)}")
+    
+    anime_nuevos_unicos = filtrar_nuevos(anime_items_f11, anime_existente)
+    dibujos_nuevos_unicos = filtrar_nuevos(dibujos_items_f11, dibujos_existente)
+    
+    print(f"\n📊 Resultado del filtrado:")
+    print(f"   Anime nuevos únicos: {len(anime_nuevos_unicos)}")
+    print(f"   Dibujos nuevos únicos: {len(dibujos_nuevos_unicos)}")
     
     # Búsqueda específica para películas que podrían estar en otras secciones
     print(f"\n🔍 Búsqueda específica de películas populares...")
