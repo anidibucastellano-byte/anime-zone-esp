@@ -10412,19 +10412,6 @@
       "type": "Dibujos",
       "url": "https://animezoneesp.foroactivo.com/t1708-activo-capitan-biceps-2010-castellano-39-78-tv-rip-632x360-35mb-100mb-mega-pixeldrain-ver-online#4179",
       "year": 2010
-    },
-    {
-      "name": "Mandarina y Vaca",
-      "year": 2007,
-      "type": "Dibujos",
-      "genre": "Comedia",
-      "specificGenre": "Comedia, Familia",
-      "url": "https://animezoneesp.foroactivo.com/t1718-activo-mandarina-y-vaca-2007-castellano-76-76-dvb-rip-704x528-65mb-90mb-mega-pixeldrain-ver-online#4194",
-      "href": "/t1718-activo-mandarina-y-vaca-2007-castellano-76-76-dvb-rip-704x528-65mb-90mb-mega-pixeldrain-ver-online",
-      "razonClasificacion": "Extraído automáticamente del foro - 2026-04-18 02:04",
-      "originalGenre": "Comedia",
-      "confianza": 100,
-      "fecha_adicion": "2026-04-18T02:13:10.467036"
     }
   ],
   "peliculas": [
@@ -12503,28 +12490,15 @@
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1694-activo-digimon-la-pelicula-1999-multi-audio-bd-rip-1920x1080-1003gb-mega-ver-online",
       "year": 1999
-    },
-    {
-      "name": "La fortuna sonríe a Lady Nikuko",
-      "year": 2021,
-      "type": "Película",
-      "genre": "Comedia",
-      "specificGenre": "Drama, Familia, Comedia",
-      "url": "https://animezoneesp.foroactivo.com/t1719-activo-la-fortuna-sonrie-a-lady-nikuko-2021-dual-audio-bd-rip-1920x1080-890gb-mega-pixeldrain-ver-online#4195",
-      "href": "/t1719-activo-la-fortuna-sonrie-a-lady-nikuko-2021-dual-audio-bd-rip-1920x1080-890gb-mega-pixeldrain-ver-online",
-      "razonClasificacion": "Extraído automáticamente del foro - 2026-04-18 02:27",
-      "originalGenre": "Comedia",
-      "confianza": 100,
-      "fecha_adicion": "2026-04-18T02:34:25.076867"
     }
   ],
   "resumen": {
     "anime": 391,
-    "dibujos": 445,
-    "peliculas": 174,
+    "dibujos": 444,
+    "peliculas": 173,
     "series": 31,
-    "total": 1041,
-    "ultima_actualizacion": "2026-04-18 02:34:25"
+    "total": 1039,
+    "ultima_actualizacion": "2026-04-18 01:36:50"
   },
   "series": [
     {

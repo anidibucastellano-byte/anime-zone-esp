@@ -75,6 +75,17 @@
             outline: none;
             border-color: #e94560;
         }
+        /* Fix para desplegables - texto oscuro sobre fondo claro */
+        select option {
+            background: #fff;
+            color: #333;
+            padding: 10px;
+        }
+        select option:hover, select option:focus, select option:active,
+        select option:checked {
+            background: #e94560 !important;
+            color: #fff !important;
+        }
         button {
             padding: 12px 24px;
             background: #e94560;
@@ -194,9 +205,66 @@
         @media (max-width: 768px) {
             .two-col { grid-template-columns: 1fr; }
         }
+        /* Toast Notifications */
+        .toast-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .toast {
+            background: rgba(30, 30, 50, 0.95);
+            border-left: 4px solid #e94560;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            animation: slideIn 0.3s ease;
+            max-width: 400px;
+            word-wrap: break-word;
+        }
+        .toast.success { border-left-color: #00ff00; }
+        .toast.error { border-left-color: #ff0000; }
+        .toast.warning { border-left-color: #ffd700; }
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes fadeOut {
+            to { opacity: 0; transform: translateX(100%); }
+        }
+        .toast.hiding { animation: fadeOut 0.3s ease forwards; }
+        /* Skeleton loading */
+        .skeleton {
+            background: linear-gradient(90deg, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 4px;
+        }
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        .tooltip {
+            position: relative;
+        }
+        .tooltip:hover::after {
+            content: attr(data-tip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.9);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            z-index: 100;
+        }
     </style>
 </head>
 <body>
+    <div class="toast-container" id="toastContainer"></div>
     <div class="container">
         <header>
             <h1>🎬 Panel de Control</h1>
@@ -231,7 +299,7 @@
             <button class="tab" onclick="showTab('extract')">🔍 Extraer URL</button>
             <button class="tab" onclick="showTab('batch')">📦 Batch Masivo</button>
             <button class="tab" onclick="showTab('catalog')">📋 Ver Catálogo</button>
-            <button class="tab" onclick="showTab('import')">📥 Importar/Exportar</button>
+            <button class="tab tooltip" data-tip="Push a GitHub" onclick="showTab('import')">� Deploy</button>
         </div>
 
         <!-- Tab: Añadir Nuevo -->
@@ -446,8 +514,14 @@ https://animezoneesp.foroactivo.com/t9012-...
             <div style="background: rgba(233, 69, 96, 0.2); padding: 20px; border-radius: 10px; border: 2px solid #e94560;">
                 <h3>🚀 Subir a GitHub y Deploy</h3>
                 <p>Hace commit y push de los cambios, activando el deploy de GitHub Pages</p>
-                <button id="gitPushBtn" onclick="pushToGitHub()" class="btn-success" style="font-size: 16px; padding: 15px 30px;">
-                    Subir a GitHub y Deploy
+                <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; margin: 15px 0;">
+                    <label style="display: flex; align-items: center; cursor: pointer; margin-bottom: 10px;">
+                        <input type="checkbox" id="confirmPush" style="width: auto; margin-right: 10px;">
+                        <span>✅ Confirmo que quiero subir los cambios a producción</span>
+                    </label>
+                </div>
+                <button id="gitPushBtn" onclick="pushToGitHub()" class="btn-success" style="font-size: 16px; padding: 15px 30px;" disabled>
+                    🚀 Subir a GitHub y Deploy
                 </button>
                 <div id="gitStatus" class="status-msg"></div>
             </div>
@@ -460,17 +534,53 @@ https://animezoneesp.foroactivo.com/t9012-...
         let currentCategory = 'all';
         let currentSearch = '';
 
+        // ========== UTILIDADES ==========
+        function showToast(message, type = 'success', duration = 3000) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.innerHTML = message;
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.add('hiding');
+                setTimeout(() => toast.remove(), 300);
+            }, duration);
+        }
+        
+        // Debounce para búsqueda
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
         // Cargar datos al iniciar
         async function loadData() {
             try {
+                showSkeletonStats();
                 const response = await fetch(`${API_URL}/api/data`);
                 currentData = await response.json();
                 updateStats();
                 renderSeries();
+                showToast('📊 Datos cargados correctamente', 'success', 2000);
             } catch (error) {
                 console.error('Error cargando datos:', error);
-                alert('Error al cargar los datos. ¿El servidor está corriendo?');
+                showToast('❌ Error al cargar datos. ¿Servidor corriendo?', 'error', 5000);
             }
+        }
+        
+        function showSkeletonStats() {
+            ['stat-total', 'stat-anime', 'stat-dibujos', 'stat-peliculas', 'stat-series'].forEach(id => {
+                const el = document.getElementById(id);
+                el.innerHTML = '<div class="skeleton" style="width: 40px; height: 30px; margin: 0 auto;"></div>';
+            });
         }
 
         // Actualizar estadísticas
@@ -495,6 +605,11 @@ https://animezoneesp.foroactivo.com/t9012-...
                 renderSeries();
             }
         }
+        
+        // Checkbox para habilitar push
+        document.getElementById('confirmPush')?.addEventListener('change', function() {
+            document.getElementById('gitPushBtn').disabled = !this.checked;
+        });
 
         // Añadir serie
         document.getElementById('addForm').addEventListener('submit', async (e) => {
@@ -520,21 +635,19 @@ https://animezoneesp.foroactivo.com/t9012-...
                 });
                 
                 const result = await response.json();
-                const statusEl = document.getElementById('addStatus');
                 
                 if (response.ok) {
-                    statusEl.textContent = '✅ Serie añadida correctamente';
-                    statusEl.className = 'status-msg success';
+                    showToast(`✅ "${data.name}" añadido correctamente`, 'success');
                     document.getElementById('addForm').reset();
                     loadData();
+                } else if (response.status === 409) {
+                    showToast('⚠️ Esta serie ya existe en el catálogo', 'warning');
                 } else {
-                    statusEl.textContent = '❌ ' + (result.error || 'Error desconocido');
-                    statusEl.className = 'status-msg error';
+                    showToast('❌ ' + (result.error || 'Error desconocido'), 'error');
                 }
-                statusEl.style.display = 'block';
-                
             } catch (error) {
                 console.error('Error:', error);
+                showToast('❌ Error de conexión', 'error');
             }
         });
 
@@ -546,10 +659,11 @@ https://animezoneesp.foroactivo.com/t9012-...
             renderSeries();
         }
 
-        function filterSeries() {
+        // Búsqueda con debounce (300ms)
+        const filterSeries = debounce(() => {
             currentSearch = document.getElementById('searchInput').value.toLowerCase();
             renderSeries();
-        }
+        }, 300);
 
         // Renderizar lista de series
         function renderSeries() {
@@ -607,7 +721,10 @@ https://animezoneesp.foroactivo.com/t9012-...
 
         // Exportar JSON
         function exportJSON() {
-            if (!currentData) return;
+            if (!currentData) {
+                showToast('❌ No hay datos para exportar', 'error');
+                return;
+            }
             const blob = new Blob([JSON.stringify(currentData, null, 2)], { type: 'application/json' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
@@ -615,13 +732,14 @@ https://animezoneesp.foroactivo.com/t9012-...
             a.download = `TOP_backup_${new Date().toISOString().slice(0,10)}.json`;
             a.click();
             URL.revokeObjectURL(url);
+            showToast('✅ JSON descargado correctamente', 'success');
         }
 
         // Importar JSON
         async function importJSON() {
             const file = document.getElementById('importFile').files[0];
             if (!file) {
-                alert('Selecciona un archivo JSON');
+                showToast('❌ Selecciona un archivo JSON', 'error');
                 return;
             }
             
@@ -638,13 +756,13 @@ https://animezoneesp.foroactivo.com/t9012-...
                     });
                     
                     if (response.ok) {
-                        alert('✅ Catálogo importado correctamente');
+                        showToast('✅ Catálogo importado correctamente', 'success');
                         loadData();
                     } else {
-                        alert('❌ Error al importar');
+                        showToast('❌ Error al importar', 'error');
                     }
                 } catch (err) {
-                    alert('❌ Archivo JSON inválido');
+                    showToast('❌ Archivo JSON inválido', 'error');
                 }
             };
             reader.readAsText(file);
@@ -695,18 +813,20 @@ https://animezoneesp.foroactivo.com/t9012-...
                 });
                 
                 if (response.ok) {
+                    showToast('🗑️ Serie eliminada', 'success', 2000);
                     loadData();
                     renderSeries();
                 } else {
-                    alert('Error al eliminar');
+                    showToast('❌ Error al eliminar', 'error');
                 }
             } catch (error) {
-                alert('Error de conexión');
+                showToast('❌ Error de conexión', 'error');
             }
         }
 
         function editSeries(cat, idx) {
-            alert('Función de edición: ve a "Añadir Nuevo" y crea la serie con los datos correctos, luego elimina esta versión.');
+            const item = currentData[cat][idx];
+            showToast(`💡 Copia los datos y ve a "➕ Añadir Nuevo"<br><small>${item.name}</small>`, 'warning', 5000);
         }
 
         // ========== EXTRACCIÓN AUTOMÁTICA DESDE URL ==========
@@ -720,9 +840,7 @@ https://animezoneesp.foroactivo.com/t9012-...
             const result = document.getElementById('extractResult');
 
             if (!url || !url.includes('animezoneesp.foroactivo.com')) {
-                status.textContent = '❌ URL inválida. Debe ser del foro animezoneesp.foroactivo.com';
-                status.className = 'status-msg error';
-                status.style.display = 'block';
+                showToast('❌ URL inválida. Debe ser del foro animezoneesp.foroactivo.com', 'error');
                 return;
             }
 
@@ -751,48 +869,37 @@ https://animezoneesp.foroactivo.com/t9012-...
                     document.getElementById('editRazon').value = currentExtractedData.razonClasificacion || '';
                     
                     result.style.display = 'block';
-                    status.textContent = '✅ Datos extraídos. Puedes editarlos antes de guardar.';
-                    status.className = 'status-msg success';
+                    showToast('✅ Datos extraídos. Edítalos antes de guardar.', 'success');
                 } else {
-                    status.textContent = '❌ Error: ' + (result_data.error || 'No se pudo extraer');
-                    status.className = 'status-msg error';
+                    showToast('❌ ' + (result_data.error || 'No se pudo extraer'), 'error');
                 }
             } catch (error) {
-                status.textContent = '❌ Error de conexión: ' + error.message;
-                status.className = 'status-msg error';
+                showToast('❌ Error de conexión: ' + error.message, 'error');
             }
 
-            status.style.display = 'block';
             btn.disabled = false;
             btn.innerHTML = '🔍 Extraer Datos';
         }
 
         async function saveEditedData() {
-            const status = document.getElementById('extractStatus');
-            
             // Recoger datos del formulario editable
             const editedData = {
-                name: document.getElementById('editName').value,
+                name: document.getElementById('editName').value.trim(),
                 year: parseInt(document.getElementById('editYear').value) || null,
                 type: document.getElementById('editType').value,
                 genre: document.getElementById('editGenre').value,
-                specificGenre: document.getElementById('editSpecificGenre').value,
-                url: document.getElementById('editUrl').value,
+                specificGenre: document.getElementById('editSpecificGenre').value.trim(),
+                url: document.getElementById('editUrl').value.trim(),
                 href: '/' + document.getElementById('editUrl').value.split('/').pop().split('#')[0],
-                razonClasificacion: document.getElementById('editRazon').value,
+                razonClasificacion: document.getElementById('editRazon').value.trim(),
                 originalGenre: document.getElementById('editGenre').value,
-                confianza: 100  // Manual = máxima confianza
+                confianza: 100
             };
 
             if (!editedData.name || !editedData.url) {
-                status.textContent = '❌ Nombre y URL son obligatorios';
-                status.className = 'status-msg error';
-                status.style.display = 'block';
+                showToast('❌ Nombre y URL son obligatorios', 'error');
                 return;
             }
-
-            status.textContent = '⏳ Guardando...';
-            status.style.display = 'block';
 
             try {
                 const response = await fetch(`${API_URL}/api/series/add`, {
@@ -804,20 +911,16 @@ https://animezoneesp.foroactivo.com/t9012-...
                 const result = await response.json();
 
                 if (response.ok) {
-                    status.textContent = '✅ Serie guardada correctamente';
-                    status.className = 'status-msg success';
+                    showToast(`✅ "${editedData.name}" guardado correctamente`, 'success');
                     clearExtract();
                     loadData();
                 } else if (response.status === 409) {
-                    status.textContent = '⚠️ Esta serie ya existe en el catálogo';
-                    status.className = 'status-msg error';
+                    showToast('⚠️ Esta serie ya existe en el catálogo', 'warning', 4000);
                 } else {
-                    status.textContent = '❌ Error: ' + (result.error || 'No se pudo guardar');
-                    status.className = 'status-msg error';
+                    showToast('❌ ' + (result.error || 'No se pudo guardar'), 'error');
                 }
             } catch (error) {
-                status.textContent = '❌ Error: ' + error.message;
-                status.className = 'status-msg error';
+                showToast('❌ Error: ' + error.message, 'error');
             }
         }
 
@@ -851,7 +954,7 @@ https://animezoneesp.foroactivo.com/t9012-...
             const urls = urlsText.split('\n').map(u => u.trim()).filter(u => u);
 
             if (urls.length === 0) {
-                alert('❌ No hay URLs válidas');
+                showToast('❌ No hay URLs válidas', 'error');
                 return;
             }
 
@@ -937,6 +1040,16 @@ https://animezoneesp.foroactivo.com/t9012-...
 
             btn.disabled = false;
             btn.textContent = '🚀 Procesar Todas';
+            
+            // Notificación resumen
+            if (errors === 0 && duplicates === 0) {
+                showToast(`✅ Batch completado: ${success} series guardadas`, 'success', 5000);
+            } else if (success > 0) {
+                showToast(`⚠️ Batch parcial: ${success} guardadas, ${duplicates} duplicadas, ${errors} errores`, 'warning', 6000);
+            } else {
+                showToast(`❌ Batch fallido: ${errors} errores, ${duplicates} duplicadas`, 'error', 5000);
+            }
+            
             loadData();
         }
 
