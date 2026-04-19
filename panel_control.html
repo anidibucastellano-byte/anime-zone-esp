@@ -299,7 +299,8 @@
             <button class="tab" onclick="showTab('extract')">🔍 Extraer URL</button>
             <button class="tab" onclick="showTab('batch')">📦 Batch Masivo</button>
             <button class="tab" onclick="showTab('catalog')">📋 Ver Catálogo</button>
-            <button class="tab tooltip" data-tip="Push a GitHub" onclick="showTab('import')">� Deploy</button>
+            <button class="tab" onclick="showTab('duplicates')">🔎 Duplicados</button>
+            <button class="tab tooltip" data-tip="Push a GitHub" onclick="showTab('import')">🚀 Deploy</button>
         </div>
 
         <!-- Tab: Añadir Nuevo -->
@@ -440,9 +441,9 @@
                 <div>
                     <div class="extract-box">
                         <h3>📋 Lista de URLs</h3>
-                        <p>Pega una URL por línea. Se procesarán automáticamente todas.</p>
+                        <p>Pega una URL por línea. Primero se extraerán y podrás editar antes de guardar.</p>
                         <div class="form-group">
-                            <textarea id="batchUrls" rows="10" placeholder="https://animezoneesp.foroactivo.com/t1234-...
+                            <textarea id="batchUrls" rows="8" placeholder="https://animezoneesp.foroactivo.com/t1234-...
 https://animezoneesp.foroactivo.com/t5678-...
 https://animezoneesp.foroactivo.com/t9012-...
 ..."></textarea>
@@ -457,12 +458,16 @@ https://animezoneesp.foroactivo.com/t9012-...
                                 <option value="Serie Live-Action">Serie Live-Action</option>
                             </select>
                         </div>
-                        <button onclick="processBatch()" id="batchBtn" class="btn-success">🚀 Procesar Todas</button>
+                        <button onclick="extractBatchPreview()" id="batchExtractBtn" class="btn-success">� Extraer y Previsualizar</button>
+                        <button onclick="saveBatchAll()" id="batchSaveBtn" class="btn-success" style="display: none; background: #00cc00;">💾 Guardar Todas</button>
                         <button onclick="clearBatch()" class="btn-secondary">Limpiar</button>
+                    </div>
+                    <div id="batchSummary" style="margin-top: 15px; padding: 10px; background: rgba(0,0,0,0.3); border-radius: 8px; display: none;">
+                        <strong>Resumen:</strong> <span id="batchCount">0</span> series listas para guardar
                     </div>
                 </div>
                 <div>
-                    <h3>📊 Progreso</h3>
+                    <h3>📊 Progreso de Extracción</h3>
                     <div id="batchProgress" style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; margin-bottom: 15px; display: none;">
                         <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
                             <span id="batchStats">0/0 procesados</span>
@@ -472,7 +477,7 @@ https://animezoneesp.foroactivo.com/t9012-...
                             <div id="batchBar" style="background: linear-gradient(90deg, #e94560, #00d9ff); height: 100%; width: 0%; transition: width 0.3s;"></div>
                         </div>
                     </div>
-                    <div id="batchResults" class="batch-list" style="display: none;"></div>
+                    <div id="batchResults" class="batch-list" style="display: none; max-height: 500px; overflow-y: auto;"></div>
                 </div>
             </div>
         </div>
@@ -490,7 +495,55 @@ https://animezoneesp.foroactivo.com/t9012-...
                 <button class="filter-btn" onclick="filterByCategory('peliculas')">Películas</button>
                 <button class="filter-btn" onclick="filterByCategory('series')">Series</button>
             </div>
+            <!-- Controles de selección múltiple -->
+            <div id="bulkControls" style="display: none; background: rgba(233,69,96,0.15); border: 2px solid #e94560; border-radius: 10px; padding: 12px 15px; margin-bottom: 15px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <input type="checkbox" id="selectAll" onchange="toggleSelectAll()" style="width: 18px; height: 18px; cursor: pointer;">
+                        <label for="selectAll" style="cursor: pointer; color: #fff; font-size: 14px;">
+                            Todos (<span id="selectedCount" style="color: #e94560; font-weight: bold;">0</span>)
+                        </label>
+                    </div>
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                        <select id="bulkMoveTarget" style="padding: 6px 10px; border-radius: 6px; background: rgba(0,0,0,0.3); color: #fff; border: 1px solid #9b59b6; font-size: 13px;">
+                            <option value="">📁 Mover a...</option>
+                            <option value="anime">📺 Anime</option>
+                            <option value="dibujos">🎨 Dibujos</option>
+                            <option value="peliculas">🎬 Películas</option>
+                            <option value="series">📺 Series</option>
+                        </select>
+                        <button onclick="moveSelected()" style="background: #9b59b6; padding: 6px 14px; font-size: 13px; border-radius: 6px;">📁 Mover</button>
+                        <button onclick="deleteSelected()" style="background: #c0392b; padding: 6px 14px; font-size: 13px; border-radius: 6px;">🗑️ Eliminar</button>
+                        <button onclick="clearSelection()" style="background: #7f8c8d; padding: 6px 14px; font-size: 13px; border-radius: 6px;">✕</button>
+                    </div>
+                </div>
+            </div>
             <div id="seriesList" class="series-list"></div>
+        </div>
+
+        <!-- Tab: Duplicados -->
+        <div id="tab-duplicates" class="tab-content">
+            <h2>🔎 Gestor de Duplicados</h2>
+            
+            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 15px;">
+                    <button onclick="findDuplicatesSameCategory()" class="btn-success">🔍 Buscar duplicados (misma sección)</button>
+                    <button onclick="findDuplicatesAllCategories()" class="btn-success" style="background: #9b59b6;">🔍 Buscar duplicados (entre secciones)</button>
+                    <button onclick="clearDuplicates()" class="btn-secondary">Limpiar</button>
+                </div>
+                <p style="color: #888; font-size: 13px;">
+                    • <strong>Misma sección:</strong> Encuentra series duplicadas dentro de Anime, Dibujos, Películas o Series<br>
+                    • <strong>Entre secciones:</strong> Encuentra la misma serie en diferentes categorías (ej: mismo anime en Anime y en Películas)
+                </p>
+            </div>
+
+            <div id="duplicatesResults" style="display: none;">
+                <div style="background: rgba(233,69,96,0.1); border: 1px solid #e94560; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
+                    <h3 style="color: #e94560; margin-bottom: 10px;">📊 Resumen</h3>
+                    <div id="duplicatesStats" style="font-size: 14px;"></div>
+                </div>
+                <div id="duplicatesList" style="display: grid; gap: 15px;"></div>
+            </div>
         </div>
 
         <!-- Tab: Importar/Exportar -->
@@ -666,10 +719,13 @@ https://animezoneesp.foroactivo.com/t9012-...
         }, 300);
 
         // Renderizar lista de series
+        let selectedItems = new Set(); // Almacena los IDs de items seleccionados
+
         function renderSeries() {
             if (!currentData) return;
             
             const list = document.getElementById('seriesList');
+            const bulkControls = document.getElementById('bulkControls');
             list.innerHTML = '';
             
             const categories = currentCategory === 'all' ? ['anime', 'dibujos', 'peliculas', 'series'] : [currentCategory];
@@ -678,7 +734,7 @@ https://animezoneesp.foroactivo.com/t9012-...
             categories.forEach(cat => {
                 if (currentData[cat]) {
                     currentData[cat].forEach((item, idx) => {
-                        series.push({ ...item, _cat: cat, _idx: idx });
+                        series.push({ ...item, _cat: cat, _idx: idx, _id: `${cat}_${idx}` });
                     });
                 }
             });
@@ -695,6 +751,20 @@ https://animezoneesp.foroactivo.com/t9012-...
             // Ordenar por nombre
             series.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
             
+            // Mostrar/ocultar controles de selección múltiple
+            if (series.length > 0) {
+                bulkControls.style.display = 'block';
+            } else {
+                bulkControls.style.display = 'none';
+            }
+            
+            // Limpiar selección que ya no está visible
+            const visibleIds = new Set(series.map(s => s._id));
+            selectedItems.forEach(id => {
+                if (!visibleIds.has(id)) selectedItems.delete(id);
+            });
+            updateSelectionCount();
+            
             if (series.length === 0) {
                 list.innerHTML = '<p style="text-align: center; color: #888; padding: 40px;">No se encontraron series</p>';
                 return;
@@ -703,20 +773,186 @@ https://animezoneesp.foroactivo.com/t9012-...
             series.forEach(item => {
                 const el = document.createElement('div');
                 el.className = 'series-item';
+                const isSelected = selectedItems.has(item._id);
+                el.style.cssText = `
+                    background: ${isSelected ? 'rgba(233,69,96,0.2)' : 'rgba(255,255,255,0.05)'};
+                    border: ${isSelected ? '1px solid #e94560' : '1px solid rgba(233, 69, 96, 0.2)'};
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 15px;
+                    border-radius: 8px;
+                    gap: 15px;
+                `;
                 el.innerHTML = `
-                    <div class="series-info">
-                        <div class="series-name">${item.name}</div>
-                        <div class="series-meta">
-                            ${item.type} • ${item.year || 'N/A'} • ${item.genre}
+                    <div style="display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0;">
+                        <input type="checkbox" 
+                               class="series-checkbox" 
+                               data-id="${item._id}" 
+                               data-cat="${item._cat}" 
+                               data-idx="${item._idx}"
+                               ${isSelected ? 'checked' : ''} 
+                               onchange="toggleSelection('${item._id}', '${item._cat}', ${item._idx}, this.checked)"
+                               style="width: 18px; height: 18px; cursor: pointer; flex-shrink: 0;">
+                        <div class="series-info" onclick="toggleSelection('${item._id}', '${item._cat}', ${item._idx}, !selectedItems.has('${item._id}'))" style="cursor: pointer; overflow: hidden; color: #fff;">
+                            <div class="series-name" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #fff; font-weight: bold; font-size: 15px;">${item.name}</div>
+                            <div class="series-meta" style="color: #aaa; font-size: 12px; margin-top: 3px;">
+                                ${item.type} • ${item.year || 'N/A'} • ${item.genre}
+                            </div>
                         </div>
                     </div>
-                    <div class="series-actions">
-                        <button class="icon-btn btn-edit" onclick="editSeries('${item._cat}', ${item._idx})">✏️</button>
-                        <button class="icon-btn btn-delete" onclick="deleteSeries('${item._cat}', ${item._idx})">🗑️</button>
+                    <div class="series-actions" style="flex-shrink: 0;">
+                        <button class="icon-btn btn-edit" onclick="event.stopPropagation(); editSeries('${item._cat}', ${item._idx})">✏️</button>
+                        <button class="icon-btn btn-delete" onclick="event.stopPropagation(); deleteSeries('${item._cat}', ${item._idx})">🗑️</button>
                     </div>
                 `;
                 list.appendChild(el);
             });
+        }
+
+        // ========== SELECCIÓN MÚLTIPLE ==========
+        function toggleSelection(id, cat, idx, checked) {
+            if (checked) {
+                selectedItems.add(id);
+            } else {
+                selectedItems.delete(id);
+            }
+            updateSelectionCount();
+            renderSeries(); // Re-renderizar para actualizar estilos
+        }
+
+        function toggleSelectAll() {
+            const checkboxes = document.querySelectorAll('.series-checkbox');
+            const allChecked = document.getElementById('selectAll').checked;
+            
+            checkboxes.forEach(cb => {
+                const id = cb.dataset.id;
+                if (allChecked) {
+                    selectedItems.add(id);
+                } else {
+                    selectedItems.delete(id);
+                }
+            });
+            
+            updateSelectionCount();
+            renderSeries();
+        }
+
+        function updateSelectionCount() {
+            document.getElementById('selectedCount').textContent = selectedItems.size;
+            document.getElementById('selectAll').checked = selectedItems.size > 0 && selectedItems.size === document.querySelectorAll('.series-checkbox').length;
+        }
+
+        function clearSelection() {
+            selectedItems.clear();
+            document.getElementById('selectAll').checked = false;
+            document.getElementById('bulkMoveTarget').value = '';
+            updateSelectionCount();
+            renderSeries();
+        }
+
+        async function moveSelected() {
+            const target = document.getElementById('bulkMoveTarget').value;
+            if (!target) {
+                showToast('❌ Selecciona una categoría destino', 'error');
+                return;
+            }
+            
+            if (selectedItems.size === 0) {
+                showToast('❌ No hay series seleccionadas', 'error');
+                return;
+            }
+
+            const categorias = { 'anime': 'Anime', 'dibujos': 'Dibujos', 'peliculas': 'Películas', 'series': 'Series Live-Action' };
+            
+            if (!confirm(`¿Mover ${selectedItems.size} serie(s) a ${categorias[target]}?`)) {
+                return;
+            }
+
+            let success = 0;
+            let errors = 0;
+            
+            // Convertir Set a Array para iterar
+            const itemsToMove = Array.from(selectedItems).map(id => {
+                const [cat, idx] = id.split('_');
+                return { id, cat, idx: parseInt(idx) };
+            });
+
+            for (const item of itemsToMove) {
+                try {
+                    const response = await fetch(`${API_URL}/api/series/${item.cat}/${item.idx}/move`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ categoria_destino: target })
+                    });
+
+                    if (response.ok) {
+                        success++;
+                        selectedItems.delete(item.id);
+                    } else {
+                        errors++;
+                    }
+                } catch (error) {
+                    errors++;
+                }
+            }
+
+            if (success > 0) {
+                showToast(`✅ ${success} serie(s) movidas a ${categorias[target]}`, 'success');
+                loadData();
+            }
+            if (errors > 0) {
+                showToast(`❌ ${errors} error(es)`, 'error');
+            }
+            
+            clearSelection();
+        }
+
+        async function deleteSelected() {
+            if (selectedItems.size === 0) {
+                showToast('❌ No hay series seleccionadas', 'error');
+                return;
+            }
+
+            if (!confirm(`¿Eliminar ${selectedItems.size} serie(s)? Esta acción no se puede deshacer.`)) {
+                return;
+            }
+
+            let success = 0;
+            let errors = 0;
+            
+            // Ordenar por índice descendente para eliminar sin afectar índices previos
+            const itemsToDelete = Array.from(selectedItems).map(id => {
+                const [cat, idx] = id.split('_');
+                return { id, cat, idx: parseInt(idx) };
+            }).sort((a, b) => b.idx - a.idx);
+
+            for (const item of itemsToDelete) {
+                try {
+                    const response = await fetch(`${API_URL}/api/series/${item.cat}/${item.idx}`, {
+                        method: 'DELETE'
+                    });
+
+                    if (response.ok) {
+                        success++;
+                        selectedItems.delete(item.id);
+                    } else {
+                        errors++;
+                    }
+                } catch (error) {
+                    errors++;
+                }
+            }
+
+            if (success > 0) {
+                showToast(`🗑️ ${success} serie(s) eliminadas`, 'success');
+                loadData();
+            }
+            if (errors > 0) {
+                showToast(`❌ ${errors} error(es)`, 'error');
+            }
+            
+            clearSelection();
         }
 
         // Exportar JSON
@@ -826,7 +1062,134 @@ https://animezoneesp.foroactivo.com/t9012-...
 
         function editSeries(cat, idx) {
             const item = currentData[cat][idx];
-            showToast(`💡 Copia los datos y ve a "➕ Añadir Nuevo"<br><small>${item.name}</small>`, 'warning', 5000);
+            if (!item) return;
+
+            // Llenar el modal con los datos
+            document.getElementById('modalEditCat').value = cat;
+            document.getElementById('modalEditIdx').value = idx;
+            document.getElementById('modalEditName').value = item.name || '';
+            document.getElementById('modalEditYear').value = item.year || '';
+            document.getElementById('modalEditType').value = item.type || 'Anime';
+            document.getElementById('modalEditGenre').value = item.genre || 'Animación Japonesa';
+            document.getElementById('modalEditSpecificGenre').value = item.specificGenre || '';
+            document.getElementById('modalEditUrl').value = item.url || '';
+            document.getElementById('modalEditRazon').value = item.razonClasificacion || '';
+
+            // Mostrar el modal
+            document.getElementById('editModal').style.display = 'flex';
+        }
+
+        function closeEditModal() {
+            document.getElementById('editModal').style.display = 'none';
+        }
+
+        function updateModalGenreOptions() {
+            const type = document.getElementById('modalEditType').value;
+            const genreSelect = document.getElementById('modalEditGenre');
+
+            // Opciones por tipo
+            const options = {
+                'Anime': ['Animación Japonesa', 'Acción', 'Comedia', 'Drama', 'Fantasía', 'Ciencia Ficción', 'Terror', 'Romance', 'Deportes'],
+                'Dibujos': ['Animación Occidental', 'Acción', 'Comedia', 'Drama', 'Fantasía', 'Ciencia Ficción'],
+                'Película': ['Animación Japonesa', 'Animación Occidental', 'Live-Action', 'Acción', 'Comedia', 'Drama', 'Fantasía', 'Ciencia Ficción', 'Terror'],
+                'Serie Live-Action': ['Live-Action', 'Acción', 'Comedia', 'Drama', 'Fantasía', 'Ciencia Ficción', 'Terror']
+            };
+
+            const currentValue = genreSelect.value;
+            genreSelect.innerHTML = '';
+            (options[type] || options['Anime']).forEach(opt => {
+                const option = document.createElement('option');
+                option.value = opt;
+                option.textContent = opt;
+                genreSelect.appendChild(option);
+            });
+
+            // Restaurar valor si existe en nuevas opciones
+            if (options[type] && options[type].includes(currentValue)) {
+                genreSelect.value = currentValue;
+            }
+        }
+
+        async function saveModalEdit() {
+            const cat = document.getElementById('modalEditCat').value;
+            const idx = parseInt(document.getElementById('modalEditIdx').value);
+
+            const data = {
+                name: document.getElementById('modalEditName').value.trim(),
+                year: parseInt(document.getElementById('modalEditYear').value),
+                type: document.getElementById('modalEditType').value,
+                genre: document.getElementById('modalEditGenre').value,
+                specificGenre: document.getElementById('modalEditSpecificGenre').value.trim(),
+                url: document.getElementById('modalEditUrl').value.trim(),
+                razonClasificacion: document.getElementById('modalEditRazon').value.trim(),
+                href: '/' + document.getElementById('modalEditUrl').value.split('/').pop().split('#')[0]
+            };
+
+            try {
+                const response = await fetch(`${API_URL}/api/series/${cat}/${idx}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    showToast('✅ Serie actualizada correctamente', 'success');
+                    closeEditModal();
+                    loadData();
+                } else {
+                    const err = await response.json();
+                    showToast('❌ Error: ' + (err.error || 'No se pudo actualizar'), 'error');
+                }
+            } catch (error) {
+                showToast('❌ Error de conexión', 'error');
+            }
+        }
+
+        async function moveToCategory() {
+            const catOrigen = document.getElementById('modalEditCat').value;
+            const idx = parseInt(document.getElementById('modalEditIdx').value);
+            const item = currentData[catOrigen][idx];
+
+            // Mapear nombres de categorías
+            const categorias = {
+                'anime': 'Anime',
+                'dibujos': 'Dibujos',
+                'peliculas': 'Película',
+                'series': 'Serie Live-Action'
+            };
+
+            const catKeys = Object.keys(categorias).filter(k => k !== catOrigen);
+            const opciones = catKeys.map((k, i) => `${i + 1}. ${categorias[k]}`).join('\n');
+
+            const seleccion = prompt(`¿Mover a qué categoría?\n${opciones}\n\nEscribe el número:`);
+            if (!seleccion) return;
+
+            const idxSeleccion = parseInt(seleccion) - 1;
+            if (idxSeleccion < 0 || idxSeleccion >= catKeys.length) {
+                showToast('❌ Selección inválida', 'error');
+                return;
+            }
+
+            const catDestino = catKeys[idxSeleccion];
+
+            try {
+                const response = await fetch(`${API_URL}/api/series/${catOrigen}/${idx}/move`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ categoria_destino: catDestino })
+                });
+
+                if (response.ok) {
+                    showToast(`✅ "${item.name}" movido a ${categorias[catDestino]}`, 'success');
+                    closeEditModal();
+                    loadData();
+                } else {
+                    const err = await response.json();
+                    showToast('❌ Error: ' + (err.error || 'No se pudo mover'), 'error');
+                }
+            } catch (error) {
+                showToast('❌ Error de conexión', 'error');
+            }
         }
 
         // ========== EXTRACCIÓN AUTOMÁTICA DESDE URL ==========
@@ -941,15 +1304,20 @@ https://animezoneesp.foroactivo.com/t9012-...
         }
 
         // ========== BATCH MASIVO ==========
-        async function processBatch() {
+        let batchExtractedData = []; // Almacena los datos extraídos para edición
+
+        async function extractBatchPreview() {
             const urlsText = document.getElementById('batchUrls').value.trim();
             const defaultType = document.getElementById('batchType').value;
-            const btn = document.getElementById('batchBtn');
+            const btn = document.getElementById('batchExtractBtn');
+            const saveBtn = document.getElementById('batchSaveBtn');
             const progress = document.getElementById('batchProgress');
             const results = document.getElementById('batchResults');
             const stats = document.getElementById('batchStats');
             const percent = document.getElementById('batchPercent');
             const bar = document.getElementById('batchBar');
+            const summary = document.getElementById('batchSummary');
+            const count = document.getElementById('batchCount');
 
             const urls = urlsText.split('\n').map(u => u.trim()).filter(u => u);
 
@@ -959,14 +1327,16 @@ https://animezoneesp.foroactivo.com/t9012-...
             }
 
             btn.disabled = true;
-            btn.textContent = '⏳ Procesando...';
+            btn.textContent = '⏳ Extrayendo...';
             progress.style.display = 'block';
             results.style.display = 'block';
             results.innerHTML = '';
+            saveBtn.style.display = 'none';
+            summary.style.display = 'none';
+            batchExtractedData = [];
 
             let success = 0;
             let errors = 0;
-            let duplicates = 0;
 
             for (let i = 0; i < urls.length; i++) {
                 const url = urls[i];
@@ -975,15 +1345,7 @@ https://animezoneesp.foroactivo.com/t9012-...
                 percent.textContent = `${pct}%`;
                 bar.style.width = `${pct}%`;
 
-                // Mostrar item procesando
-                const itemDiv = document.createElement('div');
-                itemDiv.className = 'batch-item processing';
-                itemDiv.innerHTML = `⏳ <strong>[${i + 1}]</strong> ${url.substring(0, 60)}...`;
-                results.appendChild(itemDiv);
-                results.scrollTop = results.scrollHeight;
-
                 try {
-                    // Extraer
                     const extractRes = await fetch(`${API_URL}/api/extract`, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
@@ -995,53 +1357,155 @@ https://animezoneesp.foroactivo.com/t9012-...
                         throw new Error(extractData.error || 'Error extrayendo');
                     }
 
-                    // Guardar
-                    const saveRes = await fetch(`${API_URL}/api/series/add`, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(extractData.data)
+                    // Almacenar para edición
+                    batchExtractedData.push({
+                        index: i,
+                        url: url,
+                        data: extractData.data,
+                        status: 'ready'
                     });
 
-                    if (saveRes.ok) {
-                        itemDiv.className = 'batch-item success';
-                        itemDiv.innerHTML = `✅ <strong>[${i + 1}]</strong> ${extractData.data.name}<br><small>${extractData.data.type} • ${extractData.data.year || 'N/A'}</small>`;
-                        success++;
-                    } else if (saveRes.status === 409) {
-                        itemDiv.className = 'batch-item error';
-                        itemDiv.innerHTML = `⚠️ <strong>[${i + 1}]</strong> Ya existe: ${extractData.data.name}`;
-                        duplicates++;
-                    } else {
-                        const err = await saveRes.json();
-                        throw new Error(err.error || 'Error guardando');
-                    }
+                    // Crear item editable en la lista
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'batch-item';
+                    itemDiv.id = `batch-item-${i}`;
+                    itemDiv.style.cssText = 'background: rgba(0,0,0,0.3); padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 4px solid #00d9ff;';
+                    itemDiv.innerHTML = createBatchEditableItem(i, extractData.data);
+                    results.appendChild(itemDiv);
+                    success++;
+
                 } catch (error) {
+                    const itemDiv = document.createElement('div');
                     itemDiv.className = 'batch-item error';
+                    itemDiv.style.cssText = 'background: rgba(255,0,0,0.2); padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 4px solid #ff0000;';
                     itemDiv.innerHTML = `❌ <strong>[${i + 1}]</strong> ${url.substring(0, 50)}...<br><small>Error: ${error.message}</small>`;
+                    results.appendChild(itemDiv);
                     errors++;
                 }
 
                 results.scrollTop = results.scrollHeight;
-                await new Promise(r => setTimeout(r, 500)); // Pequeña pausa entre requests
+                await new Promise(r => setTimeout(r, 300));
             }
 
-            // Resumen final
-            const summary = document.createElement('div');
-            summary.className = 'batch-item';
-            summary.style.borderLeftColor = '#00d9ff';
-            summary.style.background = 'rgba(0, 217, 255, 0.1)';
-            summary.innerHTML = `
+            btn.disabled = false;
+            btn.textContent = '🔍 Extraer y Previsualizar';
+
+            if (success > 0) {
+                saveBtn.style.display = 'inline-block';
+                summary.style.display = 'block';
+                count.textContent = success;
+                showToast(`✅ ${success} series extraídas. Revisa y edita antes de guardar.`, 'success', 5000);
+            } else {
+                showToast(`❌ No se pudo extraer ninguna serie`, 'error');
+            }
+        }
+
+        function createBatchEditableItem(index, data) {
+            return `
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <strong>📺 #${index + 1}: ${data.name}</strong>
+                    <span style="color: #00d9ff;">${data.type} • ${data.year || 'N/A'}</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                    <input type="text" id="batch-name-${index}" value="${data.name}" placeholder="Nombre" style="padding: 5px; border-radius: 4px; border: 1px solid #333; background: rgba(255,255,255,0.1); color: #fff;">
+                    <input type="number" id="batch-year-${index}" value="${data.year || ''}" placeholder="Año" style="padding: 5px; border-radius: 4px; border: 1px solid #333; background: rgba(255,255,255,0.1); color: #fff;">
+                    <select id="batch-type-${index}" style="padding: 5px; border-radius: 4px; border: 1px solid #333; background: rgba(255,255,255,0.1); color: #fff;">
+                        <option value="Anime" ${data.type === 'Anime' ? 'selected' : ''}>Anime</option>
+                        <option value="Dibujos" ${data.type === 'Dibujos' ? 'selected' : ''}>Dibujos</option>
+                        <option value="Película" ${data.type === 'Película' ? 'selected' : ''}>Película</option>
+                        <option value="Serie Live-Action" ${data.type === 'Serie Live-Action' ? 'selected' : ''}>Serie Live-Action</option>
+                    </select>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                    <select id="batch-genre-${index}" style="padding: 5px; border-radius: 4px; border: 1px solid #333; background: rgba(255,255,255,0.1); color: #fff;">
+                        <option value="Animación Japonesa" ${data.genre === 'Animación Japonesa' ? 'selected' : ''}>Animación Japonesa</option>
+                        <option value="Animación Occidental" ${data.genre === 'Animación Occidental' ? 'selected' : ''}>Animación Occidental</option>
+                        <option value="Live-Action" ${data.genre === 'Live-Action' ? 'selected' : ''}>Live-Action</option>
+                        <option value="Acción" ${data.genre === 'Acción' ? 'selected' : ''}>Acción</option>
+                        <option value="Comedia" ${data.genre === 'Comedia' ? 'selected' : ''}>Comedia</option>
+                        <option value="Drama" ${data.genre === 'Drama' ? 'selected' : ''}>Drama</option>
+                        <option value="Fantasía" ${data.genre === 'Fantasía' ? 'selected' : ''}>Fantasía</option>
+                        <option value="Ciencia Ficción" ${data.genre === 'Ciencia Ficción' ? 'selected' : ''}>Ciencia Ficción</option>
+                    </select>
+                    <input type="text" id="batch-specific-${index}" value="${data.specificGenre || ''}" placeholder="Género específico" style="padding: 5px; border-radius: 4px; border: 1px solid #333; background: rgba(255,255,255,0.1); color: #fff;">
+                </div>
+                <input type="hidden" id="batch-url-${index}" value="${data.url}">
+                <input type="hidden" id="batch-href-${index}" value="${data.href}">
+                <div style="color: #888; font-size: 11px;">🔗 ${data.url}</div>
+            `;
+        }
+
+        async function saveBatchAll() {
+            const btn = document.getElementById('batchSaveBtn');
+            const extractBtn = document.getElementById('batchExtractBtn');
+            const results = document.getElementById('batchResults');
+
+            btn.disabled = true;
+            btn.textContent = '⏳ Guardando...';
+
+            let success = 0;
+            let errors = 0;
+            let duplicates = 0;
+
+            for (const item of batchExtractedData) {
+                const idx = item.index;
+                const itemDiv = document.getElementById(`batch-item-${idx}`);
+
+                // Leer valores editados
+                const data = {
+                    name: document.getElementById(`batch-name-${idx}`).value.trim(),
+                    year: parseInt(document.getElementById(`batch-year-${idx}`).value),
+                    type: document.getElementById(`batch-type-${idx}`).value,
+                    genre: document.getElementById(`batch-genre-${idx}`).value,
+                    specificGenre: document.getElementById(`batch-specific-${idx}`).value.trim(),
+                    url: document.getElementById(`batch-url-${idx}`).value,
+                    href: document.getElementById(`batch-href-${idx}`).value,
+                    razonClasificacion: 'Añadido desde batch masivo',
+                    originalGenre: document.getElementById(`batch-genre-${idx}`).value
+                };
+
+                try {
+                    const saveRes = await fetch(`${API_URL}/api/series/add`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data)
+                    });
+
+                    if (saveRes.ok) {
+                        itemDiv.style.borderLeftColor = '#00cc00';
+                        itemDiv.style.background = 'rgba(0,204,0,0.1)';
+                        success++;
+                    } else if (saveRes.status === 409) {
+                        itemDiv.style.borderLeftColor = '#ff9900';
+                        itemDiv.style.background = 'rgba(255,153,0,0.1)';
+                        duplicates++;
+                    } else {
+                        throw new Error('Error guardando');
+                    }
+                } catch (error) {
+                    itemDiv.style.borderLeftColor = '#ff0000';
+                    itemDiv.style.background = 'rgba(255,0,0,0.2)';
+                    errors++;
+                }
+
+                await new Promise(r => setTimeout(r, 200));
+            }
+
+            btn.disabled = false;
+            btn.textContent = '💾 Guardar Todas';
+            extractBtn.style.display = 'none';
+
+            // Resumen
+            const summaryDiv = document.createElement('div');
+            summaryDiv.style.cssText = 'background: rgba(0,217,255,0.1); padding: 15px; margin: 15px 0; border-radius: 8px; border-left: 4px solid #00d9ff;';
+            summaryDiv.innerHTML = `
                 <strong>📊 RESUMEN BATCH</strong><br>
                 ✅ Guardadas: ${success}<br>
                 ⚠️ Duplicadas: ${duplicates}<br>
                 ❌ Errores: ${errors}
             `;
-            results.appendChild(summary);
-            results.scrollTop = results.scrollHeight;
+            results.insertBefore(summaryDiv, results.firstChild);
 
-            btn.disabled = false;
-            btn.textContent = '🚀 Procesar Todas';
-            
-            // Notificación resumen
             if (errors === 0 && duplicates === 0) {
                 showToast(`✅ Batch completado: ${success} series guardadas`, 'success', 5000);
             } else if (success > 0) {
@@ -1049,7 +1513,7 @@ https://animezoneesp.foroactivo.com/t9012-...
             } else {
                 showToast(`❌ Batch fallido: ${errors} errores, ${duplicates} duplicadas`, 'error', 5000);
             }
-            
+
             loadData();
         }
 
@@ -1057,10 +1521,350 @@ https://animezoneesp.foroactivo.com/t9012-...
             document.getElementById('batchUrls').value = '';
             document.getElementById('batchProgress').style.display = 'none';
             document.getElementById('batchResults').style.display = 'none';
+            document.getElementById('batchSaveBtn').style.display = 'none';
+            document.getElementById('batchExtractBtn').style.display = 'inline-block';
+            document.getElementById('batchSummary').style.display = 'none';
+            batchExtractedData = [];
+        }
+
+        // ========== GESTOR DE DUPLICADOS ==========
+        let currentDuplicates = [];
+
+        function normalizeName(name) {
+            if (!name) return '';
+            return name.toLowerCase()
+                .replace(/\[.*?\]/g, '') // Quitar etiquetas como [Activo], [Dual-Audio]
+                .replace(/\(.*?\)/g, '') // Quitar paréntesis con contenido
+                .replace(/[^\w\s]/g, ' ') // Quitar caracteres especiales
+                .replace(/\s+/g, ' ') // Normalizar espacios
+                .trim();
+        }
+
+        function findDuplicatesSameCategory() {
+            if (!currentData) {
+                showToast('❌ No hay datos cargados', 'error');
+                return;
+            }
+
+            currentDuplicates = [];
+            const categories = ['anime', 'dibujos', 'peliculas', 'series'];
+
+            categories.forEach(cat => {
+                if (!currentData[cat] || currentData[cat].length < 2) return;
+
+                const items = currentData[cat].map((item, idx) => ({
+                    ...item,
+                    _cat: cat,
+                    _idx: idx,
+                    _normalized: normalizeName(item.name)
+                }));
+
+                // Encontrar duplicados por nombre normalizado
+                for (let i = 0; i < items.length; i++) {
+                    for (let j = i + 1; j < items.length; j++) {
+                        const itemA = items[i];
+                        const itemB = items[j];
+
+                        // Comparar por nombre normalizado o URL
+                        const nameMatch = itemA._normalized === itemB._normalized && itemA._normalized.length > 3;
+                        const urlMatch = itemA.url === itemB.url && itemA.url;
+
+                        if (nameMatch || urlMatch) {
+                            // Verificar si ya existe este par
+                            const exists = currentDuplicates.some(d =>
+                                (d.item1._cat === itemA._cat && d.item1._idx === itemA._idx &&
+                                 d.item2._cat === itemB._cat && d.item2._idx === itemB._idx) ||
+                                (d.item1._cat === itemB._cat && d.item1._idx === itemB._idx &&
+                                 d.item2._cat === itemA._cat && d.item2._idx === itemA._idx)
+                            );
+
+                            if (!exists) {
+                                currentDuplicates.push({
+                                    type: 'same-category',
+                                    category: cat,
+                                    item1: itemA,
+                                    item2: itemB,
+                                    matchType: nameMatch ? 'nombre' : 'URL'
+                                });
+                            }
+                        }
+                    }
+                }
+            });
+
+            renderDuplicates();
+        }
+
+        function findDuplicatesAllCategories() {
+            if (!currentData) {
+                showToast('❌ No hay datos cargados', 'error');
+                return;
+            }
+
+            currentDuplicates = [];
+            const categories = ['anime', 'dibujos', 'peliculas', 'series'];
+            const allItems = [];
+
+            // Recopilar todas las series de todas las categorías
+            categories.forEach(cat => {
+                if (currentData[cat]) {
+                    currentData[cat].forEach((item, idx) => {
+                        allItems.push({
+                            ...item,
+                            _cat: cat,
+                            _idx: idx,
+                            _normalized: normalizeName(item.name)
+                        });
+                    });
+                }
+            });
+
+            // Encontrar duplicados entre categorías diferentes
+            for (let i = 0; i < allItems.length; i++) {
+                for (let j = i + 1; j < allItems.length; j++) {
+                    const itemA = allItems[i];
+                    const itemB = allItems[j];
+
+                    // Solo comparar si están en categorías diferentes
+                    if (itemA._cat === itemB._cat) continue;
+
+                    const nameMatch = itemA._normalized === itemB._normalized && itemA._normalized.length > 3;
+                    const urlMatch = itemA.url === itemB.url && itemA.url;
+
+                    if (nameMatch || urlMatch) {
+                        const exists = currentDuplicates.some(d =>
+                            (d.item1._cat === itemA._cat && d.item1._idx === itemA._idx &&
+                             d.item2._cat === itemB._cat && d.item2._idx === itemB._idx) ||
+                            (d.item1._cat === itemB._cat && d.item1._idx === itemB._idx &&
+                             d.item2._cat === itemA._cat && d.item2._idx === itemA._idx)
+                        );
+
+                        if (!exists) {
+                            currentDuplicates.push({
+                                type: 'cross-category',
+                                item1: itemA,
+                                item2: itemB,
+                                matchType: nameMatch ? 'nombre' : 'URL'
+                            });
+                        }
+                    }
+                }
+            }
+
+            renderDuplicates();
+        }
+
+        function renderDuplicates() {
+            const resultsDiv = document.getElementById('duplicatesResults');
+            const listDiv = document.getElementById('duplicatesList');
+            const statsDiv = document.getElementById('duplicatesStats');
+
+            if (currentDuplicates.length === 0) {
+                resultsDiv.style.display = 'block';
+                listDiv.innerHTML = '<div style="text-align: center; padding: 40px; color: #00d9ff;">✅ No se encontraron duplicados</div>';
+                statsDiv.innerHTML = 'Duplicados encontrados: <strong>0</strong>';
+                return;
+            }
+
+            resultsDiv.style.display = 'block';
+
+            // Estadísticas
+            const sameCat = currentDuplicates.filter(d => d.type === 'same-category').length;
+            const crossCat = currentDuplicates.filter(d => d.type === 'cross-category').length;
+            statsDiv.innerHTML = `
+                Total duplicados: <strong style="color: #e94560;">${currentDuplicates.length}</strong><br>
+                ${sameCat > 0 ? `• Misma sección: <strong>${sameCat}</strong><br>` : ''}
+                ${crossCat > 0 ? `• Entre secciones: <strong>${crossCat}</strong>` : ''}
+            `;
+
+            // Renderizar lista
+            listDiv.innerHTML = '';
+            currentDuplicates.forEach((dup, idx) => {
+                const card = document.createElement('div');
+                card.style.cssText = `
+                    background: rgba(255,255,255,0.05);
+                    border: 1px solid rgba(233,69,96,0.5);
+                    border-radius: 10px;
+                    padding: 15px;
+                `;
+
+                const catNames = { 'anime': 'Anime', 'dibujos': 'Dibujos', 'peliculas': 'Películas', 'series': 'Series' };
+
+                card.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+                        <span style="background: #e94560; color: #fff; padding: 3px 10px; border-radius: 15px; font-size: 12px;">
+                            Duplicado #${idx + 1} • Coincidencia por: ${dup.matchType}
+                        </span>
+                        ${dup.type === 'same-category' ?
+                            `<span style="color: #888; font-size: 12px;">En: ${catNames[dup.category]}</span>` :
+                            `<span style="color: #9b59b6; font-size: 12px;">Entre categorías</span>`
+                        }
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                        ${renderDuplicateItem(dup.item1, 'A')}
+                        ${renderDuplicateItem(dup.item2, 'B')}
+                    </div>
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <button onclick="deleteDuplicateItem('${dup.item1._cat}', ${dup.item1._idx}, 'A')" style="background: #c0392b; padding: 6px 12px; font-size: 12px;">
+                            🗑️ Eliminar A
+                        </button>
+                        <button onclick="deleteDuplicateItem('${dup.item2._cat}', ${dup.item2._idx}, 'B')" style="background: #c0392b; padding: 6px 12px; font-size: 12px;">
+                            🗑️ Eliminar B
+                        </button>
+                        <button onclick="deleteDuplicateItem('${dup.item1._cat}', ${dup.item1._idx}, 'A'); deleteDuplicateItem('${dup.item2._cat}', ${dup.item2._idx}, 'B');" style="background: #e74c3c; padding: 6px 12px; font-size: 12px;">
+                            🗑️ Eliminar Ambos
+                        </button>
+                        ${dup.type === 'cross-category' ? `
+                            <button onclick="moveDuplicateItem('${dup.item2._cat}', ${dup.item2._idx}, '${dup.item1._cat}')" style="background: #9b59b6; padding: 6px 12px; font-size: 12px;">
+                                📁 Mover B a ${catNames[dup.item1._cat]}
+                            </button>
+                        ` : ''}
+                    </div>
+                `;
+                listDiv.appendChild(card);
+            });
+        }
+
+        function renderDuplicateItem(item, label) {
+            const catNames = { 'anime': 'Anime', 'dibujos': 'Dibujos', 'peliculas': 'Películas', 'series': 'Series' };
+            return `
+                <div style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px; border-left: 4px solid ${label === 'A' ? '#e94560' : '#9b59b6'};">
+                    <div style="font-size: 11px; color: #888; margin-bottom: 4px;">Opción ${label} • ${catNames[item._cat]}</div>
+                    <div style="font-weight: bold; color: #fff; font-size: 14px; margin-bottom: 6px; word-break: break-word;">${item.name}</div>
+                    <div style="font-size: 12px; color: #aaa;">
+                        ${item.type} • ${item.year || 'N/A'} • ${item.genre}
+                    </div>
+                    <div style="font-size: 11px; color: #666; margin-top: 6px; word-break: break-all;">
+                        🔗 ${item.url ? item.url.substring(0, 50) + '...' : 'Sin URL'}
+                    </div>
+                </div>
+            `;
+        }
+
+        async function deleteDuplicateItem(cat, idx, label) {
+            const item = currentData[cat][idx];
+            if (!confirm(`¿Eliminar opción ${label}: "${item.name}"?`)) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_URL}/api/series/${cat}/${idx}`, {
+                    method: 'DELETE'
+                });
+
+                if (response.ok) {
+                    showToast(`🗑️ "${item.name}" eliminado`, 'success');
+                    await loadData();
+                    // Recargar la búsqueda de duplicados actual
+                    if (currentDuplicates.length > 0 && currentDuplicates[0].type === 'same-category') {
+                        findDuplicatesSameCategory();
+                    } else {
+                        findDuplicatesAllCategories();
+                    }
+                } else {
+                    showToast('❌ Error al eliminar', 'error');
+                }
+            } catch (error) {
+                showToast('❌ Error de conexión', 'error');
+            }
+        }
+
+        async function moveDuplicateItem(cat, idx, targetCat) {
+            const item = currentData[cat][idx];
+            const catNames = { 'anime': 'Anime', 'dibujos': 'Dibujos', 'peliculas': 'Películas', 'series': 'Series' };
+
+            if (!confirm(`¿Mover "${item.name}" a ${catNames[targetCat]}?`)) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_URL}/api/series/${cat}/${idx}/move`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ categoria_destino: targetCat })
+                });
+
+                if (response.ok) {
+                    showToast(`📁 "${item.name}" movido a ${catNames[targetCat]}`, 'success');
+                    await loadData();
+                    findDuplicatesAllCategories();
+                } else {
+                    showToast('❌ Error al mover', 'error');
+                }
+            } catch (error) {
+                showToast('❌ Error de conexión', 'error');
+            }
+        }
+
+        function clearDuplicates() {
+            currentDuplicates = [];
+            document.getElementById('duplicatesResults').style.display = 'none';
+            document.getElementById('duplicatesList').innerHTML = '';
         }
 
         // Cargar datos al inicio
         loadData();
     </script>
+
+    <!-- Modal de Edición Universal -->
+    <div id="editModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border: 2px solid #e94560; border-radius: 12px; padding: 25px; max-width: 600px; width: 90%; max-height: 90vh; overflow-y: auto;">
+            <h3 style="color: #e94560; margin-bottom: 20px;">✏️ Editar Serie</h3>
+            <input type="hidden" id="modalEditCat">
+            <input type="hidden" id="modalEditIdx">
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" id="modalEditName" style="width: 100%;">
+            </div>
+            <div class="two-col">
+                <div class="form-group">
+                    <label>Año</label>
+                    <input type="number" id="modalEditYear">
+                </div>
+                <div class="form-group">
+                    <label>Tipo</label>
+                    <select id="modalEditType" onchange="updateModalGenreOptions()">
+                        <option value="Anime">Anime</option>
+                        <option value="Dibujos">Dibujos</option>
+                        <option value="Película">Película</option>
+                        <option value="Serie Live-Action">Serie Live-Action</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Género Principal</label>
+                <select id="modalEditGenre">
+                    <option value="Animación Japonesa">Animación Japonesa</option>
+                    <option value="Animación Occidental">Animación Occidental</option>
+                    <option value="Live-Action">Live-Action</option>
+                    <option value="Acción">Acción</option>
+                    <option value="Comedia">Comedia</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Fantasía">Fantasía</option>
+                    <option value="Ciencia Ficción">Ciencia Ficción</option>
+                    <option value="Terror">Terror</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Deportes">Deportes</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Género Específico</label>
+                <input type="text" id="modalEditSpecificGenre" placeholder="Acción, Aventura, Mecha...">
+            </div>
+            <div class="form-group">
+                <label>URL</label>
+                <input type="url" id="modalEditUrl" style="width: 100%;">
+            </div>
+            <div class="form-group">
+                <label>Razón de Clasificación</label>
+                <textarea id="modalEditRazon" rows="2"></textarea>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px;">
+                <button onclick="saveModalEdit()" class="btn-success">💾 Guardar Cambios</button>
+                <button onclick="closeEditModal()" class="btn-secondary">❌ Cancelar</button>
+                <button onclick="moveToCategory()" style="background: #9b59b6;">📁 Mover Categoría</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

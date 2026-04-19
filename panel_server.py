@@ -293,6 +293,49 @@ def delete_series(categoria, index):
         return jsonify({"error": str(e)}), 500
 
 
+@app.route('/api/series/<categoria_origen>/<int:index>/move', methods=['POST'])
+def move_series(categoria_origen, index):
+    """Mover serie de una categoría a otra"""
+    try:
+        data = request.get_json()
+        categoria_destino = data.get('categoria_destino')
+        
+        if not categoria_destino:
+            return jsonify({"error": "Falta categoria_destino"}), 400
+        
+        catalogo = load_top_json()
+        if catalogo is None:
+            return jsonify({"error": "No se pudo cargar TOP.json"}), 500
+        
+        if categoria_origen not in catalogo or index >= len(catalogo[categoria_origen]):
+            return jsonify({"error": "Serie no encontrada en categoría origen"}), 404
+        
+        if categoria_destino not in catalogo:
+            return jsonify({"error": "Categoría destino no válida"}), 400
+        
+        # Extraer la serie de la categoría origen
+        serie = catalogo[categoria_origen].pop(index)
+        
+        # Actualizar metadatos
+        serie['fecha_modificacion'] = datetime.now().isoformat()
+        serie['categoria_anterior'] = categoria_origen
+        
+        # Añadir a la categoría destino
+        catalogo[categoria_destino].append(serie)
+        
+        if save_top_json(catalogo):
+            return jsonify({
+                "success": True,
+                "message": f"Serie movida de {categoria_origen} a {categoria_destino}",
+                "data": serie
+            })
+        else:
+            return jsonify({"error": "No se pudo guardar"}), 500
+    
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
 @app.route('/api/backups', methods=['GET'])
 def list_backups():
     """Listar backups disponibles"""

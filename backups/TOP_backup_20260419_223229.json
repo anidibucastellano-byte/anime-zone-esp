@@ -3982,6 +3982,21 @@
       "categoria_anterior": "dibujos"
     },
     {
+      "confianza": 90,
+      "genre": "Animación Japonesa",
+      "href": "/t297-activolas-tres-mellizas-1995-castellano-104-104-dvd-rip-960x720-325-625-mb-mega-pixeldrain-ver-online",
+      "name": "[Activo]Las tres mellizas (1995) [Castellano] [104/104] [DVD-Rip] [960x720] [325/625 MB] [Mega/Pixeldrain] [Ver Online]",
+      "originalGenre": "Animación Japonesa",
+      "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
+      "specificGenre": "Drama",
+      "tmdb_type": "anime",
+      "type": "Anime",
+      "url": "https://animezoneesp.foroactivo.com/t297-activolas-tres-mellizas-1995-castellano-104-104-dvd-rip-960x720-325-625-mb-mega-pixeldrain-ver-online",
+      "year": 1995,
+      "fecha_modificacion": "2026-04-19T21:12:17.744295",
+      "categoria_anterior": "dibujos"
+    },
+    {
       "confianza": 85,
       "genre": "Animación Japonesa",
       "href": "/t1319-activo-doomed-megalopolis-1991-castellano-4-4-dvd-rip-640x480-645-655-mb-mega-pixeldrain-ver-online",
@@ -11874,12 +11889,12 @@
     }
   ],
   "resumen": {
-    "anime": 326,
+    "anime": 327,
     "dibujos": 456,
     "peliculas": 174,
     "series": 31,
-    "total": 987,
-    "ultima_actualizacion": "2026-04-19 22:32:29"
+    "total": 988,
+    "ultima_actualizacion": "2026-04-19 22:32:26"
   },
   "series": [
     {

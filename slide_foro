@@ -1,0 +1,1036 @@
+<style>
+/* --- CONTENEDOR PRINCIPAL (Más alto para que quepan los pósters) --- */
+.news-ticker-wrap {
+    width: 100%;
+    height: 230px; /* Aumentado de 130px a 230px */
+    overflow: hidden;
+    background-color: #0f0f0f;
+    position: relative;
+    border-bottom: 2px solid #A60000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+}
+
+/* --- ETIQUETA DE FECHA DINÁMICA --- */
+.date-label {
+    display: none; /* OCULTO - no funciona correctamente */
+}
+.ticker-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #A60000;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 3px 10px;
+    z-index: 20;
+    text-transform: uppercase;
+    border-bottom-right-radius: 8px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    pointer-events: none;
+}
+
+/* --- EL TREN DE IMÁGENES --- */
+.ticker-move {
+    display: flex;
+    align-items: center;
+    animation: desplazamiento 55s linear infinite;
+    padding-left: 100%;
+    will-change: transform;
+    transition: transform 0.4s ease-out;
+}
+
+.ticker-move:hover {
+    /* Sin pausa en hover - control manual solo con flechas */
+}
+
+/* --- TARJETAS (FORMATO PÓSTER) --- */
+.anime-card {
+    flex: 0 0 auto;
+    width: 105px;  /* ANTES: 190px -> AHORA: Más estrecho */
+    height: 180px; /* ANTES: 105px -> AHORA: Mucho más alto */
+    margin-right: 15px;
+    position: relative;
+    border-radius: 6px; /* Un poco más redondeado */
+    overflow: hidden;
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+    background: #000; /* Fondo negro por si la imagen no carga */
+}
+
+.anime-card:hover {
+    transform: scale(1.05);
+    border-color: #A60000;
+    z-index: 15;
+    box-shadow: 0 0 10px rgba(166, 0, 0, 0.5);
+}
+
+.anime-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* IMPORTANTE: Recorta la imagen para llenar el póster sin deformarla */
+    object-position: center top; /* Enfoca la parte de arriba (caras), no el centro */
+}
+
+/* --- TÍTULO DE LA SERIE --- */
+.anime-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, transparent); /* Degradado más suave */
+    color: #fff;
+    font-size: 11px; /* Letra un pelín más grande */
+    padding: 30px 5px 8px 5px; /* Más espacio para el degradado */
+    text-align: center;
+    white-space: normal; /* Permite 2 líneas de texto si es largo */
+    line-height: 1.1;
+    text-shadow: 1px 1px 2px black;
+}
+
+/* --- BADGES / ETIQUETAS --- */
+.badge {
+    position: absolute;
+    top: 6px;
+    right: 6px; /* Un poco más separado del borde */
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 800; /* Extra negrita */
+    color: white;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+    text-transform: uppercase;
+}
+.badge.anime { background-color: #00cc00; }
+.badge.dibujos { background-color: #0066ff; }
+.badge.serie { background-color: #cc0000; }
+.badge.pelicula-live { background-color: #e74c3c; color: white; }
+.badge.pelicula { background-color: #f39c12; color: black; }
+.badge.resubido { background-color: #F5273C; }
+.badge.mejorcalidad { background-color: #F75E6E; }
+
+/* --- ANIMACIÓN --- */
+@keyframes desplazamiento {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* --- GRUPO DE FECHA (CONTENEDOR VERTICAL) --- */
+.date-group {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 20px;
+}
+
+/* --- BARRA DE FECHA HORIZONTAL --- */
+.date-bar {
+    height: 22px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #1a237e 0%, #0d47a1 50%, #1a237e 100%);
+    border-radius: 3px;
+    border: 1px solid #00ccff;
+    padding: 0 12px;
+    box-sizing: border-box;
+    margin-bottom: 6px;
+}
+
+.date-bar.rojo {
+    background: linear-gradient(90deg, #b71c1c 0%, #d32f2f 50%, #b71c1c 100%);
+    border-color: #ff5252;
+}
+
+.date-bar.verde {
+    background: linear-gradient(90deg, #1b5e20 0%, #388e3c 50%, #1b5e20 100%);
+    border-color: #69f0ae;
+}
+
+.date-bar.purpura {
+    background: linear-gradient(90deg, #4a148c 0%, #7b1fa2 50%, #4a148c 100%);
+    border-color: #e040fb;
+}
+
+.date-bar.naranja {
+    background: linear-gradient(90deg, #e65100 0%, #f57c00 50%, #e65100 100%);
+    border-color: #ffd740;
+}
+.date-bar.cyan {
+    background: linear-gradient(90deg, #006064 0%, #0097a7 50%, #006064 100%);
+    border-color: #00e5ff;
+}
+
+.date-bar.rosa {
+    background: linear-gradient(90deg, #880e4f 0%, #d81b60 50%, #880e4f 100%);
+    border-color: #ff80ab;
+}
+
+.date-bar.amarillo {
+    background: linear-gradient(90deg, #f57f17 0%, #fbc02d 50%, #f57f17 100%);
+    border-color: #ffff00;
+}
+
+.date-bar.gris {
+    background: linear-gradient(90deg, #37474f 0%, #546e7a 50%, #37474f 100%);
+    border-color: #b0bec5;
+}
+
+.date-bar.marron {
+    background: linear-gradient(90deg, #4e342e 0%, #795548 50%, #4e342e 100%);
+    border-color: #bcaaa4;
+}
+
+.date-bar .date-text {
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+/* --- FILA DE CARDS (sin borde, fluye naturalmente) --- */
+.cards-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 4px 0;
+}
+
+/* --- BARRA SEPARADORA DE FECHA (OCULTA - ya no se usa) --- */
+.date-separator {
+    display: none;
+}
+
+/* --- FLECHAS DE NAVEGACIÓN --- */
+.news-ticker-wrap .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(166, 0, 0, 0.9);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 1;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.news-ticker-wrap .nav-btn:hover {
+    background: rgba(166, 0, 0, 1);
+}
+.news-ticker-wrap .nav-btn.prev {
+    left: 0;
+    border-radius: 0 8px 8px 0;
+}
+.news-ticker-wrap .nav-btn.next {
+    right: 0;
+    border-radius: 8px 0 0 8px;
+}
+.news-ticker-wrap.paused .ticker-move,
+.news-ticker-wrap:hover .ticker-move {
+    animation-play-state: paused !important;
+}
+.news-ticker-wrap.paused::after,
+.news-ticker-wrap:hover::after {
+    content: '⏸ PAUSADO';
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 60;
+    pointer-events: none;
+}
+
+</style>
+
+<!-- HTML -->
+<div class="news-ticker-wrap" onmouseenter="this.classList.add('paused')" onmouseleave="this.classList.remove('paused')">
+    
+    <!-- FLECHAS DE NAVEGACIÓN -->
+    <div class="nav-btn prev" onclick="var m=document.querySelector('.ticker-move'),w=document.querySelector('.news-ticker-wrap'),d=95,s=2.5,cst=window.getComputedStyle(m),dm=cst.animationDelay,cd=parseFloat(dm)||0,np=cd+s;m.style.animationDelay=np+'s';m.style.animationPlayState='paused';w.classList.add('paused');setTimeout(function(){m.style.animationPlayState='running';w.classList.remove('paused');},3000);">&#8249;</div>
+    <div class="nav-btn next" onclick="var m=document.querySelector('.ticker-move'),w=document.querySelector('.news-ticker-wrap'),d=95,s=-2.5,cst=window.getComputedStyle(m),dm=cst.animationDelay,cd=parseFloat(dm)||0,np=cd+s;m.style.animationDelay=np+'s';m.style.animationPlayState='paused';w.classList.add('paused');setTimeout(function(){m.style.animationPlayState='running';w.classList.remove('paused');},3000);">&#8250;</div>
+    
+    <!-- ETIQUETA DE FECHA DINÁMICA -->
+    <div class="date-label" id="currentDateLabel">06/04/2026</div>
+    
+    <!-- ETIQUETA PEQUEÑA ARRIBA A LA IZQUIERDA -->
+    <div class="ticker-label">ÚLTIMAS AÑADIDAS</div>
+
+    <!-- TREN DE SERIES -->
+    <div class="ticker-move">
+                                      <!-- GRUPO: 18/04/2026 -->
+        <div class="date-group">
+            <div class="date-bar rosa">
+                <div class="date-text">18/04/2026</div>
+                <div class="date-text">18/04/2026</div>
+            </div>
+            <div class="cards-row">
+              
+        <!-- Scooby-Doo! Misterios, S. A. -->
+        <a href="https://animezoneesp.foroactivo.com/t1720-activo-scooby-doo-misterios-s-a-2010-castellano-52-52-webdl-rip-704x396-240mb-345mb-mega-pixeldrain-ver-online#4197" class="anime-card">
+            <span class="badge dibujos">DIBUJOS</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776474105/mis_archivos_elegidos/manual_poster_tmdb_Scooby-Doo%21_Misterios%2C_S._A..jpg" alt="Scooby-Doo! Misterios, S. A.">
+            <div class="anime-title">Scooby-Doo! Misterios, S. A.</div>
+        </a>
+        <!-- La fortuna sonríe a Lady Nikuko -->
+        <a href="https://animezoneesp.foroactivo.com/t1719-activo-la-fortuna-sonrie-a-lady-nikuko-2021-dual-audio-bd-rip-1920x1080-890gb-mega-pixeldrain-ver-online#4195" class="anime-card">
+            <span class="badge pelicula">PELÍCULA</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776471476/mis_archivos_elegidos/manual_poster_tmdb_La_fortuna_sonr%C3%ADe_a_Lady_Nikuko.jpg" alt="La fortuna sonríe a Lady Nikuko">
+            <div class="anime-title">La fortuna sonríe a Lady Nikuko</div>
+        </a>
+        <!-- Mandarina y Vaca -->
+        <a href="https://animezoneesp.foroactivo.com/t1718-activo-mandarina-y-vaca-2007-castellano-76-76-dvb-rip-704x528-65mb-90mb-mega-pixeldrain-ver-online#4194" class="anime-card">
+            <span class="badge dibujos">DIBUJOS</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776470047/mis_archivos_elegidos/manual_Mandarina%20y%20Vaca.jpg" alt="Mandarina y Vaca">
+            <div class="anime-title">Mandarina y Vaca</div>
+        </a>
+        <!-- Los magos de Waverly Place -->
+        <a href="https://animezoneesp.foroactivo.com/t1716-activo-los-magos-de-waverly-place-2007-castellano-107-10701-dvd-rip-704x528-130mb-114gb-mega-pixeldrain-ver-online#4191" class="anime-card">
+            <span class="badge serie">SERIE</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776468392/mis_archivos_elegidos/manual_poster_tmdb_Los_magos_de_Waverly_Place.jpg" alt="Los magos de Waverly Place">
+            <div class="anime-title">Los magos de Waverly Place</div>
+        </a>
+        <!-- Lizzie McGuire -->
+        <a href="https://animezoneesp.foroactivo.com/t1715-activo-lizzie-mcguire-2001-dual-audio-65-65-dvd-rip-640x480-485mb-545mb-mega-pixeldrain-ver-online#4190" class="anime-card">
+            <span class="badge serie">SERIE</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776468201/mis_archivos_elegidos/manual_poster_tmdb_Lizzie_McGuire.jpg" alt="Lizzie McGuire">
+            <div class="anime-title">Lizzie McGuire</div>
+        </a>
+        <!-- La Hora de José Mota -->
+        <a href="https://animezoneesp.foroactivo.com/t1714-activo-la-hora-de-jose-mota-2009-castellano-40-40-webdl-rip-1920x1080-595mb-107gb-mega-pixeldrain-ver-online#4189" class="anime-card">
+            <span class="badge serie">SERIE</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776468034/mis_archivos_elegidos/manual_poster_tmdb_La_Hora_de_Jos%C3%A9_Mota.jpg" alt="La Hora de José Mota">
+            <div class="anime-title">La Hora de José Mota</div>
+        </a>
+        <!-- El barco -->
+        <a href="https://animezoneesp.foroactivo.com/t1713-activo-el-barco-2011-castellano-43-43-webdl-rip-1920x1080-207gb-320gb-mega-pixeldrain-ver-online#4188" class="anime-card">
+            <span class="badge serie">SERIE</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776465618/mis_archivos_elegidos/manual_poster_tmdb_El_barco.jpg" alt="El barco">
+            <div class="anime-title">El barco</div>
+        </a>
+                                                                                                    </div>
+        </div>
+                                <!-- GRUPO: 17/04/2026 -->
+        <div class="date-group">
+            <div class="date-bar cyan">
+                <div class="date-text">17/04/2026</div>
+                <div class="date-text">17/04/2026</div>
+            </div>
+            <div class="cards-row">
+            
+        <!-- Cosas de casa -->
+        <a href="https://animezoneesp.foroactivo.com/t1711-activo-cosas-de-casa-1989-castellano-215-215-dvd-rip-720x540-190mb-405mb-mega-pixeldrain-ver-online#4186" class="anime-card">
+            <span class="badge serie">SERIE</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776442002/mis_archivos_elegidos/manual_poster_tmdb_Cosas_de_casa.jpg" alt="Cosas de casa">
+            <div class="anime-title">Cosas de casa</div>
+        </a>
+        <!-- Capitán Biceps -->
+        <a href="https://animezoneesp.foroactivo.com/t1708-activo-capitan-biceps-2010-castellano-39-78-tv-rip-632x360-35mb-100mb-mega-pixeldrain-ver-online#4179" class="anime-card">
+            <span class="badge dibujos">DIBUJOS</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776435226/mis_archivos_elegidos/manual_poster_tmdb_Capit%C3%A1n_Biceps_%282010%29.jpg" alt="Capitán Biceps">
+            <div class="anime-title">Capitán Biceps</div>
+        </a>
+        <!-- RoboCop: La Serie Animada -->
+        <a href="https://animezoneesp.foroactivo.com/t1706-activo-robocop-la-serie-animada-1988-multi-audio-12-12-dvd-rip-720x544-380mb-380mb-mega-pixeldrain-ver-online#4146" class="anime-card">
+            <span class="badge dibujos">DIBUJOS</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776391490/mis_archivos_elegidos/manual_poster_tmdb_RoboCop.jpg" alt="RoboCop: La Serie Animada">
+            <div class="anime-title">RoboCop: La Serie Animada</div>
+        </a>
+        <!-- ¡Vuela, Isami! -->
+        <a href="https://animezoneesp.foroactivo.com/t1705-activo-vuela-isami-1995-dual-audio-50-50-dvd-rip-640x480-170mb-265mb-mega-pixeldrain-ver-online#4145" class="anime-card">
+            <span class="badge anime">ANIME</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776391251/mis_archivos_elegidos/manual_poster_tmdb_%C2%A1Vuela%2C_Isami%21.jpg" alt="¡Vuela, Isami!">
+            <div class="anime-title">¡Vuela, Isami!</div>
+        </a>
+        <!-- Seraph of the end (El reino de los vampiros) -->
+        <a href="https://animezoneesp.foroactivo.com/t1704-activo-seraph-of-the-end-el-reino-de-los-vampiros-2015-castellano-24-24-webdl-rip-1920x1080-330mb-340mb-mega-pixeldrain-ver-online#4144" class="anime-card">
+            <span class="badge anime">ANIME</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776391000/mis_archivos_elegidos/manual_poster_tmdb_Seraph_of_the_end.jpg" alt="Seraph of the end (El reino de los vampiros)">
+            <div class="anime-title">Seraph of the end (El reino de los vampiros)</div>
+        </a>
+        <!-- Un planeta extraño -->
+        <a href="https://animezoneesp.foroactivo.com/t1703-activo-un-planeta-extrano-2023-dual-audio-10-10-webdl-rip-1920x1080-410mb-575mb-mega-pixeldrain-ver-online#4143" class="anime-card">
+            <span class="badge dibujos">DIBUJOS</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776390855/mis_archivos_elegidos/manual_poster_tmdb_Un_planeta_extra%C3%B1o.jpg" alt="Un planeta extraño">
+            <div class="anime-title">Un planeta extraño</div>
+        </a>
+        <!-- Tokyo Babylon -->
+        <a href="https://animezoneesp.foroactivo.com/t1702-activo-tokyo-babylon-miniserie-1992-dual-audio-02-02-dvd-rip-640x480-745mb-920mb-mega-pixeldrain-ver-online#4142" class="anime-card">
+            <span class="badge anime">ANIME</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776390745/mis_archivos_elegidos/manual_poster_tmdb_Tokyo_Babylon.jpg" alt="Tokyo Babylon">
+            <div class="anime-title">Tokyo Babylon</div>
+        </a>
+        <!-- Sin Supervisión -->
+        <a href="https://animezoneesp.foroactivo.com/t1701-activo-sin-supervision-2012-castellano-13-13-hd-rip-720x400-295mb-330mb-mega-pixeldrain-ver-online#4141" class="anime-card">
+            <span class="badge dibujos">DIBUJOS</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776390575/mis_archivos_elegidos/manual_poster_tmdb_Sin_Supervisi%C3%B3n.jpg" alt="Sin Supervisión">
+            <div class="anime-title">Sin Supervisión</div>
+        </a>
+        <!-- El túnel de los deseos -->
+        <a href="https://animezoneesp.foroactivo.com/t1700-activo-el-tunel-de-los-deseos-2022-tri-audio-webdl-rip-1920x1080-882gb-mega-pixeldrain-ver-online#4138" class="anime-card">
+            <span class="badge pelicula">PELÍCULA</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776388293/mis_archivos_elegidos/manual_poster_tmdb_El_t%C3%BAnel_de_los_deseos.jpg" alt="El túnel de los deseos">
+            <div class="anime-title">El túnel de los deseos</div>
+        </a>
+        <!-- Violet Evergarden: La eternidad y la muñeca de recuerdos automáticos -->
+        <a href="https://animezoneesp.foroactivo.com/t1699-activo-violet-evergarden-la-eternidad-y-la-muneca-de-recuerdos-automaticos-2019-multi-audio-webdl-rip-1920x1080-544gb-mega-pixeldrain-ver-online#4137" class="anime-card">
+            <span class="badge pelicula">PELÍCULA</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776386734/mis_archivos_elegidos/manual_poster_tmdb_Violet_Evergarden_La_eternidad_y_la_mu%C3%B1eca_de_recu.jpg" alt="Violet Evergarden: La eternidad y la muñeca de recuerdos automáticos">
+            <div class="anime-title">Violet Evergarden: La eternidad y la muñeca de recuerdos automáticos</div>
+        </a>
+        <!-- Koutetsujou no Kabaneri Movie 3: Unato Kessen -->
+        <a href="https://animezoneesp.foroactivo.com/t1698-activo-koutetsujou-no-kabaneri-movie-3-unato-kessen-2019-dual-audio-bd-rip-1920x1080-842gb-mega-pixeldrain-ver-online#4136" class="anime-card">
+            <span class="badge pelicula">PELÍCULA</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776385659/mis_archivos_elegidos/manual_poster_tmdb_Koutetsujou_no_Kabaneri_Movie_3_Unato_Kessen.jpg" alt="Koutetsujou no Kabaneri Movie 3: Unato Kessen">
+            <div class="anime-title">Koutetsujou no Kabaneri Movie 3: Unato Kessen</div>
+        </a>
+        <!-- Maquia, una historia de amor inmortal -->
+        <a href="https://animezoneesp.foroactivo.com/t1697-activo-maquia-una-historia-de-amor-inmortal-2018-dual-audio-bd-rip-1920x1080-923gb-mega-pixeldrain-ver-online#4135" class="anime-card">
+            <span class="badge pelicula">PELÍCULA</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776384411/mis_archivos_elegidos/manual_poster_tmdb_Maquia%2C_una_historia_de_amor_inmortal.jpg" alt="Maquia, una historia de amor inmortal">
+            <div class="anime-title">Maquia, una historia de amor inmortal</div>
+        </a>
+        <!-- King of Thorn: El rey del espino -->
+        <a href="https://animezoneesp.foroactivo.com/t1696-activo-king-of-thorn-el-rey-del-espino-2010-dual-audio-bd-rip-1916x1036-442gb-mega-pixeldrain-ver-online#4134" class="anime-card">
+            <span class="badge pelicula">PELÍCULA</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776383187/mis_archivos_elegidos/manual_poster_tmdb_King_of_Thorn_El_rey_del_espino.jpg" alt="King of Thorn: El rey del espino">
+            <div class="anime-title">King of Thorn: El rey del espino</div>
+        </a>
+        <!-- Fullmetal Alchemist: El conquistador de Shambala -->
+        <a href="https://animezoneesp.foroactivo.com/t1695-activo-fullmetal-alchemist-el-conquistador-de-shambala-2005-dual-audio-bd-rip-1920x1080-535gb-mega-pixeldrain-ver-online#4133" class="anime-card">
+            <span class="badge pelicula">PELÍCULA</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776382349/mis_archivos_elegidos/manual_poster_tmdb_Fullmetal_Alchemist_El_conquistador_de_Shambala.jpg" alt="Fullmetal Alchemist: El conquistador de Shambala">
+            <div class="anime-title">Fullmetal Alchemist: El conquistador de Shambala</div>
+        </a>
+        <!-- Digimon - La película -->
+        <a href="https://animezoneesp.foroactivo.com/t1694-activo-digimon-la-pelicula-1999-multi-audio-bd-rip-1920x1080-1003gb-mega-ver-online#4132" class="anime-card">
+            <span class="badge pelicula">PELÍCULA</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776381214/mis_archivos_elegidos/manual_poster_tmdb_Digimon_Adventure_OVA.jpg" alt="Digimon - La película">
+            <div class="anime-title">Digimon - La película</div>
+        </a>
+        <!-- Yu Yu Hakusho. La película 2: Batalla mortal en el más allá -->
+        <a href="https://animezoneesp.foroactivo.com/t1693-activo-yu-yu-hakusho-la-pelicula-2-batalla-mortal-en-el-mas-alla-1994-dual-audio-dvd-rip-1920x1080-959gb-mega-ver-online#4131" class="anime-card">
+            <span class="badge pelicula">PELÍCULA</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776377442/mis_archivos_elegidos/manual_poster_tmdb_Yu_Yu_Hakusho._La_pel%C3%ADcula_2_Batalla_mortal_en_el_.jpg" alt="Yu Yu Hakusho. La película 2: Batalla mortal en el más allá">
+            <div class="anime-title">Yu Yu Hakusho. La película 2: Batalla mortal en el más allá</div>
+        </a> 
+                                                                                </div>
+        </div>
+                          <!-- GRUPO: 16/04/2026 -->
+        <div class="date-group">
+            <div class="date-bar verde">
+                <div class="date-text">16/04/2026</div>
+                <div class="date-text">16/04/2026</div>
+            </div>
+            <div class="cards-row">
+      
+        <!-- Yu Yu Hakusho: La película (El Sello Dorado) -->
+        <a href="https://animezoneesp.foroactivo.com/t1691-activo-yu-yu-hakusho-la-pelicula-el-sello-dorado-1993-dual-audio-dvd-rip-720x480-405mb-mega-pixeldrain-ver-online#4124" class="anime-card">
+            <span class="badge pelicula">PELÍCULA</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776371921/mis_archivos_elegidos/manual_poster_tmdb_Yu_Yu_Hakusho_La_pel%C3%ADcula_%28El_Sello_Dorado%29.jpg" alt="Yu Yu Hakusho: La película (El Sello Dorado)">
+            <div class="anime-title">Yu Yu Hakusho: La película (El Sello Dorado)</div>
+        </a>
+        <!-- Los Caballeros del Zodiaco: Los guerreros de la última guerra santa -->
+        <a href="https://animezoneesp.foroactivo.com/t1690-activo-los-caballeros-del-zodiaco-los-guerreros-de-la-ultima-guerra-santa-1989-dual-audio-bd-rip-1920x1080-459gb-mega-pixeldrain-ver-online#4123" class="anime-card">
+            <span class="badge pelicula">PELÍCULA</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776369867/mis_archivos_elegidos/manual_poster_tmdb_Los_Caballeros_del_Zodiaco__Los_guerreros_de_la_%C3%BAl.jpg" alt="Los Caballeros del Zodiaco: Los guerreros de la última guerra santa">
+            <div class="anime-title">Los Caballeros del Zodiaco: Los guerreros de la última guerra santa</div>
+        </a>
+        <!-- Los Caballeros del Zodiaco: La leyenda de los santos escarlatas -->
+        <a href="https://animezoneesp.foroactivo.com/t1689-activo-los-caballeros-del-zodiaco-la-leyenda-de-los-santos-escarlatas-1988-dual-audio-bd-rip-1920x1080-756gb-mega-pixeldrain-ver-online#4121" class="anime-card">
+            <span class="badge pelicula">PELÍCULA</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776369288/mis_archivos_elegidos/manual_poster_tmdb_Los_Caballeros_del_Zodiaco_La_leyenda_de_los_santo.jpg" alt="Los Caballeros del Zodiaco: La leyenda de los santos escarlatas">
+            <div class="anime-title">Los Caballeros del Zodiaco: La leyenda de los santos escarlatas</div>
+        </a>
+        <!-- Los Caballeros del Zodiaco: La batalla de los dioses -->
+        <a href="https://animezoneesp.foroactivo.com/t1688-activo-los-caballeros-del-zodiaco-la-batalla-de-los-dioses-1988-dual-audio-bd-rip-1920x1080-455gb-mega-pixeldrain-ver-online#4120" class="anime-card">
+            <span class="badge pelicula">PELÍCULA</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776368991/mis_archivos_elegidos/manual_poster_tmdb_Los_Caballeros_del_Zodiaco_La_batalla_de_los_diose.jpg" alt="Los Caballeros del Zodiaco: La batalla de los dioses">
+            <div class="anime-title">Los Caballeros del Zodiaco: La batalla de los dioses</div>
+        </a>
+        <!-- Los Caballeros del Zodiaco: La diosa malvada Eris -->
+        <a href="https://animezoneesp.foroactivo.com/t1687-activo-los-caballeros-del-zodiaco-la-diosa-malvada-eris-1987-dual-audio-bd-rip-1920x1080-478gb-mega-pixeldrain-ver-online#4119" class="anime-card">
+            <span class="badge pelicula">PELÍCULA</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776367141/mis_archivos_elegidos/manual_poster_tmdb_Los_Caballeros_del_Zodiaco_La_diosa_malvada_Eris.jpg" alt="Los Caballeros del Zodiaco: La diosa malvada Eris">
+            <div class="anime-title">Los Caballeros del Zodiaco: La diosa malvada Eris</div>
+        </a>
+        <!-- Proyecto A-Ko 4: Final -->
+        <a href="https://animezoneesp.foroactivo.com/t1686-activo-proyecto-a-ko-4-final-1989-multi-audio-bd-rip-1920x1080-973gb-mega-ver-online#4118" class="anime-card">
+            <span class="badge pelicula">PELÍCULA</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776366656/mis_archivos_elegidos/manual_poster_tmdb_Proyecto_A-Ko_4_Final.jpg" alt="Proyecto A-Ko 4: Final">
+            <div class="anime-title">Proyecto A-Ko 4: Final</div>
+        </a>
+        <!-- Proyecto A-Ko 3: La rapsodia de Cenicienta -->
+        <a href="https://animezoneesp.foroactivo.com/t1685-activo-proyecto-a-ko-3-la-rapsodia-de-cenicienta-1988-multi-audio-bd-rip-1920x1080-875gb-mega-pixeldrain-ver-online#4117" class="anime-card">
+            <span class="badge pelicula">PELÍCULA</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776364517/mis_archivos_elegidos/manual_poster_tmdb_Proyecto_A-Ko_3_La_rapsodia_de_Cenicienta.jpg" alt="Proyecto A-Ko 3: La rapsodia de Cenicienta">
+            <div class="anime-title">Proyecto A-Ko 3: La rapsodia de Cenicienta</div>
+        </a>
+        <!-- Proyecto A-Ko 2: El entramado del grupo financiero Daitokuji -->
+        <a href="https://animezoneesp.foroactivo.com/t1684-activo-proyecto-a-ko-2-el-entramado-del-grupo-financiero-daitokuji-1987-multi-audio-bd-rip-1920x1080-999gb-mega-ver-online" class="anime-card">
+            <span class="badge pelicula">PELÍCULA</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776361472/mis_archivos_elegidos/manual_poster_tmdb_Proyecto_A-Ko_2_El_entramado_del_grupo_financiero_.jpg" alt="Proyecto A-Ko 2: El entramado del grupo financiero Daitokuji">
+            <div class="anime-title">Proyecto A-Ko 2: El entramado del grupo financiero Daitokuji</div>
+        </a>
+                                                                  </div>
+        </div>
+                    <!-- GRUPO: 15/04/2026 -->
+        <div class="date-group">
+            <div class="date-bar purpura">
+                <div class="date-text">15/04/2026</div>
+                <div class="date-text">15/04/2026</div>
+            </div>
+            <div class="cards-row">
+             
+        <!-- Proyecto A-Ko -->
+        <a href="https://animezoneesp.foroactivo.com/t1674-activo-proyecto-a-ko-1986-multi-audio-bd-rip-1920x1080-1445gb-mega-ver-online#4088" class="anime-card">
+            <span class="badge pelicula">PELÍCULA</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776290251/mis_archivos_elegidos/manual_poster_tmdb_Proyecto_A-Ko.jpg" alt="Proyecto A-Ko">
+            <div class="anime-title">Proyecto A-Ko</div>
+        </a>
+        <!-- Me llamo Earl -->
+        <a href="https://animezoneesp.foroactivo.com/t1673-activo-me-llamo-earl-2005-dual-audio-96-96-webdl-rip-1920x1080-107gb-171gb-mega-pixeldrain-ver-online#4087" class="anime-card">
+            <span class="badge serie">SERIE</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776289995/mis_archivos_elegidos/manual_poster_tmdb_Me_llamo_Earl.jpg" alt="Me llamo Earl">
+            <div class="anime-title">Me llamo Earl</div>
+        </a>
+        <!-- GetBackers -->
+        <a href="https://animezoneesp.foroactivo.com/t1672-activo-getbackers-2002-castellano-49-49-dvd-rip-720x400-55mb-85mb-mega-pixeldrain-ver-online#4086" class="anime-card">
+            <span class="badge anime">ANIME</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776289757/mis_archivos_elegidos/manual_poster_tmdb_Get_Backers.jpg" alt="GetBackers">
+            <div class="anime-title">GetBackers</div>
+        </a>
+        <!-- El príncipe de Bel-Air -->
+        <a href="https://animezoneesp.foroactivo.com/t1671-activo-el-principe-de-bel-air-1990-dual-audio-148-148-bd-rip-1440x1080-265mb-520mb-mega-pixeldrain-ver-online#4085" class="anime-card">
+            <span class="badge serie">SERIE</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776289261/mis_archivos_elegidos/manual_poster_tmdb_El_pr%C3%ADncipe_de_Bel-Air.jpg" alt="El príncipe de Bel-Air">
+            <div class="anime-title">El príncipe de Bel-Air</div>
+        </a>
+        <!-- El irresponsable Capitán Tylor -->
+        <a href="https://animezoneesp.foroactivo.com/t1670-activo-el-irresponsable-capitan-tylor-1993-dual-audio-26-2609-bd-rip-1440x1080-780mb-338gb-mega-pixeldrain-ver-online#4084" class="anime-card">
+            <span class="badge anime">ANIME</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1776288651/mis_archivos_elegidos/manual_poster_tmdb_El_irresponsable_Capit%C3%A1n_Tylor.jpg" alt="El irresponsable Capitán Tylor">
+            <div class="anime-title">El irresponsable Capitán Tylor</div>
+        </a>
+                                          </div>
+        </div>
+              <!-- GRUPO: 07/04/2026 -->
+        <div class="date-group">
+            <div class="date-bar naranja">
+                <div class="date-text">07/04/2026</div>
+                <div class="date-text">07/04/2026</div>
+            </div>
+            <div class="cards-row">
+              
+        <!-- Akame ga Kill! -->
+        <a href="https://animezoneesp.foroactivo.com/t1642-activo-akame-ga-kill-2014-multi-audio-24-24-webdl-rip-1920x1080-176gb-275gb-mega-pixeldrain-ver-online#4023" class="anime-card">
+            <span class="badge anime">ANIME</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775562965/mis_archivos_elegidos/manual_poster_tmdb_Akame_ga_Kill%21.jpg" alt="Akame ga Kill!">
+            <div class="anime-title">Akame ga Kill!</div>
+        </a>
+        <!-- Dorohedoro -->
+        <a href="https://animezoneesp.foroactivo.com/t1641-activo-dorohedoro-2020-dual-audio-13-13-webdl-rip-1920x1080-109gb-253gb-mega-pixeldrain-ver-online#4022" class="anime-card">
+            <span class="badge anime">ANIME</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775562822/mis_archivos_elegidos/manual_poster_tmdb_Dorohedoro.jpg" alt="Dorohedoro">
+            <div class="anime-title">Dorohedoro</div>
+        </a>
+        <!-- Disney Twisted-Wonderland: La serie -->
+        <a href="https://animezoneesp.foroactivo.com/t1640-activo-disney-twisted-wonderland-la-serie-2025-multi-audio-08-08-webdl-rip-1920x1080-101gb-126gb-mega-pixeldrain-ver-online#4021" class="anime-card">
+            <span class="badge anime">ANIME</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775562636/mis_archivos_elegidos/manual_poster_tmdb_Disney_Twisted-Wonderland_La_serie.jpg" alt="Disney Twisted-Wonderland: La serie">
+            <div class="anime-title">Disney Twisted-Wonderland: La serie</div>
+        </a>
+        <!-- De yakuza a amo de casa -->
+        <a href="https://animezoneesp.foroactivo.com/t1639-activo-de-yakuza-a-amo-de-casa-2021-multi-audio-15-15-webdl-rip-1920x1080-370mb-129gb-mega-pixeldrain-ver-online#4020" class="anime-card">
+            <span class="badge anime">ANIME</span>
+            <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775562185/mis_archivos_elegidos/manual_poster_tmdb_De_yakuza_a_amo_de_casa.jpg" alt="De yakuza a amo de casa">
+            <div class="anime-title">De yakuza a amo de casa</div>
+        </a>
+                                </div>
+        </div>
+        <!-- GRUPO: 06/04/2026 -->
+        <div class="date-group">
+            <div class="date-bar">
+                <div class="date-text">06/04/2026</div>
+                <div class="date-text">06/04/2026</div>
+            </div>
+            <div class="cards-row">
+                <!-- Zeke y Luther -->
+                <a href="https://animezoneesp.foroactivo.com/t1627-activo-zeke-y-luther-2009-castellano-73-73-webdl-rip-1280x720-370mb-1025mb-mega-pixeldrain-ver-online#3984" class="anime-card">
+                    <span class="badge serie">SERIE</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775465888/mis_archivos_elegidos/manual_poster_tmdb_Zeke_y_Luther.jpg" alt="Zeke y Luther">
+                    <div class="anime-title">Zeke y Luther</div>
+                </a>
+                <!-- Your Lie in April -->
+                <a href="https://animezoneesp.foroactivo.com/t1626-activo-your-lie-in-april-2014-dual-audio-22-22-dvd-rip-1920x1080-450mb-475mb-mega-pixeldrain-ver-online#3983" class="anime-card">
+                    <span class="badge anime">ANIME</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775465768/mis_archivos_elegidos/manual_poster_tmdb_Your_Lie_in_April.jpg" alt="Your Lie in April">
+                    <div class="anime-title">Your Lie in April</div>
+                </a>
+                <!-- Un país de cuentos -->
+                <a href="https://animezoneesp.foroactivo.com/t1625-activo-un-pais-de-cuentos-2004-castellano-23-23-dvd-rip-720x544-155mb-740mb-mega-pixeldrain-ver-online#3982" class="anime-card">
+                    <span class="badge dibujos">DIBUJOS</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775465202/mis_archivos_elegidos/manual_poster_tmdb_Un_pa%C3%ADs_de_cuentos.jpg" alt="Un país de cuentos">
+                    <div class="anime-title">Un país de cuentos</div>
+                </a>
+                <!-- Super Gals! -->
+                <a href="https://animezoneesp.foroactivo.com/t1624-activo-super-gals-2001-dual-audio-52-52-dvd-rip-640x480-275mb-295mb-mega-pixeldrain-ver-online#3980" class="anime-card">
+                    <span class="badge anime">ANIME</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775464948/mis_archivos_elegidos/manual_poster_tmdb_Super_Gals%21.jpg" alt="Super Gals!">
+                    <div class="anime-title">Super Gals!</div>
+                </a>
+                <!-- Soy Sakamoto ¿por? -->
+                <a href="https://animezoneesp.foroactivo.com/t1623-activo-sakamoto-desu-ga-soy-sakamoto-por-2016-dual-audio-13-13-webdl-rip-1920x1080-106gb-120gb-mega-pixeldrain-ver-online#3979" class="anime-card">
+                    <span class="badge anime">ANIME</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775464696/mis_archivos_elegidos/manual_Soy%20Sakamoto%20%C2%BFpor%C2%BF%20A.jpg" alt="Soy Sakamoto ¿por?">
+                    <div class="anime-title">Soy Sakamoto ¿por?</div>
+                </a>
+                <!-- SHIBOYUGI: Juegos mortales para ganarse el pan -->
+                <a href="https://animezoneesp.foroactivo.com/t1622-activo-shiboyugi-juegos-mortales-para-ganarse-el-pan-2026-multi-audio-11-11-webdl-rip-1920x1080-163gb-322gb-mega-pixeldrain-ver-online#3978" class="anime-card">
+                    <span class="badge anime">ANIME</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775464157/mis_archivos_elegidos/manual_poster_tmdb_SHIBOYUGI_Juegos_mortales_para_ganarse_el_pan.jpg" alt="SHIBOYUGI: Juegos mortales para ganarse el pan">
+                    <div class="anime-title">SHIBOYUGI: Juegos mortales para ganarse el pan</div>
+                </a>
+                <!-- Scarlet -->
+                <a href="https://animezoneesp.foroactivo.com/t1621-activo-scarlet-2025-multi-audio-bd-rip-1920x800-712gb-mega-pixeldrain-ver-online#3977" class="anime-card">
+                    <span class="badge pelicula">PELÍCULA</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775464013/mis_archivos_elegidos/manual_poster_tmdb_Scarlet.jpg" alt="Scarlet">
+                    <div class="anime-title">Scarlet</div>
+                </a>
+                <!-- Look Back -->
+                <a href="https://animezoneesp.foroactivo.com/t1620-activo-look-back-2024-dual-audio-bd-rip-1920x960-204gb-mega-pixeldrain-ver-online#3976" class="anime-card">
+                    <span class="badge pelicula">PELÍCULA</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775463909/mis_archivos_elegidos/manual_poster_tmdb_Look_Back.jpg" alt="Look Back">
+                    <div class="anime-title">Look Back</div>
+                </a>
+                <!-- Mirai, mi hermana pequeña -->
+                <a href="https://animezoneesp.foroactivo.com/t1619-activo-mirai-mi-hermana-pequena-2018-multi-audio-bd-rip-1920x1038-909gb-mega-pixeldrain-ver-online#3975" class="anime-card">
+                    <span class="badge pelicula">PELÍCULA</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775463812/mis_archivos_elegidos/manual_poster_tmdb_Mirai%2C_mi_hermana_peque%C3%B1a.jpg" alt="Mirai, mi hermana pequeña">
+                    <div class="anime-title">Mirai, mi hermana pequeña</div>
+                </a>
+                <!-- One Piece Gold -->
+                <a href="https://animezoneesp.foroactivo.com/t1618-activo-one-piece-gold-2016-tri-audio-bd-rip-1920x1080-702gb-mega-pixeldrain-ver-online#3974" class="anime-card">
+                    <span class="badge pelicula">PELÍCULA</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775463701/mis_archivos_elegidos/manual_poster_tmdb_One_Piece_Gold.jpg" alt="One Piece Gold">
+                    <div class="anime-title">One Piece Gold</div>
+                </a>
+                <!-- Tsubasa Chronicle: La Princesa del Reino Enjaulado -->
+                <a href="https://animezoneesp.foroactivo.com/t1617-activo-tsubasa-chronicle-la-princesa-del-reino-enjaulado-2005-dual-audio-bd-rip-1920x1080-129gb-mega-pixeldrain-ver-online#3973" class="anime-card">
+                    <span class="badge pelicula">PELÍCULA</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775463491/mis_archivos_elegidos/manual_poster_tmdb_Tsubasa_Chronicle_La_Princesa_del_Reino_Enjaulado.jpg" alt="Tsubasa Chronicle: La Princesa del Reino Enjaulado">
+                    <div class="anime-title">Tsubasa Chronicle: La Princesa del Reino Enjaulado</div>
+                </a>
+                <!-- City Hunter: La ciudad portuaria en guerra -->
+                <a href="https://animezoneesp.foroactivo.com/t1616-activo-city-hunter-la-ciudad-portuaria-en-guerra-1990-tri-audio-bd-rip-1472x1072-147gb-mega-pixeldrain-ver-online#3972" class="anime-card">
+                    <span class="badge pelicula">PELÍCULA</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775463329/mis_archivos_elegidos/manual_poster_tmdb_City_Hunter_La_ciudad_portuaria_en_guerra.jpg" alt="City Hunter: La ciudad portuaria en guerra">
+                    <div class="anime-title">City Hunter: La ciudad portuaria en guerra</div>
+                </a>
+                <!-- City Hunter: La conspiración del millón de dólares -->
+                <a href="https://animezoneesp.foroactivo.com/t1615-activo-city-hunter-la-conspiracion-del-millon-de-dolares-1990-tri-audio-bd-rip-1472x1072-129gb-1154gb-mega-pixeldrain-ver-online#3971" class="anime-card">
+                    <span class="badge pelicula">PELÍCULA</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775463220/mis_archivos_elegidos/manual_poster_tmdb_City_Hunter_La_conspiraci%C3%B3n_del_mill%C3%B3n_de_d%C3%B3lares.jpg" alt="City Hunter: La conspiración del millón de dólares">
+                    <div class="anime-title">City Hunter: La conspiración del millón de dólares</div>
+                </a>
+                <!-- City Hunter: Un mágnum destinado al amor -->
+                <a href="https://animezoneesp.foroactivo.com/t1614-activo-city-hunter-un-magnum-destinado-al-amor-1989-tri-audio-bd-rip-1472x1072-273gb-mega-pixeldrain-ver-online#3970" class="anime-card">
+                    <span class="badge pelicula">PELÍCULA</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775463099/mis_archivos_elegidos/manual_poster_tmdb_City_Hunter_Un_m%C3%A1gnum_destinado_al_amor.jpg" alt="City Hunter: Un mágnum destinado al amor">
+                    <div class="anime-title">City Hunter: Un mágnum destinado al amor</div>
+                </a>
+                <!-- Demon City Shinjuku -->
+                <a href="https://animezoneesp.foroactivo.com/t1613-activo-demon-city-shinjuku-1988-multi-audio-bd-rip-1440x1080-1154gb-mega-ver-online#3969" class="anime-card">
+                    <span class="badge pelicula">PELÍCULA</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775462913/mis_archivos_elegidos/manual_poster_tmdb_Demon_City_Shinjuku.jpg" alt="Demon City Shinjuku">
+                    <div class="anime-title">Demon City Shinjuku</div>
+                </a>
+            </div>
+        </div>
+        <!-- GRUPO: 05/04/2026 -->
+        <div class="date-group">
+            <div class="date-bar rojo">
+                <div class="date-text">05/04/2026</div>
+                <div class="date-text">05/04/2026</div>
+            </div>
+            <div class="cards-row">
+                <!-- Megas XLR -->
+                <a href="https://animezoneesp.foroactivo.com/t1608-activo-megas-xlr-2004-castellano-26-26-tv-rip-576x470-185mb-210mb-mega-pixeldrain-ver-online#3958" class="anime-card">
+                    <span class="badge dibujos">DIBUJOS</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775389898/mis_archivos_elegidos/manual_poster_tmdb_Megas_XLR.jpg" alt="Megas XLR">
+                    <div class="anime-title">Megas XLR</div>
+                </a>
+                <!-- Link Click -->
+                <a href="https://animezoneesp.foroactivo.com/t1606-activo-link-click-2021-castellano-24-24-webdl-rip-1920x1080-190mb-475mb-mega-pixeldrain-ver-online#3949" class="anime-card">
+                    <span class="badge anime">ANIME</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775350391/mis_archivos_elegidos/manual_poster_tmdb_Link_Click.jpg" alt="Link Click">
+                    <div class="anime-title">Link Click</div>
+                </a>
+                <!-- Lazarus -->
+                <a href="https://animezoneesp.foroactivo.com/t1605-activo-lazarus-2025-multi-audio-13-13-webdl-rip-1920x1080-710mb-114gb-mega-pixeldrain-ver-online#3948" class="anime-card">
+                    <span class="badge anime">ANIME</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775350260/mis_archivos_elegidos/manual_poster_tmdb_Lazarus.jpg" alt="Lazarus">
+                    <div class="anime-title">Lazarus</div>
+                </a>
+                <!-- Las aventuras del Capitán Harlock -->
+                <a href="https://animezoneesp.foroactivo.com/t1604-activo-las-aventuras-del-capitan-harlock-1978-castellano-42-42-dvd-rip-640x480-155mb-175mb-mega-pixeldrain-ver-online#3947" class="anime-card">
+                    <span class="badge anime">ANIME</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775350048/mis_archivos_elegidos/manual_poster_tmdb_Las_aventuras_del_Capit%C3%A1n_Harlock_%28Pirata_Espacial.jpg" alt="Las aventuras del Capitán Harlock">
+                    <div class="anime-title">Las aventuras del Capitán Harlock</div>
+                </a>
+                <!-- Hannah Montana -->
+                <a href="https://animezoneesp.foroactivo.com/t1603-activo-hannah-montana-2006-castellano-86-86-web-dl-640x480-495mb-142gb-mega-pixeldrain-ver-online" class="anime-card">
+                    <span class="badge serie">SERIE</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775335985/mis_archivos_elegidos/manual_poster_tmdb_Hannah_Montana.jpg" alt="Hannah Montana">
+                    <div class="anime-title">Hannah Montana</div>
+                </a>
+                <!-- Gankutsuou: El conde de Montecristo -->
+                <a href="https://animezoneesp.foroactivo.com/t1602-activo-gankutsuou-el-conde-de-montecristo-2004-castellano-24-24-dvd-rip-704x396-270mb-285mb-mega-pixeldrain-ver-online#3943" class="anime-card">
+                    <span class="badge anime">ANIME</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775335055/mis_archivos_elegidos/manual_poster_tmdb_Gankutsuou_El_conde_de_Montecristo.jpg" alt="Gankutsuou: El conde de Montecristo">
+                    <div class="anime-title">Gankutsuou: El conde de Montecristo</div>
+                </a>
+                <!-- ¡Croket! -->
+                <a href="https://animezoneesp.foroactivo.com/t1600-activo-croket-2003-castellano-52-52-tv-rip-600x480-100mb-120mb-mega-pixeldrain-ver-online#3940" class="anime-card">
+                    <span class="badge anime">ANIME</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775332579/mis_archivos_elegidos/manual_Crocket%20A.jpg" alt="¡Croket!">
+                    <div class="anime-title">¡Croket!</div>
+                </a>
+                <!-- City Hunter -->
+                <a href="https://animezoneesp.foroactivo.com/t1599-activo-city-hunter-1987-tri-audio-143-143-bd-rip-1472x1072-385mb-314gb-mega-pixeldrain-ver-online#3939" class="anime-card">
+                    <span class="badge anime">ANIME</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775332002/mis_archivos_elegidos/manual_poster_tmdb_City_Hunter.jpg" alt="City Hunter">
+                    <div class="anime-title">City Hunter</div>
+                </a>
+                <!-- Capitán Herlock: The Endless Odyssey -->
+                <a href="https://animezoneesp.foroactivo.com/t1598-activo-capitan-herlock-the-endless-odyssey-2002-castellano-13-13-dvd-rip-704x528-250mb-260mb-mega-pixeldrain-ver-online#3938" class="anime-card">
+                    <span class="badge anime">ANIME</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775331760/mis_archivos_elegidos/manual_poster_tmdb_Capit%C3%A1n_Herlock_The_Endless_Odyssey.jpg" alt="Capitán Herlock: The Endless Odyssey">
+                    <div class="anime-title">Capitán Herlock: The Endless Odyssey</div>
+                </a>
+                <!-- Bolts and Blip -->
+                <a href="https://animezoneesp.foroactivo.com/t1597-activo-bolts-and-blip-2010-castellano-26-26-tv-rip-640x360-125mb-130mb-mega-pixeldrain-ver-online#3937" class="anime-card">
+                    <span class="badge dibujos">DIBUJOS</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775331577/mis_archivos_elegidos/manual_poster_tmdb_Bolts_and_Blip.jpg" alt="Bolts and Blip">
+                    <div class="anime-title">Bolts and Blip</div>
+                </a>
+                <!-- Bailando con vampiros -->
+                <a href="https://animezoneesp.foroactivo.com/t1592-activo-bailando-con-vampiros-2010-dual-audio-12-12-webdl-rip-1920x1080-169gb-267gb-mega-pixeldrain-ver-online#3931" class="anime-card">
+                    <span class="badge anime">ANIME</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1775315538/mis_archivos_elegidos/manual_poster_tmdb_Bailando_con_vampiros.jpg" alt="Bailando con vampiros">
+                    <div class="anime-title">Bailando con vampiros</div>
+                </a>
+                <!-- xxxHOLiC -->
+                <a href="https://animezoneesp.foroactivo.com/t1587-activo-xxxholic-2006-dual-audio-24-24-dvd-rip-720x576-106gb-108gb-mega-pixeldrain-ver-online" class="anime-card">
+                    <span class="badge anime">ANIME</span>
+                    <img src="https://res.cloudinary.com/ddaxoi1n4/image/upload/v1774482130/mis_archivos_elegidos/manual_poster_tmdb_xxxHOLiC.jpg" alt="xxxHOLiC">
+                    <div class="anime-title">xxxHOLiC</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var w = document.querySelector('.news-ticker-wrap');
+    var m = document.querySelector('.ticker-move');
+    var s = 120, t = null, d = 95;
+    
+    if (!w || !m) {
+        console.log('Slider: elementos no encontrados');
+        return;
+    }
+    console.log('Slider inicializado');
+
+    function pauseAnim() {
+        m.style.animationPlayState = 'paused';
+        w.classList.add('paused');
+    }
+
+    function resumeFromPosition() {
+        if (!m) return;
+        var style = window.getComputedStyle(m);
+        var matrix = new WebKitCSSMatrix(style.transform);
+        var currentX = matrix.m41;
+        var contentWidth = m.scrollWidth / 2;
+        var percent = Math.abs(currentX) / contentWidth;
+        var delay = -(percent * d);
+        m.style.transform = '';
+        m.style.animation = 'desplazamiento ' + d + 's linear infinite';
+        m.style.animationDelay = delay + 's';
+        m.style.animationPlayState = 'running';
+        w.classList.remove('paused');
+    }
+
+    function autoResume() {
+        if (t) clearTimeout(t);
+        t = setTimeout(resumeFromPosition, 3000);
+    }
+
+    window.navLeft = function() {
+        console.log('navLeft clicked');
+        var style = window.getComputedStyle(m);
+        var matrix = new WebKitCSSMatrix(style.transform);
+        var currentX = matrix.m41;
+        var newPos = Math.min(currentX + s, 0);
+        pauseAnim();
+        m.style.transition = 'transform 0.4s ease-out';
+        m.style.transform = 'translateX(' + newPos + 'px)';
+        m.style.animation = 'none';
+        setTimeout(function() {
+            m.style.transition = '';
+            autoResume();
+        }, 400);
+    };
+
+    window.navRight = function() {
+        console.log('navRight clicked');
+        var style = window.getComputedStyle(m);
+        var matrix = new WebKitCSSMatrix(style.transform);
+        var currentX = matrix.m41;
+        var wrapWidth = w.clientWidth;
+        var contentWidth = m.scrollWidth / 2;
+        var maxX = -(contentWidth * 2 - wrapWidth);
+        var newPos = Math.max(currentX - s, maxX);
+        pauseAnim();
+        m.style.transition = 'transform 0.4s ease-out';
+        m.style.transform = 'translateX(' + newPos + 'px)';
+        m.style.animation = 'none';
+        setTimeout(function() {
+            m.style.transition = '';
+            autoResume();
+        }, 400);
+    };
+
+    // Asignar eventos a las flechas
+    var prevBtn = document.querySelector('.nav-btn.prev');
+    var nextBtn = document.querySelector('.nav-btn.next');
+    
+    if (prevBtn) {
+        prevBtn.onclick = window.navLeft;
+        console.log('Prev button assigned');
+    } else {
+        console.log('Prev button not found');
+    }
+    
+    if (nextBtn) {
+        nextBtn.onclick = window.navRight;
+        console.log('Next button assigned');
+    } else {
+        console.log('Next button not found');
+    }
+
+    // Teclado
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); window.navLeft(); }
+        else if (e.key === 'ArrowRight') { e.preventDefault(); window.navRight(); }
+        else if (e.key === 'Escape') {
+            if (t) clearTimeout(t);
+            m.style.animationDelay = '0s';
+            resumeFromPosition();
+        }
+    });
+    
+    console.log('Slider events attached');
+});
+</script>
+
+<script>
+// Script para actualizar la fecha dinámica según qué barra de fecha esté visible
+(function() {
+    const dateLabel = document.getElementById('currentDateLabel');
+    const separators = document.querySelectorAll('.date-separator');
+    const wrap = document.querySelector('.news-ticker-wrap');
+    
+    if (!dateLabel || !separators.length || !wrap) return;
+    
+    function updateDateLabel() {
+        const wrapRect = wrap.getBoundingClientRect();
+        const wrapCenter = wrapRect.left + wrapRect.width / 2;
+        
+        let currentDate = separators[0]?.querySelector('.date-text')?.textContent || '';
+        
+        separators.forEach(separator => {
+            const rect = separator.getBoundingClientRect();
+            const separatorCenter = rect.left + rect.width / 2;
+            
+            // Si el separador está cerca del centro del viewport del slider
+            if (separatorCenter <= wrapCenter && separatorCenter >= wrapRect.left) {
+                const dateText = separator.querySelector('.date-text');
+                if (dateText) {
+                    currentDate = dateText.textContent;
+                }
+            }
+        });
+        
+        if (currentDate && dateLabel.textContent !== currentDate) {
+            dateLabel.textContent = currentDate;
+            
+            // Cambiar color según la fecha
+            const currentSeparator = Array.from(separators).find(s => 
+                s.querySelector('.date-text')?.textContent === currentDate
+            );
+            
+            if (currentSeparator) {
+                dateLabel.style.background = window.getComputedStyle(currentSeparator).background;
+                dateLabel.style.borderColor = window.getComputedStyle(currentSeparator).borderColor;
+            }
+        }
+    }
+    
+    // Usar requestAnimationFrame para actualizar suavemente
+    let ticking = false;
+    function onAnimationFrame() {
+        updateDateLabel();
+        ticking = false;
+    }
+    
+    // Observar cambios en la animación CSS
+    const tickerMove = document.querySelector('.ticker-move');
+    if (tickerMove) {
+        const observer = new MutationObserver(() => {
+            if (!ticking) {
+                ticking = true;
+                requestAnimationFrame(onAnimationFrame);
+            }
+        });
+        
+        observer.observe(tickerMove, { 
+            attributes: true, 
+            attributeFilter: ['style'] 
+        });
+    }
+    
+    // Actualizar periódicamente también
+    setInterval(updateDateLabel, 100);
+    
+    // Inicializar
+    updateDateLabel();
+})();
+</script>
+
+<ul class="linklist">
+	<!-- BEGIN switch_user_logged_in -->
+	<li><a href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a>&nbsp;&bull;&nbsp;</li>
+	<li><a href="{U_SEARCH_SELF}">{L_SEARCH_SELF}</a>&nbsp;&bull;&nbsp;</li>
+	<!-- END switch_user_logged_in -->
+	<li><a href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a></li>
+	<!-- BEGIN switch_user_logged_in -->
+	<li class="rightside"><a href="{U_MARK_READ}" accesskey="m">{L_MARK_FORUMS_READ}</a></li>
+	<!-- END switch_user_logged_in -->
+</ul>
+
+<!-- BEGIN catrow -->
+	<!-- BEGIN tablehead -->
+		<div class="forabg">
+			<div class="inner"><span class="corners-top"><span></span></span>
+			<ul class="topiclist">
+				<li class="header">
+					<dl class="icon">
+						<dd class="dterm"><div class="table-title">{catrow.tablehead.L_FORUM}</div></dd>
+						<dd class="topics">{L_TOPICS}</dd>
+						<dd class="posts">{L_POSTS}</dd>
+						<dd class="lastpost"><span>{L_LASTPOST}</span></dd>
+					</dl>
+				</li>
+			</ul>
+			<ul class="topiclist forums">
+	<!-- END tablehead -->
+
+	<!-- BEGIN forumrow -->
+				<li class="row">
+					<dl class="icon" style="background:url({catrow.forumrow.FORUM_FOLDER_IMG}) no-repeat scroll {catrow.forumrow.INC_LEVEL} 50%;">
+						<dd class="dterm">
+							<div style="display: block; margin : 0 {catrow.forumrow.INC_LEVEL_RIGHT} 0 {catrow.forumrow.INC_LEVEL_LEFT};">
+								<h{catrow.forumrow.LEVEL} class="hierarchy">
+								<a href="{catrow.forumrow.U_VIEWFORUM}" class="forumtitle">{catrow.forumrow.FORUM_NAME}</a>
+								</h{catrow.forumrow.LEVEL}>
+								<br />
+								{catrow.forumrow.FORUM_DESC}
+
+								<!-- BEGIN switch_moderators_links -->
+									{catrow.forumrow.switch_moderators_links.L_MODERATOR}{catrow.forumrow.switch_moderators_links.MODERATORS}
+								<!-- END switch_moderators_links -->
+								{catrow.forumrow.L_LINKS}{catrow.forumrow.LINKS}
+								<strong>{forumrow.L_SUBFORUM_STR}</strong> {forumrow.SUBFORUMS}
+							</div>
+						</dd>
+						<dd class="topics">{catrow.forumrow.TOPICS} <dfn>{L_TOPICS}</dfn></dd>
+						<dd class="posts">{catrow.forumrow.POSTS} <dfn>{L_POSTS}</dfn></dd>
+						<dd class="lastpost">
+							<!-- BEGIN ads -->
+							<span class="AD_LastPA">
+                                <span class="lastpost-avatar"><img src="{catrow.forumrow.ads.IMG}" alt="{catrow.forumrow.ads.TITLE}" loading="lazy" /></span>
+                                <span class="AD_LastInfos">
+                                    <b><a href="{catrow.forumrow.ads.LINK}">{catrow.forumrow.ads.TITLE}</a></b><br />
+                                    {catrow.forumrow.ads.DATE}<br />
+                                    {catrow.forumrow.ads.LOCATION}
+                                </span>
+							</span>
+                            <!-- END ads -->
+							
+                            <!-- BEGIN avatar -->
+                            <span class="lastpost-avatar">{catrow.forumrow.avatar.LAST_POST_AVATAR}</span>
+                            <!-- END avatar -->
+
+							<span>
+							<!-- BEGIN switch_topic_title -->
+							<a href="{catrow.forumrow.U_LATEST_TOPIC}" title="{catrow.forumrow.LATEST_TOPIC_TITLE}">{catrow.forumrow.LATEST_TOPIC_NAME}</a><br />
+							<!-- END switch_topic_title -->
+							{catrow.forumrow.USER_LAST_POST}
+							</span>
+						</dd>
+					</dl>
+				</li>
+	<!-- END forumrow -->
+
+	<!-- BEGIN tablefoot -->
+				</ul>
+
+			<span class="corners-bottom"><span></span></span></div>
+		</div>
+	<!-- END tablefoot -->
+<!-- END catrow -->
+
+<!-- BEGIN switch_forum_images -->
+<div class="forabg">
+	<div class="inner"><span class="corners-top"><span></span></span>
+		<ul class="topiclist">
+			<li class="header">
+				<dl class="icon">
+					<dd class="dterm"><div class="table-title"><h2>{switch_forum_images.TITLE}</h2></div></dd>
+				</dl>
+			</li>
+		</ul>
+		<div class="container-imgs-list" style="max-height: 500px" id="imageList">
+			{switch_forum_images.SCRIPTS}
+		</div>
+	</div>
+	<span class="corners-bottom"><span></span></span>
+</div>
+<!-- END switch_forum_images -->
+
+<!-- BEGIN switch_on_index -->
+<ul class="linklist">
+	<li><a href="{U_TODAY_ACTIVE}">{L_TODAY_ACTIVE}</a>&nbsp;&bull;&nbsp;</li>
+	<li><a href="{U_TODAY_POSTERS}">{L_TODAY_POSTERS}</a>&nbsp;&bull;&nbsp;</li>
+	<li class="last"><a href="{U_OVERALL_POSTERS}">{L_OVERALL_POSTERS}</a></li>
+	<!-- BEGIN switch_delete_cookies -->
+	<li class="rightside"><a href="{switch_on_index.switch_delete_cookies.U_DELETE_COOKIES}" rel="nofollow">{switch_on_index.switch_delete_cookies.L_DELETE_COOKIES}</a></li>
+	<!-- END switch_delete_cookies -->
+</ul>
+<!-- END switch_on_index -->
