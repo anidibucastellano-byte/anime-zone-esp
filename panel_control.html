@@ -432,6 +432,29 @@
                 </div>
                 <div id="extractStatus" class="status-msg"></div>
             </div>
+
+            <!-- TV Time Episode Extractor -->
+            <div class="extract-box" style="margin-top: 25px; border: 2px solid #9b59b6;">
+                <h3>📺 TV Time - Extraer Episodios</h3>
+                <p>Pega la URL de una serie de TV Time para extraer todos los episodios con sus títulos y números.</p>
+                <div class="form-group">
+                    <input type="url" id="tvtimeUrl" placeholder="https://www.tvtime.com/es/show/374585-taffy..." style="margin-bottom: 10px;">
+                    <button onclick="extractTvTimeEpisodes()" id="tvtimeBtn" style="background: #9b59b6;">📺 Extraer Episodios</button>
+                </div>
+                <div id="tvtimeResult" style="display: none; margin-top: 20px;">
+                    <div style="background: rgba(155,89,182,0.1); border: 1px solid #9b59b6; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
+                        <h4 style="color: #9b59b6; margin-bottom: 10px;">📺 <span id="tvtimeShowName"></span></h4>
+                        <div id="tvtimeInfo" style="font-size: 13px; color: #aaa; margin-bottom: 10px;"></div>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px;">
+                            <button onclick="copyEpisodesList()" class="btn-secondary" style="font-size: 12px;">📋 Copiar lista</button>
+                            <button onclick="copyEpisodesJson()" class="btn-secondary" style="font-size: 12px;">📄 Copiar JSON</button>
+                            <button onclick="clearTvTime()" class="btn-secondary" style="font-size: 12px;">🗑️ Limpiar</button>
+                        </div>
+                    </div>
+                    <div id="tvtimeEpisodesList" style="max-height: 400px; overflow-y: auto; background: rgba(0,0,0,0.3); border-radius: 8px; padding: 10px;"></div>
+                </div>
+                <div id="tvtimeStatus" class="status-msg"></div>
+            </div>
         </div>
 
         <!-- Tab: Batch Masivo -->
@@ -1301,6 +1324,105 @@ https://animezoneesp.foroactivo.com/t9012-...
             document.getElementById('editSpecificGenre').value = '';
             document.getElementById('editUrl').value = '';
             document.getElementById('editRazon').value = '';
+        }
+
+        // ========== TV TIME EPISODE EXTRACTOR ==========
+        let currentTvTimeEpisodes = [];
+
+        async function extractTvTimeEpisodes() {
+            const url = document.getElementById('tvtimeUrl').value.trim();
+            const btn = document.getElementById('tvtimeBtn');
+            const status = document.getElementById('tvtimeStatus');
+            const result = document.getElementById('tvtimeResult');
+
+            if (!url || !url.includes('tvtime.com')) {
+                showToast('❌ URL inválida. Debe ser de tvtime.com', 'error');
+                return;
+            }
+
+            btn.disabled = true;
+            btn.innerHTML = '<span class="loading"></span> Extrayendo...';
+            status.style.display = 'none';
+
+            try {
+                const response = await fetch(`${API_URL}/api/extract/tvtime`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ url })
+                });
+
+                const result_data = await response.json();
+
+                if (response.ok && result_data.success) {
+                    currentTvTimeEpisodes = result_data.episodes;
+                    
+                    // Mostrar información de la serie
+                    document.getElementById('tvtimeShowName').textContent = result_data.show_name || 'Serie sin nombre';
+                    document.getElementById('tvtimeInfo').innerHTML = `
+                        📊 Total episodios: <strong>${result_data.episodes_count}</strong>
+                        ${result_data.show_info.year ? `• 📅 Año: <strong>${result_data.show_info.year}</strong>` : ''}
+                    `;
+                    
+                    // Renderizar lista de episodios
+                    const listDiv = document.getElementById('tvtimeEpisodesList');
+                    if (currentTvTimeEpisodes.length === 0) {
+                        listDiv.innerHTML = '<div style="text-align: center; padding: 20px; color: #888;">No se encontraron episodios</div>';
+                    } else {
+                        listDiv.innerHTML = currentTvTimeEpisodes.map((ep, idx) => `
+                            <div style="display: flex; gap: 10px; padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); ${idx % 2 === 0 ? 'background: rgba(255,255,255,0.02);' : ''}">
+                                <span style="color: #9b59b6; font-weight: bold; min-width: 50px;">EP${ep.number}</span>
+                                <span style="flex: 1; color: #fff;">${ep.title}</span>
+                                ${ep.air_date ? `<span style="color: #888; font-size: 12px;">📅 ${ep.air_date}</span>` : ''}
+                            </div>
+                        `).join('');
+                    }
+                    
+                    result.style.display = 'block';
+                    showToast(`✅ ${result_data.episodes_count} episodios extraídos`, 'success');
+                } else {
+                    showToast('❌ ' + (result_data.error || 'No se pudo extraer'), 'error');
+                }
+            } catch (error) {
+                showToast('❌ Error de conexión: ' + error.message, 'error');
+            }
+
+            btn.disabled = false;
+            btn.innerHTML = '📺 Extraer Episodios';
+        }
+
+        function copyEpisodesList() {
+            if (currentTvTimeEpisodes.length === 0) {
+                showToast('❌ No hay episodios para copiar', 'error');
+                return;
+            }
+            
+            const text = currentTvTimeEpisodes.map(ep => `EP${ep.number}: ${ep.title}`).join('\n');
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('✅ Lista de episodios copiada al portapapeles', 'success');
+            }).catch(() => {
+                showToast('❌ Error al copiar', 'error');
+            });
+        }
+
+        function copyEpisodesJson() {
+            if (currentTvTimeEpisodes.length === 0) {
+                showToast('❌ No hay episodios para copiar', 'error');
+                return;
+            }
+            
+            const json = JSON.stringify(currentTvTimeEpisodes, null, 2);
+            navigator.clipboard.writeText(json).then(() => {
+                showToast('✅ JSON de episodios copiado al portapapeles', 'success');
+            }).catch(() => {
+                showToast('❌ Error al copiar', 'error');
+            });
+        }
+
+        function clearTvTime() {
+            currentTvTimeEpisodes = [];
+            document.getElementById('tvtimeUrl').value = '';
+            document.getElementById('tvtimeResult').style.display = 'none';
+            document.getElementById('tvtimeStatus').style.display = 'none';
         }
 
         // ========== BATCH MASIVO ==========

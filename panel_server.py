@@ -687,6 +687,295 @@ def extract_href(url):
         return match.group(0) if match else url
 
 
+@app.route('/api/extract/tvtime', methods=['POST'])
+def extract_tvtime_episodes():
+    """Extraer episodios de una serie de TV Time"""
+    try:
+        data = request.get_json()
+        if not data or 'url' not in data:
+            return jsonify({"error": "URL de TV Time requerida"}), 400
+        
+        url = data['url']
+        
+        # Validar URL de TV Time
+        if 'tvtime.com' not in url:
+            return jsonify({"error": "URL debe ser de tvtime.com"}), 400
+        
+        # Asegurar que la URL tenga el formato correcto
+        # TV Time a veces redirige, así que usamos la URL tal cual viene
+        
+        # Hacer scraping con headers más completos
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+            'Accept-Language': 'es-ES,es;q=0.9,en;q=0.8',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'Connection': 'keep-alive',
+            'Upgrade-Insecure-Requests': '1',
+        }
+        
+        response = requests.get(url, headers=headers, timeout=20, allow_redirects=True)
+        response.raise_for_status()
+        
+        soup = BeautifulSoup(response.text, 'html.parser')
+        html_text = response.text
+        
+        # Extraer nombre de la serie
+        show_name = ''
+        # Intentar múltiples selectores
+        selectors = [
+            ('h1', {'class_': 'show-title'}),
+            ('h1', {'class_': 'title'}),
+            ('div', {'class_': 'show-header-title'}),
+            ('span', {'class_': 'show-title'}),
+        ]
+        for tag, attrs in selectors:
+            elem = soup.find(tag, **attrs)
+            if elem:
+                show_name = elem.get_text(strip=True)
+                break
+        
+        # Si no se encontró, usar meta tags
+        if not show_name:
+            meta_title = soup.find('meta', property='og:title') or soup.find('meta', attrs={'name': 'title'})
+            if meta_title:
+                show_name = meta_title.get('content', '').replace(' - TV Time', '').replace(' | TV Time', '').strip()
+        
+        # Extraer información de la serie
+        show_info = {}
+        # Buscar año en múltiples lugares
+        year_patterns = [
+            r'(\d{4})',  # Cualquier año de 4 dígitos
+        ]
+        for pattern in year_patterns:
+            year_match = re.search(pattern, html_text)
+            if year_match:
+                year = int(year_match.group(1))
+                if 1950 <= year <= 2030:  # Rango razonable
+                    show_info['year'] = year
+                    break
+        
+        # Extraer episodios usando múltiples métodos
+        episodes = []
+        seen_episodes = {}  # Diccionario para evitar duplicados, key = número
+        
+        # MÉTODO ESPECÍFICO TV TIME: Parsear estructura ##### S01 | E23
+        # Buscar todos los headers h5 que contienen la info de episodio
+        tvtime_episodes = soup.find_all(['h5', 'h4', 'h3'], string=re.compile(r'S\d+\s*\|\s*E\d+', re.I))
+        
+        # Si no se encontraron headers, buscar en el texto plano del HTML
+        if not tvtime_episodes:
+            # Buscar patrón en el HTML completo: S01 | E01
+            pattern = r'S(\d+)\s*\|\s*E(\d+)'
+            matches = list(re.finditer(pattern, html_text, re.IGNORECASE))
+            for match in matches:
+                season_num = match.group(1)
+                ep_num = match.group(2)
+                unique_key = f"S{season_num}E{ep_num}"
+                
+                if unique_key not in seen_episodes:
+                    # Buscar título en el texto después del match
+                    start_pos = match.end()
+                    # Buscar hasta 200 caracteres después
+                    text_after = html_text[start_pos:start_pos + 200]
+                    
+                    # Limpiar HTML tags
+                    text_clean = re.sub(r'<[^>]+>', '', text_after)
+                    # Buscar líneas que no sean fechas
+                    lines = [l.strip() for l in text_clean.split('\n') if l.strip()]
+                    
+                    ep_title = None
+                    ep_date = None
+                    for line in lines[:3]:  # Revisar primeras 3 líneas
+                        if re.match(r'\w{3,}\s+\d{1,2},?\s+\d{4}', line):
+                            ep_date = line
+                            break
+                        elif len(line) > 2 and not line.startswith('S'):
+                            ep_title = line
+                            break
+                    
+                    seen_episodes[unique_key] = {
+                        'number': ep_num,
+                        'season': season_num,
+                        'episode': ep_num,
+                        'title': ep_title or f'Episodio {ep_num}',
+                        'air_date': ep_date,
+                        'sort_key': (int(season_num) * 1000) + int(ep_num)
+                    }
+        
+        for ep_header in tvtime_episodes:
+            header_text = ep_header.get_text(strip=True)
+            
+            # Extraer SXX | EYY
+            match = re.search(r'S(\d+)\s*\|\s*E(\d+)', header_text, re.I)
+            if match:
+                season_num = match.group(1)
+                ep_num = match.group(2)
+                
+                # Buscar el título en el siguiente elemento hermano o padre
+                ep_title = None
+                ep_date = None
+                
+                # Intentar encontrar título en elementos cercanos
+                parent = ep_header.find_parent(['div', 'li', 'article'])
+                if parent:
+                    # Buscar en el texto completo del contenedor
+                    parent_text = parent.get_text(separator='\n', strip=True)
+                    lines = [l.strip() for l in parent_text.split('\n') if l.strip()]
+                    
+                    # Buscar línea que no sea el header y que tenga contenido
+                    for line in lines:
+                        if line != header_text and len(line) > 2 and not re.match(r'S\d+\s*\|\s*E\d+', line, re.I):
+                            # Verificar que no sea una fecha
+                            if not re.match(r'\w{3}\s+\d{1,2},?\s+\d{4}', line) and not re.match(r'\d{1,2}[/-]\d{1,2}[/-]\d{4}', line):
+                                ep_title = line
+                                break
+                            else:
+                                ep_date = line
+                
+                # Si no se encontró título, buscar en el siguiente elemento
+                if not ep_title:
+                    next_elem = ep_header.find_next_sibling()
+                    if next_elem:
+                        ep_title = next_elem.get_text(strip=True)
+                
+                # Buscar fecha en formato "Mar 16, 2019" o similar
+                if parent:
+                    parent_text = parent.get_text()
+                    date_match = re.search(r'([A-Z][a-z]{2}\s+\d{1,2},?\s+\d{4}|\d{1,2}[/-]\d{1,2}[/-]\d{4})', parent_text)
+                    if date_match:
+                        ep_date = date_match.group(1)
+                
+                # Crear número único considerando temporada (ej: S01E23)
+                unique_key = f"S{season_num}E{ep_num}"
+                display_num = ep_num  # Mostrar solo número de episodio
+                
+                if unique_key not in seen_episodes:
+                    seen_episodes[unique_key] = {
+                        'number': display_num,
+                        'season': season_num,
+                        'episode': ep_num,
+                        'title': ep_title or f'Episodio {ep_num}',
+                        'air_date': ep_date,
+                        'sort_key': (int(season_num) * 1000) + int(ep_num)  # Para ordenar correctamente
+                    }
+        
+        # MÉTODO 1: Buscar en JSON-LD (Linked Data)
+        if not seen_episodes:
+            scripts = soup.find_all('script', {'type': 'application/ld+json'})
+            for script in scripts:
+                if script.string:
+                    try:
+                        json_data = json.loads(script.string)
+                        if isinstance(json_data, dict) and 'containsSeason' in json_data:
+                            seasons = json_data['containsSeason']
+                            if isinstance(seasons, dict):
+                                seasons = [seasons]
+                            for season in seasons:
+                                if 'episode' in season:
+                                    ep_list = season['episode']
+                                    if isinstance(ep_list, dict):
+                                        ep_list = [ep_list]
+                                    for ep in ep_list:
+                                        ep_num = str(ep.get('episodeNumber', ''))
+                                        ep_title = ep.get('name', f'Episodio {ep_num}')
+                                        if ep_num and ep_num not in seen_episodes:
+                                            seen_episodes[ep_num] = {
+                                                'number': ep_num,
+                                                'title': ep_title,
+                                                'air_date': ep.get('datePublished', None),
+                                                'sort_key': int(ep_num) if ep_num.isdigit() else 0
+                                            }
+                    except:
+                        pass
+        
+        # MÉTODO 2: Buscar en scripts de JavaScript
+        if not seen_episodes:
+            all_scripts = soup.find_all('script')
+            for script in all_scripts:
+                if script.string:
+                    patterns = [
+                        r'"episodeNumber"[:\s]*(\d+)[^}]*"name"[:\s]*"([^"]+)"',
+                        r'"episode_number"[:\s]*(\d+)[^}]*"title"[:\s]*"([^"]+)"',
+                    ]
+                    for pattern in patterns:
+                        matches = re.findall(pattern, script.string, re.IGNORECASE | re.DOTALL)
+                        for match in matches:
+                            ep_num = str(match[0])
+                            ep_title = match[1].strip()
+                            if ep_num and ep_num not in seen_episodes:
+                                seen_episodes[ep_num] = {
+                                    'number': ep_num,
+                                    'title': ep_title,
+                                    'air_date': None,
+                                    'sort_key': int(ep_num) if ep_num.isdigit() else 0
+                                }
+        
+        # MÉTODO 3: Buscar links a episodios con GUID de TV Time
+        if not seen_episodes:
+            episode_links = soup.find_all('a', href=re.compile(r'/episode/[a-f0-9-]+'))
+            for link in episode_links:
+                href = link.get('href', '')
+                link_text = link.get_text(strip=True)
+                
+                # Intentar extraer número del texto del link o del contexto
+                ep_match = re.search(r'E(\d+)', link_text, re.I)
+                if ep_match:
+                    ep_num = ep_match.group(1)
+                    if ep_num not in seen_episodes:
+                        seen_episodes[ep_num] = {
+                            'number': ep_num,
+                            'title': link_text,
+                            'air_date': None,
+                            'sort_key': int(ep_num) if ep_num.isdigit() else 0
+                        }
+        
+        # Convertir diccionario a lista
+        episodes = list(seen_episodes.values())
+        
+        # Ordenar episodios usando sort_key si existe, o por número de episodio
+        def ep_sort_key(ep):
+            # Si ya tiene sort_key (del método TV Time), usarlo
+            if 'sort_key' in ep:
+                return ep['sort_key']
+            # Si no, extraer del número
+            try:
+                num_str = str(ep.get('number', '0'))
+                match = re.search(r'\d+$', num_str)
+                if match:
+                    return int(match.group())
+                match = re.search(r'\d+', num_str)
+                if match:
+                    return int(match.group())
+                return 0
+            except:
+                return 0
+        
+        episodes.sort(key=ep_sort_key)
+        
+        # Renumerar secuencialmente del 1 en adelante
+        for i, ep in enumerate(episodes, 1):
+            ep['number'] = str(i)
+            # Limpiar campos temporales
+            ep.pop('sort_key', None)
+            ep.pop('season', None)
+            ep.pop('episode', None)
+        
+        return jsonify({
+            "success": True,
+            "show_name": show_name,
+            "show_info": show_info,
+            "episodes_count": len(episodes),
+            "episodes": episodes,
+            "url": url
+        })
+        
+    except requests.RequestException as e:
+        return jsonify({"error": f"Error conectando a TV Time: {str(e)}"}), 500
+    except Exception as e:
+        return jsonify({"error": f"Error extrayendo episodios: {str(e)}"}), 500
+
+
 # Ruta a git en Windows (ajustar según instalación)
 GIT_PATH = r'C:\Program Files\Git\bin\git.exe'
 
