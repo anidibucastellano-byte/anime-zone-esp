@@ -4101,32 +4101,6 @@
       "originalGenre": "Comedia",
       "confianza": 100,
       "fecha_adicion": "2026-04-20T20:37:02.318542"
-    },
-    {
-      "name": "Arc the Lad",
-      "year": 1999,
-      "type": "Anime",
-      "genre": "Acción",
-      "specificGenre": "Ciencia ficción, fantasía, Drama, Acción",
-      "url": "https://animezoneesp.foroactivo.com/t1768-activo-arc-the-lad-1999-tri-audio-26-26-dvd-rip-640x480-260mb-315mb-mega-pixeldrain-ver-online#4321",
-      "href": "/t1768-activo-arc-the-lad-1999-tri-audio-26-26-dvd-rip-640x480-260mb-315mb-mega-pixeldrain-ver-online",
-      "razonClasificacion": "Extraído automáticamente del foro - 2026-04-21 13:14",
-      "originalGenre": "Acción",
-      "confianza": 100,
-      "fecha_adicion": "2026-04-21T13:14:59.898486"
-    },
-    {
-      "name": "Louie, el guerrero de las runas",
-      "year": 2001,
-      "type": "Anime",
-      "genre": "Acción",
-      "specificGenre": "Ciencia ficción, fantasía, Comedia, Acción",
-      "url": "https://animezoneesp.foroactivo.com/t1769-activo-louie-el-guerrero-de-las-runas-2001-castellano-24-24-dvd-rip-640x480-170mb-175mb-mega-pixeldrain-ver-online#4322",
-      "href": "/t1769-activo-louie-el-guerrero-de-las-runas-2001-castellano-24-24-dvd-rip-640x480-170mb-175mb-mega-pixeldrain-ver-online",
-      "razonClasificacion": "Extraído automáticamente del foro - 2026-04-21 13:17",
-      "originalGenre": "Acción",
-      "confianza": 100,
-      "fecha_adicion": "2026-04-21T13:17:12.242949"
     }
   ],
   "dibujos": [
@@ -12189,12 +12163,12 @@
     }
   ],
   "resumen": {
-    "anime": 336,
+    "anime": 334,
     "dibujos": 459,
     "peliculas": 185,
     "series": 31,
-    "total": 1011,
-    "ultima_actualizacion": "2026-04-21 13:17:12"
+    "total": 1009,
+    "ultima_actualizacion": "2026-04-21 13:12:01"
   },
   "series": [
     {
