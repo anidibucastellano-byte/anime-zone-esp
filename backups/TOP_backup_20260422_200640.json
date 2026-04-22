@@ -4192,19 +4192,6 @@
       "originalGenre": "Terror",
       "confianza": 100,
       "fecha_adicion": "2026-04-22T18:12:31.951961"
-    },
-    {
-      "name": "El bosque del piano",
-      "year": 2018,
-      "type": "Anime",
-      "genre": "Drama",
-      "specificGenre": "Drama",
-      "url": "https://animezoneesp.foroactivo.com/t1802-activo-el-bosque-del-piano-2018-multi-audio-24-24-webdl-rip-1920x1080-735mb-147gb-mega-pixeldrain-ver-online#4391",
-      "href": "/t1802-activo-el-bosque-del-piano-2018-multi-audio-24-24-webdl-rip-1920x1080-735mb-147gb-mega-pixeldrain-ver-online",
-      "razonClasificacion": "Extraído automáticamente del foro - 2026-04-22 21:23",
-      "originalGenre": "Drama",
-      "confianza": 100,
-      "fecha_adicion": "2026-04-22T21:23:14.670028"
     }
   ],
   "dibujos": [
@@ -10135,32 +10122,6 @@
       "confianza": 100,
       "fecha_adicion": "2026-04-22T18:52:22.111013",
       "fecha_modificacion": "2026-04-22T18:52:34.001636"
-    },
-    {
-      "name": "Oh My God, Yes! (¡Sí, j*der! Una serie con la que todos nos identificamos)",
-      "year": 2025,
-      "type": "Dibujos",
-      "genre": "Comedia",
-      "specificGenre": "Comedia",
-      "url": "https://animezoneesp.foroactivo.com/t1799-activo-oh-my-god-yes-si-jder-una-serie-con-la-que-todos-nos-identificamos-2025-castellano-07-07-webdl-rip-1920x1080-435mb-660mb-mega-pixeldrain-ver-online#4386",
-      "href": "/t1799-activo-oh-my-god-yes-si-jder-una-serie-con-la-que-todos-nos-identificamos-2025-castellano-07-07-webdl-rip-1920x1080-435mb-660mb-mega-pixeldrain-ver-online",
-      "razonClasificacion": "Extraído automáticamente del foro - 2026-04-22 20:04",
-      "originalGenre": "Comedia",
-      "confianza": 100,
-      "fecha_adicion": "2026-04-22T20:06:40.673871"
-    },
-    {
-      "name": "Locos por el basket",
-      "year": 1993,
-      "type": "Dibujos",
-      "genre": "Deportes",
-      "specificGenre": "Animación",
-      "url": "https://animezoneesp.foroactivo.com/t1800-activo-locos-por-el-basket-1993-castellano-39-39-tv-rip-720x544-140mb-150mb-mega-pixeldrain-ver-online#4388",
-      "href": "/t1800-activo-locos-por-el-basket-1993-castellano-39-39-tv-rip-720x544-140mb-150mb-mega-pixeldrain-ver-online",
-      "razonClasificacion": "Extraído automáticamente del foro - 2026-04-22 20:34",
-      "originalGenre": "Deportes",
-      "confianza": 100,
-      "fecha_adicion": "2026-04-22T20:34:54.056853"
     }
   ],
   "peliculas": [
@@ -12450,12 +12411,12 @@
     }
   ],
   "resumen": {
-    "anime": 342,
-    "dibujos": 469,
+    "anime": 341,
+    "dibujos": 467,
     "peliculas": 189,
     "series": 31,
-    "total": 1031,
-    "ultima_actualizacion": "2026-04-22 21:23:14"
+    "total": 1028,
+    "ultima_actualizacion": "2026-04-22 19:29:11"
   },
   "series": [
     {
