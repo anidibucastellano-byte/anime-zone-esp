@@ -4153,19 +4153,6 @@
       "originalGenre": "Ciencia Ficción",
       "confianza": 100,
       "fecha_adicion": "2026-04-22T15:57:40.764703"
-    },
-    {
-      "name": "Ghost in the Shell: SAC_2045",
-      "year": 2020,
-      "type": "Anime",
-      "genre": "Acción",
-      "specificGenre": "Drama, Acción, Ciencia ficción, fantasía",
-      "url": "https://animezoneesp.foroactivo.com/t1786-activo-ghost-in-the-shell-sac_2045-2020-multi-audio-24-24-webdl-rip-1920x1080-645mb-217gb-mega-pixeldrain-ver-online#4372",
-      "href": "/t1786-activo-ghost-in-the-shell-sac_2045-2020-multi-audio-24-24-webdl-rip-1920x1080-645mb-217gb-mega-pixeldrain-ver-online",
-      "razonClasificacion": "Extraído automáticamente del foro - 2026-04-22 16:18",
-      "originalGenre": "Acción",
-      "confianza": 100,
-      "fecha_adicion": "2026-04-22T16:19:09.160401"
     }
   ],
   "dibujos": [
@@ -10043,32 +10030,6 @@
       "originalGenre": "Fantasía",
       "confianza": 100,
       "fecha_adicion": "2026-04-22T16:02:42.599664"
-    },
-    {
-      "name": "Winx Club: Vuelve la magia",
-      "year": 2025,
-      "type": "Dibujos",
-      "genre": "Fantasía",
-      "specificGenre": "Niños, Acción, Comedia, Ciencia ficción, fantasía",
-      "url": "https://animezoneesp.foroactivo.com/t1787-activo-winx-club-vuelve-la-magia-2025-castellano-13-13-webdl-rip-1920x1080-805mb-120gb-mega-pixeldrain-ver-online#4373",
-      "href": "/t1787-activo-winx-club-vuelve-la-magia-2025-castellano-13-13-webdl-rip-1920x1080-805mb-120gb-mega-pixeldrain-ver-online",
-      "razonClasificacion": "Extraído automáticamente del foro - 2026-04-22 16:25",
-      "originalGenre": "Fantasía",
-      "confianza": 100,
-      "fecha_adicion": "2026-04-22T16:25:30.133541"
-    },
-    {
-      "name": "Tutenstein",
-      "year": 2003,
-      "type": "Dibujos",
-      "genre": "Fantasía",
-      "specificGenre": "Niños",
-      "url": "https://animezoneesp.foroactivo.com/t1788-activo-tutenstein-2003-castellano-26-26-tv-rip-704x528-220mb-225mb-mega-pixeldrain-ver-online#4374",
-      "href": "/t1788-activo-tutenstein-2003-castellano-26-26-tv-rip-704x528-220mb-225mb-mega-pixeldrain-ver-online",
-      "razonClasificacion": "Extraído automáticamente del foro - 2026-04-22 16:28",
-      "originalGenre": "Fantasía",
-      "confianza": 100,
-      "fecha_adicion": "2026-04-22T16:29:08.138703"
     }
   ],
   "peliculas": [
@@ -12332,12 +12293,12 @@
     }
   ],
   "resumen": {
-    "anime": 339,
-    "dibujos": 465,
+    "anime": 338,
+    "dibujos": 463,
     "peliculas": 187,
     "series": 31,
-    "total": 1022,
-    "ultima_actualizacion": "2026-04-22 16:29:08"
+    "total": 1019,
+    "ultima_actualizacion": "2026-04-22 16:02:42"
   },
   "series": [
     {
