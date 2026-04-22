@@ -1,0 +1,171 @@
+[center][size=24][b][color=#00BFFF]🛡️ COMO QUITAR LA PUBLICIDAD EN CHROME[/color][/b][/size]
+[size=14][color=#808080]Guía Completa 2025 - uBlock Origin[/color][/size][/center]
+
+[center][color=#FF0000]═══════════════════════════════════════════[/color][/center]
+
+[quote][center][size=16][b][color=#FF4444]😤 ¿CANSADO DE LA PUBLICIDAD INVASIVA?[/color][/b][/size][/center]
+
+Pop-ups emergentes, banners parpadeantes, videos autoplay...
+La publicidad moderna no solo es molesta, sino que:
+[list]
+[*][color=#CCCCCC]Ralentiza la carga de páginas[/color]
+[*][color=#CCCCCC]Consume tu ancho de banda[/color]
+[*][color=#CCCCCC]Compromete tu privacidad[/color]
+[*][color=#CCCCCC]Puede contener malware[/color]
+[/list]
+
+[center][size=14][b][color=#00FF00]✨ HAY SOLUCIÓN: uBlock Origin[/color][/b][/size][/center][/quote]
+
+[center][color=#FF0000]═══════════════════════════════════════════[/color][/center]
+
+[center][size=18][b][color=#0080FF]💡 ¿POR QUÉ UBLOCK ORIGIN?[/color][/b][/size][/center]
+
+Es el bloqueador de anuncios más [b]efectivo[/b], [b]ligero[/b] y [b]respetuoso[/b] con la privacidad.
+A diferencia de AdBlock y otros, [u]no vende tus datos[/u] ni permite anuncios "aceptables".
+
+[center][color=#FF0000]═══════════════════════════════════════════[/color][/center]
+
+[center][size=18][b][color=#AA66FF]🌟 BONUS: Enlaces del Foro Sin Publicidad[/color][/b][/size][/center]
+
+[color=#FFAA00]¡Buenas noticias para los usuarios de AnimeZoneEsp![/color]
+
+Los enlaces [b][color=#00D4FF]shrinkme[/color][/b] que usamos en nuestro foro [b][color=#00FF00]NO tienen publicidad invasiva[/color][/b] gracias a uBlock Origin.
+
+[b][color=#FFD700]¿Qué significa esto?[/color][/b]
+[list]
+[*]✅ Al usar shrinkme [b]desde nuestro foro[/b], los anuncios popup y redirects son bloqueados automáticamente
+[*]✅ No verás ventanas emergentes molestas al hacer clic en enlaces de descarga
+[*]✅ La navegación es más limpia y segura
+[*]✅ uBlock Origin protege tu experiencia en [b]TODOS[/b] los enlaces del foro
+[/list]
+
+[center][color=#00FF00][b]💡 Consejo:[/b] Este tutorial no solo mejora tu navegación general,
+también hace que usar los enlaces de nuestro foro sea mucho más agradable.[/color][/center]
+
+[center][color=#FF0000]═══════════════════════════════════════════[/color][/center]
+
+[center][size=20][b][color=#00FFFF]═══════════════════════════════════════[/color][/b][/size]
+[size=18][b][color=#FFFFFF]PASO 1: Preparar Chrome[/color][/b][/size]
+[size=20][b][color=#00FFFF]═══════════════════════════════════════[/color][/b][/size][/center]
+
+[color=#FFAA00]Google ha limitado la instalación de extensiones como uBlock Origin.[/color]
+[b][color=#FFFF00]Necesitamos modificar Chrome[/color][/b] para que las acepte:
+
+[center][color=#FF4444]⚠️ IMPORTANTE:[/color] Este paso es [u]obligatorio[/u]. Sin él, no podrás instalar uBlock Origin.[/center]
+
+[size=14][b][color=#FFD700]A) Cierra completamente Chrome[/color][/b][/size]
+[i]Asegúrate de que no quede ninguna ventana abierta (revisa la barra de tareas)[/i]
+
+[size=14][b][color=#FFD700]B) Modificar el acceso directo de Chrome[/color][/b][/size]
+[list=1]
+[*]Busca el icono de [b]Chrome[/b] en tu escritorio o menú inicio
+[*]Haz clic [b]derecho[/b] → [b]Propiedades[/b]
+[*]En la pestaña [b]"Acceso directo"[/b], busca el campo [b]"Destino"[/b]
+[/list]
+
+[color=#888888]Tu destino actual probablemente es así:[/color]
+[code]"C:\Program Files\Google\Chrome\Application\chrome.exe"[/code]
+
+[color=#00FF00]Debe quedar ASÍ:[/color]
+[code]"C:\Program Files\Google\Chrome\Application\chrome.exe" --disable-features=ExtensionManifestV2Unsupported,ExtensionManifestV2Disabled[/code]
+
+[size=14][b][color=#FFD700]C) Lo que debes añadir:[/color][/b][/size]
+[code] --disable-features=ExtensionManifestV2Unsupported,ExtensionManifestV2Disabled[/code]
+
+[color=#AAAAAA]Nota: debe haber un ESPACIO entre las comillas finales y el primer guión[/color]
+
+[center][color=#00FF00]✓ Resultado:[/color] Al final del campo "Destino" debe quedar el código amarillo de arriba.[/center]
+
+[size=14][b][color=#FFD700]D) Guardar cambios[/color][/b][/size]
+Haz clic en [b]Aplicar[/b] y luego [b]Aceptar[/b]
+
+[center][color=#FF0000]═══════════════════════════════════════════[/color][/center]
+
+[center][size=20][b][color=#00FFFF]═══════════════════════════════════════[/color][/b][/size]
+[size=18][b][color=#FFFFFF]PASO 2: Instalar uBlock Origin[/color][/b][/size]
+[size=20][b][color=#00FFFF]═══════════════════════════════════════[/color][/b][/size][/center]
+
+[list=1]
+[*]Abre Chrome usando el [b]acceso directo que acabas de modificar[/b]
+[*]Ve a la Chrome Web Store:
+[url=https://chrome.google.com/webstore/category/extensions][color=#66AAFF][b]chrome.google.com/webstore[/b][/color][/url]
+[*]Busca en la barra de búsqueda: [b][color=#FFFF00]uBlock Origin[/color][/b]
+[*]Selecciona el de [b]Raymond Hill[/b] (el creador original)
+[*]Haz clic en [b]"Añadir a Chrome"[/b]
+[*]Confirma en el popup que aparece
+[/list]
+
+[center][color=#00FF00][b]🎉 ¡LISTO![/b][/color] Verás un icono 🛡️ en la barra de Chrome (arriba a la derecha)[/center]
+
+[center][color=#FF0000]═══════════════════════════════════════════[/color][/center]
+
+[center][size=20][b][color=#00FFFF]═══════════════════════════════════════[/color][/b][/size]
+[size=18][b][color=#FFFFFF]PASO 3: Configurar uBlock[/color][/b][/size]
+[size=20][b][color=#00FFFF]═══════════════════════════════════════[/color][/b][/size][/center]
+
+Para una protección máxima:
+[list=1]
+[*]Haz clic en el icono 🛡️ de uBlock
+[*]Haz clic en el [b]icono de engranaje[/b] ⚙️ para abrir el panel
+[*]Ve a la pestaña [b]"Lista de filtros"[/b]
+[*]Asegúrate de que estén marcadas:
+[list]
+[*][color=#CCCCCC]Filtros integrados (EasyList, EasyPrivacy)[/color]
+[*][color=#CCCCCC]Filtros de malware[/color]
+[*][color=#CCCCCC]Filtros de elementos molestos[/color]
+[/list]
+[*]Haz clic en [b]"Aplicar cambios"[/b]
+[/list]
+
+[center][color=#FF0000]═══════════════════════════════════════════[/color][/center]
+
+[center][size=20][b][color=#00FFFF]═══════════════════════════════════════[/color][/b][/size]
+[size=18][b][color=#FFFFFF]PASO 4: Verificar que Funciona[/color][/b][/size]
+[size=20][b][color=#00FFFF]═══════════════════════════════════════[/color][/b][/size][/center]
+
+[b][color=#FF6666]SIN uBlock Origin:[/color][/b]
+❌ Banners publicitarios
+❌ Pop-ups emergentes  
+❌ Videos autoplay
+❌ Rastreadores
+
+[b][color=#66FF66]CON uBlock Origin:[/color][/b]
+✅ Sin anuncios visibles
+✅ Navegación limpia
+✅ Carga más rápida
+✅ Privacidad protegida
+
+[center][color=#0080FF][b]🔍 PRUEBA:[/b][/color] Visita cualquier página con mucha publicidad.
+Verás que los anuncios han desaparecido.[/center]
+
+[center][color=#FF0000]═══════════════════════════════════════════[/color][/center]
+
+[center][size=18][b][color=#FF4444]🔧 SOLUCIÓN DE PROBLEMAS[/color][/b][/size][/center]
+
+[color=#FFAA00][b]"No puedo instalar la extensión"[/b][/color]
+[list]
+[*]Verifica que modificaste el acceso directo CORRECTAMENTE
+[*]Debe haber un [b]ESPACIO[/b] entre "chrome.exe" y --disable...
+[*]Abre Chrome SOLO desde el acceso directo modificado
+[/list]
+
+[color=#FFAA00][b]"La extensión se desactiva al reiniciar"[/b][/color]
+[list]
+[*]Siempre abre Chrome desde el [b]acceso directo modificado[/b]
+[*]Fija el acceso directo modificado a la barra de tareas
+[/list]
+
+[color=#FFAA00][b]"Algunos anuncios siguen apareciendo"[/b][/color]
+[list]
+[*]Actualiza las listas de filtros:
+Panel uBlock → "Lista de filtros" → "Purgar todas las cachés" → "Actualizar ahora"
+[/list]
+
+[center][color=#FF0000]═══════════════════════════════════════════[/color][/center]
+
+[center][quote][size=22][b][color=#00FF00]🎊 ¡FELICITACIONES![/color][/b][/size]
+
+Ahora navegas [b]sin publicidad invasiva[/b].
+Tu experiencia web será más [b]rápida[/b], [b]segura[/b] y [b]agradable[/b].[/quote][/center]
+
+[center][color=#666666][size=10]Tutorial creado para AnimeZoneEsp | 2025[/size][/color][/center]

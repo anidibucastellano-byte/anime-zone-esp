@@ -1,0 +1,104 @@
+══════════════════════════════════════════════════════════════════
+  IMÁGENES REALES DISPONIBLES PARA EL TUTORIAL
+══════════════════════════════════════════════════════════════════
+
+LOGO UBLOCK ORIGIN (FUNCIONA):
+--------------------------------
+URL: https://raw.githubusercontent.com/gorhill/uBlock/master/src/img/ublock.svg
+
+BBCode:
+[img width=200]https://raw.githubusercontent.com/gorhill/uBlock/master/src/img/ublock.svg[/img]
+
+══════════════════════════════════════════════════════════════════
+  IMÁGENES QUE DEBES CAPTURAR TÚ (PERSONALIZADAS)
+══════════════════════════════════════════════════════════════════
+
+Estas imágenes son específicas de TU configuración y debes capturarlas:
+
+1. 📸 PROPIEDADES_CHROME.png
+   - Haz clic derecho en icono Chrome
+   - Selecciona "Propiedades"
+   - Captura la ventana
+
+2. 📸 DESTINO_ANTES.png
+   - En Propiedades, campo "Destino"
+   - Captura el valor original
+
+3. 📸 DESTINO_DESPUES.png
+   - Después de añadir el código
+   - Captura el valor modificado
+
+4. 📸 WEBSTORE_BUSCAR.png
+   - Abre chrome.google.com/webstore
+   - Busca "uBlock Origin"
+   - Captura la búsqueda
+
+5. 📸 UBLOCK_INSTALAR.png
+   - Página de uBlock Origin
+   - Botón "Añadir a Chrome" visible
+
+6. 📸 UBLOCK_ICONO_BAR.png
+   - Barra de Chrome arriba
+   - Icono 🛡️ de uBlock visible
+
+7. 📸 UBLOCK_PANEL.png
+   - Haz clic en el icono 🛡️
+   - Captura el panel abierto
+
+8. 📸 UBLOCK_FILTROS.png
+   - En el panel, pestaña "Lista de filtros"
+   - Casillas marcadas visibles
+
+══════════════════════════════════════════════════════════════════
+  COMO SUBIR TUS IMÁGENES
+══════════════════════════════════════════════════════════════════
+
+OPCIÓN 1: Imgur (GRATIS y RÁPIDO)
+----------------------------------
+1. Ve a https://imgur.com
+2. Arrastra tus capturas ahí
+3. Copia el link DIRECTO (termina en .png o .jpg)
+4. Reemplaza en el tutorial
+
+OPCIÓN 2: Servimg (para foros)
+--------------------------------
+1. Ve a https://servimg.com
+2. Crea cuenta gratuita
+3. Sube imágenes
+4. Copia el enlace DIRECTO
+
+OPCIÓN 3: Alojamiento ForoActivo
+---------------------------------
+1. En tu foro: "Galería" → "Crear álbum"
+2. Sube las imágenes
+3. Copia URL de cada una
+4. Reemplaza en el tutorial
+
+══════════════════════════════════════════════════════════════════
+  BBCode PARA IMÁGENES EN FOROACTIVO
+══════════════════════════════════════════════════════════════════
+
+BÁSICO:
+[img]URL_DE_LA_IMAGEN[/img]
+
+CON TAMAÑO (recomendado):
+[img width=600]URL_DE_LA_IMAGEN[/img]
+
+CENTRADA:
+[center][img width=600]URL_DE_LA_IMAGEN[/img][/center]
+
+══════════════════════════════════════════════════════════════════
+  EJEMPLO COMPLETO
+══════════════════════════════════════════════════════════════════
+
+Supón que subes tu captura a Imgur y te da esta URL:
+https://i.imgur.com/Ejemplo123.png
+
+En el tutorial, reemplaza:
+   📸 IMAGEN 1: Click derecho en icono Chrome → Propiedades
+   (Captura tu propia imagen aquí)
+
+Por:
+   [center][img width=600]https://i.imgur.com/Ejemplo123.png[/img][/center]
+
+══════════════════════════════════════════════════════════════════

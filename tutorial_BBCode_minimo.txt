@@ -1,0 +1,139 @@
+[center][size=24][b]🛡️ COMO QUITAR LA PUBLICIDAD EN CHROME[/b][/size]
+[size=14]Guía Completa 2025 - uBlock Origin[/size][/center]
+
+[center]═══════════════════════════════════════════[/center]
+
+[quote][center][size=16][b]😤 ¿CANSADO DE LA PUBLICIDAD INVASIVA?[/b][/size][/center]
+
+Pop-ups emergentes, banners parpadeantes, videos autoplay...
+La publicidad moderna no solo es molesta, sino que:
+[list]
+[*]Ralentiza la carga de páginas
+[*]Consume tu ancho de banda
+[*]Compromete tu privacidad
+[*]Puede contener malware
+[/list]
+
+[center][size=14][b]✨ HAY SOLUCIÓN: uBlock Origin[/b][/size][/center][/quote]
+
+[center]═══════════════════════════════════════════[/center]
+
+[center][size=18][b]💡 ¿POR QUÉ UBLOCK ORIGIN?[/b][/size][/center]
+
+Es el bloqueador de anuncios más [b]efectivo[/b], [b]ligero[/b] y [b]respetuoso[/b] con la privacidad.
+A diferencia de AdBlock y otros, [u]no vende tus datos[/u].
+
+[center]═══════════════════════════════════════════[/center]
+
+[center][size=18][b]═══════════════════════════════════════
+PASO 1: Preparar Chrome
+═══════════════════════════════════════[/b][/size][/center]
+
+[b]⚠️ IMPORTANTE:[/b] Este paso es [u]obligatorio[/u]. Sin él, no podrás instalar uBlock Origin.
+
+[b]A) Cierra completamente Chrome[/b]
+[i]Asegúrate de que no quede ninguna ventana abierta[/i]
+
+[b]B) Modificar el acceso directo de Chrome[/b]
+[list=1]
+[*]Busca el icono de [b]Chrome[/b] en tu escritorio
+[*]Haz clic [b]derecho[/b] → [b]Propiedades[/b]
+[*]En la pestaña "Acceso directo", busca el campo [b]"Destino"[/b]
+[/list]
+
+Tu destino actual:
+[code]"C:\Program Files\Google\Chrome\Application\chrome.exe"[/code]
+
+Debe quedar ASÍ:
+[code]"C:\Program Files\Google\Chrome\Application\chrome.exe" --disable-features=ExtensionManifestV2Unsupported,ExtensionManifestV2Disabled[/code]
+
+[b]C) Lo que debes añadir:[/b]
+[code] --disable-features=ExtensionManifestV2Unsupported,ExtensionManifestV2Disabled[/code]
+
+[i]Nota: debe haber un ESPACIO entre las comillas finales y el primer guión[/i]
+
+[center][b]✓ Resultado:[/b] Al final del campo "Destino" debe quedar el código de arriba.[/center]
+
+[b]D) Guardar cambios[/b]
+Haz clic en [b]Aplicar[/b] y luego [b]Aceptar[/b]
+
+[center]═══════════════════════════════════════════[/center]
+
+[center][size=18][b]═══════════════════════════════════════
+PASO 2: Instalar uBlock Origin
+═══════════════════════════════════════[/b][/size][/center]
+
+[list=1]
+[*]Abre Chrome usando el [b]acceso directo modificado[/b]
+[*]Ve a: [url]https://chrome.google.com/webstore[/url]
+[*]Busca: [b]uBlock Origin[/b]
+[*]Selecciona el de [b]Raymond Hill[/b] (creador original)
+[*]Haz clic en [b]"Añadir a Chrome"[/b]
+[*]Confirma el popup
+[/list]
+
+[center][b]🎉 ¡LISTO![/b] Verás un icono 🛡️ en la barra de Chrome[/center]
+
+[center]═══════════════════════════════════════════[/center]
+
+[center][size=18][b]═══════════════════════════════════════
+PASO 3: Configurar uBlock (Opcional)
+═══════════════════════════════════════[/b][/size][/center]
+
+[list=1]
+[*]Haz clic en el icono 🛡️ de uBlock
+[*]Haz clic en el [b]engranaje[/b] ⚙️
+[*]Ve a [b]"Lista de filtros"[/b]
+[*]Marca: Filtros integrados, Filtros de malware, Elementos molestos
+[*]Haz clic en [b]"Aplicar cambios"[/b]
+[/list]
+
+[center]═══════════════════════════════════════════[/center]
+
+[center][size=18][b]═══════════════════════════════════════
+PASO 4: Verificar que Funciona
+═══════════════════════════════════════[/b][/size][/center]
+
+[b]SIN uBlock:[/b]
+[list]
+[*]❌ Banners publicitarios
+[*]❌ Pop-ups emergentes
+[*]❌ Videos autoplay
+[*]❌ Rastreadores
+[/list]
+
+[b]CON uBlock:[/b]
+[list]
+[*]✅ Sin anuncios visibles
+[*]✅ Navegación limpia
+[*]✅ Carga más rápida
+[*]✅ Privacidad protegida
+[/list]
+
+[center][b]🔍 PRUEBA:[/b] Visita cualquier página con publicidad. Verás que ha desaparecido.[/center]
+
+[center]═══════════════════════════════════════════[/center]
+
+[center][size=18][b]🔧 SOLUCIÓN DE PROBLEMAS[/b][/size][/center]
+
+[b]"No puedo instalar la extensión"[/b]
+[list]
+[*]Verifica que modificaste el acceso directo CORRECTAMENTE
+[*]Debe haber un [b]ESPACIO[/b] entre "chrome.exe" y --disable...
+[*]Abre Chrome SOLO desde el acceso directo modificado
+[/list]
+
+[b]"La extensión se desactiva al reiniciar"[/b]
+[list]
+[*]Siempre abre Chrome desde el [b]acceso directo modificado[/b]
+[*]Fíjalo en la barra de tareas
+[/list]
+
+[center]═══════════════════════════════════════════[/center]
+
+[center][quote][size=20][b]🎊 ¡FELICITACIONES![/b][/size]
+
+Ahora navegas [b]sin publicidad invasiva[/b].
+Tu experiencia será más [b]rápida[/b] y [b]segura[/b].[/quote][/center]
+
+[center][size=10]Tutorial creado para AnimeZoneEsp | 2025[/size][/center]
