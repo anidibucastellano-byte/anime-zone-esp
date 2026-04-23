@@ -4218,48 +4218,6 @@
       "originalGenre": "Acción",
       "confianza": 100,
       "fecha_adicion": "2026-04-23T13:51:02.359789"
-    },
-    {
-      "name": "El Hakkenden",
-      "year": 1990,
-      "type": "Anime",
-      "genre": [
-        "Drama",
-        "Fantasía",
-        "Ciencia Ficción"
-      ],
-      "specificGenre": "Drama, Ciencia ficción, fantasía",
-      "url": "https://animezoneesp.foroactivo.com/t1813-activo-el-hakkenden-1990-tri-audio-13-13-dvd-rip-640x480-350mb-380mb-mega-pixeldrain-ver-online#4437",
-      "href": "/t1813-activo-el-hakkenden-1990-tri-audio-13-13-dvd-rip-640x480-350mb-380mb-mega-pixeldrain-ver-online",
-      "razonClasificacion": "Extraído automáticamente del foro - 2026-04-23 23:47",
-      "originalGenre": [
-        "Drama",
-        "Fantasía",
-        "Ciencia Ficción"
-      ],
-      "confianza": 100,
-      "fecha_adicion": "2026-04-23T23:47:05.818585"
-    },
-    {
-      "name": "El mundo de Narue",
-      "year": 2003,
-      "type": "Anime",
-      "genre": [
-        "Comedia",
-        "Fantasía",
-        "Ciencia Ficción"
-      ],
-      "specificGenre": "Comedia, Ciencia ficción, fantasía",
-      "url": "https://animezoneesp.foroactivo.com/t1816-activo-el-mundo-de-narue-2003-dual-audio-12-12-dvd-rip-640x480-200mb-220mb-mega-pixeldrain-ver-online#4441",
-      "href": "/t1816-activo-el-mundo-de-narue-2003-dual-audio-12-12-dvd-rip-640x480-200mb-220mb-mega-pixeldrain-ver-online",
-      "razonClasificacion": "Extraído automáticamente del foro - 2026-04-23 23:47",
-      "originalGenre": [
-        "Comedia",
-        "Fantasía",
-        "Ciencia Ficción"
-      ],
-      "confianza": 100,
-      "fecha_adicion": "2026-04-23T23:47:39.295803"
     }
   ],
   "dibujos": [
@@ -10229,32 +10187,6 @@
       "originalGenre": "Comedia",
       "confianza": 100,
       "fecha_adicion": "2026-04-23T21:08:54.696852"
-    },
-    {
-      "name": "Bratz",
-      "year": 2005,
-      "type": "Dibujos",
-      "genre": "Comedia",
-      "specificGenre": "Comedia, Niños, Familia",
-      "url": "https://animezoneesp.foroactivo.com/t1808-activo-bratz-2005-castellano-23-23-tv-rip-640x360-60mb-85mb-mega-pixeldrain-ver-online",
-      "href": "/t1808-activo-bratz-2005-castellano-23-23-tv-rip-640x360-60mb-85mb-mega-pixeldrain-ver-online",
-      "razonClasificacion": "Extraído automáticamente del foro - 2026-04-23 21:09",
-      "originalGenre": "Comedia",
-      "confianza": 100,
-      "fecha_adicion": "2026-04-23T21:09:25.073037"
-    },
-    {
-      "name": "El fabuloso libro de los hechizos",
-      "year": 2001,
-      "type": "Dibujos",
-      "genre": "Ciencia Ficción",
-      "specificGenre": "Ciencia ficción, fantasía, Familia, Niños",
-      "url": "https://animezoneesp.foroactivo.com/t1812-activo-el-fabuloso-libro-de-los-hechizos-2001-castellano-04-26-iaupscale-rip-1280x960-133gb-247gb-mega-pixeldrain-ver-online#4435",
-      "href": "/t1812-activo-el-fabuloso-libro-de-los-hechizos-2001-castellano-04-26-iaupscale-rip-1280x960-133gb-247gb-mega-pixeldrain-ver-online",
-      "razonClasificacion": "Extraído automáticamente del foro - 2026-04-23 21:24",
-      "originalGenre": "Ciencia Ficción",
-      "confianza": 100,
-      "fecha_adicion": "2026-04-23T21:25:58.340926"
     }
   ],
   "peliculas": [
@@ -12544,12 +12476,12 @@
     }
   ],
   "resumen": {
-    "anime": 345,
-    "dibujos": 472,
+    "anime": 343,
+    "dibujos": 470,
     "peliculas": 189,
     "series": 31,
-    "total": 1037,
-    "ultima_actualizacion": "2026-04-23 23:47:39"
+    "total": 1033,
+    "ultima_actualizacion": "2026-04-23 21:08:54"
   },
   "series": [
     {

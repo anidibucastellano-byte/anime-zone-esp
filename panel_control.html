@@ -86,6 +86,18 @@
             background: #e94560 !important;
             color: #fff !important;
         }
+        /* Estilo para selección múltiple */
+        select[multiple] {
+            min-height: 120px;
+        }
+        select[multiple] option {
+            padding: 8px 12px;
+            border-bottom: 1px solid #eee;
+        }
+        select[multiple] option:checked {
+            background: #e94560 !important;
+            color: #fff !important;
+        }
         button {
             padding: 12px 24px;
             background: #e94560;
@@ -326,20 +338,73 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Género *</label>
-                    <select id="genre" required>
-                        <option value="">Seleccionar...</option>
-                        <option value="Animación Japonesa">Animación Japonesa</option>
-                        <option value="Animación Occidental">Animación Occidental</option>
-                        <option value="Live-Action">Live-Action</option>
+                    <label>Género (selección múltiple) * <small style="color: #aaa; font-weight: normal;">(Ctrl+Click para seleccionar varios)</small></label>
+                    <select id="genre" multiple required style="min-height: 120px;">
                         <option value="Acción">Acción</option>
+                        <option value="Aventura">Aventura</option>
                         <option value="Comedia">Comedia</option>
                         <option value="Drama">Drama</option>
                         <option value="Fantasía">Fantasía</option>
                         <option value="Ciencia Ficción">Ciencia Ficción</option>
                         <option value="Terror">Terror</option>
+                        <option value="Suspense">Suspense / Thriller</option>
                         <option value="Romance">Romance</option>
+                        <option value="Misterio">Misterio</option>
+                        <option value="Crimen">Crimen</option>
+                        <option value="Guerra">Guerra / Militar</option>
+                        <option value="Western">Western</option>
+                        <option value="Histórico">Histórico</option>
+                        <option value="Biográfico">Biográfico</option>
+                        <option value="Isekai">Isekai</option>
+                        <option value="Mecha">Mecha / Robots</option>
+                        <option value="Magia">Magia</option>
+                        <option value="Sobrenatural">Sobrenatural</option>
+                        <option value="Psicológico">Psicológico</option>
+                        <option value="Distopía">Distopía / Post-apocalíptico</option>
+                        <option value="Cyberpunk">Cyberpunk</option>
+                        <option value="Steampunk">Steampunk</option>
+                        <option value="Gore">Gore / Splatter</option>
+                        <option value="Superpoderes">Superpoderes / Superhéroes</option>
+                        <option value="Supervivencia">Supervivencia</option>
+                        <option value="Viajes en el Tiempo">Viajes en el Tiempo</option>
+                        <option value="Demonios">Demonios / Angeles</option>
+                        <option value="Vampiros">Vampiros / Licántropos</option>
+                        <option value="Zombies">Zombies</option>
                         <option value="Deportes">Deportes</option>
+                        <option value="Musical">Musical</option>
+                        <option value="Escolar">Escolar / Colegio</option>
+                        <option value="Trabajo">Trabajo / Oficina</option>
+                        <option value="Cocina">Cocina / Gastronomía</option>
+                        <option value="Artes Marciales">Artes Marciales</option>
+                        <option value="Espionaje">Espionaje</option>
+                        <option value="Política">Política / Intriga</option>
+                        <option value="Economía">Economía / Negocios</option>
+                        <option value="Videojuegos">Videojuegos / Gaming</option>
+                        <option value="Idol">Idol / Artista</option>
+                        <option value="Parodia">Parodia / Sátira</option>
+                        <option value="Recuentos de la Vida">Recuentos de la Vida (Slice of Life)</option>
+                        <option value="Harem">Harem / Reverse Harem</option>
+                        <option value="Shonen">Shonen</option>
+                        <option value="Shojo">Shojo</option>
+                        <option value="Seinen">Seinen</option>
+                        <option value="Josei">Josei</option>
+                        <option value="Infantil">Infantil</option>
+                        <option value="Kodomo">Kodomo</option>
+                        <option value="Familia">Familia / Para todos</option>
+                        <option value="Yaoi/BL">Yaoi / BL</option>
+                        <option value="Yuri/GL">Yuri / GL</option>
+                        <option value="Spokon">Spokon</option>
+                        <option value="Sentai">Sentai / Equipos</option>
+                        <option value="Tokusatsu">Tokusatsu</option>
+                        <option value="Kaiju">Kaiju / Monstruos gigantes</option>
+                        <option value="Cortometraje">Cortometraje / Corto</option>
+                        <option value="Documental">Documental</option>
+                        <option value="Stop Motion">Stop Motion</option>
+                        <option value="CGI">CGI (Animación 3D)</option>
+                        <option value="Live-Action">Live-Action</option>
+                        <option value="Animación Japonesa">Animación Japonesa</option>
+                        <option value="Animación Occidental">Animación Occidental</option>
+                        <option value="Adultos">Adultos (Ecchi/Hentai)</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -399,19 +464,73 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>Género Principal</label>
-                            <select id="editGenre">
-                                <option value="Animación Japonesa">Animación Japonesa</option>
-                                <option value="Animación Occidental">Animación Occidental</option>
-                                <option value="Live-Action">Live-Action</option>
+                            <label>Género Principal (selección múltiple)</label>
+                            <select id="editGenre" multiple style="min-height: 120px;">
                                 <option value="Acción">Acción</option>
+                                <option value="Aventura">Aventura</option>
                                 <option value="Comedia">Comedia</option>
                                 <option value="Drama">Drama</option>
                                 <option value="Fantasía">Fantasía</option>
                                 <option value="Ciencia Ficción">Ciencia Ficción</option>
                                 <option value="Terror">Terror</option>
+                                <option value="Suspense">Suspense / Thriller</option>
                                 <option value="Romance">Romance</option>
+                                <option value="Misterio">Misterio</option>
+                                <option value="Crimen">Crimen</option>
+                                <option value="Guerra">Guerra / Militar</option>
+                                <option value="Western">Western</option>
+                                <option value="Histórico">Histórico</option>
+                                <option value="Biográfico">Biográfico</option>
+                                <option value="Isekai">Isekai</option>
+                                <option value="Mecha">Mecha / Robots</option>
+                                <option value="Magia">Magia</option>
+                                <option value="Sobrenatural">Sobrenatural</option>
+                                <option value="Psicológico">Psicológico</option>
+                                <option value="Distopía">Distopía / Post-apocalíptico</option>
+                                <option value="Cyberpunk">Cyberpunk</option>
+                                <option value="Steampunk">Steampunk</option>
+                                <option value="Gore">Gore / Splatter</option>
+                                <option value="Superpoderes">Superpoderes / Superhéroes</option>
+                                <option value="Supervivencia">Supervivencia</option>
+                                <option value="Viajes en el Tiempo">Viajes en el Tiempo</option>
+                                <option value="Demonios">Demonios / Angeles</option>
+                                <option value="Vampiros">Vampiros / Licántropos</option>
+                                <option value="Zombies">Zombies</option>
                                 <option value="Deportes">Deportes</option>
+                                <option value="Musical">Musical</option>
+                                <option value="Escolar">Escolar / Colegio</option>
+                                <option value="Trabajo">Trabajo / Oficina</option>
+                                <option value="Cocina">Cocina / Gastronomía</option>
+                                <option value="Artes Marciales">Artes Marciales</option>
+                                <option value="Espionaje">Espionaje</option>
+                                <option value="Política">Política / Intriga</option>
+                                <option value="Economía">Economía / Negocios</option>
+                                <option value="Videojuegos">Videojuegos / Gaming</option>
+                                <option value="Idol">Idol / Artista</option>
+                                <option value="Parodia">Parodia / Sátira</option>
+                                <option value="Recuentos de la Vida">Recuentos de la Vida (Slice of Life)</option>
+                                <option value="Harem">Harem / Reverse Harem</option>
+                                <option value="Shonen">Shonen</option>
+                                <option value="Shojo">Shojo</option>
+                                <option value="Seinen">Seinen</option>
+                                <option value="Josei">Josei</option>
+                                <option value="Infantil">Infantil</option>
+                                <option value="Kodomo">Kodomo</option>
+                                <option value="Familia">Familia / Para todos</option>
+                                <option value="Yaoi/BL">Yaoi / BL</option>
+                                <option value="Yuri/GL">Yuri / GL</option>
+                                <option value="Spokon">Spokon</option>
+                                <option value="Sentai">Sentai / Equipos</option>
+                                <option value="Tokusatsu">Tokusatsu</option>
+                                <option value="Kaiju">Kaiju / Monstruos gigantes</option>
+                                <option value="Cortometraje">Cortometraje / Corto</option>
+                                <option value="Documental">Documental</option>
+                                <option value="Stop Motion">Stop Motion</option>
+                                <option value="CGI">CGI (Animación 3D)</option>
+                                <option value="Live-Action">Live-Action</option>
+                                <option value="Animación Japonesa">Animación Japonesa</option>
+                                <option value="Animación Occidental">Animación Occidental</option>
+                                <option value="Adultos">Adultos (Ecchi/Hentai)</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -687,20 +806,86 @@ https://animezoneesp.foroactivo.com/t9012-...
             document.getElementById('gitPushBtn').disabled = !this.checked;
         });
 
+        // Helper para obtener valores seleccionados de un select múltiple
+        function getSelectedValues(selectId) {
+            const select = document.getElementById(selectId);
+            return Array.from(select.selectedOptions).map(opt => opt.value);
+        }
+
+        // Helper para establecer múltiples valores en un select
+        function setSelectedValues(selectId, values) {
+            const select = document.getElementById(selectId);
+            const valArray = Array.isArray(values) ? values : [values].filter(v => v);
+            Array.from(select.options).forEach(opt => {
+                opt.selected = valArray.includes(opt.value);
+            });
+        }
+
+        // Helper para normalizar texto de género (quitar tildes, minúsculas, trim)
+        function normalizeGenre(text) {
+            return text
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '') // quitar tildes
+                .replace(/[^a-z0-9]/g, '') // quitar caracteres especiales
+                .trim();
+        }
+
+        // Helper para encontrar coincidencias de géneros entre texto extraído y opciones del select
+        function findMatchingGenres(genreText, selectId) {
+            const select = document.getElementById(selectId);
+            const availableOptions = Array.from(select.options).map(opt => opt.value);
+            const extractedGenres = genreText
+                .split(/[,;]/)
+                .map(g => g.trim())
+                .filter(g => g.length > 0);
+            
+            const matchedGenres = [];
+            
+            for (const extracted of extractedGenres) {
+                const normalizedExtracted = normalizeGenre(extracted);
+                
+                // Buscar coincidencia exacta primero
+                if (availableOptions.includes(extracted)) {
+                    matchedGenres.push(extracted);
+                    continue;
+                }
+                
+                // Buscar coincidencia normalizada
+                for (const option of availableOptions) {
+                    const normalizedOption = normalizeGenre(option);
+                    if (normalizedExtracted === normalizedOption) {
+                        matchedGenres.push(option);
+                        break;
+                    }
+                    // Coincidencia parcial (si el género extraído contiene el nombre de la opción)
+                    if (normalizedExtracted.includes(normalizedOption) || normalizedOption.includes(normalizedExtracted)) {
+                        if (normalizedOption.length > 3) { // evitar coincidencias cortas como "de"
+                            matchedGenres.push(option);
+                            break;
+                        }
+                    }
+                }
+            }
+            
+            return [...new Set(matchedGenres)]; // eliminar duplicados
+        }
+
         // Añadir serie
         document.getElementById('addForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             
+            const selectedGenres = getSelectedValues('genre');
             const data = {
                 name: document.getElementById('name').value,
                 year: parseInt(document.getElementById('year').value),
                 type: document.getElementById('type').value,
-                genre: document.getElementById('genre').value,
+                genre: selectedGenres,
                 url: document.getElementById('url').value,
                 href: '/' + document.getElementById('url').value.split('/').pop().split('#')[0],
                 specificGenre: document.getElementById('specificGenre').value,
                 razonClasificacion: document.getElementById('razonClasificacion').value || 'Añadido manualmente desde el panel',
-                originalGenre: document.getElementById('genre').value
+                originalGenre: selectedGenres
             };
 
             try {
@@ -724,6 +909,26 @@ https://animezoneesp.foroactivo.com/t9012-...
             } catch (error) {
                 console.error('Error:', error);
                 showToast('❌ Error de conexión', 'error');
+            }
+        });
+
+        // Sincronizar género específico con select múltiple (formulario de añadir)
+        document.getElementById('specificGenre')?.addEventListener('input', function() {
+            if (this.value.trim()) {
+                const matched = findMatchingGenres(this.value, 'genre');
+                if (matched.length > 0) {
+                    setSelectedValues('genre', matched);
+                }
+            }
+        });
+
+        // Sincronizar género específico con select múltiple (formulario de edición)
+        document.getElementById('editSpecificGenre')?.addEventListener('input', function() {
+            if (this.value.trim()) {
+                const matched = findMatchingGenres(this.value, 'editGenre');
+                if (matched.length > 0) {
+                    setSelectedValues('editGenre', matched);
+                }
             }
         });
 
@@ -820,7 +1025,7 @@ https://animezoneesp.foroactivo.com/t9012-...
                         <div class="series-info" onclick="toggleSelection('${item._id}', '${item._cat}', ${item._idx}, !selectedItems.has('${item._id}'))" style="cursor: pointer; overflow: hidden; color: #fff;">
                             <div class="series-name" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #fff; font-weight: bold; font-size: 15px;">${item.name}</div>
                             <div class="series-meta" style="color: #aaa; font-size: 12px; margin-top: 3px;">
-                                ${item.type} • ${item.year || 'N/A'} • ${item.genre}
+                                ${item.type} • ${item.year || 'N/A'} • ${Array.isArray(item.genre) ? item.genre.join(', ') : item.genre}
                             </div>
                         </div>
                     </div>
@@ -1093,7 +1298,7 @@ https://animezoneesp.foroactivo.com/t9012-...
             document.getElementById('modalEditName').value = item.name || '';
             document.getElementById('modalEditYear').value = item.year || '';
             document.getElementById('modalEditType').value = item.type || 'Anime';
-            document.getElementById('modalEditGenre').value = item.genre || 'Animación Japonesa';
+            setSelectedValues('modalEditGenre', item.genre || 'Animación Japonesa');
             document.getElementById('modalEditSpecificGenre').value = item.specificGenre || '';
             document.getElementById('modalEditUrl').value = item.url || '';
             document.getElementById('modalEditRazon').value = item.razonClasificacion || '';
@@ -1107,29 +1312,23 @@ https://animezoneesp.foroactivo.com/t9012-...
         }
 
         function updateModalGenreOptions() {
+            // Ahora que tenemos un select múltiple con todas las opciones,
+            // solo preseleccionamos algunos géneros por defecto según el tipo
             const type = document.getElementById('modalEditType').value;
             const genreSelect = document.getElementById('modalEditGenre');
 
-            // Opciones por tipo
-            const options = {
-                'Anime': ['Animación Japonesa', 'Acción', 'Comedia', 'Drama', 'Fantasía', 'Ciencia Ficción', 'Terror', 'Romance', 'Deportes'],
-                'Dibujos': ['Animación Occidental', 'Acción', 'Comedia', 'Drama', 'Fantasía', 'Ciencia Ficción'],
-                'Película': ['Animación Japonesa', 'Animación Occidental', 'Live-Action', 'Acción', 'Comedia', 'Drama', 'Fantasía', 'Ciencia Ficción', 'Terror'],
-                'Serie Live-Action': ['Live-Action', 'Acción', 'Comedia', 'Drama', 'Fantasía', 'Ciencia Ficción', 'Terror']
+            // Valores por defecto según tipo
+            const defaults = {
+                'Anime': ['Animación Japonesa'],
+                'Dibujos': ['Animación Occidental'],
+                'Película': ['Animación Japonesa'],
+                'Serie Live-Action': ['Live-Action']
             };
 
-            const currentValue = genreSelect.value;
-            genreSelect.innerHTML = '';
-            (options[type] || options['Anime']).forEach(opt => {
-                const option = document.createElement('option');
-                option.value = opt;
-                option.textContent = opt;
-                genreSelect.appendChild(option);
-            });
-
-            // Restaurar valor si existe en nuevas opciones
-            if (options[type] && options[type].includes(currentValue)) {
-                genreSelect.value = currentValue;
+            // Solo establecer valores por defecto si no hay ninguno seleccionado
+            const currentSelected = getSelectedValues('modalEditGenre');
+            if (currentSelected.length === 0) {
+                setSelectedValues('modalEditGenre', defaults[type] || defaults['Anime']);
             }
         }
 
@@ -1141,7 +1340,7 @@ https://animezoneesp.foroactivo.com/t9012-...
                 name: document.getElementById('modalEditName').value.trim(),
                 year: parseInt(document.getElementById('modalEditYear').value),
                 type: document.getElementById('modalEditType').value,
-                genre: document.getElementById('modalEditGenre').value,
+                genre: getSelectedValues('modalEditGenre'),
                 specificGenre: document.getElementById('modalEditSpecificGenre').value.trim(),
                 url: document.getElementById('modalEditUrl').value.trim(),
                 razonClasificacion: document.getElementById('modalEditRazon').value.trim(),
@@ -1249,7 +1448,49 @@ https://animezoneesp.foroactivo.com/t9012-...
                     document.getElementById('editName').value = currentExtractedData.name || '';
                     document.getElementById('editYear').value = currentExtractedData.year || '';
                     document.getElementById('editType').value = currentExtractedData.type || 'Anime';
-                    document.getElementById('editGenre').value = currentExtractedData.genre || 'Animación Japonesa';
+                    
+                    // Sincronizar géneros usando coincidencia inteligente
+                    let genresToSelect = [];
+                    
+                    // Primero buscar coincidencias en el género específico (si tiene varios)
+                    if (currentExtractedData.specificGenre) {
+                        const matchedFromSpecific = findMatchingGenres(currentExtractedData.specificGenre, 'editGenre');
+                        genresToSelect.push(...matchedFromSpecific);
+                    }
+                    
+                    // Añadir el género principal si existe y coincide
+                    if (currentExtractedData.genre) {
+                        const mainGenre = Array.isArray(currentExtractedData.genre) 
+                            ? currentExtractedData.genre[0] 
+                            : currentExtractedData.genre;
+                        
+                        // Buscar coincidencia del género principal
+                        const select = document.getElementById('editGenre');
+                        const availableOptions = Array.from(select.options).map(opt => opt.value);
+                        
+                        if (availableOptions.includes(mainGenre)) {
+                            genresToSelect.push(mainGenre);
+                        } else {
+                            // Buscar coincidencia normalizada
+                            const normalizedMain = normalizeGenre(mainGenre);
+                            for (const option of availableOptions) {
+                                if (normalizeGenre(option) === normalizedMain) {
+                                    genresToSelect.push(option);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    
+                    // Eliminar duplicados y valores vacíos
+                    genresToSelect = [...new Set(genresToSelect)].filter(g => g);
+                    
+                    // Si no hay géneros, usar valor por defecto
+                    if (genresToSelect.length === 0) {
+                        genresToSelect = ['Animación Japonesa'];
+                    }
+                    
+                    setSelectedValues('editGenre', genresToSelect);
                     document.getElementById('editSpecificGenre').value = currentExtractedData.specificGenre || '';
                     document.getElementById('editUrl').value = currentExtractedData.url || '';
                     document.getElementById('editRazon').value = currentExtractedData.razonClasificacion || '';
@@ -1269,16 +1510,17 @@ https://animezoneesp.foroactivo.com/t9012-...
 
         async function saveEditedData() {
             // Recoger datos del formulario editable
+            const selectedGenres = getSelectedValues('editGenre');
             const editedData = {
                 name: document.getElementById('editName').value.trim(),
                 year: parseInt(document.getElementById('editYear').value) || null,
                 type: document.getElementById('editType').value,
-                genre: document.getElementById('editGenre').value,
+                genre: selectedGenres,
                 specificGenre: document.getElementById('editSpecificGenre').value.trim(),
                 url: document.getElementById('editUrl').value.trim(),
                 href: '/' + document.getElementById('editUrl').value.split('/').pop().split('#')[0],
                 razonClasificacion: document.getElementById('editRazon').value.trim(),
-                originalGenre: document.getElementById('editGenre').value,
+                originalGenre: selectedGenres,
                 confianza: 100
             };
 
@@ -1320,7 +1562,7 @@ https://animezoneesp.foroactivo.com/t9012-...
             document.getElementById('editName').value = '';
             document.getElementById('editYear').value = '';
             document.getElementById('editType').value = 'Anime';
-            document.getElementById('editGenre').value = 'Animación Japonesa';
+            setSelectedValues('editGenre', 'Animación Japonesa');
             document.getElementById('editSpecificGenre').value = '';
             document.getElementById('editUrl').value = '';
             document.getElementById('editRazon').value = '';
@@ -1954,19 +2196,73 @@ https://animezoneesp.foroactivo.com/t9012-...
                 </div>
             </div>
             <div class="form-group">
-                <label>Género Principal</label>
-                <select id="modalEditGenre">
-                    <option value="Animación Japonesa">Animación Japonesa</option>
-                    <option value="Animación Occidental">Animación Occidental</option>
-                    <option value="Live-Action">Live-Action</option>
+                <label>Género (selección múltiple)</label>
+                <select id="modalEditGenre" multiple style="min-height: 120px;">
                     <option value="Acción">Acción</option>
+                    <option value="Aventura">Aventura</option>
                     <option value="Comedia">Comedia</option>
                     <option value="Drama">Drama</option>
                     <option value="Fantasía">Fantasía</option>
                     <option value="Ciencia Ficción">Ciencia Ficción</option>
                     <option value="Terror">Terror</option>
+                    <option value="Suspense">Suspense / Thriller</option>
                     <option value="Romance">Romance</option>
+                    <option value="Misterio">Misterio</option>
+                    <option value="Crimen">Crimen</option>
+                    <option value="Guerra">Guerra / Militar</option>
+                    <option value="Western">Western</option>
+                    <option value="Histórico">Histórico</option>
+                    <option value="Biográfico">Biográfico</option>
+                    <option value="Isekai">Isekai</option>
+                    <option value="Mecha">Mecha / Robots</option>
+                    <option value="Magia">Magia</option>
+                    <option value="Sobrenatural">Sobrenatural</option>
+                    <option value="Psicológico">Psicológico</option>
+                    <option value="Distopía">Distopía / Post-apocalíptico</option>
+                    <option value="Cyberpunk">Cyberpunk</option>
+                    <option value="Steampunk">Steampunk</option>
+                    <option value="Gore">Gore / Splatter</option>
+                    <option value="Superpoderes">Superpoderes / Superhéroes</option>
+                    <option value="Supervivencia">Supervivencia</option>
+                    <option value="Viajes en el Tiempo">Viajes en el Tiempo</option>
+                    <option value="Demonios">Demonios / Angeles</option>
+                    <option value="Vampiros">Vampiros / Licántropos</option>
+                    <option value="Zombies">Zombies</option>
                     <option value="Deportes">Deportes</option>
+                    <option value="Musical">Musical</option>
+                    <option value="Escolar">Escolar / Colegio</option>
+                    <option value="Trabajo">Trabajo / Oficina</option>
+                    <option value="Cocina">Cocina / Gastronomía</option>
+                    <option value="Artes Marciales">Artes Marciales</option>
+                    <option value="Espionaje">Espionaje</option>
+                    <option value="Política">Política / Intriga</option>
+                    <option value="Economía">Economía / Negocios</option>
+                    <option value="Videojuegos">Videojuegos / Gaming</option>
+                    <option value="Idol">Idol / Artista</option>
+                    <option value="Parodia">Parodia / Sátira</option>
+                    <option value="Recuentos de la Vida">Recuentos de la Vida (Slice of Life)</option>
+                    <option value="Harem">Harem / Reverse Harem</option>
+                    <option value="Shonen">Shonen</option>
+                    <option value="Shojo">Shojo</option>
+                    <option value="Seinen">Seinen</option>
+                    <option value="Josei">Josei</option>
+                    <option value="Infantil">Infantil</option>
+                    <option value="Kodomo">Kodomo</option>
+                    <option value="Familia">Familia / Para todos</option>
+                    <option value="Yaoi/BL">Yaoi / BL</option>
+                    <option value="Yuri/GL">Yuri / GL</option>
+                    <option value="Spokon">Spokon</option>
+                    <option value="Sentai">Sentai / Equipos</option>
+                    <option value="Tokusatsu">Tokusatsu</option>
+                    <option value="Kaiju">Kaiju / Monstruos gigantes</option>
+                    <option value="Cortometraje">Cortometraje / Corto</option>
+                    <option value="Documental">Documental</option>
+                    <option value="Stop Motion">Stop Motion</option>
+                    <option value="CGI">CGI (Animación 3D)</option>
+                    <option value="Live-Action">Live-Action</option>
+                    <option value="Animación Japonesa">Animación Japonesa</option>
+                    <option value="Animación Occidental">Animación Occidental</option>
+                    <option value="Adultos">Adultos (Ecchi/Hentai)</option>
                 </select>
             </div>
             <div class="form-group">
