@@ -4336,50 +4336,6 @@
       ],
       "confianza": 100,
       "fecha_adicion": "2026-04-24T13:26:48.874537"
-    },
-    {
-      "name": "La Leyenda del Maestro Espadachin Yaiba",
-      "year": 1993,
-      "type": "Anime",
-      "genre": [
-        "Acción",
-        "Comedia",
-        "Drama"
-      ],
-      "specificGenre": "Niños, Acción, Drama, Comedia",
-      "url": "https://animezoneesp.foroactivo.com/t1842-activo-la-leyenda-del-maestro-espadachin-yaiba-1993-castellano-52-52-dvd-rip-640x480-140mb-425mb-mega-pixeldrain-ver-online#4486",
-      "href": "/t1842-activo-la-leyenda-del-maestro-espadachin-yaiba-1993-castellano-52-52-dvd-rip-640x480-140mb-425mb-mega-pixeldrain-ver-online",
-      "razonClasificacion": "Extraído automáticamente del foro - 2026-04-24 19:58",
-      "originalGenre": [
-        "Acción",
-        "Comedia",
-        "Drama"
-      ],
-      "confianza": 100,
-      "fecha_adicion": "2026-04-24T20:00:15.624039"
-    },
-    {
-      "name": "Ataque a los Titanes: Junior High",
-      "year": 2015,
-      "type": "Anime",
-      "genre": [
-        "Acción",
-        "Comedia",
-        "Fantasía",
-        "Ciencia Ficción"
-      ],
-      "specificGenre": "Acción, Comedia, Ciencia ficción, fantasía",
-      "url": "https://animezoneesp.foroactivo.com/t1844-activo-ataque-a-los-titanes-junior-high-2015-dual-audio-12-12-webdl-rip-1920x1080-700mb-935mb-mega-pixeldrain-ver-online#4490",
-      "href": "/t1844-activo-ataque-a-los-titanes-junior-high-2015-dual-audio-12-12-webdl-rip-1920x1080-700mb-935mb-mega-pixeldrain-ver-online",
-      "razonClasificacion": "Extraído automáticamente del foro - 2026-04-24 20:22",
-      "originalGenre": [
-        "Acción",
-        "Comedia",
-        "Fantasía",
-        "Ciencia Ficción"
-      ],
-      "confianza": 100,
-      "fecha_adicion": "2026-04-24T20:23:19.147129"
     }
   ],
   "dibujos": [
@@ -10409,29 +10365,6 @@
       ],
       "confianza": 100,
       "fecha_adicion": "2026-04-24T13:51:03.817257"
-    },
-    {
-      "name": "The Midnight Gospel (Miniserie)",
-      "year": 2020,
-      "type": "Dibujos",
-      "genre": [
-        "Comedia",
-        "Fantasía",
-        "Ciencia Ficción",
-        "Misterio"
-      ],
-      "specificGenre": "Comedia, Ciencia ficción, fantasía, Misterio",
-      "url": "https://animezoneesp.foroactivo.com/t1841-activo-the-midnight-gospel-miniserie-2020-castellano-08-08-webdl-rip-1920x1080-106gb-178gb-mega-pixeldrain-ver-online#4485",
-      "href": "/t1841-activo-the-midnight-gospel-miniserie-2020-castellano-08-08-webdl-rip-1920x1080-106gb-178gb-mega-pixeldrain-ver-online",
-      "razonClasificacion": "Extraído automáticamente del foro - 2026-04-24 19:57",
-      "originalGenre": [
-        "Comedia",
-        "Fantasía",
-        "Ciencia Ficción",
-        "Misterio"
-      ],
-      "confianza": 100,
-      "fecha_adicion": "2026-04-24T19:57:04.695785"
     }
   ],
   "peliculas": [
@@ -12828,34 +12761,15 @@
       ],
       "confianza": 100,
       "fecha_adicion": "2026-04-24T19:54:52.203947"
-    },
-    {
-      "name": "Buda: El gran viaje",
-      "year": 2011,
-      "type": "Película",
-      "genre": [
-        "Drama",
-        "Histórico"
-      ],
-      "specificGenre": "Drama, Historia",
-      "url": "https://animezoneesp.foroactivo.com/t1843-activo-buda-el-gran-viaje-2011-dual-audio-bd-rip-1920x1080-504gb-mega-pixeldrain-ver-online#4487",
-      "href": "/t1843-activo-buda-el-gran-viaje-2011-dual-audio-bd-rip-1920x1080-504gb-mega-pixeldrain-ver-online",
-      "razonClasificacion": "Extraído automáticamente del foro - 2026-04-24 20:00",
-      "originalGenre": [
-        "Drama",
-        "Histórico"
-      ],
-      "confianza": 100,
-      "fecha_adicion": "2026-04-24T20:00:49.519979"
     }
   ],
   "resumen": {
-    "anime": 351,
-    "dibujos": 475,
-    "peliculas": 196,
+    "anime": 349,
+    "dibujos": 474,
+    "peliculas": 195,
     "series": 31,
-    "total": 1053,
-    "ultima_actualizacion": "2026-04-24 20:23:19"
+    "total": 1049,
+    "ultima_actualizacion": "2026-04-24 19:54:52"
   },
   "series": [
     {
