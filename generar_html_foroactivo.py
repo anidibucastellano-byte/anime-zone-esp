@@ -541,22 +541,121 @@ def generar_html_foroactivo():
         }}
         
         .items-grid {{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }}
+        
+        @media (max-width: 768px) {{
+            .items-grid {{
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }}
+        }}
+        
+        /* Carruseles por género estilo Netflix */
+        .genre-section {{
+            margin-bottom: 40px;
+            position: relative;
+        }}
+        
+        .genre-title {{
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0 0 15px 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-left: 4px solid var(--primary-red);
+            padding-left: 15px;
+        }}
+        
+        .carousel-container {{
+            position: relative;
+            overflow: hidden;
+            padding: 0 40px;
+        }}
+        
+        .carousel-track {{
             display: flex;
-            flex-direction: column;
-            gap: 10px;
+            gap: 15px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 10px 0 20px 0;
+        }}
+        
+        .carousel-track::-webkit-scrollbar {{
+            display: none;
+        }}
+        
+        .carousel-btn {{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.7);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+        }}
+        
+        .carousel-btn:hover {{
+            background: rgba(192, 57, 43, 0.9);
+            transform: translateY(-50%) scale(1.1);
+        }}
+        
+        .carousel-btn.prev {{
+            left: 0;
+        }}
+        
+        .carousel-btn.next {{
+            right: 0;
+        }}
+        
+        .carousel-btn.hidden {{
+            display: none;
+        }}
+        
+        /* Item card en carrusel */
+        .carousel-track .item-card {{
+            flex: 0 0 auto;
+            width: 200px;
+            aspect-ratio: 2/3;
+        }}
+        
+        @media (max-width: 768px) {{
+            .carousel-track .item-card {{
+                width: 150px;
+            }}
+            
+            .genre-title {{
+                font-size: 1.2rem;
+            }}
         }}
         
         .item-card {{
             background: var(--bg-card);
             border: 2px solid #333;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            transform: translateY(0);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             display: flex;
-            align-items: center;
-            padding: 15px 20px;
+            flex-direction: column;
+            cursor: pointer;
+            aspect-ratio: 2/3;
         }}
         
         .item-card::before {{
@@ -575,81 +674,108 @@ def generar_html_foroactivo():
         }}
         
         .item-card:hover {{
-            transform: translateY(-8px) scale(1.02);
+            transform: translateY(-8px);
             border-color: var(--primary-red);
             box-shadow: 0 20px 40px rgba(192, 57, 43, 0.4);
-            background: linear-gradient(135deg, 
-                var(--bg-card) 0%, 
-                rgba(192, 57, 43, 0.05) 100%);
+            z-index: 10;
         }}
         
-        .item-card:hover::before {{
-            left: 100%;
+        .item-image {{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.4s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
         }}
         
-        .item-card:hover .item-number {{
-            color: var(--accent-gold);
-            transform: scale(1.1);
+        .item-card:hover .item-image {{
+            transform: scale(1.08);
         }}
         
-        .item-card:hover .item-title {{
-            color: var(--text-primary);
-        }}
-        
-        .item-header {{
+        .item-image-placeholder {{
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
             display: flex;
             align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary-red);
+        }}
+        
+        .item-content {{
+            padding: 12px;
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 100%);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
         }}
         
         .item-title {{
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 600;
-        }}
-        
-        .item-number {{
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: var(--primary-red);
-            min-width: 50px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }}
-        
-        .item-body {{
-            display: flex;
-            align-items: center;
-            gap: 15px;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+            line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }}
         
         .item-meta {{
             display: flex;
-            gap: 10px;
+            gap: 8px;
             align-items: center;
+            flex-wrap: wrap;
         }}
         
         .meta-badge {{
-            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 2px 8px rgba(192, 57, 43, 0.3);
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 4px;
         }}
         
-        .meta-badge::after {{
-            content: '';
+        .item-link {{
             position: absolute;
             top: 0;
-            left: -100%;
+            left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.2), 
-                transparent);
-            animation: shimmer 2s infinite;
+            z-index: 5;
+            text-decoration: none;
+        }}
+        
+        .item-overlay {{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, 
+                transparent 0%, 
+                transparent 50%, 
+                rgba(0,0,0,0.8) 100%);
+            z-index: 1;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }}
+        
+        .item-card:hover .item-overlay {{
+            opacity: 0.8;
+        }}
+        
+        .item-card:hover::before {{
+            left: 100%;
         }}
         
         .meta-badge:hover {{
@@ -662,42 +788,251 @@ def generar_html_foroactivo():
             border: 1px solid rgba(255, 255, 255, 0.2);
         }}
         
-        .item-link {{
-            background: linear-gradient(135deg, var(--primary-red), #e74c3c);
-            border: none;
-            border-radius: 8px;
-            padding: 10px 20px;
-            color: white;
-            text-decoration: none;
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 600;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        .item-link:hover {{
+            background: rgba(192, 57, 43, 0.1);
+        }}
+        
+        /* Modal estilo Netflix */
+        .modal-overlay {{
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #000;
+            z-index: 1000;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }}
+        
+        .modal-overlay.active {{
+            display: flex;
+        }}
+        
+        .modal-content {{
+            background: transparent;
+            border-radius: 0;
+            max-width: 900px;
+            width: 100%;
+            min-height: 100vh;
             position: relative;
             overflow: hidden;
+            margin: 0 auto;
         }}
         
-        .item-link::before {{
-            content: '';
+        .modal-close {{
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.7);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }}
+        
+        .modal-close:hover {{
+            background: var(--primary-red);
+            transform: scale(1.1);
+        }}
+        
+        .modal-bg-image {{
             position: absolute;
             top: 0;
-            left: -100%;
+            left: 0;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.3), 
-                transparent);
-            transition: left 0.4s ease;
+            height: 70vh;
+            min-height: 500px;
+            object-fit: cover;
+            object-position: center 20%;
+            filter: blur(15px) brightness(0.4);
+            z-index: 0;
         }}
         
-        .item-link:hover {{
+        .modal-bg-gradient {{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70vh;
+            min-height: 500px;
+            background: linear-gradient(to bottom, 
+                rgba(0,0,0,0.1) 0%, 
+                rgba(0,0,0,0.3) 30%, 
+                rgba(0,0,0,0.7) 60%, 
+                #000 100%);
+            z-index: 1;
+        }}
+        
+        .modal-content-wrapper {{
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            padding: 40px;
+            min-height: 100vh;
+        }}
+        
+        .modal-poster {{
+            width: 280px;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.9);
+            flex-shrink: 0;
+            z-index: 2;
+            border: 3px solid rgba(255,255,255,0.15);
+        }}
+        
+        .modal-info {{
+            flex: 1;
+            max-width: 600px;
+            text-align: left;
+            z-index: 2;
+        }}
+        
+        
+        .modal-title {{
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            line-height: 1.2;
+        }}
+        
+        .modal-meta {{
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }}
+        
+        .modal-meta-badge {{
+            background: var(--primary-red);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }}
+        
+        .modal-sinopsis {{
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: left;
+            max-height: 300px;
+            overflow-y: auto;
+        }}
+        
+        .modal-sinopsis:empty {{
+            display: none;
+        }}
+        
+        .modal-sinopsis-label {{
+            color: var(--primary-red);
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            display: block;
+        }}
+        
+        /* Responsive para móviles */
+        @media (max-width: 768px) {{
+            .modal-content-wrapper {{
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 20px;
+            }}
+            
+            .modal-poster {{
+                width: 200px;
+                height: 300px;
+            }}
+            
+            .modal-info {{
+                text-align: center;
+                padding-top: 0;
+            }}
+            
+            .modal-title {{
+                font-size: 1.5rem;
+            }}
+        }}
+        
+        .modal-info-extra {{
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }}
+        
+        .modal-info-extra h3 {{
+            color: var(--primary-red);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }}
+        
+        .modal-info-extra p {{
+            color: var(--text-secondary);
+            line-height: 1.8;
+            white-space: pre-line;
+        }}
+        
+        .modal-link {{
+            display: inline-block;
+            margin-top: 20px;
+            background: var(--primary-red);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }}
+        
+        .modal-link:hover {{
+            background: #a93226;
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(192, 57, 43, 0.5);
-            background: linear-gradient(135deg, #e74c3c, var(--primary-red));
+            box-shadow: 0 5px 15px rgba(192, 57, 43, 0.4);
         }}
         
-        .item-link:hover::before {{
-            left: 100%;
+        @media (max-width: 768px) {{
+            .modal-image-container {{
+                height: 250px;
+            }}
+            
+            .modal-title {{
+                font-size: 1.5rem;
+            }}
+            
+            .modal-info {{
+                padding: 20px;
+            }}
         }}
     </style>
 </head>
@@ -776,19 +1111,19 @@ def generar_html_foroactivo():
         </div>
         
         <div id="content-all" class="content-section active">
-            <div class="items-grid" id="grid-all"></div>
+            <div id="grid-all" class="genre-carousels"></div>
         </div>
         <div id="content-series" class="content-section">
-            <div class="items-grid" id="grid-series"></div>
+            <div id="grid-series" class="genre-carousels"></div>
         </div>
         <div id="content-anime" class="content-section">
-            <div class="items-grid" id="grid-anime"></div>
+            <div id="grid-anime" class="genre-carousels"></div>
         </div>
         <div id="content-dibujos" class="content-section">
-            <div class="items-grid" id="grid-dibujos"></div>
+            <div id="grid-dibujos" class="genre-carousels"></div>
         </div>
         <div id="content-peliculas" class="content-section">
-            <div class="items-grid" id="grid-peliculas"></div>
+            <div id="grid-peliculas" class="genre-carousels"></div>
         </div>
         
         <div style="text-align: center; padding: 30px; margin-top: 40px; border-top: 2px solid var(--primary-red); color: var(--text-secondary);">
@@ -880,26 +1215,243 @@ def generar_html_foroactivo():
             const grid = document.getElementById(gridId);
             
             if (filtered.length === 0) {{
-                grid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 60px; color: var(--text-secondary);"><div style="font-size: 4rem; margin-bottom: 20px;">�</div><p>No se encontraron resultados</p></div>';
+                grid.innerHTML = '<div style="text-align: center; padding: 60px; color: var(--text-secondary);"><div style="font-size: 4rem; margin-bottom: 20px;">🔍</div><p>No se encontraron resultados</p></div>';
                 return;
             }}
             
-            grid.innerHTML = filtered.map((item, index) => {{
+            // Función para generar HTML de item
+            function generateItemHTML(item) {{
                 const nombre = item.nombre_limpio || item.name || '';
                 const year = item.year || 'N/A';
                 const genero = item.specificGenre || item.genre || 'N/A';
-                const url = item.url || '#';
+                const imagen = item.imagen_url || item.imagen || null;
+                const tipo = item.tipo || 'anime';
+                const href = item.href || item.url || '';
                 
-                return `<div class="item-card"><div class="item-number">#${{index + 1}}</div><div class="item-header"><div class="item-title">${{nombre}}</div></div><div class="item-body"><div class="item-meta"><span class="meta-badge">📅 ${{year}}</span><span class="meta-badge genre-badge">${{genero}}</span></div><a href="${{url}}" target="_blank" class="item-link">Ver</a></div></div>`;
-            }}).join('');
+                const emojis = {{ 'anime': '🍜', 'dibujos': '🎨', 'peliculas': '🎬', 'series': '📺' }};
+                const emoji = emojis[tipo] || '📺';
+                
+                const imagenHTML = imagen 
+                    ? `<img src="${{imagen}}" class="item-image" alt="${{nombre}}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="item-image-placeholder" style="display:none">${{emoji}}</div>`
+                    : `<div class="item-image-placeholder">${{emoji}}</div>`;
+                
+                // Usar href para abrir modal (evita problemas con JSON.stringify)
+                const safeHref = href.replace(/"/g, '&quot;');
+                return `<div class="item-card" title="${{nombre}} (${{year}})" onclick='openModalByHref("${{safeHref}}")' style="cursor: pointer;">
+                    ${{imagenHTML}}
+                    <div class="item-overlay"></div>
+                    <div class="item-content">
+                        <div class="item-title">${{nombre}}</div>
+                        <div class="item-meta">
+                            <span class="meta-badge">📅 ${{year}}</span>
+                            <span class="meta-badge genre-badge">${{genero}}</span>
+                        </div>
+                    </div>
+                </div>`;
+            }}
+            
+            // Función para normalizar géneros (quitar tildes, minúsculas, trim)
+            function normalizeGenre(g) {{
+                return g.toLowerCase()
+                    .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // quitar tildes
+                    .replace(/[^a-z0-9\s]/g, '') // quitar caracteres especiales
+                    .trim();
+            }}
+            
+            // Mapeo de géneros normalizados a nombre original (para mostrar)
+            const genreDisplayNames = {{}};
+            
+            // Agrupar por género - cada item SOLO UNA VEZ, usando SOLO el PRIMER género
+            const groupedByGenre = {{}};
+            const usedIndexes = new Set(); // Índices de items ya asignados
+            
+            // Asignar cada item a su PRIMER género (eliminando categorías compuestas)
+            filtered.forEach((item, index) => {{
+                // Si ya fue asignado, saltar
+                if (usedIndexes.has(index)) return;
+                
+                // Obtener género y separar por comas si es compuesto
+                const fullGenre = item.specificGenre || item.genre || 'Sin Género';
+                // Tomar solo el primer género (antes de la primera coma)
+                const originalGenre = fullGenre.split(',')[0].trim();
+                const normalizedGenre = normalizeGenre(originalGenre);
+                
+                // Guardar nombre original para mostrar
+                if (!genreDisplayNames[normalizedGenre]) {{
+                    genreDisplayNames[normalizedGenre] = originalGenre;
+                }}
+                
+                // Crear array del género si no existe (usando nombre normalizado como key)
+                if (!groupedByGenre[normalizedGenre]) {{
+                    groupedByGenre[normalizedGenre] = [];
+                }}
+                
+                // Agregar item a su género y marcar índice como usado
+                groupedByGenre[normalizedGenre].push(item);
+                usedIndexes.add(index);
+            }});
+            
+            // Obtener géneros ordenados alfabéticamente que tengan items
+            const sortedGenres = Object.keys(groupedByGenre)
+                .filter(g => groupedByGenre[g].length > 0)
+                .sort();
+            
+            // Generar HTML de carruseles por género
+            let carouselsHTML = '';
+            sortedGenres.forEach((normalizedGenre, genreIndex) => {{
+                const items = groupedByGenre[normalizedGenre];
+                const itemCount = items.length;
+                const displayName = genreDisplayNames[normalizedGenre] || normalizedGenre;
+                const safeGenre = normalizedGenre.replace(/[^a-zA-Z0-9]/g, '-');
+                const carouselId = `carousel-${{safeGenre}}-${{genreIndex}}`;
+                
+                carouselsHTML += `
+                <div class="genre-section">
+                    <h2 class="genre-title">${{displayName}} <span style="color: var(--text-secondary); font-size: 0.8em;">(${{itemCount}})</span></h2>
+                    <div class="carousel-container">
+                        <button class="carousel-btn prev" onclick="scrollCarousel('${{carouselId}}', -1)">❮</button>
+                        <div class="carousel-track" id="${{carouselId}}">
+                            ${{items.map(item => generateItemHTML(item)).join('')}}
+                        </div>
+                        <button class="carousel-btn next" onclick="scrollCarousel('${{carouselId}}', 1)">❯</button>
+                    </div>
+                </div>`;
+            }});
+            
+            grid.innerHTML = carouselsHTML;
         }}
+        
+        // Función para scroll de carrusel
+        function scrollCarousel(carouselId, direction) {{
+            const track = document.getElementById(carouselId);
+            if (track) {{
+                const scrollAmount = 220 * 4; // 4 items por scroll
+                track.scrollBy({{ left: direction * scrollAmount, behavior: 'smooth' }});
+            }}
+        }}
+        
+        // Funciones del modal estilo Netflix
+        function openModalByHref(href) {{
+            const item = allItems.find(i => i.href === href || i.url === href);
+            if (!item) return;
+            openModal(item);
+        }}
+        
+        function openModal(item) {{
+            const modal = document.getElementById('netflixModal');
+            const modalBgImage = document.getElementById('modalBgImage');
+            const modalPoster = document.getElementById('modalPoster');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalYear = document.getElementById('modalYear');
+            const modalGenre = document.getElementById('modalGenre');
+            const modalSinopsis = document.getElementById('modalSinopsis');
+            const modalSinopsisText = document.getElementById('modalSinopsisText');
+            const modalInfoExtra = document.getElementById('modalInfoExtra');
+            const modalInfoText = document.getElementById('modalInfoText');
+            const modalLink = document.getElementById('modalLink');
+            
+            // Llenar datos
+            const imagen = item.imagen_url || item.imagen || '';
+            const nombre = item.nombre_limpio || item.name || '';
+            
+            // Imagen de fondo (blur) y poster
+            modalBgImage.src = imagen;
+            modalPoster.src = imagen;
+            modalPoster.alt = nombre;
+            
+            // Título y metadatos
+            modalTitle.textContent = nombre;
+            modalYear.textContent = '📅 ' + (item.year || 'N/A');
+            modalGenre.textContent = item.specificGenre || item.genre || 'N/A';
+            
+            // Sinopsis
+            if (item.sinopsis && item.sinopsis.length > 10) {{
+                modalSinopsisText.textContent = item.sinopsis;
+                modalSinopsis.style.display = 'block';
+            }} else {{
+                modalSinopsis.style.display = 'none';
+            }}
+            
+            // Info extra (desde Género: hasta Trailer:)
+            if (item.info_extra && item.info_extra.length > 10) {{
+                modalInfoText.textContent = item.info_extra;
+                modalInfoExtra.style.display = 'block';
+            }} else {{
+                modalInfoExtra.style.display = 'none';
+            }}
+            
+            // Link al foro
+            modalLink.href = item.url || '#';
+            
+            // Mostrar modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevenir scroll
+        }}
+        
+        function closeModal(event) {{
+            if (event && event.target !== event.currentTarget) return;
+            
+            const modal = document.getElementById('netflixModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = ''; // Restaurar scroll
+            
+            // Limpiar imagen
+            setTimeout(() => {{
+                document.getElementById('modalImage').src = '';
+            }}, 300);
+        }}
+        
+        // Cerrar modal con ESC
+        document.addEventListener('keydown', function(e) {{
+            if (e.key === 'Escape') closeModal();
+        }});
         
         applyFilters();
     </script>
+    
+    <!-- Modal estilo Netflix -->
+    <div class="modal-overlay" id="netflixModal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <!-- Imagen horizontal de fondo -->
+            <img class="modal-bg-image" id="modalBgImage" src="" alt="">
+            <!-- Gradiente para difuminar la transición -->
+            <div class="modal-bg-gradient"></div>
+            
+            <button class="modal-close" onclick="closeModal()">×</button>
+            
+            <div class="modal-content-wrapper">
+                <!-- Poster pequeño superpuesto -->
+                <img class="modal-poster" id="modalPoster" src="" alt="">
+                
+                <div class="modal-info">
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                    <div class="modal-meta">
+                        <span class="modal-meta-badge" id="modalYear"></span>
+                        <span class="modal-meta-badge" id="modalGenre"></span>
+                    </div>
+                    
+                    <!-- Sinopsis con label -->
+                    <div class="modal-sinopsis" id="modalSinopsis" style="display: none;">
+                        <span class="modal-sinopsis-label">Sinopsis</span>
+                        <span id="modalSinopsisText"></span>
+                    </div>
+                    
+                    <div class="modal-info-extra" id="modalInfoExtra" style="display: none;">
+                        <h3>Información</h3>
+                        <p id="modalInfoText"></p>
+                    </div>
+                    
+                    <a class="modal-link" id="modalLink" href="#" target="_blank">Ver en el foro →</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>'''
     
-    with open('top_foroactivo.html', 'w', encoding='utf-8') as f:
+    # Guardar como index.html para GitHub Pages
+    output_file = 'index.html'
+    with open(output_file, 'w', encoding='utf-8') as f:
         f.write(html)
     
     # Resumen final del proceso
@@ -915,15 +1467,15 @@ def generar_html_foroactivo():
     print(f"   • Series: {len(series)}")
     print(f"   • Géneros únicos: {len(generos_ordenados)}")
     print(f"   • Backup creado: {'Sí' if backup_ok else 'No'}")
-    print(f"   • Archivo generado: top_foroactivo.html")
+    print(f"   • Archivo generado: {output_file}")
     print(f"   • Duración: {str(duracion).split('.')[0]}")
     
     # Logging del resumen
     logger.info(f"HTML generado exitosamente - Total: {len(todos_items)} items")
     logger.info(f"Distribución - Anime: {len(animes)}, Dibujos: {len(dibujos)}, Películas: {len(peliculas)}, Series: {len(series)}")
     
-    print(f"\n✅ HTML Premium generado con filtros interactivos")
-    print(f"📁 Archivo guardado como: top_foroactivo.html")
+    print(f"\n✅ HTML Premium con diseño Netflix generado")
+    print(f"📁 Archivo guardado como: {output_file}")
     
     return {
         'total_items': len(todos_items),
@@ -933,7 +1485,7 @@ def generar_html_foroactivo():
         'series': len(series),
         'generos': len(generos_ordenados),
         'backup_ok': backup_ok,
-        'html_file': 'top_foroactivo.html'
+        'html_file': output_file
     }
 
 # Ejecutar la función
