@@ -31,7 +31,7 @@ jobs:
           pip install requests
           python generar_html_foroactivo.py
           mkdir -p _site
-          cp top_foroactivo.html _site/index.html
+          cp index.html _site/index.html
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
