@@ -199,15 +199,19 @@ def generar_html_foroactivo():
     
     print(f"   Total items: {len(todos_items)}")
     
-    # Validar y corregir géneros
-    items_sin_genero = 0
+    # Validar y corregir géneros - genre (actualizado manualmente) tiene prioridad sobre specificGenre
+    items_actualizados = 0
     for item in todos_items:
-        if not item.get('specificGenre') or item['specificGenre'] == 'N/A':
-            item['specificGenre'] = item.get('genre', 'Sin género')
-            items_sin_genero += 1
+        if item.get('genre'):
+            # Si existe genre (actualizado manualmente), usarlo como specificGenre
+            item['specificGenre'] = item['genre']
+            items_actualizados += 1
+        elif not item.get('specificGenre') or item['specificGenre'] == 'N/A':
+            item['specificGenre'] = 'Sin género'
+            items_actualizados += 1
     
-    if items_sin_genero > 0:
-        print(f"⚠️ Se corrigieron {items_sin_genero} items sin género específico")
+    if items_actualizados > 0:
+        print(f"✅ Se actualizaron {items_actualizados} items con géneros correctos")
     
     # Función para limpiar nombres en Python
     def limpiar_nombre(nombre):
@@ -235,7 +239,7 @@ def generar_html_foroactivo():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anime Zone ESP - TOP Premium</title>
+    <title>AnimeZoneEsp - Catalogo</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         * {{
@@ -532,6 +536,56 @@ def generar_html_foroactivo():
             box-shadow: 0 0 15px rgba(192, 57, 43, 0.3);
         }}
         
+        .search-suggestions {{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(30, 30, 35, 0.98);
+            border: 1px solid rgba(231, 76, 60, 0.3);
+            border-radius: 8px;
+            margin-top: 5px;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 99999;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }}
+        
+        .suggestion-item {{
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.2s ease;
+        }}
+        
+        .suggestion-item:hover,
+        .suggestion-item.active {{
+            background: rgba(231, 76, 60, 0.3);
+        }}
+        
+        .suggestion-img {{
+            width: 40px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 12px;
+            background: rgba(255, 255, 255, 0.1);
+        }}
+        
+        .suggestion-title {{
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }}
+        
+        .suggestion-meta {{
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }}
+        
         .content-section {{
             display: none;
         }}
@@ -556,40 +610,114 @@ def generar_html_foroactivo():
         
         /* Carruseles por género estilo Netflix */
         .genre-section {{
-            margin-bottom: 40px;
+            margin-bottom: 15px;
             position: relative;
         }}
         
         .genre-title {{
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
+            font-size: 1.1rem;
             font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
             color: var(--text-primary);
             margin: 0 0 15px 20px;
             text-transform: uppercase;
             letter-spacing: 2px;
             border-left: 4px solid var(--primary-red);
             padding-left: 15px;
+            display: inline-block;
+        }}
+        
+        .genre-title:hover {{
+            color: var(--primary-red);
+            transform: translateX(5px);
+        }}
+        
+        /* Modal para ver todos los items de un género */
+        .genre-modal-content {{
+            max-width: 1400px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 2px solid var(--primary-red);
+            overflow: hidden;
+        }}
+        
+        .genre-modal-header {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            background: linear-gradient(90deg, var(--primary-red), transparent);
+            border-bottom: 2px solid var(--primary-red);
+        }}
+        
+        .genre-modal-header h2 {{
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: white;
+        }}
+        
+        .genre-modal-header .close-btn {{
+            background: rgba(0,0,0,0.5);
+            border: 2px solid white;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }}
+        
+        .genre-modal-header .close-btn:hover {{
+            background: var(--primary-red);
+            transform: scale(1.1);
+        }}
+        
+        .genre-modal-grid {{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            max-height: calc(100vh - 150px);
+            overflow-y: auto;
         }}
         
         .carousel-container {{
             position: relative;
+            display: block;
+            padding: 0 50px;
+            z-index: 1;
+            width: 1100px;
+            margin: 0 auto;
+        }}
+        
+        .carousel-scroll-area {{
+            position: relative;
             overflow: hidden;
-            padding: 0 40px;
+            padding: 10px 0;
+            width: 1000px;
+            height: 260px;
+            box-sizing: border-box;
+        }}
+        
+        .carousel-scroll-area::-webkit-scrollbar {{
+            display: none;
         }}
         
         .carousel-track {{
             display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
             gap: 15px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-            padding: 10px 0 20px 0;
-        }}
-        
-        .carousel-track::-webkit-scrollbar {{
-            display: none;
+            padding: 0;
+            width: max-content;
+            position: relative;
+            left: 0;
+            transition: left 0.3s ease;
         }}
         
         .carousel-btn {{
@@ -598,30 +726,36 @@ def generar_html_foroactivo():
             transform: translateY(-50%);
             width: 40px;
             height: 60px;
-            background: rgba(0, 0, 0, 0.7);
-            border: none;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             color: white;
             font-size: 1.5rem;
             cursor: pointer;
-            z-index: 10;
+            z-index: 100;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 4px;
+            border-radius: 8px;
+            pointer-events: auto;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
         }}
         
-        .carousel-btn:hover {{
+        .carousel-btn:hover,
+        .carousel-btn:active {{
             background: rgba(192, 57, 43, 0.9);
             transform: translateY(-50%) scale(1.1);
+            border-color: rgba(255, 255, 255, 0.8);
         }}
         
-        .carousel-btn.prev {{
-            left: 0;
+        .carousel-btn.carousel-prev {{
+            left: 5px;
         }}
         
-        .carousel-btn.next {{
-            right: 0;
+        .carousel-btn.carousel-next {{
+            right: 5px;
         }}
         
         .carousel-btn.hidden {{
@@ -631,7 +765,7 @@ def generar_html_foroactivo():
         /* Item card en carrusel */
         .carousel-track .item-card {{
             flex: 0 0 auto;
-            width: 200px;
+            width: 150px;
             aspect-ratio: 2/3;
         }}
         
@@ -641,7 +775,7 @@ def generar_html_foroactivo():
             }}
             
             .genre-title {{
-                font-size: 1.2rem;
+                font-size: 0.9rem;
             }}
         }}
         
@@ -707,12 +841,12 @@ def generar_html_foroactivo():
         }}
         
         .item-content {{
-            padding: 12px;
+            padding: 8px 10px;
             flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 100%);
+            justify-content: flex-end;
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
             position: absolute;
             bottom: 0;
             left: 0;
@@ -721,7 +855,7 @@ def generar_html_foroactivo():
         }}
         
         .item-title {{
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             font-weight: 600;
             color: var(--text-primary);
             margin-bottom: 5px;
@@ -740,9 +874,9 @@ def generar_html_foroactivo():
         }}
         
         .meta-badge {{
-            font-size: 0.75rem;
-            padding: 4px 8px;
-            border-radius: 4px;
+            font-size: 0.65rem;
+            padding: 2px 6px;
+            border-radius: 3px;
         }}
         
         .item-link {{
@@ -974,33 +1108,89 @@ def generar_html_foroactivo():
                 height: 300px;
             }}
             
-            .modal-info {{
-                text-align: center;
-                padding-top: 0;
-            }}
-            
-            .modal-title {{
-                font-size: 1.5rem;
-            }}
         }}
         
         .modal-info-extra {{
             background: rgba(0, 0, 0, 0.3);
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
-            margin-top: 20px;
+            margin-top: 15px;
         }}
         
         .modal-info-extra h3 {{
             color: var(--primary-red);
-            margin-bottom: 15px;
-            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }}
         
         .modal-info-extra p {{
             color: var(--text-secondary);
-            line-height: 1.8;
+            line-height: 1.6;
             white-space: pre-line;
+            font-size: 0.85rem;
+        }}
+        
+        /* Ficha Técnica */
+        .modal-ficha-tecnica {{
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }}
+        
+        .modal-ficha-tecnica h3 {{
+            color: var(--primary-red);
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }}
+        
+        .ficha-grid {{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px 15px;
+        }}
+        
+        .ficha-item {{
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+            min-width: 0;
+        }}
+        
+        .ficha-item.full-width {{
+            grid-column: 1 / -1;
+        }}
+        
+        .ficha-label {{
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            font-weight: 500;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }}
+        
+        .ficha-value {{
+            color: var(--text-primary);
+            font-size: 0.8rem;
+            font-weight: 500;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            line-height: 1.3;
+        }}
+        
+        .ficha-link {{
+            color: var(--primary-red);
+            text-decoration: underline;
+            font-weight: 600;
+            cursor: pointer;
+        }}
+        
+        .ficha-link:hover {{
+            color: var(--accent-gold);
         }}
         
         .modal-link {{
@@ -1016,9 +1206,25 @@ def generar_html_foroactivo():
         }}
         
         .modal-link:hover {{
-            background: #a93226;
+            background: #c0392b;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(192, 57, 43, 0.4);
+        }}
+        
+        .modal-link-online {{
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            margin-left: 10px;
+        }}
+        
+        .modal-link-online:hover {{
+            background: linear-gradient(135deg, #229954, #27ae60);
+        }}
+        
+        .modal-buttons {{
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
         }}
         
         @media (max-width: 768px) {{
@@ -1039,7 +1245,8 @@ def generar_html_foroactivo():
 <body>
     <div class="container">
         <div class="header">
-            <h1>ANIMEZONEESP</h1>
+            <img src="https://i.servimg.com/u/f30/20/63/83/19/icono10.png" alt="Anime Zone ESP" class="header-logo" style="height: 50px; width: auto; margin-right: 15px; vertical-align: middle;">
+            <h1 style="display: inline-block; vertical-align: middle; margin: 0;">ANIMEZONEESP</h1>
         </div>
         
         <div class="stats-bar">
@@ -1101,8 +1308,9 @@ def generar_html_foroactivo():
             <button class="tab-btn" onclick="showTab('peliculas')">PELICULAS</button>
         </div>
         
-        <div class="search-container" style="display: flex; justify-content: center; margin-bottom: 20px;">
-            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar serie, película o género..." onkeyup="applyFilters()">
+        <div class="search-container" style="display: flex; justify-content: center; margin-bottom: 20px; position: relative;">
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar serie, película o género..." onkeyup="handleSearchInput(event)" autocomplete="off">
+            <div id="searchSuggestions" class="search-suggestions" style="display: none;"></div>
         </div>
         
         <div class="sort-container" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
@@ -1143,7 +1351,19 @@ def generar_html_foroactivo():
             document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
             document.getElementById('content-' + tab).classList.add('active');
             currentTab = tab;
+            
+            // Limpiar posiciones de carousels al cambiar de pestaña
+            for (let key in carouselPositions) {{
+                delete carouselPositions[key];
+            }}
+            
+            // Aplicar filtros primero, luego reinicializar carousels
             applyFilters();
+            
+            // Reinicializar posiciones de carousels después de que el DOM se actualice
+            setTimeout(() => {{
+                initCarousels();
+            }}, 100);
         }}
         
         function sortItems(sortBy) {{
@@ -1187,13 +1407,160 @@ def generar_html_foroactivo():
             return 'older';
         }}
         
+        // Función para generar HTML de item (global)
+        function generateItemHTML(item) {{
+            let nombre = item.nombre_limpio || item.name || '';
+            const year = item.year || 'N/A';
+            const genero = item.specificGenre || item.genre || 'N/A';
+            const imagen = item.imagen_url || item.imagen || null;
+            const tipo = item.type || 'anime';
+            const href = item.href || item.url || '';
+            
+            // Quitar el año del nombre (patrón " (YYYY)")
+            nombre = nombre.replace(/\s*\(\d{{4}}\)\s*$/, '').trim();
+            
+            const emojis = {{ 'anime': '🍜', 'dibujos': '🎨', 'peliculas': '🎬', 'series': '📺' }};
+            const emoji = emojis[tipo] || '📺';
+            
+            const imagenHTML = imagen 
+                ? `<img src="${{imagen}}" class="item-image" alt="${{nombre}}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="item-image-placeholder" style="display:none">${{emoji}}</div>`
+                : `<div class="item-image-placeholder">${{emoji}}</div>`;
+            
+            // Usar href para abrir modal (evita problemas con JSON.stringify)
+            const safeHref = href.replace(/"/g, '&quot;');
+            return `<div class="item-card" title="${{nombre}} (${{year}})" onclick='openModalByHref("${{safeHref}}")' style="cursor: pointer;">
+                ${{imagenHTML}}
+                <div class="item-overlay"></div>
+                <div class="item-content">
+                    <div class="item-title">${{nombre}}</div>
+                    <div class="item-meta">
+                        <span class="meta-badge">📅 ${{year}}</span>
+                    </div>
+                </div>
+            </div>`;
+        }}
+        
+        // Función para manejar el autocompletado
+        let selectedSuggestionIndex = -1;
+        
+        function handleSearchInput(event) {{
+            console.log('handleSearchInput llamado:', event.key, document.getElementById('searchInput').value);
+            const input = document.getElementById('searchInput');
+            const suggestionsDiv = document.getElementById('searchSuggestions');
+            const searchTerm = input.value.toLowerCase().trim();
+            console.log('Buscando:', searchTerm, 'longitud:', searchTerm.length);
+            
+            // Si presiona Enter, abrir la primera sugerencia o aplicar filtro
+            if (event.key === 'Enter') {{
+                if (selectedSuggestionIndex >= 0) {{
+                    const suggestions = suggestionsDiv.querySelectorAll('.suggestion-item');
+                    if (suggestions[selectedSuggestionIndex]) {{
+                        suggestions[selectedSuggestionIndex].click();
+                        return;
+                    }}
+                }}
+                applyFilters();
+                suggestionsDiv.style.display = 'none';
+                return;
+            }}
+            
+            // Si presiona flechas, navegar entre sugerencias
+            if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {{
+                const suggestions = suggestionsDiv.querySelectorAll('.suggestion-item');
+                if (suggestions.length === 0) return;
+                
+                if (event.key === 'ArrowDown') {{
+                    selectedSuggestionIndex = Math.min(selectedSuggestionIndex + 1, suggestions.length - 1);
+                }} else {{
+                    selectedSuggestionIndex = Math.max(selectedSuggestionIndex - 1, -1);
+                }}
+                
+                suggestions.forEach((s, i) => s.classList.toggle('active', i === selectedSuggestionIndex));
+                return;
+            }}
+            
+            // Si escapa, cerrar sugerencias
+            if (event.key === 'Escape') {{
+                suggestionsDiv.style.display = 'none';
+                selectedSuggestionIndex = -1;
+                return;
+            }}
+            
+            // Si no hay texto, ocultar sugerencias
+            if (searchTerm.length < 1) {{
+                suggestionsDiv.style.display = 'none';
+                return;
+            }}
+            
+            // Buscar coincidencias
+            const matches = allItems.filter(item => {{
+                const name = String(item.name || '').toLowerCase();
+                const genre = String(item.genre || '').toLowerCase();
+                const specificGenre = String(item.specificGenre || '').toLowerCase();
+                return name.includes(searchTerm) || genre.includes(searchTerm) || specificGenre.includes(searchTerm);
+            }}).slice(0, 8); // Máximo 8 sugerencias
+            
+            console.log('Matches encontrados:', matches.length);
+            
+            if (matches.length === 0) {{
+                suggestionsDiv.style.display = 'none';
+                return;
+            }}
+            
+            // Función para limpiar el nombre (extraer solo el título sin corchetes)
+            function limpiarNombre(name) {{
+                if (!name) return 'Sin nombre';
+                // Eliminar [Activo], [Finalizado], etc. al inicio
+                let limpio = name.replace(/^\[[^\]]+\]\s*/, '');
+                // Extraer solo el nombre antes de cualquier corchete
+                const match = limpio.match(/^([^\[]+)/);
+                if (match) {{
+                    limpio = match[1].trim();
+                }}
+                // Eliminar el año entre paréntesis si existe al final del nombre
+                limpio = limpio.replace(/\s*\(\d{4}\)\s*$/, '');
+                return limpio || 'Sin nombre';
+            }}
+            
+            // Generar HTML de sugerencias
+            let html = '';
+            matches.forEach((item, index) => {{
+                const imagen = item.imagen_url || item.imagen || '';
+                const nombre = limpiarNombre(item.name);
+                const year = item.year || '';
+                const tipo = item.type || item.tipo || 'anime';
+                
+                html += `<div class="suggestion-item" onclick="openModalByHref('${{item.url || item.href}}'); document.getElementById('searchSuggestions').style.display='none';" data-index="${{index}}">
+                    <img src="${{imagen}}" class="suggestion-img" alt="" onerror="this.style.display='none'">
+                    <div class="suggestion-info">
+                        <div class="suggestion-title">${{nombre}}</div>
+                        <div class="suggestion-meta">📅 ${{year}} • ${{tipo}}</div>
+                    </div>
+                </div>`;
+            }});
+            
+            suggestionsDiv.innerHTML = html;
+            suggestionsDiv.style.display = 'block';
+            console.log('Dropdown mostrado con', matches.length, 'sugerencias');
+            selectedSuggestionIndex = -1;
+        }}
+        
+        // Cerrar sugerencias al hacer clic fuera
+        document.addEventListener('click', function(event) {{
+            const searchContainer = document.querySelector('.search-container');
+            const suggestionsDiv = document.getElementById('searchSuggestions');
+            if (searchContainer && !searchContainer.contains(event.target)) {{
+                suggestionsDiv.style.display = 'none';
+            }}
+        }});
+        
         function applyFilters() {{
             const decada = document.getElementById('decadaFilter').value;
             const genero = document.getElementById('generoFilter').value;
             const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
             
             let filtered = allItems.filter(item => {{
-                if (currentTab !== 'all' && item.tipo !== currentTab) return false;
+                if (currentTab !== 'all' && (item.type || item.tipo) !== currentTab) return false;
                 if (decada !== 'all' && getDecade(item.year) !== decada) return false;
                 if (genero !== 'all' && (item.specificGenre || item.genre || 'N/A') !== genero) return false;
                 
@@ -1219,37 +1586,6 @@ def generar_html_foroactivo():
                 return;
             }}
             
-            // Función para generar HTML de item
-            function generateItemHTML(item) {{
-                const nombre = item.nombre_limpio || item.name || '';
-                const year = item.year || 'N/A';
-                const genero = item.specificGenre || item.genre || 'N/A';
-                const imagen = item.imagen_url || item.imagen || null;
-                const tipo = item.tipo || 'anime';
-                const href = item.href || item.url || '';
-                
-                const emojis = {{ 'anime': '🍜', 'dibujos': '🎨', 'peliculas': '🎬', 'series': '📺' }};
-                const emoji = emojis[tipo] || '📺';
-                
-                const imagenHTML = imagen 
-                    ? `<img src="${{imagen}}" class="item-image" alt="${{nombre}}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="item-image-placeholder" style="display:none">${{emoji}}</div>`
-                    : `<div class="item-image-placeholder">${{emoji}}</div>`;
-                
-                // Usar href para abrir modal (evita problemas con JSON.stringify)
-                const safeHref = href.replace(/"/g, '&quot;');
-                return `<div class="item-card" title="${{nombre}} (${{year}})" onclick='openModalByHref("${{safeHref}}")' style="cursor: pointer;">
-                    ${{imagenHTML}}
-                    <div class="item-overlay"></div>
-                    <div class="item-content">
-                        <div class="item-title">${{nombre}}</div>
-                        <div class="item-meta">
-                            <span class="meta-badge">📅 ${{year}}</span>
-                            <span class="meta-badge genre-badge">${{genero}}</span>
-                        </div>
-                    </div>
-                </div>`;
-            }}
-            
             // Función para normalizar géneros (quitar tildes, minúsculas, trim)
             function normalizeGenre(g) {{
                 return g.toLowerCase()
@@ -1271,7 +1607,12 @@ def generar_html_foroactivo():
                 if (usedIndexes.has(index)) return;
                 
                 // Obtener género y separar por comas si es compuesto
-                const fullGenre = item.specificGenre || item.genre || 'Sin Género';
+                // Usar item.genre primero (géneros actualizados manualmente), luego specificGenre
+                let fullGenre = item.genre || item.specificGenre || 'Sin Género';
+                // Asegurar que sea string
+                if (typeof fullGenre !== 'string') {{
+                    fullGenre = String(fullGenre || 'Sin Género');
+                }}
                 // Tomar solo el primer género (antes de la primera coma)
                 const originalGenre = fullGenre.split(',')[0].trim();
                 const normalizedGenre = normalizeGenre(originalGenre);
@@ -1303,30 +1644,228 @@ def generar_html_foroactivo():
                 const itemCount = items.length;
                 const displayName = genreDisplayNames[normalizedGenre] || normalizedGenre;
                 const safeGenre = normalizedGenre.replace(/[^a-zA-Z0-9]/g, '-');
-                const carouselId = `carousel-${{safeGenre}}-${{genreIndex}}`;
+                // Incluir el tipo de pestaña en el ID para hacerlo único
+                const tabPrefix = currentTab === 'all' ? 'all' : currentTab;
+                const carouselId = `carousel-${{tabPrefix}}-${{safeGenre}}-${{genreIndex}}`;
+                
+                const safeId = carouselId.replace(/[^a-zA-Z0-9_-]/g, '-');
+                const scrollAreaId = 'scrollarea-' + safeId;
+                
+                // Crear data attribute con los hrefs de los items
+                const itemsHref = items.map(i => i.href || i.url).join(',');
                 
                 carouselsHTML += `
                 <div class="genre-section">
-                    <h2 class="genre-title">${{displayName}} <span style="color: var(--text-secondary); font-size: 0.8em;">(${{itemCount}})</span></h2>
+                    <h2 class="genre-title" data-genre="${{displayName}}" data-items="${{itemsHref}}" data-count="${{itemCount}}" title="Ver todos los ${{itemCount}} items de ${{displayName}}">
+                        ${{displayName}} <span style="color: var(--text-secondary); font-size: 0.8em;">(${{itemCount}})</span>
+                    </h2>
                     <div class="carousel-container">
-                        <button class="carousel-btn prev" onclick="scrollCarousel('${{carouselId}}', -1)">❮</button>
-                        <div class="carousel-track" id="${{carouselId}}">
-                            ${{items.map(item => generateItemHTML(item)).join('')}}
+                        <button class="carousel-btn carousel-prev" data-scrollarea="${{scrollAreaId}}" type="button">❮</button>
+                        <div class="carousel-scroll-area" id="${{scrollAreaId}}">
+                            <div class="carousel-track" id="${{safeId}}">
+                                ${{items.map(item => generateItemHTML(item)).join('')}}
+                            </div>
                         </div>
-                        <button class="carousel-btn next" onclick="scrollCarousel('${{carouselId}}', 1)">❯</button>
+                        <button class="carousel-btn carousel-next" data-scrollarea="${{scrollAreaId}}" type="button">❯</button>
                     </div>
                 </div>`;
             }});
             
             grid.innerHTML = carouselsHTML;
+            
+            // Inicializar carousels con ancho correcto
+            setTimeout(() => {{
+                initCarousels();
+            }}, 0);
+            
+            // Asignar event listeners a los botones del carousel
+            setTimeout(() => {{
+                console.log('Asignando event listeners a', grid.querySelectorAll('.carousel-prev').length, 'botones prev y', grid.querySelectorAll('.carousel-next').length, 'botones next');
+                
+                grid.querySelectorAll('.carousel-prev').forEach((btn, idx) => {{
+                    btn.addEventListener('click', function(e) {{
+                        e.preventDefault();
+                        e.stopPropagation();
+                        const scrollAreaId = this.getAttribute('data-scrollarea');
+                        console.log('Botón prev #' + idx + ' clickeado, scrollArea:', scrollAreaId);
+                        scrollCarouselArea(scrollAreaId, -1);
+                    }});
+                }});
+                grid.querySelectorAll('.carousel-next').forEach((btn, idx) => {{
+                    btn.addEventListener('click', function(e) {{
+                        e.preventDefault();
+                        e.stopPropagation();
+                        const scrollAreaId = this.getAttribute('data-scrollarea');
+                        console.log('Botón next #' + idx + ' clickeado, scrollArea:', scrollAreaId);
+                        scrollCarouselArea(scrollAreaId, 1);
+                    }});
+                }});
+                
+                // Asignar event listeners a los títulos de género
+                grid.querySelectorAll('.genre-title').forEach((title, idx) => {{
+                    title.addEventListener('click', function(e) {{
+                        e.preventDefault();
+                        e.stopPropagation();
+                        const genreName = this.getAttribute('data-genre');
+                        const itemsHref = this.getAttribute('data-items');
+                        const count = this.getAttribute('data-count');
+                        console.log('Título de género clickeado:', genreName, 'Items:', count);
+                        showAllByGenre(genreName, itemsHref, count);
+                    }});
+                }});
+            }}, 0);
         }}
         
-        // Función para scroll de carrusel
-        function scrollCarousel(carouselId, direction) {{
-            const track = document.getElementById(carouselId);
-            if (track) {{
-                const scrollAmount = 220 * 4; // 4 items por scroll
-                track.scrollBy({{ left: direction * scrollAmount, behavior: 'smooth' }});
+        // Objeto para almacenar posiciones de cada carousel
+        const carouselPositions = {{}};
+        
+        // Función para inicializar carousels después de renderizar
+        function initCarousels() {{
+            document.querySelectorAll('.carousel-scroll-area').forEach(area => {{
+                const track = area.querySelector('.carousel-track');
+                if (track) {{
+                    const itemCount = track.querySelectorAll('.item-card').length;
+                    const itemWidth = 165; // 150px + 15px gap
+                    const totalWidth = itemCount * itemWidth;
+                    const areaId = area.id;
+                    
+                    // Reinicializar posición a 0
+                    carouselPositions[areaId] = 0;
+                    
+                    // Aplicar estilos con !important para asegurar que se apliquen
+                    track.style.setProperty('width', totalWidth + 'px', 'important');
+                    track.style.setProperty('left', '0px', 'important');
+                    track.style.setProperty('position', 'relative', 'important');
+                    
+                    // Actualizar ancho del contenedor a 1000px (6 items de 150px)
+                    area.style.setProperty('width', '1000px', 'important');
+                    
+                    console.log('Carousel inicializado:', areaId, 'Items:', itemCount, 'Ancho:', totalWidth, 'Left:', track.style.left);
+                }}
+            }});
+        }}
+        
+        // Función para scroll del área del carousel
+        function scrollCarouselArea(scrollAreaId, direction) {{
+            console.log('scrollCarouselArea llamado con ID:', scrollAreaId, 'dirección:', direction);
+            const scrollArea = document.getElementById(scrollAreaId);
+            
+            if (!scrollArea) {{
+                console.error('No se encontró el área de scroll con ID:', scrollAreaId);
+                return;
+            }}
+            
+            console.log('scrollArea encontrada:', scrollArea, 'ID:', scrollArea.id, 'Visible:', scrollArea.offsetParent !== null);
+            
+            // Obtener el ID del track desde el ID del scrollArea
+            const trackId = scrollAreaId.replace('scrollarea-', '');
+            let track = document.getElementById(trackId);
+            
+            // Fallback a querySelector si no se encuentra por ID
+            if (!track) {{
+                track = scrollArea.querySelector('.carousel-track');
+            }}
+            
+            if (!track) {{
+                console.error('No se encontró el track. ID buscado:', trackId);
+                return;
+            }}
+            
+            console.log('Track encontrado por ID:', trackId, 'Track:', track);
+            
+            try {{
+                // Inicializar posición si no existe
+                if (!carouselPositions[scrollAreaId]) {{
+                    carouselPositions[scrollAreaId] = 0;
+                }}
+            
+            const itemWidth = 165; // 150px + 15px gap
+            const itemsPerPage = 6;
+            const scrollAmount = itemWidth * itemsPerPage;
+            
+            // Calcular límites - usar ancho fijo de 1000px (6 items * 165px aprox)
+            const containerWidth = 1000;
+            const itemCount = track.querySelectorAll('.item-card').length;
+            const trackWidth = itemCount * itemWidth;
+            const maxScroll = Math.max(0, trackWidth - containerWidth);
+            
+            console.log('Items en track:', itemCount, 'Ancho track:', trackWidth, 'Ancho container (fijo):', containerWidth, 'Máximo:', maxScroll);
+            
+            // Calcular nueva posición
+            let newPosition = carouselPositions[scrollAreaId] + (direction * scrollAmount);
+            
+            // Limitar posición
+            newPosition = Math.max(0, Math.min(newPosition, maxScroll));
+            
+            console.log('Posición actual:', carouselPositions[scrollAreaId], 'Nueva posición:', newPosition, 'Máximo:', maxScroll);
+            
+            // Aplicar left para el scroll usando setProperty con !important
+            const leftValue = -newPosition;
+            track.style.setProperty('left', leftValue + 'px', 'important');
+            
+            // Guardar posición
+            carouselPositions[scrollAreaId] = newPosition;
+            
+            console.log('Left aplicado:', leftValue + 'px', 'Elemento:', track.className, 'ID:', track.id);
+            
+            // Verificar que se aplicó
+            const computedLeft = window.getComputedStyle(track).left;
+            console.log('Computed left:', computedLeft);
+            
+            }} catch (e) {{
+                console.error('Error en scrollCarouselArea:', e);
+            }}
+        }}
+        
+        // Función para mostrar todos los items de un género
+        function showAllByGenre(genreName, itemsHrefStr, count) {{
+            try {{
+                // Dividir el string de hrefs separados por comas
+                const hrefs = itemsHrefStr ? itemsHrefStr.split(',').filter(h => h) : [];
+                const genreItems = allItems.filter(item => hrefs.includes(item.href || item.url));
+                
+                console.log('Mostrando género:', genreName, 'Hrefs:', hrefs.length, 'Items encontrados:', genreItems.length);
+                
+                // Crear modal con grid de items
+                const modal = document.createElement('div');
+                modal.className = 'genre-modal';
+                modal.innerHTML = `
+                    <div class="genre-modal-content">
+                        <div class="genre-modal-header">
+                            <h2>${{genreName}} (${{genreItems.length}} items)</h2>
+                            <button class="close-btn" onclick="this.closest('.genre-modal').remove()">✕</button>
+                        </div>
+                        <div class="genre-modal-grid">
+                            ${{genreItems.map(item => generateItemHTML(item)).join('')}}
+                        </div>
+                    </div>
+                `;
+                
+                // Agregar estilos al modal
+                modal.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.95);
+                    z-index: 10000;
+                    overflow-y: auto;
+                    padding: 20px;
+                    box-sizing: border-box;
+                `;
+                
+                document.body.appendChild(modal);
+                
+                // Cerrar al hacer clic fuera
+                modal.addEventListener('click', function(e) {{
+                    if (e.target === modal) {{
+                        modal.remove();
+                    }}
+                }});
+                
+            }} catch(e) {{
+                console.error('Error mostrando género:', e);
             }}
         }}
         
@@ -1348,7 +1887,10 @@ def generar_html_foroactivo():
             const modalSinopsisText = document.getElementById('modalSinopsisText');
             const modalInfoExtra = document.getElementById('modalInfoExtra');
             const modalInfoText = document.getElementById('modalInfoText');
+            const modalFichaTecnica = document.getElementById('modalFichaTecnica');
+            const modalFichaContent = document.getElementById('modalFichaContent');
             const modalLink = document.getElementById('modalLink');
+            const modalRentryLink = document.getElementById('modalRentryLink');
             
             // Llenar datos
             const imagen = item.imagen_url || item.imagen || '';
@@ -1372,6 +1914,51 @@ def generar_html_foroactivo():
                 modalSinopsis.style.display = 'none';
             }}
             
+            // Ficha Técnica
+            if (item.ficha_tecnica && Object.keys(item.ficha_tecnica).length > 0) {{
+                let fichaHTML = '<div class="ficha-grid">';
+                const campos = {{
+                    'genero': {{ "label": "Género", "icon": "🎭" }},
+                    'ano': {{ "label": "Año", "icon": "📅" }},
+                    'idioma': {{ "label": "Idioma", "icon": "🎙️" }},
+                    'subtitulos': {{ "label": "Subtítulos", "icon": "💾" }},
+                    'formato': {{ "label": "Formato", "icon": "📘" }},
+                    'calidad': {{ "label": "Calidad", "icon": "™️" }},
+                    'resolucion': {{ "label": "Resolución", "icon": "🖼️" }},
+                    'peso': {{ "label": "Peso/Cap", "icon": "⚙️" }},
+                    'temporadas': {{ "label": "Temporadas", "icon": "📺" }},
+                    'episodios': {{ "label": "Episodios", "icon": "🎬" }},
+                    'estudio': {{ "label": "Estudio", "icon": "🏢" }},
+                    'director': {{ "label": "Director", "icon": "🎬" }},
+                    'reparto': {{ "label": "Reparto", "icon": "👥" }},
+                    'nfo': {{ "label": "NFO", "icon": "🎞️", "isLink": true }},
+                    'trailer': {{ "label": "Trailer", "icon": "📽️", "isLink": true }}
+                }};
+                
+                for (const [key, config] of Object.entries(campos)) {{
+                    const value = item.ficha_tecnica[key];
+                    if (value && value.trim() !== '' && value !== 'Año:' && value !== 'Enlace') {{
+                        const isLong = value.length > 25 || key === 'genero' || key === 'reparto' || key === 'idioma' || key === 'subtitulos';
+                        const className = isLong ? 'ficha-item full-width' : 'ficha-item';
+                        let valueHTML;
+                        
+                        if (config["isLink"]) {{
+                            // NFO y Trailer como enlaces
+                            valueHTML = `<a href="${{value}}" target="_blank" class="ficha-link">${{value}}</a>`;
+                        }} else {{
+                            valueHTML = value;
+                        }}
+                        
+                        fichaHTML += `<div class="${{className}}"><span class="ficha-label">${{config["icon"]}} ${{config["label"]}}:</span><span class="ficha-value">${{valueHTML}}</span></div>`;
+                    }}
+                }}
+                fichaHTML += '</div>';
+                modalFichaContent.innerHTML = fichaHTML;
+                modalFichaTecnica.style.display = 'block';
+            }} else {{
+                modalFichaTecnica.style.display = 'none';
+            }}
+            
             // Info extra (desde Género: hasta Trailer:)
             if (item.info_extra && item.info_extra.length > 10) {{
                 modalInfoText.textContent = item.info_extra;
@@ -1382,6 +1969,14 @@ def generar_html_foroactivo():
             
             // Link al foro
             modalLink.href = item.url || '#';
+            
+            // Link de Ver Online (rentry.co)
+            if (item.rentry_url) {{
+                modalRentryLink.href = item.rentry_url;
+                modalRentryLink.style.display = 'inline-block';
+            }} else {{
+                modalRentryLink.style.display = 'none';
+            }}
             
             // Mostrar modal
             modal.classList.add('active');
@@ -1436,12 +2031,22 @@ def generar_html_foroactivo():
                         <span id="modalSinopsisText"></span>
                     </div>
                     
+                    <!-- Ficha Técnica -->
+                    <div class="modal-ficha-tecnica" id="modalFichaTecnica" style="display: none;">
+                        <h3>Ficha Técnica</h3>
+                        <div id="modalFichaContent"></div>
+                    </div>
+                    
                     <div class="modal-info-extra" id="modalInfoExtra" style="display: none;">
                         <h3>Información</h3>
                         <p id="modalInfoText"></p>
                     </div>
                     
-                    <a class="modal-link" id="modalLink" href="#" target="_blank">Ver en el foro →</a>
+                    <!-- Botones de acción -->
+                    <div class="modal-buttons">
+                        <a class="modal-link" id="modalLink" href="#" target="_blank">Ver en el foro →</a>
+                        <a class="modal-link modal-link-online" id="modalRentryLink" href="#" target="_blank" style="display: none;">Ver Online →</a>
+                    </div>
                 </div>
             </div>
         </div>
