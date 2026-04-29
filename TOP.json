@@ -8727,6 +8727,32 @@
         "peso": "85MB/135MB"
       },
       "rentry_url": "https://rentry.co/wuzs7vsr"
+    },
+    {
+      "confianza": 85,
+      "href": "/t1332-activo-the-cockpit-miniserie-1993-multi-audio-3-3-bd-rip-1016x720-125-131-gb-mega-pixeldrain-ver-online",
+      "name": "[Activo] The Cockpit (Miniserie) (1993) [Multi-audio] [3/3] [BD-Rip] [1016x720] [1,25/1,31 GB] [Mega/Pixeldrain] [Ver Online]",
+      "originalGenre": "Animación Japonesa",
+      "razonClasificacion": "Clasificación durante scraping con enlace",
+      "specificGenre": "Bélico",
+      "type": "Anime",
+      "url": "https://animezoneesp.foroactivo.com/t1332-activo-the-cockpit-miniserie-1993-multi-audio-3-3-bd-rip-1016x720-125-131-gb-mega-pixeldrain-ver-online",
+      "year": 1993,
+      "fecha_modificacion": "2026-04-19T20:28:08.830552",
+      "categoria_anterior": "anime",
+      "imagen": "images\\dibujos_448_Activo-The-Cockpit-Miniserie-1993-Multi-audio-33-BD-Rip-1016x720-125131-GB-MegaPixeldrain-Ver-Online.jpg",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1773596446/mis_archivos_elegidos/manual_poster_tmdb_The_Cockpit.jpg",
+      "sinopsis": "Película formada por tres OVAs independientes, centradas en varias historias ambientadas en la Segunda Guerra Mundial, cada una de ellas dirigida por un realizador diferente. Una gira en torno a un piloto alemán, otra en un kamikace japonés y otra en un grupo de soldados japoneses en el Pacífico.",
+      "ficha_tecnica": {
+        "ano": "1993",
+        "idioma": "Castellano, Inglés, Francés, Japonés",
+        "subtitulos": "Español, Inglés, Francés",
+        "formato": "MKV​",
+        "calidad": "BD-Rip",
+        "resolucion": "1016x720",
+        "peso": "1,25/1,31 GB"
+      },
+      "rentry_url": "https://rentry.co/ynokyrz6"
     }
   ],
   "dibujos": [
@@ -10785,9 +10811,9 @@
       "confianza": 85,
       "href": "/t92-activolos-poderosos-monsterwheelies-2024-castellano-52-52-webdl-rip-1920x1080-275-305-mb-mega-ver-online",
       "name": "[Activo]Los poderosos MonsterWheelies (2024) [Castellano] [52/52] [WebDL-Rip] [1920x1080] [275/305 MB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Occidental",
+      "originalGenre": "Infantil, Comedia, Aventura, Fantasía",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Thrille",
+      "specificGenre": "Infantil, Comedia, Aventura, Fantasía",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t92-activolos-poderosos-monsterwheelies-2024-castellano-52-52-webdl-rip-1920x1080-275-305-mb-mega-ver-online",
       "year": 2024,
@@ -10804,7 +10830,7 @@
         "peso": "275/305 MB"
       },
       "rentry_url": "https://rentry.co/xvcekp92",
-      "genre": "Thriller"
+      "genre": "Infantil, Comedia, Aventura, Fantasía"
     },
     {
       "confianza": 85,
@@ -15436,7 +15462,7 @@
       "confianza": 85,
       "href": "/t28-activola-isla-de-las-sombras-summer-time-render-2022-castellano-25-webdl-rip-1280x720-565mb-mega-ver-online",
       "name": "[Activo]La Isla de las Sombras (Summer Time Render) (2022) [Castellano] [25/??] [WebDL-RIP] [1280x720] [565MB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Occidental",
+      "originalGenre": "Musical, Fantasía, Aventura, Misterio",
       "razonClasificacion": "Clasificación durante scraping con enlace",
       "specificGenre": "Musical, Fantasía, Aventura, Misterio",
       "type": "Dibujo Animado",
@@ -15444,15 +15470,18 @@
       "year": 2022,
       "imagen": "images\\dibujos_271_ActivoLa-Isla-de-las-Sombras-Summer-Time-Render-2022-Castellano-25-WebDL-RIP-1280x720-565MB-Mega-Ver-Online.jpg",
       "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1765324279/mis_archivos_elegidos/manual_poster_tmdb_Summer_Time_Render.jpg",
-      "sinopsis": "Siendo niño, los padres de Shinpei murieron y él fue acogido por la familia Kofune, que lo crió como a un hijo más. Años después, mientras vive en Tokio, Shinpei se ve forzado a regresar a su isla natal para asistir al funeral de su amiga de la infancia Ushio, quien ha fallecido ahogada en el mar intentando salvar a una niña. Lo que debería haber sido una corta visita para compartir el duelo con la familia y sus allegados se convierte en un misterio ante la sospecha de que la muerte de Ushio pudo no haber sido un accidente.",
+      "sinopsis": "Siendo niño, los padres de Shinpei murieron y él fue acogido por la familia Kofune, que lo crió como a un hijo más. Años después, mientras vive en Tokio, Shinpei se ve forzado a regresar a su isla natal para asistir al funeral de su amiga de la infancia Ushio, quien ha fallecido ahogada en el mar in",
       "ficha_tecnica": {
         "ano": "2022",
         "idioma": "Castellano",
         "subtitulos": "Ninguno",
         "formato": "MKV Peso/Cap: 395/565 MB NFO: [Tienes que estar registrado y conectado para ver este vínculo] Traile",
-        "peso": "395/565 MB"
+        "peso": "395/565 MB",
+        "calidad": "",
+        "resolucion": ""
       },
-      "rentry_url": "https://rentry.co/f3pnc4uh"
+      "rentry_url": "https://rentry.co/f3pnc4uh",
+      "genre": "Musical, Fantasía, Aventura, Misterio"
     },
     {
       "confianza": 90,
@@ -19943,7 +19972,7 @@
       "confianza": 85,
       "href": "/t1273-activo-ultra-maniac-2003-castellano-26-26-dvd-rip-704x528-270-280-mb-mega-pixeldrain-ver-online",
       "name": "[Activo] Ultra Maniac (2003) [Castellano] [26/26] [DVD-Rip] [704x528] [270/280 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Romance, Comedia, Fantasía",
       "razonClasificacion": "Clasificación durante scraping con enlace",
       "specificGenre": "Romance, Comedia, Fantasía",
       "type": "Anime",
@@ -19963,33 +19992,8 @@
         "resolucion": "704x528",
         "peso": "270/280 MB"
       },
-      "rentry_url": "https://rentry.co/utizp2c5"
-    },
-    {
-      "confianza": 85,
-      "href": "/t1332-activo-the-cockpit-miniserie-1993-multi-audio-3-3-bd-rip-1016x720-125-131-gb-mega-pixeldrain-ver-online",
-      "name": "[Activo] The Cockpit (Miniserie) (1993) [Multi-audio] [3/3] [BD-Rip] [1016x720] [1,25/1,31 GB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
-      "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Bélico",
-      "type": "Anime",
-      "url": "https://animezoneesp.foroactivo.com/t1332-activo-the-cockpit-miniserie-1993-multi-audio-3-3-bd-rip-1016x720-125-131-gb-mega-pixeldrain-ver-online",
-      "year": 1993,
-      "fecha_modificacion": "2026-04-19T20:28:08.830552",
-      "categoria_anterior": "anime",
-      "imagen": "images\\dibujos_448_Activo-The-Cockpit-Miniserie-1993-Multi-audio-33-BD-Rip-1016x720-125131-GB-MegaPixeldrain-Ver-Online.jpg",
-      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1773596446/mis_archivos_elegidos/manual_poster_tmdb_The_Cockpit.jpg",
-      "sinopsis": "Película formada por tres OVAs independientes, centradas en varias historias ambientadas en la Segunda Guerra Mundial, cada una de ellas dirigida por un realizador diferente. Una gira en torno a un piloto alemán, otra en un kamikace japonés y otra en un grupo de soldados japoneses en el Pacífico.",
-      "ficha_tecnica": {
-        "ano": "1993",
-        "idioma": "Castellano, Inglés, Francés, Japonés",
-        "subtitulos": "Español, Inglés, Francés",
-        "formato": "MKV​",
-        "calidad": "BD-Rip",
-        "resolucion": "1016x720",
-        "peso": "1,25/1,31 GB"
-      },
-      "rentry_url": "https://rentry.co/ynokyrz6"
+      "rentry_url": "https://rentry.co/utizp2c5",
+      "genre": "Romance, Comedia, Fantasía"
     },
     {
       "confianza": 100,
