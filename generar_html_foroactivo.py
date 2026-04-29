@@ -1413,7 +1413,7 @@ def generar_html_foroactivo():
             const year = item.year || 'N/A';
             const genero = item.specificGenre || item.genre || 'N/A';
             const imagen = item.imagen_url || item.imagen || null;
-            const tipo = item.type || 'anime';
+            const tipo = item.tipo || item.type || 'anime';
             const href = item.href || item.url || '';
             
             // Quitar el año del nombre (patrón " (YYYY)")
@@ -1528,7 +1528,7 @@ def generar_html_foroactivo():
                 const imagen = item.imagen_url || item.imagen || '';
                 const nombre = limpiarNombre(item.name);
                 const year = item.year || '';
-                const tipo = item.type || item.tipo || 'anime';
+                const tipo = item.tipo || item.type || 'anime';
                 
                 html += `<div class="suggestion-item" onclick="openModalByHref('${{item.url || item.href}}'); document.getElementById('searchSuggestions').style.display='none';" data-index="${{index}}">
                     <img src="${{imagen}}" class="suggestion-img" alt="" onerror="this.style.display='none'">
@@ -1560,7 +1560,27 @@ def generar_html_foroactivo():
             const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
             
             let filtered = allItems.filter(item => {{
-                if (currentTab !== 'all' && (item.type || item.tipo) !== currentTab) return false;
+                // Normalizar el tipo para comparación (minúsculas, quitar espacios extras)
+                const itemTipo = (item.tipo || item.type || '').toString().toLowerCase().trim();
+                const tabTipo = currentTab.toLowerCase().trim();
+                
+                // Comparación flexible: exacta o parcial
+                let tipoMatch = false;
+                if (currentTab === 'all') {{
+                    tipoMatch = true;
+                }} else if (itemTipo === tabTipo) {{
+                    tipoMatch = true;
+                }} else if (tabTipo === 'dibujos' && itemTipo.includes('dibujo')) {{
+                    tipoMatch = true;
+                }} else if (tabTipo === 'peliculas' && (itemTipo.includes('pelicula') || itemTipo === 'película')) {{
+                    tipoMatch = true;
+                }} else if (tabTipo === 'series' && itemTipo.includes('serie')) {{
+                    tipoMatch = true;
+                }} else if (tabTipo === 'anime' && itemTipo.includes('anime')) {{
+                    tipoMatch = true;
+                }}
+                
+                if (!tipoMatch) return false;
                 if (decada !== 'all' && getDecade(item.year) !== decada) return false;
                 if (genero !== 'all' && (item.specificGenre || item.genre || 'N/A') !== genero) return false;
                 
