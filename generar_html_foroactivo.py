@@ -503,6 +503,31 @@ def generar_html_foroactivo():
             box-shadow: 0 4px 15px rgba(192, 57, 43, 0.3);
         }}
         
+        .sidebar-filters {{
+            padding: 0 5px;
+        }}
+        
+        .sidebar-filters label {{
+            display: block;
+            margin-bottom: 4px;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+        }}
+        
+        .sidebar-filters .filter-select {{
+            width: 100% !important;
+            margin-bottom: 10px;
+            background: var(--bg-elevated);
+            border: 1px solid #333;
+            border-radius: 4px;
+            padding: 4px 8px;
+            color: var(--text-primary);
+            font-size: 0.75rem;
+            cursor: pointer;
+        }}
+        
         .main-content {{
             flex: 1;
             min-width: 0;
@@ -1392,11 +1417,21 @@ def generar_html_foroactivo():
             </div>
         </div>
         
-        <div class="filters-section">
-            <div class="filters-grid">
-                <div>
+        <div class="main-layout">
+            <aside class="sidebar">
+                <div class="sidebar-title">Categorías</div>
+                <ul class="sidebar-menu">
+                    <li><button class="tab-btn active" onclick="showTab('all', this)">📁 TODO</button></li>
+                    <li><button class="tab-btn" onclick="showTab('series', this)">📺 Series</button></li>
+                    <li><button class="tab-btn" onclick="showTab('anime', this)">🎌 Anime</button></li>
+                    <li><button class="tab-btn" onclick="showTab('dibujos', this)">🎨 Dibujos</button></li>
+                    <li><button class="tab-btn" onclick="showTab('peliculas', this)">🎬 Películas</button></li>
+                </ul>
+                
+                <div class="sidebar-title" style="margin-top: 20px;">Filtros</div>
+                <div class="sidebar-filters">
                     <label style="color: var(--text-secondary); margin-bottom: 4px; display: block; font-size: 0.65rem !important; text-transform: uppercase; letter-spacing: 0.5px;">Década</label>
-                    <select id="decadaFilter" class="filter-select" onchange="applyFilters()" style="font-size: 0.75rem !important; height: 28px !important; padding: 4px 8px !important; width: 140px !important;">
+                    <select id="decadaFilter" class="filter-select" onchange="applyFilters()" style="font-size: 0.75rem !important; height: 28px !important; padding: 4px 8px !important; width: 100% !important; margin-bottom: 10px;">
                         <option value="all">Todas las décadas</option>
                         <option value="2020">2020s (2020-2029)</option>
                         <option value="2010">2010s (2010-2019)</option>
@@ -1409,27 +1444,13 @@ def generar_html_foroactivo():
                         <option value="1940">1940s (1940-1949)</option>
                         <option value="older">Anteriores a 1940</option>
                     </select>
-                </div>
-                <div>
+                    
                     <label style="color: var(--text-secondary); margin-bottom: 4px; display: block; font-size: 0.65rem !important; text-transform: uppercase; letter-spacing: 0.5px;">Género</label>
-                    <select id="generoFilter" class="filter-select" onchange="applyFilters()" style="font-size: 0.75rem !important; height: 28px !important; padding: 4px 8px !important; width: 140px !important;">
+                    <select id="generoFilter" class="filter-select" onchange="applyFilters()" style="font-size: 0.75rem !important; height: 28px !important; padding: 4px 8px !important; width: 100% !important;">
                         <option value="all">Todos los géneros</option>
                         {''.join(f'<option value="{g}">{g}</option>' for g in generos_ordenados)}
                     </select>
                 </div>
-            </div>
-        </div>
-        
-        <div class="main-layout">
-            <aside class="sidebar">
-                <div class="sidebar-title">Categorías</div>
-                <ul class="sidebar-menu">
-                    <li><button class="tab-btn active" onclick="showTab('all', this)">📁 TODO</button></li>
-                    <li><button class="tab-btn" onclick="showTab('series', this)">📺 Series</button></li>
-                    <li><button class="tab-btn" onclick="showTab('anime', this)">🎌 Anime</button></li>
-                    <li><button class="tab-btn" onclick="showTab('dibujos', this)">🎨 Dibujos</button></li>
-                    <li><button class="tab-btn" onclick="showTab('peliculas', this)">🎬 Películas</button></li>
-                </ul>
             </aside>
             
             <main class="main-content">
@@ -1473,9 +1494,17 @@ def generar_html_foroactivo():
         let sortDirection = 'asc';
         
         // Función para llenar carrusel de últimas añadidas
+        let latestCarouselInterval = null;
+        
         function fillLatestCarousel() {{
             const latestTrack = document.getElementById('carousel-latest');
-            if (!latestTrack) return;
+            const scrollArea = document.getElementById('scrollarea-latest');
+            if (!latestTrack || !scrollArea) return;
+            
+            // Limpiar intervalo anterior si existe
+            if (latestCarouselInterval) {{
+                clearInterval(latestCarouselInterval);
+            }}
             
             // Tomar los últimos 15 items (asumiendo que están en orden de adición)
             const latestItems = allItems.slice(-15).reverse();
@@ -1501,6 +1530,52 @@ def generar_html_foroactivo():
                     scrollCarouselArea('scrollarea-latest', 1);
                 }});
             }}
+            
+            // Auto-scroll lento
+            let scrollPos = 0;
+            const scrollStep = 1; // pixels por intervalo
+            const scrollInterval = 50; // ms entre cada paso
+            
+            latestCarouselInterval = setInterval(() => {{
+                const track = latestTrack;
+                const trackWidth = track.scrollWidth;
+                const containerWidth = scrollArea.clientWidth;
+                
+                if (trackWidth <= containerWidth) return;
+                
+                scrollPos += scrollStep;
+                
+                // Reiniciar al llegar al final
+                if (scrollPos > trackWidth - containerWidth) {{
+                    scrollPos = 0;
+                }}
+                
+                scrollArea.scrollLeft = scrollPos;
+            }}, scrollInterval);
+            
+            // Pausar auto-scroll al pasar el mouse
+            scrollArea.addEventListener('mouseenter', () => {{
+                if (latestCarouselInterval) clearInterval(latestCarouselInterval);
+            }});
+            
+            scrollArea.addEventListener('mouseleave', () => {{
+                scrollPos = scrollArea.scrollLeft;
+                latestCarouselInterval = setInterval(() => {{
+                    const track = latestTrack;
+                    const trackWidth = track.scrollWidth;
+                    const containerWidth = scrollArea.clientWidth;
+                    
+                    if (trackWidth <= containerWidth) return;
+                    
+                    scrollPos += scrollStep;
+                    
+                    if (scrollPos > trackWidth - containerWidth) {{
+                        scrollPos = 0;
+                    }}
+                    
+                    scrollArea.scrollLeft = scrollPos;
+                }}, scrollInterval);
+            }});
         }}
         
         function showTab(tab, btnElement) {{
