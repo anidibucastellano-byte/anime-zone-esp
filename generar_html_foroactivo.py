@@ -242,10 +242,18 @@ def generar_html_foroactivo():
     <title>AnimeZoneEsp - Catalogo</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        * {{
+        *, *::before, *::after {{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }}
+        
+        html {{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
         }}
         
         :root {{
