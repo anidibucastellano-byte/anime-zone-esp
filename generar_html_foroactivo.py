@@ -1814,12 +1814,12 @@ def generar_html_foroactivo():
                 // Calcular límites - usar ancho real del contenedor visible
                 const containerWidth = scrollArea.clientWidth;
                 const itemsPerPage = Math.max(1, Math.floor(containerWidth / itemWidth));
-                const scrollAmount = itemWidth * itemsPerPage;
+                const scrollAmount = itemWidth; // Mover de 1 en 1
                 const itemCount = track.querySelectorAll('.item-card').length;
                 const trackWidth = itemCount * itemWidth;
                 const maxScroll = Math.max(0, trackWidth - containerWidth);
                 
-                console.log('Items en track:', itemCount, 'Ancho track:', trackWidth, 'Ancho container:', containerWidth, 'Máximo:', maxScroll);
+                console.log('Items en track:', itemCount, 'Ancho track:', trackWidth, 'Ancho container:', containerWidth, 'Scroll 1 item:', scrollAmount, 'Máximo:', maxScroll);
                 
                 // Calcular nueva posición
                 let newPosition = carouselPositions[scrollAreaId] + (direction * scrollAmount);
