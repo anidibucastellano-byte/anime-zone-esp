@@ -354,70 +354,71 @@ def generar_html_foroactivo():
         .stats-bar {{
             display: flex !important;
             justify-content: center !important;
-            gap: 4px !important;
-            margin-bottom: 10px !important;
+            gap: 8px !important;
+            margin-bottom: 15px !important;
             flex-wrap: wrap !important;
         }}
         
         .stat-card {{
             background: var(--bg-card) !important;
             border: 1px solid var(--primary-red) !important;
-            border-radius: 4px !important;
-            padding: 1px 4px !important;
+            border-radius: 6px !important;
+            padding: 8px 12px !important;
             text-align: center !important;
             transition: all 0.3s ease;
             box-shadow: var(--shadow) !important;
-            min-width: 40px !important;
-            max-width: 60px !important;
+            min-width: 70px !important;
+            max-width: 70px !important;
+            width: 70px !important;
             flex: none !important;
         }}
         
         .stat-card:hover {{
-            transform: translateY(-1px) !important;
+            transform: translateY(-2px) !important;
             box-shadow: var(--shadow-hover) !important;
         }}
         
         .stat-card .number {{
             font-family: 'Orbitron', sans-serif !important;
-            font-size: 0.4rem !important;
+            font-size: 0.85rem !important;
             font-weight: 700 !important;
             color: var(--primary-red) !important;
-            line-height: 1 !important;
+            line-height: 1.2 !important;
         }}
         
         .stat-card .label {{
-            font-size: 0.35rem !important;
+            font-size: 0.6rem !important;
             color: var(--text-secondary) !important;
             text-transform: uppercase !important;
-            letter-spacing: 0.3px !important;
-            margin-top: 1px !important;
+            letter-spacing: 0.5px !important;
+            margin-top: 2px !important;
         }}
         
         .filters-section {{
             background: var(--bg-card);
             border: 1px solid var(--primary-red);
             border-radius: 8px;
-            padding: 10px;
-            margin-bottom: 15px;
+            padding: 12px;
+            margin-bottom: 20px;
         }}
         
         .filters-grid {{
             display: flex;
             justify-content: center;
-            gap: 8px;
+            gap: 12px;
             flex-wrap: wrap;
         }}
         
         .filter-select {{
             background: var(--bg-elevated) !important;
             border: 1px solid #333 !important;
-            border-radius: 3px !important;
-            padding: 1px 3px !important;
+            border-radius: 4px !important;
+            padding: 4px 8px !important;
             color: var(--text-primary) !important;
-            font-size: 0.5rem !important;
+            font-size: 0.75rem !important;
             cursor: pointer;
-            width: 90px !important;
-            height: 18px !important;
+            width: 140px !important;
+            height: 28px !important;
         }}
         
         .tabs-container {{
@@ -1312,25 +1313,25 @@ def generar_html_foroactivo():
         </div>
         
         <div class="stats-bar">
-            <div class="stat-card" style="padding: 1px 4px !important; min-width: 40px !important; max-width: 60px !important; border-radius: 4px !important;">
-                <div class="number" style="font-size: 0.4rem !important;">{len(animes)}</div>
-                <div class="label" style="font-size: 0.35rem !important;">Anime</div>
+            <div class="stat-card" style="padding: 8px 12px !important; width: 70px !important; min-width: 70px !important; max-width: 70px !important; border-radius: 6px !important;">
+                <div class="number" style="font-size: 0.85rem !important;">{len(animes)}</div>
+                <div class="label" style="font-size: 0.6rem !important;">Anime</div>
             </div>
-            <div class="stat-card" style="padding: 1px 4px !important; min-width: 40px !important; max-width: 60px !important; border-radius: 4px !important;">
-                <div class="number" style="font-size: 0.4rem !important;">{len(dibujos)}</div>
-                <div class="label" style="font-size: 0.35rem !important;">Dibujos</div>
+            <div class="stat-card" style="padding: 8px 12px !important; width: 70px !important; min-width: 70px !important; max-width: 70px !important; border-radius: 6px !important;">
+                <div class="number" style="font-size: 0.85rem !important;">{len(dibujos)}</div>
+                <div class="label" style="font-size: 0.6rem !important;">Dibujos</div>
             </div>
-            <div class="stat-card" style="padding: 1px 4px !important; min-width: 40px !important; max-width: 60px !important; border-radius: 4px !important;">
-                <div class="number" style="font-size: 0.4rem !important;">{len(peliculas)}</div>
-                <div class="label" style="font-size: 0.35rem !important;">Peliculas</div>
+            <div class="stat-card" style="padding: 8px 12px !important; width: 70px !important; min-width: 70px !important; max-width: 70px !important; border-radius: 6px !important;">
+                <div class="number" style="font-size: 0.85rem !important;">{len(peliculas)}</div>
+                <div class="label" style="font-size: 0.6rem !important;">Peliculas</div>
             </div>
-            <div class="stat-card" style="padding: 1px 4px !important; min-width: 40px !important; max-width: 60px !important; border-radius: 4px !important;">
-                <div class="number" style="font-size: 0.4rem !important;">{len(series)}</div>
-                <div class="label" style="font-size: 0.35rem !important;">Series</div>
+            <div class="stat-card" style="padding: 8px 12px !important; width: 70px !important; min-width: 70px !important; max-width: 70px !important; border-radius: 6px !important;">
+                <div class="number" style="font-size: 0.85rem !important;">{len(series)}</div>
+                <div class="label" style="font-size: 0.6rem !important;">Series</div>
             </div>
-            <div class="stat-card" style="padding: 1px 4px !important; min-width: 40px !important; max-width: 60px !important; border-radius: 4px !important;">
-                <div class="number" style="font-size: 0.4rem !important;">{len(animes) + len(dibujos) + len(peliculas) + len(series)}</div>
-                <div class="label" style="font-size: 0.35rem !important;">Total</div>
+            <div class="stat-card" style="padding: 8px 12px !important; width: 70px !important; min-width: 70px !important; max-width: 70px !important; border-radius: 6px !important;">
+                <div class="number" style="font-size: 0.85rem !important;">{len(animes) + len(dibujos) + len(peliculas) + len(series)}</div>
+                <div class="label" style="font-size: 0.6rem !important;">Total</div>
             </div>
         </div>
         
@@ -1351,8 +1352,8 @@ def generar_html_foroactivo():
         <div class="filters-section">
             <div class="filters-grid">
                 <div>
-                    <label style="color: var(--text-secondary); margin-bottom: 1px; display: block; font-size: 0.4rem !important; text-transform: uppercase; letter-spacing: 0.2px;">Década</label>
-                    <select id="decadaFilter" class="filter-select" onchange="applyFilters()" style="font-size: 0.5rem !important; height: 18px !important; padding: 1px 3px !important; width: 90px !important;">
+                    <label style="color: var(--text-secondary); margin-bottom: 4px; display: block; font-size: 0.65rem !important; text-transform: uppercase; letter-spacing: 0.5px;">Década</label>
+                    <select id="decadaFilter" class="filter-select" onchange="applyFilters()" style="font-size: 0.75rem !important; height: 28px !important; padding: 4px 8px !important; width: 140px !important;">
                         <option value="all">Todas las décadas</option>
                         <option value="2020">2020s (2020-2029)</option>
                         <option value="2010">2010s (2010-2019)</option>
@@ -1367,8 +1368,8 @@ def generar_html_foroactivo():
                     </select>
                 </div>
                 <div>
-                    <label style="color: var(--text-secondary); margin-bottom: 1px; display: block; font-size: 0.4rem !important; text-transform: uppercase; letter-spacing: 0.2px;">Género</label>
-                    <select id="generoFilter" class="filter-select" onchange="applyFilters()" style="font-size: 0.5rem !important; height: 18px !important; padding: 1px 3px !important; width: 90px !important;">
+                    <label style="color: var(--text-secondary); margin-bottom: 4px; display: block; font-size: 0.65rem !important; text-transform: uppercase; letter-spacing: 0.5px;">Género</label>
+                    <select id="generoFilter" class="filter-select" onchange="applyFilters()" style="font-size: 0.75rem !important; height: 28px !important; padding: 4px 8px !important; width: 140px !important;">
                         <option value="all">Todos los géneros</option>
                         {''.join(f'<option value="{g}">{g}</option>' for g in generos_ordenados)}
                     </select>
