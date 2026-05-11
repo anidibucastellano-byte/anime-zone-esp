@@ -699,9 +699,10 @@ def generar_html_foroactivo():
         .carousel-container {{
             position: relative;
             display: block;
-            padding: 0 50px;
+            padding: 0 20px;
             z-index: 1;
-            width: 1100px;
+            width: 100%;
+            max-width: 100%;
             margin: 0 auto;
         }}
         
@@ -709,7 +710,7 @@ def generar_html_foroactivo():
             position: relative;
             overflow: hidden;
             padding: 10px 0;
-            width: 1000px;
+            width: 100%;
             height: 260px;
             box-sizing: border-box;
         }}
@@ -1767,8 +1768,7 @@ def generar_html_foroactivo():
                     track.style.setProperty('left', '0px', 'important');
                     track.style.setProperty('position', 'relative', 'important');
                     
-                    // Actualizar ancho del contenedor a 1000px (6 items de 150px)
-                    area.style.setProperty('width', '1000px', 'important');
+                    // El ancho del contenedor es 100% via CSS, no fijo
                     
                     console.log('Carousel inicializado:', areaId, 'Items:', itemCount, 'Ancho:', totalWidth, 'Left:', track.style.left);
                 }}
@@ -1808,40 +1808,40 @@ def generar_html_foroactivo():
                 if (!carouselPositions[scrollAreaId]) {{
                     carouselPositions[scrollAreaId] = 0;
                 }}
-            
-            const itemWidth = 165; // 150px + 15px gap
-            const itemsPerPage = 6;
-            const scrollAmount = itemWidth * itemsPerPage;
-            
-            // Calcular límites - usar ancho fijo de 1000px (6 items * 165px aprox)
-            const containerWidth = 1000;
-            const itemCount = track.querySelectorAll('.item-card').length;
-            const trackWidth = itemCount * itemWidth;
-            const maxScroll = Math.max(0, trackWidth - containerWidth);
-            
-            console.log('Items en track:', itemCount, 'Ancho track:', trackWidth, 'Ancho container (fijo):', containerWidth, 'Máximo:', maxScroll);
-            
-            // Calcular nueva posición
-            let newPosition = carouselPositions[scrollAreaId] + (direction * scrollAmount);
-            
-            // Limitar posición
-            newPosition = Math.max(0, Math.min(newPosition, maxScroll));
-            
-            console.log('Posición actual:', carouselPositions[scrollAreaId], 'Nueva posición:', newPosition, 'Máximo:', maxScroll);
-            
-            // Aplicar left para el scroll usando setProperty con !important
-            const leftValue = -newPosition;
-            track.style.setProperty('left', leftValue + 'px', 'important');
-            
-            // Guardar posición
-            carouselPositions[scrollAreaId] = newPosition;
-            
-            console.log('Left aplicado:', leftValue + 'px', 'Elemento:', track.className, 'ID:', track.id);
-            
-            // Verificar que se aplicó
-            const computedLeft = window.getComputedStyle(track).left;
-            console.log('Computed left:', computedLeft);
-            
+                
+                const itemWidth = 165; // 150px + 15px gap
+                
+                // Calcular límites - usar ancho real del contenedor visible
+                const containerWidth = scrollArea.clientWidth;
+                const itemsPerPage = Math.max(1, Math.floor(containerWidth / itemWidth));
+                const scrollAmount = itemWidth * itemsPerPage;
+                const itemCount = track.querySelectorAll('.item-card').length;
+                const trackWidth = itemCount * itemWidth;
+                const maxScroll = Math.max(0, trackWidth - containerWidth);
+                
+                console.log('Items en track:', itemCount, 'Ancho track:', trackWidth, 'Ancho container:', containerWidth, 'Máximo:', maxScroll);
+                
+                // Calcular nueva posición
+                let newPosition = carouselPositions[scrollAreaId] + (direction * scrollAmount);
+                
+                // Limitar posición
+                newPosition = Math.max(0, Math.min(newPosition, maxScroll));
+                
+                console.log('Posición actual:', carouselPositions[scrollAreaId], 'Nueva posición:', newPosition, 'Máximo:', maxScroll);
+                
+                // Aplicar left para el scroll usando setProperty con !important
+                const leftValue = -newPosition;
+                track.style.setProperty('left', leftValue + 'px', 'important');
+                
+                // Guardar posición
+                carouselPositions[scrollAreaId] = newPosition;
+                
+                console.log('Left aplicado:', leftValue + 'px', 'Elemento:', track.className, 'ID:', track.id);
+                
+                // Verificar que se aplicó
+                const computedLeft = window.getComputedStyle(track).left;
+                console.log('Computed left:', computedLeft);
+                
             }} catch (e) {{
                 console.error('Error en scrollCarouselArea:', e);
             }}
