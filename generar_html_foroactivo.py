@@ -730,13 +730,6 @@ def generar_html_foroactivo():
             text-shadow: 0 0 20px rgba(192, 57, 43, 0.5);
         }}
         
-        .latest-title::before {{
-            content: '✨ ';
-        }}
-        
-        .latest-title::after {{
-            content: ' ✨';
-        }}
         
         .genre-section {{
             margin-bottom: 15px;
