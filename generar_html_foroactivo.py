@@ -352,57 +352,72 @@ def generar_html_foroactivo():
         }}
         
         .stats-bar {{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 20px;
+            display: flex !important;
+            justify-content: center !important;
+            gap: 4px !important;
+            margin-bottom: 10px !important;
+            flex-wrap: wrap !important;
         }}
         
         .stat-card {{
-            background: var(--bg-card);
-            border: 2px solid var(--primary-red);
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
+            background: var(--bg-card) !important;
+            border: 1px solid var(--primary-red) !important;
+            border-radius: 4px !important;
+            padding: 1px 4px !important;
+            text-align: center !important;
             transition: all 0.3s ease;
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow) !important;
+            min-width: 40px !important;
+            max-width: 60px !important;
+            flex: none !important;
         }}
         
         .stat-card:hover {{
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
+            transform: translateY(-1px) !important;
+            box-shadow: var(--shadow-hover) !important;
         }}
         
         .stat-card .number {{
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-red);
+            font-family: 'Orbitron', sans-serif !important;
+            font-size: 0.4rem !important;
+            font-weight: 700 !important;
+            color: var(--primary-red) !important;
+            line-height: 1 !important;
+        }}
+        
+        .stat-card .label {{
+            font-size: 0.35rem !important;
+            color: var(--text-secondary) !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.3px !important;
+            margin-top: 1px !important;
         }}
         
         .filters-section {{
             background: var(--bg-card);
-            border: 2px solid var(--primary-red);
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 30px;
+            border: 1px solid var(--primary-red);
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 15px;
         }}
         
         .filters-grid {{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
         }}
         
         .filter-select {{
-            background: var(--bg-elevated);
-            border: 2px solid #333;
-            border-radius: 10px;
-            padding: 12px 15px;
-            color: var(--text-primary);
-            font-size: 1rem;
+            background: var(--bg-elevated) !important;
+            border: 1px solid #333 !important;
+            border-radius: 3px !important;
+            padding: 1px 3px !important;
+            color: var(--text-primary) !important;
+            font-size: 0.5rem !important;
             cursor: pointer;
-            width: 100%;
+            width: 90px !important;
+            height: 18px !important;
         }}
         
         .tabs-container {{
@@ -1297,25 +1312,25 @@ def generar_html_foroactivo():
         </div>
         
         <div class="stats-bar">
-            <div class="stat-card">
-                <div class="number">{len(animes)}</div>
-                <div class="label">Anime</div>
+            <div class="stat-card" style="padding: 1px 4px !important; min-width: 40px !important; max-width: 60px !important; border-radius: 4px !important;">
+                <div class="number" style="font-size: 0.4rem !important;">{len(animes)}</div>
+                <div class="label" style="font-size: 0.35rem !important;">Anime</div>
             </div>
-            <div class="stat-card">
-                <div class="number">{len(dibujos)}</div>
-                <div class="label">Dibujos</div>
+            <div class="stat-card" style="padding: 1px 4px !important; min-width: 40px !important; max-width: 60px !important; border-radius: 4px !important;">
+                <div class="number" style="font-size: 0.4rem !important;">{len(dibujos)}</div>
+                <div class="label" style="font-size: 0.35rem !important;">Dibujos</div>
             </div>
-            <div class="stat-card">
-                <div class="number">{len(peliculas)}</div>
-                <div class="label">Peliculas</div>
+            <div class="stat-card" style="padding: 1px 4px !important; min-width: 40px !important; max-width: 60px !important; border-radius: 4px !important;">
+                <div class="number" style="font-size: 0.4rem !important;">{len(peliculas)}</div>
+                <div class="label" style="font-size: 0.35rem !important;">Peliculas</div>
             </div>
-            <div class="stat-card">
-                <div class="number">{len(series)}</div>
-                <div class="label">Series</div>
+            <div class="stat-card" style="padding: 1px 4px !important; min-width: 40px !important; max-width: 60px !important; border-radius: 4px !important;">
+                <div class="number" style="font-size: 0.4rem !important;">{len(series)}</div>
+                <div class="label" style="font-size: 0.35rem !important;">Series</div>
             </div>
-            <div class="stat-card">
-                <div class="number">{len(animes) + len(dibujos) + len(peliculas) + len(series)}</div>
-                <div class="label">Total</div>
+            <div class="stat-card" style="padding: 1px 4px !important; min-width: 40px !important; max-width: 60px !important; border-radius: 4px !important;">
+                <div class="number" style="font-size: 0.4rem !important;">{len(animes) + len(dibujos) + len(peliculas) + len(series)}</div>
+                <div class="label" style="font-size: 0.35rem !important;">Total</div>
             </div>
         </div>
         
@@ -1336,8 +1351,8 @@ def generar_html_foroactivo():
         <div class="filters-section">
             <div class="filters-grid">
                 <div>
-                    <label style="color: var(--text-secondary); margin-bottom: 8px; display: block;">Década</label>
-                    <select id="decadaFilter" class="filter-select" onchange="applyFilters()">
+                    <label style="color: var(--text-secondary); margin-bottom: 1px; display: block; font-size: 0.4rem !important; text-transform: uppercase; letter-spacing: 0.2px;">Década</label>
+                    <select id="decadaFilter" class="filter-select" onchange="applyFilters()" style="font-size: 0.5rem !important; height: 18px !important; padding: 1px 3px !important; width: 90px !important;">
                         <option value="all">Todas las décadas</option>
                         <option value="2020">2020s (2020-2029)</option>
                         <option value="2010">2010s (2010-2019)</option>
@@ -1352,8 +1367,8 @@ def generar_html_foroactivo():
                     </select>
                 </div>
                 <div>
-                    <label style="color: var(--text-secondary); margin-bottom: 8px; display: block;">Género</label>
-                    <select id="generoFilter" class="filter-select" onchange="applyFilters()">
+                    <label style="color: var(--text-secondary); margin-bottom: 1px; display: block; font-size: 0.4rem !important; text-transform: uppercase; letter-spacing: 0.2px;">Género</label>
+                    <select id="generoFilter" class="filter-select" onchange="applyFilters()" style="font-size: 0.5rem !important; height: 18px !important; padding: 1px 3px !important; width: 90px !important;">
                         <option value="all">Todos los géneros</option>
                         {''.join(f'<option value="{g}">{g}</option>' for g in generos_ordenados)}
                     </select>
