@@ -5695,23 +5695,6 @@
     },
     {
       "confianza": 85,
-      "href": "/t273-activosakura-cazadora-de-cartas-1998-dual-audio-70-70-webdl-rip-1440x1080-520-mb-mega-pixeldrain-ver-online",
-      "name": "[Activo]Sakura, cazadora de cartas (1998) [Dual-Audio] [70/70] [WebDL-Rip] [1440x1080] [520 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
-      "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Fantasía, Aventura, Romance, Magical Girl",
-      "type": "Anime",
-      "url": "https://animezoneesp.foroactivo.com/t273-activosakura-cazadora-de-cartas-1998-dual-audio-70-70-webdl-rip-1440x1080-520-mb-mega-pixeldrain-ver-online",
-      "year": 1998,
-      "imagen": "images\\anime_235_ActivoSakura-cazadora-de-cartas-1998-Dual-Audio-7070-WebDL-Rip-1440x1080-520-MB-MegaPixeldrain-Ver-Online.png",
-      "imagen_url": "https://2img.net/u/4916/76/75/07/avatars/gallery/avatar11.png",
-      "ficha_tecnica": {
-        "subtitulos": "en español"
-      },
-      "genre": "Romance, Drama, Ecchi"
-    },
-    {
-      "confianza": 85,
       "href": "/t1214-activo-samurai-7-2004-castellano-26-26-dvd-rip-704x384-335-370-mb-mega-pixeldrain-ver-online",
       "name": "[Activo] Samurai 7 (2004) [Castellano] [26/26] [DVD-Rip] [704x384] [335/370 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Japonesa",
@@ -9514,6 +9497,29 @@
         "resolucion": "1920x1080",
         "formato": "MP4",
         "peso": "220MB/320MB"
+      }
+    },
+    {
+      "name": "Sakura, cazadora de cartas",
+      "year": 1998,
+      "genre": "Ciencia ficción, Fantasía, Acción, Aventura",
+      "specificGenre": "Ciencia ficción, Fantasía, Acción, Aventura",
+      "originalGenre": "Ciencia ficción, Fantasía, Acción, Aventura",
+      "type": "Anime",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1763257446/mis_archivos_elegidos/manual_poster_tmdb_Sakura%2C_cazadora_de_cartas.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1763257446/mis_archivos_elegidos/manual_poster_tmdb_Sakura%2C_cazadora_de_cartas.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t287-activosakura-cazadora-de-cartas-1998-dual-audio-70-70-webdl-rip-1440x1080-520-mb-mega-pixeldrain-ver-online?highlight=Sakura++cazadora+de+cartas",
+      "href": "/t287-activosakura-cazadora-de-cartas-1998-dual-audio-70-70-webdl-rip-1440x1080-520-mb-mega-pixeldrain-ver-online?highlight=Sakura++cazadora+de+cartas",
+      "rentry_url": "https://rentry.co/ow82wsqf",
+      "sinopsis": "La obra narra las aventuras de Sakura Kinomoto, una pequeña niña de diez años que accidentalmente libera un conjunto de cartas que se encontraban dentro de un libro, el cual había descubierto en la biblioteca de su padre. Tras esto, Kero —el guardián del libro— emerge y, al enterarse de que la mayoría de las cartas conocidas como las «cartas Clow» se habían esparcido por todas partes, le dice a Sakura que ahora es su responsabilidad convertirse en una «cardcaptor» e ir en busca de ellas para evitar que ocurra una «catástrofe» en el mundo. Por lo tanto, Sakura adquiere habilidades especiales para así enfrentarse a los poderes mágicos de cada carta y lograr capturarlas y sellarlas. Kero se vuelve el guía y mentor de Sakura durante la búsqueda, mientras que su mejor amiga, Tomoyo Daidōji, le confecciona gran variedades de trajes, ya que según ella «debe llevar una ropa especial para una ocasión especial». Además, Tomoyo suele hacer grabaciones de las batallas de Sakura.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Japonés",
+        "subtitulos": "Español",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1440x1080",
+        "formato": "MKV",
+        "peso": "520 MB"
       }
     }
   ],
