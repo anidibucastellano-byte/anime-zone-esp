@@ -431,60 +431,92 @@ def generar_html_foroactivo():
             height: 28px !important;
         }}
         
-        .tabs-container {{
+        /* Sidebar Menu Styles */
+        .main-layout {{
             display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-            justify-content: center;
+            gap: 20px;
+            min-height: calc(100vh - 200px);
         }}
         
-        .tab-btn {{
+        .sidebar {{
+            width: 200px;
+            flex-shrink: 0;
             background: var(--bg-card);
-            border: 2px solid #333;
-            border-radius: 10px;
-            padding: 15px 30px;
-            color: var(--text-secondary);
+            border: 1px solid var(--primary-red);
+            border-radius: 8px;
+            padding: 15px;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }}
+        
+        .sidebar-title {{
             font-family: 'Orbitron', sans-serif;
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
+            color: var(--primary-red);
+            margin-bottom: 15px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--primary-red);
+            padding-bottom: 10px;
         }}
         
-        .tab-btn::before {{
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
+        .sidebar-menu {{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }}
+        
+        .sidebar-menu li {{
+            margin-bottom: 5px;
+        }}
+        
+        .sidebar-menu button {{
             width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(243, 156, 18, 0.3), 
-                transparent);
-            transition: left 0.5s ease;
+            background: transparent;
+            border: 1px solid #333;
+            border-radius: 6px;
+            padding: 10px 15px;
+            color: var(--text-secondary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            text-transform: uppercase;
         }}
         
-        .tab-btn:hover {{
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.3);
-            border-color: var(--accent-gold);
+        .sidebar-menu button:hover {{
+            background: rgba(192, 57, 43, 0.1);
+            border-color: var(--primary-red);
             color: var(--text-primary);
+            transform: translateX(3px);
         }}
         
-        .tab-btn:hover::before {{
-            left: 100%;
-        }}
-        
-        .tab-btn.active {{
+        .sidebar-menu button.active {{
             background: var(--primary-red);
             border-color: var(--primary-red);
             color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(192, 57, 43, 0.4);
+            box-shadow: 0 4px 15px rgba(192, 57, 43, 0.3);
+        }}
+        
+        .main-content {{
+            flex: 1;
+            min-width: 0;
+        }}
+        
+        @media (max-width: 768px) {{
+            .main-layout {{
+                flex-direction: column;
+            }}
+            .sidebar {{
+                width: 100%;
+                position: relative;
+                top: 0;
+            }}
         }}
         
         .sort-btn {{
@@ -1388,38 +1420,45 @@ def generar_html_foroactivo():
             </div>
         </div>
         
-        <div class="tabs-container">
-            <button class="tab-btn active" onclick="showTab('all')">TODO</button>
-            <button class="tab-btn" onclick="showTab('series')">SERIES</button>
-            <button class="tab-btn" onclick="showTab('anime')">ANIME</button>
-            <button class="tab-btn" onclick="showTab('dibujos')">DIBUJOS</button>
-            <button class="tab-btn" onclick="showTab('peliculas')">PELICULAS</button>
-        </div>
-        
-        <div class="search-container" style="display: flex; justify-content: center; margin-bottom: 20px; position: relative;">
-            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar serie, película o género..." onkeyup="handleSearchInput(event)" autocomplete="off">
-            <div id="searchSuggestions" class="search-suggestions" style="display: none;"></div>
-        </div>
-        
-        <div class="sort-container" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
-            <button class="sort-btn" onclick="sortItems('name')">Ordenar por Nombre</button>
-            <button class="sort-btn" onclick="sortItems('year')">Ordenar por Año</button>
-        </div>
-        
-        <div id="content-all" class="content-section active">
-            <div id="grid-all" class="genre-carousels"></div>
-        </div>
-        <div id="content-series" class="content-section">
-            <div id="grid-series" class="genre-carousels"></div>
-        </div>
-        <div id="content-anime" class="content-section">
-            <div id="grid-anime" class="genre-carousels"></div>
-        </div>
-        <div id="content-dibujos" class="content-section">
-            <div id="grid-dibujos" class="genre-carousels"></div>
-        </div>
-        <div id="content-peliculas" class="content-section">
-            <div id="grid-peliculas" class="genre-carousels"></div>
+        <div class="main-layout">
+            <aside class="sidebar">
+                <div class="sidebar-title">Categorías</div>
+                <ul class="sidebar-menu">
+                    <li><button class="tab-btn active" onclick="showTab('all', this)">📁 TODO</button></li>
+                    <li><button class="tab-btn" onclick="showTab('series', this)">📺 Series</button></li>
+                    <li><button class="tab-btn" onclick="showTab('anime', this)">🎌 Anime</button></li>
+                    <li><button class="tab-btn" onclick="showTab('dibujos', this)">🎨 Dibujos</button></li>
+                    <li><button class="tab-btn" onclick="showTab('peliculas', this)">🎬 Películas</button></li>
+                </ul>
+            </aside>
+            
+            <main class="main-content">
+                <div class="search-container" style="display: flex; justify-content: center; margin-bottom: 20px; position: relative;">
+                    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar serie, película o género..." onkeyup="handleSearchInput(event)" autocomplete="off">
+                    <div id="searchSuggestions" class="search-suggestions" style="display: none;"></div>
+                </div>
+                
+                <div class="sort-container" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
+                    <button class="sort-btn" onclick="sortItems('name')">Ordenar por Nombre</button>
+                    <button class="sort-btn" onclick="sortItems('year')">Ordenar por Año</button>
+                </div>
+                
+                <div id="content-all" class="content-section active">
+                    <div id="grid-all" class="genre-carousels"></div>
+                </div>
+                <div id="content-series" class="content-section">
+                    <div id="grid-series" class="genre-carousels"></div>
+                </div>
+                <div id="content-anime" class="content-section">
+                    <div id="grid-anime" class="genre-carousels"></div>
+                </div>
+                <div id="content-dibujos" class="content-section">
+                    <div id="grid-dibujos" class="genre-carousels"></div>
+                </div>
+                <div id="content-peliculas" class="content-section">
+                    <div id="grid-peliculas" class="genre-carousels"></div>
+                </div>
+            </main>
         </div>
         
         <div style="text-align: center; padding: 30px; margin-top: 40px; border-top: 2px solid var(--primary-red); color: var(--text-secondary);">
@@ -1464,9 +1503,9 @@ def generar_html_foroactivo():
             }}
         }}
         
-        function showTab(tab) {{
+        function showTab(tab, btnElement) {{
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            if (btnElement) btnElement.classList.add('active');
             document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
             document.getElementById('content-' + tab).classList.add('active');
             currentTab = tab;
