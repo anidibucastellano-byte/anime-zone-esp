@@ -312,7 +312,7 @@ def generar_html_foroactivo():
             width: 100%;
             margin: 0;
             padding: 20px;
-            background: var(--bg-dark);
+            background: transparent;
             border: none;
             border-radius: 0;
         }}
