@@ -388,6 +388,37 @@
         }
         
         /* Carruseles por género estilo Netflix */
+        
+        /* Carrusel destacado de últimas añadidas */
+        .latest-section {
+            margin-bottom: 30px;
+            position: relative;
+            background: linear-gradient(180deg, rgba(192, 57, 43, 0.15) 0%, rgba(231, 76, 60, 0.08) 50%, transparent 100%);
+            border-radius: 12px;
+            padding: 25px 20px;
+            border: 1px solid rgba(192, 57, 43, 0.3);
+        }
+        
+        .latest-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--primary-red);
+            margin: 0 0 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-align: center;
+            text-shadow: 0 0 20px rgba(192, 57, 43, 0.5);
+        }
+        
+        .latest-title::before {
+            content: '✨ ';
+        }
+        
+        .latest-title::after {
+            content: ' ✨';
+        }
+        
         .genre-section {
             margin-bottom: 15px;
             position: relative;
@@ -1052,6 +1083,20 @@
             </div>
         </div>
         
+        <!-- Carrusel destacado de últimas añadidas -->
+        <div class="latest-section" id="latest-section">
+            <h2 class="latest-title">Últimas Añadidas</h2>
+            <div class="carousel-container">
+                <button class="carousel-btn carousel-prev" data-scrollarea="scrollarea-latest" type="button">❮</button>
+                <div class="carousel-scroll-area" id="scrollarea-latest">
+                    <div class="carousel-track" id="carousel-latest">
+                        <!-- Se llena dinámicamente con JS -->
+                    </div>
+                </div>
+                <button class="carousel-btn carousel-next" data-scrollarea="scrollarea-latest" type="button">❯</button>
+            </div>
+        </div>
+        
         <div class="filters-section">
             <div class="filters-grid">
                 <div>
@@ -1124,6 +1169,38 @@
         let currentTab = 'all';
         let currentSort = 'name';
         let sortDirection = 'asc';
+        
+        // Función para llenar carrusel de últimas añadidas
+        function fillLatestCarousel() {
+            const latestTrack = document.getElementById('carousel-latest');
+            if (!latestTrack) return;
+            
+            // Tomar los últimos 15 items (asumiendo que están en orden de adición)
+            // O si prefieres, ordenar por algún campo de fecha si existe
+            const latestItems = allItems.slice(-15).reverse();
+            
+            latestTrack.innerHTML = latestItems.map(item => generateItemHTML(item)).join('');
+            
+            // Asignar event listeners a los botones del carousel
+            const prevBtn = document.querySelector('.latest-section .carousel-prev');
+            const nextBtn = document.querySelector('.latest-section .carousel-next');
+            
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    scrollCarouselArea('scrollarea-latest', -1);
+                });
+            }
+            
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    scrollCarouselArea('scrollarea-latest', 1);
+                });
+            }
+        }
         
         function showTab(tab) {
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -1799,6 +1876,9 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') closeModal();
         });
+        
+        // Llenar carrusel de últimas añadidas
+        fillLatestCarousel();
         
         applyFilters();
     </script>
