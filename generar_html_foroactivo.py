@@ -708,57 +708,34 @@ def generar_html_foroactivo():
         
         /* Carruseles por género estilo Netflix */
         
-        /* Sección Novedades - Estilo Profesional */
+        /* Carrusel destacado de últimas añadidas */
         .latest-section {{
-            margin-bottom: 40px;
-            padding: 0;
-            background: transparent;
-            border: none;
-        }}
-        
-        .latest-header {{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(192, 57, 43, 0.3);
+            margin-bottom: 30px;
+            position: relative;
+            background: linear-gradient(180deg, rgba(192, 57, 43, 0.15) 0%, rgba(231, 76, 60, 0.08) 50%, transparent 100%);
+            border-radius: 12px;
+            padding: 25px 20px;
+            border: 1px solid rgba(192, 57, 43, 0.3);
         }}
         
         .latest-title {{
-            font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin: 0;
-            letter-spacing: 0.5px;
-        }}
-        
-        .latest-title span {{
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 900;
             color: var(--primary-red);
-            font-weight: 700;
+            margin: 0 0 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-align: center;
+            text-shadow: 0 0 20px rgba(192, 57, 43, 0.5);
         }}
         
-        .latest-count {{
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            background: var(--bg-elevated);
-            padding: 4px 12px;
-            border-radius: 20px;
-            border: 1px solid rgba(192, 57, 43, 0.2);
+        .latest-title::before {{
+            content: '✨ ';
         }}
         
-        .latest-grid {{
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            gap: 15px;
-        }}
-        
-        @media (max-width: 768px) {{
-            .latest-grid {{
-                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-                gap: 12px;
-            }}
+        .latest-title::after {{
+            content: ' ✨';
         }}
         
         .genre-section {{
@@ -1426,14 +1403,17 @@ def generar_html_foroactivo():
             </div>
         </div>
         
-        <!-- Sección Novedades - Estilo Profesional -->
+        <!-- Carrusel destacado de últimas añadidas -->
         <div class="latest-section" id="latest-section">
-            <div class="latest-header">
-                <h2 class="latest-title"><span>Nuevas</span> incorporaciones</h2>
-                <span class="latest-count">Últimas 12</span>
-            </div>
-            <div class="latest-grid" id="latest-grid">
-                <!-- Se llena dinámicamente con JS -->
+            <h2 class="latest-title">Últimas Añadidas</h2>
+            <div class="carousel-container">
+                <button class="carousel-btn carousel-prev" data-scrollarea="scrollarea-latest" type="button">❮</button>
+                <div class="carousel-scroll-area" id="scrollarea-latest">
+                    <div class="carousel-track" id="carousel-latest">
+                        <!-- Se llena dinámicamente con JS -->
+                    </div>
+                </div>
+                <button class="carousel-btn carousel-next" data-scrollarea="scrollarea-latest" type="button">❯</button>
             </div>
         </div>
         
@@ -1520,18 +1500,92 @@ def generar_html_foroactivo():
             return match ? parseInt(match[1]) : 0;
         }}
         
-        // Función para llenar grid de últimas añadidas
+        // Función para llenar carrusel de últimas añadidas
+        let latestCarouselInterval = null;
+        
         function fillLatestCarousel() {{
-            const latestGrid = document.getElementById('latest-grid');
-            if (!latestGrid) return;
+            const latestTrack = document.getElementById('carousel-latest');
+            const scrollArea = document.getElementById('scrollarea-latest');
+            if (!latestTrack || !scrollArea) return;
+            
+            // Limpiar intervalo anterior si existe
+            if (latestCarouselInterval) {{
+                clearInterval(latestCarouselInterval);
+            }}
             
             // Ordenar por ID de thread (descendente = más recientes primero)
             const sortedItems = [...allItems].sort((a, b) => getThreadId(b) - getThreadId(a));
             
-            // Tomar los 12 items más recientes
-            const latestItems = sortedItems.slice(0, 12);
+            // Tomar los 15 items más recientes
+            const latestItems = sortedItems.slice(0, 15);
             
-            latestGrid.innerHTML = latestItems.map(item => generateItemHTML(item)).join('');
+            latestTrack.innerHTML = latestItems.map(item => generateItemHTML(item)).join('');
+            
+            // Asignar event listeners a los botones del carousel
+            const prevBtn = document.querySelector('.latest-section .carousel-prev');
+            const nextBtn = document.querySelector('.latest-section .carousel-next');
+            
+            if (prevBtn) {{
+                prevBtn.addEventListener('click', function(e) {{
+                    e.preventDefault();
+                    e.stopPropagation();
+                    scrollCarouselArea('scrollarea-latest', -1);
+                }});
+            }}
+            
+            if (nextBtn) {{
+                nextBtn.addEventListener('click', function(e) {{
+                    e.preventDefault();
+                    e.stopPropagation();
+                    scrollCarouselArea('scrollarea-latest', 1);
+                }});
+            }}
+            
+            // Auto-scroll lento
+            let scrollPos = 0;
+            const scrollStep = 1; // pixels por intervalo
+            const scrollInterval = 50; // ms entre cada paso
+            
+            latestCarouselInterval = setInterval(() => {{
+                const track = latestTrack;
+                const trackWidth = track.scrollWidth;
+                const containerWidth = scrollArea.clientWidth;
+                
+                if (trackWidth <= containerWidth) return;
+                
+                scrollPos += scrollStep;
+                
+                // Reiniciar al llegar al final
+                if (scrollPos > trackWidth - containerWidth) {{
+                    scrollPos = 0;
+                }}
+                
+                scrollArea.scrollLeft = scrollPos;
+            }}, scrollInterval);
+            
+            // Pausar auto-scroll al pasar el mouse
+            scrollArea.addEventListener('mouseenter', () => {{
+                if (latestCarouselInterval) clearInterval(latestCarouselInterval);
+            }});
+            
+            scrollArea.addEventListener('mouseleave', () => {{
+                scrollPos = scrollArea.scrollLeft;
+                latestCarouselInterval = setInterval(() => {{
+                    const track = latestTrack;
+                    const trackWidth = track.scrollWidth;
+                    const containerWidth = scrollArea.clientWidth;
+                    
+                    if (trackWidth <= containerWidth) return;
+                    
+                    scrollPos += scrollStep;
+                    
+                    if (scrollPos > trackWidth - containerWidth) {{
+                        scrollPos = 0;
+                    }}
+                    
+                    scrollArea.scrollLeft = scrollPos;
+                }}, scrollInterval);
+            }});
         }}
         
         function showTab(tab, btnElement) {{
@@ -2209,7 +2263,7 @@ def generar_html_foroactivo():
             if (e.key === 'Escape') closeModal();
         }});
         
-        // Llenar grid de novedades
+        // Llenar carrusel de últimas añadidas
         fillLatestCarousel();
         
         applyFilters();
