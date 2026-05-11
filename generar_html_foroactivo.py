@@ -318,12 +318,22 @@ def generar_html_foroactivo():
         }}
         
         .header {{
-            text-align: center;
-            padding: 40px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 30px;
             background: linear-gradient(180deg, rgba(192, 57, 43, 0.2) 0%, transparent 100%);
             border-bottom: 3px solid var(--primary-red);
             margin-bottom: 30px;
             position: relative;
+            flex-wrap: wrap;
+            gap: 15px;
+        }}
+        
+        .header-left {{
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }}
         
         .header h1 {{
@@ -353,9 +363,9 @@ def generar_html_foroactivo():
         
         .stats-bar {{
             display: flex !important;
-            justify-content: center !important;
+            justify-content: flex-end !important;
             gap: 8px !important;
-            margin-bottom: 15px !important;
+            margin-bottom: 0 !important;
             flex-wrap: wrap !important;
         }}
         
@@ -1308,30 +1318,31 @@ def generar_html_foroactivo():
 <body>
     <div class="container">
         <div class="header">
-            <img src="https://i.servimg.com/u/f30/20/63/83/19/icono10.png" alt="Anime Zone ESP" class="header-logo" style="height: 50px; width: auto; margin-right: 15px; vertical-align: middle;">
-            <h1 style="display: inline-block; vertical-align: middle; margin: 0;">ANIMEZONEESP</h1>
-        </div>
-        
-        <div class="stats-bar">
-            <div class="stat-card" style="padding: 8px 12px !important; width: 70px !important; min-width: 70px !important; max-width: 70px !important; border-radius: 6px !important;">
-                <div class="number" style="font-size: 0.85rem !important;">{len(animes)}</div>
-                <div class="label" style="font-size: 0.6rem !important;">Anime</div>
+            <div class="header-left">
+                <img src="https://i.servimg.com/u/f30/20/63/83/19/icono10.png" alt="Anime Zone ESP" class="header-logo" style="height: 50px; width: auto;">
+                <h1 style="margin: 0;">ANIMEZONEESP</h1>
             </div>
-            <div class="stat-card" style="padding: 8px 12px !important; width: 70px !important; min-width: 70px !important; max-width: 70px !important; border-radius: 6px !important;">
-                <div class="number" style="font-size: 0.85rem !important;">{len(dibujos)}</div>
-                <div class="label" style="font-size: 0.6rem !important;">Dibujos</div>
-            </div>
-            <div class="stat-card" style="padding: 8px 12px !important; width: 70px !important; min-width: 70px !important; max-width: 70px !important; border-radius: 6px !important;">
-                <div class="number" style="font-size: 0.85rem !important;">{len(peliculas)}</div>
-                <div class="label" style="font-size: 0.6rem !important;">Peliculas</div>
-            </div>
-            <div class="stat-card" style="padding: 8px 12px !important; width: 70px !important; min-width: 70px !important; max-width: 70px !important; border-radius: 6px !important;">
-                <div class="number" style="font-size: 0.85rem !important;">{len(series)}</div>
-                <div class="label" style="font-size: 0.6rem !important;">Series</div>
-            </div>
-            <div class="stat-card" style="padding: 8px 12px !important; width: 70px !important; min-width: 70px !important; max-width: 70px !important; border-radius: 6px !important;">
-                <div class="number" style="font-size: 0.85rem !important;">{len(animes) + len(dibujos) + len(peliculas) + len(series)}</div>
-                <div class="label" style="font-size: 0.6rem !important;">Total</div>
+            <div class="stats-bar">
+                <div class="stat-card" style="padding: 8px 12px !important; width: 70px !important; min-width: 70px !important; max-width: 70px !important; border-radius: 6px !important;">
+                    <div class="number" style="font-size: 0.85rem !important;">{len(animes)}</div>
+                    <div class="label" style="font-size: 0.6rem !important;">Anime</div>
+                </div>
+                <div class="stat-card" style="padding: 8px 12px !important; width: 70px !important; min-width: 70px !important; max-width: 70px !important; border-radius: 6px !important;">
+                    <div class="number" style="font-size: 0.85rem !important;">{len(dibujos)}</div>
+                    <div class="label" style="font-size: 0.6rem !important;">Dibujos</div>
+                </div>
+                <div class="stat-card" style="padding: 8px 12px !important; width: 70px !important; min-width: 70px !important; max-width: 70px !important; border-radius: 6px !important;">
+                    <div class="number" style="font-size: 0.85rem !important;">{len(peliculas)}</div>
+                    <div class="label" style="font-size: 0.6rem !important;">Peliculas</div>
+                </div>
+                <div class="stat-card" style="padding: 8px 12px !important; width: 70px !important; min-width: 70px !important; max-width: 70px !important; border-radius: 6px !important;">
+                    <div class="number" style="font-size: 0.85rem !important;">{len(series)}</div>
+                    <div class="label" style="font-size: 0.6rem !important;">Series</div>
+                </div>
+                <div class="stat-card" style="padding: 8px 12px !important; width: 70px !important; min-width: 70px !important; max-width: 70px !important; border-radius: 6px !important;">
+                    <div class="number" style="font-size: 0.85rem !important;">{len(animes) + len(dibujos) + len(peliculas) + len(series)}</div>
+                    <div class="label" style="font-size: 0.6rem !important;">Total</div>
+                </div>
             </div>
         </div>
         
