@@ -290,16 +290,18 @@ def generar_html_foroactivo():
             color: var(--text-primary);
             min-height: 100vh;
             overflow-x: hidden;
+            margin: 0;
+            padding: 0;
         }}
         
         .container {{
-            max-width: 1200px;
-            margin: 20px auto;
+            max-width: 100%;
+            width: 100%;
+            margin: 0;
             padding: 20px;
             background: var(--bg-dark);
-            border: 2px solid var(--primary-red);
-            border-radius: 15px;
-            box-shadow: var(--shadow);
+            border: none;
+            border-radius: 0;
         }}
         
         .header {{
