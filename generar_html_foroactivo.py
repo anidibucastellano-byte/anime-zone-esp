@@ -1493,6 +1493,13 @@ def generar_html_foroactivo():
         let currentSort = 'name';
         let sortDirection = 'asc';
         
+        // Función para extraer ID de thread del href
+        function getThreadId(item) {{
+            const href = item.href || item.url || '';
+            const match = href.match(/\/t(\d+)-/);
+            return match ? parseInt(match[1]) : 0;
+        }}
+        
         // Función para llenar carrusel de últimas añadidas
         let latestCarouselInterval = null;
         
@@ -1506,8 +1513,11 @@ def generar_html_foroactivo():
                 clearInterval(latestCarouselInterval);
             }}
             
-            // Tomar los últimos 15 items (asumiendo que están en orden de adición)
-            const latestItems = allItems.slice(-15).reverse();
+            // Ordenar por ID de thread (descendente = más recientes primero)
+            const sortedItems = [...allItems].sort((a, b) => getThreadId(b) - getThreadId(a));
+            
+            // Tomar los 15 items más recientes
+            const latestItems = sortedItems.slice(0, 15);
             
             latestTrack.innerHTML = latestItems.map(item => generateItemHTML(item)).join('');
             
