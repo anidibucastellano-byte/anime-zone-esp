@@ -116,75 +116,78 @@
         }
         
         .stats-bar {
-            display: flex;
-            justify-content: center;
-            gap: 6px;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
+            display: flex !important;
+            justify-content: center !important;
+            gap: 4px !important;
+            margin-bottom: 8px !important;
+            flex-wrap: wrap !important;
         }
         
         .stat-card {
-            background: var(--bg-card);
-            border: 1px solid var(--primary-red);
-            border-radius: 6px;
-            padding: 4px 10px;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
-            min-width: 60px;
+            background: var(--bg-card) !important;
+            border: 1px solid var(--primary-red) !important;
+            border-radius: 4px !important;
+            padding: 2px 6px !important;
+            text-align: center !important;
+            transition: all 0.3s ease !important;
+            box-shadow: var(--shadow) !important;
+            min-width: 50px !important;
+            max-width: 70px !important;
+            flex: none !important;
         }
         
         .stat-card:hover {
-            transform: translateY(-1px);
-            box-shadow: var(--shadow-hover);
+            transform: translateY(-1px) !important;
+            box-shadow: var(--shadow-hover) !important;
         }
         
         .stat-card .number {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--primary-red);
-            line-height: 1;
+            font-family: 'Orbitron', sans-serif !important;
+            font-size: 0.7rem !important;
+            font-weight: 700 !important;
+            color: var(--primary-red) !important;
+            line-height: 1 !important;
         }
         
         .stat-card .label {
-            font-size: 0.6rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            font-size: 0.5rem !important;
+            color: var(--text-secondary) !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.3px !important;
+            margin-top: 1px !important;
         }
         
         .filters-section {
-            background: var(--bg-card);
-            border: 1px solid var(--primary-red);
-            border-radius: 6px;
-            padding: 6px 10px;
-            margin-bottom: 12px;
+            background: var(--bg-card) !important;
+            border: 1px solid var(--primary-red) !important;
+            border-radius: 4px !important;
+            padding: 4px 8px !important;
+            margin-bottom: 8px !important;
         }
         
         .filters-grid {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
+            display: flex !important;
+            gap: 6px !important;
+            flex-wrap: wrap !important;
+            align-items: center !important;
+            justify-content: center !important;
         }
         
         .filters-grid > div {
-            width: 120px;
-            flex: none;
+            width: 100px !important;
+            flex: none !important;
         }
         
         .filter-select {
-            background: var(--bg-elevated);
-            border: 1px solid #333;
-            border-radius: 4px;
-            padding: 3px 6px;
-            color: var(--text-primary);
-            font-size: 0.7rem;
-            cursor: pointer;
-            width: 100%;
-            height: 24px;
+            background: var(--bg-elevated) !important;
+            border: 1px solid #333 !important;
+            border-radius: 3px !important;
+            padding: 2px 4px !important;
+            color: var(--text-primary) !important;
+            font-size: 0.6rem !important;
+            cursor: pointer !important;
+            width: 100% !important;
+            height: 22px !important;
         }
         
         .tabs-container {
