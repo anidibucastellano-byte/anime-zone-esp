@@ -2,7 +2,10 @@ import json
 import requests
 from datetime import datetime
 import os
+import re
 import shutil
+import copy
+import unicodedata
 import logging
 from logging.handlers import RotatingFileHandler
 
@@ -68,6 +71,132 @@ def validar_integridad_datos(data):
                 warnings.append(f"{tipo}[{i}]: Falta tipo")
     
     return errores, warnings
+
+
+def _norm_match_title(s):
+    if not s:
+        return ''
+    s = str(s).replace('\ufeff', '').replace('×', 'x').replace('✕', 'x')
+    s = ''.join(c for c in unicodedata.normalize('NFD', s) if unicodedata.category(c) != 'Mn')
+    s = re.sub(r'\s+', ' ', s.lower().strip())
+    return s
+
+
+def _core_title_before_paren(s):
+    if not s:
+        return ''
+    return re.split(r'\s*\(', str(s).strip())[0].strip()
+
+
+def _score_cn_title_against_name(cn_line, catalog_name):
+    cn = _norm_match_title(_core_title_before_paren(cn_line))
+    nm = _norm_match_title(_core_title_before_paren(catalog_name))
+    if len(cn) < 2 or not nm:
+        return 0
+    if cn == nm:
+        return 100
+    if nm.startswith(cn + ' ') or nm.startswith(cn + '('):
+        return 93
+    if len(cn) >= 4 and cn in nm:
+        return 85
+    if len(nm) >= 5 and nm in cn:
+        return 78
+    cn_words = [w for w in cn.split() if len(w) > 2]
+    if len(cn_words) >= 2 and all(w in nm for w in cn_words):
+        return 72
+    if len(cn_words) == 1 and len(cn_words[0]) >= 4 and cn_words[0] in nm:
+        return 70
+    return 0
+
+
+def parse_cartoon_network_txt(filepath):
+    """Lee cartoon network.txt: secciones Anime, Dibujos animados, Películas."""
+    if not os.path.isfile(filepath):
+        return {'anime': [], 'dibujos': [], 'peliculas': []}
+    with open(filepath, 'r', encoding='utf-8') as f:
+        raw_lines = f.readlines()
+    lines = []
+    for ln in raw_lines:
+        t = ln.strip().replace('\ufeff', '')
+        if t:
+            lines.append(t)
+    anime, dibujos, peliculas = [], [], []
+    section = None
+    skip_prefixes = (
+        'originales o clásicos',
+        'originales o clasicos',
+        'adult swim /',
+        'adult swim/',
+    )
+    for line in lines:
+        low = line.lower()
+        if low == 'anime':
+            section = 'anime'
+            continue
+        if low == 'dibujos animados':
+            section = 'dibujos'
+            continue
+        if low in ('películas', 'peliculas'):
+            section = 'peliculas'
+            continue
+        if section is None:
+            continue
+        if any(low.startswith(p) for p in skip_prefixes):
+            continue
+        if section == 'anime':
+            anime.append(line)
+        elif section == 'dibujos':
+            dibujos.append(line)
+        elif section == 'peliculas':
+            peliculas.append(line)
+    return {'anime': anime, 'dibujos': dibujos, 'peliculas': peliculas}
+
+
+def find_best_catalog_match_for_cn_title(cn_title, todos_items):
+    """Devuelve el ítem del catálogo que mejor coincide con una línea del TXT."""
+    best_item, best_score = None, 0
+    min_accept = 70
+    cn_n = _norm_match_title(_core_title_before_paren(cn_title))
+    if len(cn_n) <= 4:
+        min_accept = 68
+    for item in todos_items:
+        name = item.get('nombre_limpio') or item.get('name', '')
+        sc = _score_cn_title_against_name(cn_title, name)
+        if sc > best_score:
+            best_score, best_item = sc, item
+    if best_score >= min_accept:
+        return best_item
+    return None
+
+
+def construir_items_cartoon_network(todos_items, filepath):
+    """
+    Cruza los títulos de cartoon network.txt con TOP.json.
+    Cada ítem incluye cnBucket ('anime'|'dibujos'|'peliculas') y cnListTitle.
+    """
+    parsed = parse_cartoon_network_txt(filepath)
+    seen = set()
+    out = []
+    for bucket, titles in (
+        ('anime', parsed['anime']),
+        ('dibujos', parsed['dibujos']),
+        ('peliculas', parsed['peliculas']),
+    ):
+        for title in titles:
+            m = find_best_catalog_match_for_cn_title(title, todos_items)
+            if not m:
+                continue
+            href = m.get('href') or m.get('url') or ''
+            key = href or json.dumps(m.get('name', ''), ensure_ascii=False)
+            if key in seen:
+                continue
+            seen.add(key)
+            d = copy.deepcopy(m)
+            d['cnBucket'] = bucket
+            d['cnListTitle'] = title
+            out.append(d)
+    return out
+
 
 def generar_html_foroactivo():
     """Generar código HTML premium con filtros interactivos"""
@@ -233,6 +362,12 @@ def generar_html_foroactivo():
     # Limpiar todos los nombres antes de pasar a JavaScript
     for item in todos_items:
         item['nombre_limpio'] = limpiar_nombre(item.get('name', ''))
+    
+    _script_dir = os.path.dirname(os.path.abspath(__file__))
+    _cn_txt = os.path.join(_script_dir, 'cartoon network.txt')
+    cartoon_network_items = construir_items_cartoon_network(todos_items, _cn_txt)
+    logger.info(f"Cartoon Network enlazados: {len(cartoon_network_items)}")
+    print(f"📺 Cartoon Network: {len(cartoon_network_items)} títulos enlazados con el catálogo (cartoon network.txt)")
     
     html = f'''<!DOCTYPE html>
 <html lang="es">
@@ -779,6 +914,60 @@ def generar_html_foroactivo():
         }}
         
         .sidebar-disney-expand .filter-select {{
+            width: 100% !important;
+            min-width: 0 !important;
+            max-width: 100% !important;
+            height: auto !important;
+            min-height: 32px;
+            font-size: 0.72rem !important;
+            padding: 6px 8px !important;
+            line-height: 1.25;
+        }}
+        
+        .cartoon-tier {{
+            margin-bottom: 36px;
+        }}
+        
+        .cartoon-tier-title {{
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #00d4ff;
+            margin: 0 0 18px 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-left: 4px solid #00a8cc;
+            padding-left: 14px;
+            text-shadow: 0 0 12px rgba(0, 212, 255, 0.25);
+        }}
+        
+        .sidebar-cartoon-expand-li {{
+            list-style: none;
+            margin: 0 0 6px 0;
+            padding: 0;
+        }}
+        
+        .sidebar-cartoon-expand {{
+            padding: 10px 8px 12px;
+            margin: 2px 0 4px 0;
+            background: var(--bg-elevated);
+            border: 1px solid rgba(0, 168, 204, 0.65);
+            border-radius: 8px;
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2);
+        }}
+        
+        .sidebar-cartoon-expand-label {{
+            font-family: 'Inter', sans-serif;
+            font-size: 0.62rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #00d4ff;
+            margin-bottom: 8px;
+            text-align: center;
+        }}
+        
+        .sidebar-cartoon-expand .filter-select {{
             width: 100% !important;
             min-width: 0 !important;
             max-width: 100% !important;
@@ -1484,6 +1673,18 @@ def generar_html_foroactivo():
                             </select>
                         </div>
                     </li>
+                    <li><button class="tab-btn" onclick="showTab('cartoon', this)">📡 Cartoon Network</button></li>
+                    <li id="cartoonSubWrap" class="sidebar-cartoon-expand-li" style="display: none;">
+                        <div class="sidebar-cartoon-expand">
+                            <div class="sidebar-cartoon-expand-label">Tipo CN</div>
+                            <select id="cartoonSubFilter" class="filter-select" onchange="onCartoonSubChange()">
+                                <option value="all">Todo</option>
+                                <option value="anime">Anime</option>
+                                <option value="dibujos">Dibujo</option>
+                                <option value="peliculas">Película</option>
+                            </select>
+                        </div>
+                    </li>
                     <li><button class="tab-btn" onclick="showTab('peliculas', this)">🎬 Películas</button></li>
                 </ul>
                 
@@ -1538,6 +1739,9 @@ def generar_html_foroactivo():
                 <div id="content-disney" class="content-section">
                     <div id="grid-disney" class="genre-carousels"></div>
                 </div>
+                <div id="content-cartoon" class="content-section">
+                    <div id="grid-cartoon" class="genre-carousels"></div>
+                </div>
                 <div id="content-peliculas" class="content-section">
                     <div id="grid-peliculas" class="genre-carousels"></div>
                 </div>
@@ -1551,8 +1755,10 @@ def generar_html_foroactivo():
     
     <script>
         const allItems = {json.dumps(todos_items, ensure_ascii=False)};
+        const cartoonNetworkItems = {json.dumps(cartoon_network_items, ensure_ascii=False)};
         let currentTab = 'all';
         let disneySub = 'all';
+        let cartoonSub = 'all';
         let currentSort = 'name';
         let sortDirection = 'asc';
         
@@ -1663,9 +1869,18 @@ def generar_html_foroactivo():
                 disneyWrap.style.display = tab === 'disney' ? 'list-item' : 'none';
             }}
             
+            const cartoonWrap = document.getElementById('cartoonSubWrap');
+            if (cartoonWrap) {{
+                cartoonWrap.style.display = tab === 'cartoon' ? 'list-item' : 'none';
+            }}
+            
             if (tab === 'disney') {{
                 const dsel = document.getElementById('disneySubFilter');
                 if (dsel) dsel.value = disneySub;
+            }}
+            if (tab === 'cartoon') {{
+                const csel = document.getElementById('cartoonSubFilter');
+                if (csel) csel.value = cartoonSub;
             }}
             
             // Limpiar posiciones de carousels al cambiar de pestaña
@@ -1689,6 +1904,13 @@ def generar_html_foroactivo():
             setTimeout(() => initCarousels(), 100);
         }}
         
+        function onCartoonSubChange() {{
+            const csel = document.getElementById('cartoonSubFilter');
+            cartoonSub = csel ? csel.value : 'all';
+            applyFilters();
+            setTimeout(() => initCarousels(), 100);
+        }}
+        
         function sortItems(sortBy) {{
             if (currentSort === sortBy) {{
                 sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
@@ -1697,7 +1919,8 @@ def generar_html_foroactivo():
                 sortDirection = 'asc';
             }}
             
-            allItems.sort((a, b) => {{
+            const listToSort = (currentTab === 'cartoon') ? cartoonNetworkItems : allItems;
+            listToSort.sort((a, b) => {{
                 let valA, valB;
                 if (sortBy === 'name') {{
                     valA = (a.name || '').toLowerCase().replace('[activo]', '').trim();
@@ -1816,7 +2039,8 @@ def generar_html_foroactivo():
             }}
             
             // Buscar coincidencias
-            const matches = allItems.filter(item => {{
+            const searchPool = (currentTab === 'cartoon') ? cartoonNetworkItems : allItems;
+            const matches = searchPool.filter(item => {{
                 const name = String(item.name || '').toLowerCase();
                 const genre = String(item.genre || '').toLowerCase();
                 const specificGenre = String(item.specificGenre || '').toLowerCase();
@@ -1881,8 +2105,9 @@ def generar_html_foroactivo():
             const decada = document.getElementById('decadaFilter').value;
             const genero = document.getElementById('generoFilter').value;
             const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+            const basePool = (currentTab === 'cartoon') ? cartoonNetworkItems : allItems;
             
-            let filtered = allItems.filter(item => {{
+            let filtered = basePool.filter(item => {{
                 // Normalizar el tipo para comparación (minúsculas, quitar espacios extras)
                 const itemTipo = (item.tipo || item.type || '').toString().toLowerCase().trim();
                 const itemGenero = String(item.specificGenre || item.genre || '').toLowerCase();
@@ -1897,6 +2122,8 @@ def generar_html_foroactivo():
                 // Comparación flexible: exacta o parcial
                 let tipoMatch = false;
                 if (currentTab === 'all') {{
+                    tipoMatch = true;
+                }} else if (currentTab === 'cartoon') {{
                     tipoMatch = true;
                 }} else if (itemTipo === tabTipo) {{
                     tipoMatch = true;
@@ -1959,6 +2186,10 @@ def generar_html_foroactivo():
                 if (bucketKey === 'dibujos') return t.includes('dibujo');
                 if (bucketKey === 'anime') return t.includes('anime');
                 return false;
+            }}
+            
+            function itemMatchesCnBucket(item, bucketKey) {{
+                return (item.cnBucket || '') === bucketKey;
             }}
             
             function buildGenreCarouselsHTML(items, idPrefix) {{
@@ -2030,12 +2261,31 @@ def generar_html_foroactivo():
                     carouselsHTML += buildGenreCarouselsHTML(sub, 'disney-' + bucket.key);
                     carouselsHTML += '</div>';
                 }});
+            }} else if (currentTab === 'cartoon') {{
+                const cnBuckets = [
+                    {{ key: 'anime', label: '🎌 Anime Cartoon Network' }},
+                    {{ key: 'dibujos', label: '🎨 Dibujos Cartoon Network' }},
+                    {{ key: 'peliculas', label: '🎬 Películas Cartoon Network' }}
+                ];
+                cnBuckets.forEach((bucket) => {{
+                    if (cartoonSub !== 'all' && bucket.key !== cartoonSub) return;
+                    const sub = filtered.filter(item => itemMatchesCnBucket(item, bucket.key));
+                    if (sub.length === 0) return;
+                    carouselsHTML += `<div class="cartoon-tier"><h2 class="cartoon-tier-title">${{bucket.label}} <span style="color: var(--text-secondary); font-size: 0.85em;">(${{sub.length}})</span></h2>`;
+                    carouselsHTML += buildGenreCarouselsHTML(sub, 'cn-' + bucket.key);
+                    carouselsHTML += '</div>';
+                }});
             }} else {{
                 carouselsHTML = buildGenreCarouselsHTML(filtered, currentTab === 'all' ? 'all' : currentTab);
             }}
             
             if (currentTab === 'disney' && !carouselsHTML) {{
                 grid.innerHTML = '<div style="text-align: center; padding: 60px; color: var(--text-secondary);"><div style="font-size: 4rem; margin-bottom: 20px;">🏰</div><p>No hay contenido Disney en la categoría seleccionada.</p><p style="margin-top:12px;font-size:0.9rem;">Prueba con otra opción del desplegable o quita filtros (década / género).</p></div>';
+                return;
+            }}
+            
+            if (currentTab === 'cartoon' && !carouselsHTML) {{
+                grid.innerHTML = '<div style="text-align: center; padding: 60px; color: var(--text-secondary);"><div style="font-size: 4rem; margin-bottom: 20px;">📡</div><p>No hay entradas Cartoon Network enlazadas al catálogo con los filtros actuales.</p><p style="margin-top:12px;font-size:0.9rem;">Los títulos de <code style="color:#00d4ff">cartoon network.txt</code> se cruzan con TOP.json por nombre; prueba otra categoría del desplegable o relaja década / género.</p></div>';
                 return;
             }}
             
@@ -2189,7 +2439,9 @@ def generar_html_foroactivo():
             try {{
                 // Dividir el string de hrefs separados por comas
                 const hrefs = itemsHrefStr ? itemsHrefStr.split(',').filter(h => h) : [];
-                const genreItems = allItems.filter(item => hrefs.includes(item.href || item.url));
+                const genreItems = hrefs.map(h =>
+                    allItems.find(i => (i.href || i.url) === h) || cartoonNetworkItems.find(i => (i.href || i.url) === h)
+                ).filter(Boolean);
                 
                 console.log('Mostrando género:', genreName, 'Hrefs:', hrefs.length, 'Items encontrados:', genreItems.length);
                 
@@ -2238,7 +2490,8 @@ def generar_html_foroactivo():
         
         // Funciones del modal estilo Netflix
         function openModalByHref(href) {{
-            const item = allItems.find(i => i.href === href || i.url === href);
+            const item = allItems.find(i => i.href === href || i.url === href)
+                || cartoonNetworkItems.find(i => i.href === href || i.url === href);
             if (!item) return;
             openModal(item);
         }}
