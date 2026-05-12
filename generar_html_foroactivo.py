@@ -1803,7 +1803,6 @@ def generar_html_foroactivo():
                 // Normalizar el tipo para comparación (minúsculas, quitar espacios extras)
                 const itemTipo = (item.tipo || item.type || '').toString().toLowerCase().trim();
                 const tabTipo = currentTab.toLowerCase().trim();
-                const itemGenero = (item.specificGenre || item.genre || '').toLowerCase();
                 
                 // Comparación flexible: exacta o parcial
                 let tipoMatch = false;
