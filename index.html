@@ -1244,7 +1244,7 @@
         </div>
         
         <div style="text-align: center; padding: 30px; margin-top: 40px; border-top: 2px solid var(--primary-red); color: var(--text-secondary);">
-            <p>Última actualización: <span style="color: var(--primary-red); font-weight: 600;">13/05/2026 00:02</span></p>
+            <p>Última actualización: <span style="color: var(--primary-red); font-weight: 600;">13/05/2026 00:09</span></p>
         </div>
     </div>
     
@@ -1567,6 +1567,7 @@
                 // Normalizar el tipo para comparación (minúsculas, quitar espacios extras)
                 const itemTipo = (item.tipo || item.type || '').toString().toLowerCase().trim();
                 const tabTipo = currentTab.toLowerCase().trim();
+                const itemGenero = (item.specificGenre || item.genre || '').toLowerCase();
                 
                 // Comparación flexible: exacta o parcial
                 let tipoMatch = false;
