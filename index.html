@@ -1244,7 +1244,7 @@
         </div>
         
         <div style="text-align: center; padding: 30px; margin-top: 40px; border-top: 2px solid var(--primary-red); color: var(--text-secondary);">
-            <p>Última actualización: <span style="color: var(--primary-red); font-weight: 600;">12/05/2026 19:06</span></p>
+            <p>Última actualización: <span style="color: var(--primary-red); font-weight: 600;">12/05/2026 19:11</span></p>
         </div>
     </div>
     
@@ -1567,7 +1567,6 @@
                 // Normalizar el tipo para comparación (minúsculas, quitar espacios extras)
                 const itemTipo = (item.tipo || item.type || '').toString().toLowerCase().trim();
                 const tabTipo = currentTab.toLowerCase().trim();
-                const itemGenero = (item.specificGenre || item.genre || '').toLowerCase();
                 
                 // Comparación flexible: exacta o parcial
                 let tipoMatch = false;
@@ -1589,7 +1588,7 @@
                 
                 if (!tipoMatch) return false;
                 if (decada !== 'all' && getDecade(item.year) !== decada) return false;
-                if (genero !== 'all' && (item.specificGenre || item.genre || 'N/A') !== genero) return false;
+                if (currentTab !== 'disney' && genero !== 'all' && (item.specificGenre || item.genre || 'N/A') !== genero) return false;
                 
                 // Búsqueda por texto
                 if (searchTerm) {
