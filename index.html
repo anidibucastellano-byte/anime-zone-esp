@@ -516,31 +516,41 @@
             padding-left: 14px;
         }
         
-        .disney-sub-bar {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 22px;
-            padding: 14px 16px;
-            background: var(--bg-card);
-            border: 1px solid var(--primary-red);
-            border-radius: 8px;
+        .sidebar-disney-expand-li {
+            list-style: none;
+            margin: 0 0 6px 0;
+            padding: 0;
         }
         
-        .disney-sub-bar label {
+        .sidebar-disney-expand {
+            padding: 10px 8px 12px;
+            margin: 2px 0 4px 0;
+            background: var(--bg-elevated);
+            border: 1px solid rgba(192, 57, 43, 0.55);
+            border-radius: 8px;
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2);
+        }
+        
+        .sidebar-disney-expand-label {
             font-family: 'Inter', sans-serif;
-            font-size: 0.8rem;
+            font-size: 0.62rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--text-secondary);
+            letter-spacing: 0.6px;
+            color: var(--accent-gold);
+            margin-bottom: 8px;
+            text-align: center;
         }
         
-        .disney-sub-bar select {
-            min-width: 220px;
-            max-width: 100%;
+        .sidebar-disney-expand .filter-select {
+            width: 100% !important;
+            min-width: 0 !important;
+            max-width: 100% !important;
+            height: auto !important;
+            min-height: 32px;
+            font-size: 0.72rem !important;
+            padding: 6px 8px !important;
+            line-height: 1.25;
         }
         
         .genre-title {
@@ -1226,6 +1236,18 @@
                     <li><button class="tab-btn" onclick="showTab('anime', this)">🎌 Anime</button></li>
                     <li><button class="tab-btn" onclick="showTab('dibujos', this)">🎨 Dibujos</button></li>
                     <li><button class="tab-btn" onclick="showTab('disney', this)">🏰 Disney</button></li>
+                    <li id="disneySubWrap" class="sidebar-disney-expand-li" style="display: none;">
+                        <div class="sidebar-disney-expand">
+                            <div class="sidebar-disney-expand-label">Tipo Disney</div>
+                            <select id="disneySubFilter" class="filter-select" onchange="onDisneySubChange()">
+                                <option value="all">Todo</option>
+                                <option value="series">Serie</option>
+                                <option value="dibujos">Dibujo</option>
+                                <option value="peliculas">Película</option>
+                                <option value="anime">Anime</option>
+                            </select>
+                        </div>
+                    </li>
                     <li><button class="tab-btn" onclick="showTab('peliculas', this)">🎬 Películas</button></li>
                 </ul>
                 
@@ -1278,16 +1300,6 @@
                     <div id="grid-dibujos" class="genre-carousels"></div>
                 </div>
                 <div id="content-disney" class="content-section">
-                    <div id="disneySubBar" class="disney-sub-bar">
-                        <label for="disneySubFilter">Tipo Disney</label>
-                        <select id="disneySubFilter" class="filter-select" onchange="onDisneySubChange()" style="width: auto; min-width: 220px; height: 36px; font-size: 0.85rem;">
-                            <option value="all">Todo (series, dibujos y películas)</option>
-                            <option value="series">Solo series</option>
-                            <option value="dibujos">Solo dibujos</option>
-                            <option value="peliculas">Solo películas</option>
-                            <option value="anime">Solo anime</option>
-                        </select>
-                    </div>
                     <div id="grid-disney" class="genre-carousels"></div>
                 </div>
                 <div id="content-peliculas" class="content-section">
@@ -1297,7 +1309,7 @@
         </div>
         
         <div style="text-align: center; padding: 30px; margin-top: 40px; border-top: 2px solid var(--primary-red); color: var(--text-secondary);">
-            <p>Última actualización: <span style="color: var(--primary-red); font-weight: 600;">13/05/2026 01:40</span></p>
+            <p>Última actualización: <span style="color: var(--primary-red); font-weight: 600;">13/05/2026 01:45</span></p>
         </div>
     </div>
     
@@ -1409,6 +1421,11 @@
             document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
             document.getElementById('content-' + tab).classList.add('active');
             currentTab = tab;
+            
+            const disneyWrap = document.getElementById('disneySubWrap');
+            if (disneyWrap) {
+                disneyWrap.style.display = tab === 'disney' ? 'list-item' : 'none';
+            }
             
             if (tab === 'disney') {
                 const dsel = document.getElementById('disneySubFilter');
