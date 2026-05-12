@@ -1802,7 +1802,14 @@ def generar_html_foroactivo():
             let filtered = allItems.filter(item => {{
                 // Normalizar el tipo para comparación (minúsculas, quitar espacios extras)
                 const itemTipo = (item.tipo || item.type || '').toString().toLowerCase().trim();
+                const itemGenero = String(item.specificGenre || item.genre || '').toLowerCase();
                 const tabTipo = currentTab.toLowerCase().trim();
+                // Texto combinado para detectar Disney aunque solo venga en originalGenre, URL o nombre
+                const disneyPool = [
+                    item.specificGenre, item.genre, item.originalGenre,
+                    item.name, item.href, item.url,
+                    item.ficha_tecnica && item.ficha_tecnica.genero
+                ].filter(Boolean).join(' ').toLowerCase();
                 
                 // Comparación flexible: exacta o parcial
                 let tipoMatch = false;
@@ -1812,11 +1819,11 @@ def generar_html_foroactivo():
                     tipoMatch = true;
                 }} else if (tabTipo === 'dibujos' && itemTipo.includes('dibujo')) {{
                     tipoMatch = true;
-                }} else if (tabTipo === 'disney' && itemGenero && itemGenero.includes('disney')) {{
+                }} else if (tabTipo === 'disney' && disneyPool.includes('disney')) {{
                     tipoMatch = true;
                 }} else if (tabTipo === 'peliculas' && (itemTipo.includes('pelicula') || itemTipo === 'película')) {{
                     tipoMatch = true;
-                }} else if (tabTipo === 'series' && itemTipo.includes('serie')) {{
+                }} else if (tabTipo === 'series' && (itemTipo === 'series' || itemTipo.includes('serie'))) {{
                     tipoMatch = true;
                 }} else if (tabTipo === 'anime' && itemTipo.includes('anime')) {{
                     tipoMatch = true;
@@ -1824,7 +1831,14 @@ def generar_html_foroactivo():
                 
                 if (!tipoMatch) return false;
                 if (decada !== 'all' && getDecade(item.year) !== decada) return false;
-                if (genero !== 'all' && (item.specificGenre || item.genre || 'N/A') !== genero) return false;
+                // Género: igualdad exacta falla con listas compuestas ("A, B" vs "A, B, Disney"); exigir que cada parte del filtro aparezca en el ítem
+                if (genero !== 'all') {{
+                    const raw = (item.specificGenre || item.genre || 'N/A').toString();
+                    const pool = raw.toLowerCase();
+                    const tokens = genero.split(',').map(t => t.trim().toLowerCase()).filter(Boolean);
+                    const matchGenre = pool === genero.toLowerCase() || (tokens.length > 0 && tokens.every(t => pool.includes(t)));
+                    if (!matchGenre) return false;
+                }}
                 
                 // Búsqueda por texto
                 if (searchTerm) {{
