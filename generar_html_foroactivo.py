@@ -1803,7 +1803,6 @@ def generar_html_foroactivo():
                 // Normalizar el tipo para comparación (minúsculas, quitar espacios extras)
                 const itemTipo = (item.tipo || item.type || '').toString().toLowerCase().trim();
                 const tabTipo = currentTab.toLowerCase().trim();
-                const itemGenero = (item.specificGenre || item.genre || '').toLowerCase();
                 
                 // Comparación flexible: exacta o parcial
                 let tipoMatch = false;
@@ -1825,8 +1824,7 @@ def generar_html_foroactivo():
                 
                 if (!tipoMatch) return false;
                 if (decada !== 'all' && getDecade(item.year) !== decada) return false;
-                // Para la categoría Disney, no aplicar filtro de género
-                if (currentTab !== 'disney' && genero !== 'all' && genero !== 'Todos' && (item.specificGenre || item.genre || 'N/A') !== genero) return false;
+                if (genero !== 'all' && (item.specificGenre || item.genre || 'N/A') !== genero) return false;
                 
                 // Búsqueda por texto
                 if (searchTerm) {{
