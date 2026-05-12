@@ -26,9 +26,9 @@
       "confianza": 85,
       "href": "/t139-activo3x3-ojos-1991-japones-castellano-07-07-dvd-rip-640x480-305-715-mb-mega-ver-online",
       "name": "[Activo]3x3 Ojos (1991) [Japonés, Castellano] [07/07] [DVD-Rip] [640x480] [305/715 MB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Terror, Fantasía, Sobrenatural",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Fantasía, Terror, Sobrenatural",
+      "specificGenre": "Terror, Fantasía, Sobrenatural",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t139-activo3x3-ojos-1991-japones-castellano-07-07-dvd-rip-640x480-305-715-mb-mega-ver-online",
       "year": 1991,
@@ -44,7 +44,8 @@
         "resolucion": "640x480",
         "peso": "305/715 MB"
       },
-      "rentry_url": "https://rentry.co/3b8tmwt8"
+      "rentry_url": "https://rentry.co/3b8tmwt8",
+      "genre": "Terror, Fantasía, Sobrenatural"
     },
     {
       "confianza": 85,
@@ -148,9 +149,9 @@
       "confianza": 85,
       "href": "/t342-activo-air-gear-2006-dual-audio-26-26-dvd-rip-768x576-280mb-365mb-mega-pixeldrain-ver-online",
       "name": "[Activo] Air Gear (2006) [Dual-Audio] [26/26] [DVD-Rip] [768x576] [280MB/365MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Deportes, Acción, Comedia",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Acción, Deportes",
+      "specificGenre": "Deportes, Acción, Comedia",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t342-activo-air-gear-2006-dual-audio-26-26-dvd-rip-768x576-280mb-365mb-mega-pixeldrain-ver-online",
       "year": 2006,
@@ -167,7 +168,7 @@
         "peso": "280MB/365MB"
       },
       "rentry_url": "https://rentry.co/nn6ihxbq",
-      "genre": "Acción, Deportes, Comedia"
+      "genre": "Deportes, Acción, Comedia"
     },
     {
       "confianza": 85,
@@ -836,9 +837,9 @@
       "confianza": 85,
       "href": "/t830-activo-burst-angel-2004-dual-audio-24-2401-webdl-rip-1920x1080-715-mb-114-gb-mega-pixeldrain-ver-online",
       "name": "[Activo] Burst Angel (2004) [Dual-Audio] [24/24+01] [WebDL-Rip] [1920x1080] [715 MB/1,14 GB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Mecha, Acción, Ciencia ficción",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Acción, Ciencia ficción",
+      "specificGenre": "Mecha, Acción, Ciencia ficción",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t830-activo-burst-angel-2004-dual-audio-24-2401-webdl-rip-1920x1080-715-mb-114-gb-mega-pixeldrain-ver-online",
       "year": 2004,
@@ -855,7 +856,7 @@
         "peso": "715 MB/1,14 GB"
       },
       "rentry_url": "https://rentry.co/p2ebnqrg",
-      "genre": "Acción, Ciencia ficción, Mecha"
+      "genre": "Mecha, Acción, Ciencia ficción"
     },
     {
       "confianza": 85,
@@ -1638,9 +1639,9 @@
       "confianza": 90,
       "href": "/t330-activodoraemon-el-gato-cosmico-2005-castellano-900caps-tv-rip-704x396-15-11-gb-mega",
       "name": "[Activo]Doraemon, el gato cósmico (2005) [Castellano] [+900caps] [TV-RIP] [704x396] [15/1,1 GB] [Mega]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Infantil, Comedia, Ciencia ficción",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Comedia, Ciencia ficción, Infantil",
+      "specificGenre": "Infantil, Comedia, Ciencia ficción",
       "tmdb_type": "anime",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t330-activodoraemon-el-gato-cosmico-2005-castellano-900caps-tv-rip-704x396-15-11-gb-mega",
@@ -1656,7 +1657,9 @@
         "calidad": "TV-RIP",
         "resolucion": "704x396",
         "peso": "15/1,1 GB"
-      }
+      },
+      "genre": "Infantil, Comedia, Ciencia ficción",
+      "rentry_url": ""
     },
     {
       "confianza": 85,
@@ -8523,10 +8526,7 @@
       "url": "https://animezoneesp.foroactivo.com/t1818-activo-iria-zeiram-the-animation-miniserie-1994-dual-audio-06-06-dvb-rip-714x480-725mb-855mb-mega-pixeldrain-ver-online#4445",
       "href": "/t1818-activo-iria-zeiram-the-animation-miniserie-1994-dual-audio-06-06-dvb-rip-714x480-725mb-855mb-mega-pixeldrain-ver-online",
       "razonClasificacion": "Extraído automáticamente del foro - 2026-04-23 23:53",
-      "originalGenre": [
-        "Acción",
-        "Ciencia Ficción"
-      ],
+      "originalGenre": "Acción, Ciencia ficción",
       "confianza": 100,
       "fecha_adicion": "2026-04-23T23:54:01.995792",
       "imagen": "images\\anime_347_Iria-Zeiram-the-Animation-Miniserie.jpg",
@@ -8540,7 +8540,8 @@
         "resolucion": "714x480",
         "peso": "725MB/855MB"
       },
-      "rentry_url": "https://rentry.co/wrd74ov6"
+      "rentry_url": "https://rentry.co/wrd74ov6",
+      "sinopsis": "Una cazadora de monstruos persigue una bestia que podría ser su hermano."
     },
     {
       "name": "Halo Legends (Miniserie)",
@@ -28693,7 +28694,7 @@
       "confianza": 90,
       "href": "/t1293-activo-buffy-cazavampiros-1997-castellano-144-144-bd-rip-1280x720-114-247-gb-mega-pixeldrain-ver-online",
       "name": "[Activo] Buffy, cazavampiros (1997) [Castellano] [144/144] [BD-Rip] [1280x720] [1,14/2,47 GB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Live-Action",
+      "originalGenre": "Fantasía, Terror, Acción",
       "razonClasificacion": "Clasificado con TMDB: Sci-Fi & Fantasy, Comedia, Drama, Action & Adventure",
       "specificGenre": "Fantasía, Terror, Acción",
       "type": "Serie Live-Action",
@@ -28711,7 +28712,8 @@
         "resolucion": "1280x720",
         "peso": "1,14/2,47 GB"
       },
-      "rentry_url": "https://rentry.co/3w6nqfvk"
+      "rentry_url": "https://rentry.co/3w6nqfvk",
+      "genre": "Fantasía, Terror, Acción"
     },
     {
       "confianza": 90,
@@ -29029,9 +29031,9 @@
       "confianza": 90,
       "href": "/t75-activolos-fraguel-1983-castellano-96-96-webdl-rip-1438x1080-380-405-mb-mega",
       "name": "[Activo]Los Fraguel (1983) [Castellano] [96/96] [WebDL-Rip] [1438x1080] [380/405 MB] [Mega]",
-      "originalGenre": "Live-Action",
+      "originalGenre": "Musical, Fantasía, Familiar, Comedia",
       "razonClasificacion": "Clasificado con TMDB: Kids, Familia, Sci-Fi & Fantasy, Comedia",
-      "specificGenre": "Fantasía, Familiar, Musical, Comedia",
+      "specificGenre": "Musical, Fantasía, Familiar, Comedia",
       "type": "Serie Live-Action",
       "url": "https://animezoneesp.foroactivo.com/t75-activolos-fraguel-1983-castellano-96-96-webdl-rip-1438x1080-380-405-mb-mega",
       "year": 1983,
@@ -29046,15 +29048,17 @@
         "calidad": "WebDL-Rip",
         "resolucion": "1438x1080",
         "peso": "380/405 MB"
-      }
+      },
+      "genre": "Musical, Fantasía, Familiar, Comedia",
+      "rentry_url": ""
     },
     {
       "confianza": 90,
       "href": "/t90-activolos-fraguel-la-diversion-continua-2022-castellano-26-26-webdl-rip-1920x1080-585-700-mb-mega-ver-online",
       "name": "[Activo]Los Fraguel: La diversión continúa (2022) [Castellano] [26/26] [WebDL-Rip] [1920x1080] [585/700 MB] [Mega] [Ver Online]",
-      "originalGenre": "Live-Action",
+      "originalGenre": "Musical, Fantasía, Familiar, Comedia",
       "razonClasificacion": "Clasificado con TMDB: Kids, Animación, Comedia",
-      "specificGenre": "Fantasía, Familiar, Musical, Comedia",
+      "specificGenre": "Musical, Fantasía, Familiar, Comedia",
       "type": "Serie Live-Action",
       "url": "https://animezoneesp.foroactivo.com/t90-activolos-fraguel-la-diversion-continua-2022-castellano-26-26-webdl-rip-1920x1080-585-700-mb-mega-ver-online",
       "year": 2022,
@@ -29070,7 +29074,8 @@
         "resolucion": "1920x1080",
         "peso": "585/700 MB"
       },
-      "rentry_url": "https://rentry.co/oqimnskw"
+      "rentry_url": "https://rentry.co/oqimnskw",
+      "genre": "Musical, Fantasía, Familiar, Comedia"
     },
     {
       "confianza": 90,
