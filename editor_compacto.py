@@ -87,6 +87,20 @@ class EditorCompacto:
         generos_filtrados = [g for g in generos if g.lower() not in ['animación', 'animacion']]
         return ', '.join(generos_filtrados) if generos_filtrados else genero
     
+    def normalizar_genero(self, genero):
+        """Normalizar género: reemplazar 'Niños' por 'Infantil'"""
+        if not genero:
+            return genero
+        # Reemplazar 'Niños' o 'Ninos' por 'Infantil'
+        generos = [g.strip() for g in genero.split(',')]
+        generos_normalizados = []
+        for g in generos:
+            if g.lower() in ['niños', 'ninos', 'ninos']:
+                generos_normalizados.append('Infantil')
+            else:
+                generos_normalizados.append(g)
+        return ', '.join(generos_normalizados)
+    
     def crear_widgets(self):
         """Crear interfaz compacta"""
         # Frame superior compacto
@@ -162,8 +176,9 @@ class EditorCompacto:
         self.entry_year.pack(side='left', padx=(2, 10))
         
         ttk.Label(frame_fila1, text="Cat:").pack(side='left')
-        self.label_categoria = ttk.Label(frame_fila1, text="-", width=8)
-        self.label_categoria.pack(side='left', padx=2)
+        self.combo_categoria = ttk.Combobox(frame_fila1, values=['Anime', 'Dibujos', 'Peliculas', 'Series'], width=10, state='readonly')
+        self.combo_categoria.pack(side='left', padx=2)
+        self.combo_categoria.set('Anime')
         
         ttk.Label(frame_fila1, text="Clasif:").pack(side='left')
         self.label_primer_genero = ttk.Label(frame_fila1, text="-", foreground='blue', width=12)
@@ -198,6 +213,7 @@ class EditorCompacto:
         ttk.Button(frame_botones, text="✅ Aplicar", command=self.aplicar_cambios, width=12).pack(side='left', padx=2)
         ttk.Button(frame_botones, text="🔄 Restaurar", command=self.cargar_serie, width=12).pack(side='left', padx=2)
         ttk.Button(frame_botones, text="➡️ Siguiente", command=self.siguiente_serie, width=12).pack(side='left', padx=2)
+        ttk.Button(frame_botones, text="🗑️ Eliminar", command=self.eliminar_serie, width=12).pack(side='left', padx=2)
         
         # URLs adicionales
         frame_urls2 = ttk.Frame(frame_izq)
@@ -382,12 +398,17 @@ class EditorCompacto:
         for item in tree.get_children():
             tree.delete(item)
         
+        # Guardar series filtradas para selección correcta
+        series_filtradas = []
+        
         for serie in series:
             nombre_completo = serie.get('name', '').lower()
             nombre_limpio = self.limpiar_nombre(serie.get('name', '')).lower()
             
             if termino and termino not in nombre_completo and termino not in nombre_limpio:
                 continue
+            
+            series_filtradas.append(serie)
             
             nombre = self.limpiar_nombre(serie.get('name', ''))
             if len(nombre) > 45:
@@ -399,6 +420,9 @@ class EditorCompacto:
                 genero = genero[:20] + "..."
             
             tree.insert('', 'end', values=(nombre, year, genero))
+        
+        # Guardar referencia a series filtradas para esta categoría
+        self.series_filtradas = {cat_name: series_filtradas}
     
     def seleccionar_serie(self, event, cat_name):
         """Seleccionar serie"""
@@ -408,19 +432,18 @@ class EditorCompacto:
             return
         
         index = tree.index(seleccion[0])
-        series = self.categorias[cat_name]
         
-        # Encontrar serie real
-        nombre_sel = tree.item(seleccion[0])['values'][0]
-        for serie in series:
-            if self.limpiar_nombre(serie.get('name', '')).startswith(nombre_sel[:30]):
-                self.serie_actual = serie
-                break
+        # Si hay filtro activo, usar series filtradas
+        if hasattr(self, 'series_filtradas') and cat_name in self.series_filtradas:
+            series = self.series_filtradas[cat_name]
         else:
-            if index < len(series):
-                self.serie_actual = series[index]
-            else:
-                return
+            series = self.categorias[cat_name]
+        
+        # Usar índice directamente
+        if index < len(series):
+            self.serie_actual = series[index]
+        else:
+            return
         
         self.cargar_serie()
     
@@ -438,7 +461,7 @@ class EditorCompacto:
         self.entry_year.delete(0, tk.END)
         self.entry_year.insert(0, str(s.get('year', '')))
         
-        self.label_categoria.config(text=s.get('_categoria', 'N/A').upper())
+        self.combo_categoria.set(s.get('_categoria', 'anime').capitalize())
         
         # Géneros
         generos = s.get('genre', s.get('specificGenre', ''))
@@ -450,7 +473,7 @@ class EditorCompacto:
         self.entry_imagen.insert(0, s.get('imagen_url', s.get('imagen', '')))
         
         self.text_sinopsis.delete(1.0, tk.END)
-        self.text_sinopsis.insert(1.0, s.get('sinopsis', '')[:300])
+        self.text_sinopsis.insert(1.0, s.get('sinopsis', '')[:1000])
         
         # URLs adicionales
         self.entry_url.delete(0, tk.END)
@@ -519,8 +542,9 @@ class EditorCompacto:
         except:
             pass
         
-        # Géneros con filtro de Animación
-        generos = self.filtrar_animacion(self.entry_generos.get().strip())
+        # Géneros con filtro de Animación y normalización
+        generos = self.normalizar_genero(self.entry_generos.get().strip())
+        generos = self.filtrar_animacion(generos)
         s['genre'] = generos
         s['imagen_url'] = self.entry_imagen.get().strip()
         s['sinopsis'] = self.text_sinopsis.get(1.0, tk.END).strip()
@@ -532,6 +556,22 @@ class EditorCompacto:
         # Campos técnicos
         s['type'] = self.combo_tipo.get()
         s['href'] = self.entry_href.get().strip()
+        
+        # Verificar si cambió la categoría
+        categoria_nueva_key = self.combo_categoria.get()  # 'Anime', 'Dibujos', etc.
+        categoria_nueva = categoria_nueva_key.lower()  # 'anime', 'dibujos', etc.
+        categoria_actual = s.get('_categoria', '').lower()
+        categoria_actual_key = categoria_actual.capitalize() if categoria_actual else ''
+        
+        if categoria_nueva != categoria_actual and categoria_nueva in ['anime', 'dibujos', 'peliculas', 'series']:
+            # Mover la serie a la nueva categoría
+            if categoria_actual_key in self.categorias and s in self.categorias[categoria_actual_key]:
+                self.categorias[categoria_actual_key].remove(s)
+            if categoria_nueva_key in self.categorias:
+                self.categorias[categoria_nueva_key].append(s)
+                s['_categoria'] = categoria_nueva
+                self.label_status.config(text=f"✅ Serie movida a {categoria_nueva.upper()}")
+                self.actualizar_contadores_pestanas()
         
         # Géneros originales (mismo valor que géneros, también filtrado)
         s['originalGenre'] = generos
@@ -556,7 +596,30 @@ class EditorCompacto:
         # Detectar nuevo género
         genero_nuevo = s['genre'].split(',')[0].strip().capitalize() if s['genre'] else 'Sin Género'
         
-        self.label_status.config(text=f"✅ Cambios aplicados")
+        # Guardar automáticamente en JSON
+        try:
+            data_actualizada = {}
+            for cat_name, items in self.categorias.items():
+                items_limpios = []
+                for item in items:
+                    item_limpio = {k: v for k, v in item.items() if k != '_categoria'}
+                    items_limpios.append(item_limpio)
+                data_actualizada[cat_name.lower()] = items_limpios
+            
+            with open(self.ruta_json, 'w', encoding='utf-8') as f:
+                json.dump(data_actualizada, f, ensure_ascii=False, indent=2)
+            
+            self.data = data_actualizada
+            
+            # Restaurar _categoria
+            for cat_name, items in self.categorias.items():
+                for item in items:
+                    item['_categoria'] = cat_name.lower()
+            
+            self.label_status.config(text=f"✅ Cambios aplicados y guardados")
+        except Exception as e:
+            self.label_status.config(text=f"⚠️ Cambios aplicados pero error al guardar: {e}")
+        
         self.refrescar_todos()
         
         # Si cambió el género y estamos en modo géneros, cambiar a esa pestaña
@@ -613,11 +676,19 @@ class EditorCompacto:
         # Reordenar géneros por cantidad
         self.generos_ordenados = sorted(self.generos.items(), key=lambda x: len(x[1]), reverse=True)
     
+    def actualizar_contadores_pestanas(self):
+        """Actualizar los números en los títulos de las pestañas"""
+        if self.modo_actual == 'categorias':
+            for i, cat_name in enumerate(['Anime', 'Dibujos', 'Peliculas', 'Series']):
+                if cat_name in self.tabs:
+                    self.notebook.tab(i, text=f"{cat_name} ({len(self.categorias[cat_name])})")
+    
     def refrescar_todos(self):
         """Refrescar todos los trees"""
         if self.modo_actual == 'categorias':
             for cat_name in self.categorias:
                 self.cargar_series(cat_name)
+            self.actualizar_contadores_pestanas()
         else:
             # Modo géneros
             for genero in self.generos:
@@ -667,17 +738,85 @@ class EditorCompacto:
         
         self.label_status.config(text=f"No encontrado: {termino}")
     
+    def eliminar_serie(self):
+        """Eliminar la serie seleccionada del catálogo"""
+        if not hasattr(self, 'serie_actual') or not self.serie_actual:
+            messagebox.showwarning("Atención", "Selecciona una serie para eliminar")
+            return
+        
+        s = self.serie_actual
+        nombre = self.limpiar_nombre(s.get('name', 'Sin nombre'))
+        categoria = s.get('_categoria', '').capitalize()
+        
+        # Confirmar eliminación
+        if not messagebox.askyesno("Confirmar eliminación", 
+                                   f"¿Eliminar '{nombre}' de {categoria}?\n\nEsta acción no se puede deshacer."):
+            return
+        
+        # Eliminar de la categoría
+        if categoria in self.categorias and s in self.categorias[categoria]:
+            self.categorias[categoria].remove(s)
+            
+            # Limpiar selección
+            self.serie_actual = None
+            self.limpiar_todos_los_campos()
+            
+            # Refrescar y guardar
+            self.refrescar_todos()
+            self.guardar_silencioso()
+            
+            self.label_status.config(text=f"🗑️ '{nombre[:30]}' eliminado de {categoria}", foreground='red')
+        else:
+            messagebox.showerror("Error", "No se pudo encontrar la serie en la categoría")
+    
+    def guardar_silencioso(self):
+        """Guardar JSON sin mostrar mensajes"""
+        try:
+            data_actualizada = {}
+            for cat_name, items in self.categorias.items():
+                items_limpios = []
+                for item in items:
+                    item_limpio = {k: v for k, v in item.items() if k != '_categoria'}
+                    items_limpios.append(item_limpio)
+                data_actualizada[cat_name.lower()] = items_limpios
+            
+            with open(self.ruta_json, 'w', encoding='utf-8') as f:
+                json.dump(data_actualizada, f, ensure_ascii=False, indent=2)
+            
+            self.data = data_actualizada
+            
+            # Restaurar _categoria
+            for cat_name, items in self.categorias.items():
+                for item in items:
+                    item['_categoria'] = cat_name.lower()
+        except Exception as e:
+            self.label_status.config(text=f"⚠️ Error al guardar: {e}", foreground='red')
+
     def guardar(self):
         """Guardar JSON"""
         try:
-            for cat_items in self.categorias.values():
-                for item in cat_items:
-                    if '_categoria' in item:
-                        del item['_categoria']
+            # Aplicar cambios actuales del formulario si hay una serie seleccionada
+            if hasattr(self, 'serie_actual') and self.serie_actual:
+                self.aplicar_cambios()
+            
+            # Reconstruir data desde categorías (para reflejar cambios de categoría)
+            data_actualizada = {}
+            for cat_name, items in self.categorias.items():
+                # Limpiar el campo _categoria antes de guardar
+                items_limpios = []
+                for item in items:
+                    item_limpio = {k: v for k, v in item.items() if k != '_categoria'}
+                    items_limpios.append(item_limpio)
+                # Guardar con clave en minúsculas (anime, dibujos, peliculas, series)
+                data_actualizada[cat_name.lower()] = items_limpios
             
             with open(self.ruta_json, 'w', encoding='utf-8') as f:
-                json.dump(self.data, f, ensure_ascii=False, indent=2)
+                json.dump(data_actualizada, f, ensure_ascii=False, indent=2)
             
+            # Actualizar self.data
+            self.data = data_actualizada
+            
+            # Restaurar _categoria para uso interno
             for cat_name, items in self.categorias.items():
                 for item in items:
                     item['_categoria'] = cat_name.lower()
@@ -1291,8 +1430,8 @@ Acción, Aventura, Artes marciales, Fantasía, Shōnen"""
         self.combo_tipo.set('Anime')
         self.entry_href.delete(0, tk.END)
         
-        # Resetear labels
-        self.label_categoria.config(text='-')
+        # Resetear labels y combos
+        self.combo_categoria.set('Anime')
         self.label_primer_genero.config(text='-')
         
         # Ficha técnica
@@ -1504,6 +1643,13 @@ Acción, Aventura, Artes marciales, Fantasía, Shōnen"""
         if genero_match:
             genero = next((g for g in genero_match.groups() if g is not None), '').strip()
             if genero:
+                # Normalizar separadores: reemplazar ' y ' por ', '
+                genero = re.sub(r'\s+y\s+', ', ', genero, flags=re.IGNORECASE)
+                # Normalizar: primera letra de cada género en mayúscula
+                generos_list = [g.strip().capitalize() for g in genero.split(',')]
+                genero = ', '.join(generos_list)
+                # Reemplazar 'Niños' por 'Infantil'
+                genero = self.normalizar_genero(genero)
                 # Filtrar "Animación" del género
                 genero = self.filtrar_animacion(genero)
                 datos['genre'] = genero
@@ -1563,7 +1709,14 @@ Acción, Aventura, Artes marciales, Fantasía, Shōnen"""
         # Buscar sinopsis/descripción - múltiples estrategias
         # 1. Buscar en el HTML postbody - buscar párrafos completos
         if soup:
+            # Intentar múltiples selectores para foroactivo
             postbody = soup.find('div', class_='postbody')
+            if not postbody:
+                # Foroactivo: buscar en otros contenedores comunes
+                postbody = soup.find('div', class_='content') or soup.find('div', {'id': 'post_content'}) or soup.find('div', class_='post_content')
+            # Si aún no hay postbody, buscar el contenido principal
+            if not postbody:
+                postbody = soup.find('div', class_='post') or soup.find('article')
             if postbody:
                 # Buscar todos los párrafos <p> dentro del postbody
                 parrafos = postbody.find_all('p')
@@ -1782,8 +1935,8 @@ Acción, Aventura, Artes marciales, Fantasía, Shōnen"""
             categoria = 'Anime'
         elif 'dibujo' in tipo or 'cartoon' in tipo:
             categoria = 'Dibujos'
-        elif 'peli' in tipo or 'movie' in tipo:
-            categoria = 'Películas'
+        elif 'peli' in tipo or 'pelí' in tipo or 'movie' in tipo:
+            categoria = 'Peliculas'
         else:
             categoria = 'Series'
         
