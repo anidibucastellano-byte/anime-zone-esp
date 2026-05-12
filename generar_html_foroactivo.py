@@ -736,6 +736,22 @@ def generar_html_foroactivo():
             position: relative;
         }}
         
+        .disney-tier {{
+            margin-bottom: 36px;
+        }}
+        
+        .disney-tier-title {{
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin: 0 0 18px 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 14px;
+        }}
+        
         .genre-title {{
             font-family: 'Orbitron', sans-serif;
             font-size: 1.1rem;
@@ -1869,67 +1885,50 @@ def generar_html_foroactivo():
                     .trim();
             }}
             
-            // Mapeo de géneros normalizados a nombre original (para mostrar)
-            const genreDisplayNames = {{}};
+            function itemMatchesTipoBucket(item, bucketKey) {{
+                const t = (item.tipo || item.type || '').toString().toLowerCase().trim();
+                if (bucketKey === 'peliculas') return t.includes('pelicula') || t === 'película';
+                if (bucketKey === 'series') return t === 'series' || t.includes('serie');
+                if (bucketKey === 'dibujos') return t.includes('dibujo');
+                if (bucketKey === 'anime') return t.includes('anime');
+                return false;
+            }}
             
-            // Agrupar por género - cada item SOLO UNA VEZ, usando SOLO el PRIMER género
-            const groupedByGenre = {{}};
-            const usedIndexes = new Set(); // Índices de items ya asignados
-            
-            // Asignar cada item a su PRIMER género (eliminando categorías compuestas)
-            filtered.forEach((item, index) => {{
-                // Si ya fue asignado, saltar
-                if (usedIndexes.has(index)) return;
-                
-                // Obtener género y separar por comas si es compuesto
-                // Usar item.genre primero (géneros actualizados manualmente), luego specificGenre
-                let fullGenre = item.genre || item.specificGenre || 'Sin Género';
-                // Asegurar que sea string
-                if (typeof fullGenre !== 'string') {{
-                    fullGenre = String(fullGenre || 'Sin Género');
-                }}
-                // Tomar solo el primer género (antes de la primera coma)
-                const originalGenre = fullGenre.split(',')[0].trim();
-                const normalizedGenre = normalizeGenre(originalGenre);
-                
-                // Guardar nombre original para mostrar
-                if (!genreDisplayNames[normalizedGenre]) {{
-                    genreDisplayNames[normalizedGenre] = originalGenre;
-                }}
-                
-                // Crear array del género si no existe (usando nombre normalizado como key)
-                if (!groupedByGenre[normalizedGenre]) {{
-                    groupedByGenre[normalizedGenre] = [];
-                }}
-                
-                // Agregar item a su género y marcar índice como usado
-                groupedByGenre[normalizedGenre].push(item);
-                usedIndexes.add(index);
-            }});
-            
-            // Obtener géneros ordenados alfabéticamente que tengan items
-            const sortedGenres = Object.keys(groupedByGenre)
-                .filter(g => groupedByGenre[g].length > 0)
-                .sort();
-            
-            // Generar HTML de carruseles por género
-            let carouselsHTML = '';
-            sortedGenres.forEach((normalizedGenre, genreIndex) => {{
-                const items = groupedByGenre[normalizedGenre];
-                const itemCount = items.length;
-                const displayName = genreDisplayNames[normalizedGenre] || normalizedGenre;
-                const safeGenre = normalizedGenre.replace(/[^a-zA-Z0-9]/g, '-');
-                // Incluir el tipo de pestaña en el ID para hacerlo único
-                const tabPrefix = currentTab === 'all' ? 'all' : currentTab;
-                const carouselId = `carousel-${{tabPrefix}}-${{safeGenre}}-${{genreIndex}}`;
-                
-                const safeId = carouselId.replace(/[^a-zA-Z0-9_-]/g, '-');
-                const scrollAreaId = 'scrollarea-' + safeId;
-                
-                // Crear data attribute con los hrefs de los items
-                const itemsHref = items.map(i => i.href || i.url).join(',');
-                
-                carouselsHTML += `
+            function buildGenreCarouselsHTML(items, idPrefix) {{
+                const genreDisplayNames = {{}};
+                const groupedByGenre = {{}};
+                const usedIndexes = new Set();
+                items.forEach((item, index) => {{
+                    if (usedIndexes.has(index)) return;
+                    let fullGenre = item.genre || item.specificGenre || 'Sin Género';
+                    if (typeof fullGenre !== 'string') {{
+                        fullGenre = String(fullGenre || 'Sin Género');
+                    }}
+                    const originalGenre = fullGenre.split(',')[0].trim();
+                    const normalizedGenre = normalizeGenre(originalGenre);
+                    if (!genreDisplayNames[normalizedGenre]) {{
+                        genreDisplayNames[normalizedGenre] = originalGenre;
+                    }}
+                    if (!groupedByGenre[normalizedGenre]) {{
+                        groupedByGenre[normalizedGenre] = [];
+                    }}
+                    groupedByGenre[normalizedGenre].push(item);
+                    usedIndexes.add(index);
+                }});
+                const sortedGenres = Object.keys(groupedByGenre)
+                    .filter(g => groupedByGenre[g].length > 0)
+                    .sort();
+                let html = '';
+                sortedGenres.forEach((normalizedGenre, genreIndex) => {{
+                    const rowItems = groupedByGenre[normalizedGenre];
+                    const itemCount = rowItems.length;
+                    const displayName = genreDisplayNames[normalizedGenre] || normalizedGenre;
+                    const safeGenre = normalizedGenre.replace(/[^a-zA-Z0-9]/g, '-');
+                    const carouselId = `carousel-${{idPrefix}}-${{safeGenre}}-${{genreIndex}}`;
+                    const safeId = carouselId.replace(/[^a-zA-Z0-9_-]/g, '-');
+                    const scrollAreaId = 'scrollarea-' + safeId;
+                    const itemsHref = rowItems.map(i => i.href || i.url).join(',');
+                    html += `
                 <div class="genre-section">
                     <h2 class="genre-title" data-genre="${{displayName}}" data-items="${{itemsHref}}" data-count="${{itemCount}}" title="Ver todos los ${{itemCount}} items de ${{displayName}}">
                         ${{displayName}} <span style="color: var(--text-secondary); font-size: 0.8em;">(${{itemCount}})</span>
@@ -1938,13 +1937,34 @@ def generar_html_foroactivo():
                         <button class="carousel-btn carousel-prev" data-scrollarea="${{scrollAreaId}}" type="button">❮</button>
                         <div class="carousel-scroll-area" id="${{scrollAreaId}}">
                             <div class="carousel-track" id="${{safeId}}">
-                                ${{items.map(item => generateItemHTML(item)).join('')}}
+                                ${{rowItems.map(item => generateItemHTML(item)).join('')}}
                             </div>
                         </div>
                         <button class="carousel-btn carousel-next" data-scrollarea="${{scrollAreaId}}" type="button">❯</button>
                     </div>
                 </div>`;
-            }});
+                }});
+                return html;
+            }}
+            
+            let carouselsHTML = '';
+            if (currentTab === 'disney') {{
+                const disneyBuckets = [
+                    {{ key: 'series', label: '📺 Series Disney' }},
+                    {{ key: 'dibujos', label: '🎨 Dibujos Disney' }},
+                    {{ key: 'peliculas', label: '🎬 Películas Disney' }},
+                    {{ key: 'anime', label: '🎌 Anime Disney' }}
+                ];
+                disneyBuckets.forEach((bucket) => {{
+                    const sub = filtered.filter(item => itemMatchesTipoBucket(item, bucket.key));
+                    if (sub.length === 0) return;
+                    carouselsHTML += `<div class="disney-tier"><h2 class="disney-tier-title">${{bucket.label}} <span style="color: var(--text-secondary); font-size: 0.85em;">(${{sub.length}})</span></h2>`;
+                    carouselsHTML += buildGenreCarouselsHTML(sub, 'disney-' + bucket.key);
+                    carouselsHTML += '</div>';
+                }});
+            }} else {{
+                carouselsHTML = buildGenreCarouselsHTML(filtered, currentTab === 'all' ? 'all' : currentTab);
+            }}
             
             grid.innerHTML = carouselsHTML;
             
