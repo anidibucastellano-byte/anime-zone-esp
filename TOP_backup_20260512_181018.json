@@ -26,9 +26,9 @@
       "confianza": 85,
       "href": "/t139-activo3x3-ojos-1991-japones-castellano-07-07-dvd-rip-640x480-305-715-mb-mega-ver-online",
       "name": "[Activo]3x3 Ojos (1991) [Japonés, Castellano] [07/07] [DVD-Rip] [640x480] [305/715 MB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Terror, Fantasía, Sobrenatural",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Fantasía, Terror, Sobrenatural",
+      "specificGenre": "Terror, Fantasía, Sobrenatural",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t139-activo3x3-ojos-1991-japones-castellano-07-07-dvd-rip-640x480-305-715-mb-mega-ver-online",
       "year": 1991,
@@ -44,7 +44,8 @@
         "resolucion": "640x480",
         "peso": "305/715 MB"
       },
-      "rentry_url": "https://rentry.co/3b8tmwt8"
+      "rentry_url": "https://rentry.co/3b8tmwt8",
+      "genre": "Terror, Fantasía, Sobrenatural"
     },
     {
       "confianza": 85,
@@ -148,9 +149,9 @@
       "confianza": 85,
       "href": "/t342-activo-air-gear-2006-dual-audio-26-26-dvd-rip-768x576-280mb-365mb-mega-pixeldrain-ver-online",
       "name": "[Activo] Air Gear (2006) [Dual-Audio] [26/26] [DVD-Rip] [768x576] [280MB/365MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Deportes, Acción, Comedia",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Acción, Deportes",
+      "specificGenre": "Deportes, Acción, Comedia",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t342-activo-air-gear-2006-dual-audio-26-26-dvd-rip-768x576-280mb-365mb-mega-pixeldrain-ver-online",
       "year": 2006,
@@ -167,7 +168,7 @@
         "peso": "280MB/365MB"
       },
       "rentry_url": "https://rentry.co/nn6ihxbq",
-      "genre": "Acción, Deportes, Comedia"
+      "genre": "Deportes, Acción, Comedia"
     },
     {
       "confianza": 85,
@@ -836,9 +837,9 @@
       "confianza": 85,
       "href": "/t830-activo-burst-angel-2004-dual-audio-24-2401-webdl-rip-1920x1080-715-mb-114-gb-mega-pixeldrain-ver-online",
       "name": "[Activo] Burst Angel (2004) [Dual-Audio] [24/24+01] [WebDL-Rip] [1920x1080] [715 MB/1,14 GB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Mecha, Acción, Ciencia ficción",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Acción, Ciencia ficción",
+      "specificGenre": "Mecha, Acción, Ciencia ficción",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t830-activo-burst-angel-2004-dual-audio-24-2401-webdl-rip-1920x1080-715-mb-114-gb-mega-pixeldrain-ver-online",
       "year": 2004,
@@ -855,7 +856,7 @@
         "peso": "715 MB/1,14 GB"
       },
       "rentry_url": "https://rentry.co/p2ebnqrg",
-      "genre": "Acción, Ciencia ficción, Mecha"
+      "genre": "Mecha, Acción, Ciencia ficción"
     },
     {
       "confianza": 85,
@@ -1638,9 +1639,9 @@
       "confianza": 90,
       "href": "/t330-activodoraemon-el-gato-cosmico-2005-castellano-900caps-tv-rip-704x396-15-11-gb-mega",
       "name": "[Activo]Doraemon, el gato cósmico (2005) [Castellano] [+900caps] [TV-RIP] [704x396] [15/1,1 GB] [Mega]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Infantil, Comedia, Ciencia ficción",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Comedia, Ciencia ficción, Infantil",
+      "specificGenre": "Infantil, Comedia, Ciencia ficción",
       "tmdb_type": "anime",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t330-activodoraemon-el-gato-cosmico-2005-castellano-900caps-tv-rip-704x396-15-11-gb-mega",
@@ -1656,7 +1657,9 @@
         "calidad": "TV-RIP",
         "resolucion": "704x396",
         "peso": "15/1,1 GB"
-      }
+      },
+      "genre": "Infantil, Comedia, Ciencia ficción",
+      "rentry_url": ""
     },
     {
       "confianza": 85,
@@ -1885,9 +1888,9 @@
       "confianza": 90,
       "href": "/t262-activodragon-quest-las-aventuras-de-fly-1991-castellano-46-46-dvd-rip-640x480-50-mb-mega-pixeldrain-ver-online",
       "name": "[Activo]Dragon Quest: Las aventuras de Fly (1991) [Castellano] [46/46] [DVD-Rip] [640x480] [50 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Aventuras, Comedia, Acción",
+      "originalGenre": "Aventura, Comedia, Acción",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Aventuras, Comedia, Acción",
+      "specificGenre": "Aventura, Comedia, Acción",
       "tmdb_type": "anime",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t262-activodragon-quest-las-aventuras-de-fly-1991-castellano-46-46-dvd-rip-640x480-50-mb-mega-pixeldrain-ver-online",
@@ -1905,7 +1908,7 @@
         "peso": "50 MB"
       },
       "rentry_url": "https://rentry.co/aewoytcf",
-      "genre": "Aventuras, Comedia, Acción"
+      "genre": "Aventura, Comedia, Acción"
     },
     {
       "confianza": 85,
@@ -2912,9 +2915,9 @@
       "confianza": 85,
       "href": "/t253-activoheartcatch-pretty-cure-2010-dual-audio-49-49-webdl-rip-960x720-350-mb-mega-pixeldrain-ver-online",
       "name": "[Activo]HeartCatch Pretty Cure (2010) [Dual-Audio] [49/49] [WebDL-Rip] [960x720] [350 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Fantasía, Acción, Aventura, Comedia",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Mahou shoujo, Acción, Aventura, Fantasía, Comedia",
+      "specificGenre": "Fantasía, Acción, Aventura, Comedia",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t253-activoheartcatch-pretty-cure-2010-dual-audio-49-49-webdl-rip-960x720-350-mb-mega-pixeldrain-ver-online",
       "year": 2010,
@@ -2930,7 +2933,8 @@
         "resolucion": "960x720",
         "peso": "350 MB"
       },
-      "rentry_url": "https://rentry.co/cq8mfgta"
+      "rentry_url": "https://rentry.co/cq8mfgta",
+      "genre": "Fantasía, Acción, Aventura, Comedia"
     },
     {
       "confianza": 90,
@@ -3154,9 +3158,9 @@
       "confianza": 90,
       "href": "/t667-activo-invencible-2021-multi-audio-24-24-webdl-rip-1920x1080-950-mb-232-gb-mega-pixeldrain-ver-online",
       "name": "[Activo] Invencible (2021) [Multi-audio] [24/24] [WebDL-Rip] [1920x1080] [950 MB / 2,32 GB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Acción, Superhéroes, Ciencia ficción, Drama",
       "razonClasificacion": "Clasificado con TMDB: Animación, Ciencia ficción, Acción",
-      "specificGenre": "Superhéroes, Ciencia ficción, Acción, Drama",
+      "specificGenre": "Acción, Superhéroes, Ciencia ficción, Drama",
       "tmdb_type": "anime",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t667-activo-invencible-2021-multi-audio-24-24-webdl-rip-1920x1080-950-mb-232-gb-mega-pixeldrain-ver-online",
@@ -3173,7 +3177,8 @@
         "resolucion": "1920x1080",
         "peso": "950 MB / 2,32 GB"
       },
-      "rentry_url": "https://rentry.co/vucpz6au"
+      "rentry_url": "https://rentry.co/vucpz6au",
+      "genre": "Acción, Superhéroes, Ciencia ficción, Drama"
     },
     {
       "confianza": 85,
@@ -4138,9 +4143,9 @@
       "confianza": 85,
       "href": "/t272-activomagical-doremi-1999-castellano-201-201-webdl-rip-1440x1080-260-11-gb-mega-pixeldrain-ver-online",
       "name": "[Activo]Magical DoReMi (1999) [Castellano] [201/201] [WebDL-Rip] [1440x1080] [260/1,1 GB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Fantasía",
+      "originalGenre": "Fantasía, Magical girl, Comedia, Slice of life, Infantil",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Magical girl, Comedia, Slice of life, Fantasía, Infantil",
+      "specificGenre": "Fantasía, Magical girl, Comedia, Slice of life, Infantil",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t272-activomagical-doremi-1999-castellano-201-201-webdl-rip-1440x1080-260-11-gb-mega-pixeldrain-ver-online",
       "year": 1999,
@@ -4156,7 +4161,8 @@
         "resolucion": "1440x1080",
         "peso": "260/1,1 GB"
       },
-      "rentry_url": "https://rentry.co/s8z65mcq"
+      "rentry_url": "https://rentry.co/s8z65mcq",
+      "genre": "Fantasía, Magical girl, Comedia, Slice of life, Infantil"
     },
     {
       "confianza": 85,
@@ -5209,15 +5215,15 @@
       "confianza": 85,
       "href": "/t254-activopretty-cure-max-heart-2005-dual-audio-47-47-webdl-rip-960x720-295-445-mb-mega-pixeldrain-ver-online",
       "name": "[Activo]Pretty Cure Max Heart (2005) [Dual-Audio] [47/47] [WebDL-Rip] [960x720] [295/445 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Magical girl, Acción, Fantasía",
+      "originalGenre": "Fantasía, Magical girl, Acción",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Magical girl, Acción, Fantasía",
+      "specificGenre": "Fantasía, Magical girl, Acción",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t254-activopretty-cure-max-heart-2005-dual-audio-47-47-webdl-rip-960x720-295-445-mb-mega-pixeldrain-ver-online",
       "year": 2005,
       "imagen": "images/anime_254_ActivoSupercampeones-Ashita-e-Free-Kick-1992-Castellano-5252-DVD-Rip-640x480-85120-MB-MegaPixeldrain-Ver-Online.jpg",
       "imagen_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj93rd5b7SXkAsd-_avWYgcNcPR7pGjued_91Azn2UOChgAzHjxd2aQ1FfyNUbSocwk-sRaE24cL7RB-jruHxCtv1K2uhuz1C2HtDhMRot28UbVaaxa7hokhiQoH_HrAFmZKK-hur-tFzVwdOeLnErwqrlke_O2_6NACxNqwZiMWg9n_ZHnHr23aOgFrCM/s16000/Pretty%20Cure%20Max%20Heart.jpg",
-      "sinopsis": "Tras haber salvado el Jardín de la Luz, Nagisa Misumi (Cure Black) y Honoka Yukishiro (Cure White) vuelven a la normalidad… o eso creen. Una nueva amenaza surge cuando el Jardín del Corazón cae bajo el poder del malvado Jardín de la Oscuridad. Las Pretty Cure deben volver a transformarse con la ayuda de Mepple, Mipple y la nueva compañera Porun, para proteger los Fragmentos del Corazón de la Reina. Con la llegada de Hikari Kujou (Shiny Luminous), una misteriosa chica con un vínculo especial con la Reina, el poder de la amistad y la esperanza vuelve a brillar. ¡El dúo más brillante y fuerte regresa en una nueva batalla por la luz del mundo!",
+      "sinopsis": "Pretty Cure Max Heart (2005-2006) es la secuela directa de Futari wa Pretty Cure, donde Nagisa y Honoka regresan como Cure Black y Cure White para proteger al Jardín de la Luz tras la caída del Rey Malvado. Junto a la nueva guerrera Hikari Kujou (Shiny Luminosa), deben encontrar los 12 Corazoneros para resucitar a la Reina.",
       "ficha_tecnica": {
         "ano": "2005",
         "idioma": "Castellano, Japonés",
@@ -5228,7 +5234,7 @@
         "peso": "295/445 MB"
       },
       "rentry_url": "https://rentry.co/2oq8wt99",
-      "genre": "Magical girl, Acción, Fantasía"
+      "genre": "Fantasía, Magical girl, Acción"
     },
     {
       "confianza": 85,
@@ -5648,9 +5654,9 @@
       "confianza": 85,
       "href": "/t269-activosailor-moon-1992-dual-audio-200-200-webdl-rip-768x576-255-695-mb-mega-pixeldrain-ver-online",
       "name": "[Activo]Sailor Moon (1992) [Dual-Audio] [200/200] [WebDL-Rip] [768x576] [255/695 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Fantasía, Mahou shoujo, Acción, Aventura, Romance, Drama",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Mahou shoujo, Acción, Aventura, Romance, Fantasía, Drama",
+      "specificGenre": "Fantasía, Mahou shoujo, Acción, Aventura, Romance, Drama",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t269-activosailor-moon-1992-dual-audio-200-200-webdl-rip-768x576-255-695-mb-mega-pixeldrain-ver-online",
       "year": 1992,
@@ -5666,7 +5672,8 @@
         "resolucion": "768x576",
         "peso": "255/695 MB"
       },
-      "rentry_url": "https://rentry.co/dxdonqku"
+      "rentry_url": "https://rentry.co/dxdonqku",
+      "genre": "Fantasía, Mahou shoujo, Acción, Aventura, Romance, Drama"
     },
     {
       "confianza": 85,
@@ -6779,9 +6786,9 @@
       "confianza": 85,
       "href": "/t581-activo-utena-la-chica-revolucionaria-1997-castellano-39-39-webdl-rip-1280x720-100-285-mb-mega-pixeldrain-ver-online",
       "name": "[Activo] Utena, la chica revolucionaria (1997) [Castellano] [39/39] [WebDL-Rip] [1280x720] [100/285 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Fantasía, Psicológico, Drama",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Psicológico, Drama, Fantasía",
+      "specificGenre": "Fantasía, Psicológico, Drama",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t581-activo-utena-la-chica-revolucionaria-1997-castellano-39-39-webdl-rip-1280x720-100-285-mb-mega-pixeldrain-ver-online",
       "year": 1997,
@@ -6797,7 +6804,8 @@
         "resolucion": "1280x720",
         "peso": "100/285 MB"
       },
-      "rentry_url": "https://rentry.co/5bti537t"
+      "rentry_url": "https://rentry.co/5bti537t",
+      "genre": "Fantasía, Psicológico, Drama"
     },
     {
       "confianza": 85,
@@ -8518,10 +8526,7 @@
       "url": "https://animezoneesp.foroactivo.com/t1818-activo-iria-zeiram-the-animation-miniserie-1994-dual-audio-06-06-dvb-rip-714x480-725mb-855mb-mega-pixeldrain-ver-online#4445",
       "href": "/t1818-activo-iria-zeiram-the-animation-miniserie-1994-dual-audio-06-06-dvb-rip-714x480-725mb-855mb-mega-pixeldrain-ver-online",
       "razonClasificacion": "Extraído automáticamente del foro - 2026-04-23 23:53",
-      "originalGenre": [
-        "Acción",
-        "Ciencia Ficción"
-      ],
+      "originalGenre": "Acción, Ciencia ficción",
       "confianza": 100,
       "fecha_adicion": "2026-04-23T23:54:01.995792",
       "imagen": "images\\anime_347_Iria-Zeiram-the-Animation-Miniserie.jpg",
@@ -8535,7 +8540,8 @@
         "resolucion": "714x480",
         "peso": "725MB/855MB"
       },
-      "rentry_url": "https://rentry.co/wrd74ov6"
+      "rentry_url": "https://rentry.co/wrd74ov6",
+      "sinopsis": "Una cazadora de monstruos persigue una bestia que podría ser su hermano."
     },
     {
       "name": "Halo Legends (Miniserie)",
@@ -8690,9 +8696,9 @@
       "confianza": 85,
       "href": "/t1332-activo-the-cockpit-miniserie-1993-multi-audio-3-3-bd-rip-1016x720-125-131-gb-mega-pixeldrain-ver-online",
       "name": "[Activo] The Cockpit (Miniserie) (1993) [Multi-audio] [3/3] [BD-Rip] [1016x720] [1,25/1,31 GB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Histórico",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Bélico",
+      "specificGenre": "Histórico",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t1332-activo-the-cockpit-miniserie-1993-multi-audio-3-3-bd-rip-1016x720-125-131-gb-mega-pixeldrain-ver-online",
       "year": 1993,
@@ -8710,7 +8716,8 @@
         "resolucion": "1016x720",
         "peso": "1,25/1,31 GB"
       },
-      "rentry_url": "https://rentry.co/ynokyrz6"
+      "rentry_url": "https://rentry.co/ynokyrz6",
+      "genre": "Histórico"
     },
     {
       "confianza": 85,
@@ -9521,6 +9528,52 @@
         "formato": "MKV",
         "peso": "520 MB"
       }
+    },
+    {
+      "name": "Azuki",
+      "year": 1995,
+      "genre": "Romance, Adolescente, Infantil, Comedia",
+      "specificGenre": "Romance, Adolescente, Infantil, Comedia",
+      "originalGenre": "Romance, Adolescente, Infantil, Comedia",
+      "type": "Anime",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1778585558/mis_archivos_elegidos/manual_poster_tmdb_Azuki.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1778585558/mis_archivos_elegidos/manual_poster_tmdb_Azuki.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t2103-activo-azuki-1995-castellano-117-1177-dvd-rip-640x476-160mb-410mb-mega-pixeldrain-ver-online",
+      "href": "/t2103-activo-azuki-1995-castellano-117-1177-dvd-rip-640x476-160mb-410mb-mega-pixeldrain-ver-online",
+      "rentry_url": "https://rentry.co/q5wdkzks",
+      "sinopsis": "Azuki, es una jovencita tímida y muy normal que se enamora de su nuevo compañero de clase llamado Yûnosuke. Cada vez que lo ve su corazón late muy deprisa y se angustia porque no sabe lo que siente él por ella, pero en esos momentos está Kaoru, su mejor amiga para apoyarla. Para Azuki no será un camino fácil poder estar con Yûnosuke ya que se le presenta una rival muy fuerte llamada Yoko. ¿Qué pasará? ¿Conseguirá Azuki el amor de Yûnosuke?. Este cómic es una especie de \"manual del amor\" desde la más tierna infancia hasta la adolescencia.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "calidad": "DVD-Rip",
+        "resolucion": "640x476",
+        "formato": "AVI",
+        "peso": "160MB/410MB"
+      }
+    },
+    {
+      "name": "Hello Kitty's Animation Theater",
+      "year": 2001,
+      "genre": "Infantil, Ciencia ficción, Fantasía, Infantil",
+      "specificGenre": "Infantil, Ciencia ficción, Fantasía, Infantil",
+      "originalGenre": "Infantil, Ciencia ficción, Fantasía, Infantil",
+      "type": "Anime",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1778590751/mis_archivos_elegidos/manual_poster_tmdb_%E3%82%B5%E3%83%B3%E3%83%AA%E3%82%AA%E3%82%A2%E3%83%8B%E3%83%A1%E4%B8%96%E7%95%8C%E5%90%8D%E4%BD%9C%E5%8A%87%E5%A0%B4.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1778590751/mis_archivos_elegidos/manual_poster_tmdb_%E3%82%B5%E3%83%B3%E3%83%AA%E3%82%AA%E3%82%A2%E3%83%8B%E3%83%A1%E4%B8%96%E7%95%8C%E5%90%8D%E4%BD%9C%E5%8A%87%E5%A0%B4.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t2105-activo-hello-kitty-s-animation-theater-2001-dual-audio-13-13-dvd-rip-720x576-965mb-170gb-mega-pixeldrain-ver-online#5083",
+      "href": "/t2105-activo-hello-kitty-s-animation-theater-2001-dual-audio-13-13-dvd-rip-720x576-965mb-170gb-mega-pixeldrain-ver-online#5083",
+      "rentry_url": "https://rentry.co/3smhmurb",
+      "sinopsis": "Recreaciones de diferentes cuentos de hadas protagonizados por Hello Kitty y otros personajes de Sanrio.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Japonés",
+        "subtitulos": "Español",
+        "calidad": "DVD-Rip",
+        "resolucion": "720x576",
+        "formato": "MKV",
+        "peso": "965MB/1,70GB"
+      }
     }
   ],
   "dibujos": [
@@ -9799,7 +9852,7 @@
       "name": "[Activo]Big Hero 6: La serie (2017) [Castellano] [50/50] [WebDL-Rip] [1920x1080] [520 MB] [Mega] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Acción",
+      "specificGenre": "Acción, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t107-activobig-hero-6-la-serie-2017-castellano-50-50-webdl-rip-1920x1080-520-mb-mega-ver-online",
       "year": 2017,
@@ -9816,7 +9869,7 @@
         "peso": "520 MB"
       },
       "rentry_url": "https://rentry.co/dervobs5",
-      "genre": "Acción, Comedia, Superhéroes"
+      "genre": "Acción, Comedia, Superhéroes, Disney"
     },
     {
       "confianza": 85,
@@ -9969,7 +10022,7 @@
       "name": "[Activo]Chip y Chop: Guardianes rescatadores [Castellano] [65/65] [WebDL-RIP] [1920x1080] [535/565MB] [Mega] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Aventura",
+      "specificGenre": "Aventura, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t20-activochip-y-chop-guardianes-rescatadores-castellano-65-65-webdl-rip-1920x1080-535-565mb-mega-ver-online",
       "year": 2026,
@@ -9991,7 +10044,7 @@
       "name": "[Activo] Circuito de cortos (2020) [Dual-Audio] [20/20] [WebDL-Rip] [1920x1080] [60/360 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Fantasía, Comedia, Familiar",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Fantasía, Comedia, Familiar",
+      "specificGenre": "Fantasía, Comedia, Familiar, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t1170-activo-circuito-de-cortos-2020-dual-audio-20-20-webdl-rip-1920x1080-60-360-mb-mega-pixeldrain-ver-online",
       "year": 2020,
@@ -10008,7 +10061,7 @@
         "peso": "60/360 MB"
       },
       "rentry_url": "https://rentry.co/smxaozeo",
-      "genre": "Fantasía, Comedia, Familiar"
+      "genre": "Fantasía, Comedia, Familiar, Disney"
     },
     {
       "confianza": 85,
@@ -10262,7 +10315,7 @@
       "name": "[Activo] Doctora Juguetes (2012) [Castellano] [136/136] [WebDL-Rip] [1280x720] [335/445 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Animación, Infantil, Comedia, Educativo",
+      "specificGenre": "Animación, Infantil, Comedia, Educativo, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t413-activo-doctora-juguetes-2012-castellano-136-136-webdl-rip-1280x720-335-445-mb-mega-pixeldrain-ver-online",
       "year": 2012,
@@ -10279,7 +10332,7 @@
         "peso": "335/445 MB"
       },
       "rentry_url": "https://rentry.co/4anfhmew",
-      "genre": "Infantil, Educativo"
+      "genre": "Infantil, Educativo, Disney"
     },
     {
       "confianza": 85,
@@ -10479,7 +10532,7 @@
       "name": "[Activo] El maravilloso mundo de Mickey Mouse (2020) [Castellano] [10/25] [WebDL-Rip] [1280x720] [225/285 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Comedia",
+      "specificGenre": "Comedia, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t614-activo-el-maravilloso-mundo-de-mickey-mouse-2020-castellano-10-25-webdl-rip-1280x720-225-285-mb-mega-pixeldrain-ver-online",
       "year": 2020,
@@ -10496,7 +10549,7 @@
         "peso": "225/285 MB"
       },
       "rentry_url": "https://rentry.co/wd94b7cc",
-      "genre": "Comedia"
+      "genre": "Comedia, Disney"
     },
     {
       "confianza": 85,
@@ -10529,7 +10582,7 @@
       "name": "[Activo]Elena de Ávalor (2016) [Castellano] [80/80+20] [WebDL-Rip] [1280x720] [35 MB / 1,72 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Acción",
+      "specificGenre": "Acción, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t384-activoelena-de-avalor-2016-castellano-80-8020-webdl-rip-1280x720-35-mb-172-gb-mega-pixeldrain-ver-online",
       "year": 2016,
@@ -10546,7 +10599,7 @@
         "peso": "35 MB / 1,72 GB"
       },
       "rentry_url": "https://rentry.co/onuxdygg",
-      "genre": "Aventura, Fantasía, Infantil"
+      "genre": "Aventura, Fantasía, Infantil, Disney"
     },
     {
       "confianza": 85,
@@ -10625,7 +10678,7 @@
       "name": "[Activo]Fancy Nancy Clancy (2018) [Castellano] [50/50] [WebDL-Rip] [1280x720] [305/445 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Animación, Infantil, Comedia, Familiar",
+      "specificGenre": "Animación, Infantil, Comedia, Familiar, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t386-activofancy-nancy-clancy-2018-castellano-50-50-webdl-rip-1280x720-305-445-mb-mega-pixeldrain-ver-online",
       "year": 2018,
@@ -10642,7 +10695,7 @@
         "peso": "305/445 MB"
       },
       "rentry_url": "https://rentry.co/fqnaxy69",
-      "genre": "Infantil, Comedia"
+      "genre": "Infantil, Comedia, Disney"
     },
     {
       "confianza": 85,
@@ -10846,7 +10899,7 @@
       "name": "[Activo]Hércules, la serie animada (1998) [Castellano] [65/65] [WebDL-RIP] [1440x1080] [685MB] [Mega] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Aventura, Fantasía",
+      "specificGenre": "Aventura, Fantasía, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t52-activohercules-la-serie-animada-1998-castellano-65-65-webdl-rip-1440x1080-685mb-mega-ver-online",
       "year": 1998,
@@ -10868,7 +10921,7 @@
       "name": "[Activo]House of Mouse (2001) [Castellano/Inglés] [52/52] [WebDL-RIP] [1280x720] [765MB] [Mega] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Comedia, Familiar",
+      "specificGenre": "Comedia, Familiar, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t51-activohouse-of-mouse-2001-castellano-ingles-52-52-webdl-rip-1280x720-765mb-mega-ver-online",
       "year": 2001,
@@ -10913,7 +10966,7 @@
       "name": "[Activo] Iwájú (2024) [Dual-Audio] [6/6] [WebDL-Rip] [1920x1080] [325/435 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Acción",
+      "specificGenre": "Acción, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t764-activo-iwaju-2024-dual-audio-6-6-webdl-rip-1920x1080-325-435-mb-mega-pixeldrain-ver-online",
       "year": 2024,
@@ -10930,7 +10983,7 @@
         "peso": "325/435 MB"
       },
       "rentry_url": "https://rentry.co/ae4n5o85",
-      "genre": "Ciencia ficción, Drama"
+      "genre": "Ciencia ficción, Drama, Disney"
     },
     {
       "confianza": 85,
@@ -10938,7 +10991,7 @@
       "name": "[Activo]Jake y los piratas de nunca jamás (2011) [Castellano] [120/???] [WebDL-Rip] [1920x1080] [545/605 MB] [Mega]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Acción",
+      "specificGenre": "Acción, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t74-activojake-y-los-piratas-de-nunca-jamas-2011-castellano-120-webdl-rip-1920x1080-545-605-mb-mega",
       "year": 2011,
@@ -10954,7 +11007,7 @@
         "resolucion": "1920x1080",
         "peso": "545/605 MB"
       },
-      "genre": "Aventura, Infantil"
+      "genre": "Aventura, Infantil, Disney"
     },
     {
       "confianza": 85,
@@ -11056,7 +11109,7 @@
       "name": "[Activo]Kuzco: Un emperador en el cole (2006) [Castellano] [52/52] [WebDL-RIP] [1920x1080] [435MB] [Mega] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Acción",
+      "specificGenre": "Acción, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t49-activokuzco-un-emperador-en-el-cole-2006-castellano-52-52-webdl-rip-1920x1080-435mb-mega-ver-online",
       "year": 2006,
@@ -11071,7 +11124,7 @@
         "peso": "435 MB"
       },
       "rentry_url": "https://rentry.co/bmfiuamx",
-      "genre": "Comedia, Infantil"
+      "genre": "Comedia, Infantil, Disney"
     },
     {
       "confianza": 85,
@@ -11102,7 +11155,7 @@
       "name": "[Activo]La casa de Mickey Mouse (2006) [Castellano] [132/132] [WebDL-Rip] [570/730 MB] [Mega] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Animación, Infantil, Educativo, Comedia",
+      "specificGenre": "Animación, Infantil, Educativo, Comedia, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t71-activola-casa-de-mickey-mouse-2006-castellano-132-132-webdl-rip-570-730-mb-mega-ver-online",
       "year": 2006,
@@ -11119,7 +11172,7 @@
         "peso": "570/730 MB"
       },
       "rentry_url": "https://rentry.co/rtru3vei",
-      "genre": "Infantil, Educativo"
+      "genre": "Infantil, Educativo, Disney"
     },
     {
       "confianza": 85,
@@ -11127,7 +11180,7 @@
       "name": "[Activo] La guardia del león (2016) [Castellano] [78/78] [WebDL-Rip] [720x406] [200/250 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Aventura, Infantil",
+      "specificGenre": "Aventura, Infantil, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t1296-activo-la-guardia-del-leon-2016-castellano-78-78-webdl-rip-720x406-200-250-mb-mega-pixeldrain-ver-online",
       "year": 2016,
@@ -11175,7 +11228,7 @@
       "name": "[Activo]La Mosca Maggie (2005) [Castellano] [21/21] [TV-RIP] [640x480] [125/160 MB] [Mega] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Acción",
+      "specificGenre": "Acción, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t173-activola-mosca-maggie-2005-castellano-21-21-tv-rip-640x480-125-160-mb-mega-ver-online",
       "year": 2005,
@@ -11192,7 +11245,7 @@
         "peso": "125/160 MB"
       },
       "rentry_url": "https://rentry.co/rri6x6kw",
-      "genre": "Comedia"
+      "genre": "Comedia, Disney"
     },
     {
       "confianza": 85,
@@ -11224,7 +11277,7 @@
       "name": "[Activo]La princesa Sofía (2013) [Castellano] [111/111] [WebDL-Rip] [1280x720] [190 MB / 1,28 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Animación, Infantil, Fantasía, Aventura",
+      "specificGenre": "Animación, Infantil, Fantasía, Aventura, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t388-activola-princesa-sofia-2013-castellano-111-111-webdl-rip-1280x720-190-mb-128-gb-mega-pixeldrain-ver-online",
       "year": 2013,
@@ -11241,7 +11294,7 @@
         "peso": "190 MB / 1,28 GB"
       },
       "rentry_url": "https://rentry.co/a6pag3va",
-      "genre": "Infantil, Fantasía"
+      "genre": "Infantil, Fantasía, Disney"
     },
     {
       "confianza": 85,
@@ -11271,9 +11324,9 @@
       "confianza": 85,
       "href": "/t148-activola-sirenita-1992-castellano-31-31-webdl-rip-1920x1080-440-10-gb-mega-ver-online",
       "name": "La sirenita",
-      "originalGenre": "Familia, Niños, Ciencia ficción y fantasía",
+      "originalGenre": "Infantil, Infantil, Ciencia ficción y fantasía",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Familia, Niños, Ciencia ficción y fantasía",
+      "specificGenre": "Infantil, Infantil, Ciencia ficción y fantasía, Disney",
       "type": "Dibujos",
       "url": "https://animezoneesp.foroactivo.com/t148-activola-sirenita-1992-castellano-31-31-webdl-rip-1920x1080-440-10-gb-mega-ver-online",
       "year": 1992,
@@ -11289,7 +11342,7 @@
         "peso": "440/1,0 GB"
       },
       "rentry_url": "https://rentry.co/e4ps8e57",
-      "genre": "Familia, Niños, Ciencia ficción y fantasía",
+      "genre": "Infantil, Infantil, Ciencia ficción y fantasía, Disney",
       "sinopsis": "Serie de TV (1992-1994). 3 temporadas. 31 episodios. Precuela de la clásica película de animación de Disney."
     },
     {
@@ -11420,7 +11473,7 @@
       "name": "[Activo] Little Einsteins (2005) [Dual-Audio] [67/67] [WebDL-Rip] [640x480] [515/560 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Animación, Infantil, Educativo, Música, Aventura",
+      "specificGenre": "Animación, Infantil, Educativo, Música, Aventura, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t670-activo-little-einsteins-2005-dual-audio-67-67-webdl-rip-640x480-515-560-mb-mega-pixeldrain-ver-online",
       "year": 2005,
@@ -11437,7 +11490,7 @@
         "peso": "515/560 MB"
       },
       "rentry_url": "https://rentry.co/mz6xs35b",
-      "genre": "Infantil, Educativo, Música"
+      "genre": "Infantil, Educativo, Música, Disney"
     },
     {
       "confianza": 85,
@@ -11591,7 +11644,7 @@
       "name": "[Activo]Los Proud (2001) [Castellano] [52/52] [WebDL-Rip] [704x528] [170/265 MB] [Mega] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Comedia, Familiar",
+      "specificGenre": "Comedia, Familiar, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t123-activolos-proud-2001-castellano-52-52-webdl-rip-704x528-170-265-mb-mega-ver-online",
       "year": 2001,
@@ -11763,7 +11816,7 @@
       "name": "[Activo]Monstruos a la obra (2021) [Castellano] [20/20] [WebDL-Rip] [1920x1080] [515/790 MB] [Mega] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Animación, Comedia, Familiar",
+      "specificGenre": "Animación, Comedia, Familiar, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t91-activomonstruos-a-la-obra-2021-castellano-20-20-webdl-rip-1920x1080-515-790-mb-mega-ver-online",
       "year": 2021,
@@ -11780,7 +11833,7 @@
         "peso": "515/790 MB"
       },
       "rentry_url": "https://rentry.co/2ponatq3",
-      "genre": "Infantil, Fantasía, Comedia"
+      "genre": "Infantil, Fantasía, Comedia, Disney"
     },
     {
       "confianza": 85,
@@ -11861,7 +11914,7 @@
       "name": "[Activo] Quack Pack (1996) [Castellano] [39/39] [DVD-Rip] [640x480] [505/510 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Comedia, Familiar",
+      "specificGenre": "Comedia, Familiar, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t621-activo-quack-pack-1996-castellano-39-39-dvd-rip-640x480-505-510-mb-mega-pixeldrain-ver-online",
       "year": 1996,
@@ -12155,7 +12208,7 @@
       "name": "[Activo]Spidey y su superequipo (2021) [Castellano] [83/83] [WebDL-Rip] [1920x1080] [570 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Animación, Infantil, Acción, Superhéroes",
+      "specificGenre": "Animación, Infantil, Acción, Superhéroes, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t286-activospidey-y-su-superequipo-2021-castellano-83-83-webdl-rip-1920x1080-570-mb-mega-pixeldrain-ver-online",
       "year": 2021,
@@ -12172,7 +12225,7 @@
         "peso": "570 MB"
       },
       "rentry_url": "https://rentry.co/hfr5hdfr",
-      "genre": "Infantil, Superhéroes"
+      "genre": "Infantil, Superhéroes, Disney"
     },
     {
       "confianza": 85,
@@ -12229,7 +12282,7 @@
       "name": "[Activo]Star Wars: Visions (2021) [Dual-Audio] [27/27] [WebDL-Rip] [1920x1080] [520/1,1 GB] [Mega] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Ciencia ficción, Fantasía, Acción",
+      "specificGenre": "Ciencia ficción, Fantasía, Acción, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t179-activostar-wars-visions-2021-dual-audio-27-27-webdl-rip-1920x1080-520-11-gb-mega-ver-online",
       "year": 2021,
@@ -12684,7 +12737,7 @@
       "name": "X-Men, La Serie Animada",
       "originalGenre": "Acción, Aventuras, Ciencia ficción, fantasía",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Acción, Aventuras, Ciencia ficción, fantasía",
+      "specificGenre": "Acción, Aventuras, Ciencia ficción, fantasía, Disney",
       "type": "Dibujos",
       "url": "https://animezoneesp.foroactivo.com/t513-activo-x-men-la-serie-animada-1992-castellano-76-76-tv-rip-704x528-210-235-mb-mega-pixeldrain-ver-online",
       "year": 1992,
@@ -12700,7 +12753,7 @@
         "peso": "210/235 MB"
       },
       "rentry_url": "https://rentry.co/mrf9vw6c",
-      "genre": "Acción, Aventuras, Ciencia ficción, fantasía",
+      "genre": "Acción, Aventuras, Ciencia ficción, fantasía, Disney",
       "sinopsis": "Primera serie de animación basada en los cómics de Marvel, X-Men. La serie comienza con Júbilo, una adolescente que de pronto descubre tener poderes mutantes. Fue atacada por Centinelas y rescatada por los X-Men, y luego de conocerlos dejó a sus padres adoptivos y se fue con ellos, para aprender a controlar sus poderes y estar a salvo de los ataques de los Centinelas u otras organizaciones extremistas anti-mutantes. La serie se enfoca también en el triángulo amoroso entre Cíclope, Jean y Wolverine, y la complicada relación entre Gambito y Rogue. Había una enorme cantidad de personajes invitados a lo largo de la serie provenientes de todo el Universo Marvel, pero sólo los mutantes se pueden considerar como tales. A excepción de Miss Marvel y el Capitán América en uno de los episodios finales, y Juggernaut dado su naturaleza mágica, todos los personajes no-mutantes que aparecían lo hacían sólo como cameos de breves segundos. En 2000, se estrenó una segunda serie animada llamada \"X-Men Evolution\", aunque no fue tan bien recibida como ésta, Spiderman: La serie animada o Batman: La serie animada."
     },
     {
@@ -12757,7 +12810,7 @@
       "name": "[Activo] Zombies: La serie re-animada (2024) [Castellano] [20/20] [WebDL-Rip] [1920x1080] [885 MB / 1,01 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Animación, Musical, Comedia, Fantasía juvenil",
+      "specificGenre": "Animación, Musical, Comedia, Fantasía juvenil, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t448-activo-zombies-la-serie-re-animada-2024-castellano-20-20-webdl-rip-1920x1080-885-mb-101-gb-mega-pixeldrain-ver-online",
       "year": 2024,
@@ -12774,7 +12827,7 @@
         "peso": "885 MB / 1,01 GB"
       },
       "rentry_url": "https://rentry.co/fda8622x",
-      "genre": "Infantil, Musical, Fantasía"
+      "genre": "Infantil, Musical, Fantasía, Disney"
     },
     {
       "confianza": 85,
@@ -12807,7 +12860,7 @@
       "name": "[Activo] X-Men: Evolution (2000) [Castellano] [52/52] [DVD-Rip] [640x480] [135/190 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t1289-activo-x-men-evolution-2000-castellano-52-52-dvd-rip-640x480-135-190-mb-mega-pixeldrain-ver-online",
@@ -12825,13 +12878,13 @@
         "peso": "135/190 MB"
       },
       "rentry_url": "https://rentry.co/szwqg3pi",
-      "genre": "Acción, Superhéroes"
+      "genre": "Acción, Superhéroes, Disney"
     },
     {
       "confianza": 85,
       "href": "/t15-activovoltron-el-defensor-legendario-castellano-76-76-webdl-rip-1920x1080-295-590mb-mega-ver-online",
       "name": "[Activo]Voltron El defensor legendario [Castellano] [76/76] [WebDL-RIP] [1920x1080] [295/590MB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Occidental",
+      "originalGenre": "Mecha, Acción, Aventura, Ciencia ficción, Superhéroes",
       "razonClasificacion": "Clasificación durante scraping con enlace",
       "specificGenre": "Mecha, Acción, Aventura, Ciencia ficción, Superhéroes",
       "type": "Dibujo Animado",
@@ -12845,9 +12898,12 @@
         "idioma": "Castellano",
         "subtitulos": "Ninguno",
         "formato": "MP4 Peso/Cap: 295/590 MB NFO: [Tienes que estar registrado y conectado para ver este vínculo] Traile",
-        "peso": "295/590 MB"
+        "peso": "295/590 MB",
+        "calidad": "",
+        "resolucion": ""
       },
-      "rentry_url": "https://rentry.co/gxck2ond"
+      "rentry_url": "https://rentry.co/gxck2ond",
+      "genre": "Mecha, Acción, Aventura, Ciencia ficción, Superhéroes"
     },
     {
       "confianza": 90,
@@ -12855,7 +12911,7 @@
       "name": "[Activo]Ultimate Spider-Man (2012) [Castellano] [104/104] [WebDL-Rip] [1280x720] [355/465 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t280-activoultimate-spider-man-2012-castellano-104-104-webdl-rip-1280x720-355-465-mb-mega-pixeldrain-ver-online",
@@ -12873,7 +12929,7 @@
         "peso": "355/465 MB"
       },
       "rentry_url": "https://rentry.co/fiyyuaf2",
-      "genre": "Acción, Superhéroes, Comedia"
+      "genre": "Acción, Superhéroes, Comedia, Disney"
     },
     {
       "confianza": 90,
@@ -13187,7 +13243,7 @@
       "name": "[Activo] Star Wars: Las aventuras de los jóvenes Jedi (2023) [Dual-Audio] [55/55] [WebDL-Rip] [1920x1080] [655 MB / 1,40 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t1131-activo-star-wars-las-aventuras-de-los-jovenes-jedi-2023-dual-audio-55-55-webdl-rip-1920x1080-655-mb-140-gb-mega-pixeldrain-ver-online",
@@ -13205,7 +13261,7 @@
         "peso": "655 MB / 1,40 GB"
       },
       "rentry_url": "https://rentry.co/6vaxhz2e",
-      "genre": "Aventura, Infantil"
+      "genre": "Aventura, Infantil, Disney"
     },
     {
       "confianza": 90,
@@ -13213,7 +13269,7 @@
       "name": "[Activo] Star Wars: La Resistencia (2018) [Dual-Audio] [40/40] [WebDL-Rip] [1920x1080] [1,25/1,37 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t1130-activo-star-wars-la-resistencia-2018-dual-audio-40-40-webdl-rip-1920x1080-125-137-gb-mega-pixeldrain-ver-online",
@@ -13231,7 +13287,7 @@
         "peso": "1,25/1,37 GB"
       },
       "rentry_url": "https://rentry.co/y28hsxgh",
-      "genre": "Ciencia ficción, Aventura"
+      "genre": "Ciencia ficción, Aventura, Disney"
     },
     {
       "confianza": 90,
@@ -13239,7 +13295,7 @@
       "name": "[Activo] Star Wars Droids: Las aventuras de R2D2 y C3PO (1985) [Dual-Audio] [13/13] [IAUpScale-Rip] [1440x1080] [530/550 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t714-activo-star-wars-droids-las-aventuras-de-r2d2-y-c3po-1985-dual-audio-13-13-iaupscale-rip-1440x1080-530-550-mb-mega-pixeldrain-ver-online",
@@ -13257,7 +13313,7 @@
         "peso": "530/550 MB"
       },
       "rentry_url": "https://rentry.co/esnydonw",
-      "genre": "Aventura, Infantil"
+      "genre": "Aventura, Infantil, Disney"
     },
     {
       "confianza": 90,
@@ -13343,7 +13399,7 @@
       "name": "[Activo]Phineas y Ferb (2007) [Castellano] [146/146] [WebDL-Rip] [515/840 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Comedia, Aventura, Familiar",
+      "specificGenre": "Comedia, Aventura, Familiar, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t69-activophineas-y-ferb-2007-castellano-146-146-webdl-rip-515-840-mb-mega-pixeldrain-ver-online",
       "year": 2007,
@@ -13417,9 +13473,9 @@
       "confianza": 90,
       "href": "/t666-activo-marvel-s-hit-monkey-2021-dual-audio-10-10-webdl-rip-1920x1080-395-495-mb-mega-pixeldrain-ver-online",
       "name": "[Activo] Marvel's Hit-Monkey (2021) [Dual-Audio] [10/10] [WebDL-Rip] [1920x1080] [395/495 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Occidental",
+      "originalGenre": "Acción, Comedia negra, Adulto, Disney",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Acción, Comedia negra, Adulto, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t666-activo-marvel-s-hit-monkey-2021-dual-audio-10-10-webdl-rip-1920x1080-395-495-mb-mega-pixeldrain-ver-online",
@@ -13437,7 +13493,7 @@
         "peso": "395/495 MB"
       },
       "rentry_url": "https://rentry.co/ug8mszt8",
-      "genre": "Acción, Comedia negra, Adulto"
+      "genre": "Acción, Comedia negra, Adulto, Disney"
     },
     {
       "confianza": 90,
@@ -13445,7 +13501,7 @@
       "name": "[Activo]Marvel Spider-Man (2017) [Castellano] [64/64] [WebDL-Rip] [1920x1080] [620–750 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Ciencia ficción, Fantasía, Comedia, Familia",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Ciencia ficción, Fantasía, Comedia, Familia",
+      "specificGenre": "Ciencia ficción, Fantasía, Comedia, Familia, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t276-activomarvel-spider-man-2017-castellano-64-64-webdl-rip-1920x1080-620750-mb-mega-pixeldrain-ver-online",
@@ -13463,15 +13519,15 @@
         "peso": "620–750 MB"
       },
       "rentry_url": "https://rentry.co/pkw8kvw6",
-      "genre": "Ciencia ficción, Fantasía, Comedia, Familia"
+      "genre": "Ciencia ficción, Fantasía, Comedia, Familia, Disney"
     },
     {
       "confianza": 90,
       "href": "/t1127-activo-las-nuevas-aventuras-de-batman-1997-dual-audio-24-24-webdl-rip-1440x1080-650-995-mb-mega-pixeldrain-ver-online",
       "name": "[Activo] Las nuevas aventuras de Batman (1997) [Dual-Audio] [24/24] [WebDL-Rip] [1440x1080] [650/995 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Occidental",
+      "originalGenre": "Acción, Superhéroes",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Acción, Superhéroes",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t1127-activo-las-nuevas-aventuras-de-batman-1997-dual-audio-24-24-webdl-rip-1440x1080-650-995-mb-mega-pixeldrain-ver-online",
@@ -13547,7 +13603,7 @@
       "name": "[Activo]Gravity Falls (2012) [Dual-Audio] [41/41] [WebDL-Rip] [1920x1080] [345/980 MB] [Mega] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t154-activogravity-falls-2012-dual-audio-41-41-webdl-rip-1920x1080-345-980-mb-mega-ver-online",
@@ -13565,7 +13621,7 @@
         "peso": "345/980 MB"
       },
       "rentry_url": "https://rentry.co/s337wkrf",
-      "genre": "Misterio, Comedia, Aventura"
+      "genre": "Misterio, Comedia, Aventura, Disney"
     },
     {
       "confianza": 90,
@@ -13677,7 +13733,7 @@
       "name": "[Activo] Cortos Disney (1928-2021) [Castellano] [289/???] [DVD-Rip] [1300x1080] [50/745 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Comedia",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Comedia",
+      "specificGenre": "Comedia, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t1017-activo-cortos-disney-1928-2021-castellano-289-dvd-rip-1300x1080-50-745-mb-mega-pixeldrain-ver-online",
@@ -13695,7 +13751,7 @@
         "peso": "50/745 MB"
       },
       "rentry_url": "https://rentry.co/e64oo78e",
-      "genre": "Comedia"
+      "genre": "Comedia, Disney"
     },
     {
       "confianza": 90,
@@ -13988,7 +14044,7 @@
       "name": "[Activo]Jake Long: American Dragon (2005) [Dual-Audio] [52/52] [WebDL-Rip] [1920x1080] [250/450 MB] [Mega] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t184-activojake-long-american-dragon-2005-dual-audio-52-52-webdl-rip-1920x1080-250-450-mb-mega-ver-online",
@@ -14006,7 +14062,7 @@
         "peso": "250/450 MB"
       },
       "rentry_url": "https://rentry.co/o8k2ors9",
-      "genre": "Acción, Fantasía"
+      "genre": "Acción, Fantasía, Disney"
     },
     {
       "confianza": 90,
@@ -14523,7 +14579,7 @@
       "name": "[Activo] La banda del patio (1997) [Dual-Audio] [65/65] [WebDL-Rip] [640x480] [545/555 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t438-activo-la-banda-del-patio-1997-dual-audio-65-65-webdl-rip-640x480-545-555-mb-mega-pixeldrain-ver-online",
@@ -14541,7 +14597,7 @@
         "peso": "545/555 MB"
       },
       "rentry_url": "https://rentry.co/38fk23tf",
-      "genre": "Comedia, Infantil"
+      "genre": "Comedia, Infantil, Disney"
     },
     {
       "confianza": 90,
@@ -14549,7 +14605,7 @@
       "name": "[Activo]Patoaventuras (2017) [Dual-Audio] [100/100] [DVD-Rip] [640x478] [155/235 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t358-activopatoaventuras-2017-dual-audio-100-100-dvd-rip-640x478-155-235-mb-mega-pixeldrain-ver-online",
@@ -14567,7 +14623,7 @@
         "peso": "155/235 MB"
       },
       "rentry_url": "https://rentry.co/6tsbsdxo",
-      "genre": "Aventura, Comedia"
+      "genre": "Aventura, Comedia, Disney"
     },
     {
       "confianza": 90,
@@ -14575,7 +14631,7 @@
       "name": "[Activo] PJ Masks (2015) [Castellano] [104/104] [WebDL-Rip] [1280x720] [565/755 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t619-activo-pj-masks-2015-castellano-104-104-webdl-rip-1280x720-565-755-mb-mega-pixeldrain-ver-online",
@@ -14593,7 +14649,7 @@
         "peso": "565/755 MB"
       },
       "rentry_url": "https://rentry.co/3p8gwxb4",
-      "genre": "Infantil, Acción"
+      "genre": "Infantil, Acción, Disney"
     },
     {
       "confianza": 90,
@@ -14782,7 +14838,7 @@
       "name": "[Activo]Kim Possible (2002) [Castellano] [87/87] [WebDL-Rip] [1220x720] [130/285 MB] [Mega] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t222-activokim-possible-2002-castellano-87-87-webdl-rip-1220x720-130-285-mb-mega-ver-online",
@@ -14800,7 +14856,7 @@
         "peso": "130/285 MB"
       },
       "rentry_url": "https://rentry.co/wzw8ayhp",
-      "genre": "Acción, Comedia"
+      "genre": "Acción, Comedia, Disney"
     },
     {
       "confianza": 90,
@@ -15116,7 +15172,7 @@
       "name": "[Activo]Mickey Mouse Funhouse (2021) [Castellano] [86/86] [WebDL-Rip] [470/740 MB] [Mega] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t70-activomickey-mouse-funhouse-2021-castellano-86-86-webdl-rip-470-740-mb-mega-ver-online",
@@ -15134,7 +15190,7 @@
         "peso": "470/740 MB"
       },
       "rentry_url": "https://rentry.co/qeufsdbv",
-      "genre": "Infantil"
+      "genre": "Infantil, Disney"
     },
     {
       "confianza": 90,
@@ -15272,7 +15328,7 @@
       "name": "[Activo]Buzz Lightyear: Guardianes del espacio (2000) [Castellano] [62/65] [Tv-RIP] [640x480] [265/865 MB] [Mega] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t125-activobuzz-lightyear-guardianes-del-espacio-2000-castellano-62-65-tv-rip-640x480-265-865-mb-mega-ver-online",
@@ -15290,7 +15346,7 @@
         "peso": "265/865 MB"
       },
       "rentry_url": "https://rentry.co/v9zcfm74",
-      "genre": "Acción, Ciencia ficción"
+      "genre": "Acción, Ciencia ficción, Disney"
     },
     {
       "confianza": 90,
@@ -15324,7 +15380,7 @@
       "name": "[Activo]Brandy y Mr. Whiskers [Castellano] [58/59] [TV-RIP] [704x528] [115/230MB] [Mega] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t8-activobrandy-y-mr-whiskers-castellano-58-59-tv-rip-704x528-115-230mb-mega-ver-online",
@@ -15340,7 +15396,7 @@
         "peso": "115/230 MB"
       },
       "rentry_url": "https://rentry.co/wh8dyf6u",
-      "genre": "Comedia"
+      "genre": "Comedia, Disney"
     },
     {
       "confianza": 90,
@@ -15452,7 +15508,7 @@
       "name": "[Activo]Mickey Mouse Works (1999) [Castellano] [21/21] [Tv-RIP] [768x576] [170/470 MB] [Mega] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t124-activomickey-mouse-works-1999-castellano-21-21-tv-rip-768x576-170-470-mb-mega-ver-online",
@@ -15470,7 +15526,7 @@
         "peso": "170/470 MB"
       },
       "rentry_url": "https://rentry.co/mpxp5swv",
-      "genre": "Comedia"
+      "genre": "Comedia, Disney"
     },
     {
       "confianza": 90,
@@ -15832,7 +15888,7 @@
       "name": "[Activo]Mickey y los Superpilotos (2017) [Castellano] [50/50] [WebDL-Rip] [1280x720] [355/505 MB] [Mega] [Ver Online]",
       "originalGenre": "Animación Japonesa",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t119-activomickey-y-los-superpilotos-2017-castellano-50-50-webdl-rip-1280x720-355-505-mb-mega-ver-online",
@@ -15850,7 +15906,7 @@
         "peso": "355/505 MB"
       },
       "rentry_url": "https://rentry.co/hd2n4v3d",
-      "genre": "Infantil, Aventura"
+      "genre": "Infantil, Aventura, Disney"
     },
     {
       "confianza": 90,
@@ -15908,7 +15964,7 @@
       "name": "[Activo]La Tropa Goofy (1992) [Castellano] [78/78] [WebDL-RIP] [1920x1080] [540MB] [Mega] [Ver Online]",
       "originalGenre": "Animación Japonesa",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t27-activola-tropa-goofy-1992-castellano-78-78-webdl-rip-1920x1080-540mb-mega-ver-online",
@@ -15924,7 +15980,7 @@
         "peso": "540 MB"
       },
       "rentry_url": "https://rentry.co/7y4z59ob",
-      "genre": "Comedia, Familiar"
+      "genre": "Comedia, Familiar, Disney"
     },
     {
       "confianza": 90,
@@ -16057,7 +16113,7 @@
       "name": "[Activo]Galaxia Wander (2013) [Castellano] [79/79] [WebDL-Rip] [1280x720] [70/265 MB] [Mega] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t82-activogalaxia-wander-2013-castellano-79-79-webdl-rip-1280x720-70-265-mb-mega-ver-online",
@@ -16075,7 +16131,7 @@
         "peso": "70/265 MB"
       },
       "rentry_url": "https://rentry.co/sg5ctdvc",
-      "genre": "Comedia, Ciencia ficción"
+      "genre": "Comedia, Ciencia ficción, Disney"
     },
     {
       "confianza": 90,
@@ -16109,7 +16165,7 @@
       "name": "[Activo]Yin Yang Yo! (2006) [Castellano, Inglés] [26/26] [WebDL-Rip] [1920x1080] [530 MB] [Mega] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t109-activoyin-yang-yo-2006-castellano-ingles-26-26-webdl-rip-1920x1080-530-mb-mega-ver-online",
@@ -16127,7 +16183,7 @@
         "peso": "530 MB"
       },
       "rentry_url": "https://rentry.co/4gycwhtm",
-      "genre": "Comedia, Acción"
+      "genre": "Comedia, Acción, Disney"
     },
     {
       "confianza": 90,
@@ -16187,7 +16243,7 @@
       "name": "[Activo]Los Vengadores unidos (2013) [Castellano] [126/126] [WebDL-Rip] [1920x1080] [245/580 MB] [Mega] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t100-activolos-vengadores-unidos-2013-castellano-126-126-webdl-rip-1920x1080-245-580-mb-mega-ver-online",
@@ -16205,7 +16261,7 @@
         "peso": "245/580 MB"
       },
       "rentry_url": "https://rentry.co/68y3cbur",
-      "genre": "Acción, Superhéroes"
+      "genre": "Acción, Superhéroes, Disney"
     },
     {
       "confianza": 85,
@@ -16260,7 +16316,7 @@
       "name": "[Activo](Des)encanto (2018) [Castellano] [50/50] [WebDL-Rip] [1280x720] [340/1,4 GB] [Mega] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t156-activodesencanto-2018-castellano-50-50-webdl-rip-1280x720-340-14-gb-mega-ver-online",
@@ -16278,7 +16334,7 @@
         "peso": "340/1,4 GB"
       },
       "rentry_url": "https://rentry.co/ruvhzm9e",
-      "genre": "Fantasía, Musical, Familiar"
+      "genre": "Fantasía, Musical, Familiar, Disney"
     },
     {
       "confianza": 90,
@@ -16763,7 +16819,7 @@
       "name": "[Activo]Enredados: Aventuras de Rapunzel (2017) [Castellano] [68/68] [WebDL-RIP] [1920x1080] [555MB] [Mega] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t39-activoenredados-aventuras-de-rapunzel-2017-castellano-68-68-webdl-rip-1920x1080-555mb-mega-ver-online",
@@ -16779,7 +16835,7 @@
         "peso": "505/555"
       },
       "rentry_url": "https://rentry.co/pnbbab8w",
-      "genre": "Aventura, Comedia"
+      "genre": "Aventura, Comedia, Disney"
     },
     {
       "confianza": 90,
@@ -16939,7 +16995,7 @@
       "name": "[Activo] Pecezuelos (2010) [Castellano] [52/52] [WebDL-Rip] [1920x1080] [1,37/1,38 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t808-activo-pecezuelos-2010-castellano-52-52-webdl-rip-1920x1080-137-138-gb-mega-pixeldrain-ver-online",
@@ -16957,7 +17013,7 @@
         "peso": "1,37/1,38 GB"
       },
       "rentry_url": "https://rentry.co/gidu4p6n",
-      "genre": "Comedia"
+      "genre": "Comedia, Disney"
     },
     {
       "confianza": 90,
@@ -17146,7 +17202,7 @@
       "name": "[Activo] Star contra las fuerzas del mal (2015) [Dual-Audio] [77/77] [WebDL-Rip] [1920x1080] [200 MB/1,45 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t713-activo-star-contra-las-fuerzas-del-mal-2015-dual-audio-77-77-webdl-rip-1920x1080-200-mb-145-gb-mega-pixeldrain-ver-online",
@@ -17164,7 +17220,7 @@
         "peso": "200 MB/1,45 GB"
       },
       "rentry_url": "https://rentry.co/2mv7axi6",
-      "genre": "Aventura, Fantasía"
+      "genre": "Aventura, Fantasía, Disney"
     },
     {
       "confianza": 90,
@@ -17657,7 +17713,7 @@
       "name": "[Activo] ¡Baymax! (2022) [Dual-Audio] [06/06] [WebDL-Rip] [1920x1080] [305/415 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t1164-activo-baymax-2022-dual-audio-06-06-webdl-rip-1920x1080-305-415-mb-mega-pixeldrain-ver-online",
@@ -17675,7 +17731,7 @@
         "peso": "305/415 MB"
       },
       "rentry_url": "https://rentry.co/fbovhnu9",
-      "genre": "Comedia, Ciencia ficción"
+      "genre": "Comedia, Ciencia ficción, Disney"
     },
     {
       "confianza": 90,
@@ -17837,7 +17893,7 @@
       "name": "[Activo] Cars: En la carretera (2022) [Dual-Audio] [9/9] [WebDL-Rip] [1920x1080] [370/635 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t1197-activo-cars-en-la-carretera-2022-dual-audio-9-9-webdl-rip-1920x1080-370-635-mb-mega-pixeldrain-ver-online",
@@ -17855,7 +17911,7 @@
         "peso": "370/635 MB"
       },
       "rentry_url": "https://rentry.co/66b37cwv",
-      "genre": "Aventura, Comedia"
+      "genre": "Aventura, Comedia, Disney"
     },
     {
       "confianza": 90,
@@ -18042,7 +18098,7 @@
       "name": "[Activo] Dave el bárbaro (2004) [Castellano] [42/42] [TV-RIP] [704x528] [110/340 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Comedia, Fantasía",
+      "specificGenre": "Comedia, Fantasía, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t411-activo-dave-el-barbaro-2004-castellano-42-42-tv-rip-704x528-110-340-mb-mega-pixeldrain-ver-online",
       "year": 2004,
@@ -18170,7 +18226,7 @@
       "name": "[Activo] El Pato Darwing (1991) [Castellano] [91/91] [DVD-Rip] [640x480] [190/510 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t615-activo-el-pato-darwing-1991-castellano-91-91-dvd-rip-640x480-190-510-mb-mega-pixeldrain-ver-online",
@@ -18188,7 +18244,7 @@
         "peso": "190/510 MB"
       },
       "rentry_url": "https://rentry.co/envpk6nv",
-      "genre": "Comedia, Aventura"
+      "genre": "Comedia, Aventura, Disney"
     },
     {
       "confianza": 85,
@@ -18480,7 +18536,7 @@
       "name": "[Activo] Gárgolas (1994) [Dual-Audio] [78/78] [1460x1080] [320/345 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t481-activo-gargolas-1994-dual-audio-78-78-1460x1080-320-345-mb-mega-pixeldrain-ver-online",
@@ -18497,7 +18553,7 @@
         "peso": "320/345 MB"
       },
       "rentry_url": "https://rentry.co/fz2o9i7i",
-      "genre": "Acción, Fantasía, Drama"
+      "genre": "Acción, Fantasía, Drama, Disney"
     },
     {
       "confianza": 90,
@@ -18842,7 +18898,7 @@
       "name": "[Activo] Kick Buttowski (2010) [Castellano] [47/52] [WebDL-Rip] [720x406] [115/295 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t704-activo-kick-buttowski-2010-castellano-47-52-webdl-rip-720x406-115-295-mb-mega-pixeldrain-ver-online",
@@ -18860,7 +18916,7 @@
         "peso": "115/295 MB"
       },
       "rentry_url": "https://rentry.co/svdxkdyu",
-      "genre": "Comedia, Acción"
+      "genre": "Comedia, Acción, Disney"
     },
     {
       "confianza": 90,
@@ -18894,7 +18950,7 @@
       "name": "[Activo] Kizazi moto: Generación Fuego (2023) [Dual-Audio] [10/10] [BD-Rip] [1920x1080] [310/360 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t1178-activo-kizazi-moto-generacion-fuego-2023-dual-audio-10-10-bd-rip-1920x1080-310-360-mb-mega-pixeldrain-ver-online",
@@ -18912,7 +18968,7 @@
         "peso": "310/360 MB"
       },
       "rentry_url": "https://rentry.co/ia36x222",
-      "genre": "Ciencia ficción, Antología"
+      "genre": "Ciencia ficción, Antología, Disney"
     },
     {
       "confianza": 90,
@@ -19177,7 +19233,7 @@
       "name": "[Activo] Las aventuras de los Guardianes de la Galaxia (1986) [Castellano] [65/65] [IAUpScale-Rip] [1440x1080] [500/510 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t708-activo-las-aventuras-de-los-guardianes-de-la-galaxia-1986-castellano-65-65-iaupscale-rip-1440x1080-500-510-mb-mega-pixeldrain-ver-online",
@@ -19195,7 +19251,7 @@
         "peso": "500/510 MB"
       },
       "rentry_url": "https://rentry.co/ce3trks3",
-      "genre": "Acción, Ciencia ficción"
+      "genre": "Acción, Ciencia ficción, Disney"
     },
     {
       "confianza": 90,
@@ -19516,7 +19572,7 @@
       "name": "[Activo] Los Sustitutos (2006) [Dual-Audio] [18/52] [WebDL-Rip] [1920x1080] [505/540 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Comedia",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Comedia",
+      "specificGenre": "Comedia, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t770-activo-los-sustitutos-2006-dual-audio-18-52-webdl-rip-1920x1080-505-540-mb-mega-pixeldrain-ver-online",
@@ -19533,7 +19589,7 @@
         "peso": "505/540 MB"
       },
       "rentry_url": "https://rentry.co/vk9r5auz",
-      "genre": "Comedia",
+      "genre": "Comedia, Disney",
       "sinopsis": "La secuencia de apertura explica que los hermanos, Todd y Riley, vivieron en lo que parecía ser un orfanato durante toda su vida, sin ninguna explicación de lo que les sucedió a sus padres biológicos. Mientras limpiaban los pisos, se toparon con un cómic de Fleemco. Ordenaron por correo un teléfono Fleemco (que les permite reemplazar a cualquier persona o animal que deseen) y en el proceso obtuvieron nuevos padres: una agente británica llamada Agent K y un temerario profesional llamado Dick Daring. Cuando Todd y Riley quieren reemplazar a alguien indeseable, llaman a Conrad Fleem en el teléfono Fleemco con un botón grande. Fleemco inmediatamente reemplaza a la persona con alguien a gusto de Todd y Riley. La serie sigue sus caóticas desventuras mientras usan Fleemco para intentar mejorar sus vidas en casi todas las situaciones problemáticas que enfrentan. En el ultimo episodio se revela la identidad de Fleemco , en este Todd y Riley llegan a casa temprano de la escuela para descubrir que sus padres han sido reemplazados por dos padres \"perfectos\". Todd y Riley piensan que Conrad quiere obtenerlos, por lo que van con Tasumi, Shelton, Jacobo y C.A.R. a la sede de Fleemco para averiguar por qué. ¡Pronto descubren que el Doctor Scorpius ha secuestrado a Dick, K y Conrad y se ha hecho cargo de la empresa!."
     },
     {
@@ -19542,7 +19598,7 @@
       "name": "[Activo] Los Vengadores: Los héroes más poderosos del mundo (2010) [Dual-Audio] [52/52] [WebDL-Rip] [1920x1080] [220MB/435MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t1441-activo-los-vengadores-los-heroes-mas-poderosos-del-mundo-2010-dual-audio-52-52-webdl-rip-1920x1080-220mb-435mb-mega-pixeldrain-ver-online",
@@ -19560,7 +19616,7 @@
         "peso": "220MB/435MB"
       },
       "rentry_url": "https://rentry.co/e9rxo25b",
-      "genre": "Acción, Superhéroes"
+      "genre": "Acción, Superhéroes, Disney"
     },
     {
       "confianza": 90,
@@ -19928,7 +19984,7 @@
       "name": "[Activo] ¿Qué pasaría si...? (2021) [Dual-Audio] [26/26] [WebDL-Rip] [1920x1080] [1,04/1,87 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Acción, Ciencia ficción, Superhéroes",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Acción, Ciencia ficción, Superhéroes",
+      "specificGenre": "Acción, Ciencia ficción, Superhéroes, Disney",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t849-activo-que-pasaria-si-2021-dual-audio-26-26-webdl-rip-1920x1080-104-187-gb-mega-pixeldrain-ver-online",
       "year": 2021,
@@ -19944,7 +20000,7 @@
         "peso": "1,04/1,87 GB"
       },
       "rentry_url": "https://rentry.co/k2ppvrdu",
-      "genre": "Acción, Ciencia ficción, Superhéroes",
+      "genre": "Acción, Ciencia ficción, Superhéroes, Disney",
       "sinopsis": "Inspirándose en los cómics del mismo nombre, cada episodio explora un momento crucial del Universo Cinematográfico Marvel."
     },
     {
@@ -20128,7 +20184,7 @@
       "name": "[Activo] WondLa (2024) [Dual-Audio] [14/14] [WebDL-Rip] [1920x1080] [1,70/2,02 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t691-activo-wondla-2024-dual-audio-14-14-webdl-rip-1920x1080-170-202-gb-mega-pixeldrain-ver-online",
@@ -20146,7 +20202,7 @@
         "peso": "1,70/2,02 GB"
       },
       "rentry_url": "https://rentry.co/38xdruvk",
-      "genre": "Ciencia ficción, Aventura"
+      "genre": "Ciencia ficción, Aventura, Disney"
     },
     {
       "confianza": 90,
@@ -20439,8 +20495,8 @@
       "name": "Calle Dálmatas 101",
       "year": 2019,
       "type": "Dibujos",
-      "genre": "Comedia, Aventura, Infantil, Familiar",
-      "specificGenre": "Familia, Niños",
+      "genre": "Comedia, Aventura, Infantil, Familiar, Disney",
+      "specificGenre": "Familia, Niños, Disney",
       "url": "https://animezoneesp.foroactivo.com/t1726-activo-calle-dalmatas-101-2019-castellano-26-26-webdl-rip-1280x720-365mb-450mb-mega-pixeldrain-ver-online#4241",
       "href": "/t1726-activo-calle-dalmatas-101-2019-castellano-26-26-webdl-rip-1280x720-365mb-450mb-mega-pixeldrain-ver-online",
       "razonClasificacion": "Añadido desde batch masivo",
@@ -21356,9 +21412,10 @@
       "year": 2025,
       "type": "Dibujos",
       "genre": [
-        "Comedia"
+        "Comedia",
+        "Disney"
       ],
-      "specificGenre": "Comedia",
+      "specificGenre": "Comedia, Disney",
       "url": "https://animezoneesp.foroactivo.com/t1856-activo-el-hotel-embrujado-2025-castellano-10-10-webdl-rip-1920x1080-535mb-645mb-mega-pixeldrain-ver-online#4505",
       "href": "/t1856-activo-el-hotel-embrujado-2025-castellano-10-10-webdl-rip-1920x1080-535mb-645mb-mega-pixeldrain-ver-online",
       "razonClasificacion": "Extraído automáticamente del foro - 2026-04-25 13:13",
@@ -21469,8 +21526,8 @@
       "name": "Las nuevas aventuras de Winnie the Pooh",
       "year": 1988,
       "type": "Dibujos",
-      "genre": "Comedia, Familia",
-      "specificGenre": "Comedia, Familia",
+      "genre": "Comedia, Familia, Disney",
+      "specificGenre": "Comedia, Familia, Disney",
       "url": "https://animezoneesp.foroactivo.com/t1860-activo-las-nuevas-aventuras-de-winnie-the-pooh-1988-castellano-53-55-tv-rip-640x480-180mb-150gb-mega-pixeldrain-ver-online#4509",
       "href": "/t1860-activo-las-nuevas-aventuras-de-winnie-the-pooh-1988-castellano-53-55-tv-rip-640x480-180mb-150gb-mega-pixeldrain-ver-online",
       "razonClasificacion": "Extraído automáticamente del foro - 2026-04-25 13:17",
@@ -21603,7 +21660,7 @@
       "name": "101 Dálmatas: La Serie",
       "originalGenre": "Infantil, Acción y aventura",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Infantil, Acción y aventura",
+      "specificGenre": "Infantil, Acción y aventura, Disney",
       "type": "Dibujos",
       "url": "https://animezoneesp.foroactivo.com/t1122-activo-101-dalmatas-la-serie-1997-dual-audio-32-64-webdl-rip-1440x1080-395-mb-149-gb-mega-pixeldrain-ver-online",
       "year": 1997,
@@ -21620,13 +21677,13 @@
         "peso": "395 MB/1,49 GB"
       },
       "rentry_url": "https://rentry.co/3o9696vs",
-      "genre": "Infantil, Acción y aventura"
+      "genre": "Infantil, Acción y aventura, Disney"
     },
     {
       "name": "Lobezno y los X-Men",
       "year": 2009,
-      "genre": "Acción, Aventuras, Drama, Ciencia ficción, Fantasía",
-      "specificGenre": "Acción, Aventuras, Drama, Ciencia ficción, Fantasía",
+      "genre": "Acción, Aventuras, Drama, Ciencia ficción, Fantasía, Disney",
+      "specificGenre": "Acción, Aventuras, Drama, Ciencia ficción, Fantasía, Disney",
       "originalGenre": "Acción, Aventuras, Drama, Ciencia ficción, Fantasía",
       "type": "Dibujos",
       "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1777031569/mis_archivos_elegidos/manual_poster_tmdb_Lobezno_y_los_X-Men.jpg",
@@ -21760,29 +21817,6 @@
         "resolucion": "1920x1080",
         "formato": "MKV",
         "peso": "510MB/980MB"
-      }
-    },
-    {
-      "name": "Zootrópolis+",
-      "year": 2022,
-      "genre": "Familia, Acción, Aventuras",
-      "specificGenre": "Familia, Acción, Aventuras",
-      "originalGenre": "Familia, Acción, Aventuras",
-      "type": "Dibujos",
-      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1777044670/mis_archivos_elegidos/manual_poster_tmdb_Zootr%C3%B3polis%2B.jpg",
-      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1777043760/mis_archivos_elegidos/manual_poster_tmdb_The_Freak_Brothers.jpg",
-      "url": "https://animezoneesp.foroactivo.com/t1907-activo-zootropolis-2022-dual-audio-06-06-webdl-rip-1920x1080-360mb-435mb-mega-pixeldrain-ver-online#4649",
-      "href": "/t1907-activo-zootropolis-2022-dual-audio-06-06-webdl-rip-1920x1080-360mb-435mb-mega-pixeldrain-ver-online#4649",
-      "rentry_url": "https://rentry.co/gtt3gdo4",
-      "sinopsis": "Regresa a la metrópolis animal y conoce mejor la vida de sus fascinantes habitantes.",
-      "confianza": 0.8,
-      "ficha_tecnica": {
-        "idioma": "Castellano, Inglés",
-        "subtitulos": "Ninguno",
-        "calidad": "WebDL-Rip",
-        "resolucion": "1920x1080",
-        "formato": "MKV",
-        "peso": "360MB/435MB"
       }
     },
     {
@@ -21995,9 +22029,9 @@
     {
       "name": "Pac-Man y las aventuras fantasmales",
       "year": 2013,
-      "genre": "Familia, Comedia, Acción, Aventura, Ciencia ficción, Fantasía",
-      "specificGenre": "Familia, Comedia, Acción, Aventura, Ciencia ficción, Fantasía",
-      "originalGenre": "Familia, Comedia, Acción, Aventura, Ciencia ficción, Fantasía",
+      "genre": "Aventura, Comedia, Acción, Ciencia ficción, Fantasía",
+      "specificGenre": "Aventura, Comedia, Acción, Ciencia ficción, Fantasía",
+      "originalGenre": "Aventura, Comedia, Acción, Ciencia ficción, Fantasía",
       "type": "Dibujos",
       "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1777168401/mis_archivos_elegidos/manual_poster_tmdb_Pac-Man_y_las_aventuras_fantasmales.jpg",
       "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1777168401/mis_archivos_elegidos/manual_poster_tmdb_Pac-Man_y_las_aventuras_fantasmales.jpg",
@@ -22504,9 +22538,9 @@
     {
       "name": "Invizimals",
       "year": 2014,
-      "genre": "Niños",
-      "specificGenre": "Niños",
-      "originalGenre": "Niños",
+      "genre": "Infantil",
+      "specificGenre": "Infantil",
+      "originalGenre": "Infantil",
       "type": "Dibujos",
       "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1777477430/mis_archivos_elegidos/manual_poster_tmdb_Invizimals.jpg",
       "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1777477430/mis_archivos_elegidos/manual_poster_tmdb_Invizimals.jpg",
@@ -23010,9 +23044,9 @@
     {
       "name": "Cadetes de mechas",
       "year": 2023,
-      "genre": "Acción, Aventura, Familia",
-      "specificGenre": "Acción, Aventura, Familia",
-      "originalGenre": "Acción, Aventura, Familia",
+      "genre": "Mecha, Acción, Aventura, Familia",
+      "specificGenre": "Mecha, Acción, Aventura, Familia",
+      "originalGenre": "Mecha, Acción, Aventura, Familia",
       "type": "Dibujos",
       "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1778249572/mis_archivos_elegidos/manual_poster_tmdb_Cadetes_de_mechas.jpg",
       "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1778249572/mis_archivos_elegidos/manual_poster_tmdb_Cadetes_de_mechas.jpg",
@@ -23148,8 +23182,8 @@
     {
       "name": "Aladdin",
       "year": 1994,
-      "genre": "Infantil, Acción, Aventura, Comedia, Ciencia ficción, Fantasía",
-      "specificGenre": "Infantil, Acción, Aventura, Comedia, Ciencia ficción, Fantasía",
+      "genre": "Infantil, Acción, Aventura, Comedia, Ciencia ficción, Fantasía, Disney",
+      "specificGenre": "Infantil, Acción, Aventura, Comedia, Ciencia ficción, Fantasía, Disney",
       "originalGenre": "Infantil, Acción, Aventura, Comedia, Ciencia ficción, Fantasía",
       "type": "Dibujos",
       "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1770819882/mis_archivos_elegidos/manual_poster_tmdb_Aladdin.jpg",
@@ -23171,8 +23205,8 @@
     {
       "name": "La leyenda de Tarzán",
       "year": 2001,
-      "genre": "Infantil, Acción, Aventura, Infantil",
-      "specificGenre": "Infantil, Acción, Aventura, Infantil",
+      "genre": "Infantil, Acción, Aventura, Infantil, Disney",
+      "specificGenre": "Infantil, Acción, Aventura, Infantil, Disney",
       "originalGenre": "Infantil, Acción, Aventura, Infantil",
       "type": "Dibujos",
       "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1778450237/mis_archivos_elegidos/manual_poster_tmdb_Tarz%C3%A1n_La_serie_animada.jpg",
@@ -23194,8 +23228,8 @@
     {
       "name": "El libro de la selva",
       "year": 1989,
-      "genre": "Infantil, Acción, Aventura, Infantil",
-      "specificGenre": "Infantil, Acción, Aventura, Infantil",
+      "genre": "Infantil, Acción, Aventura, Infantil, Disney",
+      "specificGenre": "Infantil, Acción, Aventura, Infantil, Disney",
       "originalGenre": "Infantil, Acción, Aventura, Infantil",
       "type": "Dibujos",
       "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1778451066/mis_archivos_elegidos/manual_poster_tmdb_El_libro_de_la_selva.jpg",
@@ -23351,6 +23385,75 @@
         "formato": "AVI",
         "peso": "180 MB"
       }
+    },
+    {
+      "name": "Asha",
+      "year": 2011,
+      "genre": "Infantil",
+      "specificGenre": "Infantil",
+      "originalGenre": "Infantil",
+      "type": "Dibujos",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1778584955/mis_archivos_elegidos/manual_poster_tmdb_Asha.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1778584955/mis_archivos_elegidos/manual_poster_tmdb_Asha.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t2102-activo-asha-2011-dual-audio-51-52-webdl-rip-1280x720-330mb-590mb-mega-pixeldrain-ver-online#5078",
+      "href": "/t2102-activo-asha-2011-dual-audio-51-52-webdl-rip-1280x720-330mb-590mb-mega-pixeldrain-ver-online#5078",
+      "rentry_url": "https://rentry.co/azfzewxw",
+      "sinopsis": "Asha y Roc, junto con otros amigos, crean una especie de televisor pirata capaz de interceptar señales televisivas y otros dispositivos digitales en su barrio multicultural. Cuando están en el aire, cambian su identidad para convertirse en Los Carotas. Las emocionantes aventuras de Asha y sus amigos Roc, Sita, Daniel, Mutala, Clara y Nabil han sido elaboradas para reflejar la sociedad multicultural de hoy y hacerla más divertida. Asha, nuestro simpático y dulce personaje, tiene siempre las mejores ideas y se las arregla para convencer al resto del grupo. La amistad, la tolerancia y la solidaridad son los valores principales de esta serie que está además repleta de situaciones divertidas, magia y aventuras.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Catalán",
+        "subtitulos": "Ninguno",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1280x720",
+        "formato": "MP4",
+        "peso": "330MB/590MB"
+      }
+    },
+    {
+      "name": "Zootrópolis+",
+      "year": 2022,
+      "genre": "Infantil, Acción, Aventuras, Disney",
+      "specificGenre": "Infantil, Acción, Aventuras, Disney",
+      "originalGenre": "Infantil, Acción, Aventuras",
+      "type": "Dibujos",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1777044670/mis_archivos_elegidos/manual_poster_tmdb_Zootr%C3%B3polis%2B.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1777044670/mis_archivos_elegidos/manual_poster_tmdb_Zootr%C3%B3polis%2B.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t1907-activo-zootropolis-2022-dual-audio-06-06-webdl-rip-1920x1080-360mb-435mb-mega-pixeldrain-ver-online#4649",
+      "href": "/t1907-activo-zootropolis-2022-dual-audio-06-06-webdl-rip-1920x1080-360mb-435mb-mega-pixeldrain-ver-online#4649",
+      "rentry_url": "https://rentry.co/gtt3gdo4",
+      "sinopsis": "Regresa a la metrópolis animal y conoce mejor la vida de sus fascinantes habitantes.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Ninguno",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "360MB/435MB"
+      }
+    },
+    {
+      "name": "Kiff",
+      "year": 2023,
+      "genre": "Comedia, Disney",
+      "specificGenre": "Comedia, Disney",
+      "originalGenre": "Comedia",
+      "type": "Dibujos",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1778596056/mis_archivos_elegidos/manual_poster_tmdb_Kiff.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1778596056/mis_archivos_elegidos/manual_poster_tmdb_Kiff.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t2107-activo-kiff-2023-tri-audio-60-60-webdl-rip-1920x1080-675mb-960mb-mega-pixeldrain-ver-online#5086",
+      "href": "/t2107-activo-kiff-2023-tri-audio-60-60-webdl-rip-1920x1080-675mb-960mb-mega-pixeldrain-ver-online#5086",
+      "rentry_url": "https://rentry.co/voitmmoc",
+      "sinopsis": "La serie sigue a Kiff, una ardilla cuyas buenas intenciones a menudo provocan el caos, y a su mejor amigo, Barry, un conejo cariñoso y mullido. La acción ocurre en unas montañas donde animales y criaturas mágicas viven en armonía y la serie presenta a nuestro dúo poniendo el pueblo patas arriba con sus aventuras infinitas y sus ansias de vivir.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Latino, Inglés",
+        "subtitulos": "Español, Inglés",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "675MB/960MB"
+      }
     }
   ],
   "peliculas": [
@@ -23360,7 +23463,7 @@
       "name": "[Activo] 101 dálmatas (1961) [Castellano] [WebDL-Rip] [1920x1080] [9,05 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Japonesa",
       "razonClasificacion": "Corregido desde ASD.txt",
-      "specificGenre": "Comedia, Aventura, Familiar",
+      "specificGenre": "Comedia, Aventura, Familiar, Disney",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1040-activo-101-dalmatas-1961-castellano-webdl-rip-1920x1080-905-gb-mega-pixeldrain-ver-online",
       "year": 1961,
@@ -23481,7 +23584,7 @@
       "name": "[Activo] Alicia en el país de las maravillas (1951) [Castellano] [WebDL-Rip] [1920x1080] [7,11/10,03 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Japonesa",
       "razonClasificacion": "Corregido desde ASD.txt",
-      "specificGenre": "Fantasía, Aventura",
+      "specificGenre": "Fantasía, Aventura, Disney",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1035-activo-alicia-en-el-pais-de-las-maravillas-1951-castellano-webdl-rip-1920x1080-711-1003-gb-mega-pixeldrain-ver-online",
       "year": 1951,
@@ -23529,7 +23632,7 @@
       "name": "[Activo] Arrietty y el mundo de los diminutos (2010) [Dual-Audio] [BD-Rip] [1920x1036] [8,32GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Japonesa",
       "razonClasificacion": "Corregido desde ASD.txt",
-      "specificGenre": "Fantasía, Aventura, Familiar",
+      "specificGenre": "Fantasía, Aventura, Familiar, Disney",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1459-activo-arrietty-y-el-mundo-de-los-diminutos-2010-dual-audio-bd-rip-1920x1036-832gb-mega-pixeldrain-ver-online",
       "year": 2010,
@@ -23577,7 +23680,7 @@
       "name": "[Activo] Bambi (1942) [Castellano] [WebDL-Rip] [1920x1080] [9,06 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Corregido desde ASD.txt",
-      "specificGenre": "Drama",
+      "specificGenre": "Drama, Disney",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1022-activo-bambi-1942-castellano-webdl-rip-1920x1080-906-gb-mega-pixeldrain-ver-online",
       "year": 1942,
@@ -23594,7 +23697,7 @@
         "peso": "9,06 GB"
       },
       "rentry_url": "https://rentry.co/thqqswd5",
-      "genre": "Drama, Infantil"
+      "genre": "Drama, Infantil, Disney"
     },
     {
       "confianza": 85,
@@ -23650,7 +23753,7 @@
       "name": "[Activo] Blancanieves y los siete enanitos (1938) [Castellano] [WebDL-Rip] [1452x1080] [7,05 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Japonesa",
       "razonClasificacion": "Corregido desde ASD.txt",
-      "specificGenre": "Fantasía, Musical, Familiar",
+      "specificGenre": "Fantasía, Musical, Familiar, Disney",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1018-activo-blancanieves-y-los-siete-enanitos-1938-castellano-webdl-rip-1452x1080-705-gb-mega-pixeldrain-ver-online",
       "year": 1938,
@@ -23842,7 +23945,7 @@
       "name": "[Activo] Dumbo (1941) [Castellano] [WebDL-Rip] [1920x1080] [9,01 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
       "razonClasificacion": "Corregido desde ASD.txt",
-      "specificGenre": "Drama, Familiar",
+      "specificGenre": "Drama, Familiar, Disney",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1021-activo-dumbo-1941-castellano-webdl-rip-1920x1080-901-gb-mega-pixeldrain-ver-online",
       "year": 1941,
@@ -23859,7 +23962,7 @@
         "peso": "9,01 GB"
       },
       "rentry_url": "https://rentry.co/2ynqz34u",
-      "genre": "Drama, Infantil"
+      "genre": "Drama, Infantil, Disney"
     },
     {
       "confianza": 85,
@@ -23964,7 +24067,7 @@
       "name": "[Activo] El libro de la selva (1967) [Castellano] [WebDL-Rip] [1888x1080] [8,20 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Japonesa",
       "razonClasificacion": "Corregido desde ASD.txt",
-      "specificGenre": "Aventura, Familiar",
+      "specificGenre": "Aventura, Familiar, Disney",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1081-activo-el-libro-de-la-selva-1967-castellano-webdl-rip-1888x1080-820-gb-mega-pixeldrain-ver-online",
       "year": 1967,
@@ -24254,7 +24357,7 @@
       "name": "[Activo] Fantasía (1940) [Castellano] [WebDL-Rip] [1440x1080] [8,03 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Japonesa",
       "razonClasificacion": "Corregido desde ASD.txt",
-      "specificGenre": "Fantasía, Musical",
+      "specificGenre": "Fantasía, Musical, Disney",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1020-activo-fantasia-1940-castellano-webdl-rip-1440x1080-803-gb-mega-pixeldrain-ver-online",
       "year": 1940,
@@ -24759,7 +24862,7 @@
       "name": "[Activo] La bella durmiente (1959) [Castellano] [WebDL-Rip] [1920x1080] [9,06 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Japonesa",
       "razonClasificacion": "Corregido desde ASD.txt",
-      "specificGenre": "Fantasía",
+      "specificGenre": "Fantasía, Disney",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1039-activo-la-bella-durmiente-1959-castellano-webdl-rip-1920x1080-906-gb-mega-pixeldrain-ver-online",
       "year": 1959,
@@ -24783,7 +24886,7 @@
       "name": "[Activo] La Cenicienta (1950) [Castellano] [WebDL-Rip] [1920x1080] [10,30 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Japonesa",
       "razonClasificacion": "Corregido desde ASD.txt",
-      "specificGenre": "Fantasía",
+      "specificGenre": "Fantasía, Disney",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1032-activo-la-cenicienta-1950-castellano-webdl-rip-1920x1080-1030-gb-mega-pixeldrain-ver-online",
       "year": 1950,
@@ -24831,7 +24934,7 @@
       "name": "[Activo] La dama y el vagabundo (1955) [Castellano] [WebDL-Rip] [1920x1080] [9,06 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Japonesa",
       "razonClasificacion": "Corregido desde ASD.txt",
-      "specificGenre": "Romance, Comedia, Familiar",
+      "specificGenre": "Romance, Comedia, Familiar, Disney",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1038-activo-la-dama-y-el-vagabundo-1955-castellano-webdl-rip-1920x1080-906-gb-mega-pixeldrain-ver-online",
       "year": 1955,
@@ -24855,7 +24958,7 @@
       "name": "[Activo] La leyenda de Sleepy Hollow y el Señor Sapo (1949) [Castellano] [WebDL-Rip] [1920x1080] [9,04 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Japonesa",
       "razonClasificacion": "Corregido desde ASD.txt",
-      "specificGenre": "Fantasía",
+      "specificGenre": "Fantasía, Disney",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1031-activo-la-leyenda-de-sleepy-hollow-y-el-senor-sapo-1949-castellano-webdl-rip-1920x1080-904-gb-mega-pixeldrain-ver-online",
       "year": 1949,
@@ -24928,7 +25031,7 @@
       "name": "[Activo] Las aventuras de Bongo, Mickey y las judías mágicas (1947) [Castellano] [WebDL-Rip] [1920x1080] [9,05 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Japonesa",
       "razonClasificacion": "Corregido desde ASD.txt",
-      "specificGenre": "Fantasía",
+      "specificGenre": "Fantasía, Disney",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1026-activo-las-aventuras-de-bongo-mickey-y-las-judias-magicas-1947-castellano-webdl-rip-1920x1080-905-gb-mega-pixeldrain-ver-online",
       "year": 1947,
@@ -24976,7 +25079,7 @@
       "name": "[Activo] Los aristogatos (1970) [Castellano] [WebDL-Rip] [1920x1080] [9,60 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Japonesa",
       "razonClasificacion": "Corregido desde ASD.txt",
-      "specificGenre": "Comedia, Musical, Familiar",
+      "specificGenre": "Comedia, Musical, Familiar, Disney",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1082-activo-los-aristogatos-1970-castellano-webdl-rip-1920x1080-960-gb-mega-pixeldrain-ver-online",
       "year": 1970,
@@ -25025,7 +25128,7 @@
       "name": "[Activo] Los rescatadores (1977) [Castellano] [WebDL-Rip] [1792x1080] [8,74 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Japonesa",
       "razonClasificacion": "Corregido desde ASD.txt",
-      "specificGenre": "Aventura, Familiar",
+      "specificGenre": "Aventura, Familiar, Disney",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1128-activo-los-rescatadores-1977-castellano-webdl-rip-1792x1080-874-gb-mega-pixeldrain-ver-online",
       "year": 1977,
@@ -25049,7 +25152,7 @@
       "name": "[Activo] Los tres caballeros (1944) [Castellano] [WebDL-Rip] [1920x1080] [9,04 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Japonesa",
       "razonClasificacion": "Corregido desde ASD.txt",
-      "specificGenre": "Musical, Animación, Familiar, Aventura, Comedia",
+      "specificGenre": "Musical, Animación, Familiar, Aventura, Comedia, Disney",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1024-activo-los-tres-caballeros-1944-castellano-webdl-rip-1920x1080-904-gb-mega-pixeldrain-ver-online",
       "year": 1944,
@@ -25145,7 +25248,7 @@
       "name": "[Activo] Merlín el encantador (1963) [Castellano] [WebDL-Rip] [1920x1080] [8,90 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Japonesa",
       "razonClasificacion": "Corregido desde ASD.txt",
-      "specificGenre": "Fantasía",
+      "specificGenre": "Fantasía, Disney",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1079-activo-merlin-el-encantador-1963-castellano-webdl-rip-1920x1080-890-gb-mega-pixeldrain-ver-online",
       "year": 1963,
@@ -25290,7 +25393,7 @@
       "name": "[Activo] Música, maestro (1946) [Castellano] [WebDL-Rip] [1920x1080] [7,12 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Japonesa",
       "razonClasificacion": "Corregido desde ASD.txt",
-      "specificGenre": "Musical, Animación, Familiar, Antología",
+      "specificGenre": "Musical, Animación, Familiar, Antología, Disney",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1025-activo-musica-maestro-1946-castellano-webdl-rip-1920x1080-712-gb-mega-pixeldrain-ver-online",
       "year": 1946,
@@ -25700,7 +25803,7 @@
       "name": "[Activo] Peter Pan (1953) [Castellano] [WebDL-Rip] [1920x1080] [10,50 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Japonesa",
       "razonClasificacion": "Corregido desde ASD.txt",
-      "specificGenre": "Fantasía",
+      "specificGenre": "Fantasía, Disney",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1036-activo-peter-pan-1953-castellano-webdl-rip-1920x1080-1050-gb-mega-pixeldrain-ver-online",
       "year": 1953,
@@ -25724,7 +25827,7 @@
       "name": "[Activo] Pinocho (1940) [Castellano] [WebDL-Rip] [1452x1078] [10,05 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Japonesa",
       "razonClasificacion": "Corregido desde ASD.txt",
-      "specificGenre": "Fantasía",
+      "specificGenre": "Fantasía, Disney",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1027-activo-pinocho-1940-castellano-webdl-rip-1452x1078-1005-gb-mega-pixeldrain-ver-online",
       "year": 1940,
@@ -25991,7 +26094,7 @@
       "name": "[Activo] Robin Hood (1973) [Castellano] [WebDL-Rip] [1920x1080] [7,82/9,22 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Japonesa",
       "razonClasificacion": "Corregido desde ASD.txt",
-      "specificGenre": "Aventura, Familiar",
+      "specificGenre": "Aventura, Familiar, Disney",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1083-activo-robin-hood-1973-castellano-webdl-rip-1920x1080-782-922-gb-mega-pixeldrain-ver-online",
       "year": 1973,
@@ -26088,7 +26191,7 @@
       "name": "[Activo] Saludos amigos (1942) [Castellano] [WebDL-Rip] [1920x1080] [8,69 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Japonesa",
       "razonClasificacion": "Corregido desde ASD.txt",
-      "specificGenre": "Musical, Animación, Familiar, Antología, Aventura",
+      "specificGenre": "Musical, Animación, Familiar, Antología, Aventura, Disney",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1023-activo-saludos-amigos-1942-castellano-webdl-rip-1920x1080-869-gb-mega-pixeldrain-ver-online",
       "year": 1942,
@@ -26400,7 +26503,7 @@
       "name": "[Activo] Tiempo de melodía (1948) [Castellano] [WebDL-Rip] [1920x1080] [9,04 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Japonesa",
       "razonClasificacion": "Corregido desde ASD.txt",
-      "specificGenre": "Musical, Animación, Familiar, Antología, Romance",
+      "specificGenre": "Musical, Animación, Familiar, Antología, Romance, Disney",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1028-activo-tiempo-de-melodia-1948-castellano-webdl-rip-1920x1080-904-gb-mega-pixeldrain-ver-online",
       "year": 1948,
@@ -27511,7 +27614,7 @@
       "name": "[Activo] Digimon - La película (1999) [Multi-audio] [BD-Rip] [1920x1080] [10,03GB] [Mega] [Ver Online]",
       "originalGenre": "Animación Japonesa",
       "razonClasificacion": "Clasificado con TMDB: Animación, Aventura, Acción, Fantasía",
-      "specificGenre": "Aventura, Fantasía",
+      "specificGenre": "Aventura, Fantasía, Disney",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1694-activo-digimon-la-pelicula-1999-multi-audio-bd-rip-1920x1080-1003gb-mega-ver-online",
       "year": 1999,
@@ -28313,9 +28416,9 @@
     {
       "name": "Rainbow Brite y el ladrón de estrellas",
       "year": 1985,
-      "genre": "Familia, Ciencia ficción, Fantasía, Aventuras",
-      "specificGenre": "Familia, Ciencia ficción, Fantasía, Aventuras",
-      "originalGenre": "Familia, Ciencia ficción, Fantasía, Aventuras",
+      "genre": "Infantil, Ciencia ficción, Fantasía, Aventuras",
+      "specificGenre": "Infantil, Ciencia ficción, Fantasía, Aventuras",
+      "originalGenre": "Infantil, Ciencia ficción, Fantasía, Aventuras",
       "type": "Película",
       "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1777032533/mis_archivos_elegidos/manual_poster_tmdb_Rainbow_Brite_y_el_ladr%C3%B3n_de_estrellas.jpg",
       "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1777032533/mis_archivos_elegidos/manual_poster_tmdb_Rainbow_Brite_y_el_ladr%C3%B3n_de_estrellas.jpg",
@@ -28635,8 +28738,8 @@
     {
       "name": "Zack y Cody:  La Película",
       "year": 2011,
-      "genre": "Aventura, Comedia, Familia, Drama, Ciencia ficción, Película de tv",
-      "specificGenre": "Aventura, Comedia, Familia, Drama, Ciencia ficción, Película de tv",
+      "genre": "Aventura, Comedia, Familia, Drama, Ciencia ficción, Película de tv, Disney",
+      "specificGenre": "Aventura, Comedia, Familia, Drama, Ciencia ficción, Película de tv, Disney",
       "originalGenre": "Aventura, Comedia, Familia, Drama, Ciencia ficción, Película de tv",
       "type": "Película",
       "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1777304300/mis_archivos_elegidos/manual_poster_tmdb_Zack_y_Cody__La_Pel%C3%ADcula.jpg",
@@ -28661,9 +28764,9 @@
       "confianza": 90,
       "href": "/t1293-activo-buffy-cazavampiros-1997-castellano-144-144-bd-rip-1280x720-114-247-gb-mega-pixeldrain-ver-online",
       "name": "[Activo] Buffy, cazavampiros (1997) [Castellano] [144/144] [BD-Rip] [1280x720] [1,14/2,47 GB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Live-Action",
+      "originalGenre": "Fantasía, Terror, Acción",
       "razonClasificacion": "Clasificado con TMDB: Sci-Fi & Fantasy, Comedia, Drama, Action & Adventure",
-      "specificGenre": "Fantasía, Terror, Acción",
+      "specificGenre": "Fantasía, Terror, Acción, Disney",
       "type": "Serie Live-Action",
       "url": "https://animezoneesp.foroactivo.com/t1293-activo-buffy-cazavampiros-1997-castellano-144-144-bd-rip-1280x720-114-247-gb-mega-pixeldrain-ver-online",
       "year": 1997,
@@ -28679,7 +28782,8 @@
         "resolucion": "1280x720",
         "peso": "1,14/2,47 GB"
       },
-      "rentry_url": "https://rentry.co/3w6nqfvk"
+      "rentry_url": "https://rentry.co/3w6nqfvk",
+      "genre": "Fantasía, Terror, Acción, Disney"
     },
     {
       "confianza": 90,
@@ -28687,7 +28791,7 @@
       "name": "[Activo] Dark Angel (2000) [Castellano] [42/42] [WebDL-Rip] [1280x708] [955 MB/1,94 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Live-Action",
       "razonClasificacion": "Clasificado con TMDB: Action & Adventure, Drama",
-      "specificGenre": "Acción",
+      "specificGenre": "Acción, Disney",
       "type": "Serie Live-Action",
       "url": "https://animezoneesp.foroactivo.com/t565-activo-dark-angel-2000-castellano-42-42-webdl-rip-1280x708-955-mb-194-gb-mega-pixeldrain-ver-online",
       "year": 2000,
@@ -28711,7 +28815,7 @@
       "name": "[Activo] Dinosaurios (1991) [Castellano] [65/65] [TV-RIP] [640x480] [120/230 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Live-Action",
       "razonClasificacion": "Clasificado con TMDB: Sci-Fi & Fantasy, Comedia, Familia",
-      "specificGenre": "Comedia, Familiar",
+      "specificGenre": "Comedia, Familiar, Disney",
       "type": "Serie Live-Action",
       "url": "https://animezoneesp.foroactivo.com/t1141-activo-dinosaurios-1991-castellano-65-65-tv-rip-640x480-120-230-mb-mega-pixeldrain-ver-online",
       "year": 1991,
@@ -28830,7 +28934,7 @@
       "name": "[Activo] Hannah Montana (2006) [Castellano] [86/86] [WEB-DL] [640x480] [495MB/1,42GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Live-Action",
       "razonClasificacion": "Clasificado con TMDB: Comedia, Familia",
-      "specificGenre": "Comedia, Musical, Familiar",
+      "specificGenre": "Comedia, Musical, Familiar, Disney",
       "type": "Serie Live-Action",
       "url": "https://animezoneesp.foroactivo.com/t1603-activo-hannah-montana-2006-castellano-86-86-web-dl-640x480-495mb-142gb-mega-pixeldrain-ver-online",
       "year": 2006,
@@ -28997,9 +29101,9 @@
       "confianza": 90,
       "href": "/t75-activolos-fraguel-1983-castellano-96-96-webdl-rip-1438x1080-380-405-mb-mega",
       "name": "[Activo]Los Fraguel (1983) [Castellano] [96/96] [WebDL-Rip] [1438x1080] [380/405 MB] [Mega]",
-      "originalGenre": "Live-Action",
+      "originalGenre": "Musical, Fantasía, Familiar, Comedia",
       "razonClasificacion": "Clasificado con TMDB: Kids, Familia, Sci-Fi & Fantasy, Comedia",
-      "specificGenre": "Fantasía, Familiar, Musical, Comedia",
+      "specificGenre": "Musical, Fantasía, Familiar, Comedia",
       "type": "Serie Live-Action",
       "url": "https://animezoneesp.foroactivo.com/t75-activolos-fraguel-1983-castellano-96-96-webdl-rip-1438x1080-380-405-mb-mega",
       "year": 1983,
@@ -29014,15 +29118,17 @@
         "calidad": "WebDL-Rip",
         "resolucion": "1438x1080",
         "peso": "380/405 MB"
-      }
+      },
+      "genre": "Musical, Fantasía, Familiar, Comedia",
+      "rentry_url": ""
     },
     {
       "confianza": 90,
       "href": "/t90-activolos-fraguel-la-diversion-continua-2022-castellano-26-26-webdl-rip-1920x1080-585-700-mb-mega-ver-online",
       "name": "[Activo]Los Fraguel: La diversión continúa (2022) [Castellano] [26/26] [WebDL-Rip] [1920x1080] [585/700 MB] [Mega] [Ver Online]",
-      "originalGenre": "Live-Action",
+      "originalGenre": "Musical, Fantasía, Familiar, Comedia",
       "razonClasificacion": "Clasificado con TMDB: Kids, Animación, Comedia",
-      "specificGenre": "Fantasía, Familiar, Musical, Comedia",
+      "specificGenre": "Musical, Fantasía, Familiar, Comedia",
       "type": "Serie Live-Action",
       "url": "https://animezoneesp.foroactivo.com/t90-activolos-fraguel-la-diversion-continua-2022-castellano-26-26-webdl-rip-1920x1080-585-700-mb-mega-ver-online",
       "year": 2022,
@@ -29038,7 +29144,8 @@
         "resolucion": "1920x1080",
         "peso": "585/700 MB"
       },
-      "rentry_url": "https://rentry.co/oqimnskw"
+      "rentry_url": "https://rentry.co/oqimnskw",
+      "genre": "Musical, Fantasía, Familiar, Comedia"
     },
     {
       "confianza": 90,
@@ -29046,7 +29153,7 @@
       "name": "[Activo] Malcolm in the middle (2000) [Dual-Audio] [151/151] [WebDL-Rip] [1920x1080] [1,23/1,41 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Live-Action",
       "razonClasificacion": "Clasificado con TMDB: Comedia",
-      "specificGenre": "Comedia, Familiar",
+      "specificGenre": "Comedia, Familiar, Disney",
       "type": "Serie Live-Action",
       "url": "https://animezoneesp.foroactivo.com/t1065-activo-malcolm-in-the-middle-2000-dual-audio-151-151-webdl-rip-1920x1080-123-141-gb-mega-pixeldrain-ver-online",
       "year": 2000,
@@ -29142,7 +29249,7 @@
       "name": "[Activo]Pesadillas (1995) [Dual-Audio] [74/74] [DVD-Rip] [720x576] [880/1,2 GB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Live-Action",
       "razonClasificacion": "Clasificado con TMDB: Sci-Fi & Fantasy, Misterio, Kids, Comedia",
-      "specificGenre": "Terror, Fantasía",
+      "specificGenre": "Terror, Fantasía, Disney",
       "type": "Serie Live-Action",
       "url": "https://animezoneesp.foroactivo.com/t311-activopesadillas-1995-dual-audio-74-74-dvd-rip-720x576-880-12-gb-mega-pixeldrain-ver-online",
       "year": 1995,
@@ -29239,7 +29346,7 @@
       "name": "[Activo] Zeke y Luther (2009) [Castellano] [73/73] [WebDL-Rip] [1280x720] [370MB/1025MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Live-Action",
       "razonClasificacion": "Clasificado con TMDB: Comedia, Familia",
-      "specificGenre": "Comedia, Juvenil, Deportes",
+      "specificGenre": "Comedia, Juvenil, Deportes, Disney",
       "type": "Serie Live-Action",
       "url": "https://animezoneesp.foroactivo.com/t1627-activo-zeke-y-luther-2009-castellano-73-73-webdl-rip-1280x720-370mb-1025mb-mega-pixeldrain-ver-online",
       "year": 2009,
@@ -29363,8 +29470,8 @@
       "name": "Lizzie McGuire",
       "year": 2001,
       "type": "Serie Live-Action",
-      "genre": "Comedia",
-      "specificGenre": "Comedia, Juvenil",
+      "genre": "Comedia, Disney",
+      "specificGenre": "Comedia, Juvenil, Disney",
       "url": "https://animezoneesp.foroactivo.com/t1715-activo-lizzie-mcguire-2001-dual-audio-65-65-dvd-rip-640x480-485mb-545mb-mega-pixeldrain-ver-online#4190",
       "href": "/t1715-activo-lizzie-mcguire-2001-dual-audio-65-65-dvd-rip-640x480-485mb-545mb-mega-pixeldrain-ver-online",
       "razonClasificacion": "Extraído automáticamente del foro - 2026-04-18 01:25",
@@ -29389,8 +29496,8 @@
       "name": "Los magos de Waverly Place",
       "year": 2007,
       "type": "Serie Live-Action",
-      "genre": "Comedia",
-      "specificGenre": "Comedia, Fantasía, Juvenil",
+      "genre": "Comedia, Disney",
+      "specificGenre": "Comedia, Fantasía, Juvenil, Disney",
       "url": "https://animezoneesp.foroactivo.com/t1716-activo-los-magos-de-waverly-place-2007-castellano-107-10701-dvd-rip-704x528-130mb-114gb-mega-pixeldrain-ver-online#4191",
       "href": "/t1716-activo-los-magos-de-waverly-place-2007-castellano-107-10701-dvd-rip-704x528-130mb-114gb-mega-pixeldrain-ver-online",
       "razonClasificacion": "Extraído automáticamente del foro - 2026-04-18 01:36",
@@ -29437,8 +29544,8 @@
     {
       "name": "Hotel, dulce hotel: Las aventuras de Zack y Cody",
       "year": 2005,
-      "genre": "Comedia, Familia, Niños",
-      "specificGenre": "Comedia, Familia, Niños",
+      "genre": "Comedia, Familia, Niños, Disney",
+      "specificGenre": "Comedia, Familia, Niños, Disney",
       "originalGenre": "Comedia, Familia, Niños",
       "type": "Series",
       "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1777297531/mis_archivos_elegidos/manual_poster_tmdb_Hotel%2C_dulce_hotel_Las_aventuras_de_Zack_y_Cody.jpg",
@@ -29506,8 +29613,8 @@
     {
       "name": "Zack y Cody: Todos a bordo",
       "year": 2008,
-      "genre": "Comedia, Familia, Niños",
-      "specificGenre": "Comedia, Familia, Niños",
+      "genre": "Comedia, Familia, Niños, Disney",
+      "specificGenre": "Comedia, Familia, Niños, Disney",
       "originalGenre": "Comedia, Familia, Niños",
       "type": "Series",
       "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1777314407/mis_archivos_elegidos/manual_poster_tmdb_Zack_y_Cody_Todos_a_bordo.jpg",
@@ -29593,6 +29700,29 @@
         "resolucion": "1920x1080",
         "formato": "MP4",
         "peso": "170MB/2,08GB"
+      }
+    },
+    {
+      "name": "Águila Roja",
+      "year": 2009,
+      "genre": "Acción, Aventura, Drama, Misterio",
+      "specificGenre": "Acción, Aventura, Drama, Misterio",
+      "originalGenre": "Acción, Aventura, Drama, Misterio",
+      "type": "Series",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1778578967/mis_archivos_elegidos/manual_poster_tmdb_%C3%81guila_Roja.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1778578967/mis_archivos_elegidos/manual_poster_tmdb_%C3%81guila_Roja.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t2100-activo-aguila-roja-2009-castellano-116-116-webdl-rip-1920x1080-101gb-172gb-mega-pixeldrain-ver-online#5073",
+      "href": "/t2100-activo-aguila-roja-2009-castellano-116-116-webdl-rip-1920x1080-101gb-172gb-mega-pixeldrain-ver-online#5073",
+      "rentry_url": "https://rentry.co/axzbkdb8",
+      "sinopsis": "La serie está ambientada en España, alrededor del año 1660, durante el reinado de Felipe IV. Éste, según la ficción, había tenido a los dos protagonistas (Gonzalo de Montalvo y Hernán Mejías) como hijos de una mujer a la que sedujo, Laura de Montignac. Otra cosa que se representa en la historia es la vida del médico y noble Juan de Calatrava, duque de Velasco y Fonseca, Grande de España. Apenas se había descubierto la rotación de la Tierra y la circulación sanguínea, y la Ciencia ya era admitida por la Iglesia Católica. El lugar de ambientación es la Villa de Madrid. En 1656, la Villa de Madrid contaba con unos 125.000 habitantes, de los cuales los personajes que aparecen son unos de ellos.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Español",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "1,01GB/1,72GB"
       }
     }
   ]

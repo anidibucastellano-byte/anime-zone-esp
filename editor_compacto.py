@@ -725,16 +725,18 @@ class EditorCompacto:
             series = self.categorias[cat_name]
             for i, serie in enumerate(series):
                 if termino in serie.get('name', '').lower():
-                    self.notebook.select(self.tabs[cat_name])
-                    tree = self.trees[cat_name]
-                    # Seleccionar y ver
-                    items = tree.get_children()
-                    if i < len(items):
-                        tree.selection_set(items[i])
-                        tree.see(items[i])
-                        self.serie_actual = serie
-                        self.cargar_serie()
-                        return
+                    # Verificar si la pestaña existe antes de acceder
+                    if cat_name in self.tabs:
+                        self.notebook.select(self.tabs[cat_name])
+                        tree = self.trees[cat_name]
+                        # Seleccionar y ver
+                        items = tree.get_children()
+                        if i < len(items):
+                            tree.selection_set(items[i])
+                            tree.see(items[i])
+                            self.serie_actual = serie
+                            self.cargar_serie()
+                            return
         
         self.label_status.config(text=f"No encontrado: {termino}")
     
@@ -1350,8 +1352,37 @@ Acción, Aventura, Artes marciales, Fantasía, Shōnen"""
             for serie in series:
                 nombre = serie.get('name', '')
                 nombre_limpio = self.limpiar_nombre(nombre).lower()
+                
+                # Buscar en nombre (tanto limpio como original)
                 if texto in nombre_limpio or texto in nombre.lower():
                     sugerencias.append((nombre_limpio, serie))
+                    continue
+                
+                # Buscar en todos los géneros de la serie
+                generos_completos = []
+                
+                # Obtener todos los géneros posibles
+                genre = serie.get('genre', '')
+                specificGenre = serie.get('specificGenre', '')
+                
+                if genre:
+                    if isinstance(genre, list):
+                        generos_completos.extend(genre)
+                    elif isinstance(genre, str):
+                        generos_completos.extend([g.strip() for g in genre.split(',')])
+                
+                if specificGenre:
+                    if isinstance(specificGenre, list):
+                        generos_completos.extend(specificGenre)
+                    elif isinstance(specificGenre, str):
+                        generos_completos.extend([g.strip() for g in specificGenre.split(',')])
+                
+                # Buscar en cada género
+                for genero_item in generos_completos:
+                    if genero_item and texto in genero_item.lower():
+                        sugerencias.append((nombre_limpio, serie))
+                        break  # Ya agregamos esta serie, no seguir buscando en sus géneros
+                
                 if len(sugerencias) >= 10:  # Máximo 10 sugerencias
                     break
             if len(sugerencias) >= 10:

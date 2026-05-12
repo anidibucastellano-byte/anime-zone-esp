@@ -1418,6 +1418,7 @@ def generar_html_foroactivo():
                     <li><button class="tab-btn" onclick="showTab('series', this)">📺 Series</button></li>
                     <li><button class="tab-btn" onclick="showTab('anime', this)">🎌 Anime</button></li>
                     <li><button class="tab-btn" onclick="showTab('dibujos', this)">🎨 Dibujos</button></li>
+                    <li><button class="tab-btn" onclick="showTab('disney', this)">🏰 Disney</button></li>
                     <li><button class="tab-btn" onclick="showTab('peliculas', this)">🎬 Películas</button></li>
                 </ul>
                 
@@ -1468,6 +1469,9 @@ def generar_html_foroactivo():
                 </div>
                 <div id="content-dibujos" class="content-section">
                     <div id="grid-dibujos" class="genre-carousels"></div>
+                </div>
+                <div id="content-disney" class="content-section">
+                    <div id="grid-disney" class="genre-carousels"></div>
                 </div>
                 <div id="content-peliculas" class="content-section">
                     <div id="grid-peliculas" class="genre-carousels"></div>
@@ -1807,6 +1811,8 @@ def generar_html_foroactivo():
                 }} else if (itemTipo === tabTipo) {{
                     tipoMatch = true;
                 }} else if (tabTipo === 'dibujos' && itemTipo.includes('dibujo')) {{
+                    tipoMatch = true;
+                }} else if (tabTipo === 'disney' && itemGenero && itemGenero.toLowerCase().includes('disney')) {{
                     tipoMatch = true;
                 }} else if (tabTipo === 'peliculas' && (itemTipo.includes('pelicula') || itemTipo === 'película')) {{
                     tipoMatch = true;
