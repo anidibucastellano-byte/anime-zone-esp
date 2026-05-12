@@ -1824,7 +1824,7 @@ def generar_html_foroactivo():
                 
                 if (!tipoMatch) return false;
                 if (decada !== 'all' && getDecade(item.year) !== decada) return false;
-                if (genero !== 'all' && (item.specificGenre || item.genre || 'N/A') !== genero) return false;
+                if (currentTab !== 'disney' && genero !== 'all' && (item.specificGenre || item.genre || 'N/A') !== genero) return false;
                 
                 // Búsqueda por texto
                 if (searchTerm) {{
