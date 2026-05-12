@@ -493,9 +493,9 @@
       "confianza": 85,
       "href": "/t291-activobeyblade-2001-dual-audio-51-51-webdl-rip-1440x1080-280-450-mb-mega-pixeldrain-ver-online",
       "name": "[Activo]Beyblade (2001) [Dual-Audio] [51/51] [WebDL-Rip] [1440x1080] [280/450 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Acción, Deportes, Infantil, CN",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Acción, Deportes",
+      "specificGenre": "Acción, Deportes, Infantil, CN",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t291-activobeyblade-2001-dual-audio-51-51-webdl-rip-1440x1080-280-450-mb-mega-pixeldrain-ver-online",
       "year": 2001,
@@ -512,15 +512,15 @@
         "peso": "280/450 MB"
       },
       "rentry_url": "https://rentry.co/i7q79758",
-      "genre": "Acción, Deportes, Infantil"
+      "genre": "Acción, Deportes, Infantil, CN"
     },
     {
       "confianza": 85,
       "href": "/t294-activobeyblade-v-force-2002-castellano-51-51-tv-rip-480x360-125-mb-mega-pixeldrain-ver-online",
       "name": "[Activo]Beyblade V-Force (2002) [Castellano] [51/51] [TV-RIP] [480x360] [125 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Acción, Deportes, Infantil, cartoon network",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Acción",
+      "specificGenre": "Acción, Deportes, Infantil, cartoon network",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t294-activobeyblade-v-force-2002-castellano-51-51-tv-rip-480x360-125-mb-mega-pixeldrain-ver-online",
       "year": 2002,
@@ -537,7 +537,7 @@
         "peso": "125 MB"
       },
       "rentry_url": "https://rentry.co/k7tfzwwe",
-      "genre": "Acción, Deportes, Infantil"
+      "genre": "Acción, Deportes, Infantil, cartoon network"
     },
     {
       "confianza": 85,
@@ -23656,9 +23656,9 @@
       "confianza": 85,
       "href": "/t1459-activo-arrietty-y-el-mundo-de-los-diminutos-2010-dual-audio-bd-rip-1920x1036-832gb-mega-pixeldrain-ver-online",
       "name": "[Activo] Arrietty y el mundo de los diminutos (2010) [Dual-Audio] [BD-Rip] [1920x1036] [8,32GB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Fantasía, Aventura, Familiar",
       "razonClasificacion": "Corregido desde ASD.txt",
-      "specificGenre": "Fantasía, Aventura, Familiar, Disney",
+      "specificGenre": "Fantasía, Aventura, Familiar",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1459-activo-arrietty-y-el-mundo-de-los-diminutos-2010-dual-audio-bd-rip-1920x1036-832gb-mega-pixeldrain-ver-online",
       "year": 2010,
@@ -23674,7 +23674,8 @@
         "resolucion": "1920x1036",
         "peso": "8,32GB"
       },
-      "rentry_url": "https://rentry.co/exsorhpe"
+      "rentry_url": "https://rentry.co/exsorhpe",
+      "genre": "Fantasía, Aventura, Familiar"
     },
     {
       "confianza": 85,
@@ -27638,9 +27639,9 @@
       "confianza": 90,
       "href": "/t1694-activo-digimon-la-pelicula-1999-multi-audio-bd-rip-1920x1080-1003gb-mega-ver-online",
       "name": "[Activo] Digimon - La película (1999) [Multi-audio] [BD-Rip] [1920x1080] [10,03GB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Aventura, Fantasía",
       "razonClasificacion": "Clasificado con TMDB: Animación, Aventura, Acción, Fantasía",
-      "specificGenre": "Aventura, Fantasía, Disney",
+      "specificGenre": "Aventura, Fantasía",
       "type": "Película",
       "url": "https://animezoneesp.foroactivo.com/t1694-activo-digimon-la-pelicula-1999-multi-audio-bd-rip-1920x1080-1003gb-mega-ver-online",
       "year": 1999,
@@ -27656,7 +27657,8 @@
         "resolucion": "1920x1080",
         "peso": "10,03GB"
       },
-      "rentry_url": "https://rentry.co/ppi9zyx5"
+      "rentry_url": "https://rentry.co/ppi9zyx5",
+      "genre": "Aventura, Fantasía"
     },
     {
       "name": "La fortuna sonríe a Lady Nikuko",
