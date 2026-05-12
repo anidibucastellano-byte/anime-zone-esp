@@ -894,3 +894,8 @@
 2026-05-12 19:00:52,171 - INFO - TOP.json cargado exitosamente
 2026-05-12 19:00:52,193 - INFO - HTML generado exitosamente - Total: 1197 items
 2026-05-12 19:00:52,193 - INFO - Distribución - Anime: 387, Dibujos: 554, Películas: 216, Series: 40
+2026-05-12 19:06:35,506 - INFO - Iniciando generación de HTML
+2026-05-12 19:06:35,515 - INFO - Backup creado: True
+2026-05-12 19:06:35,525 - INFO - TOP.json cargado exitosamente
+2026-05-12 19:06:35,547 - INFO - HTML generado exitosamente - Total: 1197 items
+2026-05-12 19:06:35,548 - INFO - Distribución - Anime: 387, Dibujos: 554, Películas: 216, Series: 40
