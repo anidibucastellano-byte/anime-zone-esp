@@ -1813,7 +1813,7 @@ def generar_html_foroactivo():
                     tipoMatch = true;
                 }} else if (tabTipo === 'dibujos' && itemTipo.includes('dibujo')) {{
                     tipoMatch = true;
-                }} else if (tabTipo === 'disney' && itemGenero && itemGenero.toLowerCase().includes('disney')) {{
+                }} else if (tabTipo === 'disney' && itemGenero && itemGenero.includes('disney')) {{
                     tipoMatch = true;
                 }} else if (tabTipo === 'peliculas' && (itemTipo.includes('pelicula') || itemTipo === 'película')) {{
                     tipoMatch = true;
@@ -1830,7 +1830,6 @@ def generar_html_foroactivo():
                 // Búsqueda por texto
                 if (searchTerm) {{
                     const nombre = (item.nombre_limpio || item.name || '').toLowerCase();
-                    const itemGenero = (item.specificGenre || item.genre || '').toLowerCase();
                     const year = String(item.year || '').toLowerCase();
                     
                     if (!nombre.includes(searchTerm) && !itemGenero.includes(searchTerm) && !year.includes(searchTerm)) {{
