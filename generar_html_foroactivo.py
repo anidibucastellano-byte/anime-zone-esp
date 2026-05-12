@@ -752,6 +752,33 @@ def generar_html_foroactivo():
             padding-left: 14px;
         }}
         
+        .disney-sub-bar {{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 22px;
+            padding: 14px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--primary-red);
+            border-radius: 8px;
+        }}
+        
+        .disney-sub-bar label {{
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+        }}
+        
+        .disney-sub-bar select {{
+            min-width: 220px;
+            max-width: 100%;
+        }}
+        
         .genre-title {{
             font-family: 'Orbitron', sans-serif;
             font-size: 1.1rem;
@@ -1487,6 +1514,16 @@ def generar_html_foroactivo():
                     <div id="grid-dibujos" class="genre-carousels"></div>
                 </div>
                 <div id="content-disney" class="content-section">
+                    <div id="disneySubBar" class="disney-sub-bar">
+                        <label for="disneySubFilter">Tipo Disney</label>
+                        <select id="disneySubFilter" class="filter-select" onchange="onDisneySubChange()" style="width: auto; min-width: 220px; height: 36px; font-size: 0.85rem;">
+                            <option value="all">Todo (series, dibujos y películas)</option>
+                            <option value="series">Solo series</option>
+                            <option value="dibujos">Solo dibujos</option>
+                            <option value="peliculas">Solo películas</option>
+                            <option value="anime">Solo anime</option>
+                        </select>
+                    </div>
                     <div id="grid-disney" class="genre-carousels"></div>
                 </div>
                 <div id="content-peliculas" class="content-section">
@@ -1503,6 +1540,7 @@ def generar_html_foroactivo():
     <script>
         const allItems = {json.dumps(todos_items, ensure_ascii=False)};
         let currentTab = 'all';
+        let disneySub = 'all';
         let currentSort = 'name';
         let sortDirection = 'asc';
         
@@ -1608,6 +1646,11 @@ def generar_html_foroactivo():
             document.getElementById('content-' + tab).classList.add('active');
             currentTab = tab;
             
+            if (tab === 'disney') {{
+                const dsel = document.getElementById('disneySubFilter');
+                if (dsel) dsel.value = disneySub;
+            }}
+            
             // Limpiar posiciones de carousels al cambiar de pestaña
             for (let key in carouselPositions) {{
                 delete carouselPositions[key];
@@ -1620,6 +1663,13 @@ def generar_html_foroactivo():
             setTimeout(() => {{
                 initCarousels();
             }}, 100);
+        }}
+        
+        function onDisneySubChange() {{
+            const dsel = document.getElementById('disneySubFilter');
+            disneySub = dsel ? dsel.value : 'all';
+            applyFilters();
+            setTimeout(() => initCarousels(), 100);
         }}
         
         function sortItems(sortBy) {{
@@ -1956,6 +2006,7 @@ def generar_html_foroactivo():
                     {{ key: 'anime', label: '🎌 Anime Disney' }}
                 ];
                 disneyBuckets.forEach((bucket) => {{
+                    if (disneySub !== 'all' && bucket.key !== disneySub) return;
                     const sub = filtered.filter(item => itemMatchesTipoBucket(item, bucket.key));
                     if (sub.length === 0) return;
                     carouselsHTML += `<div class="disney-tier"><h2 class="disney-tier-title">${{bucket.label}} <span style="color: var(--text-secondary); font-size: 0.85em;">(${{sub.length}})</span></h2>`;
@@ -1964,6 +2015,11 @@ def generar_html_foroactivo():
                 }});
             }} else {{
                 carouselsHTML = buildGenreCarouselsHTML(filtered, currentTab === 'all' ? 'all' : currentTab);
+            }}
+            
+            if (currentTab === 'disney' && !carouselsHTML) {{
+                grid.innerHTML = '<div style="text-align: center; padding: 60px; color: var(--text-secondary);"><div style="font-size: 4rem; margin-bottom: 20px;">🏰</div><p>No hay contenido Disney en la categoría seleccionada.</p><p style="margin-top:12px;font-size:0.9rem;">Prueba con otra opción del desplegable o quita filtros (década / género).</p></div>';
+                return;
             }}
             
             grid.innerHTML = carouselsHTML;
