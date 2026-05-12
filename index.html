@@ -1244,7 +1244,7 @@
         </div>
         
         <div style="text-align: center; padding: 30px; margin-top: 40px; border-top: 2px solid var(--primary-red); color: var(--text-secondary);">
-            <p>Última actualización: <span style="color: var(--primary-red); font-weight: 600;">13/05/2026 00:09</span></p>
+            <p>Última actualización: <span style="color: var(--primary-red); font-weight: 600;">13/05/2026 00:20</span></p>
         </div>
     </div>
     
@@ -1590,7 +1590,7 @@
                 if (!tipoMatch) return false;
                 if (decada !== 'all' && getDecade(item.year) !== decada) return false;
                 // Para la categoría Disney, no aplicar filtro de género
-                if (currentTab !== 'disney' && genero !== 'all' && (item.specificGenre || item.genre || 'N/A') !== genero) return false;
+                if (currentTab !== 'disney' && genero !== 'all' && genero !== 'Todos' && (item.specificGenre || item.genre || 'N/A') !== genero) return false;
                 
                 // Búsqueda por texto
                 if (searchTerm) {
