@@ -12837,7 +12837,7 @@
       "confianza": 85,
       "href": "/t15-activovoltron-el-defensor-legendario-castellano-76-76-webdl-rip-1920x1080-295-590mb-mega-ver-online",
       "name": "[Activo]Voltron El defensor legendario [Castellano] [76/76] [WebDL-RIP] [1920x1080] [295/590MB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Occidental",
+      "originalGenre": "Mecha, Acción, Aventura, Ciencia ficción, Superhéroes",
       "razonClasificacion": "Clasificación durante scraping con enlace",
       "specificGenre": "Mecha, Acción, Aventura, Ciencia ficción, Superhéroes",
       "type": "Dibujo Animado",
@@ -12851,9 +12851,12 @@
         "idioma": "Castellano",
         "subtitulos": "Ninguno",
         "formato": "MP4 Peso/Cap: 295/590 MB NFO: [Tienes que estar registrado y conectado para ver este vínculo] Traile",
-        "peso": "295/590 MB"
+        "peso": "295/590 MB",
+        "calidad": "",
+        "resolucion": ""
       },
-      "rentry_url": "https://rentry.co/gxck2ond"
+      "rentry_url": "https://rentry.co/gxck2ond",
+      "genre": "Mecha, Acción, Aventura, Ciencia ficción, Superhéroes"
     },
     {
       "confianza": 90,
@@ -22993,9 +22996,9 @@
     {
       "name": "Cadetes de mechas",
       "year": 2023,
-      "genre": "Acción, Aventura, Familia",
-      "specificGenre": "Acción, Aventura, Familia",
-      "originalGenre": "Acción, Aventura, Familia",
+      "genre": "Mecha, Acción, Aventura, Familia",
+      "specificGenre": "Mecha, Acción, Aventura, Familia",
+      "originalGenre": "Mecha, Acción, Aventura, Familia",
       "type": "Dibujos",
       "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1778249572/mis_archivos_elegidos/manual_poster_tmdb_Cadetes_de_mechas.jpg",
       "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1778249572/mis_archivos_elegidos/manual_poster_tmdb_Cadetes_de_mechas.jpg",
