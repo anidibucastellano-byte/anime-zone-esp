@@ -198,77 +198,6 @@ def construir_items_cartoon_network(todos_items, filepath):
     return out
 
 
-def parse_jetix_txt(filepath):
-    """Lee JETIX.txt: secciones Anime, Dibujos animados, Películas."""
-    if not os.path.isfile(filepath):
-        return {'anime': [], 'dibujos': [], 'peliculas': []}
-    with open(filepath, 'r', encoding='utf-8') as f:
-        raw_lines = f.readlines()
-    lines = []
-    for ln in raw_lines:
-        t = ln.strip().replace('\ufeff', '')
-        if t:
-            lines.append(t)
-    anime, dibujos, peliculas = [], [], []
-    section = None
-    skip_prefixes = (
-        'originales o clásicos',
-        'originales o clasicos',
-        'adult swim /',
-        'adult swim/',
-    )
-    for line in lines:
-        low = line.lower()
-        if low == 'anime':
-            section = 'anime'
-            continue
-        if low == 'dibujos animados':
-            section = 'dibujos'
-            continue
-        if low in ('películas', 'peliculas'):
-            section = 'peliculas'
-            continue
-        if section is None:
-            continue
-        if any(low.startswith(p) for p in skip_prefixes):
-            continue
-        if section == 'anime':
-            anime.append(line)
-        elif section == 'dibujos':
-            dibujos.append(line)
-        elif section == 'peliculas':
-            peliculas.append(line)
-    return {'anime': anime, 'dibujos': dibujos, 'peliculas': peliculas}
-
-
-def construir_items_jetix(todos_items, filepath):
-    """Cruza los títulos de JETIX.txt con TOP.json y devuelve resultados y faltantes."""
-    parsed = parse_jetix_txt(filepath)
-    seen = set()
-    out = []
-    missing = []
-    for bucket, titles in (
-        ('anime', parsed['anime']),
-        ('dibujos', parsed['dibujos']),
-        ('peliculas', parsed['peliculas']),
-    ):
-        for title in titles:
-            m = find_best_catalog_match_for_cn_title(title, todos_items)
-            if not m:
-                missing.append(title)
-                continue
-            href = m.get('href') or m.get('url') or ''
-            key = href or json.dumps(m.get('name', ''), ensure_ascii=False)
-            if key in seen:
-                continue
-            seen.add(key)
-            d = copy.deepcopy(m)
-            d['jetixBucket'] = bucket
-            d['jetixListTitle'] = title
-            out.append(d)
-    return out, missing
-
-
 def generar_html_foroactivo():
     """Generar código HTML premium con filtros interactivos"""
     
@@ -439,17 +368,7 @@ def generar_html_foroactivo():
     cartoon_network_items = construir_items_cartoon_network(todos_items, _cn_txt)
     logger.info(f"Cartoon Network enlazados: {len(cartoon_network_items)}")
     print(f"📺 Cartoon Network: {len(cartoon_network_items)} títulos enlazados con el catálogo (cartoon network.txt)")
-
-    _jetix_txt = os.path.join(_script_dir, 'JETIX.txt')
-    jetix_items, jetix_missing = construir_items_jetix(todos_items, _jetix_txt)
-    logger.info(f"Jetix enlazados: {len(jetix_items)}")
-    print(f"🚀 Jetix: {len(jetix_items)} títulos enlazados con el catálogo (JETIX.txt)")
-    if jetix_missing:
-        logger.warning(f"Jetix no encontrados: {len(jetix_missing)}")
-        print(f"⚠️ No se encontraron {len(jetix_missing)} títulos de JETIX.txt en TOP.json:")
-        for title in jetix_missing:
-            print(f"   - {title}")
-
+    
     html = f'''<!DOCTYPE html>
 <html lang="es">
 <head>
@@ -1052,60 +971,6 @@ def generar_html_foroactivo():
         }}
         
         .sidebar-cartoon-expand .filter-select {{
-            width: 100% !important;
-            min-width: 0 !important;
-            max-width: 100% !important;
-            height: auto !important;
-            min-height: 32px;
-            font-size: 0.72rem !important;
-            padding: 6px 8px !important;
-            line-height: 1.25;
-        }}
-        
-        .jetix-tier {{
-            margin-bottom: 36px;
-        }}
-        
-        .jetix-tier-title {{
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #ff6b35;
-            margin: 0 0 18px 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border-left: 4px solid #ff4500;
-            padding-left: 14px;
-            text-shadow: 0 0 12px rgba(255, 107, 53, 0.25);
-        }}
-        
-        .sidebar-jetix-expand-li {{
-            list-style: none;
-            margin: 0 0 6px 0;
-            padding: 0;
-        }}
-        
-        .sidebar-jetix-expand {{
-            padding: 10px 8px 12px;
-            margin: 2px 0 4px 0;
-            background: var(--bg-elevated);
-            border: 1px solid rgba(255, 69, 0, 0.65);
-            border-radius: 8px;
-            box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2);
-        }}
-        
-        .sidebar-jetix-expand-label {{
-            font-family: 'Inter', sans-serif;
-            font-size: 0.62rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-            color: #ff6b35;
-            margin-bottom: 8px;
-            text-align: center;
-        }}
-        
-        .sidebar-jetix-expand .filter-select {{
             width: 100% !important;
             min-width: 0 !important;
             max-width: 100% !important;
@@ -1823,19 +1688,6 @@ def generar_html_foroactivo():
                             </select>
                         </div>
                     </li>
-                    <li><button class="tab-btn" onclick="showTab('jetix', this)">🚀 Jetix</button></li>
-                    <li id="jetixSubWrap" class="sidebar-jetix-expand-li" style="display: none;">
-                        <div class="sidebar-jetix-expand">
-                            <div class="sidebar-jetix-expand-label">Tipo Jetix</div>
-                            <select id="jetixSubFilter" class="filter-select" onchange="onJetixSubChange()">
-                                <option value="all">Todo</option>
-                                <option value="anime">Anime</option>
-                                <option value="dibujos">Dibujo</option>
-                                <option value="peliculas">Película</option>
-                                <option value="series">Serie</option>
-                            </select>
-                        </div>
-                    </li>
                     <li><button class="tab-btn" onclick="showTab('peliculas', this)">🎬 Películas</button></li>
                 </ul>
                 
@@ -1893,9 +1745,6 @@ def generar_html_foroactivo():
                 <div id="content-cartoon" class="content-section">
                     <div id="grid-cartoon" class="genre-carousels"></div>
                 </div>
-                <div id="content-jetix" class="content-section">
-                    <div id="grid-jetix" class="genre-carousels"></div>
-                </div>
                 <div id="content-peliculas" class="content-section">
                     <div id="grid-peliculas" class="genre-carousels"></div>
                 </div>
@@ -1910,11 +1759,9 @@ def generar_html_foroactivo():
     <script>
         const allItems = {json.dumps(todos_items, ensure_ascii=False)};
         const cartoonNetworkItems = {json.dumps(cartoon_network_items, ensure_ascii=False)};
-        const jetixItems = {json.dumps(jetix_items, ensure_ascii=False)};
         let currentTab = 'all';
         let disneySub = 'all';
         let cartoonSub = 'all';
-        let jetixSub = 'all';
         let currentSort = 'name';
         let sortDirection = 'asc';
         
@@ -2072,11 +1919,6 @@ def generar_html_foroactivo():
                 cartoonWrap.style.display = tab === 'cartoon' ? 'list-item' : 'none';
             }}
             
-            const jetixWrap = document.getElementById('jetixSubWrap');
-            if (jetixWrap) {{
-                jetixWrap.style.display = tab === 'jetix' ? 'list-item' : 'none';
-            }}
-            
             if (tab === 'disney') {{
                 const dsel = document.getElementById('disneySubFilter');
                 if (dsel) dsel.value = disneySub;
@@ -2084,10 +1926,6 @@ def generar_html_foroactivo():
             if (tab === 'cartoon') {{
                 const csel = document.getElementById('cartoonSubFilter');
                 if (csel) csel.value = cartoonSub;
-            }}
-            if (tab === 'jetix') {{
-                const jsel = document.getElementById('jetixSubFilter');
-                if (jsel) jsel.value = jetixSub;
             }}
             
             // Limpiar posiciones de carousels al cambiar de pestaña
@@ -2114,13 +1952,6 @@ def generar_html_foroactivo():
         function onCartoonSubChange() {{
             const csel = document.getElementById('cartoonSubFilter');
             cartoonSub = csel ? csel.value : 'all';
-            applyFilters();
-            setTimeout(() => initCarousels(), 100);
-        }}
-        
-        function onJetixSubChange() {{
-            const jsel = document.getElementById('jetixSubFilter');
-            jetixSub = jsel ? jsel.value : 'all';
             applyFilters();
             setTimeout(() => initCarousels(), 100);
         }}
@@ -2339,10 +2170,6 @@ def generar_html_foroactivo():
                     tipoMatch = true;
                 }} else if (currentTab === 'cartoon' && itemGenero && itemGenero.includes('cartoon network')) {{
                     tipoMatch = true;
-                }} else if (currentTab === 'jetix' && (itemGenero && itemGenero.includes('jetix'))) {{
-                    tipoMatch = true;
-                }} else if (currentTab === 'jetix' && jetixItems.some(j => (j.href || j.url) === (item.href || item.url))) {{
-                    tipoMatch = true;
                 }} else if (itemTipo === tabTipo) {{
                     tipoMatch = true;
                 }} else if (tabTipo === 'dibujos' && itemTipo.includes('dibujo')) {{
@@ -2493,21 +2320,6 @@ def generar_html_foroactivo():
                     carouselsHTML += buildGenreCarouselsHTML(sub, 'cn-' + bucket.key);
                     carouselsHTML += '</div>';
                 }});
-            }} else if (currentTab === 'jetix') {{
-                const jetixBuckets = [
-                    {{ key: 'anime', label: '🎌 Anime Jetix' }},
-                    {{ key: 'dibujos', label: '🎨 Dibujos Jetix' }},
-                    {{ key: 'peliculas', label: '🎬 Películas Jetix' }},
-                    {{ key: 'series', label: '📺 Series Jetix' }}
-                ];
-                jetixBuckets.forEach((bucket) => {{
-                    if (jetixSub !== 'all' && bucket.key !== jetixSub) return;
-                    const sub = filtered.filter(item => itemMatchesTipoBucket(item, bucket.key));
-                    if (sub.length === 0) return;
-                    carouselsHTML += `<div class="jetix-tier"><h2 class="jetix-tier-title">${{bucket.label}} <span style="color: var(--text-secondary); font-size: 0.85em;">(${{sub.length}})</span></h2>`;
-                    carouselsHTML += buildGenreCarouselsHTML(sub, 'jetix-' + bucket.key);
-                    carouselsHTML += '</div>';
-                }});
             }} else {{
                 carouselsHTML = buildGenreCarouselsHTML(filtered, currentTab === 'all' ? 'all' : currentTab);
             }}
@@ -2519,11 +2331,6 @@ def generar_html_foroactivo():
             
             if (currentTab === 'cartoon' && !carouselsHTML) {{
                 grid.innerHTML = '<div style="text-align: center; padding: 60px; color: var(--text-secondary);"><div style="font-size: 4rem; margin-bottom: 20px;">📡</div><p>No hay contenido Cartoon Network en la categoría seleccionada.</p><p style="margin-top:12px;font-size:0.9rem;">Prueba con otra opción del desplegable o quita filtros (década / género).</p></div>';
-                return;
-            }}
-            
-            if (currentTab === 'jetix' && !carouselsHTML) {{
-                grid.innerHTML = '<div style="text-align: center; padding: 60px; color: var(--text-secondary);"><div style="font-size: 4rem; margin-bottom: 20px;">🚀</div><p>No hay contenido Jetix en la categoría seleccionada.</p><p style="margin-top:12px;font-size:0.9rem;">Prueba con otra opción del desplegable o quita filtros (década / género).</p></div>';
                 return;
             }}
             
