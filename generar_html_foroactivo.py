@@ -1919,7 +1919,7 @@ def generar_html_foroactivo():
                 sortDirection = 'asc';
             }}
             
-            const listToSort = (currentTab === 'cartoon') ? cartoonNetworkItems : allItems;
+            const listToSort = allItems;
             listToSort.sort((a, b) => {{
                 let valA, valB;
                 if (sortBy === 'name') {{
@@ -2039,7 +2039,7 @@ def generar_html_foroactivo():
             }}
             
             // Buscar coincidencias
-            const searchPool = (currentTab === 'cartoon') ? cartoonNetworkItems : allItems;
+            const searchPool = allItems;
             const matches = searchPool.filter(item => {{
                 const name = String(item.name || '').toLowerCase();
                 const genre = String(item.genre || '').toLowerCase();
@@ -2105,7 +2105,7 @@ def generar_html_foroactivo():
             const decada = document.getElementById('decadaFilter').value;
             const genero = document.getElementById('generoFilter').value;
             const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
-            const basePool = (currentTab === 'cartoon') ? cartoonNetworkItems : allItems;
+            const basePool = allItems;
             
             let filtered = basePool.filter(item => {{
                 // Normalizar el tipo para comparación (minúsculas, quitar espacios extras)
@@ -2123,7 +2123,7 @@ def generar_html_foroactivo():
                 let tipoMatch = false;
                 if (currentTab === 'all') {{
                     tipoMatch = true;
-                }} else if (currentTab === 'cartoon') {{
+                }} else if (currentTab === 'cartoon' && itemGenero && itemGenero.includes('cartoon network')) {{
                     tipoMatch = true;
                 }} else if (itemTipo === tabTipo) {{
                     tipoMatch = true;
@@ -2262,17 +2262,38 @@ def generar_html_foroactivo():
                     carouselsHTML += '</div>';
                 }});
             }} else if (currentTab === 'cartoon') {{
-                const cnBuckets = [
-                    {{ key: 'anime', label: '🎌 Anime Cartoon Network' }},
-                    {{ key: 'dibujos', label: '🎨 Dibujos Cartoon Network' }},
-                    {{ key: 'peliculas', label: '🎬 Películas Cartoon Network' }}
-                ];
-                cnBuckets.forEach((bucket) => {{
-                    if (cartoonSub !== 'all' && bucket.key !== cartoonSub) return;
-                    const sub = filtered.filter(item => itemMatchesCnBucket(item, bucket.key));
+                // Agrupar por género como Disney
+                const genreDisplayNames = {{}};
+                const groupedByGenre = {{}};
+                const usedIndexes = new Set();
+                
+                filtered.forEach((item, index) => {{
+                    if (usedIndexes.has(index)) return;
+                    
+                    let fullGenre = item.genre || item.specificGenre || 'Sin Género';
+                    if (typeof fullGenre !== 'string') {{
+                        fullGenre = String(fullGenre || 'Sin Género');
+                    }}
+                    const originalGenre = fullGenre.split(',')[0].trim();
+                    const normalizedGenre = normalizeGenre(originalGenre);
+                    
+                    if (!genreDisplayNames[normalizedGenre]) {{
+                        genreDisplayNames[normalizedGenre] = originalGenre;
+                    }}
+                    
+                    if (!groupedByGenre[normalizedGenre]) {{
+                        groupedByGenre[normalizedGenre] = [];
+                    }}
+                    groupedByGenre[normalizedGenre].push(item);
+                    usedIndexes.add(index);
+                }});
+                
+                const sortedGenres = Object.keys(groupedByGenre).sort();
+                sortedGenres.forEach(genreKey => {{
+                    const sub = groupedByGenre[genreKey];
                     if (sub.length === 0) return;
-                    carouselsHTML += `<div class="cartoon-tier"><h2 class="cartoon-tier-title">${{bucket.label}} <span style="color: var(--text-secondary); font-size: 0.85em;">(${{sub.length}})</span></h2>`;
-                    carouselsHTML += buildGenreCarouselsHTML(sub, 'cn-' + bucket.key);
+                    carouselsHTML += `<div class="cartoon-tier"><h2 class="cartoon-tier-title">${{genreDisplayNames[genreKey]}} <span style="color: var(--text-secondary); font-size: 0.85em;">(${{sub.length}})</span></h2>`;
+                    carouselsHTML += buildGenreCarouselsHTML(sub, 'cn-' + genreKey);
                     carouselsHTML += '</div>';
                 }});
             }} else {{
@@ -2285,7 +2306,7 @@ def generar_html_foroactivo():
             }}
             
             if (currentTab === 'cartoon' && !carouselsHTML) {{
-                grid.innerHTML = '<div style="text-align: center; padding: 60px; color: var(--text-secondary);"><div style="font-size: 4rem; margin-bottom: 20px;">📡</div><p>No hay entradas Cartoon Network enlazadas al catálogo con los filtros actuales.</p><p style="margin-top:12px;font-size:0.9rem;">Los títulos de <code style="color:#00d4ff">cartoon network.txt</code> se cruzan con TOP.json por nombre; prueba otra categoría del desplegable o relaja década / género.</p></div>';
+                grid.innerHTML = '<div style="text-align: center; padding: 60px; color: var(--text-secondary);"><div style="font-size: 4rem; margin-bottom: 20px;">📡</div><p>No hay contenido Cartoon Network en la categoría seleccionada.</p><p style="margin-top:12px;font-size:0.9rem;">Prueba con otra opción del desplegable o quita filtros (década / género).</p></div>';
                 return;
             }}
             
