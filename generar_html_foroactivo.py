@@ -613,16 +613,18 @@ def generar_html_foroactivo():
             background: transparent;
             border: 1px solid #333;
             border-radius: 6px;
-            padding: 10px 15px;
+            padding: 10px 12px;
             color: var(--text-secondary);
             font-family: 'Inter', sans-serif;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
             text-align: left;
             text-transform: uppercase;
             white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }}
         
         .sidebar-menu button:hover {{
