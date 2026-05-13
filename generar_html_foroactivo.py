@@ -2262,38 +2262,17 @@ def generar_html_foroactivo():
                     carouselsHTML += '</div>';
                 }});
             }} else if (currentTab === 'cartoon') {{
-                // Agrupar por género como Disney
-                const genreDisplayNames = {{}};
-                const groupedByGenre = {{}};
-                const usedIndexes = new Set();
-                
-                filtered.forEach((item, index) => {{
-                    if (usedIndexes.has(index)) return;
-                    
-                    let fullGenre = item.genre || item.specificGenre || 'Sin Género';
-                    if (typeof fullGenre !== 'string') {{
-                        fullGenre = String(fullGenre || 'Sin Género');
-                    }}
-                    const originalGenre = fullGenre.split(',')[0].trim();
-                    const normalizedGenre = normalizeGenre(originalGenre);
-                    
-                    if (!genreDisplayNames[normalizedGenre]) {{
-                        genreDisplayNames[normalizedGenre] = originalGenre;
-                    }}
-                    
-                    if (!groupedByGenre[normalizedGenre]) {{
-                        groupedByGenre[normalizedGenre] = [];
-                    }}
-                    groupedByGenre[normalizedGenre].push(item);
-                    usedIndexes.add(index);
-                }});
-                
-                const sortedGenres = Object.keys(groupedByGenre).sort();
-                sortedGenres.forEach(genreKey => {{
-                    const sub = groupedByGenre[genreKey];
+                const cnBuckets = [
+                    {{ key: 'anime', label: '🎌 Anime Cartoon Network' }},
+                    {{ key: 'dibujos', label: '🎨 Dibujos Cartoon Network' }},
+                    {{ key: 'peliculas', label: '🎬 Películas Cartoon Network' }}
+                ];
+                cnBuckets.forEach((bucket) => {{
+                    if (cartoonSub !== 'all' && bucket.key !== cartoonSub) return;
+                    const sub = filtered.filter(item => itemMatchesTipoBucket(item, bucket.key));
                     if (sub.length === 0) return;
-                    carouselsHTML += `<div class="cartoon-tier"><h2 class="cartoon-tier-title">${{genreDisplayNames[genreKey]}} <span style="color: var(--text-secondary); font-size: 0.85em;">(${{sub.length}})</span></h2>`;
-                    carouselsHTML += buildGenreCarouselsHTML(sub, 'cn-' + genreKey);
+                    carouselsHTML += `<div class="cartoon-tier"><h2 class="cartoon-tier-title">${{bucket.label}} <span style="color: var(--text-secondary); font-size: 0.85em;">(${{sub.length}})</span></h2>`;
+                    carouselsHTML += buildGenreCarouselsHTML(sub, 'cn-' + bucket.key);
                     carouselsHTML += '</div>';
                 }});
             }} else {{
