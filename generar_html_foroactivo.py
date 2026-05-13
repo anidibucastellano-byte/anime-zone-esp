@@ -622,6 +622,7 @@ def generar_html_foroactivo():
             transition: all 0.3s ease;
             text-align: left;
             text-transform: uppercase;
+            white-space: nowrap;
         }}
         
         .sidebar-menu button:hover {{
@@ -1798,7 +1799,28 @@ def generar_html_foroactivo():
                 prevBtn.addEventListener('click', function(e) {{
                     e.preventDefault();
                     e.stopPropagation();
+                    // Detener auto-scroll temporalmente
+                    if (latestCarouselInterval) clearInterval(latestCarouselInterval);
                     scrollCarouselArea('scrollarea-latest', -1);
+                    // Reiniciar auto-scroll después de 5 segundos
+                    setTimeout(() => {{
+                        scrollPos = scrollArea.scrollLeft;
+                        latestCarouselInterval = setInterval(() => {{
+                            const track = latestTrack;
+                            const trackWidth = track.scrollWidth;
+                            const containerWidth = scrollArea.clientWidth;
+                            
+                            if (trackWidth <= containerWidth) return;
+                            
+                            scrollPos += scrollStep;
+                            
+                            if (scrollPos > trackWidth - containerWidth) {{
+                                scrollPos = 0;
+                            }}
+                            
+                            scrollArea.scrollLeft = scrollPos;
+                        }}, scrollInterval);
+                    }}, 5000);
                 }});
             }}
             
@@ -1806,7 +1828,28 @@ def generar_html_foroactivo():
                 nextBtn.addEventListener('click', function(e) {{
                     e.preventDefault();
                     e.stopPropagation();
+                    // Detener auto-scroll temporalmente
+                    if (latestCarouselInterval) clearInterval(latestCarouselInterval);
                     scrollCarouselArea('scrollarea-latest', 1);
+                    // Reiniciar auto-scroll después de 5 segundos
+                    setTimeout(() => {{
+                        scrollPos = scrollArea.scrollLeft;
+                        latestCarouselInterval = setInterval(() => {{
+                            const track = latestTrack;
+                            const trackWidth = track.scrollWidth;
+                            const containerWidth = scrollArea.clientWidth;
+                            
+                            if (trackWidth <= containerWidth) return;
+                            
+                            scrollPos += scrollStep;
+                            
+                            if (scrollPos > trackWidth - containerWidth) {{
+                                scrollPos = 0;
+                            }}
+                            
+                            scrollArea.scrollLeft = scrollPos;
+                        }}, scrollInterval);
+                    }}, 5000);
                 }});
             }}
             
