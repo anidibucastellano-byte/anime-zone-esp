@@ -1855,51 +1855,51 @@ def generar_html_foroactivo():
                 }});
             }}
             
-            // Auto-scroll lento
-            let scrollPos = 0;
-            const scrollStep = 1; // pixels por intervalo
-            const scrollInterval = 50; // ms entre cada paso
-            
-            latestCarouselInterval = setInterval(() => {{
-                const track = latestTrack;
-                const trackWidth = track.scrollWidth;
-                const containerWidth = scrollArea.clientWidth;
-                
-                if (trackWidth <= containerWidth) return;
-                
-                scrollPos += scrollStep;
-                
-                // Reiniciar al llegar al final
-                if (scrollPos > trackWidth - containerWidth) {{
-                    scrollPos = 0;
-                }}
-                
-                scrollArea.scrollLeft = scrollPos;
-            }}, scrollInterval);
-            
-            // Pausar auto-scroll al pasar el mouse
-            scrollArea.addEventListener('mouseenter', () => {{
-                if (latestCarouselInterval) clearInterval(latestCarouselInterval);
-            }});
-            
-            scrollArea.addEventListener('mouseleave', () => {{
-                scrollPos = scrollArea.scrollLeft;
-                latestCarouselInterval = setInterval(() => {{
-                    const track = latestTrack;
-                    const trackWidth = track.scrollWidth;
-                    const containerWidth = scrollArea.clientWidth;
-                    
-                    if (trackWidth <= containerWidth) return;
-                    
-                    scrollPos += scrollStep;
-                    
-                    if (scrollPos > trackWidth - containerWidth) {{
-                        scrollPos = 0;
-                    }}
-                    
-                    scrollArea.scrollLeft = scrollPos;
-                }}, scrollInterval);
-            }});
+            // Auto-scroll desactivado - carrusel estático
+            // let scrollPos = 0;
+            // const scrollStep = 1; // pixels por intervalo
+            // const scrollInterval = 50; // ms entre cada paso
+            // 
+            // latestCarouselInterval = setInterval(() => {{
+            //     const track = latestTrack;
+            //     const trackWidth = track.scrollWidth;
+            //     const containerWidth = scrollArea.clientWidth;
+            //     
+            //     if (trackWidth <= containerWidth) return;
+            //     
+            //     scrollPos += scrollStep;
+            //     
+            //     // Reiniciar al llegar al final
+            //     if (scrollPos > trackWidth - containerWidth) {{
+            //         scrollPos = 0;
+            //     }}
+            //     
+            //     scrollArea.scrollLeft = scrollPos;
+            // }}, scrollInterval);
+            // 
+            // // Pausar auto-scroll al pasar el mouse
+            // scrollArea.addEventListener('mouseenter', () => {{
+            //     if (latestCarouselInterval) clearInterval(latestCarouselInterval);
+            // }});
+            // 
+            // scrollArea.addEventListener('mouseleave', () => {{
+            //     scrollPos = scrollArea.scrollLeft;
+            //     latestCarouselInterval = setInterval(() => {{
+            //         const track = latestTrack;
+            //         const trackWidth = track.scrollWidth;
+            //         const containerWidth = scrollArea.clientWidth;
+            //         
+            //         if (trackWidth <= containerWidth) return;
+            //         
+            //         scrollPos += scrollStep;
+            //         
+            //         if (scrollPos > trackWidth - containerWidth) {{
+            //             scrollPos = 0;
+            //         }}
+            //         
+            //         scrollArea.scrollLeft = scrollPos;
+            //     }}, scrollInterval);
+            // }});
         }}
         
         function showTab(tab, btnElement) {{
