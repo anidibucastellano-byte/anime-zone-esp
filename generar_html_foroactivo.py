@@ -670,7 +670,7 @@ def generar_html_foroactivo():
         }}
         
         .sidebar {{
-            width: 200px;
+            width: 260px;
             flex-shrink: 0;
             background: var(--bg-card);
             border: 1px solid var(--primary-red);
@@ -718,9 +718,12 @@ def generar_html_foroactivo():
             transition: all 0.3s ease;
             text-align: left;
             text-transform: uppercase;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            min-height: 35px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }}
         
         .sidebar-menu button:hover {{
@@ -735,6 +738,15 @@ def generar_html_foroactivo():
             border-color: var(--primary-red);
             color: white;
             box-shadow: 0 4px 15px rgba(192, 57, 43, 0.3);
+        }}
+        
+        .sidebar-logo {{
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            margin-right: 8px;
+            vertical-align: middle;
+            border-radius: 2px;
         }}
         
         .sidebar-filters {{
@@ -1358,6 +1370,66 @@ def generar_html_foroactivo():
             color: var(--primary-red);
         }}
         
+        .cartoon-logo {{
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            z-index: 4;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }}
+        
+        .item-card:hover .cartoon-logo {{
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 212, 255, 0.4);
+        }}
+        
+        .jetix-logo {{
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            z-index: 4;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }}
+        
+        .item-card:hover .jetix-logo {{
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(255, 204, 0, 0.4);
+        }}
+        
+        .disney-logo {{
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            z-index: 4;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }}
+        
+        .item-card:hover .disney-logo {{
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(243, 156, 18, 0.4);
+        }}
+        
         .item-content {{
             padding: 8px 10px;
             flex: 1;
@@ -1813,7 +1885,8 @@ def generar_html_foroactivo():
                     <li><button class="tab-btn" onclick="showTab('series', this)">📺 Series</button></li>
                     <li><button class="tab-btn" onclick="showTab('anime', this)">🎌 Anime</button></li>
                     <li><button class="tab-btn" onclick="showTab('dibujos', this)">🎨 Dibujos</button></li>
-                    <li><button class="tab-btn" onclick="showTab('disney', this)">🏰 Disney</button></li>
+                    <li><button class="tab-btn" onclick="showTab('peliculas', this)">🎬 Películas</button></li>
+                    <li><button class="tab-btn" onclick="showTab('disney', this)"><img src="logo disney.png" class="sidebar-logo" alt="Disney"> Disney</button></li>
                     <li id="disneySubWrap" class="sidebar-disney-expand-li" style="display: none;">
                         <div class="sidebar-disney-expand">
                             <div class="sidebar-disney-expand-label">Tipo Disney</div>
@@ -1826,7 +1899,7 @@ def generar_html_foroactivo():
                             </select>
                         </div>
                     </li>
-                    <li><button class="tab-btn" onclick="showTab('cartoon', this)">📡 Cartoon Network</button></li>
+                    <li><button class="tab-btn" onclick="showTab('cartoon', this)"><img src="logo_cartoon_network.png" class="sidebar-logo" alt="CN"> Cartoon Network</button></li>
                     <li id="cartoonSubWrap" class="sidebar-cartoon-expand-li" style="display: none;">
                         <div class="sidebar-cartoon-expand">
                             <div class="sidebar-cartoon-expand-label">Tipo CN</div>
@@ -1838,7 +1911,7 @@ def generar_html_foroactivo():
                             </select>
                         </div>
                     </li>
-                    <li><button class="tab-btn" onclick="showTab('jetix', this)">⚡ Jetix</button></li>
+                    <li><button class="tab-btn" onclick="showTab('jetix', this)"><img src="logo jetix.png" class="sidebar-logo" alt="Jetix"> Jetix</button></li>
                     <li id="jetixSubWrap" class="sidebar-jetix-expand-li" style="display: none;">
                         <div class="sidebar-jetix-expand">
                             <div class="sidebar-jetix-expand-label">Tipo Jetix</div>
@@ -1847,10 +1920,10 @@ def generar_html_foroactivo():
                                 <option value="anime">Anime</option>
                                 <option value="dibujos">Dibujo</option>
                                 <option value="peliculas">Película</option>
+                                <option value="series">Serie</option>
                             </select>
                         </div>
                     </li>
-                    <li><button class="tab-btn" onclick="showTab('peliculas', this)">🎬 Películas</button></li>
                 </ul>
                 
                 <div class="sidebar-title" style="margin-top: 20px;">Filtros</div>
@@ -1958,7 +2031,7 @@ def generar_html_foroactivo():
             // Tomar los 15 items más recientes
             const latestItems = sortedItems.slice(0, 15);
             
-            latestTrack.innerHTML = latestItems.map(item => generateItemHTML(item)).join('');
+            latestTrack.innerHTML = latestItems.map(item => generateItemHTML(item, 'latest')).join('');
             
             // Asignar event listeners a los botones del carousel
             const prevBtn = document.querySelector('.latest-section .carousel-prev');
@@ -2182,7 +2255,7 @@ def generar_html_foroactivo():
         }}
         
         // Función para generar HTML de item (global)
-        function generateItemHTML(item) {{
+        function generateItemHTML(item, section = 'all') {{
             let nombre = item.nombre_limpio || item.name || '';
             const year = item.year || 'N/A';
             const genero = item.specificGenre || item.genre || 'N/A';
@@ -2200,10 +2273,44 @@ def generar_html_foroactivo():
                 ? `<img src="${{imagen}}" class="item-image" alt="${{nombre}}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="item-image-placeholder" style="display:none">${{emoji}}</div>`
                 : `<div class="item-image-placeholder">${{emoji}}</div>`;
             
+            // Detectar logos (case-insensitive)
+            const isCartoonNetwork = genero && typeof genero === 'string' && genero.toLowerCase().includes('cartoon network');
+            const isJetix = genero && typeof genero === 'string' && genero.toLowerCase().includes('jetix');
+            const isDisney = genero && typeof genero === 'string' && genero.toLowerCase().includes('disney');
+            
+            let logoHTML = '';
+            // Lógica de logos basada en la sección actual
+            if (section === 'cartoon' || section.startsWith('cn-')) {{
+                // En sección Cartoon Network, mostrar logo CN si aplica
+                if (isCartoonNetwork) {{
+                    logoHTML = `<img src="logo_cartoon_network.png" class="cartoon-logo" alt="Cartoon Network" title="Cartoon Network">`;
+                }}
+            }} else if (section === 'jetix' || section.startsWith('jetix-')) {{
+                // En sección Jetix, mostrar logo Jetix si aplica
+                if (isJetix) {{
+                    logoHTML = `<img src="logo jetix.png" class="jetix-logo" alt="Jetix" title="Jetix">`;
+                }}
+            }} else if (section === 'disney' || section.startsWith('disney-')) {{
+                // En sección Disney, mostrar logo Disney si aplica
+                if (isDisney) {{
+                    logoHTML = `<img src="logo disney.png" class="disney-logo" alt="Disney" title="Disney">`;
+                }}
+            }} else {{
+                // En otras secciones, usar lógica de prioridad (CN -> Jetix -> Disney)
+                if (isCartoonNetwork) {{
+                    logoHTML = `<img src="logo_cartoon_network.png" class="cartoon-logo" alt="Cartoon Network" title="Cartoon Network">`;
+                }} else if (isJetix) {{
+                    logoHTML = `<img src="logo jetix.png" class="jetix-logo" alt="Jetix" title="Jetix">`;
+                }} else if (isDisney) {{
+                    logoHTML = `<img src="logo disney.png" class="disney-logo" alt="Disney" title="Disney">`;
+                }}
+            }}
+            
             // Usar href para abrir modal (evita problemas con JSON.stringify)
             const safeHref = href.replace(/"/g, '&quot;');
             return `<div class="item-card" title="${{nombre}} (${{year}})" onclick='openModalByHref("${{safeHref}}")' style="cursor: pointer;">
                 ${{imagenHTML}}
+                ${{logoHTML}}
                 <div class="item-overlay"></div>
                 <div class="item-content">
                     <div class="item-title">${{nombre}}</div>
@@ -2465,7 +2572,7 @@ def generar_html_foroactivo():
                         <button class="carousel-btn carousel-prev" data-scrollarea="${{scrollAreaId}}" type="button">❮</button>
                         <div class="carousel-scroll-area" id="${{scrollAreaId}}">
                             <div class="carousel-track" id="${{safeId}}">
-                                ${{rowItems.map(item => generateItemHTML(item)).join('')}}
+                                ${{rowItems.map(item => generateItemHTML(item, idPrefix)).join('')}}
                             </div>
                         </div>
                         <button class="carousel-btn carousel-next" data-scrollarea="${{scrollAreaId}}" type="button">❯</button>
@@ -2704,7 +2811,7 @@ def generar_html_foroactivo():
                             <button class="close-btn" onclick="this.closest('.genre-modal').remove()">✕</button>
                         </div>
                         <div class="genre-modal-grid">
-                            ${{genreItems.map(item => generateItemHTML(item)).join('')}}
+                            ${{genreItems.map(item => generateItemHTML(item, 'modal')).join('')}}
                         </div>
                     </div>
                 `;
