@@ -198,6 +198,97 @@ def construir_items_cartoon_network(todos_items, filepath):
     return out
 
 
+def parse_jetix_txt(filepath):
+    """Lee jetix.txt: secciones Anime, Dibujos animados, Películas."""
+    if not os.path.isfile(filepath):
+        return {'anime': [], 'dibujos': [], 'peliculas': []}
+    with open(filepath, 'r', encoding='utf-8') as f:
+        raw_lines = f.readlines()
+    lines = []
+    for ln in raw_lines:
+        t = ln.strip().replace('\ufeff', '')
+        if t:
+            lines.append(t)
+    anime, dibujos, peliculas = [], [], []
+    section = None
+    skip_prefixes = (
+        'originales o clásicos',
+        'originales o clasicos',
+        'adult swim /',
+        'adult swim/',
+    )
+    for line in lines:
+        low = line.lower()
+        if low == 'anime':
+            section = 'anime'
+            continue
+        if low == 'dibujos animados':
+            section = 'dibujos'
+            continue
+        if low in ('películas', 'peliculas'):
+            section = 'peliculas'
+            continue
+        if section is None:
+            continue
+        if any(low.startswith(p) for p in skip_prefixes):
+            continue
+        if section == 'anime':
+            anime.append(line)
+        elif section == 'dibujos':
+            dibujos.append(line)
+        elif section == 'peliculas':
+            peliculas.append(line)
+    return {'anime': anime, 'dibujos': dibujos, 'peliculas': peliculas}
+
+
+def find_best_catalog_match_for_jetix_title(jetix_title, todos_items):
+    """Devuelve el ítem del catálogo que mejor coincide con una línea del TXT de Jetix."""
+    best_item, best_score = None, 0
+    min_accept = 70
+    cn_n = _norm_match_title(_core_title_before_paren(jetix_title))
+    if len(cn_n) <= 4:
+        min_accept = 68
+    for item in todos_items:
+        name = item.get('nombre_limpio') or item.get('name', '')
+        sc = _score_cn_title_against_name(jetix_title, name)
+        if sc > best_score:
+            best_score, best_item = sc, item
+    if best_score >= min_accept:
+        return best_item
+    return None
+
+
+def construir_items_jetix(todos_items, filepath):
+    """
+    Cruza los títulos de jetix.txt con TOP.json.
+    Cada ítem incluye jetixBucket ('anime'|'dibujos'|'peliculas') y jetixListTitle.
+    El género se establece como "Jetix".
+    """
+    parsed = parse_jetix_txt(filepath)
+    seen = set()
+    out = []
+    for bucket, titles in (
+        ('anime', parsed['anime']),
+        ('dibujos', parsed['dibujos']),
+        ('peliculas', parsed['peliculas']),
+    ):
+        for title in titles:
+            m = find_best_catalog_match_for_jetix_title(title, todos_items)
+            if not m:
+                continue
+            href = m.get('href') or m.get('url') or ''
+            key = href or json.dumps(m.get('name', ''), ensure_ascii=False)
+            if key in seen:
+                continue
+            seen.add(key)
+            d = copy.deepcopy(m)
+            d['jetixBucket'] = bucket
+            d['jetixListTitle'] = title
+            d['specificGenre'] = 'Jetix'
+            out.append(d)
+    return out
+
+
 def generar_html_foroactivo():
     """Generar código HTML premium con filtros interactivos"""
     
@@ -368,6 +459,11 @@ def generar_html_foroactivo():
     cartoon_network_items = construir_items_cartoon_network(todos_items, _cn_txt)
     logger.info(f"Cartoon Network enlazados: {len(cartoon_network_items)}")
     print(f"📺 Cartoon Network: {len(cartoon_network_items)} títulos enlazados con el catálogo (cartoon network.txt)")
+    
+    _jetix_txt = os.path.join(_script_dir, 'JETIX.txt')
+    jetix_items = construir_items_jetix(todos_items, _jetix_txt)
+    logger.info(f"Jetix enlazados: {len(jetix_items)}")
+    print(f"📺 Jetix: {len(jetix_items)} títulos enlazados con el catálogo (JETIX.txt)")
     
     html = f'''<!DOCTYPE html>
 <html lang="es">
