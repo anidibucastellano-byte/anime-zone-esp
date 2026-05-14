@@ -518,14 +518,14 @@
       "confianza": 85,
       "href": "/t294-activobeyblade-v-force-2002-castellano-51-51-tv-rip-480x360-125-mb-mega-pixeldrain-ver-online",
       "name": "[Activo]Beyblade V-Force (2002) [Castellano] [51/51] [TV-RIP] [480x360] [125 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Acción, Deportes, Infantil, cartoon network",
+      "originalGenre": "Acción, Deportes, Infantil, cartoon network, Jetix",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Acción, Deportes, Infantil, cartoon network",
+      "specificGenre": "Acción, Deportes, Infantil, cartoon network, Jetix",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t294-activobeyblade-v-force-2002-castellano-51-51-tv-rip-480x360-125-mb-mega-pixeldrain-ver-online",
       "year": 2002,
       "imagen": "images\\anime_23_ActivoBeyblade-V-Force-2002-Castellano-5151-TV-RIP-480x360-125-MB-MegaPixeldrain-Ver-Online.jpg",
-      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1767890427/mis_archivos_elegidos/manual_poster_tmdb_Beyblade.jpg",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1778698219/mis_archivos_elegidos/manual_Beyblade%20V-Force.jpg",
       "sinopsis": "Es un anime creados por Takao Aoki. Trata sobre competencias de peonzas, algunas de las cuales contienen Bestias Bit, o espíritus legendarios milenarios el que los ayudan a ganar en los combates.",
       "ficha_tecnica": {
         "ano": "2002",
@@ -537,7 +537,7 @@
         "peso": "125 MB"
       },
       "rentry_url": "https://rentry.co/k7tfzwwe",
-      "genre": "Acción, Deportes, Infantil, cartoon network"
+      "genre": "Acción, Deportes, Infantil, cartoon network, Jetix"
     },
     {
       "confianza": 85,
@@ -665,9 +665,9 @@
       "confianza": 90,
       "href": "/t153-activoblue-dragon-2007-castellano-102-102-webdl-rip-720x406-235-290-mb-mega-ver-online",
       "name": "[Activo]Blue Dragon (2007) [Castellano] [102/102] [WebDL-Rip] [720x406] [235/290 MB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Aventura, Fantasía, Cartoon Network, Jetix",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Aventura, Fantasía, Cartoon Network",
+      "specificGenre": "Aventura, Fantasía, Cartoon Network, Jetix",
       "tmdb_type": "anime",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t153-activoblue-dragon-2007-castellano-102-102-webdl-rip-720x406-235-290-mb-mega-ver-online",
@@ -684,7 +684,8 @@
         "resolucion": "720x406",
         "peso": "235/290 MB"
       },
-      "rentry_url": "https://rentry.co/fatcsorq"
+      "rentry_url": "https://rentry.co/fatcsorq",
+      "genre": "Aventura, Fantasía, Cartoon Network, Jetix"
     },
     {
       "confianza": 85,
@@ -763,9 +764,9 @@
       "confianza": 85,
       "href": "/t290-activobobobo-2005-multi-audio-76-76-webdl-rip-1920x1080-17-gb-mega-pixeldrain-ver-online",
       "name": "[Activo]Bobobo (2005) [Multi-audio] [76/76] [WebDL-Rip] [1920x1080] [1,7 GB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Comedia, Acción, Parodia, Surrealista, Cartoon Network, Jetix",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Comedia, Acción, Parodia, Surrealista, Cartoon Network",
+      "specificGenre": "Comedia, Acción, Parodia, Surrealista, Cartoon Network, Jetix",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t290-activobobobo-2005-multi-audio-76-76-webdl-rip-1920x1080-17-gb-mega-pixeldrain-ver-online",
       "year": 2005,
@@ -781,7 +782,8 @@
         "resolucion": "1920x1080",
         "peso": "1,7 GB"
       },
-      "rentry_url": "https://rentry.co/wsbmr82y"
+      "rentry_url": "https://rentry.co/wsbmr82y",
+      "genre": "Comedia, Acción, Parodia, Surrealista, Cartoon Network, Jetix"
     },
     {
       "confianza": 90,
@@ -1376,9 +1378,9 @@
       "confianza": 85,
       "href": "/t187-activodigimon-02-adventure-2000-dual-audio-50-50-dvd-rip-944x720-395-580-mb-mega-ver-online",
       "name": "[Activo]Digimon 02 Adventure (2000) [Dual-Audio] [50/50] [DVD-Rip] [944x720] [395/580 MB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Aventura, Jetix",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Aventura",
+      "specificGenre": "Aventura, Jetix",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t187-activodigimon-02-adventure-2000-dual-audio-50-50-dvd-rip-944x720-395-580-mb-mega-ver-online",
       "year": 2000,
@@ -1394,15 +1396,16 @@
         "resolucion": "944x720",
         "peso": "395/580 MB"
       },
-      "rentry_url": "https://rentry.co/rnhwvfbc"
+      "rentry_url": "https://rentry.co/rnhwvfbc",
+      "genre": "Aventura, Jetix"
     },
     {
       "confianza": 85,
       "href": "/t186-activodigimon-adventure-1999-dual-audio-54-54-webdl-rip-960x720-475-745-mb-mega-ver-online",
       "name": "[Activo]Digimon Adventure (1999) [Dual-Audio] [54/54] [WebDL-Rip] [960x720] [475/745 MB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Aventura, Fantasía, Cartoon Network, Jetix",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Aventura, Fantasía, Cartoon Network",
+      "specificGenre": "Aventura, Fantasía, Cartoon Network, Jetix",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t186-activodigimon-adventure-1999-dual-audio-54-54-webdl-rip-960x720-475-745-mb-mega-ver-online",
       "year": 1999,
@@ -1418,15 +1421,16 @@
         "resolucion": "960x720",
         "peso": "475/745 MB"
       },
-      "rentry_url": "https://rentry.co/9ih9pdkk"
+      "rentry_url": "https://rentry.co/9ih9pdkk",
+      "genre": "Aventura, Fantasía, Cartoon Network, Jetix"
     },
     {
       "confianza": 85,
       "href": "/t189-activodigimon-frontier-2002-dual-audio-50-50-dvd-rip-1440x1080-455-855-mb-mega-ver-online",
       "name": "[Activo]Digimon Frontier (2002) [Dual-Audio] [50/50] [DVD-Rip] [1440x1080] [455/855 MB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Aventura, Fantasía, Jetix",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Aventura, Fantasía",
+      "specificGenre": "Aventura, Fantasía, Jetix",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t189-activodigimon-frontier-2002-dual-audio-50-50-dvd-rip-1440x1080-455-855-mb-mega-ver-online",
       "year": 2002,
@@ -1442,15 +1446,16 @@
         "resolucion": "1440x1080",
         "peso": "455/855 MB"
       },
-      "rentry_url": "https://rentry.co/wy2tryp2"
+      "rentry_url": "https://rentry.co/wy2tryp2",
+      "genre": "Aventura, Fantasía, Jetix"
     },
     {
       "confianza": 85,
       "href": "/t190-activodigimon-savers-2006-castellano-48-48-dvd-rip-640x480-275-470-mb-mega-ver-online",
       "name": "[Activo]Digimon Savers (2006) [Castellano] [48/48] [DVD-Rip] [640x480] [275/470 MB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Aventura, Acción, Jetix",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Aventura, Acción",
+      "specificGenre": "Aventura, Acción, Jetix",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t190-activodigimon-savers-2006-castellano-48-48-dvd-rip-640x480-275-470-mb-mega-ver-online",
       "year": 2006,
@@ -1466,15 +1471,16 @@
         "resolucion": "640x480",
         "peso": "275/470 MB"
       },
-      "rentry_url": "https://rentry.co/vth2voad"
+      "rentry_url": "https://rentry.co/vth2voad",
+      "genre": "Aventura, Acción, Jetix"
     },
     {
       "confianza": 85,
       "href": "/t188-activodigimon-tamers-2001-dual-audio-51-51-dvd-rip-1280x720-730-mb-mega-ver-online",
       "name": "[Activo]Digimon Tamers (2001) [Dual-Audio] [51/51] [DVD-Rip] [1280x720] [730 MB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Aventura, Fantasía, Ciencia ficción, Jetix",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Aventura, Fantasía, Ciencia ficción",
+      "specificGenre": "Aventura, Fantasía, Ciencia ficción, Jetix",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t188-activodigimon-tamers-2001-dual-audio-51-51-dvd-rip-1280x720-730-mb-mega-ver-online",
       "year": 2001,
@@ -1490,15 +1496,16 @@
         "resolucion": "1280x720",
         "peso": "730 MB"
       },
-      "rentry_url": "https://rentry.co/4mx47h4m"
+      "rentry_url": "https://rentry.co/4mx47h4m",
+      "genre": "Aventura, Fantasía, Ciencia ficción, Jetix"
     },
     {
       "confianza": 85,
       "href": "/t191-activodigimon-xros-wars-2010-castellano-30-30-webdl-rip-1280x720-305-525-mb-mega-ver-online",
       "name": "[Activo]Digimon Xros Wars (2010) [Castellano] [30/30] [WebDL-Rip] [1280x720] [305/525 MB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Aventura, Acción, Jetix",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Aventura, Acción",
+      "specificGenre": "Aventura, Acción, Jetix",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t191-activodigimon-xros-wars-2010-castellano-30-30-webdl-rip-1280x720-305-525-mb-mega-ver-online",
       "year": 2010,
@@ -1514,7 +1521,8 @@
         "resolucion": "1280x720",
         "peso": "305/525 MB"
       },
-      "rentry_url": "https://rentry.co/xtsyvwg6"
+      "rentry_url": "https://rentry.co/xtsyvwg6",
+      "genre": "Aventura, Acción, Jetix"
     },
     {
       "confianza": 85,
@@ -2302,9 +2310,9 @@
       "confianza": 85,
       "href": "/t359-activoflint-y-los-viajeros-del-tiempo-1998-castellano-39-39-webdl-rip-1440x1080-180-580-mb-mega-pixeldrain-ver-online",
       "name": "[Activo]Flint y los viajeros del tiempo (1998) [Castellano] [39/39] [WebDL-Rip] [1440x1080] [180/580 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Aventura, Comedia, Jetix",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Aventura, Comedia",
+      "specificGenre": "Aventura, Comedia, Jetix",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t359-activoflint-y-los-viajeros-del-tiempo-1998-castellano-39-39-webdl-rip-1440x1080-180-580-mb-mega-pixeldrain-ver-online",
       "year": 1998,
@@ -2320,7 +2328,8 @@
         "resolucion": "1440x1080",
         "peso": "180/580 MB"
       },
-      "rentry_url": "https://rentry.co/edk9chk5"
+      "rentry_url": "https://rentry.co/edk9chk5",
+      "genre": "Aventura, Comedia, Jetix"
     },
     {
       "confianza": 85,
@@ -2916,9 +2925,9 @@
       "confianza": 85,
       "href": "/t253-activoheartcatch-pretty-cure-2010-dual-audio-49-49-webdl-rip-960x720-350-mb-mega-pixeldrain-ver-online",
       "name": "[Activo]HeartCatch Pretty Cure (2010) [Dual-Audio] [49/49] [WebDL-Rip] [960x720] [350 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Fantasía, Acción, Aventura, Comedia",
+      "originalGenre": "Fantasía, Acción, Aventura, Comedia, Jetix",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Fantasía, Acción, Aventura, Comedia",
+      "specificGenre": "Fantasía, Acción, Aventura, Comedia, Jetix",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t253-activoheartcatch-pretty-cure-2010-dual-audio-49-49-webdl-rip-960x720-350-mb-mega-pixeldrain-ver-online",
       "year": 2010,
@@ -2935,7 +2944,7 @@
         "peso": "350 MB"
       },
       "rentry_url": "https://rentry.co/cq8mfgta",
-      "genre": "Fantasía, Acción, Aventura, Comedia"
+      "genre": "Fantasía, Acción, Aventura, Comedia, Jetix"
     },
     {
       "confianza": 90,
@@ -4193,9 +4202,9 @@
       "confianza": 85,
       "href": "/t198-activomar-marchen-awakens-romance-2005-castellano-102-102-tv-rip-640x480-50-mb-mega-ver-online",
       "name": "[Activo]MÄR: Märchen Awakens Romance (2005) [Castellano] [102/102] [TV-RIP] [640x480] [50 MB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Aventura, Fantasía, Jetix",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Aventura, Fantasía",
+      "specificGenre": "Aventura, Fantasía, Jetix",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t198-activomar-marchen-awakens-romance-2005-castellano-102-102-tv-rip-640x480-50-mb-mega-ver-online",
       "year": 2005,
@@ -4211,7 +4220,8 @@
         "resolucion": "640x480",
         "peso": "50 MB"
       },
-      "rentry_url": "https://rentry.co/fzt5ui73"
+      "rentry_url": "https://rentry.co/fzt5ui73",
+      "genre": "Aventura, Fantasía, Jetix"
     },
     {
       "confianza": 90,
@@ -4532,9 +4542,9 @@
       "confianza": 85,
       "href": "/t97-activomushiking-los-guardianes-del-bosque-2005-castellano-52-52-tv-rip-1920x1080-155-370-mb-mega-ver-online",
       "name": "[Activo]Mushiking: Los Guardianes del Bosque (2005) [Castellano] [52/52] [Tv-RIP] [1920x1080] [155/370 MB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Drama, Música, Jetix",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Aventura, Infantil",
+      "specificGenre": "Drama, Música, Jetix",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t97-activomushiking-los-guardianes-del-bosque-2005-castellano-52-52-tv-rip-1920x1080-155-370-mb-mega-ver-online",
       "year": 2005,
@@ -4551,7 +4561,7 @@
         "peso": "155/370 MB"
       },
       "rentry_url": "https://rentry.co/qu9ivppk",
-      "genre": "Drama, Música"
+      "genre": "Drama, Música, Jetix"
     },
     {
       "confianza": 85,
@@ -5216,9 +5226,9 @@
       "confianza": 85,
       "href": "/t254-activopretty-cure-max-heart-2005-dual-audio-47-47-webdl-rip-960x720-295-445-mb-mega-pixeldrain-ver-online",
       "name": "[Activo]Pretty Cure Max Heart (2005) [Dual-Audio] [47/47] [WebDL-Rip] [960x720] [295/445 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Fantasía, Magical girl, Acción",
+      "originalGenre": "Fantasía, Magical girl, Acción, Jetix",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Fantasía, Magical girl, Acción",
+      "specificGenre": "Fantasía, Magical girl, Acción, Jetix",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t254-activopretty-cure-max-heart-2005-dual-audio-47-47-webdl-rip-960x720-295-445-mb-mega-pixeldrain-ver-online",
       "year": 2005,
@@ -5235,7 +5245,7 @@
         "peso": "295/445 MB"
       },
       "rentry_url": "https://rentry.co/2oq8wt99",
-      "genre": "Fantasía, Magical girl, Acción"
+      "genre": "Fantasía, Magical girl, Acción, Jetix"
     },
     {
       "confianza": 85,
@@ -5780,9 +5790,9 @@
       "confianza": 90,
       "href": "/t285-activosargento-keroro-2004-castellano-229-234-dvd-rip-640x480-150-350-mb-mega-pixeldrain-ver-online",
       "name": "[Activo]Sargento Keroro (2004) [Castellano] [229/234] [DVD-Rip] [640x480] [150/350 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Comedia, Ciencia ficción, Jetix",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Comedia, Ciencia ficción",
+      "specificGenre": "Comedia, Ciencia ficción, Jetix",
       "tmdb_type": "anime",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t285-activosargento-keroro-2004-castellano-229-234-dvd-rip-640x480-150-350-mb-mega-pixeldrain-ver-online",
@@ -5799,7 +5809,8 @@
         "resolucion": "640x480",
         "peso": "150/350 MB"
       },
-      "rentry_url": "https://rentry.co/u8g5aosg"
+      "rentry_url": "https://rentry.co/u8g5aosg",
+      "genre": "Comedia, Ciencia ficción, Jetix"
     },
     {
       "confianza": 85,
@@ -5853,9 +5864,9 @@
       "confianza": 85,
       "href": "/t270-activoshaman-king-2001-castellano-64-64-webdl-rip-640x480-210-510-mb-mega-pixeldrain-ver-online",
       "name": "[Activo]Shaman King (2001) [Castellano] [64/64] [WebDL-Rip] [640x480] [210/510 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Acción, Sobrenatural, Jetix",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Acción, Fantasía",
+      "specificGenre": "Acción, Sobrenatural, Jetix",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t270-activoshaman-king-2001-castellano-64-64-webdl-rip-640x480-210-510-mb-mega-pixeldrain-ver-online",
       "year": 2001,
@@ -5872,7 +5883,7 @@
         "peso": "210/510 MB"
       },
       "rentry_url": "https://rentry.co/s5e8w9n6",
-      "genre": "Acción, Sobrenatural"
+      "genre": "Acción, Sobrenatural, Jetix"
     },
     {
       "confianza": 90,
@@ -6024,9 +6035,9 @@
       "confianza": 85,
       "href": "/t312-activosonic-x-2003-castellano-78-78-tv-rip-1920x1080-180-325-mb-mega-pixeldrain-ver-online",
       "name": "[Activo]Sonic X (2003) [Castellano] [78/78] [TV-RIP] [1920x1080] [180/325 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Comedia, Aventura, Cartoon Network, Jetix",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Aventura, Ciencia ficción, Cartoon Network",
+      "specificGenre": "Comedia, Aventura, Cartoon Network, Jetix",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t312-activosonic-x-2003-castellano-78-78-tv-rip-1920x1080-180-325-mb-mega-pixeldrain-ver-online",
       "year": 2003,
@@ -6043,7 +6054,7 @@
         "peso": "180/325 MB"
       },
       "rentry_url": "https://rentry.co/odws8mnx",
-      "genre": "Comedia, Aventura, Cartoon Network"
+      "genre": "Comedia, Aventura, Cartoon Network, Jetix"
     },
     {
       "confianza": 85,
@@ -6294,9 +6305,9 @@
       "confianza": 90,
       "href": "/t710-activo-team-galaxy-2006-castellano-30-52-tv-rip-640x480-110-130-mb-mega-pixeldrain-ver-online",
       "name": "[Activo] Team Galaxy (2006) [Castellano] [30/52] [TV-RIP] [640x480] [110/130 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Comedia, Ciencia ficción, Jetix",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Comedia, Ciencia ficción",
+      "specificGenre": "Comedia, Ciencia ficción, Jetix",
       "tmdb_type": "anime",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t710-activo-team-galaxy-2006-castellano-30-52-tv-rip-640x480-110-130-mb-mega-pixeldrain-ver-online",
@@ -6313,7 +6324,8 @@
         "resolucion": "640x480",
         "peso": "110/130 MB"
       },
-      "rentry_url": "https://rentry.co/rchbyq3b"
+      "rentry_url": "https://rentry.co/rchbyq3b",
+      "genre": "Comedia, Ciencia ficción, Jetix"
     },
     {
       "confianza": 85,
@@ -6836,9 +6848,9 @@
       "confianza": 85,
       "href": "/t217-activoviewtiful-joe-2004-castellano-51-51-tv-rip-640x480-220-255-mb-mega-ver-online",
       "name": "[Activo]Viewtiful Joe (2004) [Castellano] [51/51] [TV-RIP] [640x480] [220/255 MB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Acción, Comedia, Jetix",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Acción",
+      "specificGenre": "Acción, Comedia, Jetix",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t217-activoviewtiful-joe-2004-castellano-51-51-tv-rip-640x480-220-255-mb-mega-ver-online",
       "year": 2004,
@@ -6855,7 +6867,7 @@
         "peso": "220/255 MB"
       },
       "rentry_url": "https://rentry.co/qdi56bdr",
-      "genre": "Acción, Comedia"
+      "genre": "Acción, Comedia, Jetix"
     },
     {
       "confianza": 85,
@@ -7133,9 +7145,9 @@
       "confianza": 85,
       "href": "/t289-activozatch-bell-2003-castellano-78-78-tv-rip-640x480-110-390-mb-mega-pixeldrain-ver-online",
       "name": "[Activo]Zatch Bell (2003) [Castellano] [78/78] [TV-RIP] [640x480] [110/390 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Aventura, Comedia, Fantasía, Cartoon Network, Jetix",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Aventura, Comedia, Fantasía, Cartoon Network",
+      "specificGenre": "Aventura, Comedia, Fantasía, Cartoon Network, Jetix",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t289-activozatch-bell-2003-castellano-78-78-tv-rip-640x480-110-390-mb-mega-pixeldrain-ver-online",
       "year": 2003,
@@ -7151,7 +7163,8 @@
         "resolucion": "640x480",
         "peso": "110/390 MB"
       },
-      "rentry_url": "https://rentry.co/bmbyymsp"
+      "rentry_url": "https://rentry.co/bmbyymsp",
+      "genre": "Aventura, Comedia, Fantasía, Cartoon Network, Jetix"
     },
     {
       "confianza": 85,
@@ -8888,9 +8901,9 @@
       "confianza": 85,
       "href": "/t845-activo-oban-star-racers-2006-multi-audio-26-26-webdl-rip-1920x1080-840-mb-135-gb-mega-pixeldrain-ver-online",
       "name": "[Activo] Oban Star-Racers (2006) [Multi-audio] [26/26] [WebDL-Rip] [1920x1080] [840 MB / 1,35 GB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Ciencia ficción, Aventura, Deportes",
+      "originalGenre": "Ciencia ficción, Aventura, Deportes, Jetix",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Ciencia ficción, Aventura, Deportes",
+      "specificGenre": "Ciencia ficción, Aventura, Deportes, Jetix",
       "type": "Anime",
       "url": "https://animezoneesp.foroactivo.com/t845-activo-oban-star-racers-2006-multi-audio-26-26-webdl-rip-1920x1080-840-mb-135-gb-mega-pixeldrain-ver-online",
       "year": 2006,
@@ -8907,7 +8920,7 @@
         "peso": "840 MB / 1,35 GB"
       },
       "rentry_url": "https://rentry.co/k6goih5g",
-      "genre": "Ciencia ficción, Aventura, Deportes"
+      "genre": "Ciencia ficción, Aventura, Deportes, Jetix"
     },
     {
       "name": "Masters del Universo: Revelación",
@@ -9779,9 +9792,9 @@
       "confianza": 85,
       "href": "/t274-activobatman-la-serie-animada-1992-castellano-85-85-webdl-rip-1436x1080-300-mb-mega-pixeldrain-ver-online",
       "name": "Batman: La Serie Animada",
-      "originalGenre": "Acción, aventura, Drama, Misterio",
+      "originalGenre": "Acción, aventura, Drama, Misterio, Jetix",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Acción, aventura, Drama, Misterio",
+      "specificGenre": "Acción, aventura, Drama, Misterio, Jetix",
       "type": "Dibujos",
       "url": "https://animezoneesp.foroactivo.com/t274-activobatman-la-serie-animada-1992-castellano-85-85-webdl-rip-1436x1080-300-mb-mega-pixeldrain-ver-online",
       "year": 1992,
@@ -9795,7 +9808,7 @@
         "formato": "MKV",
         "peso": "300 MB"
       },
-      "genre": "Acción, aventura, Drama, Misterio",
+      "genre": "Acción, aventura, Drama, Misterio, Jetix",
       "sinopsis": "Bruce Wayne de día, Batman de noche. Junto a su inseparable aprendiz, Robin, Batman luchará por la estabilidad y bienestar de los habitantes de Gotham; protegiendo a la ciudad de villanos como Dos Caras, Joker, Harley Quinn y Pingüino.",
       "rentry_url": "https://rentry.co/z8pgqb2q"
     },
@@ -12037,9 +12050,9 @@
       "confianza": 85,
       "href": "/t321-activoruby-gloom-2006-dual-audio-40-40-webdl-rip-1920x1080-560-625-mb-mega-pixeldrain-ver-online",
       "name": "[Activo]Ruby Gloom (2006) [Dual-Audio] [40/40] [WebDL-Rip] [1920x1080] [560/625 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Occidental",
+      "originalGenre": "Comedia, Infantil, Gótico, Jetix",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Acción",
+      "specificGenre": "Comedia, Infantil, Gótico, Jetix",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t321-activoruby-gloom-2006-dual-audio-40-40-webdl-rip-1920x1080-560-625-mb-mega-pixeldrain-ver-online",
       "year": 2006,
@@ -12056,7 +12069,7 @@
         "peso": "560/625 MB"
       },
       "rentry_url": "https://rentry.co/5c3mamxz",
-      "genre": "Comedia, Infantil, Gótico"
+      "genre": "Comedia, Infantil, Gótico, Jetix"
     },
     {
       "confianza": 85,
@@ -12134,9 +12147,9 @@
       "confianza": 85,
       "href": "/t120-activoshuriken-school-2006-castellano-26-26-dvd-rip-786x576-700-mb-mega-ver-online",
       "name": "[Activo]Shuriken School (2006) [Castellano] [26/26] [DVD-Rip] [786x576] [700 MB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Occidental",
+      "originalGenre": "Comedia, Acción, Jetix",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Acción",
+      "specificGenre": "Comedia, Acción, Jetix",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t120-activoshuriken-school-2006-castellano-26-26-dvd-rip-786x576-700-mb-mega-ver-online",
       "year": 2006,
@@ -12153,7 +12166,7 @@
         "peso": "700 MB"
       },
       "rentry_url": "https://rentry.co/rop5zubd",
-      "genre": "Comedia, Acción"
+      "genre": "Comedia, Acción, Jetix"
     },
     {
       "confianza": 85,
@@ -12406,9 +12419,9 @@
       "confianza": 85,
       "href": "/t102-activoteen-titans-go-2013-castellano-258-258-webdl-rip-1920x1080-215-11-gb-mega-ver-online",
       "name": "[Activo]Teen Titans Go! (2013) [Castellano] [258/258] [WebDL-Rip] [1920x1080] [215/ 1,1 GB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Occidental",
+      "originalGenre": "Comedia, Superhéroes, Cartoon Network, Jetix",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Comedia, Superhéroes, Cartoon Network",
+      "specificGenre": "Comedia, Superhéroes, Cartoon Network, Jetix",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t102-activoteen-titans-go-2013-castellano-258-258-webdl-rip-1920x1080-215-11-gb-mega-ver-online",
       "year": 2013,
@@ -12425,7 +12438,7 @@
         "peso": "215/ 1,1 GB"
       },
       "rentry_url": "https://rentry.co/cba9x3dh",
-      "genre": "Comedia, Superhéroes, Cartoon Network"
+      "genre": "Comedia, Superhéroes, Cartoon Network, Jetix"
     },
     {
       "confianza": 85,
@@ -12504,9 +12517,9 @@
       "confianza": 85,
       "href": "/t579-activo-titeuf-2001-castellano-308-326-tv-rip-512x384-15-150-mb-mega-pixeldrain-ver-online",
       "name": "[Activo] Titeuf (2001) [Castellano] [308/326] [TV-RIP] [512x384] [15/150 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Occidental",
+      "originalGenre": "Comedia, Infantil, Jetix",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Comedia, Infantil",
+      "specificGenre": "Comedia, Infantil, Jetix",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t579-activo-titeuf-2001-castellano-308-326-tv-rip-512x384-15-150-mb-mega-pixeldrain-ver-online",
       "year": 2001,
@@ -12522,7 +12535,8 @@
         "resolucion": "512x384",
         "peso": "15/150 MB"
       },
-      "rentry_url": "https://rentry.co/nss6ptoa"
+      "rentry_url": "https://rentry.co/nss6ptoa",
+      "genre": "Comedia, Infantil, Jetix"
     },
     {
       "confianza": 85,
@@ -12762,9 +12776,9 @@
       "confianza": 85,
       "href": "/t513-activo-x-men-la-serie-animada-1992-castellano-76-76-tv-rip-704x528-210-235-mb-mega-pixeldrain-ver-online",
       "name": "X-Men, La Serie Animada",
-      "originalGenre": "Acción, Aventuras, Ciencia ficción, fantasía",
+      "originalGenre": "Acción, Aventuras, Ciencia ficción, fantasía, Jetix",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Acción, Aventuras, Ciencia ficción, fantasía",
+      "specificGenre": "Acción, Aventuras, Ciencia ficción, fantasía, Jetix",
       "type": "Dibujos",
       "url": "https://animezoneesp.foroactivo.com/t513-activo-x-men-la-serie-animada-1992-castellano-76-76-tv-rip-704x528-210-235-mb-mega-pixeldrain-ver-online",
       "year": 1992,
@@ -12780,7 +12794,7 @@
         "peso": "210/235 MB"
       },
       "rentry_url": "https://rentry.co/mrf9vw6c",
-      "genre": "Acción, Aventuras, Ciencia ficción, fantasía",
+      "genre": "Acción, Aventuras, Ciencia ficción, fantasía, Jetix",
       "sinopsis": "Primera serie de animación basada en los cómics de Marvel, X-Men. La serie comienza con Júbilo, una adolescente que de pronto descubre tener poderes mutantes. Fue atacada por Centinelas y rescatada por los X-Men, y luego de conocerlos dejó a sus padres adoptivos y se fue con ellos, para aprender a controlar sus poderes y estar a salvo de los ataques de los Centinelas u otras organizaciones extremistas anti-mutantes. La serie se enfoca también en el triángulo amoroso entre Cíclope, Jean y Wolverine, y la complicada relación entre Gambito y Rogue. Había una enorme cantidad de personajes invitados a lo largo de la serie provenientes de todo el Universo Marvel, pero sólo los mutantes se pueden considerar como tales. A excepción de Miss Marvel y el Capitán América en uno de los episodios finales, y Juggernaut dado su naturaleza mágica, todos los personajes no-mutantes que aparecían lo hacían sólo como cameos de breves segundos. En 2000, se estrenó una segunda serie animada llamada \"X-Men Ev"
     },
     {
@@ -12885,9 +12899,9 @@
       "confianza": 90,
       "href": "/t1289-activo-x-men-evolution-2000-castellano-52-52-dvd-rip-640x480-135-190-mb-mega-pixeldrain-ver-online",
       "name": "[Activo] X-Men: Evolution (2000) [Castellano] [52/52] [DVD-Rip] [640x480] [135/190 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Acción, Superhéroes",
+      "originalGenre": "Acción, Superhéroes, Jetix",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Acción, Superhéroes",
+      "specificGenre": "Acción, Superhéroes, Jetix",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t1289-activo-x-men-evolution-2000-castellano-52-52-dvd-rip-640x480-135-190-mb-mega-pixeldrain-ver-online",
@@ -12905,7 +12919,7 @@
         "peso": "135/190 MB"
       },
       "rentry_url": "https://rentry.co/szwqg3pi",
-      "genre": "Acción, Superhéroes"
+      "genre": "Acción, Superhéroes, Jetix"
     },
     {
       "confianza": 85,
@@ -13012,9 +13026,9 @@
       "confianza": 90,
       "href": "/t63-activotransformers-energon-2004-castellano-52-52-tv-rip-640x480-155mb-mega-ver-online",
       "name": "[Activo]Transformers: Energon (2004) [Castellano] [52/52] [TV-RIP] [640x480] [155MB] [Mega] [Ver Online]",
-      "originalGenre": "Acción, Ciencia ficción",
+      "originalGenre": "Acción, Ciencia ficción, Jetix",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Acción, Ciencia ficción",
+      "specificGenre": "Acción, Ciencia ficción, Jetix",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t63-activotransformers-energon-2004-castellano-52-52-tv-rip-640x480-155mb-mega-ver-online",
@@ -13031,7 +13045,7 @@
         "resolucion": ""
       },
       "rentry_url": "https://rentry.co/4ahkmqph",
-      "genre": "Acción, Ciencia ficción",
+      "genre": "Acción, Ciencia ficción, Jetix",
       "sinopsis": "El espectáculo tiene lugar diez años después del final de Armada, y comienza en una era de paz en Cybertron y la Tierra que está destinada a no durar mucho. Energon enfrenta a los Autobots contra una serie de villanos: el renacido Megatron, el apenas funcional Unicron y el misterioso Alpha Q y sus secuaces Terrorcon."
     },
     {
@@ -13064,9 +13078,9 @@
       "confianza": 90,
       "href": "/t66-activotransformers-armada-2003-castellano-52-52-aiupscale-rip-1280x720-550mb-mega-ver-online",
       "name": "[Activo]Transformers: Armada (2003) [Castellano] [52/52] [AIupScale-RIP] [1280x720] [550MB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Occidental",
+      "originalGenre": "Acción, Ciencia ficción, Jetix",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Acción, Ciencia ficción, Jetix",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t66-activotransformers-armada-2003-castellano-52-52-aiupscale-rip-1280x720-550mb-mega-ver-online",
@@ -13079,10 +13093,12 @@
         "idioma": "Castellano",
         "subtitulos": "Ninguno",
         "formato": "MP4 Peso/Cap: 315/765 MB NFO: [Tienes que estar registrado y conectado para ver este vínculo] Traile",
-        "peso": "315/765 MB"
+        "peso": "315/765 MB",
+        "calidad": "",
+        "resolucion": ""
       },
       "rentry_url": "https://rentry.co/cmoymdrw",
-      "genre": "Acción, Ciencia ficción"
+      "genre": "Acción, Ciencia ficción, Jetix"
     },
     {
       "confianza": 90,
@@ -13346,9 +13362,9 @@
       "confianza": 90,
       "href": "/t279-activospider-man-1994-castellano-65-65-webdl-rip-1448x1080-440495-mb-mega-pixeldrain-ver-online",
       "name": "[Activo]Spider-Man (1994) [Castellano] [65/65] [WebDL-Rip] [1448x1080] [440–495 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Occidental",
+      "originalGenre": "Acción, Superhéroes, Jetix",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Acción, Superhéroes, Jetix",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t279-activospider-man-1994-castellano-65-65-webdl-rip-1448x1080-440495-mb-mega-pixeldrain-ver-online",
@@ -13366,7 +13382,7 @@
         "peso": "440–495 MB"
       },
       "rentry_url": "https://rentry.co/qq6px93g",
-      "genre": "Acción, Superhéroes"
+      "genre": "Acción, Superhéroes, Jetix"
     },
     {
       "confianza": 90,
@@ -15041,9 +15057,9 @@
       "confianza": 90,
       "href": "/t952-activo-totally-spies-2002-castellano-156-182-tv-rip-640x480-220-690-mb-mega-pixeldrain-ver-online",
       "name": "[Activo] Totally Spies! (2002) [Castellano] [156/182] [TV-RIP] [640x480] [220/690 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Comedia, Espionaje",
+      "originalGenre": "Comedia, Espionaje, Jetix",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Comedia, Espionaje",
+      "specificGenre": "Comedia, Espionaje, Jetix",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t952-activo-totally-spies-2002-castellano-156-182-tv-rip-640x480-220-690-mb-mega-pixeldrain-ver-online",
@@ -15061,7 +15077,7 @@
         "peso": "220/690 MB"
       },
       "rentry_url": "https://rentry.co/2zbqfzkc",
-      "genre": "Comedia, Espionaje"
+      "genre": "Comedia, Espionaje, Jetix"
     },
     {
       "confianza": 90,
@@ -15608,9 +15624,9 @@
       "confianza": 90,
       "href": "/t768-activo-lola-virginia-2006-castellano-52-52-webdl-rip-1920x1080-120-220-mb-mega-pixeldrain-ver-online",
       "name": "[Activo] Lola & Virginia (2006) [Castellano] [52/52] [WebDL-Rip] [1920x1080] [120/220 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Comedia, Jetix",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Comedia, Jetix",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t768-activo-lola-virginia-2006-castellano-52-52-webdl-rip-1920x1080-120-220-mb-mega-pixeldrain-ver-online",
@@ -15628,15 +15644,15 @@
         "peso": "120/220 MB"
       },
       "rentry_url": "https://rentry.co/itighei6",
-      "genre": "Comedia"
+      "genre": "Comedia, Jetix"
     },
     {
       "confianza": 90,
       "href": "/t31-activoben-10-2005-castellano-49-49-webdl-rip-1920x1080-625mb-mega-ver-online",
       "name": "[Activo]Ben 10 (2005) [Castellano] [49/49] [WebDL-RIP] [1920x1080] [625MB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Acción, Ciencia ficción, Jetix",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Acción, Ciencia ficción, Jetix",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t31-activoben-10-2005-castellano-49-49-webdl-rip-1920x1080-625mb-mega-ver-online",
@@ -15649,10 +15665,12 @@
         "idioma": "Castellano",
         "subtitulos": "Ninguno",
         "formato": "MP4 Peso/Cap: 380/625 MB NFO: [Tienes que estar registrado y conectado para ver este vínculo] Traile",
-        "peso": "380/625 MB"
+        "peso": "380/625 MB",
+        "calidad": "",
+        "resolucion": ""
       },
       "rentry_url": "https://rentry.co/gcdk4dky",
-      "genre": "Acción, Ciencia ficción"
+      "genre": "Acción, Ciencia ficción, Jetix"
     },
     {
       "confianza": 90,
@@ -15708,9 +15726,9 @@
       "confianza": 90,
       "href": "/t32-activoben-10-fuerza-alienigena-2008-castellano-46-46-webdl-rip-1920x1080-800mb-mega-ver-online",
       "name": "[Activo]Ben 10: Fuerza Alienígena (2008) [Castellano] [46/46] [WebDL-RIP] [1920x1080] [800MB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Drama, Cartoon Network, Jetix",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama, Cartoon Network",
+      "specificGenre": "Drama, Cartoon Network, Jetix",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t32-activoben-10-fuerza-alienigena-2008-castellano-46-46-webdl-rip-1920x1080-800mb-mega-ver-online",
@@ -15723,9 +15741,12 @@
         "idioma": "Castellano",
         "subtitulos": "Ninguno",
         "formato": "MP4 Peso/Cap: 450/800 MB NFO: [Tienes que estar registrado y conectado para ver este vínculo] Traile",
-        "peso": "450/800 MB"
+        "peso": "450/800 MB",
+        "calidad": "",
+        "resolucion": ""
       },
-      "rentry_url": "https://rentry.co/vopd2kdu"
+      "rentry_url": "https://rentry.co/vopd2kdu",
+      "genre": "Drama, Cartoon Network, Jetix"
     },
     {
       "confianza": 90,
@@ -16645,9 +16666,9 @@
       "confianza": 90,
       "href": "/t229-activoxiaolin-showdown-2003-castellano-52-52-tv-rip-480x360-60-515-mb-mega-ver-online",
       "name": "[Activo]Xiaolin Showdown (2003) [Castellano] [52/52] [TV-RIP] [480x360] [60/515 MB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Occidental",
+      "originalGenre": "Acción, Aventura, Fantasía, Cartoon Network, Jetix",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama, Cartoon Network",
+      "specificGenre": "Acción, Aventura, Fantasía, Cartoon Network, Jetix",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t229-activoxiaolin-showdown-2003-castellano-52-52-tv-rip-480x360-60-515-mb-mega-ver-online",
@@ -16665,7 +16686,7 @@
         "peso": "60/515 MB"
       },
       "rentry_url": "https://rentry.co/zmkt2x6i",
-      "genre": "Acción, Aventura, Fantasía, Cartoon Network"
+      "genre": "Acción, Aventura, Fantasía, Cartoon Network, Jetix"
     },
     {
       "confianza": 90,
@@ -17483,9 +17504,9 @@
       "confianza": 90,
       "href": "/t441-activo-martin-mystery-2003-castellano-62-66-iaupscale-rip-1440x1080-220-385-mb-mega-pixeldrain-ver-online",
       "name": "[Activo] Martin Mystery (2003) [Castellano] [62/66] [IAUpScale-Rip] [1440x1080] [220/385 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "originalGenre": "Misterio, Acción, Jetix",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Misterio, Acción, Jetix",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t441-activo-martin-mystery-2003-castellano-62-66-iaupscale-rip-1440x1080-220-385-mb-mega-pixeldrain-ver-online",
@@ -17503,7 +17524,7 @@
         "peso": "220/385 MB"
       },
       "rentry_url": "https://rentry.co/7nmr5zs6",
-      "genre": "Misterio, Acción"
+      "genre": "Misterio, Acción, Jetix"
     },
     {
       "confianza": 90,
@@ -17585,9 +17606,9 @@
       "confianza": 90,
       "href": "/t999-activo-atomic-betty-2004-castellano-79-79-tv-rip-704x528-180-500-mb-mega-pixeldrain-ver-online",
       "name": "[Activo] Atomic Betty (2004) [Castellano] [79/79] [TV-RIP] [704x528] [180/500 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Occidental",
+      "originalGenre": "Acción, Ciencia ficción, Comedia, Jetix",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Acción, Ciencia ficción, Comedia, Jetix",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t999-activo-atomic-betty-2004-castellano-79-79-tv-rip-704x528-180-500-mb-mega-pixeldrain-ver-online",
@@ -17605,7 +17626,7 @@
         "peso": "180/500 MB"
       },
       "rentry_url": "https://rentry.co/vftzqacz",
-      "genre": "Acción, Ciencia ficción, Comedia"
+      "genre": "Acción, Ciencia ficción, Comedia, Jetix"
     },
     {
       "confianza": 90,
@@ -18071,9 +18092,9 @@
       "confianza": 90,
       "href": "/t831-activo-creepie-2006-castellano-26-26-tv-rip-704x528-220-235-mb-mega-pixeldrain-ver-online",
       "name": "[Activo] Creepie (2006) [Castellano] [26/26] [TV-RIP] [704x528] [220/235 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Occidental",
+      "originalGenre": "Comedia, Terror, Jetix",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Comedia, Terror, Jetix",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t831-activo-creepie-2006-castellano-26-26-tv-rip-704x528-220-235-mb-mega-pixeldrain-ver-online",
@@ -18091,7 +18112,7 @@
         "peso": "220/235 MB"
       },
       "rentry_url": "https://rentry.co/v9pngzea",
-      "genre": "Comedia, Terror"
+      "genre": "Comedia, Terror, Jetix"
     },
     {
       "confianza": 90,
@@ -18535,9 +18556,9 @@
       "confianza": 90,
       "href": "/t595-activo-galactik-football-2006-castellano-78-78-tv-rip-854x480-105-855-mb-mega-pixeldrain-ver-online",
       "name": "[Activo] Galactik Football (2006) [Castellano] [78/78] [TV-RIP] [854x480] [105/855 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Occidental",
+      "originalGenre": "Deportes, Ciencia ficción, Jetix",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Deportes, Ciencia ficción, Jetix",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t595-activo-galactik-football-2006-castellano-78-78-tv-rip-854x480-105-855-mb-mega-pixeldrain-ver-online",
@@ -18555,15 +18576,15 @@
         "peso": "105/855 MB"
       },
       "rentry_url": "https://rentry.co/k9cdvctd",
-      "genre": "Deportes, Ciencia ficción"
+      "genre": "Deportes, Ciencia ficción, Jetix"
     },
     {
       "confianza": 90,
       "href": "/t481-activo-gargolas-1994-dual-audio-78-78-1460x1080-320-345-mb-mega-pixeldrain-ver-online",
       "name": "[Activo] Gárgolas (1994) [Dual-Audio] [78/78] [1460x1080] [320/345 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Occidental",
+      "originalGenre": "Acción, Fantasía, Drama, Disney, Jetix",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama, Disney",
+      "specificGenre": "Acción, Fantasía, Drama, Disney, Jetix",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t481-activo-gargolas-1994-dual-audio-78-78-1460x1080-320-345-mb-mega-pixeldrain-ver-online",
@@ -18577,10 +18598,11 @@
         "subtitulos": "Inglés",
         "formato": "MKV",
         "resolucion": "1460x1080",
-        "peso": "320/345 MB"
+        "peso": "320/345 MB",
+        "calidad": ""
       },
       "rentry_url": "https://rentry.co/fz2o9i7i",
-      "genre": "Acción, Fantasía, Drama, Disney"
+      "genre": "Acción, Fantasía, Drama, Disney, Jetix"
     },
     {
       "confianza": 90,
@@ -19232,9 +19254,9 @@
       "confianza": 90,
       "href": "/t836-activo-las-aventuras-de-jackie-chan-2000-castellano-93-95-tv-rip-640x480-55-120-mb-mega-pixeldrain-ver-online",
       "name": "[Activo] Las aventuras de Jackie Chan (2000) [Castellano] [93/95] [TV-RIP] [640x480] [55/120 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Occidental",
+      "originalGenre": "Acción, Comedia, Sobrenatural, Jetix",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Acción, Comedia, Sobrenatural, Jetix",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t836-activo-las-aventuras-de-jackie-chan-2000-castellano-93-95-tv-rip-640x480-55-120-mb-mega-pixeldrain-ver-online",
@@ -19252,7 +19274,7 @@
         "peso": "55/120 MB"
       },
       "rentry_url": "https://rentry.co/mwryqed3",
-      "genre": "Acción, Comedia, Sobrenatural"
+      "genre": "Acción, Comedia, Sobrenatural, Jetix"
     },
     {
       "confianza": 90,
@@ -19336,9 +19358,9 @@
       "confianza": 90,
       "href": "/t288-activolas-supernenas-1998-castellano-78-78-dvd-rip-704x528-210-320-mb-mega-pixeldrain-ver-online",
       "name": "[Activo]Las Supernenas (1998) [Castellano] [78/78] [DVD-Rip] [704x528] [210/320 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Occidental",
+      "originalGenre": "Comedia, Acción, Cartoon Network, Jetix",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Acción, Comedia, Infantil, Cartoon Network",
+      "specificGenre": "Comedia, Acción, Cartoon Network, Jetix",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t288-activolas-supernenas-1998-castellano-78-78-dvd-rip-704x528-210-320-mb-mega-pixeldrain-ver-online",
@@ -19356,7 +19378,7 @@
         "peso": "210/320 MB"
       },
       "rentry_url": "https://rentry.co/sne64i2g",
-      "genre": "Comedia, Acción, Cartoon Network"
+      "genre": "Comedia, Acción, Cartoon Network, Jetix"
     },
     {
       "confianza": 90,
@@ -19879,9 +19901,9 @@
       "confianza": 90,
       "href": "/t1207-activo-mucha-lucha-2002-espanol-neutro-52-52-webdl-rip-1920x1080-220-410-mb-mega-pixeldrain-ver-online",
       "name": "[Activo] ¡Mucha Lucha! (2002) [Español Neutro] [52/52] [WebDL-Rip] [1920x1080] [220/410 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Occidental",
+      "originalGenre": "Comedia, Jetix",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Comedia, Jetix",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t1207-activo-mucha-lucha-2002-espanol-neutro-52-52-webdl-rip-1920x1080-220-410-mb-mega-pixeldrain-ver-online",
@@ -19899,7 +19921,7 @@
         "peso": "220/410 MB"
       },
       "rentry_url": "https://rentry.co/rx8dgkcv",
-      "genre": "Comedia"
+      "genre": "Comedia, Jetix"
     },
     {
       "confianza": 90,
@@ -22266,9 +22288,9 @@
     {
       "name": "The Amazing Spiez!",
       "year": 2009,
-      "genre": "Comedia, Niños, Acción, Aventura, Ciencia ficción, Fantasía",
-      "specificGenre": "Comedia, Niños, Acción, Aventura, Ciencia ficción, Fantasía",
-      "originalGenre": "Comedia, Niños, Acción, Aventura, Ciencia ficción, Fantasía",
+      "genre": "Comedia, Infantil, Acción, Aventura, Ciencia ficción, Fantasía, Jetix",
+      "specificGenre": "Comedia, Infantil, Acción, Aventura, Ciencia ficción, Fantasía, Jetix",
+      "originalGenre": "Comedia, Infantil, Acción, Aventura, Ciencia ficción, Fantasía, Jetix",
       "type": "Dibujos",
       "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1777474923/mis_archivos_elegidos/manual_poster_tmdb_The_Amazing_Spiez%21.jpg",
       "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1777474923/mis_archivos_elegidos/manual_poster_tmdb_The_Amazing_Spiez%21.jpg",
@@ -23163,9 +23185,9 @@
     {
       "name": "Rambo, la fuerza de la libertad",
       "year": 1986,
-      "genre": "Acción, Aventura, Infantil",
-      "specificGenre": "Acción, Aventura, Infantil",
-      "originalGenre": "Acción, Aventura, Infantil",
+      "genre": "Acción, Aventura, Infantil, Jetix",
+      "specificGenre": "Acción, Aventura, Infantil, Jetix",
+      "originalGenre": "Acción, Aventura, Infantil, Jetix",
       "type": "Dibujos",
       "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1778250673/mis_archivos_elegidos/manual_poster_tmdb_Rambo%2C_la_fuerza_de_la_libertad.jpg",
       "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1778250673/mis_archivos_elegidos/manual_poster_tmdb_Rambo%2C_la_fuerza_de_la_libertad.jpg",
@@ -23370,9 +23392,9 @@
     {
       "name": "Men in Black: La serie animada",
       "year": 1997,
-      "genre": "Acción, Aventura, Ciencia ficción, Fantasía",
-      "specificGenre": "Acción, Aventura, Ciencia ficción, Fantasía",
-      "originalGenre": "Acción, Aventura, Ciencia ficción, Fantasía",
+      "genre": "Acción, Aventura, Ciencia ficción, Fantasía, Jetix",
+      "specificGenre": "Acción, Aventura, Ciencia ficción, Fantasía, Jetix",
+      "originalGenre": "Acción, Aventura, Ciencia ficción, Fantasía, Jetix",
       "type": "Dibujos",
       "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1777167925/mis_archivos_elegidos/manual_poster_tmdb_Hombres_de_Negro_La_serie_animada.jpg",
       "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1777167925/mis_archivos_elegidos/manual_poster_tmdb_Hombres_de_Negro_La_serie_animada.jpg",
@@ -23393,9 +23415,9 @@
     {
       "name": "El inspector Gadget",
       "year": 1983,
-      "genre": "Infantil, Comedia, Acción, Aventura, Ciencia ficción, Fantasía",
-      "specificGenre": "Infantil, Comedia, Acción, Aventura, Ciencia ficción, Fantasía",
-      "originalGenre": "Infantil, Comedia, Acción, Aventura, Ciencia ficción, Fantasía",
+      "genre": "Infantil, Comedia, Acción, Aventura, Ciencia ficción, Fantasía, Jetix",
+      "specificGenre": "Infantil, Comedia, Acción, Aventura, Ciencia ficción, Fantasía, Jetix",
+      "originalGenre": "Infantil, Comedia, Acción, Aventura, Ciencia ficción, Fantasía, Jetix",
       "type": "Dibujos",
       "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1763243441/mis_archivos_elegidos/manual_poster_tmdb_El_inspector_Gadget.jpg",
       "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1763243441/mis_archivos_elegidos/manual_poster_tmdb_El_inspector_Gadget.jpg",
@@ -23508,9 +23530,9 @@
     {
       "name": "Duck Dodgers",
       "year": 2003,
-      "genre": "Infantil, Comedia, Ciencia ficción, Fantasía, Cartoon Network",
-      "specificGenre": "Infantil, Comedia, Ciencia ficción, Fantasía, Cartoon Network",
-      "originalGenre": "Infantil, Comedia, Ciencia ficción, Fantasía, Cartoon Network",
+      "genre": "Infantil, Comedia, Ciencia ficción, Fantasía, Cartoon Network, Jetix",
+      "specificGenre": "Infantil, Comedia, Ciencia ficción, Fantasía, Cartoon Network, Jetix",
+      "originalGenre": "Infantil, Comedia, Ciencia ficción, Fantasía, Cartoon Network, Jetix",
       "type": "Dibujos",
       "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1778633144/mis_archivos_elegidos/manual_poster_tmdb_Duck_Dodgers.jpg",
       "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1778633144/mis_archivos_elegidos/manual_poster_tmdb_Duck_Dodgers.jpg",
