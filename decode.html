@@ -594,15 +594,36 @@
                     if (isBlocked) {
                         resolve(true);
                     } else {
-                        // Comprobación secundaria de red
+                        // Comprobación secundaria de red (Script general de Google Ads)
                         fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', {
                             method: 'HEAD',
                             mode: 'no-cors',
                             cache: 'no-store'
                         }).then(() => {
-                            resolve(false);
+                            // Comprobación terciaria: comprobar si el dominio específico de Monetag/Adsterra está bloqueado (evita bypass de DNS)
+                            if (AD_URL && AD_URL !== "TU_ENLACE_DE_MONETAG_O_ADSTERRA_AQUI") {
+                                try {
+                                    const urlObj = new URL(AD_URL);
+                                    const testDomain = urlObj.origin; // Ej: https://omg10.com
+                                    
+                                    fetch(testDomain, {
+                                        method: 'HEAD',
+                                        mode: 'no-cors',
+                                        cache: 'no-store'
+                                    }).then(() => {
+                                        resolve(false); // Ambos accesibles, no hay bloqueo
+                                    }).catch((err) => {
+                                        console.warn("Dominio de anuncios no responde (bloqueo DNS o red):", err);
+                                        resolve(true); // Bloqueado por DNS o antivirus
+                                    });
+                                } catch (e) {
+                                    resolve(false); // URL no válida, ignoramos este paso
+                                }
+                            } else {
+                                resolve(false);
+                            }
                         }).catch(() => {
-                            resolve(true);
+                            resolve(true); // Script de Google Ads bloqueado por AdBlock
                         });
                     }
                 }, 150);
