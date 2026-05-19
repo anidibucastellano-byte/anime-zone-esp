@@ -576,8 +576,8 @@
         // Detectar bloqueador de anuncios (AdBlock)
         function checkAdBlock() {
             console.log("[AdBlock Detector] Iniciando verificación...");
-            return new Promise((resolve) => {
-                // Crear un elemento de anuncio falso
+            return new Promise(async (resolve) => {
+                // Paso 1: Filtro CSS (elemento oculto)
                 const testAd = document.createElement('div');
                 testAd.innerHTML = '&nbsp;';
                 testAd.className = 'adsbox ad-placement doubleclick-ad';
@@ -588,66 +588,77 @@
                 testAd.style.height = '1px';
                 document.body.appendChild(testAd);
                 
-                window.setTimeout(() => {
-                    const isBlocked = testAd.offsetHeight === 0 || 
-                                      testAd.clientHeight === 0 || 
-                                      window.getComputedStyle(testAd).display === 'none' ||
-                                      window.getComputedStyle(testAd).visibility === 'hidden';
-                    testAd.remove();
+                await new Promise(r => setTimeout(r, 150));
+                
+                const isCssBlocked = testAd.offsetHeight === 0 || 
+                                     testAd.clientHeight === 0 || 
+                                     window.getComputedStyle(testAd).display === 'none' ||
+                                     window.getComputedStyle(testAd).visibility === 'hidden';
+                testAd.remove();
+                
+                console.log("[AdBlock Detector] Paso 1 (Filtro CSS): isBlocked =", isCssBlocked);
+                if (isCssBlocked) {
+                    resolve(true);
+                    return;
+                }
+                
+                // Paso 2: Script Tag Google Ads (Detecta uBlock/AdBlock que intercepta scripts por extensión)
+                console.log("[AdBlock Detector] Paso 2 (Script Tag): Cargando script de Google Ads...");
+                const isScriptBlocked = await new Promise((rResolve) => {
+                    const script = document.createElement('script');
+                    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+                    script.async = true;
+                    script.onload = () => {
+                        script.remove();
+                        rResolve(false); // Cargado con éxito
+                    };
+                    script.onerror = () => {
+                        script.remove();
+                        rResolve(true); // Bloqueado por extensión
+                    };
+                    document.body.appendChild(script);
                     
-                    console.log("[AdBlock Detector] Paso 1 (Filtro CSS): isBlocked =", isBlocked);
+                    // Timeout de seguridad en caso de red lenta
+                    setTimeout(() => {
+                        if (script.parentNode) {
+                            script.remove();
+                            rResolve(false); // Asumimos que no está bloqueado
+                        }
+                    }, 1500);
+                });
+                
+                console.log("[AdBlock Detector] Paso 2 (Script Tag): isBlocked =", isScriptBlocked);
+                if (isScriptBlocked) {
+                    resolve(true);
+                    return;
+                }
+                
+                // Paso 3: URL Fetch (Detecta bloqueos DNS de operadoras o antivirus)
+                if (AD_URL && AD_URL !== "TU_ENLACE_DE_MONETAG_O_ADSTERRA_AQUI") {
+                    console.log("[AdBlock Detector] Paso 3 (URL Fetch): Conectando con URL exacta del anuncio:", AD_URL);
                     
-                    if (isBlocked) {
-                        resolve(true);
-                    } else {
-                        console.log("[AdBlock Detector] Paso 2 (Google Ads Fetch): Intentando descargar script de Google...");
-                        // Comprobación secundaria de red (Script general de Google Ads)
-                        fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', {
+                    const fetchController = new AbortController();
+                    const timeoutId = setTimeout(() => fetchController.abort(), 2500);
+                    
+                    try {
+                        await fetch(AD_URL, {
                             method: 'HEAD',
                             mode: 'no-cors',
-                            cache: 'no-store'
-                        }).then(() => {
-                            console.log("[AdBlock Detector] Paso 2 exitoso (Google Ads accesible).");
-                            // Comprobación terciaria: comprobar si el enlace específico de Monetag/Adsterra está bloqueado (evita bypass de DNS y filtros por ruta)
-                            if (AD_URL && AD_URL !== "TU_ENLACE_DE_MONETAG_O_ADSTERRA_AQUI") {
-                                try {
-                                    console.log("[AdBlock Detector] Paso 3 (URL Fetch): Conectando con URL exacta del anuncio:", AD_URL);
-                                    
-                                    // Usamos un timeout de 2.5 segundos para la conexión para evitar que se quede colgado si la operadora hace 'drop' de paquetes
-                                    const fetchController = new AbortController();
-                                    const timeoutId = setTimeout(() => {
-                                        console.warn("[AdBlock Detector] Paso 3 abortado por límite de tiempo de 2.5s (paquetes ignorados por ISP).");
-                                        fetchController.abort();
-                                    }, 2500);
-                                    
-                                    fetch(AD_URL, {
-                                        method: 'HEAD',
-                                        mode: 'no-cors',
-                                        cache: 'no-store',
-                                        signal: fetchController.signal
-                                    }).then(() => {
-                                        clearTimeout(timeoutId);
-                                        console.log("[AdBlock Detector] Paso 3 exitoso (Enlace accesible, no hay bloqueos de red, DNS ni extensión).");
-                                        resolve(false); // Accesible, no hay bloqueo
-                                    }).catch((err) => {
-                                        clearTimeout(timeoutId);
-                                        console.warn("[AdBlock Detector] Paso 3 FALLIDO. Enlace de anuncios bloqueado por DNS/red/extensión:", err);
-                                        resolve(true); // Bloqueado por DNS, extensión, antivirus o timeout
-                                    });
-                                } catch (e) {
-                                    console.error("[AdBlock Detector] URL de anuncio inválida:", e);
-                                    resolve(false); // URL no válida, ignoramos este paso
-                                }
-                            } else {
-                                console.log("[AdBlock Detector] Sin URL de anuncio para verificar. Paso 3 omitido.");
-                                resolve(false);
-                            }
-                        }).catch((err) => {
-                            console.warn("[AdBlock Detector] Paso 2 FALLIDO. Script de Google Ads bloqueado:", err);
-                            resolve(true); // Script de Google Ads bloqueado por AdBlock
+                            cache: 'no-store',
+                            signal: fetchController.signal
                         });
+                        clearTimeout(timeoutId);
+                        console.log("[AdBlock Detector] Paso 3 exitoso (URL accesible).");
+                        resolve(false);
+                    } catch (err) {
+                        clearTimeout(timeoutId);
+                        console.warn("[AdBlock Detector] Paso 3 FALLIDO. URL bloqueada por DNS/red:", err);
+                        resolve(true); // Bloqueado por red o DNS
                     }
-                }, 150);
+                } else {
+                    console.log("[AdBlock Detector] Sin URL de anuncio para verificar. Paso 3 omitido.");
+                    resolve(false);
+                }
             });
         }
 
