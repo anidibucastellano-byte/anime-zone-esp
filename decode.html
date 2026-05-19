@@ -425,6 +425,18 @@
             <p class="error-message" id="error-text">El enlace proporcionado no es válido o está incompleto.</p>
         </div>
 
+        <!-- PASO 5: AdBlock Detectado -->
+        <div class="step-panel" id="panel-adblock" style="gap: 15px; flex-direction: column; align-items: center; text-align: center; width: 100%;">
+            <div style="font-size: 4rem; color: var(--primary-red); animation: shake 0.5s ease-in-out; margin-bottom: 5px;">🚫</div>
+            <p class="access-text" style="color: var(--primary-red); font-weight: 700; font-size: 1.1rem; margin: 0; text-transform: uppercase; letter-spacing: 0.5px;">AdBlock Detectado</p>
+            <p class="access-text" style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0; max-width: 340px;">
+                Para apoyar a la comunidad y poder continuar al enlace de descarga, por favor <strong>desactiva el bloqueador de anuncios</strong> en este sitio.
+            </p>
+            <button class="verify-btn" onclick="window.location.reload()" style="background: linear-gradient(135deg, var(--primary-red) 0%, #c0392b 100%); box-shadow: 0 10px 25px rgba(255, 60, 60, 0.3); font-size: 0.9rem; padding: 12px 28px; width: 100%; border-radius: 10px; cursor: pointer; display: inline-flex; justify-content: center; align-items: center; margin-top: 10px; border: none; font-weight: 600; color: white;">
+                🔄 RECARGAR PÁGINA
+            </button>
+        </div>
+
         <!-- Indicador de Progreso Visual -->
         <div class="progress-bar-bg">
             <div class="progress-bar-fill" id="progress-bar"></div>
@@ -466,10 +478,14 @@
             }
         });
 
+        // --- CONFIGURACIÓN DE PUBLICIDAD ---
+        // Pega aquí tu Smartlink de Monetag o tu Direct Link de Adsterra
+        const AD_URL = "https://omg10.com/4/11029074";
+
         // Variables globales
         let rawHash = "";
         let decryptedUrl = "";
-        const steps = ['verify', 'loader', 'access', 'error'];
+        const steps = ['verify', 'loader', 'access', 'error', 'adblock'];
         
         // Cargar hash al iniciar
         window.addEventListener('DOMContentLoaded', () => {
@@ -544,10 +560,53 @@
             if (panelId === 'verify') progress.style.width = '25%';
             if (panelId === 'loader') progress.style.width = '60%';
             if (panelId === 'access') progress.style.width = '100%';
+            if (panelId === 'adblock') {
+                progress.style.width = '100%';
+                progress.style.background = 'var(--primary-red)';
+            }
             if (panelId === 'error') {
                 progress.style.width = '100%';
                 progress.style.background = 'var(--primary-red)';
             }
+        }
+
+        // Detectar bloqueador de anuncios (AdBlock)
+        function checkAdBlock() {
+            return new Promise((resolve) => {
+                // Crear un elemento de anuncio falso
+                const testAd = document.createElement('div');
+                testAd.innerHTML = '&nbsp;';
+                testAd.className = 'adsbox ad-placement doubleclick-ad';
+                testAd.style.position = 'absolute';
+                testAd.style.top = '-9999px';
+                testAd.style.left = '-9999px';
+                testAd.style.width = '1px';
+                testAd.style.height = '1px';
+                document.body.appendChild(testAd);
+                
+                window.setTimeout(() => {
+                    const isBlocked = testAd.offsetHeight === 0 || 
+                                      testAd.clientHeight === 0 || 
+                                      window.getComputedStyle(testAd).display === 'none' ||
+                                      window.getComputedStyle(testAd).visibility === 'hidden';
+                    testAd.remove();
+                    
+                    if (isBlocked) {
+                        resolve(true);
+                    } else {
+                        // Comprobación secundaria de red
+                        fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', {
+                            method: 'HEAD',
+                            mode: 'no-cors',
+                            cache: 'no-store'
+                        }).then(() => {
+                            resolve(false);
+                        }).catch(() => {
+                            resolve(true);
+                        });
+                    }
+                }, 150);
+            });
         }
 
         // Mostrar error
@@ -558,7 +617,20 @@
         }
 
         // Iniciar Cuenta Atrás
-        function startCountdown() {
+        async function startCountdown() {
+            // Comprobar si hay un bloqueador de anuncios activo
+            const hasAdBlock = await checkAdBlock();
+            if (hasAdBlock) {
+                document.getElementById('headerSubtitle').textContent = "Acceso Restringido";
+                switchPanel('adblock');
+                return;
+            }
+
+            // Abrir el anuncio en una pestaña nueva si está configurado
+            if (AD_URL && AD_URL !== "TU_ENLACE_DE_MONETAG_O_ADSTERRA_AQUI") {
+                window.open(AD_URL, '_blank');
+            }
+
             switchPanel('loader');
             document.getElementById('headerSubtitle').textContent = "Descifrando con seguridad...";
             
