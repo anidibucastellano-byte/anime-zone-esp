@@ -36,6 +36,10 @@
             align-items: center;
             overflow: hidden;
             position: relative;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
         }
 
         /* Lienzo para partículas del fondo */
@@ -414,6 +418,40 @@
     </div>
 
     <script>
+        // --- SISTEMA DE PROTECCIÓN EXTRA DE ENLACES ---
+        // Bloquear clic derecho
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        
+        // Bloquear arrastrar y soltar
+        document.addEventListener('dragstart', e => e.preventDefault());
+        
+        // Bloquear selección de texto
+        document.addEventListener('selectstart', e => e.preventDefault());
+        
+        // Bloquear combinaciones de teclado de copia, guardado e inspección
+        document.addEventListener('keydown', e => {
+            // F12
+            if (e.keyCode === 123) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C (Herramientas de Desarrollador)
+            // Ctrl+U (Ver Código Fuente)
+            // Ctrl+S (Guardar Página)
+            // Ctrl+A (Seleccionar todo)
+            // Ctrl+C (Copiar)
+            if (e.ctrlKey && (
+                (e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) || 
+                e.keyCode === 85 || 
+                e.keyCode === 83 || 
+                e.keyCode === 65 || 
+                e.keyCode === 67
+            )) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
         // Variables globales
         let rawHash = "";
         let decryptedUrl = "";
@@ -439,6 +477,11 @@
             if (!decryptedUrl) {
                 showError("El código de encriptación no es válido o corresponde a un formato no soportado.");
                 return;
+            }
+            
+            // Ocultar inmediatamente el hash cifrado de la barra de direcciones por seguridad
+            if (window.history && window.history.replaceState) {
+                window.history.replaceState("", document.title, window.location.pathname + window.location.search);
             }
             
             document.getElementById('headerSubtitle').textContent = "Enlace detectado y protegido correctamente.";
@@ -572,38 +615,64 @@
         function sendToJDownloader() {
             if (!decryptedUrl) return;
             
-            document.getElementById('jd_urls').value = decryptedUrl;
+            const decrypted = decryptedUrl;
+            
+            // Limpiar la variable en memoria de inmediato por seguridad
+            decryptedUrl = "";
+            
+            document.getElementById('jd_urls').value = decrypted;
             document.getElementById('jd_form').submit();
             
             const btn = document.getElementById('jd-btn');
-            const originalContent = btn.innerHTML;
             btn.innerHTML = "<span>✅ ¡ENVIADO A TU GESTOR!</span>";
             btn.style.background = "linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)";
             btn.style.boxShadow = "0 12px 30px rgba(39, 174, 96, 0.4)";
+            btn.onclick = null;
             
+            // Inhabilitar botón de navegador también
+            const browserBtn = document.getElementById('browser-btn');
+            browserBtn.innerHTML = "<span>✅ ENLACE ENVIADO</span>";
+            browserBtn.style.background = "linear-gradient(135deg, #162447 0%, #1f4068 100%)";
+            browserBtn.style.cursor = "default";
+            browserBtn.onclick = null;
+
+            // Recargar la página limpia después de 3 segundos
             setTimeout(() => {
-                btn.innerHTML = originalContent;
-                btn.style.background = "linear-gradient(135deg, #1e3c72 0%, #162447 100%)";
-                btn.style.boxShadow = "0 12px 30px rgba(22, 36, 71, 0.45)";
-            }, 4000);
+                window.location.reload();
+            }, 3000);
         }
 
-        // Abrir enlace en ventana protegida sin barras del navegador
+        // Abrir enlace en ventana protegida sin revelar la procedencia (Referrer)
         function openSecurePopup() {
             if (!decryptedUrl) return;
             
-            // Abre una ventana limpia con dimensiones específicas
-            // toolbar=no, location=no e impedir barras ayuda a que el usuario no copie el enlace fácilmente
-            const popup = window.open(
-                decryptedUrl, 
-                'MegaSecureDownload', 
-                'width=1024,height=680,toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes'
-            );
+            const decrypted = decryptedUrl;
             
-            // Si el bloqueador de popups lo impide, abrir en nueva pestaña normal
-            if (!popup || popup.closed || typeof popup.closed == 'undefined') {
-                window.open(decryptedUrl, '_blank');
-            }
+            // Limpiar la variable en memoria de inmediato por seguridad
+            decryptedUrl = "";
+            
+            // Usar técnica de elemento <a> temporal con rel="noreferrer noopener" para ocultar la procedencia
+            const a = document.createElement('a');
+            a.href = decrypted;
+            a.target = '_blank';
+            a.rel = 'noreferrer noopener';
+            
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            
+            // Mostrar un mensaje final de que el enlace ya fue abierto
+            document.getElementById('headerSubtitle').textContent = "Acceso concedido. Cerrando portal...";
+            const btn = document.getElementById('browser-btn');
+            btn.innerHTML = "<span>✅ ¡ENLACE ABIERTO!</span>";
+            btn.style.background = "linear-gradient(135deg, #162447 0%, #1f4068 100%)";
+            btn.style.cursor = "default";
+            btn.onclick = null;
+            
+            // Recargar la página limpia después de 2.5 segundos
+            setTimeout(() => {
+                window.location.reload();
+            }, 2500);
         }
 
         // Canvas de partículas premium de fondo
