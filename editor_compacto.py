@@ -2018,10 +2018,13 @@ Acción, Aventura, Artes marciales, Fantasía, Shōnen"""
         import os
         
         # Confirmar
-        if not messagebox.askyesno("Confirmar", "¿Subir cambios a GitHub?\n\nEsto hará:\n1. Add index.html y TOP.json\n2. Commit\n3. Push a GitHub"):
+        if not messagebox.askyesno("Confirmar", "¿Subir cambios a GitHub?\n\nEsto hará:\n1. Guardar cambios actuales\n2. Add index.html y TOP.json\n3. Commit\n4. Push a GitHub"):
             return
         
         try:
+            # 1. Guardar automáticamente para asegurar que hay algo que subir
+            self.guardar_silencioso()
+            
             self.label_status.config(text="🚀 Haciendo deploy...", foreground='blue')
             self.root.update()
             
@@ -2029,28 +2032,35 @@ Acción, Aventura, Artes marciales, Fantasía, Shōnen"""
             proyecto_dir = r'c:\Users\Rafael\CascadeProjects\windsurf-project'
             
             # Git add
-            subprocess.run(['git', '-C', proyecto_dir, 'add', 'index.html', 'TOP.json'], 
-                          capture_output=True, check=True)
+            subprocess.run(['git', '-C', proyecto_dir, 'add', 'index.html', 'TOP.json', 'decode.html', 'encriptador_mega.py', '.github/workflows/deploy-pages.yml', 'editor_compacto.py'], 
+                          capture_output=True, text=True, encoding='utf-8', check=True)
             
             # Git commit
             subprocess.run(['git', '-C', proyecto_dir, 'commit', '-m', 'Actualizar catalogo'], 
-                          capture_output=True, check=True)
+                          capture_output=True, text=True, encoding='utf-8', check=True)
             
             # Git push
             resultado = subprocess.run(['git', '-C', proyecto_dir, 'push', 'origin', 'main'], 
-                                      capture_output=True, text=True, check=True)
+                                      capture_output=True, text=True, encoding='utf-8', check=True)
             
             messagebox.showinfo("Éxito", "✅ Deploy completado!\n\nLos cambios se subieron a GitHub.\nEspera 2-3 minutos para que se actualice el catálogo.")
             self.label_status.config(text="✅ Deploy listo - espera 2-3 min", foreground='green')
             
         except subprocess.CalledProcessError as e:
-            error_msg = e.stderr[:200] if e.stderr else str(e)
-            if "nothing to commit" in error_msg.lower() or "nothing added" in error_msg.lower():
-                messagebox.showinfo("Info", "No hay cambios nuevos para subir.")
+            # Combinar stdout y stderr para buscar el mensaje de "nothing to commit"
+            salida_completa = (e.stdout or "") + (e.stderr or "")
+            
+            if "nothing to commit" in salida_completa.lower() or "nothing added" in salida_completa.lower() or "up-to-date" in salida_completa.lower():
+                messagebox.showinfo("Info", "No hay cambios nuevos para subir o ya está actualizado.")
                 self.label_status.config(text="ℹ️ Sin cambios", foreground='gray')
             else:
-                messagebox.showerror("Error", f"Error en deploy:\n{error_msg}")
+                error_msg = e.stderr[:500] if e.stderr else str(e)
+                messagebox.showerror("Error", f"Error en Git:\n{error_msg}")
                 self.label_status.config(text="❌ Error en deploy", foreground='red')
+                
+        except Exception as e:
+            messagebox.showerror("Error Crítico", f"Ocurrió un error inesperado:\n{str(e)}")
+            self.label_status.config(text="❌ Error inesperado", foreground='red')
 
 if __name__ == "__main__":
     root = tk.Tk()

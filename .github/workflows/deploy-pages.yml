@@ -32,6 +32,7 @@ jobs:
           python generar_html_foroactivo.py
           mkdir -p _site
           cp index.html _site/index.html
+          cp decode.html _site/decode.html
           cp *.png _site/ 2>/dev/null || true
           cp TOP.json _site/ 2>/dev/null || true
           
