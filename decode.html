@@ -381,21 +381,35 @@
             <p class="loader-status" id="loader-status">Verificando conexión...</p>
         </div>
 
-        <!-- PASO 3: Enlace Listo -->
+        <!-- PASO 3: Enlace Listo (SOLO JDOWNLOADER) -->
         <div class="step-panel" id="panel-access" style="gap: 12px; width: 100%;">
-            <!-- Botón JDownloader (oculto por defecto, se muestra si se detecta localmente) -->
-            <button class="access-btn jd-btn" id="jd-btn" onclick="sendToJDownloader()" style="display: none; width: 100%; background: linear-gradient(135deg, #1f4068 0%, #162447 100%); box-shadow: 0 12px 30px rgba(22, 36, 71, 0.45); border: 1px solid rgba(255,255,255,0.05); cursor: pointer;">
-                <span>📥 AÑADIR A JDOWNLOADER</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            </button>
-            <p class="access-text" id="jd-tip" style="display: none; margin-top: -5px; margin-bottom: 10px; font-size: 0.8rem; color: var(--primary-gold); font-weight: 600;">⭐ ¡Recomendado! Añade el enlace directamente a tu gestor sin revelar la URL de MEGA.</p>
+            <!-- Caso A: JDownloader DETECTADO -->
+            <div id="jd-detected-section" style="display: none; width: 100%; flex-direction: column; gap: 12px; align-items: center;">
+                <button class="access-btn jd-btn" id="jd-btn" onclick="sendToJDownloader()" style="width: 100%; background: linear-gradient(135deg, #1f4068 0%, #162447 100%); box-shadow: 0 12px 30px rgba(22, 36, 71, 0.45); border: 1px solid rgba(255,255,255,0.05); cursor: pointer;">
+                    <span>📥 AÑADIR A JDOWNLOADER</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                </button>
+                <p class="access-text" style="font-size: 0.8rem; color: #2ecc71; font-weight: 600; text-align: center; margin: 0;">✅ JDownloader detectado. El enlace se enviará directamente a tu gestor sin revelarse en el navegador.</p>
+            </div>
 
-            <!-- Botón Navegador (siempre visible o fallback) -->
-            <button class="access-btn browser-btn" id="browser-btn" onclick="openSecurePopup()" style="width: 100%; background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); box-shadow: 0 12px 30px rgba(39, 174, 96, 0.4); border: 1px solid rgba(255,255,255,0.05); cursor: pointer;">
-                <span>🌐 DESCARGA DIRECTA (NAVEGADOR)</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </button>
-            <p class="access-text" id="browser-tip">El enlace se abrirá en una ventana emergente protegida para mayor seguridad.</p>
+            <!-- Caso B: JDownloader NO DETECTADO -->
+            <div id="jd-missing-section" style="display: none; width: 100%; flex-direction: column; gap: 14px; align-items: center; text-align: center;">
+                <div style="font-size: 2.2rem; margin-bottom: -5px;">🔌</div>
+                <p class="access-text" style="color: #ff4757; font-weight: 700; font-size: 1rem; margin: 0; text-transform: uppercase; letter-spacing: 0.5px;">JDownloader no detectado</p>
+                <p class="access-text" style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; margin: 0; max-width: 320px;">
+                    Para proteger los enlaces y que nadie pueda extraerlos, este archivo <strong>solo se puede descargar usando JDownloader</strong>.
+                </p>
+                <div style="background: rgba(255,255,255,0.02); border: 1px dashed rgba(255,255,255,0.1); border-radius: 8px; padding: 10px 12px; width: 100%; box-sizing: border-box;">
+                    <p style="font-size: 0.8rem; color: var(--primary-gold); margin: 0; font-weight: 600;">¿Cómo proceder?</p>
+                    <p style="font-size: 0.78rem; color: var(--text-muted); margin: 4px 0 0 0; text-align: left; line-height: 1.4;">
+                        1. Abre el programa <strong>JDownloader</strong> en tu PC.<br>
+                        2. <strong>Recarga esta página</strong> para iniciar la descarga.
+                    </p>
+                </div>
+                <a href="https://jdownloader.org/download/index" target="_blank" class="access-btn" style="width: 100%; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.05); color: var(--text-main); font-size: 0.82rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; height: 42px; cursor: pointer; transition: all 0.3s;">
+                    📥 CONSEGUIR JDOWNLOADER (WEB OFICIAL)
+                </a>
+            </div>
         </div>
 
         <!-- Formulario oculto para Click'n'Load / JDownloader local -->
@@ -600,13 +614,13 @@
             script.src = 'http://127.0.0.1:9666/jdcheck.js';
             script.onload = function() {
                 // JDownloader está ejecutándose localmente
-                document.getElementById('jd-btn').style.display = 'inline-flex';
-                document.getElementById('jd-tip').style.display = 'block';
-                document.getElementById('browser-tip').textContent = "Descarga directa en el navegador si no usas gestores.";
+                document.getElementById('jd-detected-section').style.display = 'flex';
+                document.getElementById('jd-missing-section').style.display = 'none';
             };
             script.onerror = function() {
                 // JDownloader no está activo o no está instalado
-                console.log("JDownloader no detectado ejecutándose localmente.");
+                document.getElementById('jd-detected-section').style.display = 'none';
+                document.getElementById('jd-missing-section').style.display = 'flex';
             };
             document.body.appendChild(script);
         }
@@ -629,50 +643,10 @@
             btn.style.boxShadow = "0 12px 30px rgba(39, 174, 96, 0.4)";
             btn.onclick = null;
             
-            // Inhabilitar botón de navegador también
-            const browserBtn = document.getElementById('browser-btn');
-            browserBtn.innerHTML = "<span>✅ ENLACE ENVIADO</span>";
-            browserBtn.style.background = "linear-gradient(135deg, #162447 0%, #1f4068 100%)";
-            browserBtn.style.cursor = "default";
-            browserBtn.onclick = null;
-
             // Recargar la página limpia después de 3 segundos
             setTimeout(() => {
                 window.location.reload();
             }, 3000);
-        }
-
-        // Abrir enlace en ventana protegida sin revelar la procedencia (Referrer)
-        function openSecurePopup() {
-            if (!decryptedUrl) return;
-            
-            const decrypted = decryptedUrl;
-            
-            // Limpiar la variable en memoria de inmediato por seguridad
-            decryptedUrl = "";
-            
-            // Usar técnica de elemento <a> temporal con rel="noreferrer noopener" para ocultar la procedencia
-            const a = document.createElement('a');
-            a.href = decrypted;
-            a.target = '_blank';
-            a.rel = 'noreferrer noopener';
-            
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            
-            // Mostrar un mensaje final de que el enlace ya fue abierto
-            document.getElementById('headerSubtitle').textContent = "Acceso concedido. Cerrando portal...";
-            const btn = document.getElementById('browser-btn');
-            btn.innerHTML = "<span>✅ ¡ENLACE ABIERTO!</span>";
-            btn.style.background = "linear-gradient(135deg, #162447 0%, #1f4068 100%)";
-            btn.style.cursor = "default";
-            btn.onclick = null;
-            
-            // Recargar la página limpia después de 2.5 segundos
-            setTimeout(() => {
-                window.location.reload();
-            }, 2500);
         }
 
         // Canvas de partículas premium de fondo
