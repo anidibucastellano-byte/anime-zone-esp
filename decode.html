@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>AnimeZoneESP • Enlace Protegido</title>
     <!-- Fuentes Google Fonts para estética premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -572,6 +575,7 @@
 
         // Detectar bloqueador de anuncios (AdBlock)
         function checkAdBlock() {
+            console.log("[AdBlock Detector] Iniciando verificación...");
             return new Promise((resolve) => {
                 // Crear un elemento de anuncio falso
                 const testAd = document.createElement('div');
@@ -591,24 +595,33 @@
                                       window.getComputedStyle(testAd).visibility === 'hidden';
                     testAd.remove();
                     
+                    console.log("[AdBlock Detector] Paso 1 (Filtro CSS): isBlocked =", isBlocked);
+                    
                     if (isBlocked) {
                         resolve(true);
                     } else {
+                        console.log("[AdBlock Detector] Paso 2 (Google Ads Fetch): Intentando descargar script de Google...");
                         // Comprobación secundaria de red (Script general de Google Ads)
                         fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', {
                             method: 'HEAD',
                             mode: 'no-cors',
                             cache: 'no-store'
                         }).then(() => {
+                            console.log("[AdBlock Detector] Paso 2 exitoso (Google Ads accesible).");
                             // Comprobación terciaria: comprobar si el dominio específico de Monetag/Adsterra está bloqueado (evita bypass de DNS)
                             if (AD_URL && AD_URL !== "TU_ENLACE_DE_MONETAG_O_ADSTERRA_AQUI") {
                                 try {
                                     const urlObj = new URL(AD_URL);
                                     const testDomain = urlObj.origin; // Ej: https://omg10.com
                                     
+                                    console.log("[AdBlock Detector] Paso 3 (DNS Fetch): Conectando con dominio del anuncio:", testDomain);
+                                    
                                     // Usamos un timeout de 2.5 segundos para la conexión para evitar que se quede colgado si la operadora hace 'drop' de paquetes
                                     const fetchController = new AbortController();
-                                    const timeoutId = setTimeout(() => fetchController.abort(), 2500);
+                                    const timeoutId = setTimeout(() => {
+                                        console.warn("[AdBlock Detector] Paso 3 abortado por límite de tiempo de 2.5s (paquetes ignorados por ISP).");
+                                        fetchController.abort();
+                                    }, 2500);
                                     
                                     fetch(testDomain, {
                                         method: 'HEAD',
@@ -617,19 +630,23 @@
                                         signal: fetchController.signal
                                     }).then(() => {
                                         clearTimeout(timeoutId);
+                                        console.log("[AdBlock Detector] Paso 3 exitoso (Dominio accesible, no hay bloqueos de red ni DNS).");
                                         resolve(false); // Ambos accesibles, no hay bloqueo
                                     }).catch((err) => {
                                         clearTimeout(timeoutId);
-                                        console.warn("Dominio de anuncios no responde o está bloqueado por la operadora/DNS:", err);
+                                        console.warn("[AdBlock Detector] Paso 3 FALLIDO. Dominio de anuncios bloqueado por DNS/red:", err);
                                         resolve(true); // Bloqueado por DNS, antivirus o timeout
                                     });
                                 } catch (e) {
+                                    console.error("[AdBlock Detector] URL de anuncio inválida:", e);
                                     resolve(false); // URL no válida, ignoramos este paso
                                 }
                             } else {
+                                console.log("[AdBlock Detector] Sin URL de anuncio para verificar. Paso 3 omitido.");
                                 resolve(false);
                             }
-                        }).catch(() => {
+                        }).catch((err) => {
+                            console.warn("[AdBlock Detector] Paso 2 FALLIDO. Script de Google Ads bloqueado:", err);
                             resolve(true); // Script de Google Ads bloqueado por AdBlock
                         });
                     }
@@ -648,12 +665,16 @@
         async function startCountdown() {
             // Comprobar si hay un bloqueador de anuncios activo
             const hasAdBlock = await checkAdBlock();
+            console.log("[AdBlock Detector] Resultado final de hasAdBlock =", hasAdBlock);
+            
             if (hasAdBlock) {
+                console.log("[AdBlock Detector] Bloqueo activado. Cancelando proceso de descifrado.");
                 document.getElementById('headerSubtitle').textContent = "Acceso Restringido";
                 switchPanel('adblock');
                 return;
             }
 
+            console.log("[AdBlock Detector] Sin bloqueo. Procediendo al descifrado...");
             // Abrir el anuncio en una pestaña nueva si está configurado
             if (AD_URL && AD_URL !== "TU_ENLACE_DE_MONETAG_O_ADSTERRA_AQUI") {
                 window.open(AD_URL, '_blank');
