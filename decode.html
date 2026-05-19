@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeZoneESP • Enlace Protegido</title>
+    <!-- Fuentes Google Fonts para estética premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0c;
+            --card-bg: rgba(18, 18, 24, 0.65);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --primary-red: #ff3c3c;
+            --primary-gold: #f5b041;
+            --text-main: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.6);
+            --glow-color: rgba(255, 60, 60, 0.3);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', 'Poppins', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Lienzo para partículas del fondo */
+        #particles-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Gradientes decorativos de fondo */
+        .bg-glow-1 {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 60, 60, 0.12) 0%, transparent 70%);
+            top: -100px;
+            left: -100px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .bg-glow-2 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(245, 176, 65, 0.08) 0%, transparent 70%);
+            bottom: -150px;
+            right: -150px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Contenedor Principal con Glassmorphism */
+        .container {
+            position: relative;
+            z-index: 10;
+            width: 90%;
+            max-width: 480px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 
+                        0 0 40px rgba(255, 60, 60, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .container:hover {
+            border-color: rgba(255, 60, 60, 0.15);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 
+                        0 0 50px rgba(255, 60, 60, 0.06);
+        }
+
+        /* Logo y Cabecera */
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .logo-img {
+            height: 42px;
+            width: auto;
+            filter: drop-shadow(0 0 8px rgba(255, 60, 60, 0.5));
+        }
+
+        .title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            background: linear-gradient(135deg, var(--text-main) 30%, #f5b041 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-top: 5px;
+        }
+
+        /* Secciones del Proceso */
+        .step-panel {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 180px;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .step-panel.active {
+            display: flex;
+        }
+
+        /* Panel de Verificación Humana */
+        .verify-badge {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .verify-btn {
+            background: linear-gradient(135deg, var(--primary-red) 0%, #d32f2f 100%);
+            color: white;
+            border: none;
+            padding: 16px 36px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 14px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(255, 60, 60, 0.35);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .verify-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(255, 60, 60, 0.5);
+        }
+
+        .verify-btn:active {
+            transform: translateY(1px);
+        }
+
+        .verify-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.6s ease;
+        }
+
+        .verify-btn:hover::before {
+            left: 100%;
+        }
+
+        /* Panel de Cuenta Atrás (Loader Circular) */
+        .circular-loader {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+        }
+
+        .progress-ring {
+            transform: rotate(-90deg);
+        }
+
+        .progress-ring__circle {
+            transition: stroke-dashoffset 0.1s linear;
+            stroke-linecap: round;
+        }
+
+        .countdown-number {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .loader-status {
+            font-size: 0.95rem;
+            color: var(--primary-gold);
+            font-weight: 600;
+            min-height: 24px;
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Panel de Botón de Acceso */
+        .access-btn {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            text-decoration: none;
+            padding: 18px 45px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(39, 174, 96, 0.4);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            animation: buttonPulse 2.2s infinite;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .access-btn:hover {
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 15px 35px rgba(39, 174, 96, 0.6);
+        }
+
+        .access-btn:active {
+            transform: scale(0.98) translateY(1px);
+        }
+
+        .access-text {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 15px;
+        }
+
+        /* Estados de Error */
+        .error-icon {
+            font-size: 4rem;
+            color: var(--primary-red);
+            margin-bottom: 15px;
+            animation: shake 0.5s ease-in-out;
+        }
+
+        .error-message {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        /* Barra de progreso inferior */
+        .progress-bar-bg {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 2px;
+            margin-top: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--primary-red), var(--primary-gold));
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes buttonPulse {
+            0% { box-shadow: 0 12px 30px rgba(39, 174, 96, 0.4); }
+            50% { box-shadow: 0 12px 40px rgba(39, 174, 96, 0.75), 0 0 15px rgba(39, 174, 96, 0.4); }
+            100% { box-shadow: 0 12px 30px rgba(39, 174, 96, 0.4); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-8px); }
+            40%, 80% { transform: translateX(8px); }
+        }
+
+        /* Responsividad */
+        @media (max-width: 480px) {
+            .container {
+                padding: 35px 20px;
+            }
+            .title {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+
+    <div class="container">
+        <!-- Cabecera Común -->
+        <div class="header">
+            <div class="logo-container">
+                <img src="https://i.servimg.com/u/f30/20/63/83/19/icono10.png" alt="Logo" class="logo-img">
+                <span class="title">AnimeZoneESP</span>
+            </div>
+            <p class="subtitle" id="headerSubtitle">Cargando enlace seguro...</p>
+        </div>
+
+        <!-- PASO 1: Verificación Humana -->
+        <div class="step-panel active" id="panel-verify">
+            <span class="verify-badge">🛡️ SISTEMA ANTIBOT ACTIVO</span>
+            <button class="verify-btn" onclick="startCountdown()">
+                <span>🔓 CONTINUAR AL ENLACE</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </button>
+        </div>
+
+        <!-- PASO 2: Cuenta Atrás y Descifrado -->
+        <div class="step-panel" id="panel-loader">
+            <div class="circular-loader">
+                <svg class="progress-ring" width="120" height="120">
+                    <circle class="progress-ring__circle-bg" stroke="rgba(255,255,255,0.03)" stroke-width="6" fill="transparent" r="52" cx="60" cy="60"/>
+                    <circle class="progress-ring__circle" stroke="url(#redGoldGradient)" stroke-width="6" fill="transparent" r="52" cx="60" cy="60"/>
+                    <defs>
+                        <linearGradient id="redGoldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#ff3c3c" />
+                            <stop offset="100%" stop-color="#f5b041" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="countdown-number" id="countdown-text">5</div>
+            </div>
+            <p class="loader-status" id="loader-status">Verificando conexión...</p>
+        </div>
+
+        <!-- PASO 3: Enlace Listo -->
+        <div class="step-panel" id="panel-access" style="display: flex; flex-direction: column; gap: 12px; width: 100%;">
+            <!-- Botón JDownloader (oculto por defecto, se muestra si se detecta localmente) -->
+            <button class="access-btn jd-btn" id="jd-btn" onclick="sendToJDownloader()" style="display: none; width: 100%; background: linear-gradient(135deg, #1f4068 0%, #162447 100%); box-shadow: 0 12px 30px rgba(22, 36, 71, 0.45); border: 1px solid rgba(255,255,255,0.05); cursor: pointer;">
+                <span>📥 AÑADIR A JDOWNLOADER</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </button>
+            <p class="access-text" id="jd-tip" style="display: none; margin-top: -5px; margin-bottom: 10px; font-size: 0.8rem; color: var(--primary-gold); font-weight: 600;">⭐ ¡Recomendado! Añade el enlace directamente a tu gestor sin revelar la URL de MEGA.</p>
+
+            <!-- Botón Navegador (siempre visible o fallback) -->
+            <button class="access-btn browser-btn" id="browser-btn" onclick="openSecurePopup()" style="width: 100%; background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); box-shadow: 0 12px 30px rgba(39, 174, 96, 0.4); border: 1px solid rgba(255,255,255,0.05); cursor: pointer;">
+                <span>🌐 DESCARGA DIRECTA (NAVEGADOR)</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </button>
+            <p class="access-text" id="browser-tip">El enlace se abrirá en una ventana emergente protegida para mayor seguridad.</p>
+        </div>
+
+        <!-- Formulario oculto para Click'n'Load / JDownloader local -->
+        <form action="http://127.0.0.1:9666/flash/add" method="POST" target="jd_iframe" id="jd_form">
+            <input type="hidden" name="urls" id="jd_urls" value="">
+            <input type="hidden" name="source" value="AnimeZone">
+        </form>
+        <iframe name="jd_iframe" style="display:none; width:0; height:0;"></iframe>
+
+        <!-- PASO 4: Estado de Error -->
+        <div class="step-panel" id="panel-error">
+            <div class="error-icon">⚠️</div>
+            <p class="error-message" id="error-text">El enlace proporcionado no es válido o está incompleto.</p>
+        </div>
+
+        <!-- Indicador de Progreso Visual -->
+        <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="progress-bar"></div>
+        </div>
+    </div>
+
+    <script>
+        // Variables globales
+        let rawHash = "";
+        let decryptedUrl = "";
+        const steps = ['verify', 'loader', 'access', 'error'];
+        
+        // Cargar hash al iniciar
+        window.addEventListener('DOMContentLoaded', () => {
+            initParticles();
+            
+            rawHash = window.location.hash;
+            if (rawHash) {
+                rawHash = rawHash.substring(1); // Quitar el '#'
+            }
+            
+            if (!rawHash) {
+                showError("No se ha proporcionado ningún enlace encriptado en la URL.");
+                return;
+            }
+            
+            // Intentar descifrar de inmediato en memoria
+            decryptedUrl = decryptMega(rawHash);
+            
+            if (!decryptedUrl) {
+                showError("El código de encriptación no es válido o corresponde a un formato no soportado.");
+                return;
+            }
+            
+            document.getElementById('headerSubtitle').textContent = "Enlace detectado y protegido correctamente.";
+        });
+
+        // Algoritmo de descifrado AnimeZone (Reverso + Prefijo/Sufijo + Base64)
+        function decryptMega(code) {
+            try {
+                code = code.trim();
+                // Verificar si tiene el formato exclusivo AnimeZoneESP
+                if (code.startsWith("AZ_") && code.endsWith("_EP")) {
+                    let core = code.slice(3, -3); // Remover AZ_ y _EP
+                    let reversedB64 = core.split("").reverse().join(""); // Des-invertir
+                    let decoded = atob(reversedB64); // Decodificar Base64
+                    
+                    // Validar si es una URL válida de MEGA
+                    if (decoded.includes("mega.nz") || decoded.includes("mega.co.nz")) {
+                        return decoded;
+                    }
+                } else {
+                    // Fallback para Base64 estándar por si acaso
+                    let decoded = atob(code);
+                    if (decoded.includes("mega.nz") || decoded.includes("mega.co.nz")) {
+                        return decoded;
+                    }
+                }
+            } catch(e) {
+                console.error("Error al descifrar el enlace:", e);
+            }
+            return "";
+        }
+
+        // Navegación de paneles
+        function switchPanel(panelId) {
+            steps.forEach(step => {
+                const el = document.getElementById('panel-' + step);
+                if (step === panelId) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                }
+            });
+            
+            // Actualizar barra de progreso inferior
+            const progress = document.getElementById('progress-bar');
+            if (panelId === 'verify') progress.style.width = '25%';
+            if (panelId === 'loader') progress.style.width = '60%';
+            if (panelId === 'access') progress.style.width = '100%';
+            if (panelId === 'error') {
+                progress.style.width = '100%';
+                progress.style.background = 'var(--primary-red)';
+            }
+        }
+
+        // Mostrar error
+        function showError(msg) {
+            document.getElementById('error-text').textContent = msg;
+            document.getElementById('headerSubtitle').textContent = "Error de Seguridad";
+            switchPanel('error');
+        }
+
+        // Iniciar Cuenta Atrás
+        function startCountdown() {
+            switchPanel('loader');
+            document.getElementById('headerSubtitle').textContent = "Descifrando con seguridad...";
+            
+            const circle = document.querySelector('.progress-ring__circle');
+            const radius = circle.r.baseVal.value;
+            const circumference = radius * 2 * Math.PI;
+            
+            circle.style.strokeDasharray = `${circumference} ${circumference}`;
+            circle.style.strokeDashoffset = circumference;
+            
+            let timeLeft = 5;
+            const countdownText = document.getElementById('countdown-text');
+            const statusText = document.getElementById('loader-status');
+            
+            const statusMessages = {
+                5: "Conectando al servidor seguro...",
+                4: "Comprobando firmas digitales...",
+                3: "Des-ofuscando enlace MEGA...",
+                2: "Generando clave de redirección...",
+                1: "¡Listo! Abriendo puerta de enlace..."
+            };
+            
+            countdownText.textContent = timeLeft;
+            statusText.textContent = statusMessages[timeLeft];
+            
+            // Animación del círculo
+            circle.style.transition = 'stroke-dashoffset 5s linear';
+            circle.style.strokeDashoffset = 0;
+            
+            const interval = setInterval(() => {
+                timeLeft--;
+                if (timeLeft >= 1) {
+                    countdownText.textContent = timeLeft;
+                    statusText.textContent = statusMessages[timeLeft];
+                }
+                
+                if (timeLeft <= 0) {
+                    clearInterval(interval);
+                    
+                    // Detectar si JDownloader está activo
+                    detectJDownloader();
+                    
+                    // Cambiar al panel final
+                    document.getElementById('headerSubtitle').textContent = "¡Completado con éxito!";
+                    switchPanel('access');
+                }
+            }, 1000);
+        }
+
+        // Detectar JDownloader local por script tag (evita problemas de CORS)
+        function detectJDownloader() {
+            const script = document.createElement('script');
+            script.src = 'http://127.0.0.1:9666/jdcheck.js';
+            script.onload = function() {
+                // JDownloader está ejecutándose localmente
+                document.getElementById('jd-btn').style.display = 'inline-flex';
+                document.getElementById('jd-tip').style.display = 'block';
+                document.getElementById('browser-tip').textContent = "Descarga directa en el navegador si no usas gestores.";
+            };
+            script.onerror = function() {
+                // JDownloader no está activo o no está instalado
+                console.log("JDownloader no detectado ejecutándose localmente.");
+            };
+            document.body.appendChild(script);
+        }
+
+        // Enviar enlace de forma totalmente invisible a JDownloader
+        function sendToJDownloader() {
+            if (!decryptedUrl) return;
+            
+            document.getElementById('jd_urls').value = decryptedUrl;
+            document.getElementById('jd_form').submit();
+            
+            const btn = document.getElementById('jd-btn');
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = "<span>✅ ¡ENVIADO A TU GESTOR!</span>";
+            btn.style.background = "linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)";
+            btn.style.boxShadow = "0 12px 30px rgba(39, 174, 96, 0.4)";
+            
+            setTimeout(() => {
+                btn.innerHTML = originalContent;
+                btn.style.background = "linear-gradient(135deg, #1e3c72 0%, #162447 100%)";
+                btn.style.boxShadow = "0 12px 30px rgba(22, 36, 71, 0.45)";
+            }, 4000);
+        }
+
+        // Abrir enlace en ventana protegida sin barras del navegador
+        function openSecurePopup() {
+            if (!decryptedUrl) return;
+            
+            // Abre una ventana limpia con dimensiones específicas
+            // toolbar=no, location=no e impedir barras ayuda a que el usuario no copie el enlace fácilmente
+            const popup = window.open(
+                decryptedUrl, 
+                'MegaSecureDownload', 
+                'width=1024,height=680,toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes'
+            );
+            
+            // Si el bloqueador de popups lo impide, abrir en nueva pestaña normal
+            if (!popup || popup.closed || typeof popup.closed == 'undefined') {
+                window.open(decryptedUrl, '_blank');
+            }
+        }
+
+        // Canvas de partículas premium de fondo
+        function initParticles() {
+            const canvas = document.getElementById('particles-canvas');
+            const ctx = canvas.getContext('2d');
+            
+            let width = canvas.width = window.innerWidth;
+            let height = canvas.height = window.innerHeight;
+            
+            window.addEventListener('resize', () => {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            });
+            
+            const particles = [];
+            const particleCount = 45;
+            
+            for (let i = 0; i < particleCount; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    r: Math.random() * 2 + 0.5,
+                    vx: (Math.random() - 0.5) * 0.4,
+                    vy: (Math.random() - 0.5) * 0.4,
+                    alpha: Math.random() * 0.5 + 0.2
+                });
+            }
+            
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                
+                particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    
+                    if (p.x < 0) p.x = width;
+                    if (p.x > width) p.x = 0;
+                    if (p.y < 0) p.y = height;
+                    if (p.y > height) p.y = 0;
+                    
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(255, 60, 60, ${p.alpha})`;
+                    ctx.fill();
+                });
+                
+                requestAnimationFrame(animate);
+            }
+            
+            animate();
+        }
+    </script>
+</body>
+</html>
