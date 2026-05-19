@@ -606,15 +606,22 @@
                                     const urlObj = new URL(AD_URL);
                                     const testDomain = urlObj.origin; // Ej: https://omg10.com
                                     
+                                    // Usamos un timeout de 2.5 segundos para la conexión para evitar que se quede colgado si la operadora hace 'drop' de paquetes
+                                    const fetchController = new AbortController();
+                                    const timeoutId = setTimeout(() => fetchController.abort(), 2500);
+                                    
                                     fetch(testDomain, {
                                         method: 'HEAD',
                                         mode: 'no-cors',
-                                        cache: 'no-store'
+                                        cache: 'no-store',
+                                        signal: fetchController.signal
                                     }).then(() => {
+                                        clearTimeout(timeoutId);
                                         resolve(false); // Ambos accesibles, no hay bloqueo
                                     }).catch((err) => {
-                                        console.warn("Dominio de anuncios no responde (bloqueo DNS o red):", err);
-                                        resolve(true); // Bloqueado por DNS o antivirus
+                                        clearTimeout(timeoutId);
+                                        console.warn("Dominio de anuncios no responde o está bloqueado por la operadora/DNS:", err);
+                                        resolve(true); // Bloqueado por DNS, antivirus o timeout
                                     });
                                 } catch (e) {
                                     resolve(false); // URL no válida, ignoramos este paso
@@ -706,14 +713,25 @@
             const script = document.createElement('script');
             script.src = 'http://127.0.0.1:9666/jdcheck.js';
             script.onload = function() {
-                // JDownloader está ejecutándose localmente
+                // JDownloader está ejecutándose localmente y es accesible
                 document.getElementById('jd-detected-section').style.display = 'flex';
                 document.getElementById('jd-missing-section').style.display = 'none';
+                
+                // Asegurar que el mensaje de éxito esté por defecto
+                const statusLabel = document.querySelector('#jd-detected-section .access-text');
+                statusLabel.innerHTML = "✅ JDownloader detectado. El enlace se enviará directamente a tu gestor sin revelarse en el navegador.";
+                statusLabel.style.color = "#2ecc71";
             };
             script.onerror = function() {
-                // JDownloader no está activo o no está instalado
-                document.getElementById('jd-detected-section').style.display = 'none';
-                document.getElementById('jd-missing-section').style.display = 'flex';
+                // JDownloader no se pudo verificar (ya sea porque está cerrado o por las políticas PNA de Chrome en HTTPS)
+                // Mostramos el botón de añadir de todas formas ya que la petición POST por formulario se permite sin restricciones
+                document.getElementById('jd-detected-section').style.display = 'flex';
+                document.getElementById('jd-missing-section').style.display = 'none';
+                
+                // Mostrar advertencia informativa en vez de bloquear el flujo
+                const statusLabel = document.querySelector('#jd-detected-section .access-text');
+                statusLabel.innerHTML = "⚠️ Si JDownloader no responde, abre el programa en tu PC e inténtalo de nuevo.";
+                statusLabel.style.color = "var(--primary-gold)";
             };
             document.body.appendChild(script);
         }
