@@ -608,13 +608,10 @@
                             cache: 'no-store'
                         }).then(() => {
                             console.log("[AdBlock Detector] Paso 2 exitoso (Google Ads accesible).");
-                            // Comprobación terciaria: comprobar si el dominio específico de Monetag/Adsterra está bloqueado (evita bypass de DNS)
+                            // Comprobación terciaria: comprobar si el enlace específico de Monetag/Adsterra está bloqueado (evita bypass de DNS y filtros por ruta)
                             if (AD_URL && AD_URL !== "TU_ENLACE_DE_MONETAG_O_ADSTERRA_AQUI") {
                                 try {
-                                    const urlObj = new URL(AD_URL);
-                                    const testDomain = urlObj.origin; // Ej: https://omg10.com
-                                    
-                                    console.log("[AdBlock Detector] Paso 3 (DNS Fetch): Conectando con dominio del anuncio:", testDomain);
+                                    console.log("[AdBlock Detector] Paso 3 (URL Fetch): Conectando con URL exacta del anuncio:", AD_URL);
                                     
                                     // Usamos un timeout de 2.5 segundos para la conexión para evitar que se quede colgado si la operadora hace 'drop' de paquetes
                                     const fetchController = new AbortController();
@@ -623,19 +620,19 @@
                                         fetchController.abort();
                                     }, 2500);
                                     
-                                    fetch(testDomain, {
+                                    fetch(AD_URL, {
                                         method: 'HEAD',
                                         mode: 'no-cors',
                                         cache: 'no-store',
                                         signal: fetchController.signal
                                     }).then(() => {
                                         clearTimeout(timeoutId);
-                                        console.log("[AdBlock Detector] Paso 3 exitoso (Dominio accesible, no hay bloqueos de red ni DNS).");
-                                        resolve(false); // Ambos accesibles, no hay bloqueo
+                                        console.log("[AdBlock Detector] Paso 3 exitoso (Enlace accesible, no hay bloqueos de red, DNS ni extensión).");
+                                        resolve(false); // Accesible, no hay bloqueo
                                     }).catch((err) => {
                                         clearTimeout(timeoutId);
-                                        console.warn("[AdBlock Detector] Paso 3 FALLIDO. Dominio de anuncios bloqueado por DNS/red:", err);
-                                        resolve(true); // Bloqueado por DNS, antivirus o timeout
+                                        console.warn("[AdBlock Detector] Paso 3 FALLIDO. Enlace de anuncios bloqueado por DNS/red/extensión:", err);
+                                        resolve(true); // Bloqueado por DNS, extensión, antivirus o timeout
                                     });
                                 } catch (e) {
                                     console.error("[AdBlock Detector] URL de anuncio inválida:", e);
