@@ -10151,30 +10151,6 @@
     },
     {
       "confianza": 85,
-      "href": "/t564-activo-clarence-2014-castellano-130-130-webdl-rip-1920x1080-65-mb-129-gb-mega-pixeldrain-ver-online",
-      "name": "[Activo] Clarence (2014) [Castellano] [130/130] [WebDL-Rip] [1920x1080] [65 MB / 1,29 GB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Occidental",
-      "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Comedia, Slice of life, Cartoon Network",
-      "type": "Dibujo Animado",
-      "url": "https://animezoneesp.foroactivo.com/t564-activo-clarence-2014-castellano-130-130-webdl-rip-1920x1080-65-mb-129-gb-mega-pixeldrain-ver-online",
-      "year": 2014,
-      "imagen": "images\\dibujos_22_Activo-Clarence-2014-Castellano-130130-WebDL-Rip-1920x1080-65-MB-129-GB-MegaPixeldrain-Ver-Online.jpg",
-      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1769468754/mis_archivos_elegidos/manual_poster_tmdb_Clarence.jpg",
-      "sinopsis": "En un mundo tan ruidoso, Clarence es pura paz, ni más ni menos. Solo ve el mundo de sus colores favoritos: uva y verde fosforescente. Clarence quiere a sus amigos Jeff y Sumo y a su madre Mary por encima de todas las cosas. Pase lo que pase, por malo que sea, nada deprime a Clarence.",
-      "ficha_tecnica": {
-        "ano": "2014",
-        "idioma": "Castellano",
-        "subtitulos": "Ninguno",
-        "formato": "MP4",
-        "calidad": "WebDL-Rip",
-        "resolucion": "1920x1080",
-        "peso": "65 MB / 1,29 GB"
-      },
-      "rentry_url": "https://rentry.co/bhngwb8g"
-    },
-    {
-      "confianza": 85,
       "href": "/t410-activo-codigo-lyoko-2003-dual-audio-95-9502-webdl-rip-1326x1080-240-530-mb-mega-pixeldrain-ver-online",
       "name": "[Activo] Código Lyoko (2003) [Dual-Audio] [95/95+02] [WebDL-Rip] [1326x1080] [240/530 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Occidental",
@@ -21450,16 +21426,12 @@
       "name": "Clarence",
       "year": 2014,
       "type": "Dibujos",
-      "genre": [
-        "Comedia"
-      ],
-      "specificGenre": "Comedia",
+      "genre": "Comedia, Cartoon Network",
+      "specificGenre": "Comedia, Cartoon Network",
       "url": "https://animezoneesp.foroactivo.com/t1853-activo-clarence-2014-castellano-139-139-dvd-rip-1920x1080-5mb-129gb-mega-pixeldrain-ver-online#4499",
       "href": "/t1853-activo-clarence-2014-castellano-139-139-dvd-rip-1920x1080-5mb-129gb-mega-pixeldrain-ver-online",
       "razonClasificacion": "Extraído automáticamente del foro - 2026-04-24 23:41",
-      "originalGenre": [
-        "Comedia"
-      ],
+      "originalGenre": "Comedia, Cartoon Network",
       "confianza": 100,
       "fecha_adicion": "2026-04-24T23:41:09.001235",
       "imagen": "images\\dibujos_477_Clarence.jpg",
