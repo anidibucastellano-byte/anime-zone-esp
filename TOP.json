@@ -33433,6 +33433,29 @@
         "formato": "MKV",
         "peso": "390MB/990MB"
       }
+    },
+    {
+      "name": "Breaking Bad",
+      "year": 2008,
+      "genre": "Crimen, Drama",
+      "specificGenre": "Crimen, Drama",
+      "originalGenre": "Crimen, Drama",
+      "type": "Series",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781110870/mis_archivos_elegidos/manual_poster_tmdb_Breaking_Bad.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781110870/mis_archivos_elegidos/manual_poster_tmdb_Breaking_Bad.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t2439-activo-breaking-bad-2008-dual-audio-62-62-webdl-rip-1920x1080-840mb-140gb-mega-pixeldrain-ver-online#5805",
+      "href": "/t2439-activo-breaking-bad-2008-dual-audio-62-62-webdl-rip-1920x1080-840mb-140gb-mega-pixeldrain-ver-online#5805",
+      "rentry_url": "https://rentry.co/c8uz9g3m",
+      "sinopsis": "Un profesor de química con cáncer terminal se asocia con un exalumno suyo para fabricar y vender metanfetamina a fin de que su familia no pase apuros económicos.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "840MB/1,40GB"
+      }
     }
   ]
 }
