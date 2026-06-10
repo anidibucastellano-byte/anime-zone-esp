@@ -26258,6 +26258,29 @@
         "formato": "AVI",
         "peso": "165MB/345MB"
       }
+    },
+    {
+      "name": "Martín Martín",
+      "year": 2003,
+      "genre": "Infantil",
+      "specificGenre": "Infantil",
+      "originalGenre": "Infantil",
+      "type": "Dibujos",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781048311/mis_archivos_elegidos/manual_poster_tmdb_Mart%C3%ADn_Mat%C3%ADn.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781048311/mis_archivos_elegidos/manual_poster_tmdb_Mart%C3%ADn_Mat%C3%ADn.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t2434-activo-martin-martin-2003-castellano-104-104-tv-rip-640x480-30mb-110mb-mega-pixeldrain-ver-online#5798",
+      "href": "/t2434-activo-martin-martin-2003-castellano-104-104-tv-rip-640x480-30mb-110mb-mega-pixeldrain-ver-online#5798",
+      "rentry_url": "https://rentry.co/cg5qm3i6",
+      "sinopsis": "Martín Martín es un muchacho de lo más normal que, con sus amigos Gromo y Roxana, acude cada día a la escuela y se esfuerza en aprender. Lo único que le diferencia de los demás muchachos es que cada mañana al despertar su aspecto y su condición han variado: Un día es un dragón, otro puede ser un rey, un superhéroe, un vampiro, o un marciano. Martín amanece cada día siendo alguien distinto, y ni él ni su familia ni sus amigos pueden hacer nada por evitarlo.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "calidad": "TV-RIP",
+        "resolucion": "640x480",
+        "formato": "MP4",
+        "peso": "30MB/110MB"
+      }
     }
   ],
   "peliculas": [
@@ -33340,6 +33363,75 @@
         "resolucion": "1920x1080",
         "formato": "MKV",
         "peso": "95MB/1,39GB"
+      }
+    },
+    {
+      "name": "Ley y desorden",
+      "year": 1995,
+      "genre": "Comedia, Crimen",
+      "specificGenre": "Comedia, Crimen",
+      "originalGenre": "Comedia, Crimen",
+      "type": "Series",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781039281/mis_archivos_elegidos/manual_poster_tmdb_Ley_y_desorden.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781039281/mis_archivos_elegidos/manual_poster_tmdb_Ley_y_desorden.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t2431-activo-ley-y-desorden-1995-castellano-14-14-dvd-rip-560x416-250mb-350mb-mega-pixeldrain-ver-online#5795",
+      "href": "/t2431-activo-ley-y-desorden-1995-castellano-14-14-dvd-rip-560x416-250mb-350mb-mega-pixeldrain-ver-online#5795",
+      "rentry_url": "https://rentry.co/69tryuce",
+      "sinopsis": "La comisaría de Gasforth está en algún sitio, puede que en un barrio de Londres como Acton o Wimblendon, o quizá en un pequeño pueblo como Godalming, el caso es que ni está en medio de la urbe ni entre los verdes pastos británicos. En ella los agentes tiene que afrontar todos los problemas que asociamos a... los uniformes, pues hay dos divisiones distintas en la comisaría, los de uniforme y la división de investigación criminal de paisano que se siente muy superior al pelotón uniformado. La comisaría es estrecha y van a tener que compartir demasiado espacio, asegurando las más cómicas situaciones.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "calidad": "DVD-Rip",
+        "resolucion": "560x416",
+        "formato": "AVI",
+        "peso": "250MB/350MB"
+      }
+    },
+    {
+      "name": "Doctor Who",
+      "year": 2005,
+      "genre": "Acción, Aventura, Drama, Ciencia ficción, Fantasía",
+      "specificGenre": "Acción, Aventura, Drama, Ciencia ficción, Fantasía",
+      "originalGenre": "Acción, Aventura, Drama, Ciencia ficción, Fantasía",
+      "type": "Series",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781044900/mis_archivos_elegidos/manual_poster_tmdb_Doctor_Who.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781044900/mis_archivos_elegidos/manual_poster_tmdb_Doctor_Who.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t2432-activo-doctor-who-2005-dual-audio-147-147-webdl-rip-1868x1070-115mb-196gb-mega-pixeldrain-ver-online#5796",
+      "href": "/t2432-activo-doctor-who-2005-dual-audio-147-147-webdl-rip-1868x1070-115mb-196gb-mega-pixeldrain-ver-online#5796",
+      "rentry_url": "https://rentry.co/wtiiw2gd",
+      "sinopsis": "Doctor Who es una serie de televisión británica de ciencia ficción producida por la BBC. El programa muestra las aventuras de un Señor del Tiempo conocido como \"El Doctor\", que explora el universo en su TARDIS, una nave espacial con conciencia propia capaz de viajar a través del tiempo y el espacio. Con la ayuda de distintos acompañantes, el Doctor se enfrenta a una variedad de enemigos mientras salva civilizaciones, visita tanto el pasado como el futuro, ayuda a gente común y corrige injusticias.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1868x1070",
+        "formato": "MKV",
+        "peso": "115MB/1,96GB"
+      }
+    },
+    {
+      "name": "Modern Family",
+      "year": 2009,
+      "genre": "Comedia",
+      "specificGenre": "Comedia",
+      "originalGenre": "Comedia",
+      "type": "Series",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781045991/mis_archivos_elegidos/manual_poster_tmdb_Modern_Family.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781045991/mis_archivos_elegidos/manual_poster_tmdb_Modern_Family.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t2433-activo-modern-family-2009-dual-audio-250-250-webdl-rip-1920x1080-390mb-990mb-mega-pixeldrain-ver-online#5797",
+      "href": "/t2433-activo-modern-family-2009-dual-audio-250-250-webdl-rip-1920x1080-390mb-990mb-mega-pixeldrain-ver-online#5797",
+      "rentry_url": "https://rentry.co/bdmq7mtp",
+      "sinopsis": "Narrada desde la perspectiva de un documental, la serie ofrece un panorama honesto y divertido sobre la vida de varias familias, en donde se presentan la relación entre padres e hijos, diferencias generacionales y culturales.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Inglés, Inglés",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "390MB/990MB"
       }
     }
   ]
