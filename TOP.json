@@ -26281,6 +26281,29 @@
         "formato": "MP4",
         "peso": "30MB/110MB"
       }
+    },
+    {
+      "name": "Fútbol en acción",
+      "year": 1981,
+      "genre": "Infantil",
+      "specificGenre": "Infantil",
+      "originalGenre": "Infantil",
+      "type": "Dibujos",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781217418/mis_archivos_elegidos/manual_poster_tmdb_F%C3%BAtbol_en_acci%C3%B3n.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781217418/mis_archivos_elegidos/manual_poster_tmdb_F%C3%BAtbol_en_acci%C3%B3n.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t2454-activo-futbol-en-accion-1981-castellano-26-26-webdl-rip-1440x1080-600mb-880mb-mega-pixeldrain-ver-online#5838",
+      "href": "/t2454-activo-futbol-en-accion-1981-castellano-26-26-webdl-rip-1440x1080-600mb-880mb-mega-pixeldrain-ver-online#5838",
+      "rentry_url": "https://rentry.co/nbneufva",
+      "sinopsis": "La serie animada de aventuras basada en la Copa Mundial de Fútbol de 1982 con la mascota oficial tiene al personaje principal, Naranjito. Naranjito estuvo acompañado por sus amigos Clementine, Citronio e Imarchi el robot.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1440x1080",
+        "formato": "MKV",
+        "peso": "600MB/880MB"
+      }
     }
   ],
   "peliculas": [
@@ -33478,6 +33501,52 @@
         "resolucion": "1920x1080",
         "formato": "MKV",
         "peso": "1,22GB/2,17GB"
+      }
+    },
+    {
+      "name": "Bajo escucha (The Wire)",
+      "year": 2002,
+      "genre": "Crimen, Drama",
+      "specificGenre": "Crimen, Drama",
+      "originalGenre": "Crimen, Drama",
+      "type": "Series",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781208013/mis_archivos_elegidos/manual_poster_tmdb_Bajo_escucha.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781208013/mis_archivos_elegidos/manual_poster_tmdb_Bajo_escucha.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t2451-activo-bajo-escucha-the-wire-2002-dual-audio-60-60-webdl-rip-1920x1080-191gb-325gb-mega-pixeldrain-ver-online#5833",
+      "href": "/t2451-activo-bajo-escucha-the-wire-2002-dual-audio-60-60-webdl-rip-1920x1080-191gb-325gb-mega-pixeldrain-ver-online#5833",
+      "rentry_url": "https://rentry.co/qsqdeqbe",
+      "sinopsis": "David Simon, creador y coguionista de la miniserie de HBO tres veces ganadora del premio Emmy The Corner, este sencillo y extremadamente realista drama sigue una caótica y controvertida investigación de drogas y asesinatos en Baltimore que conllevará peligrosos pinchazos telefónicos y continua vigilancia. Mostrando ambas perspectivas, de la policía y de sus criminales, la serie captura un universo donde distinguir entre el bien y el mal, el delito y la condena, es siempre desafío.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Inglés, Español",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "1,91GB/3,25GB"
+      }
+    },
+    {
+      "name": "Los Soprano",
+      "year": 1999,
+      "genre": "Crimen, Drama",
+      "specificGenre": "Crimen, Drama",
+      "originalGenre": "Crimen, Drama",
+      "type": "Series",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781222307/mis_archivos_elegidos/manual_poster_tmdb_Los_Soprano.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781222307/mis_archivos_elegidos/manual_poster_tmdb_Los_Soprano.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t2452-activo-los-soprano-1999-dual-audio-86-86-webdl-rip-1920x1072-900mb-143gb-mega-pixeldrain-ver-online#5834",
+      "href": "/t2452-activo-los-soprano-1999-dual-audio-86-86-webdl-rip-1920x1072-900mb-143gb-mega-pixeldrain-ver-online#5834",
+      "rentry_url": "https://rentry.co/f5h32k56",
+      "sinopsis": "Los Soprano (The Sopranos) es una serie de televisión estadounidense creada y producida por David Chase. La serie se estrenó en Estados Unidos el 10 de enero de 1999 por el canal de televisión por cable HBO, que la emitió ininterrumpidamente hasta su desenlace, el 10 de junio de 2007. La trama de la serie gira en torno al mafioso de Nueva Jersey Tony Soprano (James Gandolfini) y las dificultades que enfrenta tanto en su hogar como en la organización criminal que dirige. A su vez, la serie también se centra en la historia de los personajes cercanos a Tony, especialmente su esposa Carmela (Edie Falco) y su sobrino y protegido Christopher Moltisanti (Michael Imperioli).",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1072",
+        "formato": "MKV",
+        "peso": "900MB/1,43GB"
       }
     }
   ]
