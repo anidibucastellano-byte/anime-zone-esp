@@ -33456,6 +33456,29 @@
         "formato": "MKV",
         "peso": "840MB/1,40GB"
       }
+    },
+    {
+      "name": "Juego de tronos",
+      "year": 2011,
+      "genre": "Ciencia ficción, Fantasía, Drama, Acción, Aventura",
+      "specificGenre": "Ciencia ficción, Fantasía, Drama, Acción, Aventura",
+      "originalGenre": "Ciencia ficción, Fantasía, Drama, Acción, Aventura",
+      "type": "Series",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781200537/mis_archivos_elegidos/manual_poster_tmdb_Juego_de_tronos.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781200537/mis_archivos_elegidos/manual_poster_tmdb_Juego_de_tronos.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t2448-activo-juego-de-tronos-2011-dual-audio-73-73-webdl-rip-1920x1080-122gb-217gb-mega-pixeldrain-ver-online#5825",
+      "href": "/t2448-activo-juego-de-tronos-2011-dual-audio-73-73-webdl-rip-1920x1080-122gb-217gb-mega-pixeldrain-ver-online#5825",
+      "rentry_url": "https://rentry.co/3peup38m",
+      "sinopsis": "En una tierra donde los veranos duran décadas y los inviernos pueden durar toda una vida, los problemas acechan. Desde las maquinaciones del sur a las salvajes tierras del este, pasando por el helado norte y el milenario muro que protege el reino de las fuerzas tenebrosas, dos poderosas familias mantienen un enfrentamiento letal por gobernar los Siete Reinos de Poniente. Mientras la traición, la lujuria y las fuerzas sobrenaturales sacuden los pilares de los reinos, la sangrienta batalla por el trono de Hierro tendrá consecuencias imprevistas y trascendentales. El invierno se acerca. Que empiece 'Juego de tronos'.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "1,22GB/2,17GB"
+      }
     }
   ]
 }
