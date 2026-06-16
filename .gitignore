@@ -14,7 +14,7 @@ __pycache__/
 *.pyd
 
 # Data files (persisted state)
-seen_topics.json
+# seen_topics.json is now tracked by git (used by GitHub Action)
 backfill_progress.json
 
 # Backups
