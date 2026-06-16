@@ -33893,6 +33893,75 @@
         "formato": "MKV",
         "peso": "1,20GB/1,44GB"
       }
+    },
+    {
+      "name": "Friends",
+      "year": 1994,
+      "genre": "Comedia",
+      "specificGenre": "Comedia",
+      "originalGenre": "Comedia",
+      "type": "Series",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781600220/mis_archivos_elegidos/manual_poster_tmdb_Friends.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781600220/mis_archivos_elegidos/manual_poster_tmdb_Friends.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t2492-activo-friends-1994-dual-audio-234-234-bd-rip-1920x1080-390mb-945mb-mega-pixeldrain-ver-online#5951",
+      "href": "/t2492-activo-friends-1994-dual-audio-234-234-bd-rip-1920x1080-390mb-945mb-mega-pixeldrain-ver-online#5951",
+      "rentry_url": "https://rentry.co/r7xn7w5t",
+      "sinopsis": "Las aventuras de seis jóvenes neoyorquinos unidos por una divertida amistad. Entre el amor, el trabajo y la familia, comparten sus alegrías y preocupaciones en el Central Perk, su café favorito.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "390MB/945MB"
+      }
+    },
+    {
+      "name": "La dimensión desconocida",
+      "year": 1959,
+      "genre": "Ciencia ficción, Fantasía, Misterio, Drama",
+      "specificGenre": "Ciencia ficción, Fantasía, Misterio, Drama",
+      "originalGenre": "Ciencia ficción, Fantasía, Misterio, Drama",
+      "type": "Series",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781600350/mis_archivos_elegidos/manual_poster_tmdb_La_dimensi%C3%B3n_desconocida.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781600350/mis_archivos_elegidos/manual_poster_tmdb_La_dimensi%C3%B3n_desconocida.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t2494-activo-la-dimension-desconocida-1959-tri-audio-156-156-webdl-rip-1920x1080-835mb-216gb-mega-pixeldrain-ver-online#5953",
+      "href": "/t2494-activo-la-dimension-desconocida-1959-tri-audio-156-156-webdl-rip-1920x1080-835mb-216gb-mega-pixeldrain-ver-online#5953",
+      "rentry_url": "https://rentry.co/ar2ws3rz",
+      "sinopsis": "Serie de televisión especializada en el género de la ciencia-ficción. Fue creada por su narrador y anfitrión, Rod Serling, y cada episodio recrea un relato de fantasía, terror, suspense o ciencia ficción, a menudo rematado por un final sorprendente.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Catalán, Inglés",
+        "subtitulos": "Ninguno",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "835MB/2,16GB"
+      }
+    },
+    {
+      "name": "Seinfeld",
+      "year": 1989,
+      "genre": "Comedia",
+      "specificGenre": "Comedia",
+      "originalGenre": "Comedia",
+      "type": "Series",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781600730/mis_archivos_elegidos/manual_poster_tmdb_Seinfeld.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781600730/mis_archivos_elegidos/manual_poster_tmdb_Seinfeld.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t2495-activo-seinfeld-1989-dual-audio-178-178-webdl-rip-1920x1080-375mb-970mb-mega-pixeldrain-ver-online#5955",
+      "href": "/t2495-activo-seinfeld-1989-dual-audio-178-178-webdl-rip-1920x1080-375mb-970mb-mega-pixeldrain-ver-online#5955",
+      "rentry_url": "https://rentry.co/mre73p9c",
+      "sinopsis": "El cómico Jerry Seinfeld y sus excéntricos amigos (Constanza, Kramer y Elaine) viven en Nueva York y les pasan innumerables peripecias en esta genial comedia de situación donde la menor excusa sirve para regalarnos un delirante episodio. Batió todos los récords de audiencia que se pusieron por delante, y aún hoy en día sus reposiciones siguen contando con innumerables seguidores, no en vano \"Seinfeld\" es una verdadera leyenda de la televisión americana. \"Media hora acerca de nada\", así definió Jerry Seinfeld su teleserie cuando la presentó a los ejecutivos de la NBC, a comienzos de 1990. Contra todo pronóstico, ellos aceptaron. No en vano Seinfeld era ya por entonces uno de los cómicos más populares de Estados Unidos. ¿Su secreto? Sacar punta a las rutinas de cada día hasta convertirlas en reflexiones filosóficas dignas de figurar en un tratado sobre las grandezas y las miserias humanas.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "375MB/970MB"
+      }
     }
   ]
 }
