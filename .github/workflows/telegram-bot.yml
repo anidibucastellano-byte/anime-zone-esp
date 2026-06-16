@@ -1,0 +1,44 @@
+name: ForoActivo to Telegram Bot
+
+on:
+  schedule:
+    # Ejecuta cada 10 minutos (UTC)
+    - cron: "*/10 * * * *"
+  workflow_dispatch: # Permite ejecutar manualmente desde GitHub
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install feedparser requests python-dotenv beautifulsoup4 lxml
+
+      - name: Restore seen_topics.json from cache
+        uses: actions/cache@v4
+        with:
+          path: telegram_bot/seen_topics.json
+          key: seen-topics-${{ github.run_id }}
+          restore-keys: |
+            seen-topics-
+
+      - name: Run the bot
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
+          FORO_USERNAME: ${{ secrets.FORO_USERNAME }}
+          FORO_PASSWORD: ${{ secrets.FORO_PASSWORD }}
+        run: |
+          cd telegram_bot
+          python foroactivo_to_telegram.py

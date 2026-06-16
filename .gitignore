@@ -1,0 +1,28 @@
+# Secrets and environment
+.env
+*.env.local
+
+# Logs
+*.log
+bot.log
+backfill.log
+
+# Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Data files (persisted state)
+seen_topics.json
+backfill_progress.json
+
+# Backups
+backups/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+temp_libs/
