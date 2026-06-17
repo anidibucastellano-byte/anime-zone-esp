@@ -47,9 +47,12 @@ if TELEGRAM_THREAD_ID:
 
 # Mapeo de subforos a topics de Telegram
 FORUM_THREAD_MAPPING = {
+    "f10": 54,  # Películas (Doraemon)
     "f11": 50,  # Series Anime y Dibujos Animados
+    "f12": 50,  # Series Anime (Ito Junji)
     "f14": 54,  # Peliculas Anime y Dibujos Animados
     "f17": 59,  # Series Live-Action
+    "f20": 50,  # Series (Conde Duckula)
     "f21": 62,  # Peliculas Live-Action
 }
 
@@ -268,7 +271,7 @@ def fetch_topic_details(topic_url: str) -> tuple[str | None, str | None]:
     forum_id = None
     for container in soup.find_all(class_=re.compile(r"pathname|nav|breadcrumb", re.I)):
         for a in container.find_all("a", href=True):
-            m = re.search(r"/(f11|f14|f17|f21)-", a["href"])
+            m = re.search(r"/(f\d+)-", a["href"])
             if m:
                 forum_id = m.group(1)
                 break
@@ -277,7 +280,7 @@ def fetch_topic_details(topic_url: str) -> tuple[str | None, str | None]:
 
     if not forum_id:
         for a in soup.find_all("a", href=True):
-            m = re.search(r"/(f11|f14|f17|f21)-", a["href"])
+            m = re.search(r"/(f\d+)-", a["href"])
             if m:
                 forum_id = m.group(1)
                 break
@@ -404,7 +407,7 @@ def fetch_topic_details(topic_url: str) -> tuple[str | None, str | None, str | N
     forum_id = None
     for container in soup.find_all(class_=re.compile(r"pathname|nav|breadcrumb", re.I)):
         for a in container.find_all("a", href=True):
-            m = re.search(r"/(f11|f14|f17|f21)-", a["href"])
+            m = re.search(r"/(f\d+)-", a["href"])
             if m:
                 forum_id = m.group(1)
                 break
@@ -413,7 +416,7 @@ def fetch_topic_details(topic_url: str) -> tuple[str | None, str | None, str | N
 
     if not forum_id:
         for a in soup.find_all("a", href=True):
-            m = re.search(r"/(f11|f14|f17|f21)-", a["href"])
+            m = re.search(r"/(f\d+)-", a["href"])
             if m:
                 forum_id = m.group(1)
                 break
