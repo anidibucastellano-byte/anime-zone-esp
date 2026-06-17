@@ -340,6 +340,200 @@ def extract_image_from_rss(html_content: str) -> str | None:
     return candidates[0]
 
 
+def scrape_forum_page() -> list[dict]:
+    """
+    Scrapea la página principal del foro para obtener todos los temas recientes,
+    no solo los últimos 12 del feed RSS.
+    Devuelve una lista de diccionarios con la misma estructura que las entradas del feed.
+    """
+    session = get_session()
+    topics = []
+
+    try:
+        resp = session.get(FORO_BASE_URL, timeout=15)
+        resp.raise_for_status()
+    except requests.RequestException as exc:
+        log.warning("No se pudo acceder a la página principal del foro: %s", exc)
+        return topics
+
+    soup = BeautifulSoup(resp.text, "lxml")
+
+    # Buscar todos los enlaces a temas activos
+    seen_links = set()
+    for a in soup.find_all("a", href=True):
+        href = a["href"]
+        # Filtrar enlaces a temas (empiezan por /t y tienen -activo)
+        if "/t" in href and "-activo" in href.lower():
+            # Limpiar el enlace (eliminar anclas, parámetros extra)
+            clean_href = href.split("#")[0].split("?")[0]
+            full_link = urljoin(FORO_BASE_URL, clean_href)
+            if full_link not in seen_links:
+                seen_links.add(full_link)
+                # Obtener el título del atributo 'title' del enlace (tiene el título completo!)
+                title = a.get("title", "").strip() or a.get_text(strip=True) or "Sin título"
+                # Crear entrada con misma estructura que el feed
+                topics.append({
+                    "title": title,
+                    "link": full_link,
+                    "id": full_link,
+                    "author": "Desconocido",
+                    "published_parsed": None,
+                    "updated_parsed": None,
+                })
+
+    log.info("Scrape de página principal: encontrados %d temas recientes", len(topics))
+    return topics
+
+
+def fetch_topic_details(topic_url: str) -> tuple[str | None, str | None, str | None, tuple | None]:
+    """
+    Accede al hilo del foro con sesión autenticada.
+    Devuelve una tupla (image_url, forum_id, full_title, published_parsed).
+    """
+    session = get_session()
+    try:
+        resp = session.get(topic_url, timeout=15)
+        resp.raise_for_status()
+    except requests.RequestException as exc:
+        log.warning("No se pudo acceder al hilo %s: %s", topic_url, exc)
+        return None, None, None, None
+
+    soup = BeautifulSoup(resp.text, "lxml")
+
+    # 1. Detectar forum_id buscando enlaces a subforos en el pathname/navigation
+    forum_id = None
+    for container in soup.find_all(class_=re.compile(r"pathname|nav|breadcrumb", re.I)):
+        for a in container.find_all("a", href=True):
+            m = re.search(r"/(f11|f14|f17|f21)-", a["href"])
+            if m:
+                forum_id = m.group(1)
+                break
+        if forum_id:
+            break
+
+    if not forum_id:
+        for a in soup.find_all("a", href=True):
+            m = re.search(r"/(f11|f14|f17|f21)-", a["href"])
+            if m:
+                forum_id = m.group(1)
+                break
+
+    # 2. Buscar imagen
+    all_imgs = soup.find_all("img")
+    candidates: list[str] = []
+    for img in all_imgs:
+        src = img.get("src") or img.get("data-src") or ""
+        if not src:
+            continue
+        if src.startswith("//"):
+            src = "https:" + src
+        elif src.startswith("/"):
+            src = urljoin(FORO_BASE_URL, src)
+        elif not src.startswith("http"):
+            src = urljoin(topic_url, src)
+
+        if _is_ui_image(src):
+            continue
+
+        candidates.append(src)
+
+    image_url = None
+    if candidates:
+        for src in candidates:
+            if CLOUDINARY_DOMAIN in src.lower():
+                log.debug("Imagen Cloudinary encontrada: %s", src)
+                image_url = src
+                break
+        if not image_url:
+            log.debug("Imagen externa encontrada: %s", candidates[0])
+            image_url = candidates[0]
+
+    # 3. Obtener título completo de la página del tema (look for <h2 class="topic-title"> or similar)
+    full_title = None
+    for title_tag in soup.find_all(["h1", "h2", "h3"], class_=re.compile(r"topic-title|maintitle|cattitle", re.I)):
+        full_title = title_tag.get_text(strip=True)
+        if full_title:
+            break
+
+    # 4. Obtener fecha de publicación (look for JSON-LD script tag with datePublished!)
+    published_parsed = None
+    for script_tag in soup.find_all("script", type="application/ld+json"):
+        try:
+            import json
+            json_data = json.loads(script_tag.string)
+            if "datePublished" in json_data:
+                # Parse ISO date string like "2026-06-17T12:53:35+02:00"
+                from datetime import datetime
+                dt = datetime.fromisoformat(json_data["datePublished"])
+                # Create a time.struct_time-like tuple (tm_year, tm_mon, tm_mday, tm_hour, tm_min, tm_sec, tm_wday, tm_yday, tm_isdst)
+                published_parsed = (dt.year, dt.month, dt.day, dt.hour, dt.minute, dt.second, dt.weekday(), 0, -1)
+                break
+        except Exception as e:
+            log.debug("Could not parse JSON-LD date: %s", e)
+            pass
+
+    return image_url, forum_id, full_title, published_parsed
+
+
+def process_scraped_topics(topics: list[dict], seen: set, first_run: bool) -> int:
+    """
+    Procesa los temas obtenidos del scrape de la página principal,
+    con la misma lógica que process_feed.
+    Retorna el número de temas nuevos publicados.
+    """
+    new_count = 0
+    # Procesamos en orden (más antiguo primero, pero no tenemos fecha, así que ordenamos por ID)
+    # Los IDs de temas son números mayores para temas más nuevos (t2516 > t2515)
+    sorted_topics = sorted(topics, key=lambda t: int(re.search(r"/t(\d+)-", t["link"]).group(1)) if re.search(r"/t(\d+)-", t["link"]) else 0)
+
+    for entry in sorted_topics:
+        uid = entry.get("id") or entry.get("link", "")
+        if not uid or uid in seen:
+            continue
+
+        if not first_run:
+            topic_url = entry.get("link", "")
+
+            # 1. Obtener imagen, forum_id, full_title, published_parsed accediendo al post con sesión autenticada
+            image_url, forum_id, full_title, published_parsed = fetch_topic_details(topic_url) if topic_url else (None, None, None, None)
+
+            # Use full_title if available, otherwise keep the scraped title
+            if full_title:
+                entry["title"] = full_title
+            # Use published_parsed if available
+            if published_parsed:
+                entry["published_parsed"] = published_parsed
+
+            if not forum_id:
+                log.warning("No se pudo determinar el subforo para %s", topic_url)
+                continue
+
+            thread_id = FORUM_THREAD_MAPPING.get(forum_id)
+            if not thread_id:
+                log.info("Tema '%s' pertenece al subforo %s (no sincronizado), omitiendo.", entry.get("title"), forum_id)
+                seen.add(uid)
+                continue
+
+            # No hay HTML del RSS para fallback, así que solo usamos la imagen de la página
+            if image_url:
+                log.info("🖼️  Imagen encontrada: %s", image_url)
+            else:
+                log.info("🖼️  Sin imagen para este tema.")
+
+            text = format_message(entry)
+
+            if send_telegram_message(text, image_url, thread_id=thread_id):
+                log.info("✅ Publicado en thread %d: %s", thread_id, entry.get("title", uid))
+                new_count += 1
+            else:
+                log.warning("⚠️  No se pudo publicar: %s", entry.get("title", uid))
+                continue  # No marcar como visto si falló el envío
+
+        seen.add(uid)
+
+    return new_count
+
+
 # ─────────────────────────────────────────────
 # TELEGRAM
 # ─────────────────────────────────────────────
@@ -449,8 +643,15 @@ def process_feed(feed_name: str, feed_url: str, seen: set, first_run: bool) -> i
         if not first_run:
             topic_url = entry.get("link", "")
 
-            # 1. Obtener imagen y forum_id accediendo al post con sesión autenticada
-            image_url, forum_id = fetch_topic_details(topic_url) if topic_url else (None, None)
+            # 1. Obtener imagen, forum_id, full_title, published_parsed accediendo al post con sesión autenticada
+            image_url, forum_id, full_title, published_parsed = fetch_topic_details(topic_url) if topic_url else (None, None, None, None)
+
+            # Use full_title if available, otherwise keep the feed's title
+            if full_title:
+                entry["title"] = full_title
+            # Use published_parsed if available
+            if published_parsed:
+                entry["published_parsed"] = published_parsed
 
             if not forum_id:
                 log.warning("No se pudo determinar el subforo para %s", topic_url)
@@ -510,8 +711,12 @@ def run():
         )
 
     total_new = 0
+    # Primero procesamos el feed RSS
     for name, url in RSS_FEEDS.items():
         total_new += process_feed(name, url, seen, first_run)
+    # Luego procesamos los temas scrapeados de la página principal
+    scraped_topics = scrape_forum_page()
+    total_new += process_scraped_topics(scraped_topics, seen, first_run)
 
     save_seen(seen)
 
