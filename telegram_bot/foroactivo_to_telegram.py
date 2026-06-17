@@ -594,10 +594,10 @@ def format_message(entry: dict) -> str:
     published = entry.get("published_parsed") or entry.get("updated_parsed")
     if published:
         dt_utc = datetime(*published[:6], tzinfo=timezone.utc)
-        # Convertir UTC a zona horaria de Madrid (Europe/Madrid)
+        # Convert UTC a zona horaria de Madrid (Europe/Madrid)
         tz_madrid = ZoneInfo("Europe/Madrid")
         dt_madrid = dt_utc.astimezone(tz_madrid)
-        fecha = dt_madrid.strftime("%d/%m/%Y a las %H:%M (hora española)")
+        fecha = dt_madrid.strftime("%d/%m/%Y a las %H:%M")
     else:
         fecha = "Fecha desconocida"
 
