@@ -2018,7 +2018,7 @@ Acción, Aventura, Artes marciales, Fantasía, Shōnen"""
         import os
         
         # Confirmar
-        if not messagebox.askyesno("Confirmar", "¿Subir cambios a GitHub?\n\nEsto hará:\n1. Guardar cambios actuales\n2. Add index.html y TOP.json\n3. Commit\n4. Push a GitHub"):
+        if not messagebox.askyesno("Confirmar", "¿Subir cambios a GitHub?\n\nEsto hará:\n1. Guardar cambios actuales\n2. Regenerar HTML\n3. Añadir cambios\n4. Commit\n5. Push a GitHub"):
             return
         
         try:
@@ -2028,19 +2028,35 @@ Acción, Aventura, Artes marciales, Fantasía, Shōnen"""
             self.label_status.config(text="🚀 Haciendo deploy...", foreground='blue')
             self.root.update()
             
+            # 2. Regenerar HTML
+            import os
+            env = os.environ.copy()
+            env['PYTHONIOENCODING'] = 'utf-8'
+            
+            resultado = subprocess.run(
+                ['python', '-W', 'ignore', r'c:\Users\Rafael\CascadeProjects\windsurf-project\generar_html_foroactivo.py'],
+                capture_output=True, text=True, timeout=60, encoding='utf-8', errors='ignore',
+                env=env, shell=False
+            )
+            
             # Cambiar al directorio del proyecto
             proyecto_dir = r'c:\Users\Rafael\CascadeProjects\windsurf-project'
             
-            # Git add
-            subprocess.run(['git', '-C', proyecto_dir, 'add', 'index.html', 'TOP.json', 'decode.html', 'encriptador_mega.py', '.github/workflows/deploy-pages.yml', 'editor_compacto.py'], 
+            # 3. Git add all changes
+            subprocess.run(['git', '-C', proyecto_dir, 'add', '-u'], 
                           capture_output=True, text=True, encoding='utf-8', check=True)
+            # Also add index.html and TOP.json just in case
+            subprocess.run(['git', '-C', proyecto_dir, 'add', 'index.html', 'TOP.json'], 
+                          capture_output=True, text=True, encoding='utf-8')
             
-            # Git commit
-            subprocess.run(['git', '-C', proyecto_dir, 'commit', '-m', 'Actualizar catalogo'], 
-                          capture_output=True, text=True, encoding='utf-8', check=True)
+            # 4. Try to commit (it's okay if nothing to commit)
+            commit_result = subprocess.run(['git', '-C', proyecto_dir, 'commit', '-m', 'Actualizar catalogo'], 
+                          capture_output=True, text=True, encoding='utf-8')
             
-            # Git push
-            resultado = subprocess.run(['git', '-C', proyecto_dir, 'push', 'origin', 'main'], 
+            # 5. Git push regardless (there might be a previous commit)
+            self.label_status.config(text="📤 Subiendo a GitHub...", foreground='blue')
+            self.root.update()
+            push_result = subprocess.run(['git', '-C', proyecto_dir, 'push', 'origin', 'main'], 
                                       capture_output=True, text=True, encoding='utf-8', check=True)
             
             messagebox.showinfo("Éxito", "✅ Deploy completado!\n\nLos cambios se subieron a GitHub.\nEspera 2-3 minutos para que se actualice el catálogo.")
@@ -2050,7 +2066,25 @@ Acción, Aventura, Artes marciales, Fantasía, Shōnen"""
             # Combinar stdout y stderr para buscar el mensaje de "nothing to commit"
             salida_completa = (e.stdout or "") + (e.stderr or "")
             
-            if "nothing to commit" in salida_completa.lower() or "nothing added" in salida_completa.lower() or "up-to-date" in salida_completa.lower():
+            if "nothing to commit" in salida_completa.lower() or "nothing added" in salida_completa.lower():
+                # Still try to push in case there are unpushed commits
+                try:
+                    self.label_status.config(text="📤 Subiendo commits anteriores...", foreground='blue')
+                    self.root.update()
+                    push_result = subprocess.run(['git', '-C', proyecto_dir, 'push', 'origin', 'main'], 
+                                              capture_output=True, text=True, encoding='utf-8', check=True)
+                    messagebox.showinfo("Éxito", "✅ Push completado!")
+                    self.label_status.config(text="✅ Deploy listo", foreground='green')
+                except subprocess.CalledProcessError as push_e:
+                    push_salida = (push_e.stdout or "") + (push_e.stderr or "")
+                    if "up-to-date" in push_salida.lower():
+                        messagebox.showinfo("Info", "No hay cambios nuevos para subir o ya está actualizado.")
+                        self.label_status.config(text="ℹ️ Sin cambios", foreground='gray')
+                    else:
+                        error_msg = push_e.stderr[:500] if push_e.stderr else str(push_e)
+                        messagebox.showerror("Error", f"Error al hacer push:\n{error_msg}")
+                        self.label_status.config(text="❌ Error en push", foreground='red')
+            elif "up-to-date" in salida_completa.lower():
                 messagebox.showinfo("Info", "No hay cambios nuevos para subir o ya está actualizado.")
                 self.label_status.config(text="ℹ️ Sin cambios", foreground='gray')
             else:
