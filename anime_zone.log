@@ -1161,3 +1161,10 @@
 2026-06-18 22:40:04,096 - INFO - Jetix enlazados: 0
 2026-06-18 22:40:04,115 - INFO - HTML generado exitosamente - Total: 1401 items
 2026-06-18 22:40:04,116 - INFO - Distribución - Anime: 421, Dibujos: 654, Películas: 257, Series: 69
+2026-06-18 22:40:14,738 - INFO - Iniciando generación de HTML
+2026-06-18 22:40:14,746 - INFO - Backup creado: True
+2026-06-18 22:40:14,758 - INFO - TOP.json cargado exitosamente
+2026-06-18 22:40:14,765 - INFO - Cartoon Network enlazados: 0
+2026-06-18 22:40:14,765 - INFO - Jetix enlazados: 0
+2026-06-18 22:40:14,781 - INFO - HTML generado exitosamente - Total: 1401 items
+2026-06-18 22:40:14,782 - INFO - Distribución - Anime: 421, Dibujos: 654, Películas: 257, Series: 69
