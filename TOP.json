@@ -7787,19 +7787,19 @@
     },
     {
       "confianza": 85,
-      "href": "/t504-activo-las-cronicas-de-lodoss-1990-dual-audio-27-2713-dvd-rip-720x532-335-630-mb-mega-pixeldrain-ver-online",
-      "name": "[Activo] Las Crónicas de Lodoss (1990) [Dual-Audio] [27/27+13] [DVD-RIP] [720x532] [335/630 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
+      "href": "/t504-activo-activo-record-of-lodoss-war-1990-tri-audio-27-2713-bd-rip-1920x1080-400mb-148gb-mega-pixeldrain-ver-online#6022",
+      "name": "[Activo] Record of Lodoss War (1990) [Tri-Audio] [27/27+13] [BD-Rip] [1920x1080] [400MB/1,48GB] [Mega/Pixeldrain] [Ver Online]",
+      "originalGenre": "Fantasía, Aventura, Acción",
       "razonClasificacion": "Clasificación durante scraping con enlace",
       "specificGenre": "Fantasía, Aventura, Acción",
       "type": "Anime",
-      "url": "https://animezoneesp.foroactivo.com/t504-activo-las-cronicas-de-lodoss-1990-dual-audio-27-2713-dvd-rip-720x532-335-630-mb-mega-pixeldrain-ver-online",
+      "url": "https://animezoneesp.foroactivo.com/t504-activo-activo-record-of-lodoss-war-1990-tri-audio-27-2713-bd-rip-1920x1080-400mb-148gb-mega-pixeldrain-ver-online#6022",
       "year": 1990,
       "fecha_modificacion": "2026-04-19T21:12:16.076169",
       "categoria_anterior": "dibujos",
       "imagen": "images/imagesanime_504_Activo-Las-Crónicas-de-Lodoss-1990-Dual-Audio-272713-DVD-RIP-720x532jpg.jpg",
       "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1769023353/mis_archivos_elegidos/manual_poster_tmdb_Las_Cr%C3%B3nicas_de_Lodoss.jpg",
-      "sinopsis": "La isla de Lodoss pasa por un terrible momento. Después de años de paz una maléfica figura extiende su tétrico poder por el reino. Ante semejante situación todos los intenteos por salvaguardar el equilibrio entre las diferentes dzonas del territorio son en vano.Sólo la valentía y la astucia de seis jóvenes guerreros, liderados por el valeroso caballero Parn y la bella elfo Deedlit, podrán dar una brizna de esperanza a un reino en decadencia. La batalla definitiva entre el bien y el mal ha comenz",
+      "sinopsis": "La isla de Lodoss pasa por un terrible momento. Después de años de paz una maléfica figura extiende su tétrico poder por el reino. Ante semejante situación todos los intenteos por salvaguardar el equilibrio entre las diferentes dzonas del territorio son en vano.Sólo la valentía y la astucia de seis jóvenes guerreros, liderados por el valeroso caballero Parn y la bella elfo Deedlit, podrán dar una brizna de esperanza a un reino en decadencia. La batalla definitiva entre el bien y el mal ha comenzado. Serie dividida en 13 OVAs de 25 minutos cada una.",
       "ficha_tecnica": {
         "ano": "1990",
         "idioma": "Castellano, Japonés",
@@ -7809,7 +7809,8 @@
         "resolucion": "720x532",
         "peso": "335/630 MB"
       },
-      "rentry_url": "https://rentry.co/6ddwyvgy"
+      "rentry_url": "https://rentry.co/iemdfckc",
+      "genre": "Fantasía, Aventura, Acción"
     },
     {
       "confianza": 90,
@@ -32785,6 +32786,29 @@
         "resolucion": "1920x1080",
         "formato": "MKV",
         "peso": "3,40GB"
+      }
+    },
+    {
+      "name": "Peaky Blinders: El hombre inmortal",
+      "year": 2026,
+      "genre": "Crimen, Drama",
+      "specificGenre": "Crimen, Drama",
+      "originalGenre": "Crimen, Drama",
+      "type": "Película",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781802237/mis_archivos_elegidos/manual_poster_tmdb_Peaky_Blinders_El_hombre_inmortal.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1781802237/mis_archivos_elegidos/manual_poster_tmdb_Peaky_Blinders_El_hombre_inmortal.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t2522-activo-peaky-blinders-el-hombre-inmortal-2026-dual-audio-bd-rip-1920x1080-451gb-mega-pixeldrain-ver-online#6021",
+      "href": "/t2522-activo-peaky-blinders-el-hombre-inmortal-2026-dual-audio-bd-rip-1920x1080-451gb-mega-pixeldrain-ver-online#6021",
+      "rentry_url": "https://rentry.co/3wcupzx3",
+      "sinopsis": "El gánster Tommy Shelby regresa a Birmingham para salvar a su familia —y a su país— cuando su hijo, del que se ha distanciado, se ve envuelto en un complot nazi.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Castellano, Inglés",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "4,51GB"
       }
     }
   ],
