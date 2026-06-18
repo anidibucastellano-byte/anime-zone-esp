@@ -2053,7 +2053,28 @@ Acción, Aventura, Artes marciales, Fantasía, Shōnen"""
             commit_result = subprocess.run(['git', '-C', proyecto_dir, 'commit', '-m', 'Actualizar catalogo'], 
                           capture_output=True, text=True, encoding='utf-8')
             
-            # 5. Git push regardless (there might be a previous commit)
+            # 5. Pull first to avoid conflicts!
+            self.label_status.config(text="📥 Actualizando desde GitHub...", foreground='blue')
+            self.root.update()
+            try:
+                subprocess.run(['git', '-C', proyecto_dir, 'pull', '--rebase', 'origin', 'main'], 
+                          capture_output=True, text=True, encoding='utf-8', check=True)
+            except subprocess.CalledProcessError as pull_e:
+                pull_salida = (pull_e.stdout or "") + (pull_e.stderr or "")
+                if "unstaged changes" in pull_salida.lower():
+                    # Stash unstaged changes if needed
+                    subprocess.run(['git', '-C', proyecto_dir, 'stash', 'push', '-m', 'temp-stash'], 
+                                  capture_output=True, text=True, encoding='utf-8')
+                    # Pull again
+                    subprocess.run(['git', '-C', proyecto_dir, 'pull', '--rebase', 'origin', 'main'], 
+                                  capture_output=True, text=True, encoding='utf-8', check=True)
+                    # Pop stash
+                    subprocess.run(['git', '-C', proyecto_dir, 'stash', 'pop'], 
+                                  capture_output=True, text=True, encoding='utf-8')
+                else:
+                    raise pull_e
+            
+            # 6. Git push
             self.label_status.config(text="📤 Subiendo a GitHub...", foreground='blue')
             self.root.update()
             push_result = subprocess.run(['git', '-C', proyecto_dir, 'push', 'origin', 'main'], 
