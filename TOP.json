@@ -38816,6 +38816,29 @@
         "formato": "MKV",
         "peso": "520MB/1,36GB"
       }
+    },
+    {
+      "name": "This Is Us",
+      "year": 2016,
+      "genre": "Drama",
+      "specificGenre": "Drama",
+      "originalGenre": "Drama",
+      "type": "Series",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1785971401/mis_archivos_elegidos/manual_poster_tmdb_This_Is_Us.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1785971401/mis_archivos_elegidos/manual_poster_tmdb_This_Is_Us.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3016-activo-this-is-us-2016-dual-audio-106-106-webdl-rip-1920x1080-875mb-165gb-mega-pixeldrain-ver-online#7741",
+      "href": "/t3016-activo-this-is-us-2016-dual-audio-106-106-webdl-rip-1920x1080-875mb-165gb-mega-pixeldrain-ver-online#7741",
+      "rentry_url": "https://rentry.co/x4kgwfwh",
+      "sinopsis": "Esta provocativa y honesta serie sigue a un grupo de personas bastante particular que, de pronto, ven cómo sus vidas se entrelazan unas con otras de las maneras más curiosas posibles, explorando sus propios conflictos, privaciones y dificultades. Pronto descubren que muchos de ellos comparten elementos comunes en sus vidas (algunos de ellos cumplen año el mismo día), incluso más de lo que cualquiera de ellos podrían esperar. This is Us es una serie que mezcla elementos de comedia y drama, y en la que los personajes deben lidiar con los aspectos difíciles de la vida, demostrando que el amor es una fuerza imparable y que los humanos son capaces de resistir más de lo que creen.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Inglés, Castellano",
+        "subtitulos": "Español, Inglés",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "875MB/1,65GB"
+      }
     }
   ]
 }
