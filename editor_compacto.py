@@ -2050,14 +2050,15 @@ Acción, Aventura, Artes marciales, Fantasía, Shōnen"""
         GIT_CMD_TIMEOUT = 60   # segundos por comando git (evita hangs permanentes)
         HTML_TIMEOUT = 180
 
-        def _run(cmd, check=True, label="", timeout=GIT_CMD_TIMEOUT, env=None):
+        def _run(cmd, check=True, label="", timeout=GIT_CMD_TIMEOUT, env=None, cwd=None):
             """Wrapper: ejecuta con timeout, captura todo y muestra error útil.
 
             Nunca pregunta interactivamente: falla rápido si necesita credenciales/interacción.
             """
             use_env = env if env is not None else _deploy_env
+            use_cwd = cwd if cwd is not None else proyecto_dir
             res = subprocess.run(
-                cmd, cwd=proyecto_dir, env=use_env,
+                cmd, cwd=use_cwd, env=use_env,
                 capture_output=True, text=True, encoding='utf-8', errors='ignore',
                 timeout=timeout
             )
@@ -2217,12 +2218,44 @@ Acción, Aventura, Artes marciales, Fantasía, Shōnen"""
                         output=(push_out + hint).encode('utf-8', 'ignore')
                     )
             else:
+                # 7. Deploy a la rama gh-pages (despliegue directo sin Actions)
+                self.label_status.config(text="🚀 Desplegando en GitHub Pages (gh-pages)...", foreground='blue')
+                self.root.update()
+
+                import tempfile
+                import shutil
+
+                temp_dir = tempfile.mkdtemp(prefix="gh_pages_deploy_", dir=proyecto_dir)
+                try:
+                    archivos_deploy = [
+                        'index.html',
+                        'decode.html',
+                        'TOP.json',
+                        'logo disney.png',
+                        'logo jetix.png',
+                        'logo_cartoon_network.png'
+                    ]
+
+                    for archivo in archivos_deploy:
+                        ruta_original = os.path.join(proyecto_dir, archivo)
+                        if os.path.exists(ruta_original):
+                            shutil.copy2(ruta_original, os.path.join(temp_dir, archivo))
+
+                    _run(['git', 'init'], check=True, label="git init temp gh-pages", cwd=temp_dir)
+                    _run(['git', 'checkout', '-b', 'gh-pages'], check=True, label="git checkout gh-pages temp", cwd=temp_dir)
+                    _run(['git', 'add', '-A'], check=True, label="git add temp gh-pages", cwd=temp_dir)
+                    _run(['git', 'commit', '-m', 'Deploy manual GitHub Pages'], check=True, label="git commit temp gh-pages", cwd=temp_dir)
+                    _run(['git', 'remote', 'add', 'origin_ghpages', 'https://github.com/anidibucastellano-byte/anime-zone-esp.git'], check=False, label="add remote temp", cwd=temp_dir)
+                    _run(['git', 'push', '-f', 'origin_ghpages', 'gh-pages'], check=True, label="push to gh-pages", cwd=temp_dir)
+                finally:
+                    shutil.rmtree(temp_dir, ignore_errors=True)
+
                 if commit_res is None:
                     summary = "Push hecho. No había cambios locales nuevos; commits anteriores ya enviados."
                 else:
-                    summary = "Deploy completado!\n\nLos cambios se subieron a GitHub.\nEspera 2-3 minutos para que se actualice el catálogo."
+                    summary = "Deploy completado!\n\nLos cambios se subieron a GitHub.\nEspera 1-2 minutos para que se actualice el catálogo."
                 messagebox.showinfo("Éxito", summary)
-                self.label_status.config(text="✅ Deploy listo - espera 2-3 min", foreground='green')
+                self.label_status.config(text="✅ Deploy listo - espera 1-2 min", foreground='green')
 
         except subprocess.CalledProcessError as e:
             salida = (e.output or b"").decode('utf-8', errors='ignore')
