@@ -2028,103 +2028,198 @@ Acción, Aventura, Artes marciales, Fantasía, Shōnen"""
         """Hacer deploy a GitHub Pages"""
         import subprocess
         import os
-        
+
+        proyecto_dir = r'c:\Users\Rafael\CascadeProjects\windsurf-project'
+
+        def _run(cmd, check=True, label=""):
+            """Wrapper: ejecuta, imprime paso, captura todo y muestra error útil."""
+            res = subprocess.run(
+                cmd, cwd=proyecto_dir,
+                capture_output=True, text=True, encoding='utf-8', errors='ignore'
+            )
+            out = (res.stdout or "") + (res.stderr or "")
+            if check and res.returncode != 0:
+                raise subprocess.CalledProcessError(
+                    res.returncode, cmd,
+                    output=(f"--- PASO: {label} ---\n{out}\n").encode('utf-8', 'ignore')
+                )
+            return res, out
+
         # Confirmar
-        if not messagebox.askyesno("Confirmar", "¿Subir cambios a GitHub?\n\nEsto hará:\n1. Guardar cambios actuales\n2. Regenerar HTML\n3. Añadir cambios\n4. Commit\n5. Push a GitHub"):
+        if not messagebox.askyesno(
+            "Confirmar",
+            "¿Subir cambios a GitHub?\n\nEsto hará:\n"
+            "1. Guardar cambios actuales (JSON)\n"
+            "2. Sincronizar con GitHub (pull) para evitar conflictos\n"
+            "3. Regenerar HTML\n"
+            "4. Commit + push a GitHub"
+        ):
             return
-        
+
         try:
-            # 1. Guardar automáticamente para asegurar que hay algo que subir
-            self.guardar_silencioso()
-            
-            self.label_status.config(text="🚀 Haciendo deploy...", foreground='blue')
+            # 0. Detectar repo roto por estado intermedio
+            git_dir = os.path.join(proyecto_dir, '.git')
+            if os.path.isdir(os.path.join(git_dir, 'rebase-merge')) or \
+               os.path.isdir(os.path.join(git_dir, 'rebase-apply')) or \
+               os.path.isfile(os.path.join(git_dir, 'MERGE_HEAD')) or \
+               os.path.isfile(os.path.join(git_dir, 'CHERRY_PICK_HEAD')):
+                messagebox.showerror(
+                    "Git en estado inconsistente",
+                    "El repositorio está en medio de un rebase/merge/cherry-pick.\n"
+                    "Abre una terminal y resuélvelo antes de volver a hacer deploy:\n\n"
+                    "  - Si era un rebase fallido:   git rebase --abort\n"
+                    "  - Si era un merge:            git merge --abort"
+                )
+                self.label_status.config(text="❌ Git en estado inconsistente", foreground='red')
+                return
+
+            # 1. Guardar JSON actual primero
+            self.label_status.config(text="💾 Guardando JSON...", foreground='blue')
             self.root.update()
-            
-            # 2. Regenerar HTML
-            import os
+            self.guardar_silencioso()
+
+            # 2. Pull ANTES de commit, para evitar conflictos al rebasar TU commit nuevo
+            self.label_status.config(text="📥 Sincronizando con GitHub...", foreground='blue')
+            self.root.update()
+
+            # Stash temporal por si había cambios locales sin trackear/modificados
+            stash_result, _ = _run(['git', 'stash', 'push', '-u', '-m', 'deploy-temp-stash'],
+                                   check=False, label="git stash pre-pull")
+            stash_hecho = (stash_result.returncode == 0 and
+                           ("No local changes" not in (stash_result.stdout + stash_result.stderr)))
+
+            try:
+                _run(['git', 'fetch', 'origin'], check=True, label="git fetch origin")
+                pull_res, pull_out = _run(['git', 'merge', '--ff-only', 'origin/main'],
+                                          check=False, label="git merge --ff-only origin/main")
+                if pull_res.returncode != 0:
+                    # Fallback a rebase si no es fast-forward
+                    rb_res, rb_out = _run(['git', 'rebase', 'origin/main'],
+                                          check=False, label="git rebase origin/main")
+                    if rb_res.returncode != 0:
+                        _run(['git', 'rebase', '--abort'], check=False, label="abort rebase")
+                        raise subprocess.CalledProcessError(
+                            rb_res.returncode, rb_res.cmd,
+                            output=("No se pudo sincronizar. "
+                                    "Conflicto al hacer merge/rebase con origin/main.\n"
+                                    "Haz pull manualmente y resuelve.\n\n"
+                                    + rb_out).encode('utf-8', 'ignore')
+                        )
+            finally:
+                if stash_hecho:
+                    _run(['git', 'stash', 'pop'], check=False, label="git stash pop")
+
+            # 3. Regenerar HTML (ahora sobre código ya sincronizado)
+            self.label_status.config(text="🧱 Generando HTML...", foreground='blue')
+            self.root.update()
             env = os.environ.copy()
             env['PYTHONIOENCODING'] = 'utf-8'
-            
-            resultado = subprocess.run(
-                ['python', '-W', 'ignore', r'c:\Users\Rafael\CascadeProjects\windsurf-project\generar_html_foroactivo.py'],
-                capture_output=True, text=True, timeout=60, encoding='utf-8', errors='ignore',
-                env=env, shell=False
+            html_res = subprocess.run(
+                ['python', '-W', 'ignore',
+                 os.path.join(proyecto_dir, 'generar_html_foroactivo.py')],
+                cwd=proyecto_dir, capture_output=True, text=True, timeout=120,
+                encoding='utf-8', errors='ignore', env=env, shell=False
             )
-            
-            # Cambiar al directorio del proyecto
-            proyecto_dir = r'c:\Users\Rafael\CascadeProjects\windsurf-project'
-            
-            # 3. Git add all changes
-            subprocess.run(['git', '-C', proyecto_dir, 'add', '-u'], 
-                          capture_output=True, text=True, encoding='utf-8', check=True)
-            # Also add index.html and TOP.json just in case
-            subprocess.run(['git', '-C', proyecto_dir, 'add', 'index.html', 'TOP.json'], 
-                          capture_output=True, text=True, encoding='utf-8')
-            
-            # 4. Try to commit (it's okay if nothing to commit)
-            commit_result = subprocess.run(['git', '-C', proyecto_dir, 'commit', '-m', 'Actualizar catalogo'], 
-                          capture_output=True, text=True, encoding='utf-8')
-            
-            # 5. Pull first to avoid conflicts!
-            self.label_status.config(text="📥 Actualizando desde GitHub...", foreground='blue')
+            if html_res.returncode != 0:
+                raise subprocess.CalledProcessError(
+                    html_res.returncode, html_res.cmd,
+                    output=(html_res.stdout or "") + (html_res.stderr or "")
+                )
+
+            # 4. Git add: tracked modificados + archivos clave explícitos
+            self.label_status.config(text="📝 Preparando commit...", foreground='blue')
             self.root.update()
-            try:
-                subprocess.run(['git', '-C', proyecto_dir, 'pull', '--rebase', 'origin', 'main'], 
-                          capture_output=True, text=True, encoding='utf-8', check=True)
-            except subprocess.CalledProcessError as pull_e:
-                pull_salida = (pull_e.stdout or "") + (pull_e.stderr or "")
-                if "unstaged changes" in pull_salida.lower():
-                    # Stash unstaged changes if needed
-                    subprocess.run(['git', '-C', proyecto_dir, 'stash', 'push', '-m', 'temp-stash'], 
-                                  capture_output=True, text=True, encoding='utf-8')
-                    # Pull again
-                    subprocess.run(['git', '-C', proyecto_dir, 'pull', '--rebase', 'origin', 'main'], 
-                                  capture_output=True, text=True, encoding='utf-8', check=True)
-                    # Pop stash
-                    subprocess.run(['git', '-C', proyecto_dir, 'stash', 'pop'], 
-                                  capture_output=True, text=True, encoding='utf-8')
-                else:
-                    raise pull_e
-            
-            # 6. Git push
+            _run(['git', 'add', '-u'], check=True, label="git add -u")
+            _run(['git', 'add',
+                  os.path.join(proyecto_dir, 'TOP.json'),
+                  os.path.join(proyecto_dir, 'index.html')],
+                 check=True, label="git add TOP.json + index.html")
+            # También los scripts por si cambiasen editor_compacto/generador
+            _run(['git', 'add',
+                  os.path.join(proyecto_dir, 'editor_compacto.py'),
+                  os.path.join(proyecto_dir, 'generar_html_foroactivo.py')],
+                 check=False, label="git add scripts (opcional)")
+
+            # Comprobar si hay algo staged
+            diff_res, _ = _run(['git', 'diff', '--cached', '--quiet'],
+                               check=False, label="hay cambios staged?")
+            nada_staged = (diff_res.returncode == 0)
+
+            # 5. Commit solo si hay cambios
+            commit_res = None
+            if nada_staged:
+                self.label_status.config(text="ℹ️ Sin cambios para commit", foreground='gray')
+            else:
+                commit_res, _ = _run(
+                    ['git', 'commit', '-m', 'Actualizar catalogo'],
+                    check=False, label="git commit"
+                )
+
+            # 6. Push siempre (por si había commits locales anteriores sin push)
             self.label_status.config(text="📤 Subiendo a GitHub...", foreground='blue')
             self.root.update()
-            push_result = subprocess.run(['git', '-C', proyecto_dir, 'push', 'origin', 'main'], 
-                                      capture_output=True, text=True, encoding='utf-8', check=True)
-            
-            messagebox.showinfo("Éxito", "✅ Deploy completado!\n\nLos cambios se subieron a GitHub.\nEspera 2-3 minutos para que se actualice el catálogo.")
-            self.label_status.config(text="✅ Deploy listo - espera 2-3 min", foreground='green')
-            
-        except subprocess.CalledProcessError as e:
-            # Combinar stdout y stderr para buscar el mensaje de "nothing to commit"
-            salida_completa = (e.stdout or "") + (e.stderr or "")
-            
-            if "nothing to commit" in salida_completa.lower() or "nothing added" in salida_completa.lower():
-                # Still try to push in case there are unpushed commits
-                try:
-                    self.label_status.config(text="📤 Subiendo commits anteriores...", foreground='blue')
-                    self.root.update()
-                    push_result = subprocess.run(['git', '-C', proyecto_dir, 'push', 'origin', 'main'], 
-                                              capture_output=True, text=True, encoding='utf-8', check=True)
-                    messagebox.showinfo("Éxito", "✅ Push completado!")
-                    self.label_status.config(text="✅ Deploy listo", foreground='green')
-                except subprocess.CalledProcessError as push_e:
-                    push_salida = (push_e.stdout or "") + (push_e.stderr or "")
-                    if "up-to-date" in push_salida.lower():
-                        messagebox.showinfo("Info", "No hay cambios nuevos para subir o ya está actualizado.")
-                        self.label_status.config(text="ℹ️ Sin cambios", foreground='gray')
+            push_res, push_out = _run(
+                ['git', 'push', 'origin', 'main'],
+                check=False, label="git push origin main"
+            )
+            if push_res.returncode != 0:
+                if "up-to-date" in push_out.lower():
+                    messagebox.showinfo(
+                        "Info",
+                        "No hay cambios nuevos para subir o ya está actualizado."
+                    )
+                    self.label_status.config(text="ℹ️ Sin cambios nuevos", foreground='gray')
+                else:
+                    # Manejar caso típico: credenciales / PAT
+                    if "authentication" in push_out.lower() or \
+                       "password authentication" in push_out.lower() or \
+                       "fatal: could not read" in push_out.lower():
+                        hint = (
+                            "\n\nParece un problema de credenciales.\n"
+                            "GitHub ya no acepta contraseña por HTTPS.\n"
+                            "Solucion:\n"
+                            "  1. Ve a https://github.com/settings/tokens y crea un PAT con scope 'repo'.\n"
+                            "  2. En Windows: Panel de control -> Administrador de credenciales -> "
+                            "Credenciales de Windows -> Busca 'git:https://github.com' y edítalo, "
+                            "poniendo el PAT como contraseña.\n"
+                            "  3. O cambia el remoto a SSH si tienes clave configurada."
+                        )
                     else:
-                        error_msg = push_e.stderr[:500] if push_e.stderr else str(push_e)
-                        messagebox.showerror("Error", f"Error al hacer push:\n{error_msg}")
-                        self.label_status.config(text="❌ Error en push", foreground='red')
-            elif "up-to-date" in salida_completa.lower():
-                messagebox.showinfo("Info", "No hay cambios nuevos para subir o ya está actualizado.")
-                self.label_status.config(text="ℹ️ Sin cambios", foreground='gray')
+                        hint = ""
+                    raise subprocess.CalledProcessError(
+                        push_res.returncode, push_res.cmd,
+                        output=(push_out + hint).encode('utf-8', 'ignore')
+                    )
             else:
-                error_msg = e.stderr[:500] if e.stderr else str(e)
-                messagebox.showerror("Error", f"Error en Git:\n{error_msg}")
-                self.label_status.config(text="❌ Error en deploy", foreground='red')
-                
+                if commit_res is None:
+                    summary = "Push hecho. No había cambios locales nuevos; commits anteriores ya enviados."
+                else:
+                    summary = "Deploy completado!\n\nLos cambios se subieron a GitHub.\nEspera 2-3 minutos para que se actualice el catálogo."
+                messagebox.showinfo("Éxito", summary)
+                self.label_status.config(text="✅ Deploy listo - espera 2-3 min", foreground='green')
+
+        except subprocess.CalledProcessError as e:
+            salida = (e.output or b"").decode('utf-8', errors='ignore')
+            if not salida:
+                salida = str(e)
+            # Mostrar ventana con el fallo y además guardar un log para leerlo luego
+            log_path = os.path.join(proyecto_dir, 'deploy_error.log')
+            try:
+                with open(log_path, 'a', encoding='utf-8') as f:
+                    import datetime as _dt
+                    f.write("\n\n========== " + str(_dt.datetime.now()) + " ==========\n")
+                    f.write(salida)
+            except Exception:
+                pass
+            # Recortar a lo visible
+            mostrar = salida if len(salida) < 2500 else salida[:2500] + "\n... (resto en deploy_error.log)"
+            messagebox.showerror(
+                "Error en deploy",
+                f"Fallo en el deploy. Detalles:\n\n{mostrar}\n\n"
+                f"Log completo guardado en:\n{log_path}"
+            )
+            self.label_status.config(text="❌ Error en deploy (ver deploy_error.log)", foreground='red')
+
         except Exception as e:
             messagebox.showerror("Error Crítico", f"Ocurrió un error inesperado:\n{str(e)}")
             self.label_status.config(text="❌ Error inesperado", foreground='red')
