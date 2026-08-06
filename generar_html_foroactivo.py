@@ -8,6 +8,32 @@ import copy
 import unicodedata
 import logging
 from logging.handlers import RotatingFileHandler
+import sys
+
+# Configurar stdout/stderr para que no fallen con caracteres unicode en entornos cp1252
+if hasattr(sys.stdout, 'reconfigure'):
+    try:
+        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+        sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+    except Exception:
+        pass
+
+def safe_print(*args, **kwargs):
+    """Función print segura que reemplaza caracteres no imprimibles en caso de error de codificación"""
+    try:
+        print(*args, **kwargs)
+    except UnicodeEncodeError:
+        try:
+            encoded_args = []
+            for arg in args:
+                if isinstance(arg, str):
+                    encoded_args.append(arg.encode(sys.stdout.encoding or 'utf-8', errors='replace').decode(sys.stdout.encoding or 'utf-8', errors='replace'))
+                else:
+                    encoded_args.append(arg)
+            print(*encoded_args, **kwargs)
+        except Exception:
+            # Fallback: no hacer nada si no se puede imprimir
+            pass
 
 def configurar_logging():
     """Configurar sistema de logging profesional"""

@@ -2035,6 +2035,7 @@ Acción, Aventura, Artes marciales, Fantasía, Shōnen"""
         # (sin TTY Git se quedaba esperando usuario/contraseña sin mostrar nada)
         _deploy_env = os.environ.copy()
         _deploy_env['PYTHONIOENCODING'] = 'utf-8'
+        _deploy_env['PYTHONUTF8'] = '1'
         _deploy_env['GIT_TERMINAL_PROMPT'] = '0'
         _deploy_env['GCM_INTERACTIVE'] = 'never'
         _deploy_env['GIT_ASKPASS'] = 'echo'
