@@ -564,11 +564,11 @@ class EditorCompacto:
         categoria_actual_key = categoria_actual.capitalize() if categoria_actual else ''
         
         if categoria_nueva != categoria_actual and categoria_nueva in ['anime', 'dibujos', 'peliculas', 'series']:
-            # Mover la serie a la nueva categoría
+            # Mover la serie a la nueva categoría (al principio, como si fuera la más reciente)
             if categoria_actual_key in self.categorias and s in self.categorias[categoria_actual_key]:
                 self.categorias[categoria_actual_key].remove(s)
             if categoria_nueva_key in self.categorias:
-                self.categorias[categoria_nueva_key].append(s)
+                self.categorias[categoria_nueva_key].insert(0, s)
                 s['_categoria'] = categoria_nueva
                 self.label_status.config(text=f"✅ Serie movida a {categoria_nueva.upper()}")
                 self.actualizar_contadores_pestanas()
@@ -1997,11 +1997,11 @@ Acción, Aventura, Artes marciales, Fantasía, Shōnen"""
             }
         }
         
-        # Añadir a la categoría
+        # Añadir a la categoría (al principio, porque es la más nueva)
         if categoria not in self.categorias:
             categoria = 'Series'  # Default
         
-        self.categorias[categoria].append(nueva_serie)
+        self.categorias[categoria].insert(0, nueva_serie)
         
         # Guardar serie_actual como la nueva
         self.serie_actual = nueva_serie
@@ -2009,6 +2009,18 @@ Acción, Aventura, Artes marciales, Fantasía, Shōnen"""
         
         # Refrescar la vista
         self.refrescar_todos()
+        
+        # Cambiar a la pestaña de la categoría y seleccionar la primera fila (la nueva)
+        if self.modo_actual == 'categorias' and categoria in self.tabs:
+            self.notebook.select(self.tabs[categoria])
+            tree = self.trees.get(categoria)
+            if tree:
+                hijos = tree.get_children()
+                if hijos:
+                    tree.selection_set(hijos[0])
+                    tree.see(hijos[0])
+                    self.serie_actual = self.categorias[categoria][0]
+                    self.cargar_serie()
         
         self.label_status.config(text=f"✅ Serie '{nombre[:30]}' añadida a {categoria}", foreground='green')
     
