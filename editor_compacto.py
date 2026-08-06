@@ -2031,11 +2031,34 @@ Acción, Aventura, Artes marciales, Fantasía, Shōnen"""
 
         proyecto_dir = r'c:\Users\Rafael\CascadeProjects\windsurf-project'
 
-        def _run(cmd, check=True, label=""):
-            """Wrapper: ejecuta, imprime paso, captura todo y muestra error útil."""
+        # Entorno global para NO abrir prompts interactivos que cuelgan el UI
+        # (sin TTY Git se quedaba esperando usuario/contraseña sin mostrar nada)
+        _deploy_env = os.environ.copy()
+        _deploy_env['PYTHONIOENCODING'] = 'utf-8'
+        _deploy_env['GIT_TERMINAL_PROMPT'] = '0'
+        _deploy_env['GCM_INTERACTIVE'] = 'never'
+        _deploy_env['GIT_ASKPASS'] = 'echo'
+        _deploy_env['GIT_SSH_COMMAND'] = 'ssh -oBatchMode=yes -oStrictHostKeyChecking=no -oConnectTimeout=15'
+        _deploy_env['SSH_ASKPASS'] = 'echo'
+        _deploy_env['DISPLAY'] = ''
+        try:
+            del _deploy_env['SSH_ASKPASS_REQUIRE']
+        except KeyError:
+            pass
+
+        GIT_CMD_TIMEOUT = 60   # segundos por comando git (evita hangs permanentes)
+        HTML_TIMEOUT = 180
+
+        def _run(cmd, check=True, label="", timeout=GIT_CMD_TIMEOUT, env=None):
+            """Wrapper: ejecuta con timeout, captura todo y muestra error útil.
+
+            Nunca pregunta interactivamente: falla rápido si necesita credenciales/interacción.
+            """
+            use_env = env if env is not None else _deploy_env
             res = subprocess.run(
-                cmd, cwd=proyecto_dir,
-                capture_output=True, text=True, encoding='utf-8', errors='ignore'
+                cmd, cwd=proyecto_dir, env=use_env,
+                capture_output=True, text=True, encoding='utf-8', errors='ignore',
+                timeout=timeout
             )
             out = (res.stdout or "") + (res.stderr or "")
             if check and res.returncode != 0:
@@ -2082,11 +2105,15 @@ Acción, Aventura, Artes marciales, Fantasía, Shōnen"""
             self.label_status.config(text="📥 Sincronizando con GitHub...", foreground='blue')
             self.root.update()
 
-            # Stash temporal por si había cambios locales sin trackear/modificados
-            stash_result, _ = _run(['git', 'stash', 'push', '-u', '-m', 'deploy-temp-stash'],
+            # Stash temporal SOLO de los cambios TRACKEADOS (NO tocar backups/untracked,
+            # hay muchos TOP_backup_*.json y scripts sin trackear que no tocan el deploy).
+            # Con -u metías 30+ ficheros sueltos que luego generaban conflictos al hacer pop.
+            stash_result, _ = _run(['git', 'stash', 'push', '-m', 'deploy-temp-stash'],
                                    check=False, label="git stash pre-pull")
+            stash_std = stash_result.stdout + stash_result.stderr
             stash_hecho = (stash_result.returncode == 0 and
-                           ("No local changes" not in (stash_result.stdout + stash_result.stderr)))
+                           ("No local changes to save" not in stash_std) and
+                           ("No local changes" not in stash_std))
 
             try:
                 _run(['git', 'fetch', 'origin'], check=True, label="git fetch origin")
@@ -2112,13 +2139,11 @@ Acción, Aventura, Artes marciales, Fantasía, Shōnen"""
             # 3. Regenerar HTML (ahora sobre código ya sincronizado)
             self.label_status.config(text="🧱 Generando HTML...", foreground='blue')
             self.root.update()
-            env = os.environ.copy()
-            env['PYTHONIOENCODING'] = 'utf-8'
             html_res = subprocess.run(
                 ['python', '-W', 'ignore',
                  os.path.join(proyecto_dir, 'generar_html_foroactivo.py')],
-                cwd=proyecto_dir, capture_output=True, text=True, timeout=120,
-                encoding='utf-8', errors='ignore', env=env, shell=False
+                cwd=proyecto_dir, capture_output=True, text=True, timeout=HTML_TIMEOUT,
+                encoding='utf-8', errors='ignore', env=_deploy_env, shell=False
             )
             if html_res.returncode != 0:
                 raise subprocess.CalledProcessError(
