@@ -1,6 +1,29 @@
 {
   "anime": [
     {
+      "name": "La invencible Nuku-Nuku (Miniserie)",
+      "year": 1992,
+      "genre": "Comedia, Aventura, Fantasía",
+      "specificGenre": "Comedia, Aventura, Fantasía",
+      "originalGenre": "Comedia, Aventura, Fantasía",
+      "type": "Anime",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1786445193/mis_archivos_elegidos/manual_poster_tmdb_La_invencible_Nuku-Nuku.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1786445193/mis_archivos_elegidos/manual_poster_tmdb_La_invencible_Nuku-Nuku.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3112-activo-la-invencible-nuku-nuku-miniserie-1992-castellano-06-06-iaupscale-rip-900x676-1015mb-118gb-mega-pixeldrain-ver-online#7982",
+      "href": "/t3112-activo-la-invencible-nuku-nuku-miniserie-1992-castellano-06-06-iaupscale-rip-900x676-1015mb-118gb-mega-pixeldrain-ver-online#7982",
+      "rentry_url": "https://rentry.co/q5fisu68",
+      "sinopsis": "Un padre (profesor Kyu), y su hijo (Ryu) son prófugos. Con un androide robado de la corporación Mishima en el asiento trasero están siendo perseguidos por un avanzado helicóptero de combate con estrictas instrucciones de regresar a Ryu a su madre (Akiko), cueste lo que cueste. Para eso cuenta con ayuda de sus dos más leales ayudantes. Para lograr su objetivo cuenta con todo tipo de armamento militar y robótico, todo con tal de tener el amor y la devoción de su hijo. Kyu transforma al androide en una bella muchacha de secundaria de gran fuerza y habilidad, para defender a Kyu de su madre, y por un incidente con un gato que dejó algo triste a su hijo.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "calidad": "IAUpScale-Rip",
+        "resolucion": "900x676",
+        "formato": "MP4",
+        "peso": "1015MB/1,18GB"
+      }
+    },
+    {
       "name": "Takagin-San: Experta en bromas pesadas",
       "year": 2018,
       "genre": "Comedia",
@@ -12076,6 +12099,29 @@
     }
   ],
   "dibujos": [
+    {
+      "name": "Egyxos",
+      "year": 2015,
+      "genre": "Ciencia ficción, Fantasía",
+      "specificGenre": "Ciencia ficción, Fantasía",
+      "originalGenre": "Ciencia ficción, Fantasía",
+      "type": "Dibujos",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1786445333/mis_archivos_elegidos/manual_poster_tmdb_Egyxos.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1786445333/mis_archivos_elegidos/manual_poster_tmdb_Egyxos.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3113-activo-egyxos-2015-castellano-26-26-webdl-rip-640x480-105mb-275mb-mega-pixeldrain-ver-online#7983",
+      "href": "/t3113-activo-egyxos-2015-castellano-26-26-webdl-rip-640x480-105mb-275mb-mega-pixeldrain-ver-online#7983",
+      "rentry_url": "https://rentry.co/788vi7yt",
+      "sinopsis": "Leo es un chico que siente verdadera pasión por el antiguo Egipto. A parte de los problemas de cualquier adolescente, el joven tendrá que enfrentarse a los peligros de un mundo paralelo: el de los Egyxos, al cual accederá mediante el brazalete del dios Ra.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "calidad": "WebDL-Rip",
+        "resolucion": "640x480",
+        "formato": "MP4",
+        "peso": "105MB/275MB"
+      }
+    },
     {
       "name": "Iron Kid",
       "year": 2007,
