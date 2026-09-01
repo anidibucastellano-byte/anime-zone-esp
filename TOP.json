@@ -1,6 +1,75 @@
 {
   "anime": [
     {
+      "name": "One Piece (Netflix)",
+      "year": 2023,
+      "genre": "Acción, Aventura, Ciencia ficción, Fantasía",
+      "specificGenre": "Acción, Aventura, Ciencia ficción, Fantasía",
+      "originalGenre": "Acción, Aventura, Ciencia ficción, Fantasía",
+      "type": "Anime",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788283304/mis_archivos_elegidos/manual_poster_tmdb_THE_ONE_PIECE.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788283304/mis_archivos_elegidos/manual_poster_tmdb_THE_ONE_PIECE.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3301-activo-one-piece-netflix-2023-dual-audio-130-130-webdl-rip-1920x1080-220mb-630mb-mega-ver-online#10315",
+      "href": "/t3301-activo-one-piece-netflix-2023-dual-audio-130-130-webdl-rip-1920x1080-220mb-630mb-mega-ver-online#10315",
+      "rentry_url": "https://rentry.co/k7onp7vd",
+      "sinopsis": "The One Piece en Netflix adapta de nuevo el inicio de la historia de Monkey D. Luffy desde la saga del East Blue con animación moderna a cargo de WIT Studio.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Japonés",
+        "subtitulos": "Español, Inglés, Alemán, Árabe, Francés, Italiano",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "220MB/630MB"
+      }
+    },
+    {
+      "name": "Hunter × Hunter",
+      "year": 2011,
+      "genre": "Acción, Aventura, Ciencia ficción, Fantasía",
+      "specificGenre": "Acción, Aventura, Ciencia ficción, Fantasía",
+      "originalGenre": "Acción, Aventura, Ciencia ficción, Fantasía",
+      "type": "Anime",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788282267/mis_archivos_elegidos/manual_poster_tmdb_Hunter_%C3%97_Hunter.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788282267/mis_archivos_elegidos/manual_poster_tmdb_Hunter_%C3%97_Hunter.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t205-activohunter-x-hunter-2011-dual-audio-131-131-webdl-rip-1920x1080-205mb-640mb-mega-ver-online#242",
+      "href": "/t205-activohunter-x-hunter-2011-dual-audio-131-131-webdl-rip-1920x1080-205mb-640mb-mega-ver-online#242",
+      "rentry_url": "https://rentry.co/ws64fx5p",
+      "sinopsis": "Gon Frecks, un niño de 12 años, vive con su tía Mito y su abuela en Isla Ballena, huérfano de madre y según su tía también de padre. Un día Gon es atacado por un oso del bosque, pero es salvado por un cazador quien le explica que está en busca de su maestro para así convertirse en un cazador, él es quien le dice que su padre Gin está vivo. Enterado de esto Gon decide convertirse en cazador para poder encontrar a su padre.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Japonés",
+        "subtitulos": "Español",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "205MB/640MB"
+      }
+    },
+    {
+      "name": "Hover champs",
+      "year": 2011,
+      "genre": "Acción, Aventura",
+      "specificGenre": "Acción, Aventura",
+      "originalGenre": "Acción, Aventura",
+      "type": "Anime",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788282155/mis_archivos_elegidos/manual_poster_tmdb_%E9%9B%B7%E9%80%9F%E7%99%BB%E7%BF%BC%E9%A3%9B%E8%A1%9D%E5%A4%A9.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788282155/mis_archivos_elegidos/manual_poster_tmdb_%E9%9B%B7%E9%80%9F%E7%99%BB%E7%BF%BC%E9%A3%9B%E8%A1%9D%E5%A4%A9.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3297-activo-hover-champs-2011-castellano-26-26-dvb-rip-1024x576-170mb-170mb-mega-ver-online#10310",
+      "href": "/t3297-activo-hover-champs-2011-castellano-26-26-dvb-rip-1024x576-170mb-170mb-mega-ver-online#10310",
+      "rentry_url": "https://rentry.co/cx2uwf2u",
+      "sinopsis": "Un chico llamado Matthew de 13 años conoce a una chica llamada Zoe, en el Parque RC con grandes habilidades en el manejo de helicópteros teledirigidos después de haber vuelto a su ciudad natal durante su infancia por el trabajo de su madre.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "calidad": "DVB-Rip",
+        "resolucion": "1024x576",
+        "formato": "MP4",
+        "peso": "170MB/170MB"
+      }
+    },
+    {
       "name": "Ranma ½",
       "year": 2024,
       "genre": "Acción, Aventura, Comedia",
@@ -3525,30 +3594,6 @@
       },
       "rentry_url": "https://rentry.co/aqapxebc",
       "genre": "Aventura, Acción, Fantasía"
-    },
-    {
-      "confianza": 85,
-      "href": "/t205-activohunter-x-hunter-2011-dual-audio-40-148-webdl-rip-1920x1080-870-mb-mega-ver-online",
-      "name": "[Activo]Hunter × Hunter (2011) [Dual-Audio] [40/148] [WebDL-Rip] [1920x1080] [870 MB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Japonesa",
-      "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Aventura, Fantasía, Cartoon Network",
-      "type": "Anime",
-      "url": "https://animezoneesp.foroactivo.com/t205-activohunter-x-hunter-2011-dual-audio-40-148-webdl-rip-1920x1080-870-mb-mega-ver-online",
-      "year": 2011,
-      "imagen": "images/anime_101_ActivoFullmetal-Alchemist-Brotherhood-2009-Dual-Audio-6464-WebDL-Rip-1920x1080-220510-MB-Mega-Ver-Online.jpg",
-      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1766331333/mis_archivos_elegidos/manual_poster_tmdb_Hunter_%C3%97_Hunter.jpg",
-      "sinopsis": "Gon Frecks, un niño de 12 años, vive con su tía Mito y su abuela en Isla Ballena, huérfano de madre y según su tía también de padre. Un día Gon es atacado por un oso del bosque, pero es salvado por un cazador quien le explica que está en busca de su maestro para así convertirse en un cazador, él es quien le dice que su padre Gin está vivo. Enterado de esto Gon decide convertirse en cazador para poder encontrar a su padre.",
-      "ficha_tecnica": {
-        "ano": "2011",
-        "idioma": "Castellano, Japonés",
-        "subtitulos": "Español",
-        "formato": "MKV​",
-        "calidad": "WebDL-Rip",
-        "resolucion": "1920x1080",
-        "peso": "870 MB"
-      },
-      "rentry_url": "https://rentry.co/7abhc4nf"
     },
     {
       "confianza": 85,
@@ -12375,6 +12420,167 @@
   ],
   "dibujos": [
     {
+      "name": "Sym-Bionic Titan",
+      "year": 2010,
+      "genre": "Acción, Aventura, Ciencia ficción, Fantasía",
+      "specificGenre": "Acción, Aventura, Ciencia ficción, Fantasía",
+      "originalGenre": "Acción, Aventura, Ciencia ficción, Fantasía",
+      "type": "Dibujos",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1768485030/mis_archivos_elegidos/manual_poster_tmdb_Sym-Bionic_Titan.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1768485030/mis_archivos_elegidos/manual_poster_tmdb_Sym-Bionic_Titan.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t373-activosym-bionic-titan-2010-dual-audio-20-20-iaupscale-rip-1920x1080-400mb-mega-ver-online#722",
+      "href": "/t373-activosym-bionic-titan-2010-dual-audio-20-20-iaupscale-rip-1920x1080-400mb-mega-ver-online#722",
+      "rentry_url": "https://rentry.co/nikf6n3m",
+      "sinopsis": "Sym-Bionic Titan muestra las aventuras de tres seres del lejano planeta Galaluna, que tras verse obligados a abandonarlo, se estrellaron con su nave en la Tierra intentando escapar de su mundo colapsado por la guerra que los invadió sorpresivamente. La serie sigue la vida de Ilana, Lance y Octus, dos extraterrestres y un robot con forma humanoide, que no demuestra ser una máquina ni un ser vivo en totalidad, quienes llegan a la Tierra, la cual es un planeta muy parecido a Galaluna en su atmósfera y flora. mientras escapaban, un malvado general que traiciono al rey se apodera de su planeta natal con la ayuda de monstruosas criaturas llamadas mutraddi, esto más que una invasión, fue un golpe de estado con motivos de cobrara venganza de parte del general supuestamente \"abandonado en el pasado\".",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Ninguno",
+        "calidad": "IAUpScale-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "400MB/400MB"
+      }
+    },
+    {
+      "name": "Mitos y Leyendas",
+      "year": 1999,
+      "genre": "Infantil, Ciencia ficción, Fantasía",
+      "specificGenre": "Infantil, Ciencia ficción, Fantasía",
+      "originalGenre": "Infantil, Ciencia ficción, Fantasía",
+      "type": "Dibujos",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788282420/mis_archivos_elegidos/manual_poster_tmdb_Mitos_y_Leyendas.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788282420/mis_archivos_elegidos/manual_poster_tmdb_Mitos_y_Leyendas.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3298-activo-mitos-y-leyendas-1999-castellano-12-13-dvb-rip-640x480-170mb-170mb-mega-ver-online#10312",
+      "href": "/t3298-activo-mitos-y-leyendas-1999-castellano-12-13-dvb-rip-640x480-170mb-170mb-mega-ver-online#10312",
+      "rentry_url": "https://rentry.co/836vshsa",
+      "sinopsis": "Dos jóvenes adolescentes llamados Nick y Lisa guían al público a través de adaptaciones animadas de cuentos clásicos, folclore, mitos y leyendas de todo el mundo. La serie busca hacer que las historias y los mitos complejos sean accesibles, educativos y entretenidos para el público infantil.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "calidad": "DVB-Rip",
+        "resolucion": "640x480",
+        "formato": "MP4",
+        "peso": "170MB/170MB"
+      }
+    },
+    {
+      "name": "Enigma",
+      "year": 1997,
+      "genre": "Misterio, Aventura",
+      "specificGenre": "Misterio, Aventura",
+      "originalGenre": "Misterio, Aventura",
+      "type": "Dibujos",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788282011/mis_archivos_elegidos/manual_poster_tmdb_Enigma.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788282011/mis_archivos_elegidos/manual_poster_tmdb_Enigma.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3296-activo-enigma-1997-castellano-51-52-dvb-rip-640x480-115mb-170mb-mega-ver-online#10309",
+      "href": "/t3296-activo-enigma-1997-castellano-51-52-dvb-rip-640x480-115mb-170mb-mega-ver-online#10309",
+      "rentry_url": "https://rentry.co/vfsv8wb6",
+      "sinopsis": "La historia sigue a Agatha Cherry, una joven que lleva una doble vida. De día es una tranquila estudiante de secundaria, pero cuando el peligro acecha se transforma en Enigma, una superheroína con la capacidad de volar. Con su identidad secreta se dedica a frustrar los planes de los delincuentes más extravagantes y a resolver los misterios más retorcidos y maquiavélicos de la ciudad.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "calidad": "DVB-Rip",
+        "resolucion": "640x480",
+        "formato": "MP4",
+        "peso": "115MB/170MB"
+      }
+    },
+    {
+      "name": "Don Coyote y Sancho Panda",
+      "year": 1990,
+      "genre": "Infantil, Aventura",
+      "specificGenre": "Infantil, Aventura",
+      "originalGenre": "Infantil, Aventura",
+      "type": "Dibujos",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788279245/mis_archivos_elegidos/manual_Don%20Coyote%20y%20Sancho%20Panda%20A.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788279245/mis_archivos_elegidos/manual_Don%20Coyote%20y%20Sancho%20Panda%20A.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3294-activo-don-coyote-y-sancho-panda-1990-castellano-26-26-tv-rip-640x480-170mb-170mb-mega-ver-online#10307",
+      "href": "/t3294-activo-don-coyote-y-sancho-panda-1990-castellano-26-26-tv-rip-640x480-170mb-170mb-mega-ver-online#10307",
+      "rentry_url": "https://rentry.co/gfxz9i9v",
+      "sinopsis": "Serie vagamente basada en los personajes principales de la novela del siglo XVII de Miguel de Cervantes \"Don Quijote\". Don Coyote es un espadachín que anda por ahí salvando a la gente, con la ayuda de su noble corcel Rocinant y Sancho Panda. Estos cruzados de la caballería cabalgan luchando por la verdad, la justicia y la belleza.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "calidad": "TV-RIP",
+        "resolucion": "640x480",
+        "formato": "MP4",
+        "peso": "170MB/170MB"
+      }
+    },
+    {
+      "name": "Calimero y Priscilla",
+      "year": 1974,
+      "genre": "Infantil",
+      "specificGenre": "Infantil",
+      "originalGenre": "Infantil",
+      "type": "Dibujos",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788015990/mis_archivos_elegidos/manual_poster_tmdb_Calimero_y_Priscilla.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788015990/mis_archivos_elegidos/manual_poster_tmdb_Calimero_y_Priscilla.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3293-activo-calimero-y-priscilla-1974-castellano-27-54-webdl-rip-640x480-170mb-280mb-mega-ver-online#10306",
+      "href": "/t3293-activo-calimero-y-priscilla-1974-castellano-27-54-webdl-rip-640x480-170mb-280mb-mega-ver-online#10306",
+      "rentry_url": "https://rentry.co/8c55tu9d",
+      "sinopsis": "Calimero es un pollito hijo de la gallina Cesira, que le rechaza porque es negro, aunque realmente solo está muy sucio. En cada episodio, Calimero vive distintas aventuras con las cuales, a pesar de ser considerado el patito feo al que nadie quiere, queda demostrado que la verdad y el bien triunfan por encima de todo. Además de sus amigos y enemigos, Calimero cuenta con la ayuda de su novia, Priscilla.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "calidad": "WebDL-Rip",
+        "resolucion": "640x480",
+        "formato": "MP4",
+        "peso": "170MB/280MB"
+      }
+    },
+    {
+      "name": "Aprendices de bruja",
+      "year": 1996,
+      "genre": "Fantasía, Brujería",
+      "specificGenre": "Fantasía, Brujería",
+      "originalGenre": "Fantasía, Brujería",
+      "type": "Dibujos",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788015926/mis_archivos_elegidos/manual_The%20little%20witches.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788015926/mis_archivos_elegidos/manual_The%20little%20witches.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3292-activo-aprendices-de-bruja-1996-castellano-26-26-tv-rip-768x576-250mb-250mb-mega-ver-online#10305",
+      "href": "/t3292-activo-aprendices-de-bruja-1996-castellano-26-26-tv-rip-768x576-250mb-250mb-mega-ver-online#10305",
+      "rentry_url": "https://rentry.co/xofhtnvu",
+      "sinopsis": "En un mundo futurista, la urbe tecnológica conocida como Ciudad Base se ve bajo la constante amenaza de los Wolti, unas extrañas y codiciosas criaturas que viven obsesionadas con el dinero. Para proteger a los ciudadanos y combatir este peligro, la bondadosa bruja blanca Sherilyn une sus fuerzas con tres jóvenes aprendices de hechicería llamadas Carla, María y Laura. Juntas deberán aprender a dominar sus poderes mágicos naturales mientras intentan hacer el bien y defender la ciudad.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "calidad": "TV-RIP",
+        "resolucion": "768x576",
+        "formato": "MKV",
+        "peso": "250MB/250MB"
+      }
+    },
+    {
+      "name": "Angry Birds - La Isla Misteriosa: Una Aventura De Polluelos",
+      "year": 2024,
+      "genre": "Aventura, Comedia",
+      "specificGenre": "Aventura, Comedia",
+      "originalGenre": "Aventura, Comedia",
+      "type": "Dibujos",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788015535/mis_archivos_elegidos/manual_poster_tmdb_Angry_Birds_-_La_Isla_Misteriosa_Una_Aventura_De_P.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788015535/mis_archivos_elegidos/manual_poster_tmdb_Angry_Birds_-_La_Isla_Misteriosa_Una_Aventura_De_P.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3291-activo-angry-birds-la-isla-misteriosa-una-aventura-de-polluelos-2024-castellano-24-24-webdl-rip-1920x1080-135mb-245mb-mega-ver-online#10304",
+      "href": "/t3291-activo-angry-birds-la-isla-misteriosa-una-aventura-de-polluelos-2024-castellano-24-24-webdl-rip-1920x1080-135mb-245mb-mega-ver-online#10304",
+      "rentry_url": "https://rentry.co/9e2yh298",
+      "sinopsis": "A diario, la pandilla trama un plan para salir de la isla, pero lo frustran giros inesperados. Se enfrentan al clima extremo, a difíciles aventuras y a nuevas criaturas y resuelven un misterio tras otro. La isla pone constantemente a prueba a Mia, Buddy, Rosie y Betocino. Solo superando estas pruebas y adentrándose en el corazón de la oscuridad, nuestros héroes podrán encontrar un camino a casa.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "135MB/245MB"
+      }
+    },
+    {
       "name": "Los últimos frikis del mundo",
       "year": 2019,
       "genre": "Comedia, Ciencia ficción, Fantasía",
@@ -15493,31 +15699,6 @@
       },
       "rentry_url": "https://rentry.co/3z5zmzmm",
       "genre": "Acción, Ciencia ficción"
-    },
-    {
-      "confianza": 85,
-      "href": "/t373-activosym-bionic-titan-2010-castellano-20-20-webdl-rip-720x406-205-390-mb-mega-pixeldrain-ver-online",
-      "name": "[Activo]Sym-Bionic Titan (2010) [Castellano] [20/20] [WebDL-Rip] [720x406] [205/390 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Occidental",
-      "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Acción, Cartoon Network",
-      "type": "Dibujo Animado",
-      "url": "https://animezoneesp.foroactivo.com/t373-activosym-bionic-titan-2010-castellano-20-20-webdl-rip-720x406-205-390-mb-mega-pixeldrain-ver-online",
-      "year": 2010,
-      "imagen": "images\\dibujos_116_ActivoSym-Bionic-Titan-2010-Castellano-2020-WebDL-Rip-720x406-205390-MB-MegaPixeldrain-Ver-Online.jpg",
-      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1768485030/mis_archivos_elegidos/manual_poster_tmdb_Sym-Bionic_Titan.jpg",
-      "sinopsis": "Sym-Bionic Titan muestra las aventuras de tres seres del lejano planeta Galaluna, que tras verse obligados a abandonarlo, se estrellaron con su nave en la Tierra intentando escapar de su mundo colapsado por la guerra que los invadió sorpresivamente. La serie sigue la vida de Ilana, Lance y Octus, dos extraterrestres y un robot con forma humanoide, que no demuestra ser una máquina ni un ser vivo en totalidad, quienes llegan a la Tierra, la cual es un planeta muy parecido a Galaluna en su atmósfera y flora. mientras escapaban, un malvado general que traiciono al rey se apodera de su planeta natal con la ayuda de monstruosas criaturas llamadas mutraddi, esto más que una invasión, fue un golpe de estado con motivos de cobrara venganza de parte del general supuestamente \"abandonado en el pasado\".",
-      "ficha_tecnica": {
-        "ano": "2010",
-        "idioma": "Castellano",
-        "subtitulos": "Ninguno",
-        "formato": "AVI​",
-        "calidad": "WebDL-Rip",
-        "resolucion": "720x406",
-        "peso": "205/390 MB"
-      },
-      "rentry_url": "https://rentry.co/yf2tv7ph",
-      "genre": "Acción, Ciencia ficción, Mecha, Cartoon Network"
     },
     {
       "confianza": 85,
@@ -29111,6 +29292,29 @@
   ],
   "peliculas": [
     {
+      "name": "Yo-kai Watch: La película",
+      "year": 2014,
+      "genre": "Acción, Aventuras, Comedia, Familia, Fantasía",
+      "specificGenre": "Acción, Aventuras, Comedia, Familia, Fantasía",
+      "originalGenre": "Acción, Aventuras, Comedia, Familia, Fantasía",
+      "type": "Película",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788283491/mis_archivos_elegidos/manual_poster_tmdb_Yo-kai_Watch_La_pel%C3%ADcula.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788283491/mis_archivos_elegidos/manual_poster_tmdb_Yo-kai_Watch_La_pel%C3%ADcula.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3302-activo-yo-kai-watch-la-pelicula-2014-castellano-webdl-rip-1920x1080-264gb-mega-ver-online#10316",
+      "href": "/t3302-activo-yo-kai-watch-la-pelicula-2014-castellano-webdl-rip-1920x1080-264gb-mega-ver-online#10316",
+      "rentry_url": "https://rentry.co/8owtrp6k",
+      "sinopsis": "La historia comienza en el momento en que el joven Nathan Adams se encuentra con una pequeña cápsula en el bosque para después recibir un misterioso reloj. Así es como conoce a un fantasma que se hace llamar Whisper. Este le comenta al chico que el reloj que lleva en su muñeca le ayudará a ver todo tipo de criaturas sobrenaturales, tanto buenas como malas. A partir de ese instante, Keita vivirá una gran aventura. Tendrá que viajar 60 años atrás en el tiempo para conocer a su propio abuelo de joven, y entre los dos tratar de salvar a la humanidad.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "2,64GB"
+      }
+    },
+    {
       "name": "Kimetsu no Yaiba: Guardianes de la noche - La fortaleza infinita",
       "year": 2025,
       "genre": "Acción, Fantasía",
@@ -38628,6 +38832,75 @@
     }
   ],
   "series": [
+    {
+      "name": "Narcos",
+      "year": 2015,
+      "genre": "Crimen, Drama",
+      "specificGenre": "Crimen, Drama",
+      "originalGenre": "Crimen, Drama",
+      "type": "Series",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788282982/mis_archivos_elegidos/manual_poster_tmdb_Narcos.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788282982/mis_archivos_elegidos/manual_poster_tmdb_Narcos.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3300-activo-narcos-2015-dual-audio-30-30-bd-rip-1920x1080-107gb-177gb-mega-ver-online#10314",
+      "href": "/t3300-activo-narcos-2015-dual-audio-30-30-bd-rip-1920x1080-107gb-177gb-mega-ver-online#10314",
+      "rentry_url": "https://rentry.co/rr2ceq7z",
+      "sinopsis": "La verdadera historia de los poderosos y violentos cárteles colombianos sirve de hilo conductor en esta serie dramática de mafiosos de gran realismo.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "1,07GB/1,77GB"
+      }
+    },
+    {
+      "name": "Mr. Inbetween",
+      "year": 2018,
+      "genre": "Crimen, Drama",
+      "specificGenre": "Crimen, Drama",
+      "originalGenre": "Crimen, Drama",
+      "type": "Series",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788282599/mis_archivos_elegidos/manual_poster_tmdb_Mr._Inbetween.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788282599/mis_archivos_elegidos/manual_poster_tmdb_Mr._Inbetween.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3299-activo-mr-inbetween-2018-dual-audio-26-26-webdl-rip-1920x1080-620mb-253gb-mega-ver-online#10313",
+      "href": "/t3299-activo-mr-inbetween-2018-dual-audio-26-26-webdl-rip-1920x1080-620mb-253gb-mega-ver-online#10313",
+      "rentry_url": "https://rentry.co/mp6yrrn7",
+      "sinopsis": "Ray Shoesmith es un padre, ex esposo, novio y mejor amigo: papeles difíciles de hacer en la era moderna. Aún más difícil cuando eres un criminal de alquiler.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "620MB/2,53GB"
+      }
+    },
+    {
+      "name": "El mágico mundo de Bruffi",
+      "year": 1985,
+      "genre": "Infantil, Fantasía",
+      "specificGenre": "Infantil, Fantasía",
+      "originalGenre": "Infantil, Fantasía",
+      "type": "Series",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788279411/mis_archivos_elegidos/manual_poster_tmdb_El_m%C3%B3n_m%C3%A0gic_del_m%C3%A0gic_Bruffi.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788279411/mis_archivos_elegidos/manual_poster_tmdb_El_m%C3%B3n_m%C3%A0gic_del_m%C3%A0gic_Bruffi.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3295-activo-el-magico-mundo-de-bruffi-1985-castellano-16-16-webdl-rip-768x576-250mb-250mb-mega-ver-online#10308",
+      "href": "/t3295-activo-el-magico-mundo-de-bruffi-1985-castellano-16-16-webdl-rip-768x576-250mb-250mb-mega-ver-online#10308",
+      "rentry_url": "https://rentry.co/tspt3pss",
+      "sinopsis": "Serie de historias ambientadas en la edad media e inspiradas en el abundante patrimonio de cuentos, leyendas y fábulas populares de toda Europa. El mágico Bruffi, inventor y genio incomprendido, el sesudo y contestatario escribiendo Pancraç, el rabiut ya la vez bondadoso Rey Jaime, el tacaño y maquiavélico Conde de Llanegues y la perversa vieja Escanyapobres componen una versión nueva de las historias de siempre, dragones, ogros, gnomos, gigantes, brujos, monjes, príncipes encantados, moros, héroes y niños continúan representando enredos bien identificables por su valor permanente.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "calidad": "WebDL-Rip",
+        "resolucion": "768x576",
+        "formato": "MKV",
+        "peso": "250MB/250MB"
+      }
+    },
     {
       "name": "Manolo y Benito Corporeision",
       "year": 2006,
