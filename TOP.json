@@ -1,6 +1,29 @@
 {
   "anime": [
     {
+      "name": "Le Chevalier D’Eon",
+      "year": 2006,
+      "genre": "Misterio",
+      "specificGenre": "Misterio",
+      "originalGenre": "Misterio",
+      "type": "Anime",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788962132/mis_archivos_elegidos/manual_poster_tmdb_Le_Chevalier_D%E2%80%99Eon.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788962132/mis_archivos_elegidos/manual_poster_tmdb_Le_Chevalier_D%E2%80%99Eon.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3320-activo-le-chevalier-deon-2006-castellano-24-24-dvd-rip-720x576-990mb-113gb-mega-ver-online#10405",
+      "href": "/t3320-activo-le-chevalier-deon-2006-castellano-24-24-dvd-rip-720x576-990mb-113gb-mega-ver-online#10405",
+      "rentry_url": "https://rentry.co/b5xdu3xc",
+      "sinopsis": "Durante el reinado de Luis XV, la corte de Versalles brilla de esplendor. Una mañana el cuerpo sin vida de una joven es hallado en un ataúd que flota por el río Sena con la palabra \"Salmos\" escrita en la tapa. Su hermano menor, el caballero D'Eon de Beaumont, hará todo lo posible por descubrir al asesino y desvelar las razones del atroz crimen conjunto a las extrañas desapariciones de varias mujeres francesas, instigado también por el vengativo espíritu de su hermana Lia, que se aferra a este mundo anhelando justicia. Conforme avanza la investigación de D'Eon, una cadena de oscuras conspiraciones que afectan a las principales casas reales de Europa empieza a vislumbrarse. En su viaje se encontrará con tres compañeros que lo ayudarán en su misión.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "calidad": "DVD-Rip",
+        "resolucion": "720x576",
+        "formato": "MKV",
+        "peso": "990MB/1,13GB"
+      }
+    },
+    {
       "name": "Ultramarine Magmell",
       "year": 2019,
       "genre": "Acción, Aventura",
@@ -39154,6 +39177,29 @@
     }
   ],
   "series": [
+    {
+      "name": "Parks and Recreation",
+      "year": 2009,
+      "genre": "Comedia",
+      "specificGenre": "Comedia",
+      "originalGenre": "Comedia",
+      "type": "Series",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788962309/mis_archivos_elegidos/manual_poster_tmdb_Parks_and_Recreation.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1788962309/mis_archivos_elegidos/manual_poster_tmdb_Parks_and_Recreation.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3321-activo-parks-and-recreation-2009-dual-audio-125-125-webdl-rip-1920x1080-127gb-168gb-mega-ver-online#10406",
+      "href": "/t3321-activo-parks-and-recreation-2009-dual-audio-125-125-webdl-rip-1920x1080-127gb-168gb-mega-ver-online#10406",
+      "rentry_url": "https://rentry.co/9zp9au99",
+      "sinopsis": "La serie sigue las andanzas en formato de documental, de Leslie Knope, que trabaja en el departamento de parques y tiempo libre en Pawnee, Indiana. Knope se une a una enfermera llamada Ann para lograr convertir en un parque lo que es un trozo de tierra abandonado, tratando de navegar hasta lograrlo por las mil trabas de la administración municipal y varios colectivos.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "1,27GB/1,68GB"
+      }
+    },
     {
       "name": "Narcos",
       "year": 2015,
