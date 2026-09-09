@@ -39178,6 +39178,29 @@
   ],
   "series": [
     {
+      "name": "Umbre",
+      "year": 2014,
+      "genre": "Crimen, Drama",
+      "specificGenre": "Crimen, Drama",
+      "originalGenre": "Crimen, Drama",
+      "type": "Series",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1786030730/mis_archivos_elegidos/manual_poster_tmdb_Umbre.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1786030730/mis_archivos_elegidos/manual_poster_tmdb_Umbre.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3028-activo-umbre-2014-dual-audio-21-21-webdl-rip-1920x1080-111gb-217gb-mega-pixeldrain-ver-online?highlight=umbre",
+      "href": "/t3028-activo-umbre-2014-dual-audio-21-21-webdl-rip-1920x1080-111gb-217gb-mega-pixeldrain-ver-online?highlight=umbre",
+      "rentry_url": "https://rentry.co/zq4ru4p7",
+      "sinopsis": "Relu es un hombre de familia. Tiene esposa y dos hijos… y una doble vida. Para su familia, Relu es un conductor de taxi normal y corriente. Nadie sospecha que Relu también trabaja como “recolector” para un mafioso local. Ninguno de los dos mundos (su familia y la mafia) sabe de la existencia del otro. Relu intenta mantener todo bajo control, pero un día, tras matar accidentalmente a un hombre, tratará de salir de los bajos fondos y encontrar su camino de vuelta. Día a día, los secretos que guarda son cada vez más opresivos y las mentiras comienzan a emerger, una tras otra.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "1,11GB/2,17GB"
+      }
+    },
+    {
       "name": "Parks and Recreation",
       "year": 2009,
       "genre": "Comedia",
