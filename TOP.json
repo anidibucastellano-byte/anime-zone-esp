@@ -1,6 +1,29 @@
 {
   "anime": [
     {
+      "name": "Astroboy",
+      "year": 2003,
+      "genre": "Ciencia ficción, Acción, Aventura, Infantil",
+      "specificGenre": "Ciencia ficción, Acción, Aventura, Infantil",
+      "originalGenre": "Ciencia ficción, Acción, Aventura, Infantil",
+      "type": "Anime",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1789266554/mis_archivos_elegidos/manual_poster_tmdb_Astroboy.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1789266554/mis_archivos_elegidos/manual_poster_tmdb_Astroboy.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3344-activo-astroboy-2003-castellano-50-50-dvb-rip-720x576-260mb-825mb-mega-ver-online#10464",
+      "href": "/t3344-activo-astroboy-2003-castellano-50-50-dvb-rip-720x576-260mb-825mb-mega-ver-online#10464",
+      "rentry_url": "https://rentry.co/3489sx9i",
+      "sinopsis": "Astro Boy es una serie de ciencia ficción situada en un mundo futurista donde los robots coexisten con los humanos. Se centra en las aventuras del personaje homónimo \"Astro Boy\" (a veces también llamado Astro); un poderoso androide creado por el jefe del Ministerio de Ciencia, el Doctor Tenma. El Dr. Tenma creó a Astro para reemplazar a su hijo Tobi (Atom en japonés), quien falleció en un accidente automovilístico. Tenma incorporó en Astro las memorias de Tobi y procedió a tratarlo como si fuera el verdadero Tobi. Sin embargo, el Dr. Tenma pronto se da cuenta de que el pequeño androide no podía llenar el vacío de su hijo, especialmente teniendo en cuenta que Astro no puede crecer ni expresar la estética humana.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "calidad": "DVB-Rip",
+        "resolucion": "720x576",
+        "formato": "MKV",
+        "peso": "260MB/825MB"
+      }
+    },
+    {
       "name": "Maria-sama ga Miteru (María nos mira)",
       "year": 2004,
       "genre": "Drama",
@@ -12719,6 +12742,52 @@
   ],
   "dibujos": [
     {
+      "name": "Gadget y los Gadgetinis",
+      "year": 2002,
+      "genre": "Infantil, Aventura",
+      "specificGenre": "Infantil, Aventura",
+      "originalGenre": "Infantil, Aventura",
+      "type": "Dibujos",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1789267379/mis_archivos_elegidos/manual_Gadget%20y%20los%20Gadgetinis%20A.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1789267379/mis_archivos_elegidos/manual_Gadget%20y%20los%20Gadgetinis%20A.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3348-activo-gadget-y-los-gadgetinis-2002-castellano-09-52-dvb-rip-704x528-235mb-250mb-mega-ver-online#10469",
+      "href": "/t3348-activo-gadget-y-los-gadgetinis-2002-castellano-09-52-dvb-rip-704x528-235mb-250mb-mega-ver-online#10469",
+      "rentry_url": "https://rentry.co/yukx2vps",
+      "sinopsis": "El inspector Gadget asciende a teniente y se une a la organización internacional WOMP, mientras lidia con misiones por todo el mundo con la ayuda de su sobrina Penny y dos robots gemelos creados por ella, llamados Digit y Fidget.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "calidad": "DVB-Rip",
+        "resolucion": "704x528",
+        "formato": "AVI",
+        "peso": "235MB/250MB"
+      }
+    },
+    {
+      "name": "Brandy y Mr. Whiskers",
+      "year": 2004,
+      "genre": "Comedia, Infantil",
+      "specificGenre": "Comedia, Infantil",
+      "originalGenre": "Comedia, Infantil",
+      "type": "Dibujos",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1765550550/mis_archivos_elegidos/manual_poster_tmdb_Brandy_y_Mr._Whiskers.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1765550550/mis_archivos_elegidos/manual_poster_tmdb_Brandy_y_Mr._Whiskers.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t8-activo-brandy-y-mr-whiskers-2004-castellano-39-39-webdl-rip-1920x1080-295mb-455mb-mega-ver-online",
+      "href": "/t8-activo-brandy-y-mr-whiskers-2004-castellano-39-39-webdl-rip-1920x1080-295mb-455mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/d8qfom5d",
+      "sinopsis": "Brandy y Mr. Whiskers, fue una serie original de Disney Channel creada por Russell Marcus y producido por Walt Disney Television Animation. El episodio piloto fue transmitido por primera vez en la cadena Toon Disney.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "295MB/455MB"
+      }
+    },
+    {
       "name": "El bebé jefazo: Vuelta a la cuna",
       "year": 2022,
       "genre": "Comedia, Familia, Infantil, Ciencia ficción, Fantasía",
@@ -19138,30 +19207,6 @@
       },
       "rentry_url": "https://rentry.co/inrp6b9h",
       "genre": "Fantasía, Infantil"
-    },
-    {
-      "confianza": 90,
-      "href": "/t8-activobrandy-y-mr-whiskers-castellano-58-59-tv-rip-704x528-115-230mb-mega-ver-online",
-      "name": "[Activo]Brandy y Mr. Whiskers [Castellano] [58/59] [TV-RIP] [704x528] [115/230MB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Occidental",
-      "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama, Disney",
-      "tmdb_type": "anime",
-      "type": "Dibujo Animado",
-      "url": "https://animezoneesp.foroactivo.com/t8-activobrandy-y-mr-whiskers-castellano-58-59-tv-rip-704x528-115-230mb-mega-ver-online",
-      "year": 0,
-      "imagen": "images\\dibujos_237_ActivoBrandy-y-Mr-Whiskers-Castellano-5859-TV-RIP-704x528-115230MB-Mega-Ver-Online.jpg",
-      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1765550550/mis_archivos_elegidos/manual_poster_tmdb_Brandy_y_Mr._Whiskers.jpg",
-      "sinopsis": "Brandy y Mr. Whiskers, fue una serie original de Disney Channel creada por Russell Marcus y producido por Walt Disney Television Animation. El episodio piloto fue transmitido por primera vez en la cadena Toon Disney.",
-      "ficha_tecnica": {
-        "ano": "2004",
-        "idioma": "Castellano",
-        "subtitulos": "Ninguno",
-        "formato": "AVI Peso/Cap: 115/230 MB NFO: [Tienes que estar registrado y conectado para ver este vínculo] Traile",
-        "peso": "115/230 MB"
-      },
-      "rentry_url": "https://rentry.co/wh8dyf6u",
-      "genre": "Comedia, Disney"
     },
     {
       "confianza": 90,
@@ -39565,6 +39610,121 @@
     }
   ],
   "series": [
+    {
+      "name": "The Shield: Al margen de la ley",
+      "year": 2002,
+      "genre": "Crimen, Drama",
+      "specificGenre": "Crimen, Drama",
+      "originalGenre": "Crimen, Drama",
+      "type": "Series",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1789266868/mis_archivos_elegidos/manual_poster_tmdb_The_Shield_Al_margen_de_la_ley.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1789266868/mis_archivos_elegidos/manual_poster_tmdb_The_Shield_Al_margen_de_la_ley.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3347-activo-the-shield-al-margen-de-la-ley-2002-dual-audio-75-75-bd-rip-1920x1080-111gb-145gb-mega-ver-online#10467",
+      "href": "/t3347-activo-the-shield-al-margen-de-la-ley-2002-dual-audio-75-75-bd-rip-1920x1080-111gb-145gb-mega-ver-online#10467",
+      "rentry_url": "https://rentry.co/ubpt8n4x",
+      "sinopsis": "Serie de carácter policíaco cuyo protagonista es el detective Vic Mackey, jefe de una unidad especial del distrito de Fargminton, en Los Ángeles, muy eficaz en su acción contra el crimen pero que trabaja según normas y métodos tan peculiares que no excluyen procedimientos tan cuestionables como la extorsión, la tortura o el chantaje si se consideran necesarios.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "1,11GB/1,45GB"
+      }
+    },
+    {
+      "name": "Paloma solitaria (Lonesome Dove) (Miniserie)",
+      "year": 1989,
+      "genre": "Western, Drama",
+      "specificGenre": "Western, Drama",
+      "originalGenre": "Western, Drama",
+      "type": "Series",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1789266744/mis_archivos_elegidos/manual_poster_tmdb_Paloma_solitaria.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1789266744/mis_archivos_elegidos/manual_poster_tmdb_Paloma_solitaria.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3346-activo-paloma-solitaria-lonesome-dove-miniserie-1989-dual-audio-04-04-bd-rip-1920x1080-199gb-209gb-mega-ver-online#10466",
+      "href": "/t3346-activo-paloma-solitaria-lonesome-dove-miniserie-1989-dual-audio-04-04-bd-rip-1920x1080-199gb-209gb-mega-ver-online#10466",
+      "rentry_url": "https://rentry.co/qrq2prwb",
+      "sinopsis": "Historia épica sobre dos antiguos Rangers de Texas que deciden conducir ganado desde el sur hasta Montana. Augustus McCrae y Woodrow Call tendrán muchos problemas en el camino y el viaje no acabará sin numerosas bajas.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Ninguno",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "1,99GB/2,09GB"
+      }
+    },
+    {
+      "name": "Line of Duty",
+      "year": 2012,
+      "genre": "Crimen, Drama, Misterio",
+      "specificGenre": "Crimen, Drama, Misterio",
+      "originalGenre": "Crimen, Drama, Misterio",
+      "type": "Series",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1789266659/mis_archivos_elegidos/manual_poster_tmdb_Line_of_Duty.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1789266659/mis_archivos_elegidos/manual_poster_tmdb_Line_of_Duty.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3345-activo-line-of-duty-2012-dual-audio-36-36-webdl-rip-1920x1080-118gb-232gb-mega-ver-online#10465",
+      "href": "/t3345-activo-line-of-duty-2012-dual-audio-36-36-webdl-rip-1920x1080-118gb-232gb-mega-ver-online#10465",
+      "rentry_url": "https://rentry.co/n3ovenip",
+      "sinopsis": "DS Steve Arnott es transferido a la unidad de policía anti-corrupción después de la muerte del hombre equivocado en un tiroteo durante una operación antiterrorista por otro policía. La nueva unidad, AC12, liderada por Ted Hastings, se ocupa de los casos de corrupción que hay dentro del cuerpo de policía. El inspector jefe Tony Gates, recientemente galardonado con un premio anual, entró en la mira de los agentes de la unidad especial. Poco a poco van descubriendo que la corrupción puede llegar más allá de lo que pensaban.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "1,18GB/2,32GB"
+      }
+    },
+    {
+      "name": "Alien: Planeta Tierra",
+      "year": 2025,
+      "genre": "Ciencia ficción, Fantasía, Drama",
+      "specificGenre": "Ciencia ficción, Fantasía, Drama",
+      "originalGenre": "Ciencia ficción, Fantasía, Drama",
+      "type": "Series",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1789266344/mis_archivos_elegidos/manual_poster_tmdb_Alien_Planeta_Tierra.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1789266344/mis_archivos_elegidos/manual_poster_tmdb_Alien_Planeta_Tierra.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3343-activo-alien-planeta-tierra-2025-dual-audio-08-08-webdl-rip-1920x804-107gb-179gb-mega-ver-online#10463",
+      "href": "/t3343-activo-alien-planeta-tierra-2025-dual-audio-08-08-webdl-rip-1920x804-107gb-179gb-mega-ver-online#10463",
+      "rentry_url": "https://rentry.co/6ndyacpt",
+      "sinopsis": "Cuando una misteriosa nave se estrella contra la Tierra, una joven y un variopinto grupo de soldados tácticos hacen un fatídico hallazgo que los pone cara a cara con la mayor amenaza del planeta. El equipo de rescate busca supervivientes entre los restos de la colisión y se topa con una forma de vida depredadora que levanta más misterios y miedos de los que cabría imaginarse. Debido a esta nueva amenaza, el equipo deberá luchar por sobrevivir. Lo que decidan hacer con este descubrimiento podría cambiar el planeta Tierra tal y como lo conocen.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x804",
+        "formato": "MKV",
+        "peso": "1,07GB/1,79GB"
+      }
+    },
+    {
+      "name": "A dos metros bajo tierra",
+      "year": 2001,
+      "genre": "Drama",
+      "specificGenre": "Drama",
+      "originalGenre": "Drama",
+      "type": "Series",
+      "imagen_url": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1789266282/mis_archivos_elegidos/manual_poster_tmdb_A_dos_metros_bajo_tierra.jpg",
+      "imagen": "https://res.cloudinary.com/ddaxoi1n4/image/upload/v1789266282/mis_archivos_elegidos/manual_poster_tmdb_A_dos_metros_bajo_tierra.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3342-activo-a-dos-metros-bajo-tierra-2001-dual-audio-63-63-webdl-rip-1440x1080-107gb-284gb-mega-ver-online#10462",
+      "href": "/t3342-activo-a-dos-metros-bajo-tierra-2001-dual-audio-63-63-webdl-rip-1440x1080-107gb-284gb-mega-ver-online#10462",
+      "rentry_url": "https://rentry.co/33qaak6m",
+      "sinopsis": "El día de Nochebuena, cuando Nathaniel Fisher esperaba la llegada de su hijo Nate, muere en un accidente de coche. La dominante madre del chico, Ruth, tiene una aventura. Su hermano David, un gay que no ha salido del armario, dirige el negocio familiar, y su hermana Claire es una problemática adolescente que consume drogas. La única persona aparentemente normal de la vida de Nate es Brenda, una apasionada mujer a la que conoce en un avión.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1440x1080",
+        "formato": "MKV",
+        "peso": "1,07GB/2,84GB"
+      }
+    },
     {
       "name": "The Last of Us",
       "year": 2023,
