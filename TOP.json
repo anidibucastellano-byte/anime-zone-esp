@@ -1,6 +1,78 @@
 {
   "anime": [
     {
+      "name": "Dulce Luna",
+      "year": "1990",
+      "genre": "Comedia, Drama",
+      "specificGenre": "Comedia, Drama",
+      "originalGenre": "Comedia, Drama",
+      "type": "Anime",
+      "imagen_url": "https://i.8upload.com/image/2a489b049bb6c132/poster-tmdb-dulce-luna.jpg",
+      "imagen": "https://i.8upload.com/image/2a489b049bb6c132/poster-tmdb-dulce-luna.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3438-activo-dulce-luna-1990-castellano-47-47-dvd-rip-640x480-180mb-330mb-mega-ver-online",
+      "href": "/t3438-activo-dulce-luna-1990-castellano-47-47-dvd-rip-640x480-180mb-330mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/3ukz3q9v",
+      "sinopsis": "Mint es una chica que resulta ser la princesa del mundo de los sueños y la magia. El medio ambiente natural de su mundo es un reflejo de los sueños de la gente en la Tierra. Ahora está en peligro, ya que la gente pierde la fe en sus sueños y deja que las tinieblas entren en sus corazones. El medio ambiente del mundo de Mint está comenzando a marchitarse y morir.\n\nA los 12 años, después de una celebración de gala con su padre el Rey y su madre, ella acepta ir al mundo de los humanos para tratar de preservar las esperanzas y sueños de la gente, y demostrar que tiene las cualidades necesarias para ser una sabia gobernante. Su padre hace arreglos para que ella se quede con su hermana Herb, la tía de Mint, que tiene una tienda de regalos en la Tierra llamada \"Happiness Shop\".",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "AVI",
+        "calidad": "DVD-Rip",
+        "resolucion": "640x480",
+        "peso": "180MB/330MB",
+        "episodios": "T1 47/47"
+      }
+    },
+    {
+      "name": "Dai-Guard",
+      "year": "1999",
+      "genre": "Acción, Aventura",
+      "specificGenre": "Acción, Aventura",
+      "originalGenre": "Acción, Aventura",
+      "type": "Anime",
+      "imagen_url": "https://i.8upload.com/image/9045be11ea279f81/poster-tmdb-dai-guard.jpg",
+      "imagen": "https://i.8upload.com/image/9045be11ea279f81/poster-tmdb-dai-guard.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3437-activo-dai-guard-1999-castellano-26-26-dvd-rip-720x480-145mb-280mb-mega-ver-online",
+      "href": "/t3437-activo-dai-guard-1999-castellano-26-26-dvd-rip-720x480-145mb-280mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/hphf2yt2",
+      "sinopsis": "Trece años después de su repentina desaparición, unos misteriosos series conocidos como \"Heterodyne\" reaparecen. Para combatir a estos peligrosos seres, tres trabajadores de una oficina de seguridad pilotan Dai-Guard - un robot gigante que estaba siendo considerado casi como un pisapapeles de gran tamaño. Por desgracia, Dai-Guard es un tanto obsoleto y está en mal estado.\n\nEs un trabajo duro, pero los asalariados también puede salvar el mundo.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "AVI",
+        "calidad": "DVD-Rip",
+        "resolucion": "720x480",
+        "peso": "145MB/280MB",
+        "episodios": "T1 26/26"
+      }
+    },
+    {
+      "name": "Babel II",
+      "year": "1992",
+      "genre": "Ciencia ficción, Acción",
+      "specificGenre": "Ciencia ficción, Acción",
+      "originalGenre": "Ciencia ficción, Acción",
+      "type": "Anime",
+      "imagen_url": "https://i.8upload.com/image/f5c7a4a4af0b5a57/poster-tmdb-babel-ii.jpg",
+      "imagen": "https://i.8upload.com/image/f5c7a4a4af0b5a57/poster-tmdb-babel-ii.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3436-activo-babel-ii-miniserie-1992-tri-audio-04-04-bd-rip-768x576-115gb-146gb-mega-ver-online",
+      "href": "/t3436-activo-babel-ii-miniserie-1992-tri-audio-04-04-bd-rip-768x576-115gb-146gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/n7ax267i",
+      "sinopsis": "Koichi es un estudiante normal y corriente, pero un día, una misteriosa voz en un sueño le revela que es la recarnación de Babel, defensor de la Tierra con grandes poderes psiquicos y 3 guardianes: Rohdem, la pantera negra; Poseidón, el robot gigante y Robross, el dragón. Babel segundo tendrá que defender la Tierra con ayuda de sus guardianes de un grupo de luchadores psiquicos como él, que quieren conquistar el mundo encabezados por el primer Babel que fue desterrado por sus malas intenciones. Entretenido anime del diseñador de personajes de Caballeros del Zodiaco.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés, Japonés",
+        "subtitulos": "Español, Inglés",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "768x576",
+        "peso": "1,15GB/1,46GB",
+        "episodios": "T1 4/4"
+      }
+    },
+    {
       "name": "Redakai꞉ Conquista el Kairu",
       "year": 2011,
       "genre": "Acción, Aventura",
@@ -12788,6 +12860,30 @@
     }
   ],
   "dibujos": [
+    {
+      "name": "Érase una vez... El cuerpo humano",
+      "year": "1987",
+      "genre": "Infantil, Documental",
+      "specificGenre": "Infantil, Documental",
+      "originalGenre": "Infantil, Documental",
+      "type": "Dibujos",
+      "imagen_url": "https://i.8upload.com/image/6c0756296f5854db/poster-tmdb-rase-una-vez-el-cuerpo-humano.jpg",
+      "imagen": "https://i.8upload.com/image/6c0756296f5854db/poster-tmdb-rase-una-vez-el-cuerpo-humano.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3439-activo-erase-una-vez-el-cuerpo-humano-1987-castellano-26-26-dvd-rip-640x480-340mb-340mb-mega-ver-online",
+      "href": "/t3439-activo-erase-una-vez-el-cuerpo-humano-1987-castellano-26-26-dvd-rip-640x480-340mb-340mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/3ink5t8f",
+      "sinopsis": "Erase una vez el Cuerpo Humano explica, de forma simple y amena a través de personajes animados, diferentes aspectos sobre anatomía y funcionamiento de nuestro cuerpo.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "AVI",
+        "calidad": "DVD-Rip",
+        "resolucion": "640x480",
+        "peso": "340MB/340MB",
+        "episodios": "T1 26/26"
+      }
+    },
     {
       "name": "Rekkit Rabbit",
       "year": "2011",
