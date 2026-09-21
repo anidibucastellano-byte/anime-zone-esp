@@ -41414,6 +41414,29 @@
   ],
   "series": [
     {
+      "name": "Parks and Recreation",
+      "year": 2009,
+      "genre": "Comedia",
+      "specificGenre": "Comedia",
+      "originalGenre": "Comedia",
+      "type": "Series",
+      "imagen_url": "https://i.8upload.com/image/4084fa341af00b82/poster-tmdb-parks-and-recreation.jpg",
+      "imagen": "https://i.8upload.com/image/4084fa341af00b82/poster-tmdb-parks-and-recreation.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3321-activo-parks-and-recreation-2009-dual-audio-125-125-web-dl-1920x1080-405mb-540mb-mega-ver-online#10406",
+      "href": "/t3321-activo-parks-and-recreation-2009-dual-audio-125-125-web-dl-1920x1080-405mb-540mb-mega-ver-online#10406",
+      "rentry_url": "https://rentry.co/9zp9au99",
+      "sinopsis": "La serie sigue las andanzas en formato de documental, de Leslie Knope, que trabaja en el departamento de parques y tiempo libre en Pawnee, Indiana. Knope se une a una enfermera llamada Ann para lograr convertir en un parque lo que es un trozo de tierra abandonado, tratando de navegar hasta lograrlo por las mil trabas de la administración municipal y varios colectivos.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "calidad": "WEB-DL",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "405MB/540MB"
+      }
+    },
+    {
       "name": "Veneno",
       "year": "2020",
       "genre": "Drama",
@@ -42141,29 +42164,6 @@
         "resolucion": "1920x1080",
         "formato": "MKV",
         "peso": "1,11GB/2,17GB"
-      }
-    },
-    {
-      "name": "Parks and Recreation",
-      "year": 2009,
-      "genre": "Comedia",
-      "specificGenre": "Comedia",
-      "originalGenre": "Comedia",
-      "type": "Series",
-      "imagen_url": "https://i.8upload.com/image/2c77829928d1d431/manual-poster-tmdb-parks-and-recreation.jpg",
-      "imagen": "https://i.8upload.com/image/2c77829928d1d431/manual-poster-tmdb-parks-and-recreation.jpg",
-      "url": "https://animezoneesp.foroactivo.com/t3321-activo-parks-and-recreation-2009-dual-audio-125-125-webdl-rip-1920x1080-127gb-168gb-mega-ver-online#10406",
-      "href": "/t3321-activo-parks-and-recreation-2009-dual-audio-125-125-webdl-rip-1920x1080-127gb-168gb-mega-ver-online#10406",
-      "rentry_url": "https://rentry.co/9zp9au99",
-      "sinopsis": "La serie sigue las andanzas en formato de documental, de Leslie Knope, que trabaja en el departamento de parques y tiempo libre en Pawnee, Indiana. Knope se une a una enfermera llamada Ann para lograr convertir en un parque lo que es un trozo de tierra abandonado, tratando de navegar hasta lograrlo por las mil trabas de la administración municipal y varios colectivos.",
-      "confianza": 0.8,
-      "ficha_tecnica": {
-        "idioma": "Castellano, Inglés",
-        "subtitulos": "Español, Inglés",
-        "calidad": "WebDL-Rip",
-        "resolucion": "1920x1080",
-        "formato": "MKV",
-        "peso": "1,27GB/1,68GB"
       }
     },
     {
