@@ -10653,29 +10653,6 @@
       }
     },
     {
-      "name": "Hailey, ¡a por todas!",
-      "year": 2023,
-      "genre": "Familia, Comedia, Ciencia ficción, Fantasía, Disney",
-      "specificGenre": "Familia, Comedia, Ciencia ficción, Fantasía, Disney",
-      "originalGenre": "Familia, Comedia, Ciencia ficción, Fantasía, Disney",
-      "type": "Anime",
-      "imagen_url": "https://i.8upload.com/image/1cb5d75c9c581c65/manual-poster-tmdb-hailey-2c-c2-a1a-por-todas-21.jpg",
-      "imagen": "https://i.8upload.com/image/1cb5d75c9c581c65/manual-poster-tmdb-hailey-2c-c2-a1a-por-todas-21.jpg",
-      "url": "https://animezoneesp.foroactivo.com/t2145-activo-hailey-a-por-todas-2023-castellano-30-30-webdl-rip-1920x1080-695mb-770mb-mega-pixeldrain-ver-online#5154",
-      "href": "/t2145-activo-hailey-a-por-todas-2023-castellano-30-30-webdl-rip-1920x1080-695mb-770mb-mega-pixeldrain-ver-online#5154",
-      "rentry_url": "https://rentry.co/qhvwxtaf",
-      "sinopsis": "Hailey Banks debe superar sus miedos si quiere salvar el mundo.",
-      "confianza": 0.8,
-      "ficha_tecnica": {
-        "idioma": "Castellano",
-        "subtitulos": "Ninguno",
-        "calidad": "WebDL-Rip",
-        "resolucion": "1920x1080",
-        "formato": "MP4",
-        "peso": "695MB/770MB"
-      }
-    },
-    {
       "name": "My Melody & Kuromi",
       "year": 2025,
       "genre": "Fantasía, Infantil",
@@ -12908,6 +12885,29 @@
     }
   ],
   "dibujos": [
+    {
+      "name": "Hailey, ¡a por todas!",
+      "year": 2023,
+      "genre": "Infantil, Comedia, Ciencia ficción, Fantasía, Disney",
+      "specificGenre": "Infantil, Comedia, Ciencia ficción, Fantasía, Disney",
+      "originalGenre": "Infantil, Comedia, Ciencia ficción, Fantasía, Disney",
+      "type": "Dibujos",
+      "imagen_url": "https://i.8upload.com/image/1cb5d75c9c581c65/manual-poster-tmdb-hailey-2c-c2-a1a-por-todas-21.jpg",
+      "imagen": "https://i.8upload.com/image/1cb5d75c9c581c65/manual-poster-tmdb-hailey-2c-c2-a1a-por-todas-21.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t2145-activo-hailey-a-por-todas-2023-castellano-30-30-webdl-rip-1920x1080-695mb-770mb-mega-pixeldrain-ver-online#5154",
+      "href": "/t2145-activo-hailey-a-por-todas-2023-castellano-30-30-webdl-rip-1920x1080-695mb-770mb-mega-pixeldrain-ver-online#5154",
+      "rentry_url": "https://rentry.co/qhvwxtaf",
+      "sinopsis": "Hailey Banks debe superar sus miedos si quiere salvar el mundo.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MP4",
+        "peso": "695MB/770MB"
+      }
+    },
     {
       "name": "Érase una vez... El cuerpo humano",
       "year": "1987",
@@ -28101,9 +28101,9 @@
     {
       "name": "La llamada de los gnomos",
       "year": 1987,
-      "genre": "Familia, Ciencia ficción, Fantasía",
-      "specificGenre": "Familia, Ciencia ficción, Fantasía",
-      "originalGenre": "Familia, Ciencia ficción, Fantasía",
+      "genre": "Infantil, Ciencia ficción, Fantasía",
+      "specificGenre": "Infantil, Ciencia ficción, Fantasía",
+      "originalGenre": "Infantil, Ciencia ficción, Fantasía",
       "type": "Dibujos",
       "imagen_url": "https://i.8upload.com/image/97da8ecd4f247825/manual-poster-tmdb-la-llamada-de-los-gnomos.jpg",
       "imagen": "https://i.8upload.com/image/97da8ecd4f247825/manual-poster-tmdb-la-llamada-de-los-gnomos.jpg",
@@ -28124,9 +28124,9 @@
     {
       "name": "Marcelino, pan y vino",
       "year": 2001,
-      "genre": "Familia, Drama",
-      "specificGenre": "Familia, Drama",
-      "originalGenre": "Familia, Drama",
+      "genre": "Infantil, Drama",
+      "specificGenre": "Infantil, Drama",
+      "originalGenre": "Infantil, Drama",
       "type": "Dibujos",
       "imagen_url": "https://i.8upload.com/image/a53c1dca9a8702de/manual-poster-tmdb-marcelino-2c-pan-y-vino.jpg",
       "imagen": "https://i.8upload.com/image/a53c1dca9a8702de/manual-poster-tmdb-marcelino-2c-pan-y-vino.jpg",
@@ -28768,9 +28768,9 @@
     {
       "name": "Matt's Monsters",
       "year": 2008,
-      "genre": "Familia, Acción, Aventura, Infantil, Comedia, Disney",
-      "specificGenre": "Familia, Acción, Aventura, Infantil, Comedia, Disney",
-      "originalGenre": "Familia, Acción, Aventura, Infantil, Comedia, Disney",
+      "genre": "Infantil, Acción, Aventura, Infantil, Comedia, Disney",
+      "specificGenre": "Infantil, Acción, Aventura, Infantil, Comedia, Disney",
+      "originalGenre": "Infantil, Acción, Aventura, Infantil, Comedia, Disney",
       "type": "Dibujos",
       "imagen_url": "https://i.8upload.com/image/75cb94b08e5fe777/manual-matt-27s-20monsters-20a.jpg",
       "imagen": "https://i.8upload.com/image/75cb94b08e5fe777/manual-matt-27s-20monsters-20a.jpg",
@@ -30170,6 +30170,29 @@
     }
   ],
   "peliculas": [
+    {
+      "name": "Vampire Hunter D: Bloodlust",
+      "year": "2001",
+      "genre": "Terror, Fantasía",
+      "specificGenre": "Terror, Fantasía",
+      "originalGenre": "Terror, Fantasía",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/1b6afee4a8ea7d26/poster-tmdb-vampire-hunter-d-bloodlust.jpg",
+      "imagen": "https://i.8upload.com/image/1b6afee4a8ea7d26/poster-tmdb-vampire-hunter-d-bloodlust.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3461-activo-vampire-hunter-d-bloodlust-2001-tri-audio-bd-rip-1920x1038-1326gb-mega-ver-online",
+      "href": "/t3461-activo-vampire-hunter-d-bloodlust-2001-tri-audio-bd-rip-1920x1038-1326gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/r2kmcatk",
+      "sinopsis": "\"D\" ha sido contratado para localizar a Meier Link, un poderoso vampiro que ha secuestrado a una chica humana, Charlotte Elbourne. Las órdenes de \"D\" son claras, encontrar a Charlotte a cualquier precio y traerla de vuelta. Por primera vez \"D\" se enfrenta a serios competidores, los Hermanos Markus, también contratados con el mismo fin. \"D\" deberá interceptar a Meier y superar a poderosos adversarios en una carrera mortal a contratiempo.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés, Japonés",
+        "subtitulos": "Español, Inglés",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1038",
+        "peso": "13,26GB"
+      }
+    },
     {
       "name": "Dragon Quest: Your Story",
       "year": "2019",
@@ -32151,9 +32174,9 @@
     {
       "name": "Pocahontas 2: Viaje a un nuevo mundo",
       "year": 1998,
-      "genre": "Familia, Aventuras, Romance, Disney",
-      "specificGenre": "Familia, Aventuras, Romance, Disney",
-      "originalGenre": "Familia, Aventuras, Romance, Disney",
+      "genre": "Infantil, Aventuras, Romance, Disney",
+      "specificGenre": "Infantil, Aventuras, Romance, Disney",
+      "originalGenre": "Infantil, Aventuras, Romance, Disney",
       "type": "Película",
       "imagen_url": "https://i.8upload.com/image/d4fd6386c1d52e1b/manual-poster-tmdb-pocahontas-2-viaje-a-un-nuevo-mundo.jpg",
       "imagen": "https://i.8upload.com/image/d4fd6386c1d52e1b/manual-poster-tmdb-pocahontas-2-viaje-a-un-nuevo-mundo.jpg",
