@@ -1,6 +1,29 @@
 {
   "anime": [
     {
+      "name": "Black Cat",
+      "year": 2005,
+      "genre": "Acción, Aventura, Ciencia ficción, Fantasía",
+      "specificGenre": "Acción, Aventura, Ciencia ficción, Fantasía",
+      "originalGenre": "Acción, Aventura, Ciencia ficción, Fantasía",
+      "type": "Anime",
+      "imagen_url": "https://i.8upload.com/image/83657bdb8264eb13/manual-poster-tmdb-black-cat.jpg",
+      "imagen": "https://i.8upload.com/image/83657bdb8264eb13/manual-poster-tmdb-black-cat.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t1630-activo-black-cat-2005-castellano-24-24-dvd-rip-848x480-110mb-195mb-mega-ver-online?highlight=Black+Cat",
+      "href": "/t1630-activo-black-cat-2005-castellano-24-24-dvd-rip-848x480-110mb-195mb-mega-ver-online?highlight=Black+Cat",
+      "rentry_url": "https://rentry.co/bo9aewzk",
+      "sinopsis": "), uno de los asesinos más poderosos de la organización, conoce a una extraña mujer llamada Saya Minatsuki, que siempre viste un kimono llamativo y ablanda su corazón. Entonces decide no volver a recibir órdenes de nadie ni matar sin motivo. Saya es asesinada por Creed, quien la llama bruja, pues-recompensas junto a él y a Eve la niña que este cuida, una misteriosa niña con poderes sobrenaturales basados en la Nanotecnología y creada artificialmente por la doctora Tearju Lunatique.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "calidad": "DVD-Rip",
+        "resolucion": "848x480",
+        "formato": "MKV",
+        "peso": "110MB/195MB"
+      }
+    },
+    {
       "name": "Detective Conan: Hanzawa el culpable",
       "year": "2022",
       "genre": "Comedia, Misterio, Crimen",
