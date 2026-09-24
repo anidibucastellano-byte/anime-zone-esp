@@ -1,6 +1,54 @@
 {
   "anime": [
     {
+      "name": "Black Torch",
+      "year": "2026",
+      "genre": "Misterio, Acción, Aventura",
+      "specificGenre": "Misterio, Acción, Aventura",
+      "originalGenre": "Misterio, Acción, Aventura",
+      "type": "Anime",
+      "imagen_url": "https://i.8upload.com/image/9b8f15846fea2472/poster-tmdb-black-torch.jpg",
+      "imagen": "https://i.8upload.com/image/9b8f15846fea2472/poster-tmdb-black-torch.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3538-activo-black-torch-2026-tri-audio-12-12-webdl-rip-1920x1080-320mb-495mb-mega-ver-online",
+      "href": "/t3538-activo-black-torch-2026-tri-audio-12-12-webdl-rip-1920x1080-320mb-495mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/ei4b4ioz",
+      "sinopsis": "Jiro Azuma pertenece a una familia de ninjas capaz de hablar con los animales. ¡Junto al gato Rago, enfrenta a los mononoke!.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Japonés, Inglés, Castellano",
+        "subtitulos": "Inglés, Español",
+        "formato": "MKV",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "peso": "320MB/495MB",
+        "episodios": "T1 12/12"
+      }
+    },
+    {
+      "name": "Parasyte: The Maxim",
+      "year": "2014",
+      "genre": "Drama, Ciencia ficción, Fantasía",
+      "specificGenre": "Drama, Ciencia ficción, Fantasía",
+      "originalGenre": "Drama, Ciencia ficción, Fantasía",
+      "type": "Anime",
+      "imagen_url": "https://i.8upload.com/image/17576b3d51772ee0/poster-tmdb-parasyte-the-maxim.jpg",
+      "imagen": "https://i.8upload.com/image/17576b3d51772ee0/poster-tmdb-parasyte-the-maxim.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3536-activo-parasyte-the-maxim-2014-japones-24-24-webdl-rip-1920x1080-305mb-470mb-mega-ver-online",
+      "href": "/t3536-activo-parasyte-the-maxim-2014-japones-24-24-webdl-rip-1920x1080-305mb-470mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/xutbxxxq",
+      "sinopsis": "Alienígenas parásitos infectan humanos para sobrevivir, tomando su forma. Shinichi Izumi, un estudiante de secundaria, lucha por controlar su cuerpo después de ser infectado por uno, y debe enfrentar a estas criaturas para salvar a la humanidad.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Japonés",
+        "subtitulos": "Español",
+        "formato": "MP4",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "peso": "305MB/470MB",
+        "episodios": "T1 24/24"
+      }
+    },
+    {
       "name": "W: Wish",
       "year": "2004",
       "genre": "Drama, Comedia",
@@ -13100,6 +13148,30 @@
     }
   ],
   "dibujos": [
+    {
+      "name": "The Batman",
+      "year": "2004",
+      "genre": "Ciencia ficción, Fantasía",
+      "specificGenre": "Ciencia ficción, Fantasía",
+      "originalGenre": "Ciencia ficción, Fantasía",
+      "type": "Dibujos",
+      "imagen_url": "https://i.8upload.com/image/d37734bd8b8e651f/poster-tmdb-the-batman.jpg",
+      "imagen": "https://i.8upload.com/image/d37734bd8b8e651f/poster-tmdb-the-batman.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3537-activo-the-batman-2004-castellano-65-65-webdl-rip-1920x1080-240mb-134gb-mega-ver-online",
+      "href": "/t3537-activo-the-batman-2004-castellano-65-65-webdl-rip-1920x1080-240mb-134gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/kbtupwhk",
+      "sinopsis": "La serie se remonta a la vida de un joven Bruce Wayne, cuyo álter ego, Batman, ya lleva 3 años al cuidado de Ciudad Gótica. Éste joven Batman se enfrenta por primera vez a sus enemigos más conocidos, con la ayuda de su mayordomo Alfred, el cual coopera en el momento en que Bruce Wayne/Batman lo requiere.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "MKV",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "peso": "240MB/1,34GB",
+        "episodios": "T1 13/13, T2 13/13, T3 13/13, T4 13/13, T5 13/13"
+      }
+    },
     {
       "name": "Hailey, ¡a por todas!",
       "year": 2023,
@@ -30386,6 +30458,75 @@
   ],
   "peliculas": [
     {
+      "name": "Shrek tercero",
+      "year": "2007",
+      "genre": "Fantasía, Aventura, Comedia, Infantil",
+      "specificGenre": "Fantasía, Aventura, Comedia, Infantil",
+      "originalGenre": "Fantasía, Aventura, Comedia, Infantil",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/2c67a9c54ade8685/poster-tmdb-shrek-tercero.jpg",
+      "imagen": "https://i.8upload.com/image/2c67a9c54ade8685/poster-tmdb-shrek-tercero.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3543-activo-shrek-tercero-2007-castellano-bd-rip-1920x1080-784gb-mega-ver-online",
+      "href": "/t3543-activo-shrek-tercero-2007-castellano-bd-rip-1920x1080-784gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/4soof9k9",
+      "sinopsis": "Shrek se casó con Fiona, pero lo que no tuvo en cuenta es que al casarse con una princesa... tarde o temprano uno termina siendo rey. Cuando su suegro, el Rey Harold, cae enfermo, Shrek se encuentra en riesgo de tener que abandonar su amado pantano por el trono. A menos claro que encuentre un heredero. Junto con Asno y el Gato con Botas, Shrek viaja para en busca del primo de Fiona, Arturo. Mientras, en Muy Muy Lejano, el Principe Encantador recluta un ejército de villanos de cuento para tomar el trono por la fuerza. Pero no cuentan con que Fiona y la Reina Lillian también han reunido su grupo de heroínas de cuento para hacerles frente...",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1080",
+        "peso": "7,84GB"
+      }
+    },
+    {
+      "name": "Monster House",
+      "year": "2006",
+      "genre": "Comedia, Infantil, Fantasía, Terror",
+      "specificGenre": "Comedia, Infantil, Fantasía, Terror",
+      "originalGenre": "Comedia, Infantil, Fantasía, Terror",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/962c58dc4f7b197c/poster-tmdb-monster-house.jpg",
+      "imagen": "https://i.8upload.com/image/962c58dc4f7b197c/poster-tmdb-monster-house.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3542-activo-monster-house-2006-castellano-bd-rip-1920x800-853gb-mega-ver-online",
+      "href": "/t3542-activo-monster-house-2006-castellano-bd-rip-1920x800-853gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/5rpnngzi",
+      "sinopsis": "D.J. Walters es un chico de doce años al que se le ha metido en la cabeza que en la casa del anciano Nebbercracker, al otro lado de la calle, ocurre algo extraño. La víspera de Halloween, el balón con el que juegan D.J. y su amigo va a parar al jardín del señor Nebbercracker, pero misteriosamente llega al interior de la vivienda. Cuando su amiga Jenny está a punto de ser engullida por la extraña casa, nadie cree a los asustados chicos; así que los tres deciden investigar qué sucede en esa extraña casa.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x800",
+        "peso": "8,53GB"
+      }
+    },
+    {
+      "name": "El barco fantasma volador",
+      "year": "1969",
+      "genre": "Ciencia ficción, Terror",
+      "specificGenre": "Ciencia ficción, Terror",
+      "originalGenre": "Ciencia ficción, Terror",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/ceefb066217fe862/poster-tmdb-el-barco-fantasma-volador.jpg",
+      "imagen": "https://i.8upload.com/image/ceefb066217fe862/poster-tmdb-el-barco-fantasma-volador.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3541-activo-el-barco-fantasma-volador-1969-dual-audio-iaupscale-rip-1440x704-850gb-mega-ver-online",
+      "href": "/t3541-activo-el-barco-fantasma-volador-1969-dual-audio-iaupscale-rip-1440x704-850gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/336f8ara",
+      "sinopsis": "La pacífica vida de Hayato con sus padres y su perro, se ve alterada cuando la ciudad es devastada por una nave fantasma, provocando una matanza en la que también pierde la vida sus padres. Antes de morir, este le rebela que él no es realmente su hijo. Hayato está ahora solo, luchando en un mundo nuevo y extraño trás el desatre. Su única meta será descubrir quien está detrás de las fuerzas misteriosas y lograr vencerlas. Lev Atamanov, aclamado animador ruso, se encargó de gran parte de la animación del film.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Ninguno",
+        "formato": "MP4",
+        "calidad": "IAUpScale-Rip",
+        "resolucion": "1440x704",
+        "peso": "8,50GB"
+      }
+    },
+    {
       "name": "Jorge el curioso",
       "year": "2006",
       "genre": "Infantil",
@@ -42203,6 +42344,54 @@
     }
   ],
   "series": [
+    {
+      "name": "Merlí",
+      "year": "2015",
+      "genre": "Comedia, Drama",
+      "specificGenre": "Comedia, Drama",
+      "originalGenre": "Comedia, Drama",
+      "type": "Series",
+      "imagen_url": "https://i.8upload.com/image/753c1244bb8f4d9b/poster-tmdb-merl.jpg",
+      "imagen": "https://i.8upload.com/image/753c1244bb8f4d9b/poster-tmdb-merl.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3540-activo-merli-2015-dual-audio-40-40-bd-rip-1920x1080-510mb-845mb-mega-ver-online",
+      "href": "/t3540-activo-merli-2015-dual-audio-40-40-bd-rip-1920x1080-510mb-845mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/g49637xi",
+      "sinopsis": "Merlí es un profesor de una materia denostada y apreciada a partes iguales, filosofía. Un tipo contradictorio, y con virtudes y defectos a la par. La producción se centra en la relación del maestro con sus alumnos y, sobre todo, en «los conflictos entre padres e hijos, estudiantes y profesores...»",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Catalán",
+        "subtitulos": "Español, Catalán",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1080",
+        "peso": "510MB/845MB",
+        "episodios": "T1 13/13, T2 13/13, T3 14/14"
+      }
+    },
+    {
+      "name": "Adolescencia",
+      "year": "2025",
+      "genre": "Drama, Crimen",
+      "specificGenre": "Drama, Crimen",
+      "originalGenre": "Drama, Crimen",
+      "type": "Series",
+      "imagen_url": "https://i.8upload.com/image/e73cb40afad78448/poster-tmdb-adolescencia.jpg",
+      "imagen": "https://i.8upload.com/image/e73cb40afad78448/poster-tmdb-adolescencia.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3539-activo-adolescencia-miniserie-2025-dual-audio-04-04-webdl-rip-1920x960-195gb-225gb-mega-ver-online",
+      "href": "/t3539-activo-adolescencia-miniserie-2025-dual-audio-04-04-webdl-rip-1920x960-195gb-225gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/6x2aq5xk",
+      "sinopsis": "El mundo de una familia se pone patas arriba cuando Jamie Miller, de 13 años, es arrestado y acusado de asesinar a una compañera de clase. Los cargos contra su hijo les obliga a enfrentarse a la peor pesadilla de cualquier padre.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "formato": "MKV",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x960",
+        "peso": "1,95GB/2,25GB",
+        "episodios": "T1 4/4"
+      }
+    },
     {
       "name": "The Bear",
       "year": "2022",
