@@ -1,6 +1,54 @@
 {
   "anime": [
     {
+      "name": "Nippon Sangoku",
+      "year": "2026",
+      "genre": "Drama, Guerra, Política",
+      "specificGenre": "Drama, Guerra, Política",
+      "originalGenre": "Drama, Guerra, Política",
+      "type": "Anime",
+      "imagen_url": "https://i.8upload.com/image/de085230cf6b8afc/poster-tmdb-nippon-sangoku.jpg",
+      "imagen": "https://i.8upload.com/image/de085230cf6b8afc/poster-tmdb-nippon-sangoku.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3560-activo-nippon-sangoku-2026-dual-audio-12-12-webdl-rip-1920x1080-240mb-420mb-mega-ver-online",
+      "href": "/t3560-activo-nippon-sangoku-2026-dual-audio-12-12-webdl-rip-1920x1080-240mb-420mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/thpc3whi",
+      "sinopsis": "En un Japón de un futuro cercano donde la civilización ha retrocedido debido a la guerra nuclear, los desastres naturales y un gobierno corrupto. La nación se fractura en tres, sumergiéndose en una nueva era de Tres Reinos mientras cada uno lucha por la supremacía. Aoteru Misumi, antes un oscuro burócrata local, fija su objetivo en la reunificación de Japón. Armado con vastos conocimientos y una elocuencia excepcional, asciende gradualmente.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Japonés",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "peso": "240MB/420MB",
+        "episodios": "T1 12/12"
+      }
+    },
+    {
+      "name": "Dang!",
+      "year": "2026",
+      "genre": "Comedia",
+      "specificGenre": "Comedia",
+      "originalGenre": "Comedia",
+      "type": "Anime",
+      "imagen_url": "https://i.8upload.com/image/639f9edfb7e60ca7/poster-tmdb-dang.jpg",
+      "imagen": "https://i.8upload.com/image/639f9edfb7e60ca7/poster-tmdb-dang.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3559-activo-dang-2026-dual-audio-08-08-webdl-rip-1920x1080-130mb-160mb-mega-ver-online",
+      "href": "/t3559-activo-dang-2026-dual-audio-08-08-webdl-rip-1920x1080-130mb-160mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/wgqg4pi6",
+      "sinopsis": "Sexo. Drogas. Síndrome del colon irritable. Los hermanos Dang tienen sus problemas, pero ahora que vuelven a estar juntos podrán poner orden en sus vidas. O quizá no.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Inglés, Castellano",
+        "subtitulos": "Español, Inglés",
+        "formato": "MKV",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "peso": "130MB/160MB",
+        "episodios": "T1 8/8"
+      }
+    },
+    {
       "name": "Black Torch",
       "year": "2026",
       "genre": "Misterio, Acción, Aventura",
@@ -16651,12 +16699,12 @@
       "confianza": 85,
       "href": "/t14-activosamurai-jack-castellano-62-62-webdl-rip-1920x1080-340mb-mega-ver-online",
       "name": "[Activo]Samurai Jack [Castellano] [62/62] [WebDL-RIP] [1920x1080] [340MB] [Mega] [Ver Online]",
-      "originalGenre": "Animación Occidental",
+      "originalGenre": "Acción, Aventura, Fantasía, Cartoon Network",
       "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Acción, Cartoon Network",
+      "specificGenre": "Acción, Aventura, Fantasía, Cartoon Network",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t14-activosamurai-jack-castellano-62-62-webdl-rip-1920x1080-340mb-mega-ver-online",
-      "year": 2026,
+      "year": 2001,
       "imagen": "images\\dibujos_104_ActivoSamurai-Jack-Castellano-6262-WebDL-RIP-1920x1080-340MB-Mega-Ver-Online.jpg",
       "imagen_url": "https://i.8upload.com/image/3c5e9be5d8ec589b/manual-poster-tmdb-samurai-jack.jpg",
       "sinopsis": "Samurai Jack cuenta la historia de un joven príncipe cuyo imperio ha sido destruido por un demonio caído de los cielos llamado Aku. Jack consigue huir de la destrucción y dedica el resto de su vida a entrenarse para poder recuperar su reino y derrotar Aku, vengando así la muerte de todo su pueblo.",
@@ -16665,7 +16713,9 @@
         "idioma": "Castellano",
         "subtitulos": "Ninguno",
         "formato": "MKV Peso/Cap: 340 MB NFO: [Tienes que estar registrado y conectado para ver este vínculo] Trailer: [",
-        "peso": "340 MB"
+        "peso": "340 MB",
+        "calidad": "",
+        "resolucion": ""
       },
       "rentry_url": "https://rentry.co/vtrkbt23",
       "genre": "Acción, Aventura, Fantasía, Cartoon Network"
@@ -30458,6 +30508,98 @@
   ],
   "peliculas": [
     {
+      "name": "Judge, el juez de las tinieblas",
+      "year": "1991",
+      "genre": "Fantasía, Terror, Acción, Suspense, Misterio, Crimen",
+      "specificGenre": "Fantasía, Terror, Acción, Suspense, Misterio, Crimen",
+      "originalGenre": "Fantasía, Terror, Acción, Suspense, Misterio, Crimen",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/6720765b5773418c/poster-tmdb-judge-el-juez-de-las-tinieblas.jpg",
+      "imagen": "https://i.8upload.com/image/6720765b5773418c/poster-tmdb-judge-el-juez-de-las-tinieblas.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3564-activo-judge-el-juez-de-las-tinieblas-1991-tri-audio-iaupscale-rip-1280x960-854gb-mega-ver-online",
+      "href": "/t3564-activo-judge-el-juez-de-las-tinieblas-1991-tri-audio-iaupscale-rip-1280x960-854gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/c7t48pvd",
+      "sinopsis": "Existe una ley, la Ley de las Tinieblas, que juzga a aquellos que a lo largo de su vida no cumplieron con la justicia. Esta ley está escrita en el Libro de las Leyes, con veredictos que poseen vida propia y recogidos sobre hojas de piel humana. El libro se halla bajo la custodia de un oficinista de apariencia normal, Houichiro Ohma, que en realidad es el despiadado juez de las Tinieblas. Su legado es impartir la justicia de manera implacable, asi como antes lo hicieron sus antepasados.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Japonés, Inglés",
+        "subtitulos": "Ninguno",
+        "formato": "MP4",
+        "calidad": "IAUpScale-Rip",
+        "resolucion": "1280x960",
+        "peso": "8,54GB"
+      }
+    },
+    {
+      "name": "Ultimate Teacher: Último profesor",
+      "year": "1988",
+      "genre": "Acción",
+      "specificGenre": "Acción",
+      "originalGenre": "Acción",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/8dc049675d9922e6/poster-tmdb-ultimate-teacher-ltimo-profesor.jpg",
+      "imagen": "https://i.8upload.com/image/8dc049675d9922e6/poster-tmdb-ultimate-teacher-ltimo-profesor.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3563-activo-ultimate-teacher-ultimo-profesor-1988-castellano-iaupscale-rip-1280x960-855gb-mega-ver-online",
+      "href": "/t3563-activo-ultimate-teacher-ultimo-profesor-1988-castellano-iaupscale-rip-1280x960-855gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/7u48krtz",
+      "sinopsis": "En 1988, un accidente terrible en un laboratorio del biotecnología permite que uno de sus sujetos de investigación se escape. 3 años más tarde, en el peor colegio de todo Kanto, que se está cayendo en pedazos y donde los profesores son mayormente ex-convictos y tienen un cementerio propio, aparece un hombre misterioso llamado Ganpachi Chabane que parece brindar una nueva esperanza y disciplina. Shiratori Hinako liberará a los estudiantes rebeldes para luchar contra el profesor definitivo.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "MP4",
+        "calidad": "IAUpScale-Rip",
+        "resolucion": "1280x960",
+        "peso": "8,55GB"
+      }
+    },
+    {
+      "name": "El ultimo reino",
+      "year": "1986",
+      "genre": "Fantasía, Acción, Aventura",
+      "specificGenre": "Fantasía, Acción, Aventura",
+      "originalGenre": "Fantasía, Acción, Aventura",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/8c38d30161de31cc/poster-tmdb-el-ultimo-reino.jpg",
+      "imagen": "https://i.8upload.com/image/8c38d30161de31cc/poster-tmdb-el-ultimo-reino.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3562-activo-el-ultimo-reino-1986-castellano-iaupscale-rip-1024x592-850gb-mega-ver-online",
+      "href": "/t3562-activo-el-ultimo-reino-1986-castellano-iaupscale-rip-1024x592-850gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/98qqvenk",
+      "sinopsis": "Mineko Negishi conocida como Neko es aparentemente una chica normal y corriente, pero tiene poderes psíquicos como los de una bruja. En una noche de luna llena con su amigo de Haruka Saiki, un chico con poderes de teletransportación, conoce a Keichiro, un chico capaz de transformarse en un león. Misteriosamente son transportados a otro mundo llamado El Reino Medio. Esta tierra está bajo el poder de un poderoso y opresor general llamado Durán III. Además, Mineko resulta ser la reencarnación de la legendaria reina Nerula.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "MP4",
+        "calidad": "IAUpScale-Rip",
+        "resolucion": "1024x592",
+        "peso": "8,50GB"
+      }
+    },
+    {
+      "name": "El pequeño Nezha pelea contra los grandes reyes de los dragones",
+      "year": "1979",
+      "genre": "Fantasía, Aventura, Acción",
+      "specificGenre": "Fantasía, Aventura, Acción",
+      "originalGenre": "Fantasía, Aventura, Acción",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/bf11c2949b13bcb7/poster-tmdb-el-peque-o-nezha-pelea-contra-los-grandes-reyes-de.jpg",
+      "imagen": "https://i.8upload.com/image/bf11c2949b13bcb7/poster-tmdb-el-peque-o-nezha-pelea-contra-los-grandes-reyes-de.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3561-activo-el-pequeno-nezha-pelea-contra-los-grandes-reyes-de-los-dragones-1979-dual-audio-iaupscale-rip-1120x832-850gb-mega-ver-online",
+      "href": "/t3561-activo-el-pequeno-nezha-pelea-contra-los-grandes-reyes-de-los-dragones-1979-dual-audio-iaupscale-rip-1120x832-850gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/9sfn53sp",
+      "sinopsis": "Basada en una leyenda de la mitología china, narra la historia del príncipe Nezha y su lucha contra los reyes dragones.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Ninguno",
+        "formato": "MP4",
+        "calidad": "IAUpScale-Rip",
+        "resolucion": "1120x832",
+        "peso": "8,50GB"
+      }
+    },
+    {
       "name": "Shrek tercero",
       "year": "2007",
       "genre": "Fantasía, Aventura, Comedia, Infantil",
@@ -42344,6 +42486,30 @@
     }
   ],
   "series": [
+    {
+      "name": "Arrested Development",
+      "year": "2003",
+      "genre": "Comedia",
+      "specificGenre": "Comedia",
+      "originalGenre": "Comedia",
+      "type": "Series",
+      "imagen_url": "https://i.8upload.com/image/02347e5b3c570fe6/poster-tmdb-arrested-development.jpg",
+      "imagen": "https://i.8upload.com/image/02347e5b3c570fe6/poster-tmdb-arrested-development.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3565-activo-arrested-development-2003-dual-audio-84-8405-webdl-rip-1920x1080-295mb-126gb-mega-ver-online",
+      "href": "/t3565-activo-arrested-development-2003-dual-audio-84-8405-webdl-rip-1920x1080-295mb-126gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/xqqnpozm",
+      "sinopsis": "Es la historia, ganadora del premio Emmy, de una familia adinerada que lo perdió todo y el hijo que tuvo que mantener a todos unidos.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Inglés",
+        "formato": "MKV",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "peso": "295MB/1,26GB",
+        "episodios": "T1 22/22, T2 18/18, T3 13/13, T4 15/15, T5 16/16, E6 05/05"
+      }
+    },
     {
       "name": "Merlí",
       "year": "2015",
