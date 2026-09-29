@@ -1,6 +1,30 @@
 {
   "anime": [
     {
+      "name": "Black Jack",
+      "year": "2004",
+      "genre": "Drama",
+      "specificGenre": "Drama",
+      "originalGenre": "Drama",
+      "type": "Anime",
+      "imagen_url": "https://i.8upload.com/image/6c394043f3c24d5c/poster-tmdb-black-jack.jpg",
+      "imagen": "https://i.8upload.com/image/6c394043f3c24d5c/poster-tmdb-black-jack.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3588-activo-black-jack-2004-tri-audio-12-12-bd-rip-1848x1080-184gb-201gb-mega-ver-online",
+      "href": "/t3588-activo-black-jack-2004-tri-audio-12-12-bd-rip-1848x1080-184gb-201gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/rtknfi39",
+      "sinopsis": "Black Jack es un médico 'no registrado' con un pasado misterioso y nublado. Trabaja con su pequeña asistente Pinoko (que está enormemente enamorada del médico), ocupándose de casos médicos no muy conocidos, que pueden ser extraños, peligrosos o desconocidos en absoluto. Pero es un genio y puede salvar casi cualquier vida de sus pacientes (siempre que tengan el dinero para ello, claro está), y es conocido por muchos en todo el mundo, especialmente entre los de la medicina y la ciencia. Él mismo es un hombre de ciencia y no cree mucho hasta que lo ha visto, sin embargo, muchas veces se sorprende cuando el amor y la naturaleza a menudo dominan la ciencia en la que basa su vida.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Japonés, Latino",
+        "subtitulos": "Español, Inglés",
+        "formato": "MP4",
+        "calidad": "BD-Rip",
+        "resolucion": "1848x1080",
+        "peso": "1,84GB/2,01GB",
+        "episodios": "T1 12/12 (Capítulos 11-12 Japonés y Latino)"
+      }
+    },
+    {
       "name": "Nippon Sangoku",
       "year": "2026",
       "genre": "Drama, Guerra, Política",
@@ -13196,6 +13220,54 @@
     }
   ],
   "dibujos": [
+    {
+      "name": "Harriet la espía",
+      "year": "2021",
+      "genre": "Infantil",
+      "specificGenre": "Infantil",
+      "originalGenre": "Infantil",
+      "type": "Dibujos",
+      "imagen_url": "https://i.8upload.com/image/00554654191d2286/poster-tmdb-harriet-la-esp-a.jpg",
+      "imagen": "https://i.8upload.com/image/00554654191d2286/poster-tmdb-harriet-la-esp-a.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3587-activo-harriet-la-espia-2021-castellano-10-10-webdl-rip-720x576-270mb-280mb-mega-ver-online",
+      "href": "/t3587-activo-harriet-la-espia-2021-castellano-10-10-webdl-rip-720x576-270mb-280mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/w3rtkiqo",
+      "sinopsis": "Honesta y perpetuamente curiosa. Así es Harriet de 11 años en pocas palabras. Pero si quiere ser Harriet M. Welsch, futura escritora, tendrá que saberlo todo. Y para saberlo todo significa que tendrá que espiar... a todo el mundo.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "AVI",
+        "calidad": "WebDL-Rip",
+        "resolucion": "720x576",
+        "peso": "270MB/280MB",
+        "episodios": "T1 10/10"
+      }
+    },
+    {
+      "name": "Stranger Things: Relatos del 85",
+      "year": "2026",
+      "genre": "Ciencia ficción, Fantasía",
+      "specificGenre": "Ciencia ficción, Fantasía",
+      "originalGenre": "Ciencia ficción, Fantasía",
+      "type": "Dibujos",
+      "imagen_url": "https://i.8upload.com/image/260fed5bbdb573fe/poster-tmdb-stranger-things-relatos-del-85.jpg",
+      "imagen": "https://i.8upload.com/image/260fed5bbdb573fe/poster-tmdb-stranger-things-relatos-del-85.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3586-activo-stranger-things-relatos-del-85-2026-dual-audio-18-18-webdl-rip-1920x960-350mb-635mb-mega-ver-online",
+      "href": "/t3586-activo-stranger-things-relatos-del-85-2026-dual-audio-18-18-webdl-rip-1920x960-350mb-635mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/96kduzh9",
+      "sinopsis": "Hawkins. Invierno de 1985. En un pueblo lleno de secretos, unos héroes se enfrentan a nuevos misterios... y a una nueva y extraña amenaza.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Inglés, Castellano",
+        "subtitulos": "Inglés, Español",
+        "formato": "MKV",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x960",
+        "peso": "350MB/635MB",
+        "episodios": "T1 10/10, T2 8/8"
+      }
+    },
     {
       "name": "The Batman",
       "year": "2004",
@@ -30508,6 +30580,144 @@
   ],
   "peliculas": [
     {
+      "name": "Spider-Man꞉ No Way Home (V.Ext)",
+      "year": "2021",
+      "genre": "Acción, Aventura, Ciencia ficción",
+      "specificGenre": "Acción, Aventura, Ciencia ficción",
+      "originalGenre": "Acción, Aventura, Ciencia ficción",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/0641d27f6378dedd/poster-tmdb-spider-man-no-way-home.jpg",
+      "imagen": "https://i.8upload.com/image/0641d27f6378dedd/poster-tmdb-spider-man-no-way-home.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3589-activo-spider-man-no-way-home-v-ext-2021-dual-audio-webdl-rip-1920x804-582gb-mega-ver-online",
+      "href": "/t3589-activo-spider-man-no-way-home-v-ext-2021-dual-audio-webdl-rip-1920x804-582gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/ebkc3op5",
+      "sinopsis": "Peter Parker es desenmascarado y por tanto no es capaz de separar su vida normal de los enormes riesgos que conlleva ser un súper héroe. Cuando pide ayuda a Doctor Strange, los riesgos pasan a ser aún más peligrosos, obligándole a descubrir lo que realmente significa ser Spider-Man.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "formato": "MKV",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x804",
+        "peso": "5,82GB"
+      }
+    },
+    {
+      "name": "Bee Movie",
+      "year": "2007",
+      "genre": "Infantil, Aventura, Comedia",
+      "specificGenre": "Infantil, Aventura, Comedia",
+      "originalGenre": "Infantil, Aventura, Comedia",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/9a20cf793827d1d0/poster-tmdb-bee-movie.jpg",
+      "imagen": "https://i.8upload.com/image/9a20cf793827d1d0/poster-tmdb-bee-movie.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3583-activo-bee-movie-2007-castellano-bd-rip-1920x1080-804gb-mega-ver-online",
+      "href": "/t3583-activo-bee-movie-2007-castellano-bd-rip-1920x1080-804gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/stkpwirx",
+      "sinopsis": "Una abeja llamada Barry B. Benson (Jerry Seinfeld) acaba de graduarse en la Universidad, pero le invade la desilusión cuando comprende que solo tiene una opción profesional, la miel. Sale por primera vez de la colmena y transgrede una de las reglas cardinales del mundo de las abejas al hablar con un ser humano, una florista de Nueva York llamada Vanessa (Renée Zellweger). Se queda atónito al descubrir que los humanos llevan siglos robando la miel de las abejas y entiende que su auténtica vocación es restablecer el orden de las cosas y demandar a las raza humana por robar la miel.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1080",
+        "peso": "8,04GB"
+      }
+    },
+    {
+      "name": "Tom y Jerry. El tesoro del galeón pirata",
+      "year": "2006",
+      "genre": "Comedia, Infantil, Aventura",
+      "specificGenre": "Comedia, Infantil, Aventura",
+      "originalGenre": "Comedia, Infantil, Aventura",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/046261688cbf8ef2/poster-tmdb-tom-y-jerry-el-tesoro-del-gale-n-pirata.jpg",
+      "imagen": "https://i.8upload.com/image/046261688cbf8ef2/poster-tmdb-tom-y-jerry-el-tesoro-del-gale-n-pirata.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3582-activo-tom-y-jerry-el-tesoro-del-galeon-pirata-2006-castellano-bd-rip-1920x1080-804gb-mega-ver-online",
+      "href": "/t3582-activo-tom-y-jerry-el-tesoro-del-galeon-pirata-2006-castellano-bd-rip-1920x1080-804gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/3v8coeuz",
+      "sinopsis": "Tom decide embarcarse en el barco del malvado Capitán Rojo. Allí tiene que limpiar la cubierta y atender a los piratas. Pero su suerte cambiará cuando encuentre una botella con un mapa que muestra el camino hacia el tesoro. Un suelo que deberá compartir con un pequeño ratón llamado Jerry que estaba dentro de la botella...",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1080",
+        "peso": "8,04GB"
+      }
+    },
+    {
+      "name": "Tod y Toby 2",
+      "year": "2006",
+      "genre": "Aventura, Comedia, Infantil, Disney",
+      "specificGenre": "Aventura, Comedia, Infantil, Disney",
+      "originalGenre": "Aventura, Comedia, Infantil, Disney",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/e89e8231b05b8584/poster-tmdb-tod-y-toby-2.jpg",
+      "imagen": "https://i.8upload.com/image/e89e8231b05b8584/poster-tmdb-tod-y-toby-2.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3581-activo-tod-y-toby-2-2006-castellano-bd-rip-1920x1080-766gb-mega-ver-online",
+      "href": "/t3581-activo-tod-y-toby-2-2006-castellano-bd-rip-1920x1080-766gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/sv8d73vz",
+      "sinopsis": "Tod y Toby siguen juntos como uña y carne, pero cuando Toby tiene la oportunidad de unirse a un extravagante grupo de perros aulladores, su amistad de pura raza se pondrá a prueba.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1080",
+        "peso": "7,66GB"
+      }
+    },
+    {
+      "name": "Salvaje",
+      "year": "2006",
+      "genre": "Acción, Aventura, Comedia, Infantil, Disney",
+      "specificGenre": "Acción, Aventura, Comedia, Infantil, Disney",
+      "originalGenre": "Acción, Aventura, Comedia, Infantil, Disney",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/a9c372b2163aa92e/poster-tmdb-salvaje-the-wild.jpg",
+      "imagen": "https://i.8upload.com/image/a9c372b2163aa92e/poster-tmdb-salvaje-the-wild.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3580-activo-salvaje-2006-castellano-bd-rip-1920x1040-652gb-mega-ver-online",
+      "href": "/t3580-activo-salvaje-2006-castellano-bd-rip-1920x1040-652gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/48zh5rtq",
+      "sinopsis": "Salvaje cuenta la historia de un joven león del Zoo de Nueva York que es embarcado accidentalmente en un barco con destino a África, separándole de los suyos. Varios de sus intrépidos compañeros intentarán rescatarle.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1040",
+        "peso": "6,52GB"
+      }
+    },
+    {
+      "name": "Ratónpolis",
+      "year": "2006",
+      "genre": "Aventura, Comedia, Infantil",
+      "specificGenre": "Aventura, Comedia, Infantil",
+      "originalGenre": "Aventura, Comedia, Infantil",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/a060678f033ccb41/poster-tmdb-rat-npolis.jpg",
+      "imagen": "https://i.8upload.com/image/a060678f033ccb41/poster-tmdb-rat-npolis.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3579-activo-ratonpolis-2006-castellano-bd-rip-1920x1040-736gb-mega-ver-online",
+      "href": "/t3579-activo-ratonpolis-2006-castellano-bd-rip-1920x1040-736gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/kp35fwad",
+      "sinopsis": "No cabe duda de que Roddy es una «rata de la alta sociedad» que vive como un rey en un piso de Kensington atendido por dos mayordomos, los hámsteres Gilbert y Sullivan. Pero cuando una vulgar rata de alcantarilla llamada Sid aparece por la pila de la cocina y decide que esto es jauja, a Roddy no le queda más remedio que deshacerse del intruso atrayéndole hacia el «remolino».",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1040",
+        "peso": "7,36GB"
+      }
+    },
+    {
       "name": "Judge, el juez de las tinieblas",
       "year": "1991",
       "genre": "Fantasía, Terror, Acción, Suspense, Misterio, Crimen",
@@ -42486,6 +42696,30 @@
     }
   ],
   "series": [
+    {
+      "name": "Knightfall",
+      "year": "2017",
+      "genre": "Acción, Aventura",
+      "specificGenre": "Acción, Aventura",
+      "originalGenre": "Acción, Aventura",
+      "type": "Series",
+      "imagen_url": "https://i.8upload.com/image/2fbc59737bdd695a/poster-tmdb-knightfall.jpg",
+      "imagen": "https://i.8upload.com/image/2fbc59737bdd695a/poster-tmdb-knightfall.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3591-activo-knightfall-2017-dual-audio-18-18-webdl-rip-1920x1080-105gb-146gb-mega-ver-online",
+      "href": "/t3591-activo-knightfall-2017-dual-audio-18-18-webdl-rip-1920x1080-105gb-146gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/ikrcummo",
+      "sinopsis": "Los Templarios dedicaron su vida a cuidar del Santo Grial. Knightfall es un drama histórico que recrea las cruzadas y la vida de esta hermandad, una mirada a los últimos días de los Caballeros Templarios durante el siglo XIV.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "formato": "MKV",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "peso": "1,05GB/1,46GB",
+        "episodios": "T1 10/10, T2 8/8"
+      }
+    },
     {
       "name": "Arrested Development",
       "year": "2003",
