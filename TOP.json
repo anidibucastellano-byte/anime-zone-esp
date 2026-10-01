@@ -30652,6 +30652,29 @@
   ],
   "peliculas": [
     {
+      "name": "Justin y la espada del valor",
+      "year": "2013",
+      "genre": "Aventura",
+      "specificGenre": "Aventura",
+      "originalGenre": "Aventura",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/2a2efa1afaa2d90e/poster-tmdb-justin-y-la-espada-del-valor.jpg",
+      "imagen": "https://i.8upload.com/image/2a2efa1afaa2d90e/poster-tmdb-justin-y-la-espada-del-valor.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3639-activo-justin-y-la-espada-del-valor-2013-castellano-bd-rip-1920x1080-928gb-mega-ver-online",
+      "href": "/t3639-activo-justin-y-la-espada-del-valor-2013-castellano-bd-rip-1920x1080-928gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/7rvmxozo",
+      "sinopsis": "Ambientada en un mágico mundo medieval con el que los niños siguen soñando, Justin y la Espada del Valor es una emocionante historia que nos habla de la constancia con la que un chico persigue su propio sueño: convertirse en caballero. Es una aventura llena de emoción, acción y diversión, en la que se entremezclan la amistad, el honor y el valor.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1080",
+        "peso": "9,28GB"
+      }
+    },
+    {
       "name": "Tiana y el sapo",
       "year": "2009",
       "genre": "Romance, Fantasía, Infantil, Disney",
