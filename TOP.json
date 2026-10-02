@@ -1,6 +1,54 @@
 {
   "anime": [
     {
+      "name": "Alegre juventud",
+      "year": "1987",
+      "genre": "Comedia, Drama",
+      "specificGenre": "Comedia, Drama",
+      "originalGenre": "Comedia, Drama",
+      "type": "Anime",
+      "imagen_url": "https://i.8upload.com/image/5d2e59e8dd291645/poster-tmdb-alegre-juventud.jpg",
+      "imagen": "https://i.8upload.com/image/5d2e59e8dd291645/poster-tmdb-alegre-juventud.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3650-activo-alegre-juventud-1987-castellano-48-48-dvd-rip-640x480-55mb-75mb-mega-ver-online",
+      "href": "/t3650-activo-alegre-juventud-1987-castellano-48-48-dvd-rip-640x480-55mb-75mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/4f36abt5",
+      "sinopsis": "La historia se centra en las relaciones de Kasumi Kishimoto, una estudiante de secundaria. Cuando entra en Myojo High School, ella se muda a la casa de huéspedes de su tía, donde cuatro niños que asisten a la escuela secundaria compartirán piso con ella. A pesar de su firme determinación de permanecer fiel a su novio, que está estudiando en el extranjero, Kasumi se encuentra a sí misma enamorándose poco a poco de Yusaku, uno de los huéspedes.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "MP4",
+        "calidad": "DVD-Rip",
+        "resolucion": "640x480",
+        "peso": "55MB/75MB",
+        "episodios": "T1 48/48"
+      }
+    },
+    {
+      "name": "Hola! Sandybell",
+      "year": "1981",
+      "genre": "Drama, Comedia, Infantil",
+      "specificGenre": "Drama, Comedia, Infantil",
+      "originalGenre": "Drama, Comedia, Infantil",
+      "type": "Anime",
+      "imagen_url": "https://i.8upload.com/image/199d34ec2f819d1b/poster-tmdb-poster.jpg",
+      "imagen": "https://i.8upload.com/image/199d34ec2f819d1b/poster-tmdb-poster.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3649-activo-hola-sandybell-1981-castellano-16-47-dvd-rip-640x480-380mb-670mb-mega-ver-online",
+      "href": "/t3649-activo-hola-sandybell-1981-castellano-16-47-dvd-rip-640x480-380mb-670mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/dzovf93x",
+      "sinopsis": "Sandy Bell(e) Lesly es una niña escocesa que vive con su padre adoptivo don Cristóbal Lesly y su perro Oliver. Entre sus aventuras está jugar con los niños del pueblo. Ella entabla una linda amistad con la condesa Walington, quien le regala un hermoso narciso blanco que le hace recordar a su madre desaparecida y quien le presenta a su hijo, Marcos, de quien posteriormente se enamora, lo cual hará que tenga roces y problemas con Kitty Shearer. Ella sufrirá una serie de lamentables eventos como la muerte de la condesa Walington, la desaparición de Marcos, la muerte de don Cristóbal en la víspera de Navidad e irse a Londres para cumplir la promesa que le hizo a don Cristóbal de convertirse en periodista.\n\nEn su camino a ser una gran reportera se encuentra con Alex Peterson, un joven reportero que con el paso del tiempo terminará enamorado de ella. Sandy viaja junto con su amigo Oliver y Ricky (un niño huérfano) y juntos disfrutarán grandes aventuras junto al Sandymobile.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "AVI",
+        "calidad": "DVD-Rip",
+        "resolucion": "640x480",
+        "peso": "380MB/670MB",
+        "episodios": "T1 16/47"
+      }
+    },
+    {
       "name": "Black Jack",
       "year": "2004",
       "genre": "Drama",
@@ -7245,7 +7293,7 @@
       "url": "https://animezoneesp.foroactivo.com/t270-activoshaman-king-2001-castellano-64-64-webdl-rip-640x480-210-510-mb-mega-pixeldrain-ver-online",
       "year": 2001,
       "imagen": "images\\anime_242_ActivoShaman-King-2001-Castellano-6464-WebDL-Rip-640x480-210510-MB-MegaPixeldrain-Ver-Online.jpg",
-      "imagen_url": "https://i.8upload.com/image/1e927190360bc6d4/manual-poster-tmdb-shaman-king.jpg",
+      "imagen_url": "https://i.8upload.com/image/c9f85ddaa42804c2/shaman-king-2001-ecrrop.jpg",
       "sinopsis": "La historia comienza cuando Manta Oyamada, un estudiante de secundaria, toma un atajo por el cementerio local y divisa a un joven misterioso que simplemente observa las estrellas llamado Yoh Asakura, el cual le invita a quedarse con él y sus \"amigos\", pero Manta huye asustado al ver que estos eran fantasmas. Tiempo después Yoh se revela así mismo como un \"chamán\" (el vínculo entre este mundo y el de los espíritus) para demostrarle a Manta que entre ellos ha nacido una amistad.",
       "ficha_tecnica": {
         "ano": "2001",
@@ -30652,6 +30700,75 @@
   ],
   "peliculas": [
     {
+      "name": "Kung Fu Panda",
+      "year": "2008",
+      "genre": "Acción, Comedia, Infantil",
+      "specificGenre": "Acción, Comedia, Infantil",
+      "originalGenre": "Acción, Comedia, Infantil",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/6e71e773095381a6/poster-tmdb-kung-fu-panda.jpg",
+      "imagen": "https://i.8upload.com/image/6e71e773095381a6/poster-tmdb-kung-fu-panda.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3647-activo-kung-fu-panda-2008-castellano-bd-rip-1920x816-740gb-mega-ver-online",
+      "href": "/t3647-activo-kung-fu-panda-2008-castellano-bd-rip-1920x816-740gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/huny2xzg",
+      "sinopsis": "El protagonista es un oso panda llamado Po, el más vago de todas las criaturas del Valle de la Paz. Con poderosos enemigos acercándose, la esperanza es depositada en una antigua profecía que dice que un héroe se alzará para salvarles. Voces originales de Jack Black, Angelina Jolie, Dustin Hoffman, Lucy Liu & Jackie Chan.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x816",
+        "peso": "7,40GB"
+      }
+    },
+    {
+      "name": "Horton",
+      "year": "2008",
+      "genre": "Comedia, Infantil, Aventura, Fantasía",
+      "specificGenre": "Comedia, Infantil, Aventura, Fantasía",
+      "originalGenre": "Comedia, Infantil, Aventura, Fantasía",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/b5381feb400fa78d/poster-tmdb-horton.jpg",
+      "imagen": "https://i.8upload.com/image/b5381feb400fa78d/poster-tmdb-horton.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3646-activo-horton-2008-castellano-bd-rip-1920x1040-588gb-mega-ver-online",
+      "href": "/t3646-activo-horton-2008-castellano-bd-rip-1920x1040-588gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/8wc6fnyo",
+      "sinopsis": "Horton no es sólo un bondadoso y torpón elefante, sino tambíen es el único animal capaz de oir a una microscópica comunidad aislada en una mota de polvo, lo que provocará que sus vecinos le tomen por loco e intenten destruir la mota de polvo en la que el pueblo de Villaquien vive en pacífica armonía. Horton está dispuesto a ayudar a los habitantes de Villaquién cuya frágil existencia pende de un hilo.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1040",
+        "peso": "5,88GB"
+      }
+    },
+    {
+      "name": "El valiente Despereaux",
+      "year": "2008",
+      "genre": "Aventura, Infantil",
+      "specificGenre": "Aventura, Infantil",
+      "originalGenre": "Aventura, Infantil",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/80f56c7a8550ac66/poster-tmdb-el-valiente-despereaux.jpg",
+      "imagen": "https://i.8upload.com/image/80f56c7a8550ac66/poster-tmdb-el-valiente-despereaux.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3645-activo-el-valiente-despereaux-2008-castellano-bd-rip-1920x816-584gb-mega-ver-online",
+      "href": "/t3645-activo-el-valiente-despereaux-2008-castellano-bd-rip-1920x816-584gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/n9pyxk2a",
+      "sinopsis": "Es la historia de tres heroes que no se parecen: un ratón que no encaja, que prefiere leer libros que comérselos y que está terriblemente enamorado de una princesa, una infeliz rata quien planea dejar la oscuridad del calabozo, y una sirvienta con orejas de coliflor, cuyos destinos están entrelazados con el de la princesa del castillo.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x816",
+        "peso": "5,84GB"
+      }
+    },
+    {
       "name": "Justin y la espada del valor",
       "year": "2013",
       "genre": "Aventura",
@@ -43067,6 +43184,30 @@
     }
   ],
   "series": [
+    {
+      "name": "Camera Café",
+      "year": "2005",
+      "genre": "Comedia",
+      "specificGenre": "Comedia",
+      "originalGenre": "Comedia",
+      "type": "Series",
+      "imagen_url": "https://i.8upload.com/image/fe5cb80284780f28/poster-tmdb-camera-caf.jpg",
+      "imagen": "https://i.8upload.com/image/fe5cb80284780f28/poster-tmdb-camera-caf.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3648-activo-camera-cafe-2005-castellano-312-354-tv-rip-1280x720-100mb-855mb-mega-ver-online",
+      "href": "/t3648-activo-camera-cafe-2005-castellano-312-354-tv-rip-1280x720-100mb-855mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/emn9actb",
+      "sinopsis": "En España se agrupan varios episodios formando un bloque. En ellos se ven, a modo de cámara oculta en la propia máquina distintas situaciones de empleados que acuden a escaquearse del trabajo. Cada personaje de los 17 que componen el reparto cumple un rol distinto: la secretaria atractiva, los trabajadores «don nadie», el «cerebrito» de contabilidad, y por supuesto, el jefe autoritario que también agacha la cabeza si es la directora de márketing la que grita.\n\nEl director del programa es Luis Guridi. Su pretensión respecto a Cámera Café era ofrecer una visión humorística, más o menos realista, del entorno laboral. Todos los estilos de humor, desde el surrealismo a la escatología simple, se dan la mano en esta microserie de corte costumbrista.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "MP4",
+        "calidad": "TV-RIP",
+        "resolucion": "1280x720",
+        "peso": "100MB/855MB",
+        "episodios": "T1 57/61, T2 66/98, T3 93/99, T4 55/55, T5 41/41"
+      }
+    },
     {
       "name": "Power Rangers Ninja Storm",
       "year": "2003",
