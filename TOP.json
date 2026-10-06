@@ -1,6 +1,54 @@
 {
   "anime": [
     {
+      "name": "Nadia: El misterio de la piedra azul",
+      "year": "1990",
+      "genre": "Acción, Aventura",
+      "specificGenre": "Acción, Aventura",
+      "originalGenre": "Acción, Aventura",
+      "type": "Anime",
+      "imagen_url": "https://i.8upload.com/image/af1b38470975cfac/poster-tmdb-nadia-el-misterio-de-la-piedra-azul.jpg",
+      "imagen": "https://i.8upload.com/image/af1b38470975cfac/poster-tmdb-nadia-el-misterio-de-la-piedra-azul.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3708-activo-nadia-el-misterio-de-la-piedra-azul-1990-tri-audio-39-39-bd-rip-1440x1080-154gb-258gb-mega-ver-online",
+      "href": "/t3708-activo-nadia-el-misterio-de-la-piedra-azul-1990-tri-audio-39-39-bd-rip-1440x1080-154gb-258gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/xewoba2e",
+      "sinopsis": "La revolución industrial ha terminado y el mundo está siendo consumido por una nueva tecnología y nuevas máquinas. Un joven científico, Jean, ve a una guapísima chica de color mientras se encuentra en Francia, la sigue y termina metiéndose en problemas. Mientras tanto, una mujer y sus dos matones están tras el amuleto de la chica, llamado Piedra Azul. La chica, Nadia, escapa con Jean. De esta forma, los dos intentarán evitar que los malvados se apoderen del amuleto, los cuales están dirigidos por un hombre llamado Gargoyle, que quiere el amuleto de Nadia para causar una catástrofe mundial.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Japonés, Inglés, Castellano",
+        "subtitulos": "Inglés, Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1440x1080",
+        "peso": "1,54GB/2,58GB",
+        "episodios": "T1 39/39"
+      }
+    },
+    {
+      "name": "Wistoria: wand and sword",
+      "year": "2024",
+      "genre": "Acción, Aventura, Ciencia ficción",
+      "specificGenre": "Acción, Aventura, Ciencia ficción",
+      "originalGenre": "Acción, Aventura, Ciencia ficción",
+      "type": "Anime",
+      "imagen_url": "https://i.8upload.com/image/a601715bd2b9b4f7/poster-tmdb-wistoria-varita-y-espada.jpg",
+      "imagen": "https://i.8upload.com/image/a601715bd2b9b4f7/poster-tmdb-wistoria-varita-y-espada.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3707-activo-wistoria-wand-and-sword-2024-castellano-24-24-webdl-rip-1920x1080-570mb-179gb-mega-ver-online",
+      "href": "/t3707-activo-wistoria-wand-and-sword-2024-castellano-24-24-webdl-rip-1920x1080-570mb-179gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/be7romop",
+      "sinopsis": "En un mundo donde reina la magia, Will Serfort no puede lanzar un hechizo. Aunque es muy trabajador, sus compañeros de clase piensan menos de él por ello. Sin embargo, tiene una fuerza secreta: su espada. ¿Podrá Will desafiar las expectativas con fuerza sobre magia y espada sobre varita? ¡Descúbrelo en esta épica aventura de espada y brujería!",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "MP4",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "peso": "570MB/1,79GB",
+        "episodios": "T1 12/12, T2 12/12"
+      }
+    },
+    {
       "name": "Oniisama e",
       "year": "1991",
       "genre": "Drama",
@@ -13336,6 +13384,30 @@
     }
   ],
   "dibujos": [
+    {
+      "name": "Isadora Moon",
+      "year": "2023",
+      "genre": "Infantil, Comedia",
+      "specificGenre": "Infantil, Comedia",
+      "originalGenre": "Infantil, Comedia",
+      "type": "Dibujos",
+      "imagen_url": "https://i.8upload.com/image/93a812c2e9806822/poster-tmdb-isadora-moon.jpg",
+      "imagen": "https://i.8upload.com/image/93a812c2e9806822/poster-tmdb-isadora-moon.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3709-activo-isadora-moon-2023-dual-audio-50-50-webdl-rip-1920x1080-130mb-430mb-mega-ver-online",
+      "href": "/t3709-activo-isadora-moon-2023-dual-audio-50-50-webdl-rip-1920x1080-130mb-430mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/xo72pvvz",
+      "sinopsis": "Isadora Moon es una niña de ocho años muy especial porque es diferente: su madre es un hada y su padre es un vampiro, por lo que ella tiene un poquito de ambos mundos. Le encantan los murciélagos, la noche y su tutú negro de ballet, pero también la luz del sol, las varitas mágicas y su inseparable conejo de peluche al que dieron vida, Pinky. Las historias narran su día a día y sus divertidas aventuras mientras aprende a aceptar su singularidad, equilibrando sus dos mitades en el colegio, de excursión o celebrando eventos familiares.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Ninguno",
+        "formato": "MKV",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "peso": "130MB/430MB",
+        "episodios": "T1 26/26, T2 24/24"
+      }
+    },
     {
       "confianza": 90,
       "href": "/t314-activogarfield-y-sus-amigos-1988-castellano-120-121-webdl-rip-1280x720-355-420-mb-mega-pixeldrain-ver-online",
@@ -30796,6 +30868,121 @@
   ],
   "peliculas": [
     {
+      "name": "Planet 51",
+      "year": "2009",
+      "genre": "Infantil, Comedia, Ciencia ficción, Aventura",
+      "specificGenre": "Infantil, Comedia, Ciencia ficción, Aventura",
+      "originalGenre": "Infantil, Comedia, Ciencia ficción, Aventura",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/98be1ddb3be42f9b/poster-tmdb-planet-51.jpg",
+      "imagen": "https://i.8upload.com/image/98be1ddb3be42f9b/poster-tmdb-planet-51.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3713-activo-planet-51-2009-castellano-bd-rip-1920x816-692gb-mega-ver-online",
+      "href": "/t3713-activo-planet-51-2009-castellano-bd-rip-1920x816-692gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/7ik48mua",
+      "sinopsis": "Planet 51 es la historia de una familia de extraterrestres que vive tranquilamente en su planeta hasta la llegada de lo que para ellos es un alienígena: un hombre. El Capitán Charles \"Chuck\" Baker, astronauta americano, aterriza en Planet 51 pensando que es la primera persona en pisar el planeta. Para su sorpresa, descubre que el planeta está habitado por pequeñas criaturas verdes que viven felizmente en un mundo plagado de cercas blancas, reminiscencia de la alegre inocencia de la América de los años 50, y cuyo único temor es el de ser invadidos por alienígenas... ¡como Chuck! Ayudado por su compañero robot \"Rover\" y su nuevo amigo Lem, Chuck tendrá que abrirse camino a través del deslumbrante y desconcertante paisaje de Planet 51 para no convertirse en pieza permanente del Museo Espacial de Invasores Alienígenas de Planet 51",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x816",
+        "peso": "6,92GB"
+      }
+    },
+    {
+      "name": "Monstruos contra alienígenas",
+      "year": "2009",
+      "genre": "Infantil, Aventura, Ciencia ficción",
+      "specificGenre": "Infantil, Aventura, Ciencia ficción",
+      "originalGenre": "Infantil, Aventura, Ciencia ficción",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/1b1f52df1f59a993/poster-tmdb-monstruos-contra-alien-genas.jpg",
+      "imagen": "https://i.8upload.com/image/1b1f52df1f59a993/poster-tmdb-monstruos-contra-alien-genas.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3712-activo-monstruos-contra-alienigenas-2009-castellano-bd-rip-1920x818-549gb-mega-ver-online",
+      "href": "/t3712-activo-monstruos-contra-alienigenas-2009-castellano-bd-rip-1920x818-549gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/3dmptyps",
+      "sinopsis": "Cuando la californiana Susan Murphy es golpeada accidentalmente por un meteorito lleno de mugre espacial en el día de su boda, crece misteriosamente hasta alcanzar más de 15 metros de altura. Los militares entran en acción y Susan es capturada y llevada a unas instalaciones gubernamentales secretas. Allí, la rebautizan como Genórmica y la retienen junto a un variopinto grupo de monstruos: el doctor Cucaracha, brillante pero con cabeza de insecto, el bravucón mitad mono mitad pez, el Eslabón Perdido, el gelatinoso e indestructible B.O.B., y la larva de más de 100 metros llamada Insectosaurio. Sin embargo, su confinamiento se acaba cuando un misterioso robot alienígena aterriza y empieza a arrasarlo todo. En un momento de desesperación, al Presidente le convencen de que reclute al abigarrado grupo de monstruos para luchar contra los alienígenas y salvar al mundo de la destrucción inminente.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x818",
+        "peso": "5,49GB"
+      }
+    },
+    {
+      "name": "Los mundos de Coraline",
+      "year": "2009",
+      "genre": "Infantil, Fantasía, Terror",
+      "specificGenre": "Infantil, Fantasía, Terror",
+      "originalGenre": "Infantil, Fantasía, Terror",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/cd6624fd03ea4c6d/poster-tmdb-los-mundos-de-coraline.jpg",
+      "imagen": "https://i.8upload.com/image/cd6624fd03ea4c6d/poster-tmdb-los-mundos-de-coraline.jpg",
+      "url": "https://www.youtube.com/embed/T6",
+      "href": "/embed/T6",
+      "rentry_url": "https://rentry.co/hepuq5tg",
+      "sinopsis": "Película de animación en la que se nos cuenta la historia de Coraline, una jovencita que descubre en su nueva casa una puerta secreta y decide abrirla. Al hacerlo, descubre una segunda versión de su vida, una vida paralela a la que ella tiene. A primera vista, la realidad paralela es curiosamente parecida a su vida de verdad, aunque mucho mejor. Pero cuando su increíble y maravillosa aventura empieza a tomar un cariz peligroso, su otra madre intenta mantenerla a su lado para siempre. Coraline deberá recurrir a su determinación y coraje, a la ayuda de los vecinos y a un gato negro con el don del habla para salvar a sus auténticos padres, a unos niños fantasmas y regresar a casa.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1080",
+        "peso": "9,17GB"
+      }
+    },
+    {
+      "name": "Lluvia de albóndigas",
+      "year": "2009",
+      "genre": "Comedia, Infantil",
+      "specificGenre": "Comedia, Infantil",
+      "originalGenre": "Comedia, Infantil",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/29b1878bc904797d/poster-tmdb-lluvia-de-alb-ndigas.jpg",
+      "imagen": "https://i.8upload.com/image/29b1878bc904797d/poster-tmdb-lluvia-de-alb-ndigas.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3711-activo-lluvia-de-albondigas-2009-castellano-bd-rip-1920x814-573gb-mega-ver-online",
+      "href": "/t3711-activo-lluvia-de-albondigas-2009-castellano-bd-rip-1920x814-573gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/d7hhxp7u",
+      "sinopsis": "Adaptación del libro homónimo de Judi Barrett, una parodia animada de los films de catástrofes, como Armageddon, Twister o Independence Day. El protagonista es Flint, un joven científico que sueña con inventar algo que le mejore la vida a todos sus vecinos. Tras muchos intentos consigue crear algo que realmente funciona: una máquina que hace caer comida del cielo.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x814",
+        "peso": "5,73GB"
+      }
+    },
+    {
+      "name": "Garfield y su pandilla",
+      "year": "2009",
+      "genre": "Infantil, Comedia, Aventura",
+      "specificGenre": "Infantil, Comedia, Aventura",
+      "originalGenre": "Infantil, Comedia, Aventura",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/2002827dbd0091da/poster-tmdb-garfield-y-su-pandilla.jpg",
+      "imagen": "https://i.8upload.com/image/2002827dbd0091da/poster-tmdb-garfield-y-su-pandilla.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3710-activo-garfield-y-su-pandilla-2009-castellano-bd-rip-1920x1036-617gb-mega-ver-online",
+      "href": "/t3710-activo-garfield-y-su-pandilla-2009-castellano-bd-rip-1920x1036-617gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/zcqv7ogz",
+      "sinopsis": "Garfield y su pandilla. Garfield y sus amigos deberán enfrentarse a una invasión alienígena. Odie y Nerman, conscientes del peligro, deciden convertirse en superhéroes, algo que Garfield no aprobará al principio..",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1036",
+        "peso": "6,17GB"
+      }
+    },
+    {
       "name": "Ice Age 3: El origen de los dinosaurios",
       "year": "2009",
       "genre": "Comedia, Infantil, Aventura",
@@ -43487,6 +43674,54 @@
     }
   ],
   "series": [
+    {
+      "name": "Los informáticos",
+      "year": "2006",
+      "genre": "Comedia",
+      "specificGenre": "Comedia",
+      "originalGenre": "Comedia",
+      "type": "Series",
+      "imagen_url": "https://i.8upload.com/image/421165fd1e4af981/poster-tmdb-los-inform-ticos.jpg",
+      "imagen": "https://i.8upload.com/image/421165fd1e4af981/poster-tmdb-los-inform-ticos.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3706-activo-los-informaticos-2006-dual-audio-25-25-webdl-rip-1914x1080-505mb-109gb-mega-ver-online",
+      "href": "/t3706-activo-los-informaticos-2006-dual-audio-25-25-webdl-rip-1914x1080-505mb-109gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/ygii3p2s",
+      "sinopsis": "En un desordenado sótano en las entrañas de Industrias Reynholm habitan Roy y Moss, los componentes del Departamento de informática. Víctimas del desprecio y del escarnio de sus compañeros más guays, su mundo de servidores y cortafuegos se ve interrumpido por la llegada de Jen, su nueva jefa, que sabe tanto de ordenadores como un yak.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "formato": "MKV",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1914x1080",
+        "peso": "505MB/1,09GB",
+        "episodios": "T1 6/6, T2 6/6, T3 6/6, T4 6/6, T5 1/1"
+      }
+    },
+    {
+      "name": "Outlander: Sangre de mi sangre",
+      "year": "2025",
+      "genre": "Drama",
+      "specificGenre": "Drama",
+      "originalGenre": "Drama",
+      "type": "Series",
+      "imagen_url": "https://i.8upload.com/image/889f0f8630bae46e/poster-tmdb-outlander-sangre-de-mi-sangre.jpg",
+      "imagen": "https://i.8upload.com/image/889f0f8630bae46e/poster-tmdb-outlander-sangre-de-mi-sangre.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3705-activo-outlander-sangre-de-mi-sangre-2025-dual-audio-10-10-webdl-rip-1920x960-149gb-238gb-mega-ver-online",
+      "href": "/t3705-activo-outlander-sangre-de-mi-sangre-2025-dual-audio-10-10-webdl-rip-1920x960-149gb-238gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/4r5ohuqs",
+      "sinopsis": "Desde los campos de batalla de la Primera Guerra Mundial hasta las escarpadas Tierras Altas de la Escocia del siglo XVIII, dos parejas predestinadas deben desafiar las fuerzas que buscan separarlas, desarrollándose de maneras sorprendentes e imprevistas en esta saga romántica que se desarrolla a través del tiempo.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "formato": "MKV",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x960",
+        "peso": "1,49GB/2,38GB",
+        "episodios": "T1 10/10"
+      }
+    },
     {
       "name": "Operación Safed Sagar",
       "year": "2026",
