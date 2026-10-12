@@ -1,6 +1,54 @@
 {
   "anime": [
     {
+      "name": "Los Caballeros del Mundo Mon",
+      "year": "2000",
+      "genre": "Acción, Aventura, Infantil",
+      "specificGenre": "Acción, Aventura, Infantil",
+      "originalGenre": "Acción, Aventura, Infantil",
+      "type": "Anime",
+      "imagen_url": "https://i.8upload.com/image/79aaf2e72fe4587e/poster-tmdb-poster.jpg",
+      "imagen": "https://i.8upload.com/image/79aaf2e72fe4587e/poster-tmdb-poster.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3781-activo-los-caballeros-del-mundo-mon-2000-castellano-16-51-dvd-rip-718x576-390mb-670mb-mega-ver-online",
+      "href": "/t3781-activo-los-caballeros-del-mundo-mon-2000-castellano-16-51-dvd-rip-718x576-390mb-670mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/5snusd9d",
+      "sinopsis": "Dos niños pequeños van a un reino mágico para ayudar a proteger a los monstruos de un rey malvado.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "MKV",
+        "calidad": "DVD-Rip",
+        "resolucion": "718x576",
+        "peso": "390MB/670MB",
+        "episodios": "T1 16/51"
+      }
+    },
+    {
+      "name": "Legendz: Tale of the Dragon Kings",
+      "year": "2004",
+      "genre": "Aventura, Acción",
+      "specificGenre": "Aventura, Acción",
+      "originalGenre": "Aventura, Acción",
+      "type": "Anime",
+      "imagen_url": "https://i.8upload.com/image/fc8aefa9db6a446e/poster-tmdb-poster.jpg",
+      "imagen": "https://i.8upload.com/image/fc8aefa9db6a446e/poster-tmdb-poster.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3780-activo-legendz-tale-of-the-dragon-kings-2004-castellano-50-50-tv-rip-640x480-25mb-50mb-mega-ver-online",
+      "href": "/t3780-activo-legendz-tale-of-the-dragon-kings-2004-castellano-50-50-tv-rip-640x480-25mb-50mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/r6r9s42e",
+      "sinopsis": "Una compañía malvada crea juguetes con los que los niños pueden invocar a los Legendz, criaturas mágicas. Shuu recibe de su padre uno de ellos, y junto a sus amigos y sus nuevos Legendz deberán proteger el mundo de la destrucción a la que se dirige...",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "MP4",
+        "calidad": "TV-RIP",
+        "resolucion": "640x480",
+        "peso": "25MB/50MB",
+        "episodios": "T1 50/50"
+      }
+    },
+    {
       "name": "Goodbye, Lara",
       "year": "2026",
       "genre": "Drama, Sci-fi & fantasy",
@@ -13553,6 +13601,29 @@
   ],
   "dibujos": [
     {
+      "name": "Las Tortugas Ninja",
+      "year": 1987,
+      "genre": "Acción, Aventura, Comedia, Infantil",
+      "specificGenre": "Acción, Aventura, Comedia, Infantil",
+      "originalGenre": "Acción, Aventura, Comedia, Infantil",
+      "type": "Dibujos",
+      "imagen_url": "https://i.8upload.com/image/82952950c2996d07/manual-las-20tortugas-20ninja-201987.jpg",
+      "imagen": "https://i.8upload.com/image/82952950c2996d07/manual-las-20tortugas-20ninja-201987.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t580-activo-las-tortugas-ninja-1987-castellano-193-193-varios-rip-1440x1080-65-985-mb-mega-ver-online?highlight=Tortugas+ninja",
+      "href": "/t580-activo-las-tortugas-ninja-1987-castellano-193-193-varios-rip-1440x1080-65-985-mb-mega-ver-online?highlight=Tortugas+ninja",
+      "rentry_url": "https://rentry.co/o73cxd5m",
+      "sinopsis": "Son grandes, son verdes, son auténticas máquinas de combate y les encanta la pizza.... ¡Son las Tortugas Ninja!  Michelangelo, Leonardo, Raphael y Donatello son los nombres de estas jóvenes tortugas mutantes entrenadas por el maestro Astilla, un maestro ninja mutado a rata que les enseñó todo tipo de técnicas de combate desde que eran pequeños.  Juntos luchan contra el mal y contra su archienemigo, el malvado Despedazador.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "calidad": "IAUpScale-Rip",
+        "resolucion": "1440x1080",
+        "formato": "MKV",
+        "peso": "65/985 MB"
+      }
+    },
+    {
       "name": "Sally McKay",
       "year": "2010",
       "genre": "Aventura, Infantil",
@@ -20598,9 +20669,9 @@
       "confianza": 90,
       "href": "/t837-activo-las-tortugas-ninja-2012-castellano-124-124-tv-rip-1280x720-180-640-mb-mega-pixeldrain-ver-online",
       "name": "[Activo] Las Tortugas Ninja (2012) [Castellano] [124/124] [TV-RIP] [1280x720] [180/640 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Occidental",
+      "originalGenre": "Acción, Aventura",
       "razonClasificacion": "Clasificado con TMDB: Sin datos TMDB",
-      "specificGenre": "Drama",
+      "specificGenre": "Acción, Aventura",
       "tmdb_type": "anime",
       "type": "Dibujo Animado",
       "url": "https://animezoneesp.foroactivo.com/t837-activo-las-tortugas-ninja-2012-castellano-124-124-tv-rip-1280x720-180-640-mb-mega-pixeldrain-ver-online",
@@ -31107,6 +31178,52 @@
     }
   ],
   "peliculas": [
+    {
+      "name": "Hop: Rebelde Sin Pascua",
+      "year": "2011",
+      "genre": "Comedia, Infantil",
+      "specificGenre": "Comedia, Infantil",
+      "originalGenre": "Comedia, Infantil",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/926f58bfafedd87c/poster-tmdb-hop-rebelde-sin-pascua.jpg",
+      "imagen": "https://i.8upload.com/image/926f58bfafedd87c/poster-tmdb-hop-rebelde-sin-pascua.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3783-activo-hop-rebelde-sin-pascua-2011-castellano-bd-rip-1920x1040-1225gb-mega-ver-online",
+      "href": "/t3783-activo-hop-rebelde-sin-pascua-2011-castellano-bd-rip-1920x1040-1225gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/726ag6gq",
+      "sinopsis": "HOP Un Rebelde sin Pascua cuenta la historia de Fred (James Marsden) un desempleado que accidentalmente conoce a E.B, el Conejo de Pascua. Mientras Fred lucha contra el peor huésped del mundo; E.B. Ambos aprenderán que es lo que se necesita para madurar.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1040",
+        "peso": "12,25GB"
+      }
+    },
+    {
+      "name": "La vuelta al mundo de Piolín",
+      "year": "2000",
+      "genre": "Infantil, Comedia, Fantasía",
+      "specificGenre": "Infantil, Comedia, Fantasía",
+      "originalGenre": "Infantil, Comedia, Fantasía",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/cf5f647c9ca50828/poster-tmdb-la-vuelta-al-mundo-de-piol-n.jpg",
+      "imagen": "https://i.8upload.com/image/cf5f647c9ca50828/poster-tmdb-la-vuelta-al-mundo-de-piol-n.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3782-activo-la-vuelta-al-mundo-de-piolin-2000-castellano-iaupscale-rip-1088x768-689gb-mega-ver-online",
+      "href": "/t3782-activo-la-vuelta-al-mundo-de-piolin-2000-castellano-iaupscale-rip-1088x768-689gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/wb8i35kc",
+      "sinopsis": "Basada en el clásico de Julio Verne, Piolín recorrerá el mundo en busca de 80 huellas felinas. Perseguido por el incansable Silvestre y acompañado por el resto de los famosos Looney Tunes: Bugs Bunny, Tazmania, el Pato Lucas, etc. Viajarán a Londres, Egipto, el Himalaya.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "MP4",
+        "calidad": "IAUpScale-Rip",
+        "resolucion": "1088x768",
+        "peso": "6,89GB"
+      }
+    },
     {
       "name": "Happy Feet 2",
       "year": "2011",
@@ -44305,6 +44422,54 @@
     }
   ],
   "series": [
+    {
+      "name": "Battlestar Galáctica: La miniserie",
+      "year": "2003",
+      "genre": "Ciencia ficción, Fantasía",
+      "specificGenre": "Ciencia ficción, Fantasía",
+      "originalGenre": "Ciencia ficción, Fantasía",
+      "type": "Series",
+      "imagen_url": "https://i.8upload.com/image/557bb529ef2108c4/poster-tmdb-battlestar-galactica.jpg",
+      "imagen": "https://i.8upload.com/image/557bb529ef2108c4/poster-tmdb-battlestar-galactica.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3779-activo-battlestar-galactica-la-miniserie-miniserie-2003-dual-audio-02-02-bd-rip-1920x1080-197gb-209gb-mega-ver-online",
+      "href": "/t3779-activo-battlestar-galactica-la-miniserie-miniserie-2003-dual-audio-02-02-bd-rip-1920x1080-197gb-209gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/i8tp5ume",
+      "sinopsis": "En una galaxia lejana residen \"Las doce colonias\", una civilización que ha permanecido en paz durante más de 40 años con unas máquinas, los \"Cyclons\", creadas por generaciones de hombres años atrás. Remake (en formato de miniserie de 2 capítulos) de una serie de TV de 1978, y que a su vez dio lugar, a modo de prólogo, a la serie 'Galáctica: Estrella de Combate' (2004).",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1080",
+        "peso": "1,97GB/2,09GB",
+        "episodios": "T0 2/2"
+      }
+    },
+    {
+      "name": "Battlestar Galactica: Estrella de Combate",
+      "year": "1978",
+      "genre": "Ciencia ficción, Fantasía",
+      "specificGenre": "Ciencia ficción, Fantasía",
+      "originalGenre": "Ciencia ficción, Fantasía",
+      "type": "Series",
+      "imagen_url": "https://i.8upload.com/image/64ccab8d3347f415/poster-tmdb-gal-ctica-estrella-de-combate.jpg",
+      "imagen": "https://i.8upload.com/image/64ccab8d3347f415/poster-tmdb-gal-ctica-estrella-de-combate.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3778-activo-battlestar-galactica-estrella-de-combate-1978-dual-audio-24-24-iaupscale-rip-1440x1084-135gb-368gb-mega-ver-online",
+      "href": "/t3778-activo-battlestar-galactica-estrella-de-combate-1978-dual-audio-24-24-iaupscale-rip-1440x1084-135gb-368gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/npt8hbf5",
+      "sinopsis": "En el séptimo milenio, la \"estrella de combate Galáctica\" vaga por la  inmensidad del espacio. La alianza robótica de los Cylones ha destruido  los doce mundos del Hombre, y las defensas coloniales han sido  aniquiladas. Sólo queda la flota de estrellas de Combate. Enfrentados a  fuerzas aplastantemente superiores, sin esperanzas de sobrevivir, un  puñado de colonos se esfuerza por alcanzar la libertad en la \"estrella de combate Galáctica\". Pero Baltar, el jefe de los Cylones, está decidido  a rematar su misión destructora. Bajo el mando de Adama, los  tripulantes de \"Galáctica\" guían a los colonos supervivientes a través  de batallas con viejos y nuevos enemigos, esforzándose siempre en  superar la estrategia de Baltar y las fuerzas de los Cylones que los  persiguen. \"Galáctica\" se adentra en el espacio buscando a la decimotercera Tribu del Hombre en el planeta Tierra.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Ninguno",
+        "formato": "MKV",
+        "calidad": "IAUpScale-Rip",
+        "resolucion": "1440x1084",
+        "peso": "1,35GB/3,68GB",
+        "episodios": "T1 24/24"
+      }
+    },
     {
       "name": "Vikingos",
       "year": "2013",
