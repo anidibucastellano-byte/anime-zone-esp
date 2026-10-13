@@ -1,6 +1,30 @@
 {
   "anime": [
     {
+      "name": "Astro gangar",
+      "year": "1972",
+      "genre": "Ciencia ficción, Fantasía",
+      "specificGenre": "Ciencia ficción, Fantasía",
+      "originalGenre": "Ciencia ficción, Fantasía",
+      "type": "Anime",
+      "imagen_url": "https://i.8upload.com/image/ec1a9d6e857ef497/poster-tmdb-astro-ganga.jpg",
+      "imagen": "https://i.8upload.com/image/ec1a9d6e857ef497/poster-tmdb-astro-ganga.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3785-activo-astro-gangar-1972-castellano-18-26-dvd-rip-640x480-70mb-575mb-mega-ver-online",
+      "href": "/t3785-activo-astro-gangar-1972-castellano-18-26-dvd-rip-640x480-70mb-575mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/nw348dd3",
+      "sinopsis": "Una mujer extraterrestre llamada Maya aterriza en la Tierra. Su planeta  natal fue destruido por los Blasters, una cruel raza alienígena que roba  los recursos naturales de otros planetas. Ella se enamora de un  científico y da a luz a un niño humano llamado Kentaro. Cuando los  Blasters comienzan a invadir la Tierra, Kentaro tendrá que defenderla  con un robot de metal viviente llamado Astroganger.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "MP4",
+        "calidad": "DVD-Rip",
+        "resolucion": "640x480",
+        "peso": "70MB/575MB",
+        "episodios": "T1 18/26"
+      }
+    },
+    {
       "name": "Los Caballeros del Mundo Mon",
       "year": "2000",
       "genre": "Acción, Aventura, Infantil",
@@ -31179,6 +31203,53 @@
   ],
   "peliculas": [
     {
+      "name": "MF Ghost",
+      "year": "2023",
+      "genre": "Acción, Aventura",
+      "specificGenre": "Acción, Aventura",
+      "originalGenre": "Acción, Aventura",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/05c22374f7442b34/poster-tmdb-mf-ghost.jpg",
+      "imagen": "https://i.8upload.com/image/05c22374f7442b34/poster-tmdb-mf-ghost.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3788-activo-mf-ghost-2023-japones-37-37-webdl-rip-1920x1080-119gb-143gb-mega-ver-online",
+      "href": "/t3788-activo-mf-ghost-2023-japones-37-37-webdl-rip-1920x1080-119gb-143gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/cv5raxk4",
+      "sinopsis": "202X d. C., un futuro más allá de Initial D.\n\nLos vehículos autónomos se utilizan ampliamente en Japón, y las carreteras públicas se emplean para carreras automovilísticas. En tal época, la competición llamada MFG se ha vuelto popular en todo el mundo. Porsche, Ferrari, Lamborghini… Los participantes están invitados a competir con sus vehículos más rápidos. Uno de ellos participantes, recién salido una prestigiosa escuela de carreras británica, Kanata Rivington, regresa a Japón con un objetivo muy claro en mente.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Japonés",
+        "subtitulos": "Inglés, Portugués, Español, Árabe, Francés, Alemán, Italiano, Ruso",
+        "formato": "MKV",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "peso": "1,19GB/1,43GB",
+        "episodios": "T1 12/12, T2 12/12, T3 13/13"
+      }
+    },
+    {
+      "name": "El Gato con Botas: El último deseo",
+      "year": "2022",
+      "genre": "Aventura, Fantasía, Comedia, Infantil",
+      "specificGenre": "Aventura, Fantasía, Comedia, Infantil",
+      "originalGenre": "Aventura, Fantasía, Comedia, Infantil",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/ef63cc50ec610b7d/poster-tmdb-el-gato-con-botas-el-ltimo-deseo.jpg",
+      "imagen": "https://i.8upload.com/image/ef63cc50ec610b7d/poster-tmdb-el-gato-con-botas-el-ltimo-deseo.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3787-activo-el-gato-con-botas-el-ultimo-deseo-2022-castellano-bd-rip-1920x804-988gb-mega-ver-online",
+      "href": "/t3787-activo-el-gato-con-botas-el-ultimo-deseo-2022-castellano-bd-rip-1920x804-988gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/8wxathmd",
+      "sinopsis": "El gato con botas descubre que ha agotado ocho de sus nueve vidas por lo que inicia una nueva para hallar la Estrella de los Deseos y así recuperar sus vidas.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x804",
+        "peso": "9,88GB"
+      }
+    },
+    {
       "name": "Hop: Rebelde Sin Pascua",
       "year": "2011",
       "genre": "Comedia, Infantil",
@@ -44422,6 +44493,30 @@
     }
   ],
   "series": [
+    {
+      "name": "Castle",
+      "year": "2009",
+      "genre": "Drama, Crimen",
+      "specificGenre": "Drama, Crimen",
+      "originalGenre": "Drama, Crimen",
+      "type": "Series",
+      "imagen_url": "https://i.8upload.com/image/a5b2b5a9514214ca/poster-tmdb-castle.jpg",
+      "imagen": "https://i.8upload.com/image/a5b2b5a9514214ca/poster-tmdb-castle.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t3786-activo-castle-2009-dual-audio-173-173-webdl-rip-1920x1080-655mb-980mb-mega-ver-online",
+      "href": "/t3786-activo-castle-2009-dual-audio-173-173-webdl-rip-1920x1080-655mb-980mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/tx5yf8nc",
+      "sinopsis": "Un escritor de novelas se une a una detective de Nueva York para resolver un caso de un asesino que emula a otro de la misma calaña, lamentablemente la relación entre ambos no es de lo mejor.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "formato": "MKV",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "peso": "655MB/980MB",
+        "episodios": "T1 10/10, T2 24/24, T3 24/24, T4 23/23, T5 24/24, T6 23/23, T7 23/23, T8 22/22"
+      }
+    },
     {
       "name": "Battlestar Galáctica: La miniserie",
       "year": "2003",
