@@ -1,6 +1,29 @@
 {
   "anime": [
     {
+      "name": "Vickie el vikingo",
+      "year": 1974,
+      "genre": "Infantil, Aventura",
+      "specificGenre": "Infantil, Aventura",
+      "originalGenre": "Infantil, Aventura",
+      "type": "Anime",
+      "imagen_url": "https://i.8upload.com/image/ba33fd7719160903/poster-tmdb-vicky-el-vikingo.jpg",
+      "imagen": "https://i.8upload.com/image/ba33fd7719160903/poster-tmdb-vicky-el-vikingo.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t1299-activo-vickie-el-vikingo-1974-castellano-78-78-webdl-rip-1920x1080-410mb-112gb-mega-ver-online#14912",
+      "href": "/t1299-activo-vickie-el-vikingo-1974-castellano-78-78-webdl-rip-1920x1080-410mb-112gb-mega-ver-online#14912",
+      "rentry_url": "https://rentry.co/qwf2kf38",
+      "sinopsis": "Vicky es un espabilado e intrépido niño vikingo, hijo único de Ylva y del jefe del poblado -el bruto y barbudo Halvar-, al que siempre se le ocurren las más imaginativas soluciones para los múltiples problemas y desventuras que les suceden a los guerreros vikingos en sus incursiones, por mar y tierra, contra sus múltiples enemigos.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MP4",
+        "peso": "410MB/1,12GB"
+      }
+    },
+    {
       "name": "Saga Slayers: Reena y Gaudy",
       "year": 1995,
       "genre": "Acción, Aventura",
@@ -22993,32 +23016,6 @@
       },
       "rentry_url": "https://rentry.co/ftfuhtcf",
       "genre": "Comedia, Cartoon Network"
-    },
-    {
-      "confianza": 90,
-      "href": "/t1299-activo-vicky-el-vikingo-1974-castellano-78-78-dvd-rip-640x480-200-220-mb-mega-pixeldrain-ver-online",
-      "name": "[Activo] Vicky el vikingo (1974) [Castellano] [78/78] [DVD-Rip] [640x480] [200/220 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Animación Occidental",
-      "razonClasificacion": "Clasificado con TMDB: Animación",
-      "specificGenre": "Drama",
-      "tmdb_type": "anime",
-      "type": "Dibujo Animado",
-      "url": "https://animezoneesp.foroactivo.com/t1299-activo-vicky-el-vikingo-1974-castellano-78-78-dvd-rip-640x480-200-220-mb-mega-pixeldrain-ver-online",
-      "year": 1974,
-      "imagen": "images\\dibujos_313_Activo-Vicky-el-vikingo-1974-Castellano-7878-DVD-Rip-640x480-200220-MB-MegaPixeldrain-Ver-Online.jpg",
-      "imagen_url": "https://i.8upload.com/image/21c229477b93c8ff/manual-poster-tmdb-vicky-el-vikingo.jpg",
-      "sinopsis": "Serie de TV (1974-1975). 78 episodios. Vicky es un espabilado e intrépido niño vikingo, hijo único de Ylva y del jefe del poblado -el bruto y barbudo Halvar-, al que siempre se le ocurren las más imaginativas soluciones para los múltiples problemas y desventuras que les suceden a los guerreros vikingos en sus incursiones, por mar y tierra, contra sus múltiples enemigos",
-      "ficha_tecnica": {
-        "ano": "1974",
-        "idioma": "Castellano",
-        "subtitulos": "Ninguno",
-        "formato": "AVI",
-        "calidad": "DVD-Rip",
-        "resolucion": "640x480",
-        "peso": "200/220 MB"
-      },
-      "rentry_url": "https://rentry.co/95quocsr",
-      "genre": "Aventura, Infantil"
     },
     {
       "confianza": 90,
