@@ -1,6 +1,29 @@
 {
   "anime": [
     {
+      "name": "Zatch Bell",
+      "year": 2003,
+      "genre": "Comedia, Infantil",
+      "specificGenre": "Comedia, Infantil",
+      "originalGenre": "Comedia, Infantil",
+      "type": "Anime",
+      "imagen_url": "https://i.8upload.com/image/a43de81f953d6132/poster-tmdb-zatch-bell.jpg",
+      "imagen": "https://i.8upload.com/image/a43de81f953d6132/poster-tmdb-zatch-bell.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t289-activo-zatch-bell-2003-dual-audio-78-78-dvd-rip-1920x1080-565mb-895mb-mega-ver-online#497",
+      "href": "/t289-activo-zatch-bell-2003-dual-audio-78-78-dvd-rip-1920x1080-565mb-895mb-mega-ver-online#497",
+      "rentry_url": "https://rentry.co/rm59ukiu",
+      "sinopsis": "Una vez cada 100 años se produce la batalla por saber quién es el  nuevo Rey de los mamodos. Y ahora ha llegado el momento de que 100 de sus hijos  vayan a la Tierra con su libro de conjuros. El motivo por el que vienen a la Tierra  a luchar entre sí es porque sólo algunos humanos pueden leer ese libro de conjuros. Por lo que se convierten en guardianes del libro. Cada mamodo  deberá encontrar al humano que pueda leer su libro, y cuanto antes.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Japonés, Castellano",
+        "subtitulos": "Español",
+        "calidad": "DVD-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "565MB/895MB"
+      }
+    },
+    {
       "name": "Kimba, el león blanco",
       "year": "1965",
       "genre": "Drama",
@@ -9353,31 +9376,6 @@
     },
     {
       "confianza": 85,
-      "href": "/t289-activozatch-bell-2003-castellano-78-78-tv-rip-640x480-110-390-mb-mega-pixeldrain-ver-online",
-      "name": "[Activo]Zatch Bell (2003) [Castellano] [78/78] [TV-RIP] [640x480] [110/390 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Aventura, Comedia, Fantasía, Cartoon Network, Jetix",
-      "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Aventura, Comedia, Fantasía, Cartoon Network, Jetix",
-      "type": "Anime",
-      "url": "https://animezoneesp.foroactivo.com/t289-activozatch-bell-2003-castellano-78-78-tv-rip-640x480-110-390-mb-mega-pixeldrain-ver-online",
-      "year": 2003,
-      "imagen": "images\\anime_294_ActivoZatch-Bell-2003-Castellano-7878-TV-RIP-640x480-110390-MB-MegaPixeldrain-Ver-Online.jpg",
-      "imagen_url": "https://i.8upload.com/image/297b1c90a8c6da40/manual-poster-tmdb-zatch-bell.jpg",
-      "sinopsis": "Una vez cada 100 años se produce la batalla por saber quién es el  nuevo Rey de los mamodos. Y ahora ha llegado el momento de que 100 de sus hijos  vayan a la Tierra con su libro de conjuros. El motivo por el que vienen a la Tierra  a luchar entre sí es porque sólo algunos humanos pueden leer ese  libro de conjuros. Por lo que se convierten en guardianes del libro. Cada mamodo  deberá encontrar al humano que pueda leer su libro, y cuanto antes.",
-      "ficha_tecnica": {
-        "ano": "2003",
-        "idioma": "Castellano",
-        "subtitulos": "Ninguno",
-        "formato": "AVI​",
-        "calidad": "TV-RIP",
-        "resolucion": "640x480",
-        "peso": "110/390 MB"
-      },
-      "rentry_url": "https://rentry.co/bmbyymsp",
-      "genre": "Aventura, Comedia, Fantasía, Cartoon Network, Jetix"
-    },
-    {
-      "confianza": 85,
       "href": "/t977-activo-zetman-2012-multi-audio-13-13-webdl-rip-1920x1080-680-975-mb-mega-pixeldrain-ver-online",
       "name": "[Activo] Zetman (2012) [Multi-audio] [13/13] [WebDL-Rip] [1920x1080] [680/975 MB] [Mega/Pixeldrain] [Ver Online]",
       "originalGenre": "Animación Japonesa",
@@ -14028,6 +14026,54 @@
     }
   ],
   "dibujos": [
+    {
+      "name": "The Super Hero Squad Show",
+      "year": "2009",
+      "genre": "Acción, Aventura",
+      "specificGenre": "Acción, Aventura",
+      "originalGenre": "Acción, Aventura",
+      "type": "Dibujos",
+      "imagen_url": "https://i.8upload.com/image/28998dfdf05d60d7/poster-tmdb-el-escuadr-n-de-superh-roes.jpg",
+      "imagen": "https://i.8upload.com/image/28998dfdf05d60d7/poster-tmdb-el-escuadr-n-de-superh-roes.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4211-activo-the-super-hero-squad-show-2009-castellano-26-26-tv-rip-704x400-130mb-325mb-mega-ver-online",
+      "href": "/t4211-activo-the-super-hero-squad-show-2009-castellano-26-26-tv-rip-704x400-130mb-325mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/otqb6m3z",
+      "sinopsis": "En un enfrentamiento entre el Doctor Muerte y Iron Man, la \"Espada del Infinito\" que el villano trataba de utilizar para gobernar el mundo se rompe en fragmentos que se esparcen por Super Hero City.\n\nPara reunir los fragmentos, Doom se alía con todos los villanos a su alcance, pero Iron Man hace lo propio y reune al Super Hero Squad.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "AVI",
+        "calidad": "TV-RIP",
+        "resolucion": "704x400",
+        "peso": "130MB/325MB",
+        "episodios": "T1 26/26"
+      }
+    },
+    {
+      "name": "Gatos callejeros, de Ricky Gervais",
+      "year": "2026",
+      "genre": "Comedia",
+      "specificGenre": "Comedia",
+      "originalGenre": "Comedia",
+      "type": "Dibujos",
+      "imagen_url": "https://i.8upload.com/image/e9f53d9a59ad2da0/poster-tmdb-gatos-callejeros-de-ricky-gervais.jpg",
+      "imagen": "https://i.8upload.com/image/e9f53d9a59ad2da0/poster-tmdb-gatos-callejeros-de-ricky-gervais.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4210-activo-gatos-callejeros-de-ricky-gervais-2026-dual-audio-06-06-webdl-rip-1920x1080-725mb-930mb-mega-ver-online",
+      "href": "/t4210-activo-gatos-callejeros-de-ricky-gervais-2026-dual-audio-06-06-webdl-rip-1920x1080-725mb-930mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/nyb2sev2",
+      "sinopsis": "En esta insolente comedia de animación de Ricky Gervais, unos gatos callejeros siembran el caos y urden una travesura disparatada detrás de otra.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Inglés, Castellano",
+        "subtitulos": "Español, Inglés",
+        "formato": "MKV",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "peso": "725MB/930MB",
+        "episodios": "T1 6/6"
+      }
+    },
     {
       "name": "La guardia del león",
       "year": 2016,
@@ -32008,6 +32054,121 @@
     }
   ],
   "peliculas": [
+    {
+      "name": "¡Upsss! ¿Dónde está Noé...?",
+      "year": "2015",
+      "genre": "Aventura, Comedia, Infantil",
+      "specificGenre": "Aventura, Comedia, Infantil",
+      "originalGenre": "Aventura, Comedia, Infantil",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/3eb32f62042638cb/poster-tmdb-upsss-d-nde-est-no.jpg",
+      "imagen": "https://i.8upload.com/image/3eb32f62042638cb/poster-tmdb-upsss-d-nde-est-no.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4216-activo-upsss-donde-esta-noe-2015-castellano-bd-rip-1920x1036-782gb-mega-ver-online",
+      "href": "/t4216-activo-upsss-donde-esta-noe-2015-castellano-bd-rip-1920x1036-782gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/7hizduod",
+      "sinopsis": "Es el fin del mundo. Un diluvio llega. Por suerte para Dave y su hijo Finny, un par de torpes Nestrians, se ha construido un Arca para salvar a todos los animales. Pero resulta que no se admiten Nestrians. Abordan furtivamente con la ayuda involuntaria de Hazel y su hija Leah, dos Grymps, creen que están a salvo. Finny y Leah tienen que intentar sobrevivir a la inundación y a los depredadores hambrientos y tratar de llegar a la cima de una montaña , mientras que Dave y Hazel deben dejar de lado sus diferencias.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1036",
+        "peso": "7,82GB"
+      }
+    },
+    {
+      "name": "Un gallo con muchos huevos",
+      "year": "2015",
+      "genre": "Aventura, Comedia, Infantil",
+      "specificGenre": "Aventura, Comedia, Infantil",
+      "originalGenre": "Aventura, Comedia, Infantil",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/c14934258d6d323e/poster-tmdb-un-gallo-con-muchos-huevos.jpg",
+      "imagen": "https://i.8upload.com/image/c14934258d6d323e/poster-tmdb-un-gallo-con-muchos-huevos.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4215-activo-un-gallo-con-muchos-huevos-2015-castellano-bd-rip-1920x1036-924gb-mega-ver-online",
+      "href": "/t4215-activo-un-gallo-con-muchos-huevos-2015-castellano-bd-rip-1920x1036-924gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/3fdbyc5x",
+      "sinopsis": "Toto es un pequeño pollito que ha nacido en un rancho muy bonito y con mucha tranquilidad. Después de que pase un tiempo, Toto se convertirá en un joven gallito, dispuesto a comerse el mundo. Un ranchero malvado y muy ambicioso conseguirá engañar a la dueña del rancho donde vive, para que la señora apueste su propiedad como premio, la disputa se arreglará con una pelea de gallos. La ranchera solamente tendrá como última esperanza a Toto, teniendo que entrenarse duramente para poder vencer al gallo más peligroso y violento de todos.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1036",
+        "peso": "9,24GB"
+      }
+    },
+    {
+      "name": "¡Scooby Doo! conoce a Kiss: Misterio a ritmo de Rock and Roll",
+      "year": "2015",
+      "genre": "Infantil, Comedia, Misterio",
+      "specificGenre": "Infantil, Comedia, Misterio",
+      "originalGenre": "Infantil, Comedia, Misterio",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/f0d2573e2bef237e/poster-tmdb-scooby-doo-conoce-a-kiss-misterio-a-ritmo-de-rock.jpg",
+      "imagen": "https://i.8upload.com/image/f0d2573e2bef237e/poster-tmdb-scooby-doo-conoce-a-kiss-misterio-a-ritmo-de-rock.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4214-activo-scooby-doo-conoce-a-kiss-misterio-a-ritmo-de-rock-and-roll-2015-castellano-bd-rip-1920x1080-1001gb-mega-ver-online",
+      "href": "/t4214-activo-scooby-doo-conoce-a-kiss-misterio-a-ritmo-de-rock-and-roll-2015-castellano-bd-rip-1920x1080-1001gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/cxxhs767",
+      "sinopsis": "Los miembros de Kiss, Gene Simmons, Paul Stanley, Eric Singer y Tommy Thayer interpretan a sus propios personajes en la película, que se centra en un concierto de Halloween en el parque de atracciones del grupo, KISS World. Scooby, Shaggy y el resto de Misterios S.A., acuden para escuchar algunas de sus canciones, pero acaban asociándose con los músicos para enfrentarse a la Bruja Carmesí, una dama fantasmagórica con un plan nefasto para invocar al malvado y poderoso Destructor proveniente de la dimensión alternativa de Kissteria.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1080",
+        "peso": "10,01GB"
+      }
+    },
+    {
+      "name": "Mune, el guardián de la luna",
+      "year": "2015",
+      "genre": "Infantil, Aventura, Fantasía",
+      "specificGenre": "Infantil, Aventura, Fantasía",
+      "originalGenre": "Infantil, Aventura, Fantasía",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/98e0d38eba136b86/poster-tmdb-mune-el-guardi-n-de-la-luna.jpg",
+      "imagen": "https://i.8upload.com/image/98e0d38eba136b86/poster-tmdb-mune-el-guardi-n-de-la-luna.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4213-activo-mune-el-guardian-de-la-luna-2015-castellano-bd-rip-1920x1080-952gb-mega-ver-online",
+      "href": "/t4213-activo-mune-el-guardian-de-la-luna-2015-castellano-bd-rip-1920x1080-952gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/ghs8bp3u",
+      "sinopsis": "Mune es un pequeño fauno del bosque, quien es inesperadamente seleccionado para ser el nuevo guardián de la Luna, pero ocurre un suceso que pondrá en peligro tanto al Sol como a la Luna, aparte de un Titán que quiere apoderarse del Sol, lo que hace que el equilibrio entre el día y la noche se quiebre. Con la ayuda de Glim, una chica hecha de cera, y de Sohone, el orgulloso guardián del Sol, buscarán salvar al Sol y devolverle a la Luna su lugar en el cielo.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1080",
+        "peso": "9,52GB"
+      }
+    },
+    {
+      "name": "La princesa y el mendigo",
+      "year": "1997",
+      "genre": "Fantasía, Romance, Drama, Misterio",
+      "specificGenre": "Fantasía, Romance, Drama, Misterio",
+      "originalGenre": "Fantasía, Romance, Drama, Misterio",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/ecf6263a4312f23a/poster-tmdb-la-princesa-y-el-mendigo.jpg",
+      "imagen": "https://i.8upload.com/image/ecf6263a4312f23a/poster-tmdb-la-princesa-y-el-mendigo.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4212-activo-la-princesa-y-el-mendigo-1997-castellano-dvd-rip-720x528-990mb-mega-ver-online",
+      "href": "/t4212-activo-la-princesa-y-el-mendigo-1997-castellano-dvd-rip-720x528-990mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/sfpficyk",
+      "sinopsis": "El buen rey Hamil no puede concebir un heredero hasta que el niño mago Gamesh use sus mágicos poderes para conseguirlo. Sin embargo, el viejo mago Epos se opone a ello y crea una niña llamada Mirabella. A cambio, el verdadero heredero es dado en adopción a unos campesinos, los cuales cuidan al niño como si fuera un hijo suyo. Mirabella se enamora de Leonardo, que es nombrado como heredero del reino gracias a las influencias mágicas de Epos. Pero gracias a la ayuda de Gamesh, Mirabella y Leonardo lucharán contra Epos para que todo vuelva a su cauce. Telefim emitido por Tele 5 en su 'serie' \"Grandes relatos\". (FILMAFFINITY)",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "AVI",
+        "calidad": "DVD-Rip",
+        "resolucion": "720x528",
+        "peso": "990MB"
+      }
+    },
     {
       "name": "¡Hora de nieve!",
       "year": "2015",
