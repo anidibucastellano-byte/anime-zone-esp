@@ -1,6 +1,53 @@
 {
   "anime": [
     {
+      "name": "The Ghost in the Shell",
+      "year": "2026",
+      "genre": "Ciencia ficción, Fantasía",
+      "specificGenre": "Ciencia ficción, Fantasía",
+      "originalGenre": "Ciencia ficción, Fantasía",
+      "type": "Anime",
+      "imagen_url": "https://i.8upload.com/image/bdbdc9288317424d/poster-tmdb-the-ghost-in-the-shell.jpg",
+      "imagen": "https://i.8upload.com/image/bdbdc9288317424d/poster-tmdb-the-ghost-in-the-shell.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4253-activo-the-ghost-in-the-shell-2026-dual-audio-10-10-webdl-rip-1920x1080-580mb-905mb-mega-ver-online",
+      "href": "/t4253-activo-the-ghost-in-the-shell-2026-dual-audio-10-10-webdl-rip-1920x1080-580mb-905mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/c3mw9um9",
+      "sinopsis": "En el Japón de 2029, la cíborg Motoko Kusanagi aspira a dirigir un comando que detenga a las amenazas emergentes. El jefe Aramaki convierte a su equipo en la Sección 9 de Seguridad Pública: la unidad blindada. Mientras, una conspiración internacional apunta a un hacker llamado el Titiritero. ¿Qué destino le espera a Kusanagi? ¿Qué busca este hacker? ¡Empieza una nueva era del ciberpunk!",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Japonés",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "peso": "580MB/905MB",
+        "episodios": "T1 10/10"
+      }
+    },
+    {
+      "name": "Reideen",
+      "year": 2007,
+      "genre": "Ciencia ficción, Fantasía",
+      "specificGenre": "Ciencia ficción, Fantasía",
+      "originalGenre": "Ciencia ficción, Fantasía",
+      "type": "Anime",
+      "imagen_url": "https://i.8upload.com/image/509fc99e48129c95/poster-tmdb-reideen.jpg",
+      "imagen": "https://i.8upload.com/image/509fc99e48129c95/poster-tmdb-reideen.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t2794-activo-reideen-2007-castellano-26-26-webdl-rip-640x368-295mb-430mb-mega-ver-online#7099",
+      "href": "/t2794-activo-reideen-2007-castellano-26-26-webdl-rip-640x368-295mb-430mb-mega-ver-online#7099",
+      "rentry_url": "https://rentry.co/4ghvniye",
+      "sinopsis": "Sigue a Junki Saiga, un estudiante con un don para las matemáticas cuya vida cambia cuando descubre que los restos de su padre arqueólogo fueron hallados junto a una misteriosa pirámide. Tras esto, Junki encuentra un brazalete de oro que le permite fusionarse y pilotar a Reideen, un gigantesco robot ancestral. Con este poder, Junki se convierte en la única esperanza para defender la Tierra ante una invasión de meteoritos y vida robótica alienígena.",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "calidad": "WebDL-Rip",
+        "resolucion": "640x368",
+        "formato": "AVI",
+        "peso": "295MB/430MB"
+      }
+    },
+    {
       "confianza": 85,
       "href": "/t304-activobakugan-battle-planet-2018-castellano-50-50-webdl-rip-1280x720-90-210-mb-mega-pixeldrain-ver-online",
       "name": "[Activo]Bakugan: Battle Planet (2018) [Castellano] [50/50] [WebDL-Rip] [1280x720] [90/210 MB] [Mega/Pixeldrain] [Ver Online]",
@@ -14099,6 +14146,30 @@
     }
   ],
   "dibujos": [
+    {
+      "name": "X-Men '97",
+      "year": "2024",
+      "genre": "Acción, Aventura",
+      "specificGenre": "Acción, Aventura",
+      "originalGenre": "Acción, Aventura",
+      "type": "Dibujos",
+      "imagen_url": "https://i.8upload.com/image/22df5d8f93c90152/poster-tmdb-x-men-97.jpg",
+      "imagen": "https://i.8upload.com/image/22df5d8f93c90152/poster-tmdb-x-men-97.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4254-activo-x-men-97-2024-dual-audio-19-19-webdl-rip-1920x1080-295mb-445mb-mega-ver-online",
+      "href": "/t4254-activo-x-men-97-2024-dual-audio-19-19-webdl-rip-1920x1080-295mb-445mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/4te59w6p",
+      "sinopsis": "X-Men '97 vuelve a la icónica época de los años 90, donde los X-Men, un grupo de mutantes que utilizan sus asombrosos poderes para proteger a un mundo que los odia y los teme, se enfrentarán a su mayor desafío y a un nuevo, insospechado y peligroso futuro.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "formato": "MKV",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "peso": "295MB/445MB",
+        "episodios": "T1 10/10, T2 9/9"
+      }
+    },
     {
       "name": "Star Wars: Maul, Señor de las sombras",
       "year": "2026",
@@ -32076,6 +32147,236 @@
     }
   ],
   "peliculas": [
+    {
+      "name": "Ballerina",
+      "year": "2016",
+      "genre": "Infantil, Comedia, Música",
+      "specificGenre": "Infantil, Comedia, Música",
+      "originalGenre": "Infantil, Comedia, Música",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/e39bcd321be0e30a/poster-tmdb-ballerina.jpg",
+      "imagen": "https://i.8upload.com/image/e39bcd321be0e30a/poster-tmdb-ballerina.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4256-activo-ballerina-2016-castellano-bd-rip-1920x816-647gb-mega-ver-online",
+      "href": "/t4256-activo-ballerina-2016-castellano-bd-rip-1920x816-647gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/bunn6x7q",
+      "sinopsis": "Felicia es una niña que, tras perder a sus padres, vive en un orfanato en su Bretaña natal. Su pasión es la danza y sueña con convertirse en una bailarina profesional. Para conseguirlo se escapa con la ayuda de su amigo Víctor y viaja hasta el París de 1879. Allí se hará pasar por otra persona para conseguir entrar como alumna de la Grand Opera House y así luchar por tener la vida que desea.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x816",
+        "peso": "6,47GB"
+      }
+    },
+    {
+      "name": "Angry Birds: La película",
+      "year": "2016",
+      "genre": "Aventura, Comedia, Infantil",
+      "specificGenre": "Aventura, Comedia, Infantil",
+      "originalGenre": "Aventura, Comedia, Infantil",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/fb2ce9a240edde66/poster-tmdb-angry-birds-la-pel-cula.jpg",
+      "imagen": "https://i.8upload.com/image/fb2ce9a240edde66/poster-tmdb-angry-birds-la-pel-cula.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4255-activo-angry-birds-la-pelicula-2016-castellano-bd-rip-1920x1038-882gb-mega-ver-online",
+      "href": "/t4255-activo-angry-birds-la-pelicula-2016-castellano-bd-rip-1920x1038-882gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/iu8vfngs",
+      "sinopsis": "Basada en la colección de videojuegos \"Angry Birds\", la historia se desarrolla en una isla poblada por aves felices que no vuelan. En este paraíso, Red, un pájaro con muy mal genio, el veloz Chuck y el volátil Bomb nunca han terminado de encajar. Pero cuando llegan a la isla unos misteriosos cerdos verdes, serán estos tres marginados los que averigüen qué traman los extraños visitantes.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1038",
+        "peso": "8,82GB"
+      }
+    },
+    {
+      "name": "LEGO DC: ¡Shazam! Magia y monstruos",
+      "year": "2020",
+      "genre": "Infantil, Aventura, Comedia",
+      "specificGenre": "Infantil, Aventura, Comedia",
+      "originalGenre": "Infantil, Aventura, Comedia",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/833adcb6cde4f5cc/poster-tmdb-lego-dc-shazam-magia-y-monstruos.jpg",
+      "imagen": "https://i.8upload.com/image/833adcb6cde4f5cc/poster-tmdb-lego-dc-shazam-magia-y-monstruos.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4249-activo-lego-dc-shazam-magia-y-monstruos-2020-dual-audio-bd-rip-1920x1080-249gb-mega-ver-online",
+      "href": "/t4249-activo-lego-dc-shazam-magia-y-monstruos-2020-dual-audio-bd-rip-1920x1080-249gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/sk98w6mk",
+      "sinopsis": "¡Ya es hora de que la Liga de la Justicia tome nota de Shazam! (Sean Astin), pero unirse al mejor equipo de superhéroes del mundo es mucho más difícil cuando todos se han convertido en niños. LEGO DC: ¡Shazam! Magic and Monsters le enseñará a Billy Batson las virtudes de la confianza mientras el héroe lucha contra Mr. Mind y Black Adam.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Inglés, Castellano",
+        "subtitulos": "Inglés, Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1080",
+        "peso": "2,49GB"
+      }
+    },
+    {
+      "name": "LEGO DC Batman: La Bat-familia importa",
+      "year": "2019",
+      "genre": "Infantil, Acción, Comedia",
+      "specificGenre": "Infantil, Acción, Comedia",
+      "originalGenre": "Infantil, Acción, Comedia",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/8f31cd970d6a1aec/poster-tmdb-lego-dc-batman-la-bat-familia-importa.jpg",
+      "imagen": "https://i.8upload.com/image/8f31cd970d6a1aec/poster-tmdb-lego-dc-batman-la-bat-familia-importa.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4248-activo-lego-dc-batman-la-bat-familia-importa-2019-dual-audio-bd-rip-1920x1080-219gb-mega-ver-online",
+      "href": "/t4248-activo-lego-dc-batman-la-bat-familia-importa-2019-dual-audio-bd-rip-1920x1080-219gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/9qf4bmmi",
+      "sinopsis": "En LEGO DC: Batman - Family Matters, las sospechas aumentan luego de que Batman, Batgirl, Robin y otros superhéroes de DC reciban invitaciones misteriosas. Sin embargo, los valores familiares deben permanecer fuertes cuando Batman y su equipo se encuentran con el villano Hood Rojo, quien está obsesionado con destruir a la familia Bat y toda la ciudad de Gotham.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Inglés, Castellano",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1080",
+        "peso": "2,19GB"
+      }
+    },
+    {
+      "name": "LEGO DC Super Heroes꞉ Aquaman, la ira de Atlantis",
+      "year": "2018",
+      "genre": "Infantil, Acción, Comedia",
+      "specificGenre": "Infantil, Acción, Comedia",
+      "originalGenre": "Infantil, Acción, Comedia",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/b21b64ffa6c7ecb6/poster-tmdb-lego-dc-super-heroes-aquaman-la-ira-de-atlantis.jpg",
+      "imagen": "https://i.8upload.com/image/b21b64ffa6c7ecb6/poster-tmdb-lego-dc-super-heroes-aquaman-la-ira-de-atlantis.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4247-activo-lego-dc-super-heroes-aquaman-la-ira-de-atlantis-2018-dual-audio-bd-rip-1920x1080-147gb-mega-ver-online",
+      "href": "/t4247-activo-lego-dc-super-heroes-aquaman-la-ira-de-atlantis-2018-dual-audio-bd-rip-1920x1080-147gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/5uvqiqed",
+      "sinopsis": "Aquaman debe luchar contra los enemigos en el aire, en tierra y en las profundidades de los Siete Mares, junto con la ayuda de la Liga de la Justicia.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1080",
+        "peso": "1,47GB"
+      }
+    },
+    {
+      "name": "LEGO DC Comics꞉ Super Heroes꞉ Flash",
+      "year": "2018",
+      "genre": "Aventura, Comedia, Infantil, Ciencia ficción",
+      "specificGenre": "Aventura, Comedia, Infantil, Ciencia ficción",
+      "originalGenre": "Aventura, Comedia, Infantil, Ciencia ficción",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/cc30c64c53778a56/poster-tmdb-lego-dc-comics-super-heroes-flash.jpg",
+      "imagen": "https://i.8upload.com/image/cc30c64c53778a56/poster-tmdb-lego-dc-comics-super-heroes-flash.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4246-activo-lego-dc-comics-super-heroes-flash-2018-dual-audio-bd-rip-1920x1080-470gb-mega-ver-online",
+      "href": "/t4246-activo-lego-dc-comics-super-heroes-flash-2018-dual-audio-bd-rip-1920x1080-470gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/fauot9dk",
+      "sinopsis": "El sol de la mañana brilla sobre la joya de la ciudad de Metrópolis: el edificio del Daily Planet. ¡Pero cuando el Joker decide que el edificio necesita unas reformas, es hora de hacer sonar la Alarma de Problemas porque los ladrillos están a punto de venirse a abajo! La Liga de la Justicia entra en acción, pero mientras la batalla contra el Joker se recrudece, los poderes de Flash empiezan a enloquecer, lo cual le deja atrapado en un bucle temporal. ¡Lo más extraño es que Flash  aparece con su traje amarillo para provocarle a cada paso! ¡Para romper el ciclo y salvar Metrópolis, Flash necesitará toda su velocidad y que le echen una mano (o una pata) los nuevos reclutas de la Liga de la Justicia: Atom, Krypto el superperro y Ace el Bat-sabueso!",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1080",
+        "peso": "4,70GB"
+      }
+    },
+    {
+      "name": "LEGO DC Comics꞉ La Liga de la Justicia꞉ Fuga de Gotham",
+      "year": "2016",
+      "genre": "Infantil, Aventura, Acción, Comedia",
+      "specificGenre": "Infantil, Aventura, Acción, Comedia",
+      "originalGenre": "Infantil, Aventura, Acción, Comedia",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/34c52cb057ca5f73/poster-tmdb-lego-la-liga-de-la-justicia-fuga-de-gotham.jpg",
+      "imagen": "https://i.8upload.com/image/34c52cb057ca5f73/poster-tmdb-lego-la-liga-de-la-justicia-fuga-de-gotham.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4245-activo-lego-dc-comics-la-liga-de-la-justicia-fuga-de-gotham-2016-dual-audio-bd-rip-1920x1080-463gb-mega-ver-online",
+      "href": "/t4245-activo-lego-dc-comics-la-liga-de-la-justicia-fuga-de-gotham-2016-dual-audio-bd-rip-1920x1080-463gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/zqdkq6gt",
+      "sinopsis": "Batman se enfrenta con su mayor desafío hasta la fecha: ¡LAS VACACIONES! Renuentemente, el héroe encapuchado acepta que Batgirl y Nightwing lo lleven a unas muy merecidas vacaciones para descansar de la lucha contra el crimen mientras que Superman y Justice League vigilan Gotham City. Ninguna de las operaciones resultan según lo planeado cuando las vacaciones de Batman se acortan debido a peligros por su pasado e invasores provenientes del centro de la Tierra. Superman y los demás miembros de League of Justice se dan cuenta de lo ocupado que Batman típicamente está con los villanos de Gotham City.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1080",
+        "peso": "4,63GB"
+      }
+    },
+    {
+      "name": "La Liga de la Justicia contra la Liga de Bizarro",
+      "year": "2015",
+      "genre": "Acción, Aventura, Infantil, Comedia",
+      "specificGenre": "Acción, Aventura, Infantil, Comedia",
+      "originalGenre": "Acción, Aventura, Infantil, Comedia",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/0e48b54e78dfbc59/poster-tmdb-la-liga-de-la-justicia-contra-la-liga-de-bizarro.jpg",
+      "imagen": "https://i.8upload.com/image/0e48b54e78dfbc59/poster-tmdb-la-liga-de-la-justicia-contra-la-liga-de-bizarro.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4244-activo-la-liga-de-la-justicia-contra-la-liga-de-bizarro-2015-dual-audio-bd-rip-1920x1080-333gb-mega-ver-online",
+      "href": "/t4244-activo-la-liga-de-la-justicia-contra-la-liga-de-bizarro-2015-dual-audio-bd-rip-1920x1080-333gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/5nb3o29k",
+      "sinopsis": "Superman, Batman y el resto de la Liga de la Justicia deberá enfrentarse a sus versiones bizarras: unos clones bastante extraños creados por el malvado Lex Luthor. No les quedará más remedio que formar una alianza si desean derrotar a un villano inesperado: Darkseid",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1080",
+        "peso": "3,33GB"
+      }
+    },
+    {
+      "name": "LEGO DC Comics꞉ Batman Asediado",
+      "year": "2014",
+      "genre": "Acción, Aventura, Infantil, Comedia",
+      "specificGenre": "Acción, Aventura, Infantil, Comedia",
+      "originalGenre": "Acción, Aventura, Infantil, Comedia",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/da2ce8e5bc6b06fc/poster-tmdb-lego-dc-comics-super-heroes-batman-fichado.jpg",
+      "imagen": "https://i.8upload.com/image/da2ce8e5bc6b06fc/poster-tmdb-lego-dc-comics-super-heroes-batman-fichado.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4243-activo-lego-dc-comics-batman-asediado-2014-dual-audio-webdl-rip-1920x1080-675mb-mega-ver-online",
+      "href": "/t4243-activo-lego-dc-comics-batman-asediado-2014-dual-audio-webdl-rip-1920x1080-675mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/yqpdg4ym",
+      "sinopsis": "Especial que explica cómo Batman se unió a La Liga de la Justicia.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "formato": "MKV",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "peso": "675MB"
+      }
+    },
+    {
+      "name": "LEGO Batman: La película - El regreso de los superhéroes de DC",
+      "year": "2013",
+      "genre": "Infantil, Aventura, Comedia",
+      "specificGenre": "Infantil, Aventura, Comedia",
+      "originalGenre": "Infantil, Aventura, Comedia",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/947395c8e4f7f9a6/poster-tmdb-lego-batman-la-pel-cula-el-regreso-de-los-superh-r.jpg",
+      "imagen": "https://i.8upload.com/image/947395c8e4f7f9a6/poster-tmdb-lego-batman-la-pel-cula-el-regreso-de-los-superh-r.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4242-activo-lego-batman-la-pelicula-el-regreso-de-los-superheroes-de-dc-2013-dual-audio-bd-rip-1920x1080-197gb-mega-ver-online",
+      "href": "/t4242-activo-lego-batman-la-pelicula-el-regreso-de-los-superheroes-de-dc-2013-dual-audio-bd-rip-1920x1080-197gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/emft6c36",
+      "sinopsis": "La fiesta de Bruce Wayne para celebrar que es el Hombre del Año en Gotham City pronto se convierte en un caos cuando El Joker aparece en escena con una gran cantidad de secuaces a su lado, incluyendo al Acertijo, Catwoman y Dos Caras. El Caballero Oscuro se tendrá que poner en acción para atrapar a estos invitados inesperados. Pero uno de los criminales que está en la fiesta no es tan obvio como el resto: Lex Luthor, que además lleva con él un arma secreta que puede cambiar la balanza de poder en Gotham City para siempre: ¡El Deconstructor! El equipo problemático de Lex Luthor y Joker, no es algo que puedan resolver solos Batman y Robin, ¿pero para que están los Super Amigos? Superman, La Mujer Maravilla y Linterna Verde les ayudarán a proteger a los inocentes y salvar Gotham City.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1080",
+        "peso": "1,97GB"
+      }
+    },
     {
       "name": "La Liga de la Justicia El ataque de la Legión del Mal",
       "year": "2015",
