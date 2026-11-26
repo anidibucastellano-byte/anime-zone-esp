@@ -1,6 +1,77 @@
 {
   "anime": [
     {
+      "name": "Sailor Moon",
+      "year": 1992,
+      "genre": "Fantasía, Acción, Aventura",
+      "specificGenre": "Fantasía, Acción, Aventura",
+      "originalGenre": "Fantasía, Acción, Aventura",
+      "type": "Anime",
+      "imagen_url": "https://i.8upload.com/image/d63587354ee8a745/poster-tmdb-sailor-moon.jpg",
+      "imagen": "https://i.8upload.com/image/d63587354ee8a745/poster-tmdb-sailor-moon.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t269-activo-sailor-moon-1992-multi-audio-200-200-iaupscale-rip-1920x1080-465mb-725mb-mega-ver-online",
+      "href": "/t269-activo-sailor-moon-1992-multi-audio-200-200-iaupscale-rip-1920x1080-465mb-725mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/munudksx",
+      "sinopsis": "Narra la historia de Usagi Tsukino, una adolescente de 14 años muy distraída e imprudente cuya vida cambiará totalmente cuando un día por casualidad conoce a una gata llamada Luna, la cual le habla acerca de su misión como Sailor Scout y de salvar a la Tierra de futuros invasores malignos. Con el tiempo, surgen las demás sailors en su orden: Sailor Mercury (Ami Mizuno), Sailor Mars (Rei Hino), Sailor Jupiter (Makoto Kino) y Sailor Venus (Minako Aino).",
+      "confianza": 0.8,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Catalán, gl, Japonés",
+        "subtitulos": "Español",
+        "calidad": "IAUpScale-Rip",
+        "resolucion": "1920x1080",
+        "formato": "MKV",
+        "peso": "465MB/725MB"
+      }
+    },
+    {
+      "name": "Usagi-chan de Cue!!",
+      "year": "2001",
+      "genre": "Comedia, Fantasía",
+      "specificGenre": "Comedia, Fantasía",
+      "originalGenre": "Comedia, Fantasía",
+      "type": "Anime",
+      "imagen_url": "https://i.8upload.com/image/174143465eeb7de1/poster-tmdb-usagi-chan-de-cue.jpg",
+      "imagen": "https://i.8upload.com/image/174143465eeb7de1/poster-tmdb-usagi-chan-de-cue.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4365-activo-usagi-chan-de-cue-miniserie-2001-castellano-03-03-dvd-rip-720x540-170mb-175mb-mega-ver-online",
+      "href": "/t4365-activo-usagi-chan-de-cue-miniserie-2001-castellano-03-03-dvd-rip-720x540-170mb-175mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/mz65zf8a",
+      "sinopsis": "Motogi Haru es un muchacho que cuida de los animales, sobre todo de los conejos que están en el tejado de su escuela. Un día, un compañera de su clase llamada Inabi Mikami, tiene una pelea con un tipo grande y fuerte sobre el tejado y de pronto se encuentra cayendo del edificio, protegiendo a un conejo. Increíblemente, en vez de conseguir matarse, ella se combina con el conejo. Se llama Mimika, y es una combinación de Inabi y el conejo, y se siente realmente feliz de estar con Haru. Pero esto es algo que a Miku, amiga de la infancia de Haru, no le gusta, porque está enamorada de él..",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "MP4",
+        "calidad": "DVD-Rip",
+        "resolucion": "720x540",
+        "peso": "170MB/175MB",
+        "episodios": "T1 3/3"
+      }
+    },
+    {
+      "name": "Sandy y sus posturas",
+      "year": "1986",
+      "genre": "Comedia, Fantasía",
+      "specificGenre": "Comedia, Fantasía",
+      "originalGenre": "Comedia, Fantasía",
+      "type": "Anime",
+      "imagen_url": "https://i.8upload.com/image/f0fb67953c18b22f/poster-tmdb-poster.jpg",
+      "imagen": "https://i.8upload.com/image/f0fb67953c18b22f/poster-tmdb-poster.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4364-activo-sandy-y-sus-posturas-1986-castellano-09-24-dvd-rip-640x480-365mb-365mb-mega-ver-online",
+      "href": "/t4364-activo-sandy-y-sus-posturas-1986-castellano-09-24-dvd-rip-640x480-365mb-365mb-mega-ver-online",
+      "rentry_url": "https://rentry.co/a62k8zmh",
+      "sinopsis": "Sandy (Yumi) tiene una vida apacible y feliz junto a su familia, gerentes de una floristería, y sus amigos del colegio, a pesar de vivir en las nubes y no ser muy buena estudiante. Su sueño es ser una autora de manga y pone todas sus fuerzas en dibujar, que no se le da nada mal a pesar de su edad. Durante el Festival de las flores, dibuja en las paredes de la casa de Lady Fukurokouji y tras ser obligada a limpiarlas, vuelve a casa donde se encuentra entre las plantas a dos duendes, Pico y Paco (Keshimaru y Kakimaru), que le otorgan una varita mágica con la que podrá hacer realidad todo aquello que dibuje en el aire durante un tiempo limitado. Así, Sandy correrá mil aventuras de las que saldrá indemne gracias a que sus dibujos cobran vida, especialmente cuando se mete en problemas con la ricachona obesa de Lady Fukurokouji.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "AVI",
+        "calidad": "DVD-Rip",
+        "resolucion": "640x480",
+        "peso": "365MB/365MB",
+        "episodios": "T1 9/24"
+      }
+    },
+    {
       "name": "Mi feliz matrimonio",
       "year": 2023,
       "genre": "Drama, Ciencia ficción, Fantasía",
@@ -8326,31 +8397,6 @@
         "peso": "165/620 MB"
       },
       "rentry_url": "https://rentry.co/qbkqpyfa"
-    },
-    {
-      "confianza": 85,
-      "href": "/t269-activosailor-moon-1992-dual-audio-200-200-webdl-rip-768x576-255-695-mb-mega-pixeldrain-ver-online",
-      "name": "[Activo]Sailor Moon (1992) [Dual-Audio] [200/200] [WebDL-Rip] [768x576] [255/695 MB] [Mega/Pixeldrain] [Ver Online]",
-      "originalGenre": "Fantasía, Mahou shoujo, Acción, Aventura, Romance, Drama",
-      "razonClasificacion": "Clasificación durante scraping con enlace",
-      "specificGenre": "Fantasía, Mahou shoujo, Acción, Aventura, Romance, Drama",
-      "type": "Anime",
-      "url": "https://animezoneesp.foroactivo.com/t269-activosailor-moon-1992-dual-audio-200-200-webdl-rip-768x576-255-695-mb-mega-pixeldrain-ver-online",
-      "year": 1992,
-      "imagen": "images\\anime_233_ActivoSailor-Moon-1992-Dual-Audio-200200-WebDL-Rip-768x576-255695-MB-MegaPixeldrain-Ver-Online.jpg",
-      "imagen_url": "https://i.8upload.com/image/9366b8664616f741/manual-poster-tmdb-sailor-moon.jpg",
-      "sinopsis": "Narra la historia de Usagi Tsukino, una adolescente de 14 años muy distraída e imprudente cuya vida cambiará totalmente cuando un día por casualidad conoce a una gata llamada Luna, la cual le habla acerca de su misión como Sailor Scout y de salvar a la Tierra de futuros invasores malignos. Con el tiempo, surgen las demás sailors en su orden: Sailor Mercury (Ami Mizuno), Sailor Mars (Rei Hino), Sailor Jupiter (Makoto Kino) y Sailor Venus (Minako Aino).",
-      "ficha_tecnica": {
-        "ano": "1992",
-        "idioma": "Castellano, Japonés",
-        "subtitulos": "Ninguno",
-        "formato": "MKV​",
-        "calidad": "WebDL-Rip",
-        "resolucion": "768x576",
-        "peso": "255/695 MB"
-      },
-      "rentry_url": "https://rentry.co/dxdonqku",
-      "genre": "Fantasía, Mahou shoujo, Acción, Aventura, Romance, Drama"
     },
     {
       "confianza": 85,
@@ -32484,6 +32530,167 @@
   ],
   "peliculas": [
     {
+      "name": "Gru 3: Mi villano favorito",
+      "year": "2017",
+      "genre": "Acción, Comedia, Infantil, Aventura",
+      "specificGenre": "Acción, Comedia, Infantil, Aventura",
+      "originalGenre": "Acción, Comedia, Infantil, Aventura",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/a1b834f950f04104/poster-tmdb-gru-3-mi-villano-favorito.jpg",
+      "imagen": "https://i.8upload.com/image/a1b834f950f04104/poster-tmdb-gru-3-mi-villano-favorito.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4371-activo-gru-3-mi-villano-favorito-2017-castellano-bd-rip-1920x804-872gb-mega-ver-online",
+      "href": "/t4371-activo-gru-3-mi-villano-favorito-2017-castellano-bd-rip-1920x804-872gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/87vxc4st",
+      "sinopsis": "A Gru lo han despedido. Se ha quedado sin trabajo porque ha dejado escapar al supervillano Balthazar Bratt, estrella infantil de los años 80 que con la llegada de la pubertad lo perdió todo y ha estado creando el caos en todo el planeta.  Además, Gru va a conocer a su hermano gemelo Dru y tendrá que decidir si está listo para continuar la tradición familiar de dedicarse al crimen, y unirse a el para llevar a cabo un último golpe. Aunque ha dejado esa vida atrás… ¿volverá a convertirse Gru en un villano?",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x804",
+        "peso": "8,72GB"
+      }
+    },
+    {
+      "name": "Ferdinand",
+      "year": "2017",
+      "genre": "Infantil, Aventura, Comedia",
+      "specificGenre": "Infantil, Aventura, Comedia",
+      "originalGenre": "Infantil, Aventura, Comedia",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/b2252d7f162a21a7/poster-tmdb-ferdinand.jpg",
+      "imagen": "https://i.8upload.com/image/b2252d7f162a21a7/poster-tmdb-ferdinand.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4370-activo-ferdinand-2017-castellano-bd-rip-1920x804-997gb-mega-ver-online",
+      "href": "/t4370-activo-ferdinand-2017-castellano-bd-rip-1920x804-997gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/vkzw5zw9",
+      "sinopsis": "Ferdinand es un novillo muy tranquilo que prefiere sentarse bajo un árbol a oler las flores que saltar, resoplar y embestirse con otros toros. A medida que va creciendo y haciéndose fuerte, su temperamento no cambia y sigue siendo un toro manso. Un día, unos hombres vienen buscando al toro más grande, rápido y bravo... y Ferdinand es elegido equivocadamente para las corridas de toros de Madrid.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x804",
+        "peso": "9,97GB"
+      }
+    },
+    {
+      "name": "Emoji: La película",
+      "year": "2017",
+      "genre": "Infantil, Comedia",
+      "specificGenre": "Infantil, Comedia",
+      "originalGenre": "Infantil, Comedia",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/4ccc3bd24745eb51/poster-tmdb-emoji-la-pel-cula.jpg",
+      "imagen": "https://i.8upload.com/image/4ccc3bd24745eb51/poster-tmdb-emoji-la-pel-cula.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4369-activo-emoji-la-pelicula-2017-castellano-bd-rip-1920x802-574gb-mega-ver-online",
+      "href": "/t4369-activo-emoji-la-pelicula-2017-castellano-bd-rip-1920x802-574gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/32bybq96",
+      "sinopsis": "Los protagonistas habitarán la misteriosa tierra de Textopolis, donde todos los emojis favoritos de la gente cobran vida, mientras esperan ser seleccionados por el usuario del teléfono. Todos los personajes tienen una sola expresión facial a excepción de Gen, un emoji que nació sin filtro y se llena de múltiples expresiones. Para lograr ser normal, Gen se embarcará en una aventura o “app-ventura”, junto a sus amigos Hi-5 y Jailbreak. Pero pronto, una gran amenaza hará que el destino de estos personajes dependa de los tres amigos, teniendo que salvar su mundo antes que sea borrado por completo.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x802",
+        "peso": "5,74GB"
+      }
+    },
+    {
+      "name": "El malvado zorro feroz",
+      "year": "2017",
+      "genre": "Infantil, Comedia",
+      "specificGenre": "Infantil, Comedia",
+      "originalGenre": "Infantil, Comedia",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/824ef03c027b0084/poster-tmdb-el-malvado-zorro-feroz.jpg",
+      "imagen": "https://i.8upload.com/image/824ef03c027b0084/poster-tmdb-el-malvado-zorro-feroz.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4368-activo-el-malvado-zorro-feroz-2017-castellano-bd-rip-1920x1080-911gb-mega-ver-online",
+      "href": "/t4368-activo-el-malvado-zorro-feroz-2017-castellano-bd-rip-1920x1080-911gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/vd6e986x",
+      "sinopsis": "Un zorro  que es incapaz de asustar a nadie y de cazar nada, no tiene otra ocurrencia que robar -de una granja muy peculiar-unos huevos de gallina para, tras incubarlos y criar a los pollitos…, comérselos. Pero al nacer, los pollitos creen que el zorro es su madre y este se encariña de ellos lo que complicará las cosas a este zorro que, ni es malvado ni feroz. En esa divertida granja también encontraremos a un conejo que actúa como una cigüeña bajo la dirección de un pato loco.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1080",
+        "peso": "9,11GB"
+      }
+    },
+    {
+      "name": "El hijo de Bigfoot",
+      "year": "2017",
+      "genre": "Infantil, Comedia, Aventura, Ciencia ficción",
+      "specificGenre": "Infantil, Comedia, Aventura, Ciencia ficción",
+      "originalGenre": "Infantil, Comedia, Aventura, Ciencia ficción",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/e879554a3fcb431e/poster-tmdb-el-hijo-de-bigfoot.jpg",
+      "imagen": "https://i.8upload.com/image/e879554a3fcb431e/poster-tmdb-el-hijo-de-bigfoot.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4367-activo-el-hijo-de-bigfoot-2017-castellano-bd-rip-1920x1080-399gb-mega-ver-online",
+      "href": "/t4367-activo-el-hijo-de-bigfoot-2017-castellano-bd-rip-1920x1080-399gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/ighu2gva",
+      "sinopsis": "Adam es un joven solitario que decide embarcarse en la aventura de encontrar a su padre, el que lleva años desaparecido. Da la casualidad de que su progenitor es el legendario Bigfoot, que vive desde hace tiempo en el bosque para protegerse a sí mismo y a su familia. En el momento en el que se reencuentran padre e hijo, estos descubren que el joven Adam ha heredado los poderes de Bigfoot.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1080",
+        "peso": "3,99GB"
+      }
+    },
+    {
+      "name": "La venganza del conde de Montecristo",
+      "year": "2002",
+      "genre": "Aventura, Drama, Historia, Acción",
+      "specificGenre": "Aventura, Drama, Historia, Acción",
+      "originalGenre": "Aventura, Drama, Historia, Acción",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/e655b0f75c8259d3/poster_tmdb_la_venganza_del_conde_de_montecristo.jpg",
+      "imagen": "https://i.8upload.com/image/e655b0f75c8259d3/poster_tmdb_la_venganza_del_conde_de_montecristo.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4363-activo-la-venganza-del-conde-de-montecristo-2002-dual-audio-bd-rip-1920x1040-644gb-mega-ver-online",
+      "href": "/t4363-activo-la-venganza-del-conde-de-montecristo-2002-dual-audio-bd-rip-1920x1040-644gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/3dibobe2",
+      "sinopsis": "El honrado e inocente Edmundo Dantes es traicionado por su mejor amigo y encerrado de por vida en las mazmorras del castillo de If. Con el paso de los años va cambiando y elabora los más despiadados planes de venganza. Tras una milagrosa fuga, Edmundo se convierte en el misterioso y acaudalado conde de Montecristo, y se introduce en los círculos de la nobleza francesa para llevar a cabo sus proyectos y conseguir vengarse de todos los que le traicionaron.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1040",
+        "peso": "6,44GB"
+      }
+    },
+    {
+      "name": "Difícil de matar",
+      "year": "1990",
+      "genre": "Acción, Drama, Crimen, Suspense",
+      "specificGenre": "Acción, Drama, Crimen, Suspense",
+      "originalGenre": "Acción, Drama, Crimen, Suspense",
+      "type": "Película",
+      "imagen_url": "https://i.8upload.com/image/6f2814e6c4d185da/poster_tmdb_dif_cil_de_matar.jpg",
+      "imagen": "https://i.8upload.com/image/6f2814e6c4d185da/poster_tmdb_dif_cil_de_matar.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4362-activo-dificil-de-matar-1990-dual-audio-bd-rip-1908x1080-478gb-mega-ver-online",
+      "href": "/t4362-activo-dificil-de-matar-1990-dual-audio-bd-rip-1908x1080-478gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/ytrb8kfi",
+      "sinopsis": "Un policía descubre una trama de corrupción a alto nivel político, por lo que le intentan asesinar, quedando en coma durante varios años. Cuando el detective recupera la consciencia, decide vengarse de aquellos que atentaron contra su vida.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1908x1080",
+        "peso": "4,78GB"
+      }
+    },
+    {
       "name": "El bebé jefazo",
       "year": "2017",
       "genre": "Comedia, Infantil",
@@ -48950,6 +49157,54 @@
     }
   ],
   "series": [
+    {
+      "name": "Ash vs Evil Dead",
+      "year": "2015",
+      "genre": "Comedia, Acción, Aventura",
+      "specificGenre": "Comedia, Acción, Aventura",
+      "originalGenre": "Comedia, Acción, Aventura",
+      "type": "Series",
+      "imagen_url": "https://i.8upload.com/image/7aa75323912d14c0/poster-tmdb-ash-vs-evil-dead.jpg",
+      "imagen": "https://i.8upload.com/image/7aa75323912d14c0/poster-tmdb-ash-vs-evil-dead.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4366-activo-ash-vs-evil-dead-2015-dual-audio-20-20-webdl-rip-1920x1080-174gb-296gb-mega-ver-online",
+      "href": "/t4366-activo-ash-vs-evil-dead-2015-dual-audio-20-20-webdl-rip-1920x1080-174gb-296gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/pdiwnmyf",
+      "sinopsis": "Secuela de la saga de películas \"Posesión infernal\". Ash ha pasado los últimos treinta años evitando madurar y luchando contra los horrores surgidos del Necronomicón. Sigue siendo el mismo malhablado sabelotodo de siempre pero de repente se encuentra con que debe volver a coger su motosierra para luchar contra una plaga de Deadites que amenaza con destruir toda la humanidad mientras intenta reconciliarse con su pasado.",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano, Inglés",
+        "subtitulos": "Español, Inglés",
+        "formato": "MKV",
+        "calidad": "WebDL-Rip",
+        "resolucion": "1920x1080",
+        "peso": "1,74GB/2,96GB",
+        "episodios": "T1 10/10, T2 10/10"
+      }
+    },
+    {
+      "name": "Merlín",
+      "year": "2008",
+      "genre": "Fantasía, Ciencia ficción",
+      "specificGenre": "Fantasía, Ciencia ficción",
+      "originalGenre": "Fantasía, Ciencia ficción",
+      "type": "Series",
+      "imagen_url": "https://i.8upload.com/image/1cbdbd2c3b836216/poster_tmdb_merl_n.jpg",
+      "imagen": "https://i.8upload.com/image/1cbdbd2c3b836216/poster_tmdb_merl_n.jpg",
+      "url": "https://animezoneesp.foroactivo.com/t4361-activo-merlin-2008-castellano-65-65-bd-rip-1920x1080-103gb-118gb-mega-ver-online",
+      "href": "/t4361-activo-merlin-2008-castellano-65-65-bd-rip-1920x1080-103gb-118gb-mega-ver-online",
+      "rentry_url": "https://rentry.co/tcganiwt",
+      "sinopsis": "Adaptacion a la televisión de la leyenda arturica en las que unos jóvenes Arturo y Merlin se enfrentan a sus primeros peligros y descubren el amor. Podremos ver al joven Colin Morgan (Dr. Who) interpretando al todavia inexperto Merlin, junto a los demas personajes de la leyenda arturica como son Arturo (Bradley James), Lancelot (Santiago Cabrera - Heroes -), Vivianne, la bruja del lago (Michelle Ryan - Bionic woman -) o el Gran Dragón (al que pone voz el veterano John Hurt).",
+      "confianza": 1.0,
+      "ficha_tecnica": {
+        "idioma": "Castellano",
+        "subtitulos": "Ninguno",
+        "formato": "MKV",
+        "calidad": "BD-Rip",
+        "resolucion": "1920x1080",
+        "peso": "1,03GB/1,18GB",
+        "episodios": "T1 13/13, T2 13/13, T3 13/13, T4 13/13, T5 13/13"
+      }
+    },
     {
       "name": "American Crime Story: El pueblo contra O. J. Simpson",
       "year": "2016",
